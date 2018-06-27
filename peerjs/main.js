@@ -1,4 +1,4 @@
-var peer = new Peer();
+var peer = new Peer([], {secure: true});
 
 var conn = peer.connect('safiullin-io-peer-timer');
 // on open will be launch when you successfully connect to PeerServer
