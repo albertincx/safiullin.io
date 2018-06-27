@@ -1,20 +1,22 @@
 var peerId = 'safiullin-io-peer-timer'
 var options = {host: 'peerjs-timer.herokuapp.com', secure: true, port: 443, key: 'peerjs', debug: 3}
 var conn, peer
+
 var promise = new Promise((resolve, reject) => {
   peer = new Peer(peerId, options)
-  conn = peer.connect(peerId)
-  startClient()
+  peer.on('error', function () {
+    reject()
+  })
 })
 
-promise.catch(e => {
-  console.log(e)
+promise.catch(() => {
   peer = new Peer(options)
-  conn = peer.connect(peerId)
+
   startClient()
 })
 
 function startClient () {
+  conn = peer.connect(peerId)
   peer.on('connection', function (conn) {
     conn.on('data', function (data) {
       // Will print 'hi!'
@@ -36,9 +38,9 @@ $(document).ready(function () {
 
   $('#send').click(function (e) {
     e.preventDefault()
-    conn.on('open', function(){
+    conn.on('open', function () {
       // here you have conn.id
-      conn.send('hi!');
-    });
+      conn.send('hi!')
+    })
   })
 })
