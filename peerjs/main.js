@@ -1,16 +1,36 @@
-var peerId = 'safiullin-io-peer-timer';
-var peer = new Peer(peerId,{　host:'peerjs-timer.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3});
+var peerId = 'safiullin-io-peer-timer'
+var options = {host: 'peerjs-timer.herokuapp.com', secure: true, port: 443, key: 'peerjs', debug: 3}
+var conn, peer
+var promise = new Promise((resolve, reject) => {
+  peer = new Peer(peerId, options)
+  conn = peer.connect(peerId)
+  startClient()
+})
 
+promise.catch(e => {
+  console.log(e)
+  peer = new Peer(options)
+  conn = peer.connect(peerId)
+  startClient()
+})
 
-/*peer.on('open', function(){
-  $('#list').text(peer.id);
-});*/
-var conn = peer.connect(peerId);
+function startClient () {
+  peer.on('connection', function (conn) {
+    conn.on('data', function (data) {
+      // Will print 'hi!'
+      var $div = $('<div />').text(data)
+      $('#list').append($div)
+      console.log(data)
+    })
+  })
+
+  conn.on('open', function () {
+    // here you have conn.id
+    conn.send('hi! connected')
+  })
+}
+
 // on open will be launch when you successfully connect to PeerServer
-conn.on('open', function(){
-  // here you have conn.id
-  conn.send('hi!');
-});/**/
 
 $(document).ready(function () {
 
@@ -22,12 +42,3 @@ $(document).ready(function () {
     });
   })
 })
-
-peer.on('connection', function(conn) {
-  conn.on('data', function(data){
-    // Will print 'hi!'
-    $div = $('<div />').text(data);
-    $('#list').append(div)
-    console.log(data);
-  });
-});
