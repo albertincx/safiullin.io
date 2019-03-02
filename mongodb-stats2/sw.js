@@ -1,7 +1,7 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/runtime~main.cd5a0db6e0a3f99b3361-time1551541552187.js",
+      "/runtime~main.8336538dab624e6e3887-time1551541649741.js",
       "/"
     ],
     "additional": [
@@ -18,16 +18,16 @@ var __wpo = {
   "hashesMap": {
     "6ec2c351bd6c7cd1449252fac9a83bfe38d92fb5": "/core-js.8076452278e26b4ffe43.chunk.js",
     "389d6c1b8d3198aa23451086a0faf38e9b685959": "/main.a2508cea50a4a7245e98.chunk.js",
-    "2019affc53a19e0455c9704ae5ab565445b00e95": "/runtime~main.cd5a0db6e0a3f99b3361-time1551541552187.js",
+    "b8844eeb5ff784f4b5578f9060652bfea8734a71": "/runtime~main.8336538dab624e6e3887-time1551541649741.js",
     "0f2868768baf8d53ca9d83a473c27e8250e098a6": "/utilityvendor.d00733130a802e54885c.chunk.js",
     "6aa3dd3f1b276b29f0df357f2819c9a77941dfc1": "/vendor.537331a5934da0f3399c.chunk.js",
     "a2619d4d6c8d919ab365c727e2c8867d6e3eb098": "/5.b7dec23c49af01f57c8c.chunk.js",
     "abf3d0cab8a4572d672b12635969c9582eb8b5f5": "/6.423bd7dbe8a1cf142e45.chunk.js",
-    "3059c9a18d819caae6f85d24fb7dc1682acfd99d": "/"
+    "e1662f00b60c006891c57c3918d7d85c33c2366c": "/"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "3/2/2019, 6:46:01 PM",
+  "version": "3/2/2019, 6:47:39 PM",
   "name": "webpack-offline",
   "pluginVersion": "5.0.6",
   "relativePaths": false
@@ -112,7 +112,7 @@ var __wpo = {
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/mongodb-stats/";
+/******/ 	__webpack_require__.p = "/mongodb-stats2/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
