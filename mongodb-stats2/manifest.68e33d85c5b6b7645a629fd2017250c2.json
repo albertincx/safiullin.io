@@ -1,57 +1,57 @@
 {
   "icons": [
     {
-      "src": "mongodb-stats2/icon_180x180.ab820f198ba4ec270876f300f6d12874.png",
+      "src": "/mongodb-stats2/icon_180x180.ab820f198ba4ec270876f300f6d12874.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_167x167.7f95a9e83cf7a99df52d4aa5cf7df347.png",
+      "src": "/mongodb-stats2/icon_167x167.7f95a9e83cf7a99df52d4aa5cf7df347.png",
       "sizes": "167x167",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_152x152.425f3232f3b8c842e0d3679d9de0a071.png",
+      "src": "/mongodb-stats2/icon_152x152.425f3232f3b8c842e0d3679d9de0a071.png",
       "sizes": "152x152",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_120x120.6ecc1c2df4c903b3354a4431be48c546.png",
+      "src": "/mongodb-stats2/icon_120x120.6ecc1c2df4c903b3354a4431be48c546.png",
       "sizes": "120x120",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_512x512.b22f94639b01b09ac1c3d5e9bbd8654b.png",
+      "src": "/mongodb-stats2/icon_512x512.b22f94639b01b09ac1c3d5e9bbd8654b.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_384x384.84b0cee54948e0e91c3054358871285a.png",
+      "src": "/mongodb-stats2/icon_384x384.84b0cee54948e0e91c3054358871285a.png",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_192x192.2f037f77df23ad20384112cce9ad7faa.png",
+      "src": "/mongodb-stats2/icon_192x192.2f037f77df23ad20384112cce9ad7faa.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_144x144.74305ffb39c5eb610339bd3ca6d1ff3b.png",
+      "src": "/mongodb-stats2/icon_144x144.74305ffb39c5eb610339bd3ca6d1ff3b.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_128x128.25a61f6cd363a44585a8ca827eaf32e3.png",
+      "src": "/mongodb-stats2/icon_128x128.25a61f6cd363a44585a8ca827eaf32e3.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_96x96.3d666f341ead7a0e4c645f15a3ee8c59.png",
+      "src": "/mongodb-stats2/icon_96x96.3d666f341ead7a0e4c645f15a3ee8c59.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "mongodb-stats2/icon_72x72.2f1380af195a17cf8860d3918e5dca3f.png",
+      "src": "/mongodb-stats2/icon_72x72.2f1380af195a17cf8860d3918e5dca3f.png",
       "sizes": "72x72",
       "type": "image/png"
     }
