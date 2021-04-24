@@ -1,25 +1,46 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 
 <div class="projects">
-    <div class="list">
-        <div class="item">
-            <a href="https://safiullin.io/tariffs">tariffs</a>
-        </div>
-        <div><a href="https://safiullin.io/projects/weather">weather</a></div>
-        <div><a href="https://safiullin.io/projects/dnd">dnd</a></div>
-        <div><a href="https://safiullin.io/playground">playground</a></div>
-        <div><a href="https://safiullin.io/projects/mongodb-stats2">mongodb-stats</a></div>
-        <div><a href="https://safiullin.io/projects/react-gallery">react-gallery</a></div>
-    </div>
-    <div id="playground"></div>
+
+    <ul class="uk-tab" uk-tab>
+        <li class="uk-active"><a href="">Backend</a></li>
+        <li><a href="">Front-end </a></li>
+        <li><a href="">Service (CEO)</a></li>
+    </ul>
+    <ul class="uk-switcher uk-margin ui-data">
+        <li>
+            <div>
+                <a href="https://safiullin.com/projects/instant-chat-bot-for-website.html">InstantChatBot</a>
+            </div>
+            <div>
+                <a href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">Telegram bot IV maker</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <a href="https://lang.safiullin.io">Learn Languages-by-subtitles</a>
+            </div>
+            <div><a href="https://read.safiullin.io">Pure reader (epub)</a></div>
+        </li>
+        <li>
+            <div>
+                Soon..
+            </div>
+        </li>
+    </ul>
 </div>
 
-<script src="js/script.js"></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
   (function(d, w, c) {

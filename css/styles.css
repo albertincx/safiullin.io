@@ -1,23 +1,7 @@
 div.projects {
-
-}
-
-div.projects .list div {
-    color: #ddd;
-    display: inline-block;
     padding: 10px;
 }
-
-.projects {
-    width: 100%;
-    height: 100%;
-}
-
-#playground  {
+.ui-data li > div {
     padding: 15px;
-}
-
-#playground iframe {
-    width: 100%;
-    height: 90%;
+    font-size: 1.7em;
 }
