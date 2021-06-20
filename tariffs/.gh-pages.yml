@@ -1,3 +1,0 @@
-redirects:
-    redirect_to: /tariffs/index.html
-    try_files: true
