@@ -100,11 +100,13 @@ td {
 a img {
   border: none;
 }
+origin-trial,
 input,
 button {
   margin: 0;
   padding: 0;
 }
+origin-trial::-moz-focus-inner,
 input::-moz-focus-inner,
 button::-moz-focus-inner {
   border: 0;
@@ -308,7 +310,7 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 200px;
+  height: 150px;
   position: relative;
   border-bottom: 1px solid #ddd;
 }
@@ -378,6 +380,7 @@ body {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
+  color: #000;
 }
 #subtitle-wrap {
   margin-top: 16px;
