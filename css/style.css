@@ -380,7 +380,11 @@ body {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
-  color: #000;
+  color: #464646;
+  background: rgba(255,255,255,0.169);
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: bold;
 }
 #subtitle-wrap {
   margin-top: 16px;
