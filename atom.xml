@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Safiullin.io</title>
+  
+  <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
+  <link href="https://safiullin.io/atom.xml" rel="self"/>
+  
+  <link href="https://safiullin.io/"/>
+  <updated>2023-06-11T14:11:58.089Z</updated>
+  <id>https://safiullin.io/</id>
+  
+  <author>
+    <name>Albert Safiullin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to make any site mobile?</title>
+    <link href="https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/"/>
+    <id>https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/</id>
+    <published>2023-06-11T11:33:02.000Z</published>
+    <updated>2023-06-11T14:11:58.089Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="The-problem"><a href="#The-problem" class="headerlink" title="The problem"></a>The problem</h2><p>Do you hate old websites who dont support mobile version while you serfing from your phone?</p><p>Surely everyone hates old websites that don’t support the mobile version while surfing on a phone?</p><p>And of course they don’t have time to make a mobile version, and some sites don’t have developers at all.</p><p>So how to fix this situation? I came up with an add-on for your mobile browser</p><h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p><a href="https://chrome.google.com/webstore/detail/make-mobile-view/ohfappdhdoofhbiajcdakoicdpfpkggn?hl=en&authuser=0">This is an extension</a></p><h1 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use?"></a>How to use?</h1><ol><li>You need mobile browser with extensions support.</li><li>Install it from Google Web store</li><li>Enjoy!</li></ol><p>Code is open<br><a href="https://github.com/albertincx/browser-extension-makeMobileView">Github</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;The-problem&quot;&gt;&lt;a href=&quot;#The-problem&quot; class=&quot;headerlink&quot; title=&quot;The problem&quot;&gt;&lt;/a&gt;The problem&lt;/h2&gt;&lt;p&gt;Do you hate old websites who dont </summary>
+      
+    
+    
+    
+    
+    <category term="mobile, bot, viewport, browser extension" scheme="https://safiullin.io/tags/mobile-bot-viewport-browser-extension/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to make your own link service with a bot</title>
+    <link href="https://safiullin.io/2023/06/11/How-to-make-your-own-link-service-with-a-bot/"/>
+    <id>https://safiullin.io/2023/06/11/How-to-make-your-own-link-service-with-a-bot/</id>
+    <published>2023-06-11T11:19:02.000Z</published>
+    <updated>2023-06-11T14:18:48.167Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="The-another-way-to-manage-your-personal-links"><a href="#The-another-way-to-manage-your-personal-links" class="headerlink" title="The another way to manage your personal links"></a>The another way to manage your personal links</h2><p>Do you hate old websites who dont support mobile version while you serfing from your phone?</p><p>Surely everyone hates old websites that don’t support the mobile version while surfing on a phone?</p><p>And of course they don’t have time to make a mobile version, and some sites don’t have developers at all.</p><p>So how to fix this situation? I came up with an add-on for your mobile browser</p><h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p><a href="https://chrome.google.com/webstore/detail/make-mobile-view/ohfappdhdoofhbiajcdakoicdpfpkggn?hl=en&authuser=0">This is an extension</a></p><h1 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use?"></a>How to use?</h1><ol><li>You need mobile browser with extensions support.</li><li>Install it from Google Web store</li><li>Enjoy!</li></ol><p>Code is open<br><a href="https://github.com/albertincx/telegram-bot-personal-links">Github</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;The-another-way-to-manage-your-personal-links&quot;&gt;&lt;a href=&quot;#The-another-way-to-manage-your-personal-links&quot; class=&quot;headerlink&quot; title=&quot;Th</summary>
+      
+    
+    
+    
+    
+    <category term="service, bot, telegram" scheme="https://safiullin.io/tags/service-bot-telegram/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How I made a puzzle game</title>
+    <link href="https://safiullin.io/2021/12/27/How-I-made-a-puzzle-game/"/>
+    <id>https://safiullin.io/2021/12/27/How-I-made-a-puzzle-game/</id>
+    <published>2021-12-27T07:39:54.000Z</published>
+    <updated>2023-06-11T14:13:30.562Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="How-I-made-a-puzzle-game"><a href="#How-I-made-a-puzzle-game" class="headerlink" title="How I made a puzzle game"></a>How I made a puzzle game</h5><p>Now, as you know, you don’t need to do anything from scratch, because there is already a lot of ready-made code. Thanks to the developers and open source.</p><p>And so we have a task to create a puzzle game.<br>What do we need to get started?<br>Of course the finished puzzle game, I found it here<br><a href="https://github.com/doochik/Puzzler">From Puzzler</a></p><p>Information is being supplemented ….</p><p>In the end, it turned out this</p><p><a href="https://puzzle.safiullin.io/">Here is the Game</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;How-I-made-a-puzzle-game&quot;&gt;&lt;a href=&quot;#How-I-made-a-puzzle-game&quot; class=&quot;headerlink&quot; title=&quot;How I made a puzzle game&quot;&gt;&lt;/a&gt;How I made a p</summary>
+      
+    
+    
+    
+    
+    <category term="games, web app" scheme="https://safiullin.io/tags/games-web-app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to get rid of traffic jams? Another solution</title>
+    <link href="https://safiullin.io/2021/12/27/How-to-get-rid-of-traffic-jams-Another-solution/"/>
+    <id>https://safiullin.io/2021/12/27/How-to-get-rid-of-traffic-jams-Another-solution/</id>
+    <published>2021-12-27T06:45:50.000Z</published>
+    <updated>2023-06-11T14:13:45.522Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Like-Elon-Musk-I-hate-traffic-jams"><a href="#Like-Elon-Musk-I-hate-traffic-jams" class="headerlink" title="Like Elon Musk, I hate traffic jams."></a>Like Elon Musk, I hate traffic jams.</h5><p>We are looking for ways to eliminate them.<br>2018 year. Saint-Petersburg. Murino. Frosty morning. I am standing at the bus stop. Cars drive slowly towards the fork.</p><p>Overcrowded buses drive up, and I watch people at the bus stop not being able to get on the bus.<br>I watch further, for cars leaving from different residential complexes. One went empty, the second empty. These empty boxes travel to one point every day and form a traffic jam.</p><p>I thought why not start using empty space and energy effectively. And the idea came to my mind to create a service where people can exchange their routes and unite in groups.</p><p>Thus, instead of 4 cars, 1 car with four people will go to the destination.</p><p>An example is shown in the figure. User 1, 2, 3 Live side by side and work in one place, for example, in the city center. So why buy 3 cars when you can team up and drive one!</p><img src="/2021/12/27/How-to-get-rid-of-traffic-jams-Another-solution/route.jpg" class=""><p>3 people and 1 shared daily route</p><p>I thought about how to create such a service, talked with people, as a result, there was not enough technology to implement this project. I knew that soon they will appear. And now the end of 2021, they appeared and I quickly began to implement the idea.</p><p>In the end, it turned out this BOT <a href="https://t.me/RouteCabBot">https://t.me/RouteCabBot</a></p><p>Short Description</p><ul><li><a href="https://t.me/routecabRU/12">https://t.me/routecabRU/12</a></li></ul><h5 id="Why-is-this-a-cool-solution"><a href="#Why-is-this-a-cool-solution" class="headerlink" title="Why is this a cool solution?"></a>Why is this a cool solution?</h5><p>Well, first of all, new pleasant acquaintances! The driver will not be bored of driving alone, there will be an opportunity to get to know each other. Share your experience, what if you give a ride to your English teacher?)</p><p>Secondly, by reducing the car traffic jam will be less, everyone benefits from this.</p><p>Thirdly, it is still better to ride in comfort, many will agree to go by car than by bus, and the driver will be able to get the money back for gaz</p><h5 id="How-to-use-this-solution-effectively"><a href="#How-to-use-this-solution-effectively" class="headerlink" title="How to use this solution effectively?"></a>How to use this solution effectively?</h5><p>By far the best way is to share the bot in the chat rooms in your area. After all, the basis is the neighbors. People who live nearby and travel to one point to work. They must see each other and form a group. It’s more fun together!</p><p>In the next posts! I will write how I implemented it. Stay in touch!</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;Like-Elon-Musk-I-hate-traffic-jams&quot;&gt;&lt;a href=&quot;#Like-Elon-Musk-I-hate-traffic-jams&quot; class=&quot;headerlink&quot; title=&quot;Like Elon Musk, I hate t</summary>
+      
+    
+    
+    
+    
+    <category term="bot, routes, location" scheme="https://safiullin.io/tags/bot-routes-location/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Learn Languages-by-subtitles</title>
+    <link href="https://safiullin.io/2021/06/20/language-by-subtitles/"/>
+    <id>https://safiullin.io/2021/06/20/language-by-subtitles/</id>
+    <published>2021-06-20T11:19:02.000Z</published>
+    <updated>2023-06-11T14:11:28.909Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://lang.safiullin.io/">Here is the webApp</a></p><p>A site where you can learn any language through subtitles</p><p>Find subtitles for your favorite TV series or movie and upload them to the site</p><p>Then just click on the phrase and see the translation</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://lang.safiullin.io/&quot;&gt;Here is the webApp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A site where you can learn any language through subtitles&lt;/p&gt;
+&lt;p&gt;Find </summary>
+      
+    
+    
+    
+    
+    <category term="learning, language, web app, pwa" scheme="https://safiullin.io/tags/learning-language-web-app-pwa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Telegram bot IV maker</title>
+    <link href="https://safiullin.io/2021/06/20/telegram-bot-iv-maker/"/>
+    <id>https://safiullin.io/2021/06/20/telegram-bot-iv-maker/</id>
+    <published>2021-06-20T11:19:00.000Z</published>
+    <updated>2023-06-11T14:13:15.894Z</updated>
+    
+    <content type="html"><![CDATA[<p>Telegram bot IV maker</p><p><a href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">Url</a></p><p>Read quickly directly in telegram</p><p>Any site is converted to IV for easy reading<br>No need to wait for downloads and annoying banners</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Telegram bot IV maker&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://safiullin.com/projects/telegram-bot-instantview-maker.html&quot;&gt;Url&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read quickly dir</summary>
+      
+    
+    
+    
+    
+    <category term="telegram bot, bot, reading" scheme="https://safiullin.io/tags/telegram-bot-bot-reading/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>InstantChatBot</title>
+    <link href="https://safiullin.io/2021/06/20/instant-chat-bot/"/>
+    <id>https://safiullin.io/2021/06/20/instant-chat-bot/</id>
+    <published>2021-06-20T11:18:57.000Z</published>
+    <updated>2023-06-11T14:06:58.754Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p><p>Let’s say you have a site that people visit. But how to quickly contact you and so that they receive an answer instantly?</p><p>Technology will help us here.<br>The recipe is simple:<br>Fast messenger - for quick replies (Telegram)<br>Node - for processing requests<br>React for creating a chat window<br>Free server - where our creation will be hosted.</p><ol><li><p>First, we make a react application, for this we take the ready-made github and delete the unnecessary.</p></li><li><p>Now we need to send messages somewhere.<br>The websocket technology will help us for this.<br>Which we will run on the server on the node.</p></li><li><p>Let’s create a group in the telegram so that all messages fall there. And we could answer them.</p></li><li><p>Now we need to somehow mark up to define their users. There are also simple rules:</p></li></ol><ul><li>create a unique key for each new visitor</li><li>bind your key to each message</li><li>a replay in a telegram will mean a reply to a chat</li></ul><p>Convenient chat for your site for communicating with clients in Telegram is ready and it’s free</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://safiullin.com/projects/instant-chat-bot-for-website.html&quot;&gt;https://safiullin.com/projects/instant-chat-bot-for-website.ht</summary>
+      
+    
+    
+    
+    
+    <category term="telegram-bot, bot, reading" scheme="https://safiullin.io/tags/telegram-bot-bot-reading/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pure reader (epub)</title>
+    <link href="https://safiullin.io/2021/06/20/pure-reader/"/>
+    <id>https://safiullin.io/2021/06/20/pure-reader/</id>
+    <published>2021-06-20T11:18:55.000Z</published>
+    <updated>2023-06-11T14:12:51.839Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://read.safiullin.io/">Here is the webApp</a></p><p>Read books directly in your browser<br>The system remembers the book and the position where you left off very conveniently</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://read.safiullin.io/&quot;&gt;Here is the webApp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Read books directly in your browser&lt;br&gt;The system remembers the book a</summary>
+      
+    
+    
+    
+    
+    <category term="reading, web app" scheme="https://safiullin.io/tags/reading-web-app/"/>
+    
+  </entry>
+  
+</feed>
