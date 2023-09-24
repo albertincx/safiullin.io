@@ -6,7 +6,7 @@
   <link href="https://safiullin.io/atom.xml" rel="self"/>
   
   <link href="https://safiullin.io/"/>
-  <updated>2023-09-24T16:40:10.365Z</updated>
+  <updated>2023-09-24T18:22:18.664Z</updated>
   <id>https://safiullin.io/</id>
   
   <author>
@@ -18,21 +18,23 @@
   
   <entry>
     <title>How to Reduce Traffic Congestion</title>
-    <link href="https://safiullin.io/2023/09/24/How-to-Reduce-Traffic-Congestion/"/>
-    <id>https://safiullin.io/2023/09/24/How-to-Reduce-Traffic-Congestion/</id>
-    <published>2023-09-24T16:36:38.760Z</published>
-    <updated>2023-09-24T16:40:10.365Z</updated>
+    <link href="https://safiullin.io/2023/12/27/How-to-Reduce-Traffic-Congestion/"/>
+    <id>https://safiullin.io/2023/12/27/How-to-Reduce-Traffic-Congestion/</id>
+    <published>2023-12-27T06:45:50.000Z</published>
+    <updated>2023-09-24T18:22:18.664Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="date-2023-12-27-06-45-50tags-bot-routes-location"><a href="#date-2023-12-27-06-45-50tags-bot-routes-location" class="headerlink" title="date: 2023-12-27 06:45:50tags: bot, routes, location"></a>date: 2023-12-27 06:45:50<br>tags: bot, routes, location</h2><h5 id="Like-Elon-Musk-I-hate-traffic-jams"><a href="#Like-Elon-Musk-I-hate-traffic-jams" class="headerlink" title="Like Elon Musk, I hate traffic jams."></a>Like Elon Musk, I hate traffic jams.</h5><p>We are looking for ways to eliminate them.<br>2018 year. Saint-Petersburg. Murino. Frosty morning. I am standing at the bus stop. Cars drive slowly towards the fork.</p><p>Overcrowded buses drive up, and I watch people at the bus stop not being able to get on the bus.<br>I watch further, for cars leaving from different residential complexes. One went empty, the second empty. These empty boxes travel to one point every day and form a traffic jam.</p><p>I thought why not start using empty space and energy effectively. And the idea came to my mind to create a service where people can exchange their routes and unite in groups.</p><p>Thus, instead of 4 cars, 1 car with four people will go to the destination.</p><p>An example is shown in the figure. User 1, 2, 3 Live side by side and work in one place, for example, in the city center. So why buy 3 cars when you can team up and drive one!</p><img src="/2023/09/24/How-to-Reduce-Traffic-Congestion/route.jpg" class=""><p>3 people and 1 shared daily route</p><p>I thought about how to create such a service, talked with people, as a result, there was not enough technology to implement this project. I knew that soon they will appear. And now the end of 2021, they appeared and I quickly began to implement the idea.</p><p>In the end, it turned out this BOT <a href="https://t.me/RouteCabBot">https://t.me/RouteCabBot</a></p><p>Short Description</p><ul><li><a href="https://t.me/routecabRU/12">https://t.me/routecabRU/12</a></li></ul><h5 id="Why-is-this-a-cool-solution"><a href="#Why-is-this-a-cool-solution" class="headerlink" title="Why is this a cool solution?"></a>Why is this a cool solution?</h5><p>Well, first of all, new pleasant acquaintances! The driver will not be bored of driving alone, there will be an opportunity to get to know each other. Share your experience, what if you give a ride to your English teacher?)</p><p>Secondly, by reducing the car traffic jam will be less, everyone benefits from this.</p><p>Thirdly, it is still better to ride in comfort, many will agree to go by car than by bus, and the driver will be able to get the money back for gaz</p><h5 id="How-to-use-this-solution-effectively"><a href="#How-to-use-this-solution-effectively" class="headerlink" title="How to use this solution effectively?"></a>How to use this solution effectively?</h5><p>By far the best way is to share the bot in the chat rooms in your area. After all, the basis is the neighbors. People who live nearby and travel to one point to work. They must see each other and form a group. It’s more fun together!</p><p>In the next posts! I will write how I implemented it. Stay in touch!</p>]]></content>
+    <content type="html"><![CDATA[<h5 id="Like-Elon-Musk-I-hate-traffic-jams"><a href="#Like-Elon-Musk-I-hate-traffic-jams" class="headerlink" title="Like Elon Musk, I hate traffic jams."></a>Like Elon Musk, I hate traffic jams.</h5><p>We are looking for ways to eliminate them.<br>2018 year. Saint-Petersburg. Murino. Frosty morning. I am standing at the bus stop. Cars drive slowly towards the fork.</p><p>Overcrowded buses drive up, and I watch people at the bus stop not being able to get on the bus.<br>I watch further, for cars leaving from different residential complexes. One went empty, the second empty. These empty boxes travel to one point every day and form a traffic jam.</p><p>I thought why not start using empty space and energy effectively. And the idea came to my mind to create a service where people can exchange their routes and unite in groups.</p><p>Thus, instead of 4 cars, 1 car with four people will go to the destination.</p><p>An example is shown in the figure. User 1, 2, 3 Live side by side and work in one place, for example, in the city center. So why buy 3 cars when you can team up and drive one!</p><img src="/2023/12/27/How-to-Reduce-Traffic-Congestion/route.jpg" class=""><p>3 people and 1 shared daily route</p><p>I thought about how to create such a service, talked with people, as a result, there was not enough technology to implement this project. I knew that soon they will appear. And now the end of 2021, they appeared and I quickly began to implement the idea.</p><p>In the end, it turned out this BOT <a href="https://t.me/RouteCabBot">https://t.me/RouteCabBot</a></p><p>Short Description</p><ul><li><a href="https://t.me/routecabRU/12">https://t.me/routecabRU/12</a></li></ul><h5 id="Why-is-this-a-cool-solution"><a href="#Why-is-this-a-cool-solution" class="headerlink" title="Why is this a cool solution?"></a>Why is this a cool solution?</h5><p>Well, first of all, new pleasant acquaintances! The driver will not be bored of driving alone, there will be an opportunity to get to know each other. Share your experience, what if you give a ride to your English teacher?)</p><p>Secondly, by reducing the car traffic jam will be less, everyone benefits from this.</p><p>Thirdly, it is still better to ride in comfort, many will agree to go by car than by bus, and the driver will be able to get the money back for gaz</p><h5 id="How-to-use-this-solution-effectively"><a href="#How-to-use-this-solution-effectively" class="headerlink" title="How to use this solution effectively?"></a>How to use this solution effectively?</h5><p>By far the best way is to share the bot in the chat rooms in your area. After all, the basis is the neighbors. People who live nearby and travel to one point to work. They must see each other and form a group. It’s more fun together!</p><p>In the next posts! I will write how I implemented it. Stay in touch!</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;date-2023-12-27-06-45-50tags-bot-routes-location&quot;&gt;&lt;a href=&quot;#date-2023-12-27-06-45-50tags-bot-routes-location&quot; class=&quot;headerlink&quot; tit</summary>
+    <summary type="html">&lt;h5 id=&quot;Like-Elon-Musk-I-hate-traffic-jams&quot;&gt;&lt;a href=&quot;#Like-Elon-Musk-I-hate-traffic-jams&quot; class=&quot;headerlink&quot; title=&quot;Like Elon Musk, I hate t</summary>
       
     
     
     
+    
+    <category term="bot, routes, location" scheme="https://safiullin.io/tags/bot-routes-location/"/>
     
   </entry>
   
