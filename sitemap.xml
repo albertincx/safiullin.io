@@ -12,6 +12,15 @@
   </url>
 
   <url>
+    <loc>https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/</loc>
+
+    <lastmod>2023-09-24</lastmod>
+
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://safiullin.io/2021/12/27/How-I-made-a-puzzle-game/</loc>
 
     <lastmod>2023-06-11</lastmod>
@@ -39,15 +48,6 @@
   </url>
 
   <url>
-    <loc>https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/</loc>
-
-    <lastmod>2023-06-11</lastmod>
-
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
     <loc>https://safiullin.io/2021/06/20/language-by-subtitles/</loc>
 
     <lastmod>2023-06-11</lastmod>
@@ -66,7 +66,7 @@
   </url>
 
   <url>
-    <loc>https://safiullin.io/index.html</loc>
+    <loc>https://safiullin.io/</loc>
 
     <lastmod>2023-06-11</lastmod>
 
@@ -84,7 +84,14 @@
 
 
   <url>
-    <loc>https://safiullin.io/tags/telegram-bot-bot-reading/</loc>
+    <loc>https://safiullin.io/tags/games-web-app/</loc>
+    <lastmod>2024-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://safiullin.io/tags/bot-routes-location/</loc>
     <lastmod>2024-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -98,14 +105,14 @@
   </url>
 
   <url>
-    <loc>https://safiullin.io/tags/learning-language-web-app-pwa/</loc>
+    <loc>https://safiullin.io/tags/telegram-bot-bot-reading/</loc>
     <lastmod>2024-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
-    <loc>https://safiullin.io/tags/service-bot-telegram/</loc>
+    <loc>https://safiullin.io/tags/learning-language-web-app-pwa/</loc>
     <lastmod>2024-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -120,27 +127,6 @@
 
   <url>
     <loc>https://safiullin.io/tags/telegram-bot-bot-reading/</loc>
-    <lastmod>2024-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <url>
-    <loc>https://safiullin.io/tags/game-web-app/</loc>
-    <lastmod>2024-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <url>
-    <loc>https://safiullin.io/tags/games-web-app/</loc>
-    <lastmod>2024-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <url>
-    <loc>https://safiullin.io/tags/bot-routes-location/</loc>
     <lastmod>2024-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
