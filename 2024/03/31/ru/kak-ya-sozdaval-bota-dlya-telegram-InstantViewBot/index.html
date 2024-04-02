@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<!-- End Google Analytics -->
+
+
+    <title>Как я создавал бота для телеграм InstantViewBot | Safiullin.io. Developer projects and stories of life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="НачалоВсем привет я Альберт и я хочу всегда все улучшить.В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете. Тут будет увлекательная история создания телегра">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как я создавал бота для телеграм InstantViewBot">
+<meta property="og:url" content="https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/">
+<meta property="og:site_name" content="Safiullin.io. Developer projects and stories of life">
+<meta property="og:description" content="НачалоВсем привет я Альберт и я хочу всегда все улучшить.В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете. Тут будет увлекательная история создания телегра">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-31T05:11:01.456Z">
+<meta property="article:modified_time" content="2024-04-02T14:41:59.185Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="telegram-bot, bot">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.io. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="canonical" href="https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/" />
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Safiullin.io</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/" class="article-date">
+  <time class="dt-published" datetime="2024-03-31T05:11:01.456Z" itemprop="datePublished">2024-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Как я создавал бота для телеграм InstantViewBot
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Начало"><a href="#Начало" class="headerlink" title="Начало"></a>Начало</h2><p>Всем привет я Альберт и я хочу всегда все улучшить.<br>В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете.</p>
+<p>Тут будет увлекательная история создания телеграм бота читалки статей который:</p>
+<p>установили <strong>40 тыс раз</strong> <br>уже обработал более <strong>3 млн страниц</strong> <br>без рекламы, мам, пап, смс и регистрации</p>
+<span id="more"></span>
+<p>Сразу появлились проблемы с этим:</p>
+<ul>
+<li>статьи появлялись быстрее чем я успевал читать</li>
+<li>читать в телефоне не удобно</li>
+<li>нужен постоянный интернет</li>
+<li>браузер не запоминал где я остановился читать</li>
+<li>не было списка “почитать позже” куда я мог бы положить статью</li>
+</ul>
+<p>Я подумал, что было бы круто решить эти проблемы и я начал гуглить.</p>
+<h2 id="Приложение-под-андроид"><a href="#Приложение-под-андроид" class="headerlink" title="Приложение под андроид"></a>Приложение под андроид</h2><p>2016 год</p>
+<p>Я нашел опенсорс проект, вот ссылка <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/JonasCz/save-for-offline">https://github.com/JonasCz/save-for-offline</a>, где автор создал приложение где вы можете указать ссылку на статью и вся страница будет загружена на телефон<br>Круто? Да.</p>
+<p>Но были проблемы:</p>
+<ul>
+<li>верстка съезжала</li>
+<li>картинки не всегда грузились</li>
+<li>Не всегда загружались страницы</li>
+</ul>
+<p>Я даже внес свой вклад.<br>Добавил фичу, исправил утечку памяти. Мой код тут <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/JonasCz/save-for-offline/commit/5029491f7cdf5b8e08937d4f3b325f80f90ede90">https://github.com/JonasCz/save-for-offline/commit/5029491f7cdf5b8e08937d4f3b325f80f90ede90</a></p>
+<h2 id="Телеграм-запустил-фичу-InstantView"><a href="#Телеграм-запустил-фичу-InstantView" class="headerlink" title="Телеграм запустил фичу InstantView"></a>Телеграм запустил фичу InstantView</h2><p>Телеграм запустил фичу сохранения и удобного чтения статей из интернета, но вначале это работало плохо:</p>
+<ul>
+<li>нужно было создавать шаблоны для каждого сайта</li>
+<li>не все сайты поддерживались</li>
+<li>кажется большие статьи не поддерживались</li>
+</ul>
+<p>В итоге получается удобный формат в телеге для чтения InstantView, запомним этот формат, теперь тут будет речь про этот формат. Потому что это наиболее комфортное чтение статей в любимом браузере, я думаю про лайфхак вы знаете, создаете группу для себя и вот у вас готов список статей на будущее чтение.</p>
+<h2 id="Бот-читалка-в-телеграм"><a href="#Бот-читалка-в-телеграм" class="headerlink" title="Бот читалка в телеграм"></a>Бот читалка в телеграм</h2><p>Нашел бота (<a target="_blank" rel="noopener external nofollow noreferrer" href="https://t.me/chotamreaderbot">https://t.me/chotamreaderbot</a>) который парсит страницу и превращает ее в InstantView, тогда для меня показалось что там нехватает возможностей и есть проблемы:</p>
+<ul>
+<li>код закрыт и написан на python</li>
+<li>не поддерживал большие статьи</li>
+<li>не поддерживал динамические страницы</li>
+<li>изначально был на аудиторию русскоязычных стран</li>
+</ul>
+<p>И я решил написать своего бота и решить все эти проблемы и добавить самую главную - автоматическая работа - это значит что все сайты он должен обрабатывать одинаково без шаблонов всяких<br>В конце 2019 я запилил его за 2 недели. В отпуске (ну а когда же еще)</p>
+<h2 id="Бесплатный-сайт-для-запуска-бота"><a href="#Бесплатный-сайт-для-запуска-бота" class="headerlink" title="Бесплатный сайт для запуска бота"></a>Бесплатный сайт для запуска бота</h2><p>Денег не было, все делалось на амбициях. </p>
+<p>Я нагуглил бесплатный сервис базы данных и веб сайт где можно запустить своего бота.</p>
+<p>С базой данных все было окей Free MongoDB Cloud, кстати этот сервис тоже ушел из РФ. Теперь все платно, никаких вам стартапов.</p>
+<p>А вот с сайтом были некоторые проблемы. Нужно было периодичеспи “будить” сервер так как из за простоя он отключался.</p>
+<p>Я нашел сайт который периодически будит его.</p>
+<p>Позже этот сайт ввел платную подписку чтобы сервера постоянно работали, пришлось платить 10 баксов в месяц.</p>
+<h2 id="Рост-нагрузки"><a href="#Рост-нагрузки" class="headerlink" title="Рост нагрузки"></a>Рост нагрузки</h2><p>Тратил деньги только на сервер, никакой рекламы. Бот начал набирать обороты. О его полезности никто не спорит. Люди начали передавать друг другу ссылу на бота и читать статьи. Началась большая нагрузка и сервер уже не мог справиться, слишком часто начал падать.</p>
+<p>Сервер падал потому что в один момент ему отправляли слишком много и он не успевал обрабатывать сообщения.</p>
+<p>Я снова пошел в гугл и нашел бесплатный сервис очереди сообщений cloudamqp. Это как раз то что мне нужно.</p>
+<p>Добавил очередь, и теперь бот обрабатывает по 1 сообщению из очереди. В итоге все пользователи ждут, но дождутся обработки и InstantView<br>Моэно выдохнуть и расслабиться.</p>
+<h2 id="Бесплатный-сервер-от-Oracle"><a href="#Бесплатный-сервер-от-Oracle" class="headerlink" title="Бесплатный сервер от Oracle"></a>Бесплатный сервер от Oracle</h2><p>Компания oracle запустила для всего мира бесплатный вечный сервер для всяких экспериментов, микростартапов. </p>
+<p>Я конечно же переехал туда и все. Бот требовал минимум правок, только баги периодически появлялись.</p>
+<p>Сервис ушел из РФ в 2022. Теперь в РФ все платно и дорого, никаких вам стартапов</p>
+<p>Если вам нужна реклама в боте - обращайтесь <a target="_blank" rel="noopener external nofollow noreferrer" href="https://t.me/safiullin">https://t.me/safiullin</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/" data-id="cluihnqes0005lfje5fufar06" data-title="Как я создавал бота для телеграм InstantViewBot" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/telegram-bot-bot/" rel="tag">telegram-bot, bot</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/27/How-to-Reduce-Traffic-Congestion/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to Reduce Traffic Congestion</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bot-routes-location/" rel="tag">bot, routes, location</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games-web-app/" rel="tag">games, web app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-language-web-app-pwa/" rel="tag">learning, language, web app, pwa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile-bot-viewport-browser-extension/" rel="tag">mobile, bot, viewport, browser extension</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reading-web-app/" rel="tag">reading, web app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot-bot-reading/" rel="tag">telegram bot, bot, reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot-bot/" rel="tag">telegram-bot, bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot-bot-reading/" rel="tag">telegram-bot, bot, reading</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bot-routes-location/" style="font-size: 10px;">bot, routes, location</a> <a href="/tags/games-web-app/" style="font-size: 10px;">games, web app</a> <a href="/tags/learning-language-web-app-pwa/" style="font-size: 10px;">learning, language, web app, pwa</a> <a href="/tags/mobile-bot-viewport-browser-extension/" style="font-size: 10px;">mobile, bot, viewport, browser extension</a> <a href="/tags/reading-web-app/" style="font-size: 10px;">reading, web app</a> <a href="/tags/telegram-bot-bot-reading/" style="font-size: 10px;">telegram bot, bot, reading</a> <a href="/tags/telegram-bot-bot/" style="font-size: 10px;">telegram-bot, bot</a> <a href="/tags/telegram-bot-bot-reading/" style="font-size: 10px;">telegram-bot, bot, reading</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/">Как я создавал бота для телеграм InstantViewBot</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/27/How-to-Reduce-Traffic-Congestion/">How to Reduce Traffic Congestion</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/20/language-by-subtitles/">Learn Languages-by-subtitles</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2024 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <script src="//cafechat.app/start.js" async></script>
+  <script type="text/javascript">window.__arsfChatIdg='4081228376';window.__arsfChatUrl = 'api.cafechat.app';
+  window.instantChatBotUidName = 'userId'</script>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
