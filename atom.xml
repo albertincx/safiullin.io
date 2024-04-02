@@ -6,7 +6,7 @@
   <link href="https://safiullin.io/atom.xml" rel="self"/>
   
   <link href="https://safiullin.io/"/>
-  <updated>2024-04-02T14:41:59.185Z</updated>
+  <updated>2024-04-02T17:04:16.871Z</updated>
   <id>https://safiullin.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/"/>
     <id>https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/</id>
     <published>2024-03-31T05:11:01.456Z</published>
-    <updated>2024-04-02T14:41:59.185Z</updated>
+    <updated>2024-04-02T17:04:16.871Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Начало"><a href="#Начало" class="headerlink" title="Начало"></a>Начало</h2><p>Всем привет я Альберт и я хочу всегда все улучшить.<br>В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете.</p><p>Тут будет увлекательная история создания телеграм бота читалки статей который:</p><p>установили <strong>40 тыс раз</strong> <br>уже обработал более <strong>3 млн страниц</strong> <br>без рекламы, мам, пап, смс и регистрации</p><span id="more"></span><p>Сразу появлились проблемы с этим:</p><ul><li>статьи появлялись быстрее чем я успевал читать</li><li>читать в телефоне не удобно</li><li>нужен постоянный интернет</li><li>браузер не запоминал где я остановился читать</li><li>не было списка “почитать позже” куда я мог бы положить статью</li></ul><p>Я подумал, что было бы круто решить эти проблемы и я начал гуглить.</p><h2 id="Приложение-под-андроид"><a href="#Приложение-под-андроид" class="headerlink" title="Приложение под андроид"></a>Приложение под андроид</h2><p>2016 год</p><p>Я нашел опенсорс проект, вот ссылка <a href="https://github.com/JonasCz/save-for-offline">https://github.com/JonasCz/save-for-offline</a>, где автор создал приложение где вы можете указать ссылку на статью и вся страница будет загружена на телефон<br>Круто? Да.</p><p>Но были проблемы:</p><ul><li>верстка съезжала</li><li>картинки не всегда грузились</li><li>Не всегда загружались страницы</li></ul><p>Я даже внес свой вклад.<br>Добавил фичу, исправил утечку памяти. Мой код тут <a href="https://github.com/JonasCz/save-for-offline/commit/5029491f7cdf5b8e08937d4f3b325f80f90ede90">https://github.com/JonasCz/save-for-offline/commit/5029491f7cdf5b8e08937d4f3b325f80f90ede90</a></p><h2 id="Телеграм-запустил-фичу-InstantView"><a href="#Телеграм-запустил-фичу-InstantView" class="headerlink" title="Телеграм запустил фичу InstantView"></a>Телеграм запустил фичу InstantView</h2><p>Телеграм запустил фичу сохранения и удобного чтения статей из интернета, но вначале это работало плохо:</p><ul><li>нужно было создавать шаблоны для каждого сайта</li><li>не все сайты поддерживались</li><li>кажется большие статьи не поддерживались</li></ul><p>В итоге получается удобный формат в телеге для чтения InstantView, запомним этот формат, теперь тут будет речь про этот формат. Потому что это наиболее комфортное чтение статей в любимом браузере, я думаю про лайфхак вы знаете, создаете группу для себя и вот у вас готов список статей на будущее чтение.</p><h2 id="Бот-читалка-в-телеграм"><a href="#Бот-читалка-в-телеграм" class="headerlink" title="Бот читалка в телеграм"></a>Бот читалка в телеграм</h2><p>Нашел бота (<a href="https://t.me/chotamreaderbot">https://t.me/chotamreaderbot</a>) который парсит страницу и превращает ее в InstantView, тогда для меня показалось что там нехватает возможностей и есть проблемы:</p><ul><li>код закрыт и написан на python</li><li>не поддерживал большие статьи</li><li>не поддерживал динамические страницы</li><li>изначально был на аудиторию русскоязычных стран</li></ul><p>И я решил написать своего бота и решить все эти проблемы и добавить самую главную - автоматическая работа - это значит что все сайты он должен обрабатывать одинаково без шаблонов всяких<br>В конце 2019 я запилил его за 2 недели. В отпуске (ну а когда же еще)</p><h2 id="Бесплатный-сайт-для-запуска-бота"><a href="#Бесплатный-сайт-для-запуска-бота" class="headerlink" title="Бесплатный сайт для запуска бота"></a>Бесплатный сайт для запуска бота</h2><p>Денег не было, все делалось на амбициях. </p><p>Я нагуглил бесплатный сервис базы данных и веб сайт где можно запустить своего бота.</p><p>С базой данных все было окей Free MongoDB Cloud, кстати этот сервис тоже ушел из РФ. Теперь все платно, никаких вам стартапов.</p><p>А вот с сайтом были некоторые проблемы. Нужно было периодичеспи “будить” сервер так как из за простоя он отключался.</p><p>Я нашел сайт который периодически будит его.</p><p>Позже этот сайт ввел платную подписку чтобы сервера постоянно работали, пришлось платить 10 баксов в месяц.</p><h2 id="Рост-нагрузки"><a href="#Рост-нагрузки" class="headerlink" title="Рост нагрузки"></a>Рост нагрузки</h2><p>Тратил деньги только на сервер, никакой рекламы. Бот начал набирать обороты. О его полезности никто не спорит. Люди начали передавать друг другу ссылу на бота и читать статьи. Началась большая нагрузка и сервер уже не мог справиться, слишком часто начал падать.</p><p>Сервер падал потому что в один момент ему отправляли слишком много и он не успевал обрабатывать сообщения.</p><p>Я снова пошел в гугл и нашел бесплатный сервис очереди сообщений cloudamqp. Это как раз то что мне нужно.</p><p>Добавил очередь, и теперь бот обрабатывает по 1 сообщению из очереди. В итоге все пользователи ждут, но дождутся обработки и InstantView<br>Моэно выдохнуть и расслабиться.</p><h2 id="Бесплатный-сервер-от-Oracle"><a href="#Бесплатный-сервер-от-Oracle" class="headerlink" title="Бесплатный сервер от Oracle"></a>Бесплатный сервер от Oracle</h2><p>Компания oracle запустила для всего мира бесплатный вечный сервер для всяких экспериментов, микростартапов. </p><p>Я конечно же переехал туда и все. Бот требовал минимум правок, только баги периодически появлялись.</p><p>Сервис ушел из РФ в 2022. Теперь в РФ все платно и дорого, никаких вам стартапов</p><p>Если вам нужна реклама в боте - обращайтесь <a href="https://t.me/safiullin">https://t.me/safiullin</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Начало"><a href="#Начало" class="headerlink" title="Начало"></a>Начало</h2><p>Всем привет я Альберт и я хочу всегда все улучшить.<br>В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете.</p><p>Тут будет увлекательная история создания телеграм бота читалки статей который:</p><p>установили <strong>40 тыс раз</strong> <br>уже обработал более <strong>3 млн страниц</strong> <br>без рекламы, мам, пап, смс и регистрации</p><span id="more"></span><p>Сразу появлились проблемы с этим:</p><ul><li>статьи появлялись быстрее чем я успевал читать</li><li>читать в телефоне не удобно</li><li>нужен постоянный интернет</li><li>браузер не запоминал где я остановился читать</li><li>не было списка “почитать позже” куда я мог бы положить статью</li></ul><p>Я подумал, что было бы круто решить эти проблемы и я начал гуглить.</p><h2 id="Приложение-под-андроид"><a href="#Приложение-под-андроид" class="headerlink" title="Приложение под андроид"></a>Приложение под андроид</h2><p>2016 год</p><p>Я нашел опенсорс проект, вот ссылка <a href="https://github.com/JonasCz/save-for-offline">https://github.com/JonasCz/save-for-offline</a>, где автор создал приложение где вы можете указать ссылку на статью и вся страница будет загружена на телефон<br>Круто? Да.</p><p>Но были проблемы:</p><ul><li>верстка съезжала</li><li>картинки не всегда грузились</li><li>Не всегда загружались страницы</li></ul><p>Я даже внес свой вклад.<br>Добавил фичу, исправил утечку памяти. Мой код тут <a href="https://github.com/JonasCz/save-for-offline/commit/5029491f7cdf5b8e08937d4f3b325f80f90ede90">https://github.com/JonasCz/save-for-offline/commit/5029491f7cdf5b8e08937d4f3b325f80f90ede90</a></p><h2 id="Телеграм-запустил-фичу-InstantView"><a href="#Телеграм-запустил-фичу-InstantView" class="headerlink" title="Телеграм запустил фичу InstantView"></a>Телеграм запустил фичу InstantView</h2><p>Телеграм запустил фичу сохранения и удобного чтения статей из интернета, но вначале это работало плохо:</p><ul><li>нужно было создавать шаблоны для каждого сайта</li><li>не все сайты поддерживались</li><li>кажется большие статьи не поддерживались</li></ul><p>В итоге получается удобный формат в телеге для чтения InstantView, запомним этот формат, теперь тут будет речь про этот формат. </p><p>InstantView - это наиболее комфортное чтение статей в любимом месседжере, я думаю про лайфхак вы знаете, создаете группу для себя и вот у вас готов список статей на будущее чтение.</p><h2 id="Бот-читалка-в-телеграм"><a href="#Бот-читалка-в-телеграм" class="headerlink" title="Бот читалка в телеграм"></a>Бот читалка в телеграм</h2><p>Нашел бота (<a href="https://t.me/chotamreaderbot">https://t.me/chotamreaderbot</a>) который парсит страницу и превращает ее в InstantView, тогда для меня показалось что там нехватает возможностей и есть проблемы:</p><ul><li>код закрыт и написан на python</li><li>не поддерживал большие статьи</li><li>не поддерживал динамические страницы</li><li>изначально был на аудиторию русскоязычных стран</li></ul><p>И я решил написать своего бота и решить все эти проблемы и добавить самую главную - автоматическая работа - это значит что все сайты он должен обрабатывать одинаково без шаблонов всяких<br>В конце 2019 я запилил его за 2 недели. В отпуске (ну а когда же еще)</p><h2 id="Бесплатный-сайт-для-запуска-бота"><a href="#Бесплатный-сайт-для-запуска-бота" class="headerlink" title="Бесплатный сайт для запуска бота"></a>Бесплатный сайт для запуска бота</h2><p>Денег не было, все делалось на амбициях. </p><p>Я нагуглил бесплатный сервис базы данных и веб сайт где можно запустить своего бота.</p><p>С базой данных все было окей Free MongoDB Cloud, кстати этот сервис тоже ушел из РФ. Теперь все платно, никаких вам стартапов.</p><p>А вот с сайтом были некоторые проблемы. Нужно было периодичеспи “будить” сервер так как из за простоя он отключался.</p><p>Я нашел сайт который периодически будит его.</p><p>Позже этот сайт ввел платную подписку чтобы сервера постоянно работали, пришлось платить 10 баксов в месяц.</p><h2 id="Рост-нагрузки"><a href="#Рост-нагрузки" class="headerlink" title="Рост нагрузки"></a>Рост нагрузки</h2><p>Тратил деньги только на сервер, никакой рекламы. Бот начал набирать обороты. О его полезности никто не спорит. Люди начали передавать друг другу ссылу на бота и читать статьи. Началась большая нагрузка и сервер уже не мог справиться, слишком часто начал падать.</p><p>Сервер падал потому что в один момент ему отправляли слишком много и он не успевал обрабатывать сообщения.</p><p>Я снова пошел в гугл и нашел бесплатный сервис очереди сообщений cloudamqp. Это как раз то что мне нужно.</p><p>Добавил очередь, и теперь бот обрабатывает по 1 сообщению из очереди. В итоге все пользователи ждут, но дождутся обработки и InstantView<br>Моэно выдохнуть и расслабиться.</p><h2 id="Бесплатный-сервер-от-Oracle"><a href="#Бесплатный-сервер-от-Oracle" class="headerlink" title="Бесплатный сервер от Oracle"></a>Бесплатный сервер от Oracle</h2><p>Компания oracle запустила для всего мира бесплатный вечный сервер для всяких экспериментов, микростартапов. </p><p>Я конечно же переехал туда и все. Бот требовал минимум правок, только баги периодически появлялись.</p><p>Сервис ушел из РФ в 2022. Теперь в РФ все платно и дорого, никаких вам стартапов</p><p>Если вам нужна реклама в боте - обращайтесь <a href="https://t.me/safiullin">https://t.me/safiullin</a></p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;Начало&quot;&gt;&lt;a href=&quot;#Начало&quot; class=&quot;headerlink&quot; title=&quot;Начало&quot;&gt;&lt;/a&gt;Начало&lt;/h2&gt;&lt;p&gt;Всем привет я Альберт и я хочу всегда все улучшить.&lt;br&gt;В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете.&lt;/p&gt;
@@ -33,7 +33,9 @@
     
     
     
-    <category term="telegram-bot, bot" scheme="https://safiullin.io/tags/telegram-bot-bot/"/>
+    <category term="bot" scheme="https://safiullin.io/tags/bot/"/>
+    
+    <category term="telegram-bot" scheme="https://safiullin.io/tags/telegram-bot/"/>
     
   </entry>
   
@@ -42,7 +44,7 @@
     <link href="https://safiullin.io/2023/12/27/How-to-Reduce-Traffic-Congestion/"/>
     <id>https://safiullin.io/2023/12/27/How-to-Reduce-Traffic-Congestion/</id>
     <published>2023-12-27T06:45:50.000Z</published>
-    <updated>2024-03-29T09:32:47.068Z</updated>
+    <updated>2024-04-02T17:05:27.510Z</updated>
     
     <content type="html"><![CDATA[<h5 id="Like-Elon-Musk-I-hate-traffic-jams"><a href="#Like-Elon-Musk-I-hate-traffic-jams" class="headerlink" title="Like Elon Musk, I hate traffic jams."></a>Like Elon Musk, I hate traffic jams.</h5><p>We are looking for ways to eliminate them.<br>2018 year. Saint-Petersburg. Murino. Frosty morning. I am standing at the bus stop. Cars drive slowly towards the fork.</p><span id="more"></span><p>Overcrowded buses drive up, and I watch people at the bus stop not being able to get on the bus.<br>I watch further, for cars leaving from different residential complexes. One went empty, the second empty. These empty boxes travel to one point every day and form a traffic jam.</p><p>I thought why not start using empty space and energy effectively. And the idea came to my mind to create a service where people can exchange their routes and unite in groups.</p><p>Thus, instead of 4 cars, 1 car with four people will go to the destination.</p><p>An example is shown in the figure. User 1, 2, 3 Live side by side and work in one place, for example, in the city center. So why buy 3 cars when you can team up and drive one!</p><img src="/2023/12/27/How-to-Reduce-Traffic-Congestion/route.jpg" class=""><p>3 people and 1 shared daily route</p><p>I thought about how to create such a service, talked with people, as a result, there was not enough technology to implement this project. I knew that soon they will appear. And now the end of 2021, they appeared and I quickly began to implement the idea.</p><p>In the end, it turned out this BOT <a href="https://t.me/RouteCabBot">https://t.me/RouteCabBot</a></p><p>Short Description</p><ul><li><a href="https://t.me/routecabRU/12">https://t.me/routecabRU/12</a></li></ul><h5 id="Why-is-this-a-cool-solution"><a href="#Why-is-this-a-cool-solution" class="headerlink" title="Why is this a cool solution?"></a>Why is this a cool solution?</h5><p>Well, first of all, new pleasant acquaintances! The driver will not be bored of driving alone, there will be an opportunity to get to know each other. Share your experience, what if you give a ride to your English teacher?)</p><p>Secondly, by reducing the car traffic jam will be less, everyone benefits from this.</p><p>Thirdly, it is still better to ride in comfort, many will agree to go by car than by bus, and the driver will be able to get the money back for gaz</p><h5 id="How-to-use-this-solution-effectively"><a href="#How-to-use-this-solution-effectively" class="headerlink" title="How to use this solution effectively?"></a>How to use this solution effectively?</h5><p>By far the best way is to share the bot in the chat rooms in your area. After all, the basis is the neighbors. People who live nearby and travel to one point to work. They must see each other and form a group. It’s more fun together!</p><p>In the next posts! I will write how I implemented it. Stay in touch!</p>]]></content>
     
@@ -52,7 +54,11 @@
     
     
     
-    <category term="bot, routes, location" scheme="https://safiullin.io/tags/bot-routes-location/"/>
+    <category term="bot" scheme="https://safiullin.io/tags/bot/"/>
+    
+    <category term="routes" scheme="https://safiullin.io/tags/routes/"/>
+    
+    <category term="location" scheme="https://safiullin.io/tags/location/"/>
     
   </entry>
   
@@ -61,7 +67,7 @@
     <link href="https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/"/>
     <id>https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/</id>
     <published>2023-06-11T11:33:02.000Z</published>
-    <updated>2024-03-29T09:33:16.094Z</updated>
+    <updated>2024-04-02T17:05:15.918Z</updated>
     
     <content type="html"><![CDATA[<h2 id="The-problem"><a href="#The-problem" class="headerlink" title="The problem"></a>The problem</h2><p>Do you hate old websites who dont support mobile version while you serfing from your phone?</p><p>Surely everyone hates old websites that don’t support the mobile version while surfing on a phone?</p><p>And of course they don’t have time to make a mobile version, and some sites don’t have developers at all.</p><p>So how to fix this situation? I came up with an add-on for your mobile browser</p><span id="more"></span><h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p><a href="https://chrome.google.com/webstore/detail/make-mobile-view/ohfappdhdoofhbiajcdakoicdpfpkggn?hl=en&authuser=0">This is an extension</a></p><h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use?"></a>How to use?</h2><ol><li>You need mobile browser with extensions support.</li><li>Install it from Google Web store</li><li>Enjoy!</li></ol><p>Code is open<br><a href="https://github.com/albertincx/browser-extension-makeMobileView">Github</a></p>]]></content>
     
@@ -74,7 +80,13 @@
     
     
     
-    <category term="mobile, bot, viewport, browser extension" scheme="https://safiullin.io/tags/mobile-bot-viewport-browser-extension/"/>
+    <category term="bot" scheme="https://safiullin.io/tags/bot/"/>
+    
+    <category term="mobile" scheme="https://safiullin.io/tags/mobile/"/>
+    
+    <category term="viewport" scheme="https://safiullin.io/tags/viewport/"/>
+    
+    <category term="browser extension" scheme="https://safiullin.io/tags/browser-extension/"/>
     
   </entry>
   
@@ -83,7 +95,7 @@
     <link href="https://safiullin.io/2021/12/27/How-I-made-a-puzzle-game/"/>
     <id>https://safiullin.io/2021/12/27/How-I-made-a-puzzle-game/</id>
     <published>2021-12-27T07:39:54.000Z</published>
-    <updated>2024-03-29T09:33:50.076Z</updated>
+    <updated>2024-04-02T17:05:07.106Z</updated>
     
     <content type="html"><![CDATA[<h5 id="How-I-made-a-puzzle-game"><a href="#How-I-made-a-puzzle-game" class="headerlink" title="How I made a puzzle game"></a>How I made a puzzle game</h5><p>Now, as you know, you don’t need to do anything from scratch, because there is already a lot of ready-made code. Thanks to the developers and open source.</p><span id="more"></span><p>And so we have a task to create a puzzle game.<br>What do we need to get started?<br>Of course the finished puzzle game, I found it here<br><a href="https://github.com/doochik/Puzzler">From Puzzler</a></p><p>Information is being supplemented ….</p><p>In the end, it turned out this</p><p><a href="https://puzzle.safiullin.io/">Here is the Game</a></p>]]></content>
     
@@ -93,7 +105,9 @@
     
     
     
-    <category term="games, web app" scheme="https://safiullin.io/tags/games-web-app/"/>
+    <category term="games" scheme="https://safiullin.io/tags/games/"/>
+    
+    <category term="web app" scheme="https://safiullin.io/tags/web-app/"/>
     
   </entry>
   
@@ -102,7 +116,7 @@
     <link href="https://safiullin.io/2021/06/20/language-by-subtitles/"/>
     <id>https://safiullin.io/2021/06/20/language-by-subtitles/</id>
     <published>2021-06-20T11:19:02.000Z</published>
-    <updated>2023-06-11T14:11:28.909Z</updated>
+    <updated>2024-04-02T17:05:42.035Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://lang.safiullin.io/">Here is the webApp</a></p><p>A site where you can learn any language through subtitles</p><p>Find subtitles for your favorite TV series or movie and upload them to the site</p><p>Then just click on the phrase and see the translation</p>]]></content>
     
@@ -117,7 +131,13 @@
     
     
     
-    <category term="learning, language, web app, pwa" scheme="https://safiullin.io/tags/learning-language-web-app-pwa/"/>
+    <category term="web app" scheme="https://safiullin.io/tags/web-app/"/>
+    
+    <category term="learning" scheme="https://safiullin.io/tags/learning/"/>
+    
+    <category term="language" scheme="https://safiullin.io/tags/language/"/>
+    
+    <category term="pwa" scheme="https://safiullin.io/tags/pwa/"/>
     
   </entry>
   
@@ -126,7 +146,7 @@
     <link href="https://safiullin.io/2021/06/20/telegram-bot-iv-maker/"/>
     <id>https://safiullin.io/2021/06/20/telegram-bot-iv-maker/</id>
     <published>2021-06-20T11:19:00.000Z</published>
-    <updated>2023-06-11T14:13:15.894Z</updated>
+    <updated>2024-04-02T17:05:55.050Z</updated>
     
     <content type="html"><![CDATA[<p>Telegram bot IV maker</p><p><a href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">Url</a></p><p>Read quickly directly in telegram</p><p>Any site is converted to IV for easy reading<br>No need to wait for downloads and annoying banners</p>]]></content>
     
@@ -141,7 +161,11 @@
     
     
     
-    <category term="telegram bot, bot, reading" scheme="https://safiullin.io/tags/telegram-bot-bot-reading/"/>
+    <category term="bot" scheme="https://safiullin.io/tags/bot/"/>
+    
+    <category term="reading" scheme="https://safiullin.io/tags/reading/"/>
+    
+    <category term="telegram bot" scheme="https://safiullin.io/tags/telegram-bot/"/>
     
   </entry>
   
@@ -150,7 +174,7 @@
     <link href="https://safiullin.io/2021/06/20/instant-chat-bot/"/>
     <id>https://safiullin.io/2021/06/20/instant-chat-bot/</id>
     <published>2021-06-20T11:18:57.000Z</published>
-    <updated>2024-03-29T09:34:09.523Z</updated>
+    <updated>2024-04-02T17:05:42.023Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p><p>Let’s say you have a site that people visit. But how to quickly contact you and so that they receive an answer instantly?</p><span id="more"></span><p>Technology will help us here.<br>The recipe is simple:<br>Fast messenger - for quick replies (Telegram)<br>Node - for processing requests<br>React for creating a chat window<br>Free server - where our creation will be hosted.</p><ol><li><p>First, we make a react application, for this we take the ready-made github and delete the unnecessary.</p></li><li><p>Now we need to send messages somewhere.<br>The websocket technology will help us for this.<br>Which we will run on the server on the node.</p></li><li><p>Let’s create a group in the telegram so that all messages fall there. And we could answer them.</p></li><li><p>Now we need to somehow mark up to define their users. There are also simple rules:</p></li></ol><ul><li>create a unique key for each new visitor</li><li>bind your key to each message</li><li>a replay in a telegram will mean a reply to a chat</li></ul><p>Convenient chat for your site for communicating with clients in Telegram is ready and it’s free</p>]]></content>
     
@@ -161,7 +185,11 @@
     
     
     
-    <category term="telegram-bot, bot, reading" scheme="https://safiullin.io/tags/telegram-bot-bot-reading/"/>
+    <category term="bot" scheme="https://safiullin.io/tags/bot/"/>
+    
+    <category term="telegram-bot" scheme="https://safiullin.io/tags/telegram-bot/"/>
+    
+    <category term="reading" scheme="https://safiullin.io/tags/reading/"/>
     
   </entry>
   
@@ -170,7 +198,7 @@
     <link href="https://safiullin.io/2021/06/20/pure-reader/"/>
     <id>https://safiullin.io/2021/06/20/pure-reader/</id>
     <published>2021-06-20T11:18:55.000Z</published>
-    <updated>2023-06-11T14:12:51.839Z</updated>
+    <updated>2024-04-02T17:05:47.750Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://read.safiullin.io/">Here is the webApp</a></p><p>Read books directly in your browser<br>The system remembers the book and the position where you left off very conveniently</p>]]></content>
     
@@ -184,7 +212,9 @@
     
     
     
-    <category term="reading, web app" scheme="https://safiullin.io/tags/reading-web-app/"/>
+    <category term="web app" scheme="https://safiullin.io/tags/web-app/"/>
+    
+    <category term="reading" scheme="https://safiullin.io/tags/reading/"/>
     
   </entry>
   
