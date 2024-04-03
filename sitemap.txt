@@ -1,3 +1,4 @@
+https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/
 https://safiullin.io/2021/06/20/telegram-bot-iv-maker/
 https://safiullin.io/2021/06/20/pure-reader/
 https://safiullin.io/2021/06/20/language-by-subtitles/
@@ -5,7 +6,6 @@ https://safiullin.io/2021/06/20/instant-chat-bot/
 https://safiullin.io/2023/12/27/How-to-Reduce-Traffic-Congestion/
 https://safiullin.io/2023/06/11/How-to-make-any-site-mobile/
 https://safiullin.io/2021/12/27/How-I-made-a-puzzle-game/
-https://safiullin.io/2024/03/31/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/
 https://safiullin.io/
 https://safiullin.io/
 https://safiullin.io/tags/games-web-app/
