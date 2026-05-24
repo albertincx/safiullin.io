@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/</loc>
+    
+    <lastmod>2026-05-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://safiullin.dev/2025/12/21/restapi-get-post-manager/</loc>
     
     <lastmod>2025-12-21</lastmod>
@@ -192,13 +201,6 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/tags/telegram-bot/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/tags/project/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -235,6 +237,27 @@
   
   <url>
     <loc>https://safiullin.dev/tags/post/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/telegram-bot/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/ai/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/game/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

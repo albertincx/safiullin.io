@@ -1,3 +1,4 @@
+https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2025/12/21/restapi-get-post-manager/
 https://safiullin.dev/2021/06/20/pure-reader/
 https://safiullin.dev/2021/06/20/language-by-subtitles/
@@ -22,10 +23,12 @@ https://safiullin.dev/tags/reading/
 https://safiullin.dev/tags/learning/
 https://safiullin.dev/tags/language/
 https://safiullin.dev/tags/pwa/
-https://safiullin.dev/tags/telegram-bot/
 https://safiullin.dev/tags/project/
 https://safiullin.dev/tags/api/
 https://safiullin.dev/tags/manager/
 https://safiullin.dev/tags/rest/
 https://safiullin.dev/tags/get/
 https://safiullin.dev/tags/post/
+https://safiullin.dev/tags/telegram-bot/
+https://safiullin.dev/tags/ai/
+https://safiullin.dev/tags/game/
