@@ -1,3 +1,4 @@
+https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/04/i-built-resume-builder/
 https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/
@@ -36,3 +37,7 @@ https://safiullin.dev/tags/games/
 https://safiullin.dev/tags/mobile/
 https://safiullin.dev/tags/viewport/
 https://safiullin.dev/tags/browser-extension/
+https://safiullin.dev/tags/web-app/
+https://safiullin.dev/tags/pdf/
+https://safiullin.dev/tags/education/
+https://safiullin.dev/tags/open-source/
