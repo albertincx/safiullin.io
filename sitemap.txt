@@ -1,3 +1,4 @@
+https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/04/i-built-resume-builder/
 https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/
@@ -41,3 +42,5 @@ https://safiullin.dev/tags/web-app/
 https://safiullin.dev/tags/pdf/
 https://safiullin.dev/tags/education/
 https://safiullin.dev/tags/open-source/
+https://safiullin.dev/tags/python/
+https://safiullin.dev/tags/resume/
