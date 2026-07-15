@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<!-- End Google Analytics -->
+
+
+    <title>How I Built a Live Web Editor for RenderCV Using Gemini | Safiullin.dev. Developer projects and stories of life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Resumes as Code: The Elegance of RenderCVIf you are an engineer or an academic, writing resumes in MS Word is a formatting nightmare, and custom...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How I Built a Live Web Editor for RenderCV Using Gemini">
+<meta property="og:url" content="https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">
+<meta property="og:site_name" content="Safiullin.dev. Developer projects and stories of life">
+<meta property="og:description" content="Resumes as Code: The Elegance of RenderCVIf you are an engineer or an academic, writing resumes in MS Word is a formatting nightmare, and custom...">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-07-15T14:05:00.000Z">
+<meta property="article:modified_time" content="2026-07-15T07:03:14.163Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="open-source">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="resume">
+<meta property="article:tag" content="web-app">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How I Built a Live Web Editor for RenderCV Using Gemini",
+  "datePublished": "2026-07-15T14:05:00.000Z",
+  "dateModified": "2026-07-15T07:03:14.163Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev. Developer projects and stories of life",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "Resumes as Code: The Elegance of RenderCVIf you are an engineer or an academic, writing resumes in MS Word is a formatting nightmare, and custom..."
+}
+</script>
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Safiullin.dev</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      How I Built a Live Web Editor for RenderCV Using Gemini
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Resumes-as-Code-The-Elegance-of-RenderCV"><a href="#Resumes-as-Code-The-Elegance-of-RenderCV" class="headerlink" title="Resumes as Code: The Elegance of RenderCV"></a>Resumes as Code: The Elegance of RenderCV</h2><p>If you are an engineer or an academic, writing resumes in MS Word is a formatting nightmare, and custom LaTeX templates are often too verbose to maintain. </p>
+<p>Recently, I stumbled upon a brilliant Python project called <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. It allows you to write your resume content in a clean, structured YAML file and generates a beautifully formatted PDF with perfect typography using <strong>Typst</strong> under the hood. It treats your resume like code, which means you can version-control it, focus strictly on the content, and let the tool handle page margins, alignment, and styling.</p>
+<p>However, RenderCV was designed primarily as a command-line interface (CLI) tool. Every time you make a change, you have to run <code>rendercv render John_Doe_CV.yaml</code>, check the output, open the PDF viewer, and check the alignment. If you make a validation or schema error, you have to read CLI compiler tracebacks. </p>
+<p>I wanted to bridge this gap by adding a <strong>Live Web Editor</strong>—a local single-page web app with a side-by-side Monaco editor, live PDF preview, instant schema validation, and interactive theme&#x2F;section toggles. </p>
+<p>With the help of <strong>Gemini</strong>, I successfully built and integrated this web interface directly into RenderCV! Here is how we did it.</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="The-Tech-Stack-and-Architecture"><a href="#The-Tech-Stack-and-Architecture" class="headerlink" title="The Tech Stack and Architecture"></a>The Tech Stack and Architecture</h2><p>To keep the web editor lightweight, fast, and dependency-minimal, we chose:</p>
+<ol>
+<li><strong>Backend:</strong> <strong>FastAPI + Uvicorn</strong> — perfect for writing high-performance APIs and serving static assets.</li>
+<li><strong>Frontend:</strong> <strong>Vanilla HTML5 + Modern CSS + Javascript</strong> — avoiding bloated build steps (like Webpack or Vite) for a local CLI helper. We used the <strong>Monaco Editor</strong> (via CDN) for a VS Code-grade YAML writing experience and <strong>Lucide Icons</strong> for smooth visual elements.</li>
+<li><strong>Rendering:</strong> <strong>RenderCV Python API</strong> — calling the library’s internal models directly to parse, validate, and build Typst and PDF documents in-memory or inside temp directories.</li>
+</ol>
+<hr>
+<h2 id="1-Designing-the-FastAPI-Backend-web-app-py"><a href="#1-Designing-the-FastAPI-Backend-web-app-py" class="headerlink" title="1. Designing the FastAPI Backend (web_app.py)"></a>1. Designing the FastAPI Backend (<code>web_app.py</code>)</h2><p>The core of the server is the <code>/api/render</code> endpoint. When the user types YAML in the web UI, the frontend sends it to this endpoint. The backend handles three major tasks:</p>
+<ol>
+<li><strong>Rendering the PDF:</strong> We compile the YAML string using RenderCV’s internal compilation functions and return the raw PDF bytes.</li>
+<li><strong>Section Visibility Toggling:</strong> RenderCV allows you to hide or show sections of your CV. We parse the incoming YAML, identify all available CV sections, strip any sections the user chose to hide in the UI dropdown, and compile the final document.</li>
+<li><strong>Structured Error Mapping:</strong> When validation fails, RenderCV throws a <code>RenderCVUserValidationError</code>. We intercept this error, extract the exact line and column numbers of the invalid YAML field, and return a clean JSON error response so Monaco can display red squiggly lines at the exact position of the error!</li>
+</ol>
+<p>Here is how the <code>/api/render</code> endpoint looks in python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.post(<span class="params"><span class="string">&quot;/api/render&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">render_pdf</span>(<span class="params">request: RenderRequest</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Compile the provided YAML to a PDF and return the PDF file bytes.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">with</span> tempfile.TemporaryDirectory() <span class="keyword">as</span> tmpdir:</span><br><span class="line">        tmp_path = pathlib.Path(tmpdir)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># Parse YAML into RenderCV&#x27;s internal dictionary</span></span><br><span class="line">            input_dict, overlay_sources = build_rendercv_dictionary(</span><br><span class="line">                request.yaml,</span><br><span class="line">                output_folder=tmp_path,</span><br><span class="line">                dont_generate_png=<span class="literal">True</span>,</span><br><span class="line">                dont_generate_markdown=<span class="literal">True</span>,</span><br><span class="line">                dont_generate_html=<span class="literal">True</span>,</span><br><span class="line">            )</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># Extract all sections to return to the UI</span></span><br><span class="line">            all_sections = []</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;cv&quot;</span> <span class="keyword">in</span> input_dict <span class="keyword">and</span> <span class="string">&quot;sections&quot;</span> <span class="keyword">in</span> input_dict[<span class="string">&quot;cv&quot;</span>] <span class="keyword">and</span> input_dict[<span class="string">&quot;cv&quot;</span>][<span class="string">&quot;sections&quot;</span>]:</span><br><span class="line">                all_sections = <span class="built_in">list</span>(input_dict[<span class="string">&quot;cv&quot;</span>][<span class="string">&quot;sections&quot;</span>].keys())</span><br><span class="line">                </span><br><span class="line">            <span class="comment"># Programmatically remove hidden sections</span></span><br><span class="line">            <span class="keyword">if</span> request.hide_sections:</span><br><span class="line">                <span class="keyword">for</span> sec <span class="keyword">in</span> request.hide_sections:</span><br><span class="line">                    <span class="keyword">if</span> <span class="string">&quot;cv&quot;</span> <span class="keyword">in</span> input_dict <span class="keyword">and</span> <span class="string">&quot;sections&quot;</span> <span class="keyword">in</span> input_dict[<span class="string">&quot;cv&quot;</span>] <span class="keyword">and</span> input_dict[<span class="string">&quot;cv&quot;</span>][<span class="string">&quot;sections&quot;</span>]:</span><br><span class="line">                        input_dict[<span class="string">&quot;cv&quot;</span>][<span class="string">&quot;sections&quot;</span>].pop(sec, <span class="literal">None</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># Validate and build model</span></span><br><span class="line">            model = build_rendercv_model_from_commented_map(input_dict, tmp_path, overlay_sources)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># Generate the Typst source code and compile to PDF</span></span><br><span class="line">            typst_path = generate_typst(model)</span><br><span class="line">            pdf_path = generate_pdf(model, typst_path)</span><br><span class="line">            pdf_bytes = pdf_path.read_bytes()</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># Send sections list in headers (URL-encoded JSON)</span></span><br><span class="line">            headers = &#123;</span><br><span class="line">                <span class="string">&quot;X-RenderCV-Sections&quot;</span>: urllib.parse.quote(json.dumps(all_sections)),</span><br><span class="line">                <span class="string">&quot;Access-Control-Expose-Headers&quot;</span>: <span class="string">&quot;X-RenderCV-Sections&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> Response(content=pdf_bytes, media_type=<span class="string">&quot;application/pdf&quot;</span>, headers=headers)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">except</span> RenderCVUserValidationError <span class="keyword">as</span> e:</span><br><span class="line">            <span class="comment"># Map Pydantic validation errors back to YAML editor coordinates</span></span><br><span class="line">            errors = []</span><br><span class="line">            <span class="keyword">for</span> err <span class="keyword">in</span> e.validation_errors:</span><br><span class="line">                start_line = err.yaml_location[<span class="number">0</span>][<span class="number">0</span>] <span class="keyword">if</span> err.yaml_location <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">                start_col = err.yaml_location[<span class="number">0</span>][<span class="number">1</span>] <span class="keyword">if</span> err.yaml_location <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">                errors.append(&#123;</span><br><span class="line">                    <span class="string">&quot;message&quot;</span>: err.message,</span><br><span class="line">                    <span class="string">&quot;line&quot;</span>: start_line,</span><br><span class="line">                    <span class="string">&quot;col&quot;</span>: start_col,</span><br><span class="line">                    <span class="string">&quot;schema_location&quot;</span>: err.schema_location</span><br><span class="line">                &#125;)</span><br><span class="line">            <span class="keyword">return</span> JSONResponse(</span><br><span class="line">                status_code=<span class="number">422</span>,</span><br><span class="line">                content=&#123;<span class="string">&quot;type&quot;</span>: <span class="string">&quot;validation_error&quot;</span>, <span class="string">&quot;detail&quot;</span>: <span class="string">&quot;YAML validation failed&quot;</span>, <span class="string">&quot;errors&quot;</span>: errors&#125;</span><br><span class="line">            )</span><br><span class="line">        <span class="comment"># ... other error handling</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-A-Premium-Web-Interface-index-html"><a href="#2-A-Premium-Web-Interface-index-html" class="headerlink" title="2. A Premium Web Interface (index.html)"></a>2. A Premium Web Interface (<code>index.html</code>)</h2><p>For the user interface, we wanted something that felt premium, responsive, and fully immersive. Gemini helped me code a beautiful modern layout featuring:</p>
+<ul>
+<li><strong>HSL Dark Theme:</strong> Deep slate backgrounds, semi-transparent overlays (<code>backdrop-filter: blur</code>), and vibrant purple linear-gradient accents.</li>
+<li><strong>Side-by-Side Splitscreen:</strong> Monaco Editor on the left, live PDF viewer (using an <code>&lt;iframe&gt;</code> loaded with a local Blob URL) on the right.</li>
+<li><strong>Dynamic Controls:</strong><ul>
+<li>A <strong>Theme Switcher</strong> dropdown to load templates (classic, engineering, moderncv, etc.) and merge your current CV data into them automatically.</li>
+<li>A <strong>Sections Dropdown</strong> which queries the backend headers and generates checklists to dynamically hide&#x2F;show resume sections (e.g. hiding “Projects” or “References” when exporting target-specific versions of your CV).</li>
+<li>An inline <strong>Validation Log</strong> console at the bottom of the editor that expands to show error details. Clicking on any validation error automatically highlights and focuses the line in the Monaco editor.</li>
+</ul>
+</li>
+</ul>
+<p>To compile, the user can either click the “Render PDF” button or use the keyboard shortcut <code>Cmd + Enter</code>. The PDF compiles in less than a second!</p>
+<hr>
+<h2 id="3-Wrapping-it-into-the-CLI-web-command-py"><a href="#3-Wrapping-it-into-the-CLI-web-command-py" class="headerlink" title="3. Wrapping it into the CLI (web_command.py)"></a>3. Wrapping it into the CLI (<code>web_command.py</code>)</h2><p>To make it incredibly easy for users to start, we added a new command to the RenderCV Typer-based CLI:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rendercv web</span><br></pre></td></tr></table></figure>
+
+<p>This launches the local Uvicorn FastAPI server and opens your web browser automatically:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.command(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="meta">    name=<span class="string">&quot;web&quot;</span>,</span></span></span><br><span class="line"><span class="params"><span class="meta">    <span class="built_in">help</span>=<span class="string">&quot;Start the RenderCV web editor for live editing and PDF compilation.&quot;</span></span></span></span><br><span class="line"><span class="params"><span class="meta"></span>)</span></span><br><span class="line"><span class="meta">@handle_user_errors</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cli_command_web</span>(<span class="params"></span></span><br><span class="line"><span class="params">    host: <span class="built_in">str</span> = <span class="string">&quot;127.0.0.1&quot;</span>,</span></span><br><span class="line"><span class="params">    port: <span class="built_in">int</span> = <span class="number">8000</span>,</span></span><br><span class="line"><span class="params">    no_browser: <span class="built_in">bool</span> = <span class="literal">False</span>,</span></span><br><span class="line"><span class="params"></span>):</span><br><span class="line">    typer.echo(<span class="string">f&quot;Starting RenderCV web editor on http://<span class="subst">&#123;host&#125;</span>:<span class="subst">&#123;port&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> no_browser:</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">open_browser</span>():</span><br><span class="line">            time.sleep(<span class="number">1.2</span>)</span><br><span class="line">            webbrowser.<span class="built_in">open</span>(<span class="string">f&quot;http://<span class="subst">&#123;host&#125;</span>:<span class="subst">&#123;port&#125;</span>&quot;</span>)</span><br><span class="line">            </span><br><span class="line">        threading.Thread(target=open_browser, daemon=<span class="literal">True</span>).start()</span><br><span class="line"></span><br><span class="line">    uvicorn.run(web_app, host=host, port=port)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Reflections-on-Coding-with-Gemini"><a href="#Reflections-on-Coding-with-Gemini" class="headerlink" title="Reflections on Coding with Gemini"></a>Reflections on Coding with Gemini</h2><p>Building this feature with Gemini was exceptionally fast. What would have normally taken days of reading internal source code and configuring Monaco API configurations was solved in hours:</p>
+<ol>
+<li><strong>Understanding the AST&#x2F;YAML library:</strong> Gemini correctly identified that we should use <code>ruamel.yaml</code> to parse the YAML file to preserve user quotes, comments, and structure when switching themes.</li>
+<li><strong>Error mapping:</strong> Gemini figured out exactly how to traverse <code>RenderCVUserValidationError</code> coordinates and construct the Monaco validation marker payloads (<code>monaco.editor.setModelMarkers</code>) so the editor is fully synchronized with Pydantic validation.</li>
+<li><strong>Polishing UX:</strong> It crafted CSS variables and layout offsets that look gorgeous, scale nicely across multiple screen resolutions, and are super responsive.</li>
+</ol>
+<p>If you write resumes, go check out <strong>RenderCV</strong>—and try running <code>rendercv web</code> to experience the live editor yourself!</p>
+<p>Happy coding!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuid4aTEGsmK7UtxDcGtwjoY9" data-title="How I Built a Live Web Editor for RenderCV Using Gemini" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How I Built PDF Ink for Comfortable Online Learning from PDF Books</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser-extension/" rel="tag">browser extension</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/language/" rel="tag">language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/location/" rel="tag">location</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/" rel="tag">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pwa/" rel="tag">pwa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reading/" rel="tag">reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/routes/" rel="tag">routes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram-bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ai/" style="font-size: 12.5px;">ai</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 10px;">browser extension</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/location/" style="font-size: 10px;">location</a> <a href="/tags/manager/" style="font-size: 10px;">manager</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/open-source/" style="font-size: 12.5px;">open-source</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/productivity/" style="font-size: 10px;">productivity</a> <a href="/tags/project/" style="font-size: 12.5px;">project</a> <a href="/tags/pwa/" style="font-size: 10px;">pwa</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/reading/" style="font-size: 15px;">reading</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/routes/" style="font-size: 10px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 12.5px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/web-app/" style="font-size: 17.5px;">web app</a> <a href="/tags/web-app/" style="font-size: 12.5px;">web-app</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/04/i-built-resume-builder/">I built a resume-builder with AI in 1 prompt</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/">How I Create Web Pages with Qwen Coder AI</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/21/how-to-build-a-good-blocks-game-with-ai/">Blocks game with ai? Yes</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
