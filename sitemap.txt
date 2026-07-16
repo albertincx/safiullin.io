@@ -1,6 +1,6 @@
+https://safiullin.dev/2026/07/04/i-built-resume-builder/
 https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
-https://safiullin.dev/2026/07/04/i-built-resume-builder/
 https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2025/12/21/restapi-get-post-manager/
