@@ -1,3 +1,4 @@
+https://safiullin.dev/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/
 https://safiullin.dev/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2021/06/20/es/telegram-bot-iv-maker/
@@ -22,7 +23,6 @@ https://safiullin.dev/2021/06/20/language-by-subtitles/
 https://safiullin.dev/2021/12/27/How-I-made-a-puzzle-game/
 https://safiullin.dev/
 https://safiullin.dev/2021/06/20/instant-chat-bot/
-https://safiullin.dev/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/
 https://safiullin.dev/2021/06/20/telegram-bot-iv-maker/
 https://safiullin.dev/2023/06/11/How-to-make-any-site-mobile/
 https://safiullin.dev/2023/12/27/How-to-Reduce-Traffic-Congestion/
