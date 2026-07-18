@@ -124,7 +124,9 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -158,14 +160,20 @@
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
         
-        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search"><span class="fa fa-search"></span></button>
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
-          <button type="submit" class="search-form-submit" aria-label="Search">&#xF002;</button>
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
           <input type="hidden" name="sitesearch" value="https://safiullin.dev">
         </form>
       </div>
@@ -176,10 +184,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-how-to-build-a-good-blocks-game-with-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-es/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/21/how-to-build-a-good-blocks-game-with-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T00:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+    <a href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -190,7 +198,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/how-to-build-a-good-blocks-game-with-ai/">Blocks game with ai? Yes</a>
+      <a class="p-name article-title" href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/">Cómo Construí un Editor Web en Vivo para RenderCV con Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
     </h2>
   
 
@@ -199,20 +207,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="🧩-How-I-Bring-My-Favorite-Game-to-Life-with-AI"><a href="#🧩-How-I-Bring-My-Favorite-Game-to-Life-with-AI" class="headerlink" title="🧩 How I Bring My Favorite Game to Life with AI"></a>🧩 How I Bring My Favorite Game to Life with AI</h1><p>It all started when I got hooked on a cool and clever puzzle game on Telegram. The premise is simple but addictive: you’re given three blocks to choose from, and you have to arrange them in a row. It required a fair amount of thinking—the more points you get, the better!</p>
-<p>But at some point, the game got blocked… 💔 But I really wanted to play! And then the thought occurred to me: <em>What if I made something like this just for myself? To while away the time on the road and exercise my brain a bit</em>.</p>
+        <h2 id="Curriculums-como-Codigo-La-Elegancia-de-RenderCV"><a href="#Curriculums-como-Codigo-La-Elegancia-de-RenderCV" class="headerlink" title="Currículums como Código: La Elegancia de RenderCV"></a>Currículums como Código: La Elegancia de RenderCV</h2><p>Si eres ingeniero o académico, escribir currículums en MS Word es una pesadilla de formato, y las plantillas LaTeX personalizadas suelen ser demasiado verbosas para mantener.</p>
+<p>Recientemente descubrí un brillante proyecto de Python llamado <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Te permite escribir el contenido de tu currículum en un archivo YAML limpio y estructurado, y genera un PDF perfectamente formateado con tipografía impecable usando <strong>Typst</strong> bajo el capó. Trata tu currículum como código, lo que significa que puedes versionarlo, concentrarte estrictamente en el contenido y dejar que la herramienta se encargue de los márgenes, la alineación y el estilo.</p>
+<p>Sin embargo, RenderCV fue diseñado principalmente como una herramienta de interfaz de línea de comandos (CLI). Cada vez que haces un cambio, tienes que ejecutar <code>rendercv render John_Doe_CV.yaml</code>, verificar el resultado, abrir el visor de PDF y comprobar la alineación. Si cometes un error de validación o de esquema, tienes que leer los rastreos del compilador CLI.</p>
+<p>Quería cerrar esta brecha añadiendo un <strong>Editor Web en Vivo</strong>—una aplicación web local de una sola página con un editor Monaco lado a lado, vista previa de PDF en tiempo real, validación de esquema instantánea y controles interactivos de temas&#x2F;secciones.</p>
+<p>¡Con la ayuda de <strong>Gemini</strong>, construí e integré exitosamente esta interfaz web directamente en RenderCV! Así es como lo hicimos.</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: Blocks game with ai? Yes">Read More</a>
+            <a href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Cómo Construí un Editor Web en Vivo para RenderCV con Gemini">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/" data-id="cuid_LEEdvG8sQwL7WuqwcNEV" data-title="Blocks game with ai? Yes" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidMkACdjODdISKfWBC_ogs8" data-title="Cómo Construí un Editor Web en Vivo para RenderCV con Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -220,10 +231,10 @@
 </article>
 
   
-    <article id="post-hi/how-to-build-a-good-blocks-game-with-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-ar/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T00:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+    <a href="/2026/07/15/ar/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -234,7 +245,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/">AI के साथ ब्लॉक्स गेम? हाँ, बिल्कुल<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/ar/how-i-built-a-live-web-editor-for-rendercv/">كيف بنيت محرراً حياً على الويب لـ RenderCV باستخدام Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - AR VERSION</span></a>
     </h2>
   
 
@@ -243,20 +254,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="🧩-मैं-AI-के-साथ-अपने-पसंदीदा-खेल-को-कैसे-जीवंत-बनाता-हूँ"><a href="#🧩-मैं-AI-के-साथ-अपने-पसंदीदा-खेल-को-कैसे-जीवंत-बनाता-हूँ" class="headerlink" title="🧩 मैं AI के साथ अपने पसंदीदा खेल को कैसे जीवंत बनाता हूँ"></a>🧩 मैं AI के साथ अपने पसंदीदा खेल को कैसे जीवंत बनाता हूँ</h1><p>यह सब तब शुरू हुआ जब मुझे टेलीग्राम पर एक बेहतरीन और चतुर पहेली खेल की लत लग गई। इसका नियम सरल लेकिन व्यसनी है: आपको चुनने के लिए तीन ब्लॉक दिए जाते हैं, और आपको उन्हें एक पंक्ति में व्यवस्थित करना होता है। इसमें काफी सोच-विचार की आवश्यकता थी—आपको जितने अधिक अंक मिलेंगे, उतना ही बेहतर होगा!</p>
-<p>लेकिन किसी समय पर, खेल ब्लॉक हो गया… 💔 लेकिन मैं सचमुच खेलना चाहता था! और फिर मेरे मन में विचार आया: <em>क्या होगा अगर मैं सिर्फ अपने लिए ऐसा कुछ बनाऊँ? रास्ते में समय बिताने और अपने दिमाग की थोड़ी कसरत करने के लिए</em>।</p>
+        <h2 id="السيرة-الذاتية-ككود-أناقة-RenderCV"><a href="#السيرة-الذاتية-ككود-أناقة-RenderCV" class="headerlink" title="السيرة الذاتية ككود: أناقة RenderCV"></a>السيرة الذاتية ككود: أناقة RenderCV</h2><p>إذا كنت مهندساً أو أكاديمياً، فإن كتابة السير الذاتية في MS Word هي كابوس للتنسيق، وغالباً ما تكون قوالب LaTeX المخصصة معقدة للغاية للمحافظة عليها.</p>
+<p>مؤخراً، عثرت على مشروع بايثون رائع يسمى <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. يتيح لك كتابة محتوى سيرتك الذاتية في ملف YAML نظيف ومنظم ويقوم بإنشاء ملف PDF منسق بشكل جميل مع طباعة مثالية باستخدام <strong>Typst</strong> في الخلفية. إنه يعامل سيرتك الذاتية ككود، مما يعني أنه يمكنك التحكم في إصداراتها والتركيز بشكل كامل على المحتوى وترك التنسيق والهوامش والأبعاد للأداة لتقوم بها.</p>
+<p>ومع ذلك، تم تصميم RenderCV في المقام الأول كأداة واجهة خط أوامر (CLI). في كل مرة تجري فيها تغييراً، يتعين عليك تشغيل <code>rendercv render John_Doe_CV.yaml</code> وفحص المخرجات وفتح عارض PDF والتحقق من التنسيق.</p>
+<p>أردت سد هذه الفجوة عن طريق إضافة <strong>محرر ويب حي</strong> - تطبيق ويب محلي أحادي الصفحة مع محرر Monaco جنباً إلى جنب، ومعاينة حية لملف PDF، والتحقق الفوري من المخطط، وتبديل الأقسام والسمات التفاعلية.</p>
+<p>بمساعدة <strong>Gemini</strong>، نجحت في بناء ودمج واجهة الويب هذه مباشرة في RenderCV! إليك كيف فعلنا ذلك.</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: AI के साथ ब्लॉक्स गेम? हाँ, बिल्कुल">Read More</a>
+            <a href="/2026/07/15/ar/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: كيف بنيت محرراً حياً على الويب لـ RenderCV باستخدام Gemini">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/" data-id="cuidq-Ens-ijSGfrClZFymzFg" data-title="AI के साथ ब्लॉक्स गेम? हाँ, बिल्कुल" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/ar/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidEyUzw30I0--wlWlDI5KwS" data-title="كيف بنيت محرراً حياً على الويب لـ RenderCV باستخدام Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -264,10 +278,10 @@
 </article>
 
   
-    <article id="post-zh-CN/how-to-build-a-good-blocks-game-with-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-fr/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/21/zh-CN/how-to-build-a-good-blocks-game-with-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T00:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+    <a href="/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -278,7 +292,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/zh-CN/how-to-build-a-good-blocks-game-with-ai/">利用 AI 制作方块消消乐游戏？当然可以！<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/">Comment j&#39;ai construit un éditeur Web en direct pour RenderCV avec Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - FR VERSION</span></a>
     </h2>
   
 
@@ -287,20 +301,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="🧩-我是如何利用-AI-让最爱的手游重获新生的"><a href="#🧩-我是如何利用-AI-让最爱的手游重获新生的" class="headerlink" title="🧩 我是如何利用 AI 让最爱的手游重获新生的"></a>🧩 我是如何利用 AI 让最爱的手游重获新生的</h1><p>一切源于我对 Telegram 上一款非常棒的拼图消消乐游戏的痴迷。它的规则很简单但非常令人上头：给你三个方块进行选择，你需要把它们排列成行。这需要相当多的策略——得到的分数越多越好！</p>
-<p>但到了某个时候，那个游戏被限制了…… 💔 但我真的太想玩了！于是我产生了一个想法：<em>如果我自己做一个类似的游戏会怎样？这样就能在路上打发时间，还能锻炼大脑</em>。</p>
+        <h2 id="Les-CV-sous-forme-de-code-l’elegance-de-RenderCV"><a href="#Les-CV-sous-forme-de-code-l’elegance-de-RenderCV" class="headerlink" title="Les CV sous forme de code : l’élégance de RenderCV"></a>Les CV sous forme de code : l’élégance de RenderCV</h2><p>Si vous êtes ingénieur ou universitaire, rédiger des CV dans MS Word est un cauchemar de mise en page, et les modèles LaTeX personnalisés sont souvent trop verbeux à maintenir.</p>
+<p>Récemment, je suis tombé sur un projet Python génial appelé <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Il vous permet de rédiger le contenu de votre CV dans un fichier YAML propre et structuré et génère un PDF magnifiquement mis en page avec une typographie parfaite en utilisant <strong>Typst</strong> en arrière-plan. Il traite votre CV comme du code, ce qui signifie que vous pouvez le suivre avec Git, vous concentrer strictement sur le contenu, et laisser l’outil gérer les marges, l’alignement et le style.</p>
+<p>Cependant, RenderCV a été conçu principalement comme un outil CLI. Chaque fois que vous apportez une modification, vous devez exécuter <code>rendercv render John_Doe_CV.yaml</code>, vérifier la sortie et rouvrir le PDF.</p>
+<p>Je voulais combler ce fossé en ajoutant un <strong>éditeur Web en direct</strong> — une application Web locale d’une seule page avec un éditeur Monaco côte à côte, un aperçu PDF en direct, une validation de schéma instantanée et des contrôles de sections interactifs.</p>
+<p>Avec l’aide de <strong>Gemini</strong>, j’ai réussi à construire et à intégrer cette interface Web directement dans RenderCV ! Voici comment nous avons procédé.</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/zh-CN/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: 利用 AI 制作方块消消乐游戏？当然可以！">Read More</a>
+            <a href="/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Comment j&#39;ai construit un éditeur Web en direct pour RenderCV avec Gemini">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/03/21/zh-CN/how-to-build-a-good-blocks-game-with-ai/" data-id="cuidatldsXsB2p0VaEjt4yE1y" data-title="利用 AI 制作方块消消乐游戏？当然可以！" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuid7xPFt5_HiFwJ70lumpPQf" data-title="Comment j&#39;ai construit un éditeur Web en direct pour RenderCV avec Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -308,10 +325,10 @@
 </article>
 
   
-    <article id="post-th/how-to-build-a-good-blocks-game-with-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-pt/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T00:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+    <a href="/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -322,7 +339,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/">สร้างเกมบล็อกด้วย AI? ใช่เลย<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/">Como eu construí um editor Web em tempo real para RenderCV usando Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - PT VERSION</span></a>
     </h2>
   
 
@@ -331,20 +348,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="🧩-ฉันชุบชีวิตเกมโปรดด้วย-AI-ได้อย่างไร"><a href="#🧩-ฉันชุบชีวิตเกมโปรดด้วย-AI-ได้อย่างไร" class="headerlink" title="🧩 ฉันชุบชีวิตเกมโปรดด้วย AI ได้อย่างไร"></a>🧩 ฉันชุบชีวิตเกมโปรดด้วย AI ได้อย่างไร</h1><p>มันเริ่มจากการที่ฉันติดเกมพัซเซิลตัวต่อสุดเจ๋งบน Telegram กติกาของมันเรียบง่ายแต่ชวนให้ติดงอมแงม: คุณจะได้รับบล็อกสามบล็อกให้เลือก และคุณต้องจัดเรียงมันให้อยู่ในแถวเดียวกัน มันต้องใช้ความคิดพอสมควรเลย ยิ่งคุณทำคะแนนได้มากเท่าไหร่ก็ยิ่งดี!</p>
-<p>แต่แล้วในจุดหนึ่ง เกมดังกล่าวก็เข้าไม่ได้… 💔 แต่ฉันอยากเล่นมันจริงๆ! และทันใดนั้นความคิดก็แวบเข้ามาในหัว: <em>จะเกิดอะไรขึ้นถ้าฉันทำอะไรแบบนี้ขึ้นมาใช้เองล่ะ? เพื่อเอาไว้เล่นฆ่าเวลาระหว่างเดินทางและฝึกสมองสักหน่อย</em></p>
+        <h2 id="Curriculos-como-Codigo-A-elegancia-do-RenderCV"><a href="#Curriculos-como-Codigo-A-elegancia-do-RenderCV" class="headerlink" title="Currículos como Código: A elegância do RenderCV"></a>Currículos como Código: A elegância do RenderCV</h2><p>Se você é engenheiro ou acadêmico, escrever currículos no MS Word é um pesadelo de formatação, e os modelos LaTeX personalizados costumam ser verbosos demais para manter.</p>
+<p>Recentemente, me deparei com um projeto Python brilhante chamado <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Ele permite que você escreva o conteúdo do seu currículo em um arquivo YAML limpo e estruturado e gera um PDF lindamente formatado com tipografia perfeita usando <strong>Typst</strong> sob o capô. Ele trata seu currículo como código, o que significa que você pode colocá-lo em controle de versão, concentrar-se estritamente no conteúdo e deixar a ferramenta cuidar das margens da página, alinhamento e estilo.</p>
+<p>No entanto, o RenderCV foi projetado principalmente como uma ferramenta de linha de comando (CLI). Cada vez que você faz uma alteração, precisa executar <code>rendercv render John_Doe_CV.yaml</code>, verificar o resultado e abrir o PDF.</p>
+<p>Eu queria preencher essa lacuna adicionando um <strong>Editor Web em Tempo Real</strong> — um aplicativo da web local de página única com um editor Monaco lado a lado, visualização de PDF em tempo real, validação instantânea de esquema e controles interativos de seções.</p>
+<p>Com a ajuda do <strong>Gemini</strong>, construí e integrei com sucesso esta interface da web diretamente no RenderCV! Veja como fizemos isso.</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: สร้างเกมบล็อกด้วย AI? ใช่เลย">Read More</a>
+            <a href="/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Como eu construí um editor Web em tempo real para RenderCV usando Gemini">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/" data-id="cuidOshK6JthteQGAoLfW60N2" data-title="สร้างเกมบล็อกด้วย AI? ใช่เลย" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidjd379YD2VKD4-2b3oMzL4" data-title="Como eu construí um editor Web em tempo real para RenderCV usando Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -352,10 +372,10 @@
 </article>
 
   
-    <article id="post-es/how-to-build-a-good-blocks-game-with-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-ru/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/03/21/es/how-to-build-a-good-blocks-game-with-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-03-21T00:00:00.000Z" itemprop="datePublished">2026-03-21</time>
+    <a href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -366,7 +386,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/03/21/es/how-to-build-a-good-blocks-game-with-ai/">¿Un juego de bloques con IA? Sí<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/">Как я создал веб-редактор реального времени для RenderCV с помощью Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
     </h2>
   
 
@@ -375,20 +395,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="🧩-Como-Doy-Vida-a-Mi-Juego-Favorito-con-IA"><a href="#🧩-Como-Doy-Vida-a-Mi-Juego-Favorito-con-IA" class="headerlink" title="🧩 Cómo Doy Vida a Mi Juego Favorito con IA"></a>🧩 Cómo Doy Vida a Mi Juego Favorito con IA</h1><p>Todo comenzó cuando me enganché a un genial y astuto juego de puzles en Telegram. La premisa es simple pero adictiva: se te dan tres bloques para elegir y tienes que acomodarlos en una fila. Requería bastante pensamiento—¡cuantos más puntos consigues, mejor!</p>
-<p>Pero en algún momento, el juego fue bloqueado… 💔 ¡Pero realmente quería jugar! Y entonces se me ocurrió el pensamiento: <em>¿Y si hago algo así solo para mí? Para pasar el tiempo en el camino y ejercitar un poco el cerebro</em>.</p>
+        <h2 id="Резюме-как-код-Элегантность-RenderCV"><a href="#Резюме-как-код-Элегантность-RenderCV" class="headerlink" title="Резюме как код: Элегантность RenderCV"></a>Резюме как код: Элегантность RenderCV</h2><p>Если вы инженер или ученый, написание резюме в MS Word — это кошмар с форматированием, а кастомные шаблоны LaTeX часто слишком сложны в поддержке.</p>
+<p>Недавно я наткнулся на отличный Python-проект под названием <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Он позволяет писать содержимое вашего резюме в чистом, структурированном файле YAML и генерирует красиво отформатированный PDF с идеальной типографикой, используя под капотом <strong>Typst</strong>. Он относится к резюме как к коду, а значит, вы можете использовать контроль версий, фокусироваться только на контенте и доверить инструменту настройку полей, выравнивания и стиля.</p>
+<p>Однако RenderCV изначально разрабатывался как CLI-инструмент. Каждый раз при внесении изменений нужно запускать <code>rendercv render John_Doe_CV.yaml</code>, проверять результат и открывать PDF.</p>
+<p>Я хотел исправить это, добавив <strong>веб-редактор реального времени</strong> — локальное веб-приложение на FastAPI с редактором Monaco, живым предпросмотром PDF, мгновенной валидацией схемы и интерактивным переключением разделов.</p>
+<p>С помощью <strong>Gemini</strong> я успешно создал и интегрировал этот веб-интерфейс прямо в RenderCV! Вот как мы это сделали.</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/es/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: ¿Un juego de bloques con IA? Sí">Read More</a>
+            <a href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Как я создал веб-редактор реального времени для RenderCV с помощью Gemini">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/03/21/es/how-to-build-a-good-blocks-game-with-ai/" data-id="cuidJP-3KsUFrJN_DioFY1zJ5" data-title="¿Un juego de bloques con IA? Sí" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuid4wfHQZtetgYsEaeciuTYq" data-title="Как я создал веб-редактор реального времени для RenderCV с помощью Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -396,10 +419,10 @@
 </article>
 
   
-    <article id="post-restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-14T13:46:31.176Z" itemprop="datePublished">2026-07-14</time>
 </a>
     
   </div>
@@ -410,7 +433,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/restapi-get-post-manager/">REST API GET POST Manager</a>
+      <a class="p-name article-title" href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
     </h2>
   
 
@@ -419,20 +442,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>This project provides a simple solution for managing GET and POST requests to REST APIs.</p>
-<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>The REST API GET POST Manager is a utility tool designed to simplify the process of sending GET and POST requests to REST APIs. It provides an easy-to-use interface for developers who need to interact with RESTful services.</p>
+        <h2 id="Why-read-PDFs-if-you-can’t-write-on-them"><a href="#Why-read-PDFs-if-you-can’t-write-on-them" class="headerlink" title="Why read PDFs if you can’t write on them?"></a>Why read PDFs if you can’t write on them?</h2><p>Hello everyone! I’m Albert, and I love making tools more convenient.</p>
+<p>If you have ever tried self-learning, studying programming textbooks, or reading complex technical documents from PDFs on your laptop or tablet, you know this struggle. You open a book, want to highlight a key code snippet, draw a quick diagram arrow next to an explanation, or leave a note on the margins — and realize that standard PDF viewers are either bloated, commercial, or they completely lose your drawings if you accidentally refresh the tab.</p>
+<p>I wanted to fix this and create <strong>PDF Ink</strong> — a lightweight, fast web application for reading and interactively annotating PDF books directly in the browser.</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/restapi-get-post-manager/#more" aria-label="Read More: REST API GET POST Manager">Read More</a>
+            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: How I Built PDF Ink for Comfortable Online Learning from PDF Books">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/restapi-get-post-manager/" data-id="cuidNxuHVODZdVGhIjOwTJE9y" data-title="REST API GET POST Manager" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/" data-id="cuidhmD7X2bFrSwXck4Gnz_eo" data-title="How I Built PDF Ink for Comfortable Online Learning from PDF Books" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -440,10 +464,10 @@
 </article>
 
   
-    <article id="post-hi/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/hi/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/04/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -454,7 +478,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/hi/restapi-get-post-manager/">REST API GET POST मैनेजर<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/i-built-resume-builder/">I built a resume-builder with AI in 1 prompt</a>
     </h2>
   
 
@@ -463,20 +487,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>यह परियोजना REST APIs के लिए GET और POST अनुरोधों को प्रबंधित करने के लिए एक सरल समाधान प्रदान करती है।</p>
-<h2 id="परियोजना-का-अवलोकन-Project-Overview"><a href="#परियोजना-का-अवलोकन-Project-Overview" class="headerlink" title="परियोजना का अवलोकन (Project Overview)"></a>परियोजना का अवलोकन (Project Overview)</h2><p>REST API GET POST मैनेजर एक उपयोगिता उपकरण (utility tool) है जिसे REST APIs को GET और POST अनुरोध भेजने की प्रक्रिया को आसान बनाने के लिए डिज़ाइन किया गया है। यह उन डेवलपर्स के लिए एक उपयोग में आसान इंटरफ़ेस प्रदान करता है जिन्हें RESTful सेवाओं के साथ इंटरैक्ट करने की आवश्यकता होती है।</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> is a premium web-based resume builder tailored specifically for IT professionals. It allows you to build, customize, and export clean, high-resolution resumes directly in your browser.</p>
+<p>I was looking for a job and they asked to send a CV, so I was thinking about building a fresh, modern resume and decided to code this.</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/hi/restapi-get-post-manager/#more" aria-label="Read More: REST API GET POST मैनेजर">Read More</a>
+            <a href="/2026/07/04/i-built-resume-builder/#more" aria-label="Read More: I built a resume-builder with AI in 1 prompt">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/hi/restapi-get-post-manager/" data-id="cuidRYF7SsjTFv8YtuBotadm8" data-title="REST API GET POST मैनेजर" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/i-built-resume-builder/" data-id="cuidzM47gClq1HN92Z15dTGRt" data-title="I built a resume-builder with AI in 1 prompt" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -484,10 +508,10 @@
 </article>
 
   
-    <article id="post-zh-CN/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-hi/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/zh-CN/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/04/hi/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -498,7 +522,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/zh-CN/restapi-get-post-manager/">REST API GET POST 请求管理器<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/hi/i-built-resume-builder/">मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
     </h2>
   
 
@@ -507,20 +531,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>该项目为管理 REST API 的 GET 和 POST 请求提供了一个简单的解决方案。</p>
-<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>REST API GET POST Manager 是一个实用工具，旨在简化向 REST API 发送 GET 和 POST 请求的过程。它为需要与 RESTful 服务进行交互的开发人员提供了一个易于使用的界面。</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> विशेष रूप से आईटी पेशेवरों के लिए तैयार किया गया एक प्रीमियम वेब-आधारित रिज्यूमे बिल्डर है। यह आपको सीधे अपने ब्राउज़र में साफ, उच्च-रिज़ॉल्यूशन वाले रिज्यूमे बनाने, कस्टमाइज़ करने और निर्यात (export) करने की अनुमति देता है।</p>
+<p>मैं नौकरी की तलाश में था और उन्होंने एक सीवी (CV) भेजने के लिए कहा, इसलिए मैं एक नया, आधुनिक रिज्यूमे बनाने के बारे में सोच रहा था और इसे खुद बनाने का फैसला किया।</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/zh-CN/restapi-get-post-manager/#more" aria-label="Read More: REST API GET POST 请求管理器">Read More</a>
+            <a href="/2026/07/04/hi/i-built-resume-builder/#more" aria-label="Read More: मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/zh-CN/restapi-get-post-manager/" data-id="cuid7UoAx-W33VlrSLWD2XmmK" data-title="REST API GET POST 请求管理器" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/hi/i-built-resume-builder/" data-id="cuidadeOaeovifc8aZGeTYTYq" data-title="मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -528,10 +552,10 @@
 </article>
 
   
-    <article id="post-th/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-zh-CN/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/th/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/04/zh-CN/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -542,7 +566,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/th/restapi-get-post-manager/">เครื่องมือจัดการ REST API GET POST<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/zh-CN/i-built-resume-builder/">我仅通过一条提示词就用 AI 构建了一个简历生成器<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
     </h2>
   
 
@@ -551,20 +575,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>โปรเจกต์นี้ขอนำเสนอแนวทางง่ายๆ ในการจัดการคำขอ GET และ POST ไปยัง REST API</p>
-<h2 id="ภาพรวมโปรเจกต์"><a href="#ภาพรวมโปรเจกต์" class="headerlink" title="ภาพรวมโปรเจกต์"></a>ภาพรวมโปรเจกต์</h2><p>REST API GET POST Manager เป็นเครื่องมืออำนวยความสะดวกที่ออกแบบมาเพื่อลดความยุ่งยากในขั้นตอนการส่งคำขอ GET และ POST ไปยัง REST API โดยมีอินเตอร์เฟสที่ใช้งานง่ายสำหรับนักพัฒนาที่ต้องทำงานกับบริการแบบ RESTful</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> 是一款专为 IT 专业人员量身定制的 premium 在线简历构建工具。它允许你在浏览器中直接生成、定制并导出高分辨率的精美简历。</p>
+<p>当时我正在找工作，他们要求发送一份简历，所以我考虑构建一个新颖、现代的简历，并决定自己开发这个工具。</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/th/restapi-get-post-manager/#more" aria-label="Read More: เครื่องมือจัดการ REST API GET POST">Read More</a>
+            <a href="/2026/07/04/zh-CN/i-built-resume-builder/#more" aria-label="Read More: 我仅通过一条提示词就用 AI 构建了一个简历生成器">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/th/restapi-get-post-manager/" data-id="cuidoeZfMQiBvmUuJPekphJKZ" data-title="เครื่องมือจัดการ REST API GET POST" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/zh-CN/i-built-resume-builder/" data-id="cuidG7y9GzuXwKeX0ivmt4E0T" data-title="我仅通过一条提示词就用 AI 构建了一个简历生成器" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -572,10 +596,10 @@
 </article>
 
   
-    <article id="post-es/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-th/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/es/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/04/th/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -586,7 +610,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/es/restapi-get-post-manager/">REST API GET POST Manager<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/th/i-built-resume-builder/">ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
     </h2>
   
 
@@ -595,20 +619,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Este proyecto proporciona una solución simple para gestionar solicitudes GET y POST a APIs REST.</p>
-<h2 id="Descripcion-del-Proyecto"><a href="#Descripcion-del-Proyecto" class="headerlink" title="Descripción del Proyecto"></a>Descripción del Proyecto</h2><p>El REST API GET POST Manager es una herramienta utilitaria diseñada para simplificar el proceso de envío de solicitudes GET y POST a APIs REST. Proporciona una interfaz fácil de usar para desarrolladores que necesitan interactuar con servicios RESTful.</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> เป็นเครื่องมือสร้างเรซูเม่บนเว็บระดับพรีเมียมที่ออกแบบมาสำหรับมืออาชีพด้านไอทีโดยเฉพาะ ช่วยให้คุณสร้าง ปรับแต่ง และส่งออกเรซูเม่ที่สะอาดตาและมีความละเอียดสูงได้โดยตรงในเบราว์เซอร์ของคุณ</p>
+<p>ช่วงนั้นฉันกำลังหางานทำและพวกเขาขอให้ส่งประวัติย่อ (CV) ฉันจึงคิดที่จะทำเรซูเม่แบบใหม่ที่ทันสมัยขึ้นมา และตัดสินใจเขียนโค้ดสำหรับโปรเจกต์นี้เอง</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/es/restapi-get-post-manager/#more" aria-label="Read More: REST API GET POST Manager">Read More</a>
+            <a href="/2026/07/04/th/i-built-resume-builder/#more" aria-label="Read More: ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/es/restapi-get-post-manager/" data-id="cuidDpsUFl15Cyouwf4Vcj80_" data-title="REST API GET POST Manager" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/th/i-built-resume-builder/" data-id="cuidnBYMwm4TTlmv0vNfqXNQ8" data-title="ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -620,7 +644,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -637,7 +661,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ai/" style="font-size: 14px;">ai</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 10px;">browser extension</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/location/" style="font-size: 10px;">location</a> <a href="/tags/manager/" style="font-size: 10px;">manager</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/open-source/" style="font-size: 14px;">open-source</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/productivity/" style="font-size: 10px;">productivity</a> <a href="/tags/project/" style="font-size: 14px;">project</a> <a href="/tags/pwa/" style="font-size: 10px;">pwa</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/reading/" style="font-size: 16px;">reading</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/routes/" style="font-size: 10px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 12px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/web-app/" style="font-size: 18px;">web app</a> <a href="/tags/web-app/" style="font-size: 14px;">web-app</a>
+      <a href="/tags/ai/" style="font-size: 16px;">ai</a> <a href="/tags/api/" style="font-size: 12px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 12px;">browser extension</a> <a href="/tags/education/" style="font-size: 12px;">education</a> <a href="/tags/game/" style="font-size: 12px;">game</a> <a href="/tags/games/" style="font-size: 12px;">games</a> <a href="/tags/get/" style="font-size: 12px;">get</a> <a href="/tags/language/" style="font-size: 12px;">language</a> <a href="/tags/learning/" style="font-size: 12px;">learning</a> <a href="/tags/location/" style="font-size: 12px;">location</a> <a href="/tags/manager/" style="font-size: 12px;">manager</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/open-source/" style="font-size: 16px;">open-source</a> <a href="/tags/pdf/" style="font-size: 12px;">pdf</a> <a href="/tags/post/" style="font-size: 12px;">post</a> <a href="/tags/productivity/" style="font-size: 12px;">productivity</a> <a href="/tags/project/" style="font-size: 16px;">project</a> <a href="/tags/pwa/" style="font-size: 12px;">pwa</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/reading/" style="font-size: 18px;">reading</a> <a href="/tags/rest/" style="font-size: 12px;">rest</a> <a href="/tags/resume/" style="font-size: 12px;">resume</a> <a href="/tags/routes/" style="font-size: 12px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 14px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 12px;">tools</a> <a href="/tags/viewport/" style="font-size: 12px;">viewport</a> <a href="/tags/web-app/" style="font-size: 20px;">web app</a> <a href="/tags/web-app/" style="font-size: 16px;">web-app</a>
     </div>
   </div>
 
@@ -659,23 +683,23 @@
       <ul>
         
           <li>
-            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/">मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</a>
+            <a href="/2026/07/18/ru/how-i-built-pdf-ink-for-online-learning/">Как я создал PDF Ink для комфортного онлайн-обучения по книгам в формате PDF</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/">मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</a>
+            <a href="/2026/07/18/ru/how-i-create-web-pages-with-qwen-coder-ai/">Как я создаю веб-страницы с помощью Qwen Coder AI</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的</a>
+            <a href="/2026/07/18/pt/how-i-create-web-pages-with-qwen-coder-ai/">Como eu crio páginas web com Qwen Coder AI</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/">我是如何使用通义千问 Qwen Coder AI 创建网页的</a>
+            <a href="/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/">Como eu construí o PDF Ink para um aprendizado online confortável usando livros em PDF</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</a>
+            <a href="/2026/07/18/fr/how-i-built-pdf-ink-for-online-learning/">Comment j&#39;ai construit PDF Ink pour étudier confortablement en ligne depuis des livres PDF</a>
           </li>
         
       </ul>
@@ -707,7 +731,7 @@
   
 </nav>
     <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
-      <span class="fa fa-chevron-up"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
     
   

@@ -124,7 +124,9 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -158,14 +160,20 @@
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
         
-        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search"><span class="fa fa-search"></span></button>
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
-          <button type="submit" class="search-form-submit" aria-label="Search">&#xF002;</button>
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
           <input type="hidden" name="sitesearch" value="https://safiullin.dev">
         </form>
       </div>
@@ -175,6 +183,358 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-zh-CN/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么读-PDF-却不能在上面写写画画？"><a href="#为什么读-PDF-却不能在上面写写画画？" class="headerlink" title="为什么读 PDF 却不能在上面写写画画？"></a>为什么读 PDF 却不能在上面写写画画？</h2><p>大家好！我是 Albert，我热衷于让工具变得更加方便实用。</p>
+<p>如果你曾尝试过自学、研究编程教科书，或者在笔记本电脑&#x2F;平板电脑上阅读复杂的 PDF 技术文档，你一定经历过这种痛苦。当你打开一本书，想要高亮显示一段核心代码，在解释旁画个简单的示意图箭头，或者在页边空白处写下笔记——却发现标准的 PDF 阅读器要么臃肿、收费，要么在你一不小心刷新标签页时，就把你的手写涂鸦丢得精光。</p>
+<p>我想要解决这个问题，于是开发了 <strong>PDF Ink</strong>——一个轻量、快速的 Web 应用程序，可直接在浏览器中阅读 PDF 书籍并进行交互式批注。</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: 我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" data-id="cuidZaXbl-q6g3W5Zl8sU131H" data-title="我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-zh-CN/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/">我是如何使用通义千问 Qwen Coder AI 创建网页的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="我是如何使用通义千问-Qwen-Coder-AI-创建网页的"><a href="#我是如何使用通义千问-Qwen-Coder-AI-创建网页的" class="headerlink" title="我是如何使用通义千问 Qwen Coder AI 创建网页的"></a>我是如何使用通义千问 Qwen Coder AI 创建网页的</h1><p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: 我是如何使用通义千问 Qwen Coder AI 创建网页的">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuid_EJRw9uuiJ602U64TzJCV" data-title="我是如何使用通义千问 Qwen Coder AI 创建网页的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-th/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="ฉันสร้างหน้าเว็บด้วย-Qwen-Coder-AI-ได้อย่างไร"><a href="#ฉันสร้างหน้าเว็บด้วย-Qwen-Coder-AI-ได้อย่างไร" class="headerlink" title="ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร"></a>ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</h1><p>ในบทความนี้ ฉันจะแบ่งปันประสบการณ์และขั้นตอนการทำงานของฉันในการสร้างหน้าเว็บโดยใช้ Qwen Coder AI</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidVsLHbdisfBG_dkneii_3c" data-title="ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-th/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/">ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="ทำไมต้องอ่าน-PDF-หากคุณไม่สามารถเขียนอะไรลงไปได้เลย"><a href="#ทำไมต้องอ่าน-PDF-หากคุณไม่สามารถเขียนอะไรลงไปได้เลย" class="headerlink" title="ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?"></a>ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?</h2><p>สวัสดีทุกคน! ฉันชื่อ Albert และฉันรักในการทำให้เครื่องมือต่างๆ ทำงานได้สะดวกขึ้น</p>
+<p>หากคุณเคยลองเรียนรู้ด้วยตนเอง ศึกษาตำราเรียนเขียนโปรแกรม หรืออ่านเอกสารทางเทคนิคที่ซับซ้อนจากไฟล์ PDF บนแล็ปท็อปหรือแท็บเล็ตของคุณ คุณจะรู้ถึงความยุ่งยากนี้ดี คุณเปิดหนังสือขึ้นมา ต้องการไฮไลท์โค้ดสำคัญ วาดลูกศรแผนภาพด่วนถัดจากคำอธิบาย หรือจดโน้ตไว้ที่ระยะขอบ — และพบว่าโปรแกรมดู PDF มาตรฐานนั้นเทอะทะ เป็นโปรแกรมเสียเงิน หรือทำภาพวาดของคุณหายไปทั้งหมดหากเผลอกดรีเฟรชหน้าเว็บ</p>
+<p>ฉันต้องการแก้ไขปัญหานี้และสร้าง <strong>PDF Ink</strong> — เว็บแอปพลิเคชันที่มีน้ำหนักเบาและรวดเร็วสำหรับการอ่านและเขียนบันทึกโต้ตอบบนหนังสือ PDF ได้โดยตรงในเบราว์เซอร์</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" data-id="cuidpDidmLHEZol6X4ZtcTO-_" data-title="ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-es/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-17T10:39:51.860Z" itemprop="datePublished">2026-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/">Cómo Crear Páginas Web con Qwen Coder AI<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>En este artículo, compartiré mi experiencia y flujo de trabajo para crear páginas web usando Qwen Coder AI.</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: Cómo Crear Páginas Web con Qwen Coder AI">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidDEwNilpc5UwMmT7duanT6" data-title="Cómo Crear Páginas Web con Qwen Coder AI" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-es/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-17T10:38:59.963Z" itemprop="datePublished">2026-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/">Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos"><a href="#¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos" class="headerlink" title="¿Por qué leer PDFs si no puedes escribir en ellos?"></a>¿Por qué leer PDFs si no puedes escribir en ellos?</h2><p>¡Hola a todos! Soy Albert y me encanta hacer las herramientas más convenientes.</p>
+<p>Si alguna vez has intentado el auto-aprendizaje, estudiar libros de texto de programación o leer documentos técnicos complejos en PDF en tu laptop o tablet, conoces esta lucha. Abres un libro, quieres resaltar un fragmento de código clave, dibujar una flecha rápida en un diagrama junto a una explicación, o dejar una nota en los márgenes—y te das cuenta de que los visores de PDF estándar son o demasiado pesados, comerciales, o pierden completamente tus dibujos si accidentalmente refrescas la pestaña.</p>
+<p>Quería solucionar esto y crear <strong>PDF Ink</strong>—una aplicación web ligera y rápida para leer y anotar interactivamente libros PDF directamente en el navegador.</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/" data-id="cuidWFgOrTiaQJnU8AKhYOGTp" data-title="Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Resumes-as-Code-The-Elegance-of-RenderCV"><a href="#Resumes-as-Code-The-Elegance-of-RenderCV" class="headerlink" title="Resumes as Code: The Elegance of RenderCV"></a>Resumes as Code: The Elegance of RenderCV</h2><p>If you are an engineer or an academic, writing resumes in MS Word is a formatting nightmare, and custom LaTeX templates are often too verbose to maintain. </p>
+<p>Recently, I stumbled upon a brilliant Python project called <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. It allows you to write your resume content in a clean, structured YAML file and generates a beautifully formatted PDF with perfect typography using <strong>Typst</strong> under the hood. It treats your resume like code, which means you can version-control it, focus strictly on the content, and let the tool handle page margins, alignment, and styling.</p>
+<p>However, RenderCV was designed primarily as a command-line interface (CLI) tool. Every time you make a change, you have to run <code>rendercv render John_Doe_CV.yaml</code>, check the output, open the PDF viewer, and check the alignment. If you make a validation or schema error, you have to read CLI compiler tracebacks. </p>
+<p>I wanted to bridge this gap by adding a <strong>Live Web Editor</strong>—a local single-page web app with a side-by-side Monaco editor, live PDF preview, instant schema validation, and interactive theme&#x2F;section toggles. </p>
+<p>With the help of <strong>Gemini</strong>, I successfully built and integrated this web interface directly into RenderCV! Here is how we did it.</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: How I Built a Live Web Editor for RenderCV Using Gemini">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuid2E_2wlW5sfxzJV_qISN-W" data-title="How I Built a Live Web Editor for RenderCV Using Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-hi/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/">मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="कोड-के-रूप-में-रिज्यूमे-RenderCV-की-भव्यता"><a href="#कोड-के-रूप-में-रिज्यूमे-RenderCV-की-भव्यता" class="headerlink" title="कोड के रूप में रिज्यूमे: RenderCV की भव्यता"></a>कोड के रूप में रिज्यूमे: RenderCV की भव्यता</h2><p>यदि आप एक इंजीनियर या शिक्षाविद हैं, तो एमएस वर्ड में रिज्यूमे लिखना एक दुःस्वप्न है, और कस्टम LaTeX टेम्पलेट अक्सर बनाए रखने के लिए बहुत जटिल होते हैं।</p>
+<p>हाल ही में, मुझे <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong> नामक एक शानदार पायथन प्रोजेक्ट मिला। यह आपको एक साफ, संरचित YAML फ़ाइल में अपने रिज्यूमे की सामग्री लिखने की अनुमति देता है और बैकएंड में <strong>Typst</strong> का उपयोग करके सही टाइपोग्राफी के साथ एक खूबसूरती से स्वरूपित PDF उत्पन्न करता है। यह आपके रिज्यूमे को कोड की तरह मानता है, जिसका अर्थ है कि आप इसे संस्करण-नियंत्रित (version-control) कर सकते हैं, पूरी तरह से सामग्री पर ध्यान केंद्रित कर सकते हैं, और टूल को पेज मार्जिन, संरेखण (alignment) और स्टाइलिंग को संभालने दे सकते हैं।</p>
+<p>हालाँकि, RenderCV को मुख्य रूप से कमांड-लाइन इंटरफ़ेस (CLI) टूल के रूप में डिज़ाइन किया गया था। हर बार जब आप कोई बदलाव करते हैं, तो आपको <code>rendercv render John_Doe_CV.yaml</code> चलाना होता है, आउटपुट की जांच करनी होती है, PDF व्यूअर खोलना होता है, और संरेखण की जांच करनी होती है। यदि आप कोई सत्यापन (validation) या स्कीमा त्रुटि करते हैं, तो आपको CLI कंपाइलर ट्रेसबैक को पढ़ना होगा।</p>
+<p>मैं एक <strong>लाइव वेब एडिटर (Live Web Editor)</strong> जोड़कर इस अंतर को पाटना चाहता था—एक स्थानीय सिंगल-पेज वेब ऐप जिसमें साइड-बाय-साइड मोनाको एडिटर (Monaco editor), लाइव PDF पूर्वावलोकन, तत्काल स्कीमा सत्यापन और इंटरैक्टिव थीम&#x2F;अनुभाग टॉगल की सुविधा हो।</p>
+<p><strong>Gemini</strong> की मदद से, मैंने इस वेब इंटरफ़ेस को सफलतापूर्वक बनाया और सीधे RenderCV में एकीकृत किया! यहाँ बताया गया है कि हमने इसे कैसे किया।</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidaCkBGW4tHYDZNOwdkbhAV" data-title="मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
   
     <article id="post-zh-CN/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -212,7 +572,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidALZEObTJuSn_LU3i95hsi" data-title="我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidALZEObTJuSn_LU3i95hsi" data-title="我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
@@ -259,364 +619,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidAuF26U_TsYoN1mUfyvGja" data-title="ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidAuF26U_TsYoN1mUfyvGja" data-title="ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-es/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/">Cómo Construí un Editor Web en Vivo para RenderCV con Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Curriculums-como-Codigo-La-Elegancia-de-RenderCV"><a href="#Curriculums-como-Codigo-La-Elegancia-de-RenderCV" class="headerlink" title="Currículums como Código: La Elegancia de RenderCV"></a>Currículums como Código: La Elegancia de RenderCV</h2><p>Si eres ingeniero o académico, escribir currículums en MS Word es una pesadilla de formato, y las plantillas LaTeX personalizadas suelen ser demasiado verbosas para mantener.</p>
-<p>Recientemente descubrí un brillante proyecto de Python llamado <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Te permite escribir el contenido de tu currículum en un archivo YAML limpio y estructurado, y genera un PDF perfectamente formateado con tipografía impecable usando <strong>Typst</strong> bajo el capó. Trata tu currículum como código, lo que significa que puedes versionarlo, concentrarte estrictamente en el contenido y dejar que la herramienta se encargue de los márgenes, la alineación y el estilo.</p>
-<p>Sin embargo, RenderCV fue diseñado principalmente como una herramienta de interfaz de línea de comandos (CLI). Cada vez que haces un cambio, tienes que ejecutar <code>rendercv render John_Doe_CV.yaml</code>, verificar el resultado, abrir el visor de PDF y comprobar la alineación. Si cometes un error de validación o de esquema, tienes que leer los rastreos del compilador CLI.</p>
-<p>Quería cerrar esta brecha añadiendo un <strong>Editor Web en Vivo</strong>—una aplicación web local de una sola página con un editor Monaco lado a lado, vista previa de PDF en tiempo real, validación de esquema instantánea y controles interactivos de temas&#x2F;secciones.</p>
-<p>¡Con la ayuda de <strong>Gemini</strong>, construí e integré exitosamente esta interfaz web directamente en RenderCV! Así es como lo hicimos.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Cómo Construí un Editor Web en Vivo para RenderCV con Gemini">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidMkACdjODdISKfWBC_ogs8" data-title="Cómo Construí un Editor Web en Vivo para RenderCV con Gemini" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/" class="article-date">
-  <time class="dt-published" datetime="2026-07-14T13:46:31.176Z" itemprop="datePublished">2026-07-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Why-read-PDFs-if-you-can’t-write-on-them"><a href="#Why-read-PDFs-if-you-can’t-write-on-them" class="headerlink" title="Why read PDFs if you can’t write on them?"></a>Why read PDFs if you can’t write on them?</h2><p>Hello everyone! I’m Albert, and I love making tools more convenient.</p>
-<p>If you have ever tried self-learning, studying programming textbooks, or reading complex technical documents from PDFs on your laptop or tablet, you know this struggle. You open a book, want to highlight a key code snippet, draw a quick diagram arrow next to an explanation, or leave a note on the margins — and realize that standard PDF viewers are either bloated, commercial, or they completely lose your drawings if you accidentally refresh the tab.</p>
-<p>I wanted to fix this and create <strong>PDF Ink</strong> — a lightweight, fast web application for reading and interactively annotating PDF books directly in the browser.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: How I Built PDF Ink for Comfortable Online Learning from PDF Books">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/" data-id="cuidhmD7X2bFrSwXck4Gnz_eo" data-title="How I Built PDF Ink for Comfortable Online Learning from PDF Books" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/i-built-resume-builder/">I built a resume-builder with AI in 1 prompt</a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> is a premium web-based resume builder tailored specifically for IT professionals. It allows you to build, customize, and export clean, high-resolution resumes directly in your browser.</p>
-<p>I was looking for a job and they asked to send a CV, so I was thinking about building a fresh, modern resume and decided to code this.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/i-built-resume-builder/#more" aria-label="Read More: I built a resume-builder with AI in 1 prompt">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/i-built-resume-builder/" data-id="cuidzM47gClq1HN92Z15dTGRt" data-title="I built a resume-builder with AI in 1 prompt" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-hi/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/hi/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/hi/i-built-resume-builder/">मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> विशेष रूप से आईटी पेशेवरों के लिए तैयार किया गया एक प्रीमियम वेब-आधारित रिज्यूमे बिल्डर है। यह आपको सीधे अपने ब्राउज़र में साफ, उच्च-रिज़ॉल्यूशन वाले रिज्यूमे बनाने, कस्टमाइज़ करने और निर्यात (export) करने की अनुमति देता है।</p>
-<p>मैं नौकरी की तलाश में था और उन्होंने एक सीवी (CV) भेजने के लिए कहा, इसलिए मैं एक नया, आधुनिक रिज्यूमे बनाने के बारे में सोच रहा था और इसे खुद बनाने का फैसला किया।</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/hi/i-built-resume-builder/#more" aria-label="Read More: मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/hi/i-built-resume-builder/" data-id="cuidadeOaeovifc8aZGeTYTYq" data-title="मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-zh-CN/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/zh-CN/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/zh-CN/i-built-resume-builder/">我仅通过一条提示词就用 AI 构建了一个简历生成器<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> 是一款专为 IT 专业人员量身定制的 premium 在线简历构建工具。它允许你在浏览器中直接生成、定制并导出高分辨率的精美简历。</p>
-<p>当时我正在找工作，他们要求发送一份简历，所以我考虑构建一个新颖、现代的简历，并决定自己开发这个工具。</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/zh-CN/i-built-resume-builder/#more" aria-label="Read More: 我仅通过一条提示词就用 AI 构建了一个简历生成器">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/zh-CN/i-built-resume-builder/" data-id="cuidG7y9GzuXwKeX0ivmt4E0T" data-title="我仅通过一条提示词就用 AI 构建了一个简历生成器" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-th/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/th/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/th/i-built-resume-builder/">ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> เป็นเครื่องมือสร้างเรซูเม่บนเว็บระดับพรีเมียมที่ออกแบบมาสำหรับมืออาชีพด้านไอทีโดยเฉพาะ ช่วยให้คุณสร้าง ปรับแต่ง และส่งออกเรซูเม่ที่สะอาดตาและมีความละเอียดสูงได้โดยตรงในเบราว์เซอร์ของคุณ</p>
-<p>ช่วงนั้นฉันกำลังหางานทำและพวกเขาขอให้ส่งประวัติย่อ (CV) ฉันจึงคิดที่จะทำเรซูเม่แบบใหม่ที่ทันสมัยขึ้นมา และตัดสินใจเขียนโค้ดสำหรับโปรเจกต์นี้เอง</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/th/i-built-resume-builder/#more" aria-label="Read More: ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/th/i-built-resume-builder/" data-id="cuidnBYMwm4TTlmv0vNfqXNQ8" data-title="ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-es/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/es/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/es/i-built-resume-builder/">Construí un creador de currículums con IA en 1 prompt<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> es un creador de currículums web premium diseñado específicamente para profesionales de TI. Te permite crear, personalizar y exportar currículums limpios y de alta resolución directamente en tu navegador.</p>
-<p>Estaba buscando trabajo y me pidieron que enviara un CV, así que pensé en construir un currículum fresco y moderno y decidí programarlo.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/es/i-built-resume-builder/#more" aria-label="Read More: Construí un creador de currículums con IA en 1 prompt">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/es/i-built-resume-builder/" data-id="cuidW2NWDILC8K4HCmS1bhd5Z" data-title="Construí un creador de currículums con IA en 1 prompt" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T03:40:15.003Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/">How I Create Web Pages with Qwen Coder AI</a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="How-I-Create-Web-Pages-with-Qwen-Coder-AI"><a href="#How-I-Create-Web-Pages-with-Qwen-Coder-AI" class="headerlink" title="How I Create Web Pages with Qwen Coder AI"></a>How I Create Web Pages with Qwen Coder AI</h1><p>In this article, I’ll share my experience and workflow for creating web pages using Qwen Coder AI.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: How I Create Web Pages with Qwen Coder AI">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidhejDudlmC2vL8m--59qoV" data-title="How I Create Web Pages with Qwen Coder AI" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
     </footer>
   </div>
   
@@ -627,7 +634,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -644,7 +651,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ai/" style="font-size: 14px;">ai</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 10px;">browser extension</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/location/" style="font-size: 10px;">location</a> <a href="/tags/manager/" style="font-size: 10px;">manager</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/open-source/" style="font-size: 14px;">open-source</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/productivity/" style="font-size: 10px;">productivity</a> <a href="/tags/project/" style="font-size: 14px;">project</a> <a href="/tags/pwa/" style="font-size: 10px;">pwa</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/reading/" style="font-size: 16px;">reading</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/routes/" style="font-size: 10px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 12px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/web-app/" style="font-size: 18px;">web app</a> <a href="/tags/web-app/" style="font-size: 14px;">web-app</a>
+      <a href="/tags/ai/" style="font-size: 16px;">ai</a> <a href="/tags/api/" style="font-size: 12px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 12px;">browser extension</a> <a href="/tags/education/" style="font-size: 12px;">education</a> <a href="/tags/game/" style="font-size: 12px;">game</a> <a href="/tags/games/" style="font-size: 12px;">games</a> <a href="/tags/get/" style="font-size: 12px;">get</a> <a href="/tags/language/" style="font-size: 12px;">language</a> <a href="/tags/learning/" style="font-size: 12px;">learning</a> <a href="/tags/location/" style="font-size: 12px;">location</a> <a href="/tags/manager/" style="font-size: 12px;">manager</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/open-source/" style="font-size: 16px;">open-source</a> <a href="/tags/pdf/" style="font-size: 12px;">pdf</a> <a href="/tags/post/" style="font-size: 12px;">post</a> <a href="/tags/productivity/" style="font-size: 12px;">productivity</a> <a href="/tags/project/" style="font-size: 16px;">project</a> <a href="/tags/pwa/" style="font-size: 12px;">pwa</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/reading/" style="font-size: 18px;">reading</a> <a href="/tags/rest/" style="font-size: 12px;">rest</a> <a href="/tags/resume/" style="font-size: 12px;">resume</a> <a href="/tags/routes/" style="font-size: 12px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 14px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 12px;">tools</a> <a href="/tags/viewport/" style="font-size: 12px;">viewport</a> <a href="/tags/web-app/" style="font-size: 20px;">web app</a> <a href="/tags/web-app/" style="font-size: 16px;">web-app</a>
     </div>
   </div>
 
@@ -666,23 +673,23 @@
       <ul>
         
           <li>
-            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/">मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</a>
+            <a href="/2026/07/18/ru/how-i-built-pdf-ink-for-online-learning/">Как я создал PDF Ink для комфортного онлайн-обучения по книгам в формате PDF</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/">मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</a>
+            <a href="/2026/07/18/ru/how-i-create-web-pages-with-qwen-coder-ai/">Как я создаю веб-страницы с помощью Qwen Coder AI</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的</a>
+            <a href="/2026/07/18/pt/how-i-create-web-pages-with-qwen-coder-ai/">Como eu crio páginas web com Qwen Coder AI</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/">我是如何使用通义千问 Qwen Coder AI 创建网页的</a>
+            <a href="/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/">Como eu construí o PDF Ink para um aprendizado online confortável usando livros em PDF</a>
           </li>
         
           <li>
-            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</a>
+            <a href="/2026/07/18/fr/how-i-built-pdf-ink-for-online-learning/">Comment j&#39;ai construit PDF Ink pour étudier confortablement en ligne depuis des livres PDF</a>
           </li>
         
       </ul>
@@ -714,7 +721,7 @@
   
 </nav>
     <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
-      <span class="fa fa-chevron-up"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
     
   
