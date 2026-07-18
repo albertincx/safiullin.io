@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705183">
+<link rel="stylesheet" href="/css/style.css?v=1784343268821">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -98,7 +98,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -111,27 +111,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn">EN</a>
+            <a href="/" class="lang-btn" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn active">RU</a>
+            <a href="/ru/" class="lang-btn active" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn">HI</a>
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn">TH</a>
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS-каналы"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS-каналы" aria-label="RSS-каналы"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Поиск"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="Поиск" aria-label="Поиск"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Поиск"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Поиск" aria-label="Поиск">
+          <button type="submit" class="search-form-submit" aria-label="Поиск">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -168,7 +172,7 @@
 <p>установили <strong>40 тыс раз</strong> <br>уже обработал более <strong>3 млн страниц</strong> <br>без рекламы, мам, пап, смс и регистрации</p>
         
           <p class="article-more-link">
-            <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/#more">Read More</a>
+            <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/#more" aria-label="Read More: Как я создавал бота для телеграм InstantViewBot">Read More</a>
           </p>
         
       
@@ -287,9 +291,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268821"></script>
 
 
 

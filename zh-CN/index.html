@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705184">
+<link rel="stylesheet" href="/css/style.css?v=1784343268821">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -98,7 +98,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -111,27 +111,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn">EN</a>
+            <a href="/" class="lang-btn" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn">RU</a>
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn">HI</a>
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn">TH</a>
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="搜索" aria-label="搜索"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="搜索" aria-label="搜索">
+          <button type="submit" class="search-form-submit" aria-label="搜索">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -166,7 +170,7 @@
         <h5 id="我是如何制作一款拼图游戏的"><a href="#我是如何制作一款拼图游戏的" class="headerlink" title="我是如何制作一款拼图游戏的"></a>我是如何制作一款拼图游戏的</h5><p>现在，如你所知，你不必从头开始做任何事情，因为已经有很多现成的代码。感谢开发者和开源社区。</p>
         
           <p class="article-more-link">
-            <a href="/2021/12/27/zh-CN/How-I-made-a-puzzle-game/#more">Read More</a>
+            <a href="/2021/12/27/zh-CN/How-I-made-a-puzzle-game/#more" aria-label="Read More: 我是如何制作一款拼图游戏的">Read More</a>
           </p>
         
       
@@ -209,7 +213,7 @@
         <h5 id="像埃隆·马斯克一样，我也讨厌交通拥堵。"><a href="#像埃隆·马斯克一样，我也讨厌交通拥堵。" class="headerlink" title="像埃隆·马斯克一样，我也讨厌交通拥堵。"></a>像埃隆·马斯克一样，我也讨厌交通拥堵。</h5><p>我们正在寻找消除它们的方法。<br>2018年。圣彼得堡。穆里诺。一个寒冷的早晨。我正站在公交车站。车辆缓慢地朝分叉路口驶去。</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/zh-CN/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/zh-CN/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: 如何减少交通拥堵">Read More</a>
           </p>
         
       
@@ -255,7 +259,7 @@
 <p>那么该如何解决这个问题呢？我为你的移动端浏览器开发了一个插件。</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/zh-CN/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/zh-CN/How-to-make-any-site-mobile/#more" aria-label="Read More: 如何让任何网站支持移动端？">Read More</a>
           </p>
         
       
@@ -300,7 +304,7 @@
 <p>我想要解决这个问题，于是开发了 <strong>PDF Ink</strong>——一个轻量、快速的 Web 应用程序，可直接在浏览器中阅读 PDF 书籍并进行交互式批注。</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/#more">Read More</a>
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: 我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的">Read More</a>
           </p>
         
       
@@ -347,7 +351,7 @@
 <p>在 <strong>Gemini</strong> 的帮助下，我成功构建了这个 Web 界面并将其直接集成到了 RenderCV 中！以下是我们的实现过程。</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/#more">Read More</a>
+            <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: 我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的">Read More</a>
           </p>
         
       
@@ -390,7 +394,7 @@
         <h1 id="我是如何使用通义千问-Qwen-Coder-AI-创建网页的"><a href="#我是如何使用通义千问-Qwen-Coder-AI-创建网页的" class="headerlink" title="我是如何使用通义千问 Qwen Coder AI 创建网页的"></a>我是如何使用通义千问 Qwen Coder AI 创建网页的</h1><p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/#more">Read More</a>
+            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: 我是如何使用通义千问 Qwen Coder AI 创建网页的">Read More</a>
           </p>
         
       
@@ -432,7 +436,7 @@
 <p>但到了某个时候，那个游戏被限制了…… 💔 但我真的太想玩了！于是我产生了一个想法：<em>如果我自己做一个类似的游戏会怎样？这样就能在路上打发时间，还能锻炼大脑</em>。</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/zh-CN/how-to-build-a-good-blocks-game-with-ai/#more">Read More</a>
+            <a href="/2026/03/21/zh-CN/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: 利用 AI 制作方块消消乐游戏？当然可以！">Read More</a>
           </p>
         
       
@@ -476,7 +480,7 @@
 <p>假设你有一个网站，有人来访问。但如何让他们能快速联系到你并获得即时答复呢？</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/zh-CN/instant-chat-bot/#more">Read More</a>
+            <a href="/2021/06/20/zh-CN/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
           </p>
         
       
@@ -520,7 +524,7 @@
 <p>当时我正在找工作，他们要求发送一份简历，所以我考虑构建一个新颖、现代的简历，并决定自己开发这个工具。</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/04/zh-CN/i-built-resume-builder/#more">Read More</a>
+            <a href="/2026/07/04/zh-CN/i-built-resume-builder/#more" aria-label="Read More: 我仅通过一条提示词就用 AI 构建了一个简历生成器">Read More</a>
           </p>
         
       
@@ -686,9 +690,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268821"></script>
 
 
 

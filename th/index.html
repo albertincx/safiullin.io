@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705185">
+<link rel="stylesheet" href="/css/style.css?v=1784343268823">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -98,7 +98,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -111,27 +111,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn">EN</a>
+            <a href="/" class="lang-btn" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn">RU</a>
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn">HI</a>
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn active">TH</a>
+            <a href="/th/" class="lang-btn active" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="ค้นหา"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="ค้นหา" aria-label="ค้นหา"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="ค้นหา"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="ค้นหา" aria-label="ค้นหา">
+          <button type="submit" class="search-form-submit" aria-label="ค้นหา">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -166,7 +170,7 @@
         <h5 id="ฉันสร้างเกมปริศนาได้อย่างไร"><a href="#ฉันสร้างเกมปริศนาได้อย่างไร" class="headerlink" title="ฉันสร้างเกมปริศนาได้อย่างไร"></a>ฉันสร้างเกมปริศนาได้อย่างไร</h5><p>อย่างที่คุณทราบ คุณไม่จำเป็นต้องทำอะไรตั้งแต่เริ่มต้น เพราะมีโค้ดสำเร็จรูปมากมายอยู่แล้ว ขอบคุณเหล่านักพัฒนาและโอเพนซอร์ส</p>
         
           <p class="article-more-link">
-            <a href="/2021/12/27/th/How-I-made-a-puzzle-game/#more">Read More</a>
+            <a href="/2021/12/27/th/How-I-made-a-puzzle-game/#more" aria-label="Read More: ฉันสร้างเกมปริศนาได้อย่างไร">Read More</a>
           </p>
         
       
@@ -209,7 +213,7 @@
         <h5 id="เหมือนกับอีลอน-มัสก์-ฉันเกลียดปัญหารถติด"><a href="#เหมือนกับอีลอน-มัสก์-ฉันเกลียดปัญหารถติด" class="headerlink" title="เหมือนกับอีลอน มัสก์ ฉันเกลียดปัญหารถติด"></a>เหมือนกับอีลอน มัสก์ ฉันเกลียดปัญหารถติด</h5><p>เรากำลังมองหาวิธีขจัดพวกมันไป<br>ปี 2018 เมืองเซนต์ปีเตอร์สเบิร์ก ย่านมูริโน เช้าอันหนาวเหน็บ ฉันกำลังยืนอยู่ที่ป้ายรถเมล์ รถยนต์ขับอย่างช้าๆ ไปยังทางแยก</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/th/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/th/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: วิธีลดความแออัดของจราจร">Read More</a>
           </p>
         
       
@@ -255,7 +259,7 @@
 <p>แล้วเราจะแก้ไขสถานการณ์นี้อย่างไรดี? ฉันได้พัฒนาส่วนขยายสำหรับเบราว์เซอร์มือถือของคุณขึ้นมา</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/th/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/th/How-to-make-any-site-mobile/#more" aria-label="Read More: วิธีทำให้เว็บไซต์ใดๆ รองรับมือถือ?">Read More</a>
           </p>
         
       
@@ -302,7 +306,7 @@
 <p>ด้วยความช่วยเหลือของ <strong>Gemini</strong> ฉันสร้างและรวมเว็บอินเตอร์เฟสนี้เข้ากับ RenderCV ได้โดยตรงสำเร็จแล้ว! และนี่คือวิธีที่เราทำกัน</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/#more">Read More</a>
+            <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร">Read More</a>
           </p>
         
       
@@ -347,7 +351,7 @@
 <p>ฉันต้องการแก้ไขปัญหานี้และสร้าง <strong>PDF Ink</strong> — เว็บแอปพลิเคชันที่มีน้ำหนักเบาและรวดเร็วสำหรับการอ่านและเขียนบันทึกโต้ตอบบนหนังสือ PDF ได้โดยตรงในเบราว์เซอร์</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/#more">Read More</a>
+            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร">Read More</a>
           </p>
         
       
@@ -390,7 +394,7 @@
         <h1 id="ฉันสร้างหน้าเว็บด้วย-Qwen-Coder-AI-ได้อย่างไร"><a href="#ฉันสร้างหน้าเว็บด้วย-Qwen-Coder-AI-ได้อย่างไร" class="headerlink" title="ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร"></a>ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</h1><p>ในบทความนี้ ฉันจะแบ่งปันประสบการณ์และขั้นตอนการทำงานของฉันในการสร้างหน้าเว็บโดยใช้ Qwen Coder AI</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/#more">Read More</a>
+            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร">Read More</a>
           </p>
         
       
@@ -432,7 +436,7 @@
 <p>แต่แล้วในจุดหนึ่ง เกมดังกล่าวก็เข้าไม่ได้… 💔 แต่ฉันอยากเล่นมันจริงๆ! และทันใดนั้นความคิดก็แวบเข้ามาในหัว: <em>จะเกิดอะไรขึ้นถ้าฉันทำอะไรแบบนี้ขึ้นมาใช้เองล่ะ? เพื่อเอาไว้เล่นฆ่าเวลาระหว่างเดินทางและฝึกสมองสักหน่อย</em></p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/#more">Read More</a>
+            <a href="/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: สร้างเกมบล็อกด้วย AI? ใช่เลย">Read More</a>
           </p>
         
       
@@ -476,7 +480,7 @@
 <p>สมมติว่าคุณมีเว็บไซต์ที่มีคนเข้ามาเยี่ยมชม แต่จะทำอย่างไรให้พวกเขาติดต่อคุณได้อย่างรวดเร็วและได้รับคำตอบในทันที?</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/th/instant-chat-bot/#more">Read More</a>
+            <a href="/2021/06/20/th/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
           </p>
         
       
@@ -520,7 +524,7 @@
 <p>ช่วงนั้นฉันกำลังหางานทำและพวกเขาขอให้ส่งประวัติย่อ (CV) ฉันจึงคิดที่จะทำเรซูเม่แบบใหม่ที่ทันสมัยขึ้นมา และตัดสินใจเขียนโค้ดสำหรับโปรเจกต์นี้เอง</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/04/th/i-built-resume-builder/#more">Read More</a>
+            <a href="/2026/07/04/th/i-built-resume-builder/#more" aria-label="Read More: ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์">Read More</a>
           </p>
         
       
@@ -686,9 +690,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268824"></script>
 
 
 

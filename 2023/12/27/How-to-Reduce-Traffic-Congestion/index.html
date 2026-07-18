@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://safiullin.dev/2023/12/27/How-to-Reduce-Traffic-Congestion/route.jpg">
 <meta property="article:published_time" content="2023-12-27T06:45:50.000Z">
-<meta property="article:modified_time" content="2025-01-06T07:44:18.394Z">
+<meta property="article:modified_time" content="2026-07-18T02:47:21.519Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="bot">
 <meta property="article:tag" content="location">
@@ -43,7 +43,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705163">
+<link rel="stylesheet" href="/css/style.css?v=1784343268800">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -76,7 +76,7 @@
   "@type": "BlogPosting",
   "headline": "How to Reduce Traffic Congestion",
   "datePublished": "2023-12-27T06:45:50.000Z",
-  "dateModified": "2025-01-06T07:44:18.394Z",
+  "dateModified": "2026-07-18T02:47:21.519Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -113,7 +113,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -126,27 +126,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn active">EN</a>
+            <a href="/" class="lang-btn active" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn">RU</a>
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn">HI</a>
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn">TH</a>
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -183,7 +187,7 @@
 <p>I thought why not start using empty space and energy effectively. And the idea came to my mind to create a service where people can exchange their routes and unite in groups.</p>
 <p>Thus, instead of 4 cars, 1 car with four people will go to the destination.</p>
 <p>An example is shown in the figure. User 1, 2, 3 Live side by side and work in one place, for example, in the city center. So why buy 3 cars when you can team up and drive one!</p>
-<img src="/2023/12/27/How-to-Reduce-Traffic-Congestion/route.jpg" class="">
+<img src="/2023/12/27/How-to-Reduce-Traffic-Congestion/route.jpg" class="" title="3 people and 1 shared daily route 3 people and 1 shared daily route">
 
 <p>3 people and 1 shared daily route</p>
 <p>I thought about how to create such a service, talked with people, as a result, there was not enough technology to implement this project. I knew that soon they will appear. And now the end of 2021, they appeared and I quickly began to implement the idea.</p>
@@ -331,9 +335,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268800"></script>
 
 
 

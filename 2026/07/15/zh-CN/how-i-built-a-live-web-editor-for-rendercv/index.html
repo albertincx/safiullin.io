@@ -28,7 +28,7 @@
 <meta property="og:description" content="简历即代码：RenderCV 的优雅之处如果你是一名工程师或学术界人士，用 MS Word 撰写简历简直是一场排版噩梦，而自定义的 LaTeX 模板又往往过于冗长，难以维护。 最近，我偶然发现了一个非常棒的 Python 项目——RenderCV。它允许你在一个干净、结构化的 YAML...">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-15T14:05:00.000Z">
-<meta property="article:modified_time" content="2026-07-18T02:27:35.665Z">
+<meta property="article:modified_time" content="2026-07-18T02:49:35.587Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="ai">
 <meta property="article:tag" content="open-source">
@@ -43,7 +43,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705159">
+<link rel="stylesheet" href="/css/style.css?v=1784343268795">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -76,7 +76,7 @@
   "@type": "BlogPosting",
   "headline": "我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的",
   "datePublished": "2026-07-15T14:05:00.000Z",
-  "dateModified": "2026-07-18T02:27:35.665Z",
+  "dateModified": "2026-07-18T02:49:35.587Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -113,7 +113,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -126,27 +126,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn">EN</a>
+            <a href="/" class="lang-btn" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn">RU</a>
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn">HI</a>
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn">TH</a>
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="搜索" aria-label="搜索"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="搜索" aria-label="搜索">
+          <button type="submit" class="search-form-submit" aria-label="搜索">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -365,9 +369,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268795"></script>
 
 
 

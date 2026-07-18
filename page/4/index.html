@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705183">
+<link rel="stylesheet" href="/css/style.css?v=1784343268820">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -98,7 +98,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -111,27 +111,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn active">EN</a>
+            <a href="/" class="lang-btn active" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn">RU</a>
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn">HI</a>
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn">TH</a>
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -168,7 +172,7 @@
 <p>установили <strong>40 тыс раз</strong> <br>уже обработал более <strong>3 млн страниц</strong> <br>без рекламы, мам, пап, смс и регистрации</p>
         
           <p class="article-more-link">
-            <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/#more">Read More</a>
+            <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/#more" aria-label="Read More: Как я создавал бота для телеграм InstantViewBot">Read More</a>
           </p>
         
       
@@ -211,7 +215,7 @@
         <h5 id="Like-Elon-Musk-I-hate-traffic-jams"><a href="#Like-Elon-Musk-I-hate-traffic-jams" class="headerlink" title="Like Elon Musk, I hate traffic jams."></a>Like Elon Musk, I hate traffic jams.</h5><p>We are looking for ways to eliminate them.<br>2018 year. Saint-Petersburg. Murino. Frosty morning. I am standing at the bus stop. Cars drive slowly towards the fork.</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: How to Reduce Traffic Congestion">Read More</a>
           </p>
         
       
@@ -254,7 +258,7 @@
         <h5 id="Como-Elon-Musk-odio-los-atascos-de-trafico"><a href="#Como-Elon-Musk-odio-los-atascos-de-trafico" class="headerlink" title="Como Elon Musk, odio los atascos de tráfico."></a>Como Elon Musk, odio los atascos de tráfico.</h5><p>Estamos buscando formas de eliminarlos.<br>Año 2018. San Petersburgo. Murino. Mañana helada. Estoy parado en la parada del autobús. Los coches avanzan lentamente hacia el cruce.</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/es/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/es/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: Cómo Reducir la Congestión del Tráfico">Read More</a>
           </p>
         
       
@@ -297,7 +301,7 @@
         <h5 id="एलन-मस्क-की-तरह-मुझे-भी-ट्रैफिक-जाम-से-नफरत-है।"><a href="#एलन-मस्क-की-तरह-मुझे-भी-ट्रैफिक-जाम-से-नफरत-है।" class="headerlink" title="एलन मस्क की तरह मुझे भी ट्रैफिक जाम से नफरत है।"></a>एलन मस्क की तरह मुझे भी ट्रैफिक जाम से नफरत है।</h5><p>हम इन्हें खत्म करने के तरीके तलाश रहे हैं।<br>साल 2018. सेंट पीटर्सबर्ग. मुरिनो. एक ठंडी सुबह. मैं बस स्टॉप पर खड़ा हूँ। कारें धीरे-धीरे चौराहे की ओर बढ़ रही हैं।</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/hi/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/hi/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: ट्रैफिक जाम को कैसे कम करें">Read More</a>
           </p>
         
       
@@ -340,7 +344,7 @@
         <h5 id="เหมือนกับอีลอน-มัสก์-ฉันเกลียดปัญหารถติด"><a href="#เหมือนกับอีลอน-มัสก์-ฉันเกลียดปัญหารถติด" class="headerlink" title="เหมือนกับอีลอน มัสก์ ฉันเกลียดปัญหารถติด"></a>เหมือนกับอีลอน มัสก์ ฉันเกลียดปัญหารถติด</h5><p>เรากำลังมองหาวิธีขจัดพวกมันไป<br>ปี 2018 เมืองเซนต์ปีเตอร์สเบิร์ก ย่านมูริโน เช้าอันหนาวเหน็บ ฉันกำลังยืนอยู่ที่ป้ายรถเมล์ รถยนต์ขับอย่างช้าๆ ไปยังทางแยก</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/th/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/th/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: วิธีลดความแออัดของจราจร">Read More</a>
           </p>
         
       
@@ -383,7 +387,7 @@
         <h5 id="像埃隆·马斯克一样，我也讨厌交通拥堵。"><a href="#像埃隆·马斯克一样，我也讨厌交通拥堵。" class="headerlink" title="像埃隆·马斯克一样，我也讨厌交通拥堵。"></a>像埃隆·马斯克一样，我也讨厌交通拥堵。</h5><p>我们正在寻找消除它们的方法。<br>2018年。圣彼得堡。穆里诺。一个寒冷的早晨。我正站在公交车站。车辆缓慢地朝分叉路口驶去。</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/zh-CN/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/zh-CN/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: 如何减少交通拥堵">Read More</a>
           </p>
         
       
@@ -429,7 +433,7 @@
 <p>So how to fix this situation? I came up with an add-on for your mobile browser</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/How-to-make-any-site-mobile/#more" aria-label="Read More: How to make any site mobile?">Read More</a>
           </p>
         
       
@@ -475,7 +479,7 @@
 <p>¿Entonces cómo solucionar esta situación? Se me ocurrió un complemento para tu navegador móvil.</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/es/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/es/How-to-make-any-site-mobile/#more" aria-label="Read More: ¿Cómo hacer que cualquier sitio sea móvil?">Read More</a>
           </p>
         
       
@@ -521,7 +525,7 @@
 <p>तो इस स्थिति को कैसे सुधारा जाए? मैं आपके मोबाइल ब्राउज़र के लिए एक एक्सटेंशन (add-on) लेकर आया हूँ।</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/hi/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/hi/How-to-make-any-site-mobile/#more" aria-label="Read More: किसी भी साइट को मोबाइल फ्रेंडली कैसे बनाएं?">Read More</a>
           </p>
         
       
@@ -567,7 +571,7 @@
 <p>แล้วเราจะแก้ไขสถานการณ์นี้อย่างไรดี? ฉันได้พัฒนาส่วนขยายสำหรับเบราว์เซอร์มือถือของคุณขึ้นมา</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/th/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/th/How-to-make-any-site-mobile/#more" aria-label="Read More: วิธีทำให้เว็บไซต์ใดๆ รองรับมือถือ?">Read More</a>
           </p>
         
       
@@ -691,9 +695,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268820"></script>
 
 
 

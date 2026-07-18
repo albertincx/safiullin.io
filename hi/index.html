@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784341705184">
+<link rel="stylesheet" href="/css/style.css?v=1784343268822">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -98,7 +98,7 @@
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu"><span class="fa fa-bars"></span></button>
         
           <a class="main-nav-link" href="/">Home</a>
         
@@ -111,27 +111,31 @@
         
         <div id="lang-selector">
           
-            <a href="/" class="lang-btn">EN</a>
+            <a href="/" class="lang-btn" aria-label="Change language to EN">EN</a>
           
-            <a href="/ru/" class="lang-btn">RU</a>
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
           
-            <a href="/es/" class="lang-btn">ES</a>
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
           
-            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
           
-            <a href="/hi/" class="lang-btn active">HI</a>
+            <a href="/hi/" class="lang-btn active" aria-label="Change language to HI">HI</a>
           
-            <a href="/th/" class="lang-btn">TH</a>
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
           
         </div>
         
         
-          <a class="nav-icon" href="/atom.xml" title="आरएसएस फ़ीड"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="आरएसएस फ़ीड" aria-label="आरएसएस फ़ीड"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="खोजें"><span class="fa fa-search"></span></a>
+        <button class="nav-icon nav-search-btn" type="button" title="खोजें" aria-label="खोजें"><span class="fa fa-search"></span></button>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="खोजें"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="खोजें" aria-label="खोजें">
+          <button type="submit" class="search-form-submit" aria-label="खोजें">&#xF002;</button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
       </div>
     </div>
   </div>
@@ -166,7 +170,7 @@
         <h5 id="मैंने-एक-पहेली-खेल-कैसे-बनाया"><a href="#मैंने-एक-पहेली-खेल-कैसे-बनाया" class="headerlink" title="मैंने एक पहेली खेल कैसे बनाया"></a>मैंने एक पहेली खेल कैसे बनाया</h5><p>अब, जैसा कि आप जानते हैं, आपको शुरू से कुछ भी करने की आवश्यकता नहीं है, क्योंकि पहले से ही बहुत सारे तैयार कोड उपलब्ध हैं। डेवलपर्स और ओपन सोर्स को धन्यवाद।</p>
         
           <p class="article-more-link">
-            <a href="/2021/12/27/hi/How-I-made-a-puzzle-game/#more">Read More</a>
+            <a href="/2021/12/27/hi/How-I-made-a-puzzle-game/#more" aria-label="Read More: मैंने एक पहेली खेल कैसे बनाया">Read More</a>
           </p>
         
       
@@ -209,7 +213,7 @@
         <h5 id="एलन-मस्क-की-तरह-मुझे-भी-ट्रैफिक-जाम-से-नफरत-है।"><a href="#एलन-मस्क-की-तरह-मुझे-भी-ट्रैफिक-जाम-से-नफरत-है।" class="headerlink" title="एलन मस्क की तरह मुझे भी ट्रैफिक जाम से नफरत है।"></a>एलन मस्क की तरह मुझे भी ट्रैफिक जाम से नफरत है।</h5><p>हम इन्हें खत्म करने के तरीके तलाश रहे हैं।<br>साल 2018. सेंट पीटर्सबर्ग. मुरिनो. एक ठंडी सुबह. मैं बस स्टॉप पर खड़ा हूँ। कारें धीरे-धीरे चौराहे की ओर बढ़ रही हैं।</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/hi/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2023/12/27/hi/How-to-Reduce-Traffic-Congestion/#more" aria-label="Read More: ट्रैफिक जाम को कैसे कम करें">Read More</a>
           </p>
         
       
@@ -254,7 +258,7 @@
 <p>मैं इसे ठीक करना चाहता था और <strong>PDF Ink</strong> बनाना चाहता था — सीधे ब्राउज़र में PDF पुस्तकों को पढ़ने और उन पर लिखने के लिए एक हल्का, तेज़ वेब एप्लिकेशन।</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/#more">Read More</a>
+            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया">Read More</a>
           </p>
         
       
@@ -300,7 +304,7 @@
 <p>तो इस स्थिति को कैसे सुधारा जाए? मैं आपके मोबाइल ब्राउज़र के लिए एक एक्सटेंशन (add-on) लेकर आया हूँ।</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/hi/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2023/06/11/hi/How-to-make-any-site-mobile/#more" aria-label="Read More: किसी भी साइट को मोबाइल फ्रेंडली कैसे बनाएं?">Read More</a>
           </p>
         
       
@@ -347,7 +351,7 @@
 <p><strong>Gemini</strong> की मदद से, मैंने इस वेब इंटरफ़ेस को सफलतापूर्वक बनाया और सीधे RenderCV में एकीकृत किया! यहाँ बताया गया है कि हमने इसे कैसे किया।</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/#more">Read More</a>
+            <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया">Read More</a>
           </p>
         
       
@@ -390,7 +394,7 @@
         <h1 id="मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ"><a href="#मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ" class="headerlink" title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ"></a>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</h1><p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/#more">Read More</a>
+            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ">Read More</a>
           </p>
         
       
@@ -432,7 +436,7 @@
 <p>लेकिन किसी समय पर, खेल ब्लॉक हो गया… 💔 लेकिन मैं सचमुच खेलना चाहता था! और फिर मेरे मन में विचार आया: <em>क्या होगा अगर मैं सिर्फ अपने लिए ऐसा कुछ बनाऊँ? रास्ते में समय बिताने और अपने दिमाग की थोड़ी कसरत करने के लिए</em>।</p>
         
           <p class="article-more-link">
-            <a href="/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/#more">Read More</a>
+            <a href="/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/#more" aria-label="Read More: AI के साथ ब्लॉक्स गेम? हाँ, बिल्कुल">Read More</a>
           </p>
         
       
@@ -476,7 +480,7 @@
 <p>मैं नौकरी की तलाश में था और उन्होंने एक सीवी (CV) भेजने के लिए कहा, इसलिए मैं एक नया, आधुनिक रिज्यूमे बनाने के बारे में सोच रहा था और इसे खुद बनाने का फैसला किया।</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/04/hi/i-built-resume-builder/#more">Read More</a>
+            <a href="/2026/07/04/hi/i-built-resume-builder/#more" aria-label="Read More: मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया">Read More</a>
           </p>
         
       
@@ -562,7 +566,7 @@
 <p>मान लीजिए आपके पास एक साइट है जिस पर लोग आते हैं। लेकिन आपसे तुरंत संपर्क कैसे करें ताकि उन्हें तुरंत उत्तर मिल सके?</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/hi/instant-chat-bot/#more">Read More</a>
+            <a href="/2021/06/20/hi/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
           </p>
         
       
@@ -686,9 +690,7 @@
 
 
 
-
-<script src="/js/script.js"></script>
-
+<script src="/js/script.js?v=1784343268823"></script>
 
 
 
