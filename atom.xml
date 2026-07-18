@@ -15,6 +15,22 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
+    <content>
+      <![CDATA[<h1 id="मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ"><a href="#मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ" class="headerlink" title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ"></a>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</h1><p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p><span id="more"></span><h2 id="परिचय"><a href="#परिचय" class="headerlink" title="परिचय"></a>परिचय</h2><p>Qwen Coder AI मेरी वेब विकास प्रक्रिया में एक अमूल्य उपकरण बन गया है। यह मुझे तेज़ी से कोड लिखने, समस्याओं को अधिक कुशलता से डीबग करने और आत्मविश्वास के साथ नई तकनीकों का पता लगाने में मदद करता है।</p><h2 id="मेरा-वर्कफ़्लो"><a href="#मेरा-वर्कफ़्लो" class="headerlink" title="मेरा वर्कफ़्लो"></a>मेरा वर्कफ़्लो</h2><h3 id="1-पेज-संरचना-की-योजना-बनाना"><a href="#1-पेज-संरचना-की-योजना-बनाना" class="headerlink" title="1. पेज संरचना की योजना बनाना"></a>1. पेज संरचना की योजना बनाना</h3><p>कोई भी कोड लिखने से पहले, मैं वेब पेज की संरचना की रूपरेखा तैयार करता हूँ:</p><ul><li>नेविगेशन के साथ हेडर</li><li>मुख्य सामग्री क्षेत्र (Main content area)</li><li>साइडबार (यदि आवश्यक हो)</li><li>फुटर</li></ul><h3 id="2-HTML-स्केलेटन-तैयार-करना"><a href="#2-HTML-स्केलेटन-तैयार-करना" class="headerlink" title="2. HTML स्केलेटन तैयार करना"></a>2. HTML स्केलेटन तैयार करना</h3><p>मैं Qwen Coder AI से उचित सिमेंटिक टैग के साथ एक साफ HTML5 स्केलेटन बनाने के लिए कहता हूँ:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;hi&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>मेरा वेब पेज<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>...<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>...<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>...<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-CSS-के-साथ-स्टाइलिंग"><a href="#3-CSS-के-साथ-स्टाइलिंग" class="headerlink" title="3. CSS के साथ स्टाइलिंग"></a>3. CSS के साथ स्टाइलिंग</h3><p>Qwen Coder AI मुझे प्रतिक्रियाशील (responsive) CSS स्टाइल तेज़ी से बनाने में मदद करता है। मैं अपनी पसंद के डिज़ाइन का वर्णन कर सकता हूँ, और यह उपयुक्त CSS कोड उत्पन्न करता है।</p><h3 id="4-जावास्क्रिप्ट-के-साथ-अन्तरक्रियाशीलता-जोड़ना"><a href="#4-जावास्क्रिप्ट-के-साथ-अन्तरक्रियाशीलता-जोड़ना" class="headerlink" title="4. जावास्क्रिप्ट के साथ अन्तरक्रियाशीलता जोड़ना"></a>4. जावास्क्रिप्ट के साथ अन्तरक्रियाशीलता जोड़ना</h3><p>गतिशील (dynamic) सुविधाओं के लिए, Qwen Coder AI जावास्क्रिप्ट फ़ंक्शंस, इवेंट हैंडलर और DOM हेरफेर कोड लिखने में सहायता करता है।</p><h3 id="5-डीबगिंग-और-अनुकूलन-Optimization"><a href="#5-डीबगिंग-और-अनुकूलन-Optimization" class="headerlink" title="5. डीबगिंग और अनुकूलन (Optimization)"></a>5. डीबगिंग और अनुकूलन (Optimization)</h3><p>जब मुझे बग्स मिलते हैं या प्रदर्शन को अनुकूलित करने की आवश्यकता होती है, तो Qwen Coder AI सुझाव और सुधार प्रदान करता है।</p><h2 id="Qwen-Coder-AI-का-उपयोग-करने-के-लाभ"><a href="#Qwen-Coder-AI-का-उपयोग-करने-के-लाभ" class="headerlink" title="Qwen Coder AI का उपयोग करने के लाभ"></a>Qwen Coder AI का उपयोग करने के लाभ</h2><ul><li><strong>गति</strong>: विकास के समय को काफी कम करता है</li><li><strong>सीखना</strong>: मुझे सर्वोत्तम प्रथाओं और नई तकनीकों को समझने में मदद करता है</li><li><strong>निरंतरता</strong>: सुनिश्चित करता है कि कोड स्थापित पैटर्नों का पालन करता है</li><li><strong>समस्या समाधान</strong>: जटिल समस्याओं का त्वरित समाधान</li></ul><h2 id="निष्कर्ष"><a href="#निष्कर्ष" class="headerlink" title="निष्कर्ष"></a>निष्कर्ष</h2><p>Qwen Coder AI ने वेब विकास के प्रति मेरे दृष्टिकोण को बदल दिया है। यह सिर्फ एक कोड जनरेटर नहीं है—यह एक सहयोगी भागीदार है जो मेरी उत्पादकता को बढ़ाता है और मुझे बेहतर वेब पेज बनाने में मदद करता है।</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/</id>
+    <link href="https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/"/>
+    <published>2026-07-18T02:27:35.666Z</published>
+    <summary>
+      <![CDATA[<h1 id="मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ"><a href="#मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ" class="headerlink" title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ"></a>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</h1><p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p>]]>
+    </summary>
+    <title>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</title>
+    <updated>2026-07-18T02:27:35.666Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="pdf" scheme="https://safiullin.dev/tags/pdf/"/>
     <category term="education" scheme="https://safiullin.dev/tags/education/"/>
@@ -31,22 +47,6 @@
 <p>मैं इसे ठीक करना चाहता था और <strong>PDF Ink</strong> बनाना चाहता था — सीधे ब्राउज़र में PDF पुस्तकों को पढ़ने और उन पर लिखने के लिए एक हल्का, तेज़ वेब एप्लिकेशन।</p>]]>
     </summary>
     <title>मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</title>
-    <updated>2026-07-18T02:27:35.666Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<h1 id="मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ"><a href="#मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ" class="headerlink" title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ"></a>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</h1><p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p><span id="more"></span><h2 id="परिचय"><a href="#परिचय" class="headerlink" title="परिचय"></a>परिचय</h2><p>Qwen Coder AI मेरी वेब विकास प्रक्रिया में एक अमूल्य उपकरण बन गया है। यह मुझे तेज़ी से कोड लिखने, समस्याओं को अधिक कुशलता से डीबग करने और आत्मविश्वास के साथ नई तकनीकों का पता लगाने में मदद करता है।</p><h2 id="मेरा-वर्कफ़्लो"><a href="#मेरा-वर्कफ़्लो" class="headerlink" title="मेरा वर्कफ़्लो"></a>मेरा वर्कफ़्लो</h2><h3 id="1-पेज-संरचना-की-योजना-बनाना"><a href="#1-पेज-संरचना-की-योजना-बनाना" class="headerlink" title="1. पेज संरचना की योजना बनाना"></a>1. पेज संरचना की योजना बनाना</h3><p>कोई भी कोड लिखने से पहले, मैं वेब पेज की संरचना की रूपरेखा तैयार करता हूँ:</p><ul><li>नेविगेशन के साथ हेडर</li><li>मुख्य सामग्री क्षेत्र (Main content area)</li><li>साइडबार (यदि आवश्यक हो)</li><li>फुटर</li></ul><h3 id="2-HTML-स्केलेटन-तैयार-करना"><a href="#2-HTML-स्केलेटन-तैयार-करना" class="headerlink" title="2. HTML स्केलेटन तैयार करना"></a>2. HTML स्केलेटन तैयार करना</h3><p>मैं Qwen Coder AI से उचित सिमेंटिक टैग के साथ एक साफ HTML5 स्केलेटन बनाने के लिए कहता हूँ:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;hi&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>मेरा वेब पेज<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>...<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>...<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>...<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-CSS-के-साथ-स्टाइलिंग"><a href="#3-CSS-के-साथ-स्टाइलिंग" class="headerlink" title="3. CSS के साथ स्टाइलिंग"></a>3. CSS के साथ स्टाइलिंग</h3><p>Qwen Coder AI मुझे प्रतिक्रियाशील (responsive) CSS स्टाइल तेज़ी से बनाने में मदद करता है। मैं अपनी पसंद के डिज़ाइन का वर्णन कर सकता हूँ, और यह उपयुक्त CSS कोड उत्पन्न करता है।</p><h3 id="4-जावास्क्रिप्ट-के-साथ-अन्तरक्रियाशीलता-जोड़ना"><a href="#4-जावास्क्रिप्ट-के-साथ-अन्तरक्रियाशीलता-जोड़ना" class="headerlink" title="4. जावास्क्रिप्ट के साथ अन्तरक्रियाशीलता जोड़ना"></a>4. जावास्क्रिप्ट के साथ अन्तरक्रियाशीलता जोड़ना</h3><p>गतिशील (dynamic) सुविधाओं के लिए, Qwen Coder AI जावास्क्रिप्ट फ़ंक्शंस, इवेंट हैंडलर और DOM हेरफेर कोड लिखने में सहायता करता है।</p><h3 id="5-डीबगिंग-और-अनुकूलन-Optimization"><a href="#5-डीबगिंग-और-अनुकूलन-Optimization" class="headerlink" title="5. डीबगिंग और अनुकूलन (Optimization)"></a>5. डीबगिंग और अनुकूलन (Optimization)</h3><p>जब मुझे बग्स मिलते हैं या प्रदर्शन को अनुकूलित करने की आवश्यकता होती है, तो Qwen Coder AI सुझाव और सुधार प्रदान करता है।</p><h2 id="Qwen-Coder-AI-का-उपयोग-करने-के-लाभ"><a href="#Qwen-Coder-AI-का-उपयोग-करने-के-लाभ" class="headerlink" title="Qwen Coder AI का उपयोग करने के लाभ"></a>Qwen Coder AI का उपयोग करने के लाभ</h2><ul><li><strong>गति</strong>: विकास के समय को काफी कम करता है</li><li><strong>सीखना</strong>: मुझे सर्वोत्तम प्रथाओं और नई तकनीकों को समझने में मदद करता है</li><li><strong>निरंतरता</strong>: सुनिश्चित करता है कि कोड स्थापित पैटर्नों का पालन करता है</li><li><strong>समस्या समाधान</strong>: जटिल समस्याओं का त्वरित समाधान</li></ul><h2 id="निष्कर्ष"><a href="#निष्कर्ष" class="headerlink" title="निष्कर्ष"></a>निष्कर्ष</h2><p>Qwen Coder AI ने वेब विकास के प्रति मेरे दृष्टिकोण को बदल दिया है। यह सिर्फ एक कोड जनरेटर नहीं है—यह एक सहयोगी भागीदार है जो मेरी उत्पादकता को बढ़ाता है और मुझे बेहतर वेब पेज बनाने में मदद करता है।</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T02:27:35.666Z</published>
-    <summary>
-      <![CDATA[<h1 id="मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ"><a href="#मैं-Qwen-Coder-AI-के-साथ-वेब-पेज-कैसे-बनाता-हूँ" class="headerlink" title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ"></a>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</h1><p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p>]]>
-    </summary>
-    <title>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</title>
     <updated>2026-07-18T02:27:35.666Z</updated>
   </entry>
   <entry>
@@ -91,6 +91,22 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
+    <content>
+      <![CDATA[<h1 id="我是如何使用通义千问-Qwen-Coder-AI-创建网页的"><a href="#我是如何使用通义千问-Qwen-Coder-AI-创建网页的" class="headerlink" title="我是如何使用通义千问 Qwen Coder AI 创建网页的"></a>我是如何使用通义千问 Qwen Coder AI 创建网页的</h1><p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p><span id="more"></span><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Qwen Coder AI 已经成为我网页开发过程中不可或缺的工具。它能帮我更快地编写代码、更高效地调试问题，并让我更有信心地探索新技术。</p><h2 id="我的工作流"><a href="#我的工作流" class="headerlink" title="我的工作流"></a>我的工作流</h2><h3 id="1-规划页面结构"><a href="#1-规划页面结构" class="headerlink" title="1. 规划页面结构"></a>1. 规划页面结构</h3><p>在编写任何代码之前，我先勾勒出网页的结构：</p><ul><li>带有导航栏的头部 (Header)</li><li>主内容区 (Main content)</li><li>侧边栏（如果需要）</li><li>页脚 (Footer)</li></ul><h3 id="2-生成-HTML-骨架"><a href="#2-生成-HTML-骨架" class="headerlink" title="2. 生成 HTML 骨架"></a>2. 生成 HTML 骨架</h3><p>我让 Qwen Coder AI 生成一个结构干净、标签语义化的 HTML5 骨架：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>我的网页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>...<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>...<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>...<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-用-CSS-编写样式"><a href="#3-用-CSS-编写样式" class="headerlink" title="3. 用 CSS 编写样式"></a>3. 用 CSS 编写样式</h3><p>Qwen Coder AI 帮助我快速创建响应式 CSS 样式。我只需描述我想要的设计，它就会生成相应的 CSS 代码。</p><h3 id="4-使用-JavaScript-添加交互"><a href="#4-使用-JavaScript-添加交互" class="headerlink" title="4. 使用 JavaScript 添加交互"></a>4. 使用 JavaScript 添加交互</h3><p>对于动态功能，Qwen Coder AI 会协助我编写 JavaScript 函数、事件处理器以及 DOM 操作代码。</p><h3 id="5-调试与优化"><a href="#5-调试与优化" class="headerlink" title="5. 调试与优化"></a>5. 调试与优化</h3><p>当我遇到 bug 或需要优化性能时，Qwen Coder AI 能够提供实用的建议和修复方案。</p><h2 id="使用-Qwen-Coder-AI-的好处"><a href="#使用-Qwen-Coder-AI-的好处" class="headerlink" title="使用 Qwen Coder AI 的好处"></a>使用 Qwen Coder AI 的好处</h2><ul><li><strong>速度</strong>：显著缩短开发时间</li><li><strong>学习</strong>：帮我理解最佳实践和新技术</li><li><strong>一致性</strong>：确保代码遵循已建立的规范</li><li><strong>解决问题</strong>：快速给出复杂问题的解决方案</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Qwen Coder AI 改变了我进行网页开发的方式。它不仅仅是一个代码生成器，更是一个协作伙伴，提升了我的工作效率并帮我构建出更好的网页。</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/</id>
+    <link href="https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/"/>
+    <published>2026-07-18T02:27:35.666Z</published>
+    <summary>
+      <![CDATA[<h1 id="我是如何使用通义千问-Qwen-Coder-AI-创建网页的"><a href="#我是如何使用通义千问-Qwen-Coder-AI-创建网页的" class="headerlink" title="我是如何使用通义千问 Qwen Coder AI 创建网页的"></a>我是如何使用通义千问 Qwen Coder AI 创建网页的</h1><p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>]]>
+    </summary>
+    <title>我是如何使用通义千问 Qwen Coder AI 创建网页的</title>
+    <updated>2026-07-18T02:27:35.666Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="pdf" scheme="https://safiullin.dev/tags/pdf/"/>
     <category term="education" scheme="https://safiullin.dev/tags/education/"/>
@@ -107,22 +123,6 @@
 <p>我想要解决这个问题，于是开发了 <strong>PDF Ink</strong>——一个轻量、快速的 Web 应用程序，可直接在浏览器中阅读 PDF 书籍并进行交互式批注。</p>]]>
     </summary>
     <title>我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的</title>
-    <updated>2026-07-18T02:27:35.666Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<h1 id="我是如何使用通义千问-Qwen-Coder-AI-创建网页的"><a href="#我是如何使用通义千问-Qwen-Coder-AI-创建网页的" class="headerlink" title="我是如何使用通义千问 Qwen Coder AI 创建网页的"></a>我是如何使用通义千问 Qwen Coder AI 创建网页的</h1><p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p><span id="more"></span><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Qwen Coder AI 已经成为我网页开发过程中不可或缺的工具。它能帮我更快地编写代码、更高效地调试问题，并让我更有信心地探索新技术。</p><h2 id="我的工作流"><a href="#我的工作流" class="headerlink" title="我的工作流"></a>我的工作流</h2><h3 id="1-规划页面结构"><a href="#1-规划页面结构" class="headerlink" title="1. 规划页面结构"></a>1. 规划页面结构</h3><p>在编写任何代码之前，我先勾勒出网页的结构：</p><ul><li>带有导航栏的头部 (Header)</li><li>主内容区 (Main content)</li><li>侧边栏（如果需要）</li><li>页脚 (Footer)</li></ul><h3 id="2-生成-HTML-骨架"><a href="#2-生成-HTML-骨架" class="headerlink" title="2. 生成 HTML 骨架"></a>2. 生成 HTML 骨架</h3><p>我让 Qwen Coder AI 生成一个结构干净、标签语义化的 HTML5 骨架：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>我的网页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>...<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>...<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>...<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-用-CSS-编写样式"><a href="#3-用-CSS-编写样式" class="headerlink" title="3. 用 CSS 编写样式"></a>3. 用 CSS 编写样式</h3><p>Qwen Coder AI 帮助我快速创建响应式 CSS 样式。我只需描述我想要的设计，它就会生成相应的 CSS 代码。</p><h3 id="4-使用-JavaScript-添加交互"><a href="#4-使用-JavaScript-添加交互" class="headerlink" title="4. 使用 JavaScript 添加交互"></a>4. 使用 JavaScript 添加交互</h3><p>对于动态功能，Qwen Coder AI 会协助我编写 JavaScript 函数、事件处理器以及 DOM 操作代码。</p><h3 id="5-调试与优化"><a href="#5-调试与优化" class="headerlink" title="5. 调试与优化"></a>5. 调试与优化</h3><p>当我遇到 bug 或需要优化性能时，Qwen Coder AI 能够提供实用的建议和修复方案。</p><h2 id="使用-Qwen-Coder-AI-的好处"><a href="#使用-Qwen-Coder-AI-的好处" class="headerlink" title="使用 Qwen Coder AI 的好处"></a>使用 Qwen Coder AI 的好处</h2><ul><li><strong>速度</strong>：显著缩短开发时间</li><li><strong>学习</strong>：帮我理解最佳实践和新技术</li><li><strong>一致性</strong>：确保代码遵循已建立的规范</li><li><strong>解决问题</strong>：快速给出复杂问题的解决方案</li></ul><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Qwen Coder AI 改变了我进行网页开发的方式。它不仅仅是一个代码生成器，更是一个协作伙伴，提升了我的工作效率并帮我构建出更好的网页。</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T02:27:35.666Z</published>
-    <summary>
-      <![CDATA[<h1 id="我是如何使用通义千问-Qwen-Coder-AI-创建网页的"><a href="#我是如何使用通义千问-Qwen-Coder-AI-创建网页的" class="headerlink" title="我是如何使用通义千问 Qwen Coder AI 创建网页的"></a>我是如何使用通义千问 Qwen Coder AI 创建网页的</h1><p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>]]>
-    </summary>
-    <title>我是如何使用通义千问 Qwen Coder AI 创建网页的</title>
     <updated>2026-07-18T02:27:35.666Z</updated>
   </entry>
   <entry>
@@ -167,9 +167,9 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
-    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
+    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="python" scheme="https://safiullin.dev/tags/python/"/>
     <category term="resume" scheme="https://safiullin.dev/tags/resume/"/>
     <content>
@@ -192,9 +192,9 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
-    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
+    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="python" scheme="https://safiullin.dev/tags/python/"/>
     <category term="resume" scheme="https://safiullin.dev/tags/resume/"/>
     <content>
@@ -217,9 +217,9 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
-    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
+    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="python" scheme="https://safiullin.dev/tags/python/"/>
     <category term="resume" scheme="https://safiullin.dev/tags/resume/"/>
     <content>
@@ -242,9 +242,9 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
-    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
+    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="python" scheme="https://safiullin.dev/tags/python/"/>
     <category term="resume" scheme="https://safiullin.dev/tags/resume/"/>
     <content>
@@ -267,9 +267,9 @@
     <author>
       <name>Albert Safiullin</name>
     </author>
-    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
     <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
+    <category term="ai" scheme="https://safiullin.dev/tags/ai/"/>
     <category term="python" scheme="https://safiullin.dev/tags/python/"/>
     <category term="resume" scheme="https://safiullin.dev/tags/resume/"/>
     <content>
