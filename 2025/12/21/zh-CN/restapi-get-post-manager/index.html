@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784"
+        crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>REST API GET POST 请求管理器 | Safiullin.dev. Developer projects and stories of life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="该项目为管理 REST API 的 GET 和 POST 请求提供了一个简单的解决方案。 项目概述REST API GET POST Manager 是一个实用工具，旨在简化向 REST API 发送 GET 和 POST 请求的过程。它为需要与 RESTful...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="REST API GET POST 请求管理器">
+<meta property="og:url" content="https://safiullin.dev/2025/12/21/zh-CN/restapi-get-post-manager/">
+<meta property="og:site_name" content="Safiullin.dev. Developer projects and stories of life">
+<meta property="og:description" content="该项目为管理 REST API 的 GET 和 POST 请求提供了一个简单的解决方案。 项目概述REST API GET POST Manager 是一个实用工具，旨在简化向 REST API 发送 GET 和 POST 请求的过程。它为需要与 RESTful...">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-18T02:27:35.668Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="api">
+<meta property="article:tag" content="get">
+<meta property="article:tag" content="manager">
+<meta property="article:tag" content="post">
+<meta property="article:tag" content="project">
+<meta property="article:tag" content="rest">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1784341705162">
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="canonical" href="https://safiullin.dev/2025/12/21/zh-CN/restapi-get-post-manager/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-CN" href="https://safiullin.dev/zh-CN/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "REST API GET POST 请求管理器",
+  "datePublished": "2025-12-21T00:00:00.000Z",
+  "dateModified": "2026-07-18T02:27:35.668Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev. Developer projects and stories of life",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "该项目为管理 REST API 的 GET 和 POST 请求提供了一个简单的解决方案。 项目概述REST API GET POST Manager 是一个实用工具，旨在简化向 REST API 发送 GET 和 POST 请求的过程。它为需要与 RESTful..."
+}
+</script>
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Safiullin.dev</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        
+        <div id="lang-selector">
+          
+            <a href="/" class="lang-btn">EN</a>
+          
+            <a href="/ru/" class="lang-btn">RU</a>
+          
+            <a href="/es/" class="lang-btn">ES</a>
+          
+            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+          
+            <a href="/hi/" class="lang-btn">HI</a>
+          
+            <a href="/th/" class="lang-btn">TH</a>
+          
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-zh-CN/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/12/21/zh-CN/restapi-get-post-manager/" class="article-date">
+  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      REST API GET POST 请求管理器
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>该项目为管理 REST API 的 GET 和 POST 请求提供了一个简单的解决方案。</p>
+<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>REST API GET POST Manager 是一个实用工具，旨在简化向 REST API 发送 GET 和 POST 请求的过程。它为需要与 RESTful 服务进行交互的开发人员提供了一个易于使用的界面。</p>
+<span id="more"></span>
+<h2 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h2><ul>
+<li>用于发送 GET 请求的简单界面</li>
+<li>用于构建包含 JSON 数据的 POST 请求的简易表单</li>
+<li>带有语法高亮的响应结果可视化展示</li>
+<li>跨域友好型 (CORS-friendly) 实现</li>
+<li>请求历史记录跟踪</li>
+</ul>
+<h2 id="项目仓库"><a href="#项目仓库" class="headerlink" title="项目仓库"></a>项目仓库</h2><p>在 GitHub 上查看源码并参与贡献：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/albertincx/restapi-get-post-manager">https://github.com/albertincx/restapi-get-post-manager</a></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>该应用程序允许你：</p>
+<ol>
+<li>输入 API 终点发送 GET 请求</li>
+<li>为 POST 请求构建 JSON 负载</li>
+<li>查看格式化后的 API 响应结果</li>
+<li>保存常用接口地址以便快速访问</li>
+</ol>
+<h2 id="所用技术"><a href="#所用技术" class="headerlink" title="所用技术"></a>所用技术</h2><ul>
+<li>客户端功能使用 JavaScript 实现</li>
+<li>用户界面使用 HTML&#x2F;CSS</li>
+<li>使用 Fetch API 发起 HTTP 请求</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2025/12/21/zh-CN/restapi-get-post-manager/" data-id="cuidqiewznd_VT3xF1CmzfeZM" data-title="REST API GET POST 请求管理器" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/12/21/th/restapi-get-post-manager/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          เครื่องมือจัดการ REST API GET POST
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Как я создавал бота для телеграм InstantViewBot</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser-extension/" rel="tag">browser extension</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/language/" rel="tag">language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/location/" rel="tag">location</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/" rel="tag">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pwa/" rel="tag">pwa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reading/" rel="tag">reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/routes/" rel="tag">routes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram-bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ai/" style="font-size: 14px;">ai</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 10px;">browser extension</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/location/" style="font-size: 10px;">location</a> <a href="/tags/manager/" style="font-size: 10px;">manager</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/open-source/" style="font-size: 14px;">open-source</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/productivity/" style="font-size: 10px;">productivity</a> <a href="/tags/project/" style="font-size: 14px;">project</a> <a href="/tags/pwa/" style="font-size: 10px;">pwa</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/reading/" style="font-size: 16px;">reading</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/routes/" style="font-size: 10px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 12px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/web-app/" style="font-size: 18px;">web app</a> <a href="/tags/web-app/" style="font-size: 14px;">web-app</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/">मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/">मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/">ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

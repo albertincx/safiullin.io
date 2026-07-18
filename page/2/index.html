@@ -41,7 +41,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1784290397318">
+<link rel="stylesheet" href="/css/style.css?v=1784341705182">
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
@@ -57,6 +57,12 @@
     <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
 
     <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-CN" href="https://safiullin.dev/zh-CN/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
 
     <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
 
@@ -111,6 +117,12 @@
           
             <a href="/es/" class="lang-btn">ES</a>
           
+            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+          
+            <a href="/hi/" class="lang-btn">HI</a>
+          
+            <a href="/th/" class="lang-btn">TH</a>
+          
         </div>
         
         
@@ -128,10 +140,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-hi/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -142,7 +154,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/restapi-get-post-manager/">REST API GET POST Manager</a>
+      <a class="p-name article-title" href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/">मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
     </h2>
   
 
@@ -151,20 +163,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>This project provides a simple solution for managing GET and POST requests to REST APIs.</p>
-<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>The REST API GET POST Manager is a utility tool designed to simplify the process of sending GET and POST requests to REST APIs. It provides an easy-to-use interface for developers who need to interact with RESTful services.</p>
+        <h2 id="कोड-के-रूप-में-रिज्यूमे-RenderCV-की-भव्यता"><a href="#कोड-के-रूप-में-रिज्यूमे-RenderCV-की-भव्यता" class="headerlink" title="कोड के रूप में रिज्यूमे: RenderCV की भव्यता"></a>कोड के रूप में रिज्यूमे: RenderCV की भव्यता</h2><p>यदि आप एक इंजीनियर या शिक्षाविद हैं, तो एमएस वर्ड में रिज्यूमे लिखना एक दुःस्वप्न है, और कस्टम LaTeX टेम्पलेट अक्सर बनाए रखने के लिए बहुत जटिल होते हैं।</p>
+<p>हाल ही में, मुझे <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong> नामक एक शानदार पायथन प्रोजेक्ट मिला। यह आपको एक साफ, संरचित YAML फ़ाइल में अपने रिज्यूमे की सामग्री लिखने की अनुमति देता है और बैकएंड में <strong>Typst</strong> का उपयोग करके सही टाइपोग्राफी के साथ एक खूबसूरती से स्वरूपित PDF उत्पन्न करता है। यह आपके रिज्यूमे को कोड की तरह मानता है, जिसका अर्थ है कि आप इसे संस्करण-नियंत्रित (version-control) कर सकते हैं, पूरी तरह से सामग्री पर ध्यान केंद्रित कर सकते हैं, और टूल को पेज मार्जिन, संरेखण (alignment) और स्टाइलिंग को संभालने दे सकते हैं।</p>
+<p>हालाँकि, RenderCV को मुख्य रूप से कमांड-लाइन इंटरफ़ेस (CLI) टूल के रूप में डिज़ाइन किया गया था। हर बार जब आप कोई बदलाव करते हैं, तो आपको <code>rendercv render John_Doe_CV.yaml</code> चलाना होता है, आउटपुट की जांच करनी होती है, PDF व्यूअर खोलना होता है, और संरेखण की जांच करनी होती है। यदि आप कोई सत्यापन (validation) या स्कीमा त्रुटि करते हैं, तो आपको CLI कंपाइलर ट्रेसबैक को पढ़ना होगा।</p>
+<p>मैं एक <strong>लाइव वेब एडिटर (Live Web Editor)</strong> जोड़कर इस अंतर को पाटना चाहता था—एक स्थानीय सिंगल-पेज वेब ऐप जिसमें साइड-बाय-साइड मोनाको एडिटर (Monaco editor), लाइव PDF पूर्वावलोकन, तत्काल स्कीमा सत्यापन और इंटरैक्टिव थीम&#x2F;अनुभाग टॉगल की सुविधा हो।</p>
+<p><strong>Gemini</strong> की मदद से, मैंने इस वेब इंटरफ़ेस को सफलतापूर्वक बनाया और सीधे RenderCV में एकीकृत किया! यहाँ बताया गया है कि हमने इसे कैसे किया।</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/restapi-get-post-manager/#more">Read More</a>
+            <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/restapi-get-post-manager/" data-id="cuidA0o9SQkXPa0LSL2KY3-ST" data-title="REST API GET POST Manager" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidPUusiWGGB_qSA04s-vjK5" data-title="मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -172,10 +187,10 @@
 </article>
 
   
-    <article id="post-es/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-th/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/12/21/es/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
+    <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -186,7 +201,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/es/restapi-get-post-manager/">REST API GET POST Manager<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/">ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
     </h2>
   
 
@@ -195,20 +210,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Este proyecto proporciona una solución simple para gestionar solicitudes GET y POST a APIs REST.</p>
-<h2 id="Descripcion-del-Proyecto"><a href="#Descripcion-del-Proyecto" class="headerlink" title="Descripción del Proyecto"></a>Descripción del Proyecto</h2><p>El REST API GET POST Manager es una herramienta utilitaria diseñada para simplificar el proceso de envío de solicitudes GET y POST a APIs REST. Proporciona una interfaz fácil de usar para desarrolladores que necesitan interactuar con servicios RESTful.</p>
+        <h2 id="เรซูเม่ในรูปแบบโค้ด-ความสง่างามของ-RenderCV"><a href="#เรซูเม่ในรูปแบบโค้ด-ความสง่างามของ-RenderCV" class="headerlink" title="เรซูเม่ในรูปแบบโค้ด: ความสง่างามของ RenderCV"></a>เรซูเม่ในรูปแบบโค้ด: ความสง่างามของ RenderCV</h2><p>หากคุณเป็นวิศวกรหรือนักวิชาการ การเขียนเรซูเม่ใน MS Word คือฝันร้ายของการจัดรูปแบบ และเทมเพลต LaTeX แบบกำหนดเองก็มักจะเวิ่นเว้อเกินกว่าจะดูแลรักษาได้ง่ายๆ</p>
+<p>เมื่อไม่นานมานี้ ฉันบังเอิญไปพบกับโปรเจกต์ Python ที่ยอดเยี่ยมชื่อว่า <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong> มันช่วยให้คุณเขียนเนื้อหาเรซูเม่ของคุณในไฟล์ YAML ที่สะอาดและมีโครงสร้างที่เป็นระเบียบ จากนั้นจะสร้าง PDF ที่จัดรูปแบบอย่างสวยงามด้วยไทโปกราฟีที่สมบูรณ์แบบโดยใช้ <strong>Typst</strong> เป็นตัวขับเคลื่อนเบื้องหลัง มันปฏิบัติกับเรซูเม่ของคุณเหมือนโค้ด ซึ่งหมายความว่าคุณสามารถควบคุมเวอร์ชัน (version-control) ได้ มุ่งเน้นไปที่เนื้อหาอย่างแท้จริง และปล่อยให้เครื่องมือจัดการเรื่องระยะขอบหน้า การจัดตำแหน่ง และสไตล์</p>
+<p>อย่างไรก็ตาม RenderCV ถูกออกแบบมาเพื่อใช้งานผ่าน Command-line interface (CLI) เป็นหลัก ทุกครั้งที่คุณทำการเปลี่ยนแปลง คุณต้องรัน <code>rendercv render John_Doe_CV.yaml</code> ตรวจสอบผลลัพธ์ เปิดโปรแกรมดู PDF และเช็คการจัดตำแหน่ง หากคุณทำผิดพลาดในการตรวจสอบความถูกต้องหรือ स्कीमा (schema) คุณต้องนั่งอ่าน CLI compiler tracebacks ที่ชวนปวดหัว</p>
+<p>ฉันต้องการเชื่อมช่องว่างนี้ด้วยการเพิ่ม <strong>Live Web Editor</strong>—เว็บแอปพลิเคชันหน้าเดียวแบบโลคัลที่มีโปรแกรมแก้ไข Monaco แบบเคียงข้างกัน พรีวิว PDF แบบเรียลไทม์ ตรวจสอบความถูกต้องของสคีมาทันที และการสลับธีม&#x2F;ส่วนการทำงานแบบโต้ตอบได้</p>
+<p>ด้วยความช่วยเหลือของ <strong>Gemini</strong> ฉันสร้างและรวมเว็บอินเตอร์เฟสนี้เข้ากับ RenderCV ได้โดยตรงสำเร็จแล้ว! และนี่คือวิธีที่เราทำกัน</p>
         
           <p class="article-more-link">
-            <a href="/2025/12/21/es/restapi-get-post-manager/#more">Read More</a>
+            <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/12/21/es/restapi-get-post-manager/" data-id="cuidkJIBKmTcLh5x1eNLlDA1O" data-title="REST API GET POST Manager" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidWh89qEk_eSoe99WfROXg2" data-title="ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -216,10 +234,10 @@
 </article>
 
   
-    <article id="post-ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-zh-CN/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/" class="article-date">
-  <time class="dt-published" datetime="2025-01-06T07:44:18.395Z" itemprop="datePublished">2025-01-06</time>
+    <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -230,7 +248,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/">Как я создавал бота для телеграм InstantViewBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/">我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
     </h2>
   
 
@@ -239,21 +257,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Начало"><a href="#Начало" class="headerlink" title="Начало"></a>Начало</h2><p>Всем привет я Альберт и я хочу всегда все улучшить.<br>В 2014 переехав в Питер, я решил начать развиваться, и решил начать читать статьи в интернете.</p>
-<p>Тут будет увлекательная история создания телеграм бота читалки статей который:</p>
-<p>установили <strong>40 тыс раз</strong> <br>уже обработал более <strong>3 млн страниц</strong> <br>без рекламы, мам, пап, смс и регистрации</p>
+        <h2 id="简历即代码：RenderCV-的优雅之处"><a href="#简历即代码：RenderCV-的优雅之处" class="headerlink" title="简历即代码：RenderCV 的优雅之处"></a>简历即代码：RenderCV 的优雅之处</h2><p>如果你是一名工程师或学术界人士，用 MS Word 撰写简历简直是一场排版噩梦，而自定义的 LaTeX 模板又往往过于冗长，难以维护。</p>
+<p>最近，我偶然发现了一个非常棒的 Python 项目——<strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>。它允许你在一个干净、结构化的 YAML 文件中编写简历内容，并在后台使用 <strong>Typst</strong> 生成排版完美、排版精美的 PDF。它把你的简历当成代码来对待，这意味着你可以对其进行版本控制，只专注于内容，让工具来处理页边距、对齐和样式。</p>
+<p>然而，RenderCV 最初主要被设计为一个命令行界面 (CLI) 工具。每次你做出修改，都必须运行 <code>rendercv render John_Doe_CV.yaml</code>，查看输出，打开 PDF 查看器并检查对齐。如果遇到验证或 schema 错误，你还得阅读 CLI 编译器的回溯信息。</p>
+<p>我希望通过添加一个<strong>实时网页编辑器 (Live Web Editor)</strong> 来弥补这一缺憾——这是一个本地单页 Web 应用程序，包含左右分栏的 Monaco 编辑器、实时 PDF 预览、即时模式验证以及交互式主题&#x2F;模块开关。</p>
+<p>在 <strong>Gemini</strong> 的帮助下，我成功构建了这个 Web 界面并将其直接集成到了 RenderCV 中！以下是我们的实现过程。</p>
         
           <p class="article-more-link">
-            <a href="/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/#more">Read More</a>
+            <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2025/01/06/ru/kak-ya-sozdaval-bota-dlya-telegram-InstantViewBot/" data-id="cuidNN2v1ErMk9r5HiXJyJY01" data-title="Как я создавал бота для телеграм InstantViewBot" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidbl7NgLQMimmqwhLwZVcbe" data-title="我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram-bot</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -261,10 +281,10 @@
 </article>
 
   
-    <article id="post-How-to-Reduce-Traffic-Congestion" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/12/27/How-to-Reduce-Traffic-Congestion/" class="article-date">
-  <time class="dt-published" datetime="2023-12-27T06:45:50.000Z" itemprop="datePublished">2023-12-27</time>
+    <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-14T13:46:31.176Z" itemprop="datePublished">2026-07-14</time>
 </a>
     
   </div>
@@ -275,7 +295,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2023/12/27/How-to-Reduce-Traffic-Congestion/">How to Reduce Traffic Congestion</a>
+      <a class="p-name article-title" href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
     </h2>
   
 
@@ -284,19 +304,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h5 id="Like-Elon-Musk-I-hate-traffic-jams"><a href="#Like-Elon-Musk-I-hate-traffic-jams" class="headerlink" title="Like Elon Musk, I hate traffic jams."></a>Like Elon Musk, I hate traffic jams.</h5><p>We are looking for ways to eliminate them.<br>2018 year. Saint-Petersburg. Murino. Frosty morning. I am standing at the bus stop. Cars drive slowly towards the fork.</p>
+        <h2 id="Why-read-PDFs-if-you-can’t-write-on-them"><a href="#Why-read-PDFs-if-you-can’t-write-on-them" class="headerlink" title="Why read PDFs if you can’t write on them?"></a>Why read PDFs if you can’t write on them?</h2><p>Hello everyone! I’m Albert, and I love making tools more convenient.</p>
+<p>If you have ever tried self-learning, studying programming textbooks, or reading complex technical documents from PDFs on your laptop or tablet, you know this struggle. You open a book, want to highlight a key code snippet, draw a quick diagram arrow next to an explanation, or leave a note on the margins — and realize that standard PDF viewers are either bloated, commercial, or they completely lose your drawings if you accidentally refresh the tab.</p>
+<p>I wanted to fix this and create <strong>PDF Ink</strong> — a lightweight, fast web application for reading and interactively annotating PDF books directly in the browser.</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2023/12/27/How-to-Reduce-Traffic-Congestion/" data-id="cuidUBJxtzCBcngua84i4CgWI" data-title="How to Reduce Traffic Congestion" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/" data-id="cuid5UkbaWifAOLUwuYxWBMxN" data-title="How I Built PDF Ink for Comfortable Online Learning from PDF Books" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/location/" rel="tag">location</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/routes/" rel="tag">routes</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
 
     </footer>
   </div>
@@ -304,10 +326,10 @@
 </article>
 
   
-    <article id="post-es/How-to-Reduce-Traffic-Congestion" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/12/27/es/How-to-Reduce-Traffic-Congestion/" class="article-date">
-  <time class="dt-published" datetime="2023-12-27T06:45:50.000Z" itemprop="datePublished">2023-12-27</time>
+    <a href="/2026/07/04/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -318,7 +340,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2023/12/27/es/How-to-Reduce-Traffic-Congestion/">Cómo Reducir la Congestión del Tráfico<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/i-built-resume-builder/">I built a resume-builder with AI in 1 prompt</a>
     </h2>
   
 
@@ -327,19 +349,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h5 id="Como-Elon-Musk-odio-los-atascos-de-trafico"><a href="#Como-Elon-Musk-odio-los-atascos-de-trafico" class="headerlink" title="Como Elon Musk, odio los atascos de tráfico."></a>Como Elon Musk, odio los atascos de tráfico.</h5><p>Estamos buscando formas de eliminarlos.<br>Año 2018. San Petersburgo. Murino. Mañana helada. Estoy parado en la parada del autobús. Los coches avanzan lentamente hacia el cruce.</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> is a premium web-based resume builder tailored specifically for IT professionals. It allows you to build, customize, and export clean, high-resolution resumes directly in your browser.</p>
+<p>I was looking for a job and they asked to send a CV, so I was thinking about building a fresh, modern resume and decided to code this.</p>
         
           <p class="article-more-link">
-            <a href="/2023/12/27/es/How-to-Reduce-Traffic-Congestion/#more">Read More</a>
+            <a href="/2026/07/04/i-built-resume-builder/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2023/12/27/es/How-to-Reduce-Traffic-Congestion/" data-id="cuiddScCkJDesBuWsVkr6cmr2" data-title="Cómo Reducir la Congestión del Tráfico" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/i-built-resume-builder/" data-id="cuid2MdkE1jHLNfQKJMAAI_OG" data-title="I built a resume-builder with AI in 1 prompt" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/location/" rel="tag">location</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/routes/" rel="tag">routes</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -347,10 +370,10 @@
 </article>
 
   
-    <article id="post-How-to-make-any-site-mobile" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-es/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/11/How-to-make-any-site-mobile/" class="article-date">
-  <time class="dt-published" datetime="2023-06-11T11:33:02.000Z" itemprop="datePublished">2023-06-11</time>
+    <a href="/2026/07/04/es/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -361,7 +384,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
+      <a class="p-name article-title" href="/2026/07/04/es/i-built-resume-builder/">Construí un creador de currículums con IA en 1 prompt<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
     </h2>
   
 
@@ -370,22 +393,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="The-problem"><a href="#The-problem" class="headerlink" title="The problem"></a>The problem</h2><p>Do you hate old websites who dont support mobile version while you serfing from your phone?</p>
-<p>Surely everyone hates old websites that don’t support the mobile version while surfing on a phone?</p>
-<p>And of course they don’t have time to make a mobile version, and some sites don’t have developers at all.</p>
-<p>So how to fix this situation? I came up with an add-on for your mobile browser</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> es un creador de currículums web premium diseñado específicamente para profesionales de TI. Te permite crear, personalizar y exportar currículums limpios y de alta resolución directamente en tu navegador.</p>
+<p>Estaba buscando trabajo y me pidieron que enviara un CV, así que pensé en construir un currículum fresco y moderno y decidí programarlo.</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2026/07/04/es/i-built-resume-builder/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2023/06/11/How-to-make-any-site-mobile/" data-id="cuidKWZBs3kPpDXXnu7qGbAkm" data-title="How to make any site mobile?" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/es/i-built-resume-builder/" data-id="cuidQ6_jh--bgNnFvDaARMOrM" data-title="Construí un creador de currículums con IA en 1 prompt" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser-extension/" rel="tag">browser extension</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mobile/" rel="tag">mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -393,10 +414,10 @@
 </article>
 
   
-    <article id="post-es/How-to-make-any-site-mobile" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-hi/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/06/11/es/How-to-make-any-site-mobile/" class="article-date">
-  <time class="dt-published" datetime="2023-06-11T11:33:02.000Z" itemprop="datePublished">2023-06-11</time>
+    <a href="/2026/07/04/hi/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -407,7 +428,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2023/06/11/es/How-to-make-any-site-mobile/">¿Cómo hacer que cualquier sitio sea móvil?<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/hi/i-built-resume-builder/">मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
     </h2>
   
 
@@ -416,22 +437,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="El-Problema"><a href="#El-Problema" class="headerlink" title="El Problema"></a>El Problema</h2><p>¿Odias los sitios web antiguos que no admiten la versión móvil mientras navegas desde tu teléfono?</p>
-<p>Seguramente todos odian los sitios web antiguos que no admiten la versión móvil mientras navegan en un teléfono.</p>
-<p>Y por supuesto no tienen tiempo para hacer una versión móvil, y algunos sitios no tienen desarrolladores en absoluto.</p>
-<p>¿Entonces cómo solucionar esta situación? Se me ocurrió un complemento para tu navegador móvil.</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> विशेष रूप से आईटी पेशेवरों के लिए तैयार किया गया एक प्रीमियम वेब-आधारित रिज्यूमे बिल्डर है। यह आपको सीधे अपने ब्राउज़र में साफ, उच्च-रिज़ॉल्यूशन वाले रिज्यूमे बनाने, कस्टमाइज़ करने और निर्यात (export) करने की अनुमति देता है।</p>
+<p>मैं नौकरी की तलाश में था और उन्होंने एक सीवी (CV) भेजने के लिए कहा, इसलिए मैं एक नया, आधुनिक रिज्यूमे बनाने के बारे में सोच रहा था और इसे खुद बनाने का फैसला किया।</p>
         
           <p class="article-more-link">
-            <a href="/2023/06/11/es/How-to-make-any-site-mobile/#more">Read More</a>
+            <a href="/2026/07/04/hi/i-built-resume-builder/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2023/06/11/es/How-to-make-any-site-mobile/" data-id="cuidsa-xJr8-nRHoDE9V1YWJT" data-title="¿Cómo hacer que cualquier sitio sea móvil?" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/hi/i-built-resume-builder/" data-id="cuidqTApz95K4z5bYxOWq9W5T" data-title="मैंने 1 प्रॉम्प्ट में AI के साथ एक रिज्यूमे-बिल्डर बनाया" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser-extension/" rel="tag">browser extension</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mobile/" rel="tag">mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -439,10 +458,10 @@
 </article>
 
   
-    <article id="post-How-I-made-a-puzzle-game" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-th/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/12/27/How-I-made-a-puzzle-game/" class="article-date">
-  <time class="dt-published" datetime="2021-12-27T07:39:54.000Z" itemprop="datePublished">2021-12-27</time>
+    <a href="/2026/07/04/th/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -453,7 +472,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
+      <a class="p-name article-title" href="/2026/07/04/th/i-built-resume-builder/">ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
     </h2>
   
 
@@ -462,19 +481,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h5 id="How-I-made-a-puzzle-game"><a href="#How-I-made-a-puzzle-game" class="headerlink" title="How I made a puzzle game"></a>How I made a puzzle game</h5><p>Now, as you know, you don’t need to do anything from scratch, because there is already a lot of ready-made code. Thanks to the developers and open source.</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> เป็นเครื่องมือสร้างเรซูเม่บนเว็บระดับพรีเมียมที่ออกแบบมาสำหรับมืออาชีพด้านไอทีโดยเฉพาะ ช่วยให้คุณสร้าง ปรับแต่ง และส่งออกเรซูเม่ที่สะอาดตาและมีความละเอียดสูงได้โดยตรงในเบราว์เซอร์ของคุณ</p>
+<p>ช่วงนั้นฉันกำลังหางานทำและพวกเขาขอให้ส่งประวัติย่อ (CV) ฉันจึงคิดที่จะทำเรซูเม่แบบใหม่ที่ทันสมัยขึ้นมา และตัดสินใจเขียนโค้ดสำหรับโปรเจกต์นี้เอง</p>
         
           <p class="article-more-link">
-            <a href="/2021/12/27/How-I-made-a-puzzle-game/#more">Read More</a>
+            <a href="/2026/07/04/th/i-built-resume-builder/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/12/27/How-I-made-a-puzzle-game/" data-id="cuidSED8-blNxPPPjqvgD6b3H" data-title="How I made a puzzle game" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/th/i-built-resume-builder/" data-id="cuido602bf67Cj8ENvL1_qCgo" data-title="ฉันสร้างเครื่องมือสร้างเรซูเม่ด้วย AI ใน 1 พรอมต์" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -482,10 +502,10 @@
 </article>
 
   
-    <article id="post-es/How-I-made-a-puzzle-game" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-zh-CN/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/12/27/es/How-I-made-a-puzzle-game/" class="article-date">
-  <time class="dt-published" datetime="2021-12-27T07:39:54.000Z" itemprop="datePublished">2021-12-27</time>
+    <a href="/2026/07/04/zh-CN/i-built-resume-builder/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -496,7 +516,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/12/27/es/How-I-made-a-puzzle-game/">Cómo Hice un Juego de Puzle<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/04/zh-CN/i-built-resume-builder/">我仅通过一条提示词就用 AI 构建了一个简历生成器<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
     </h2>
   
 
@@ -505,19 +525,20 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h5 id="Como-Hice-un-Juego-de-Puzle"><a href="#Como-Hice-un-Juego-de-Puzle" class="headerlink" title="Cómo Hice un Juego de Puzle"></a>Cómo Hice un Juego de Puzle</h5><p>Como ya sabes, no necesitas hacer nada desde cero, porque ya hay mucho código listo. Gracias a los desarrolladores y al código abierto.</p>
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> 是一款专为 IT 专业人员量身定制的 premium 在线简历构建工具。它允许你在浏览器中直接生成、定制并导出高分辨率的精美简历。</p>
+<p>当时我正在找工作，他们要求发送一份简历，所以我考虑构建一个新颖、现代的简历，并决定自己开发这个工具。</p>
         
           <p class="article-more-link">
-            <a href="/2021/12/27/es/How-I-made-a-puzzle-game/#more">Read More</a>
+            <a href="/2026/07/04/zh-CN/i-built-resume-builder/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/12/27/es/How-I-made-a-puzzle-game/" data-id="cuidsqmpRO_jMTQPakFY0wcn4" data-title="Cómo Hice un Juego de Puzle" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/zh-CN/i-built-resume-builder/" data-id="cuid-0DXjGiaWzo9gg9SFprk_" data-title="我仅通过一条提示词就用 AI 构建了一个简历生成器" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
 
     </footer>
   </div>
@@ -525,10 +546,10 @@
 </article>
 
   
-    <article id="post-language-by-subtitles" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/language-by-subtitles/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:19:02.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-04T03:40:15.003Z" itemprop="datePublished">2026-07-04</time>
 </a>
     
   </div>
@@ -539,7 +560,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/language-by-subtitles/">Learn Languages-by-subtitles</a>
+      <a class="p-name article-title" href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/">How I Create Web Pages with Qwen Coder AI</a>
     </h2>
   
 
@@ -548,19 +569,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://lang.safiullin.dev/">Here is the webApp</a></p>
-<p>A site where you can learn any language through subtitles</p>
-<p>Find subtitles for your favorite TV series or movie and upload them to the site</p>
-<p>Then just click on the phrase and see the translation</p>
-
+        <h1 id="How-I-Create-Web-Pages-with-Qwen-Coder-AI"><a href="#How-I-Create-Web-Pages-with-Qwen-Coder-AI" class="headerlink" title="How I Create Web Pages with Qwen Coder AI"></a>How I Create Web Pages with Qwen Coder AI</h1><p>In this article, I’ll share my experience and workflow for creating web pages using Qwen Coder AI.</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/language-by-subtitles/" data-id="cuidswnks6km62Bs_ozxmOxBR" data-title="Learn Languages-by-subtitles" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidViXO662V1Vf1ualY0xKGz" data-title="How I Create Web Pages with Qwen Coder AI" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/language/" rel="tag">language</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pwa/" rel="tag">pwa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li></ul>
-
     </footer>
   </div>
   
@@ -571,7 +591,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -617,23 +637,23 @@
       <ul>
         
           <li>
-            <a href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/">Cómo Crear Páginas Web con Qwen Coder AI</a>
+            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/">मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</a>
           </li>
         
           <li>
-            <a href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/">Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF</a>
+            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/">मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</a>
           </li>
         
           <li>
-            <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
+            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/">ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร</a>
           </li>
         
           <li>
-            <a href="/2026/07/15/es/how-i-built-a-live-web-editor-for-rendercv/">Cómo Construí un Editor Web en Vivo para RenderCV con Gemini</a>
+            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</a>
           </li>
         
           <li>
-            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的</a>
           </li>
         
       </ul>

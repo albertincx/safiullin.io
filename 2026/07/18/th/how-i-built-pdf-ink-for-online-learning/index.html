@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784"
+        crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร | Safiullin.dev. Developer projects and stories of life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?สวัสดีทุกคน! ฉันชื่อ Albert และฉันรักในการทำให้เครื่องมือต่างๆ ทำงานได้สะดวกขึ้น...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร">
+<meta property="og:url" content="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/">
+<meta property="og:site_name" content="Safiullin.dev. Developer projects and stories of life">
+<meta property="og:description" content="ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?สวัสดีทุกคน! ฉันชื่อ Albert และฉันรักในการทำให้เครื่องมือต่างๆ ทำงานได้สะดวกขึ้น...">
+<meta property="og:locale" content="th_TH">
+<meta property="article:published_time" content="2026-07-18T02:27:35.666Z">
+<meta property="article:modified_time" content="2026-07-18T02:27:35.666Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="education">
+<meta property="article:tag" content="open-source">
+<meta property="article:tag" content="pdf">
+<meta property="article:tag" content="web-app">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1784341705155">
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-CN" href="https://safiullin.dev/zh-CN/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร",
+  "datePublished": "2026-07-18T02:27:35.666Z",
+  "dateModified": "2026-07-18T02:27:35.666Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev. Developer projects and stories of life",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?สวัสดีทุกคน! ฉันชื่อ Albert และฉันรักในการทำให้เครื่องมือต่างๆ ทำงานได้สะดวกขึ้น..."
+}
+</script>
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Safiullin.dev</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        
+        <div id="lang-selector">
+          
+            <a href="/" class="lang-btn">EN</a>
+          
+            <a href="/ru/" class="lang-btn">RU</a>
+          
+            <a href="/es/" class="lang-btn">ES</a>
+          
+            <a href="/zh-CN/" class="lang-btn">ZH-CN</a>
+          
+            <a href="/hi/" class="lang-btn">HI</a>
+          
+            <a href="/th/" class="lang-btn active">TH</a>
+          
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="ค้นหา"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="ค้นหา"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://safiullin.dev"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-th/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="ทำไมต้องอ่าน-PDF-หากคุณไม่สามารถเขียนอะไรลงไปได้เลย"><a href="#ทำไมต้องอ่าน-PDF-หากคุณไม่สามารถเขียนอะไรลงไปได้เลย" class="headerlink" title="ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?"></a>ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?</h2><p>สวัสดีทุกคน! ฉันชื่อ Albert และฉันรักในการทำให้เครื่องมือต่างๆ ทำงานได้สะดวกขึ้น</p>
+<p>หากคุณเคยลองเรียนรู้ด้วยตนเอง ศึกษาตำราเรียนเขียนโปรแกรม หรืออ่านเอกสารทางเทคนิคที่ซับซ้อนจากไฟล์ PDF บนแล็ปท็อปหรือแท็บเล็ตของคุณ คุณจะรู้ถึงความยุ่งยากนี้ดี คุณเปิดหนังสือขึ้นมา ต้องการไฮไลท์โค้ดสำคัญ วาดลูกศรแผนภาพด่วนถัดจากคำอธิบาย หรือจดโน้ตไว้ที่ระยะขอบ — และพบว่าโปรแกรมดู PDF มาตรฐานนั้นเทอะทะ เป็นโปรแกรมเสียเงิน หรือทำภาพวาดของคุณหายไปทั้งหมดหากเผลอกดรีเฟรชหน้าเว็บ</p>
+<p>ฉันต้องการแก้ไขปัญหานี้และสร้าง <strong>PDF Ink</strong> — เว็บแอปพลิเคชันที่มีน้ำหนักเบาและรวดเร็วสำหรับการอ่านและเขียนบันทึกโต้ตอบบนหนังสือ PDF ได้โดยตรงในเบราว์เซอร์</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="แนวคิดและเทคโนโลยีที่ใช้"><a href="#แนวคิดและเทคโนโลยีที่ใช้" class="headerlink" title="แนวคิดและเทคโนโลยีที่ใช้"></a>แนวคิดและเทคโนโลยีที่ใช้</h2><p>เป้าหมายหลักคือการสร้างเครื่องมือที่:</p>
+<ol>
+<li>เปิดใช้งานได้ในคลิกเดียวบนเบราว์เซอร์ที่ทันสมัยใดๆ</li>
+<li>ช่วยให้คุณโหลดตำราเรียน PDF จากเครื่องของคุณได้</li>
+<li>ช่วยให้คุณวาดบนหน้าเพจด้วยเมาส์ ปากกาสไตลัส หรือการสัมผัส และพิมพ์ข้อความบันทึกย่อได้</li>
+<li><strong>ที่สำคัญที่สุด:</strong> บันทึกหน้าปัจจุบัน ระดับการซูม รายชื่อหนังสือ และโน้ตภาพวาดทั้งหมดไว้ในเครื่องของคุณอย่างปลอดภัย เพื่อให้คุณกลับมาเรียนต่อได้ทุกเมื่อ</li>
+</ol>
+<p>สำหรับการนำไปใช้งาน ฉันเลือกเทคโนโลยีสมัยใหม่: <strong>React + TypeScript + Vite + TailwindCSS</strong></p>
+<p>สำหรับเอนจินการเรนเดอร์ PDF ฉันใช้ <code>pdfjs-dist</code> (PDF.js) ที่น่าเชื่อถือของ Mozilla ซึ่งเรนเดอร์หน้าเอกสารลงบนองค์ประกอบ HTML5 <code>&lt;canvas&gt;</code> โดยตรง</p>
+<hr>
+<h2 id="สถาปัตยกรรมแคนวาสแบบสองชั้น-Double-Layer"><a href="#สถาปัตยกรรมแคนวาสแบบสองชั้น-Double-Layer" class="headerlink" title="สถาปัตยกรรมแคนวาสแบบสองชั้น (Double-Layer)"></a>สถาปัตยกรรมแคนวาสแบบสองชั้น (Double-Layer)</h2><p>เพื่อให้แอปพลิเคชันทำงานได้ประสิทธิภาพสูงและตอบสนองได้อย่างรวดเร็วระหว่างการโต้ตอบด้วยเมาส์หรือการสัมผัส ฉันจึงแบ่งพื้นที่ทำงานออกเป็นสองชั้นที่เป็นอิสระต่อกัน:</p>
+<ol>
+<li><strong>PDF Layer</strong>: แคนวาสพื้นหลังแบบสแตติกที่เรนเดอร์รูปภาพหน้า PDF ตามขนาดซูมที่ใช้งานอยู่</li>
+<li><strong>Annotation Layer</strong>: แคนวาสโปร่งใสวางซ้อนทับด้านบนซึ่งคอยดักจับ pointer events ของผู้ใช้ (<code>PointerEvents</code>) วาดเส้นเวกเตอร์ และวางข้อความบันทึกย่อ</li>
+</ol>
+<p>การใช้วิธีแคนวาสสองชั้นนี้ทำให้การวาดภาพรวดเร็วมาก: เมื่อผู้ใช้วาดเส้น แอปพลิเคชันจะอัปเดตเฉพาะชั้นเวกเตอร์ที่มีน้ำหนักเบาเท่านั้น โดยปล่อยให้แคนวาส PDF ที่หนักกว่านั้นคงเดิม</p>
+<p>สำหรับอุปกรณ์หน้าจอสัมผัส ฉันยังได้เพิ่ม:</p>
+<ul>
+<li>การซูมด้วยการจีบนิ้ว (multi-touch pinch-to-zoom)</li>
+<li>การวางโน้ตข้อความด้วยการลากและวางด้วยการสัมผัส โดยพิกัดจะคำนวณตามอัตราส่วนหน้าเพจ</li>
+</ul>
+<hr>
+<h2 id="วิวัฒนาการฐานข้อมูล-อัปเกรดเป็น-IndexedDB-v2"><a href="#วิวัฒนาการฐานข้อมูล-อัปเกรดเป็น-IndexedDB-v2" class="headerlink" title="วิวัฒนาการฐานข้อมูล: อัปเกรดเป็น IndexedDB v2"></a>วิวัฒนาการฐานข้อมูล: อัปเกรดเป็น IndexedDB v2</h2><p>เวอร์ชันแรกเริ่มของโปรแกรมจำลองได้บันทึกไฟล์ PDF และภาพวาดทั้งหมดไว้ใน IndexedDB เป็นอ็อบเจกต์เดียวภายใต้คีย์ <code>last-opened</code></p>
+<p>อย่างไรก็ตาม เมื่อหนังสือมีขนาดใหญ่ขึ้น เราเจอปัญหาคอขวดด้านประสิทธิภาพ:</p>
+<blockquote>
+<p><strong>ปัญหา:</strong> ทุกครั้งที่ผู้ใช้วาดเส้นหรือย้ายโน้ตข้อความ แอปพลิเคชันจะบันทึกอัตโนมัติไปยัง IndexedDB การเขียน array buffer ขนาด 20MB ของไฟล์ PDF ดิบลงดิสก์ทุกๆ 250ms ทำให้หน้าเว็บหน่วงและทำให้อายุการใช้งาน SSD สั้นลง</p>
+</blockquote>
+<h3 id="วิธีแก้ไข-แยกไฟล์ออกจากโน้ตบันทึกย่อ"><a href="#วิธีแก้ไข-แยกไฟล์ออกจากโน้ตบันทึกย่อ" class="headerlink" title="วิธีแก้ไข: แยกไฟล์ออกจากโน้ตบันทึกย่อ"></a>วิธีแก้ไข: แยกไฟล์ออกจากโน้ตบันทึกย่อ</h3><p>ฉันเขียนตัวจัดการ IndexedDB ใหม่และอัปเกรดสคีมาการจัดเก็บเป็นเวอร์ชัน 2:</p>
+<ol>
+<li><strong><code>pdfs</code> store</strong>: จัดเก็บไบต์ไฟล์ไบนารีดิบ (<code>ArrayBuffer</code>) โดยใช้ UUID ของเอกสารเป็นคีย์ ซึ่งจะเขียน<strong>เพียงครั้งเดียว</strong>เมื่ออัปโหลดไฟล์ใหม่เข้าไลบรารี</li>
+<li><strong><code>pdfs_metadata</code> store</strong>: จัดเก็บข้อมูล JSON Metadata ที่มีน้ำหนักเบา รวมถึงหมายเลขหน้า ระดับการซูม เส้นวาดเขียน และพิกัดข้อความ</li>
+</ol>
+<p>ตอนนี้ เมื่อคุณวาดเขียน เฉพาะอ็อบเจกต์ข้อมูล Metadata ขนาดเล็กเท่านั้นที่ถูกอัปเดต การเขียนใช้เวลาไม่ถึงมิลลิวินาที ขจัดความหน่วงออกไปได้อย่างสิ้นเชิง!</p>
+<p>ฉันยังเพิ่มสคริปต์การย้ายข้อมูลอัตโนมัติด้วย หากผู้ใช้เปิดแอปด้วยฐานข้อมูลเวอร์ชัน 1 ระบบจะดึงข้อมูลไบนารี สร้าง UUID ใหม่ แยกข้อมูล Metadata และทำการย้ายข้อมูลเซสชันการวาดเขียนของพวกเขาโดยอัตโนมัติ</p>
+<hr>
+<h2 id="ขัดเกลา-UX-คลังหนังสือ-ภาษา-และแถบเครื่องมือพับได้"><a href="#ขัดเกลา-UX-คลังหนังสือ-ภาษา-และแถบเครื่องมือพับได้" class="headerlink" title="ขัดเกลา UX: คลังหนังสือ ภาษา และแถบเครื่องมือพับได้"></a>ขัดเกลา UX: คลังหนังสือ ภาษา และแถบเครื่องมือพับได้</h2><p>เพื่อให้ PDF Ink ให้ความรู้สึกเหมือนเครื่องมือระดับพรีเมียม ฉันได้รวมฟีเจอร์เพิ่มเติมสามอย่างเข้าด้วยกัน:</p>
+<ul>
+<li><strong>คลังหนังสือ PDF ที่ตอบสนองได้ดี</strong>: แถบด้านข้างพับได้ซึ่งแสดงรายการ PDF ที่อัปโหลด สถานะหน้า และสถิติโน้ต (จำนวนภาพวาด จำนวนข้อความ) พร้อมการ์ดโต้ตอบ</li>
+<li><strong>สวิตช์เปลี่ยนภาษา</strong>: สร้างระบบการแปลภาษาที่รองรับภาษาอังกฤษ (ค่าเริ่มต้น, EN เป็นหลัก) และภาษารัสเซีย (RU) โดยบันทึกการตั้งค่าลงใน <code>localStorage</code></li>
+<li><strong>การตั้งค่าหัวแปรงพับได้</strong>: ปรับให้แถวการตั้งค่าปากกา (สี, แถบเลื่อนขนาด, ความโปร่งใส) เปิดปิดได้ผ่านไอคอน Sliders เพื่อให้ผู้ใช้สามารถซ่อนมันเพื่อเพิ่มพื้นที่หน้าจอให้มากที่สุดบนหน้าจอขนาดเล็ก</li>
+</ul>
+<hr>
+<h2 id="ทดลองใช้งานเลย"><a href="#ทดลองใช้งานเลย" class="headerlink" title="ทดลองใช้งานเลย!"></a>ทดลองใช้งานเลย!</h2><p>คุณสามารถทดลองใช้งานเวอร์ชันจริงของแอปพลิเคชันได้ที่นี่:<br>👉 <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://practice-book-app.web.app/">PDF Ink Live App</a></strong></p>
+<hr>
+<h2 id="บทสรุป"><a href="#บทสรุป" class="headerlink" title="บทสรุป"></a>บทสรุป</h2><p>เครื่องมือการเรียนรู้ควรช่วยให้คุณมีสมาธิกับการรับความรู้ ไม่ใช่ต้องมาสู้รบกับอินเตอร์เฟสของระบบ การพัฒนา <strong>PDF Ink</strong> แสดงให้ฉันเห็นว่าเบราว์เซอร์ API สมัยใหม่ (IndexedDB, PointerEvents, HTML5 Canvas) ช่วยให้นักพัฒนาสร้างเครื่องมือแบบ offline-first ที่ทรงพลังและเคารพความเป็นส่วนตัวของข้อมูลผู้ใช้ได้อย่างไร</p>
+<p>ขอให้มีความสุขกับการเรียนรู้ และเขียนโค้ดที่ทำให้ชีวิตง่ายขึ้นกันเถอะ!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" data-id="cuidmxlaJwbnPrWfhLYop9t8f" data-title="ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร" class="article-share-link"><span class="fa fa-share">แชร์</span></a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">ใหม่กว่า</strong>
+      <div class="article-nav-title">
+        
+          मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">เก่ากว่า</strong>
+      <div class="article-nav-title">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ai/" rel="tag">ai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bot/" rel="tag">bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser-extension/" rel="tag">browser extension</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/education/" rel="tag">education</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/games/" rel="tag">games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get/" rel="tag">get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/language/" rel="tag">language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/location/" rel="tag">location</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manager/" rel="tag">manager</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/" rel="tag">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/open-source/" rel="tag">open-source</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pdf/" rel="tag">pdf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/post/" rel="tag">post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/productivity/" rel="tag">productivity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pwa/" rel="tag">pwa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reading/" rel="tag">reading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rest/" rel="tag">rest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resume/" rel="tag">resume</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/routes/" rel="tag">routes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/telegram-bot/" rel="tag">telegram-bot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/" rel="tag">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/viewport/" rel="tag">viewport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-app/" rel="tag">web app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-app/" rel="tag">web-app</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ai/" style="font-size: 14px;">ai</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/bot/" style="font-size: 20px;">bot</a> <a href="/tags/browser-extension/" style="font-size: 10px;">browser extension</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/game/" style="font-size: 10px;">game</a> <a href="/tags/games/" style="font-size: 10px;">games</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/location/" style="font-size: 10px;">location</a> <a href="/tags/manager/" style="font-size: 10px;">manager</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/open-source/" style="font-size: 14px;">open-source</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/productivity/" style="font-size: 10px;">productivity</a> <a href="/tags/project/" style="font-size: 14px;">project</a> <a href="/tags/pwa/" style="font-size: 10px;">pwa</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/reading/" style="font-size: 16px;">reading</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/resume/" style="font-size: 10px;">resume</a> <a href="/tags/routes/" style="font-size: 10px;">routes</a> <a href="/tags/telegram-bot/" style="font-size: 10px;">telegram bot</a> <a href="/tags/telegram-bot/" style="font-size: 12px;">telegram-bot</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/viewport/" style="font-size: 10px;">viewport</a> <a href="/tags/web-app/" style="font-size: 18px;">web app</a> <a href="/tags/web-app/" style="font-size: 14px;">web-app</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/">मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/">मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/">ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
