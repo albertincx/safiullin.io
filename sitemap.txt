@@ -1,3 +1,9 @@
+https://safiullin.dev/2026/07/18/fr/how-i-built-pdf-ink-for-online-learning/
+https://safiullin.dev/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/
+https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/
+https://safiullin.dev/2026/07/18/ru/how-i-built-pdf-ink-for-online-learning/
+https://safiullin.dev/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/
+https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/ru/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/ru/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2026/07/04/ru/i-built-resume-builder/
@@ -8,10 +14,8 @@ https://safiullin.dev/2021/06/20/ru/language-by-subtitles/
 https://safiullin.dev/2023/12/27/ru/How-to-Reduce-Traffic-Congestion/
 https://safiullin.dev/2023/06/11/ru/How-to-make-any-site-mobile/
 https://safiullin.dev/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/
-https://safiullin.dev/2026/07/18/ru/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2021/12/27/ru/How-I-made-a-puzzle-game/
 https://safiullin.dev/2023/06/11/pt/How-to-make-any-site-mobile/
-https://safiullin.dev/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/pt/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/07/04/pt/i-built-resume-builder/
@@ -29,7 +33,6 @@ https://safiullin.dev/2025/12/21/fr/restapi-get-post-manager/
 https://safiullin.dev/2021/06/20/fr/pure-reader/
 https://safiullin.dev/2023/12/27/fr/How-to-Reduce-Traffic-Congestion/
 https://safiullin.dev/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/
-https://safiullin.dev/2026/07/18/fr/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2023/06/11/fr/How-to-make-any-site-mobile/
 https://safiullin.dev/2026/07/18/fr/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/fr/how-to-build-a-good-blocks-game-with-ai/
@@ -41,7 +44,6 @@ https://safiullin.dev/2021/12/27/ar/How-I-made-a-puzzle-game/
 https://safiullin.dev/2023/12/27/ar/How-to-Reduce-Traffic-Congestion/
 https://safiullin.dev/2023/06/11/ar/How-to-make-any-site-mobile/
 https://safiullin.dev/2026/07/15/ar/how-i-built-a-live-web-editor-for-rendercv/
-https://safiullin.dev/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/ar/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/ar/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2026/07/04/ar/i-built-resume-builder/
@@ -83,7 +85,6 @@ https://safiullin.dev/2021/06/20/zh-CN/pure-reader/
 https://safiullin.dev/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/hi/how-to-build-a-good-blocks-game-with-ai/
-https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/th/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/
@@ -106,7 +107,6 @@ https://safiullin.dev/2025/12/21/es/restapi-get-post-manager/
 https://safiullin.dev/2021/06/20/es/instant-chat-bot/
 https://safiullin.dev/2026/03/21/es/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/
-https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2025/12/21/restapi-get-post-manager/
 https://safiullin.dev/2021/06/20/pure-reader/
