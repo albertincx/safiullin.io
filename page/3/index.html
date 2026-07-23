@@ -42,13 +42,13 @@
 
 
 
-    <title>Safiullin.dev</title>
+    <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Albert Safiullin&#96;s Developer blog. Stories of life, Useful apps, useful bots. Make our world better with Information technologies">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Safiullin.dev">
+<meta property="og:title" content="Safiullin.dev Videcode. Ai. Life. Tools">
 <meta property="og:url" content="https://safiullin.dev/page/3/">
-<meta property="og:site_name" content="Safiullin.dev">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
 <meta property="og:description" content="Albert Safiullin&#96;s Developer blog. Stories of life, Useful apps, useful bots. Make our world better with Information technologies">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Albert Safiullin">
@@ -98,7 +98,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Safiullin.dev",
+  "name": "Safiullin.dev Videcode. Ai. Life. Tools",
   "url": "https://safiullin.dev",
   "description": "Albert Safiullin`s Developer blog. Stories of life, Useful apps, useful bots. Make our world better with Information technologies"
 }
@@ -114,9 +114,12 @@
   <div id="banner"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
-      <h2 id="logo-wrap">
-        <a href="/en/" id="logo">Safiullin.dev</a>
-      </h2>
+      
+        <h1 id="logo-wrap">
+          <a href="/en/" id="logo">Safiullin.dev</a>
+        </h1>
+      
+
       
         <h2 id="subtitle-wrap">
           <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
@@ -184,10 +187,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hi/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-es/telegram-bot-iv-maker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+    <a href="/2021/06/20/es/telegram-bot-iv-maker/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:00.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -198,7 +201,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/">मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/es/telegram-bot-iv-maker/">Bot de Telegram IV Maker<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
     </h2>
   
 
@@ -207,43 +210,30 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="कोड-के-रूप-में-रिज्यूमे-RenderCV-की-भव्यता"><a href="#कोड-के-रूप-में-रिज्यूमे-RenderCV-की-भव्यता" class="headerlink" title="कोड के रूप में रिज्यूमे: RenderCV की भव्यता"></a>कोड के रूप में रिज्यूमे: RenderCV की भव्यता</h2><p>यदि आप एक इंजीनियर या शिक्षाविद हैं, तो एमएस वर्ड में रिज्यूमे लिखना एक दुःस्वप्न है, और कस्टम LaTeX टेम्पलेट अक्सर बनाए रखने के लिए बहुत जटिल होते हैं।</p>
-<p>हाल ही में, मुझे <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong> नामक एक शानदार पायथन प्रोजेक्ट मिला। यह आपको एक साफ, संरचित YAML फ़ाइल में अपने रिज्यूमे की सामग्री लिखने की अनुमति देता है और बैकएंड में <strong>Typst</strong> का उपयोग करके सही टाइपोग्राफी के साथ एक खूबसूरती से स्वरूपित PDF उत्पन्न करता है। यह आपके रिज्यूमे को कोड की तरह मानता है, जिसका अर्थ है कि आप इसे संस्करण-नियंत्रित (version-control) कर सकते हैं, पूरी तरह से सामग्री पर ध्यान केंद्रित कर सकते हैं, और टूल को पेज मार्जिन, संरेखण (alignment) और स्टाइलिंग को संभालने दे सकते हैं।</p>
-<p>हालाँकि, RenderCV को मुख्य रूप से कमांड-लाइन इंटरफ़ेस (CLI) टूल के रूप में डिज़ाइन किया गया था। हर बार जब आप कोई बदलाव करते हैं, तो आपको <code>rendercv render John_Doe_CV.yaml</code> चलाना होता है, आउटपुट की जांच करनी होती है, PDF व्यूअर खोलना होता है, और संरेखण की जांच करनी होती है। यदि आप कोई सत्यापन (validation) या स्कीमा त्रुटि करते हैं, तो आपको CLI कंपाइलर ट्रेसबैक को पढ़ना होगा।</p>
-<p>मैं एक <strong>लाइव वेब एडिटर (Live Web Editor)</strong> जोड़कर इस अंतर को पाटना चाहता था—एक स्थानीय सिंगल-पेज वेब ऐप जिसमें साइड-बाय-साइड मोनाको एडिटर (Monaco editor), लाइव PDF पूर्वावलोकन, तत्काल स्कीमा सत्यापन और इंटरैक्टिव थीम&#x2F;अनुभाग टॉगल की सुविधा हो।</p>
-<p><strong>Gemini</strong> की मदद से, मैंने इस वेब इंटरफ़ेस को सफलतापूर्वक बनाया और सीधे RenderCV में एकीकृत किया! यहाँ बताया गया है कि हमने इसे कैसे किया।</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया">Read More</a>
-          </p>
-        
+        <p>Bot de Telegram IV Maker</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">URL</a></p>
+<p>Lee rápidamente directamente en telegram</p>
+<p>Cualquier sitio se convierte a IV para una lectura fácil.<br>No necesitas esperar descargas ni banners molestos.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuid4xOhvfZcOT-Fj-ifEKnGe" data-title="मैंने Gemini का उपयोग करके RenderCV के लिए एक लाइव वेब एडिटर कैसे बनाया" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/es/telegram-bot-iv-maker/" data-id="cuid35QGF78rT5PXpeSKsKZ_H" data-title="Bot de Telegram IV Maker" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/es/tags/bot/" rel="tag">bot</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/es/tags/reading/" rel="tag">reading</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/resume/" rel="tag">resume</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/es/tags/telegram-bot/" rel="tag">telegram bot</a>
       </li>
     
   </ul>
@@ -254,10 +244,10 @@
 </article>
 
   
-    <article id="post-fr/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-fr/telegram-bot-iv-maker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+    <a href="/2021/06/20/fr/telegram-bot-iv-maker/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:00.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -268,7 +258,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/">Comment j&#39;ai construit un éditeur Web en direct pour RenderCV avec Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - FR VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/fr/telegram-bot-iv-maker/">Générateur de pages Instant View pour Telegram<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - FR VERSION</span></a>
     </h2>
   
 
@@ -277,43 +267,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Les-CV-sous-forme-de-code-l’elegance-de-RenderCV"><a href="#Les-CV-sous-forme-de-code-l’elegance-de-RenderCV" class="headerlink" title="Les CV sous forme de code : l’élégance de RenderCV"></a>Les CV sous forme de code : l’élégance de RenderCV</h2><p>Si vous êtes ingénieur ou universitaire, rédiger des CV dans MS Word est un cauchemar de mise en page, et les modèles LaTeX personnalisés sont souvent trop verbeux à maintenir.</p>
-<p>Récemment, je suis tombé sur un projet Python génial appelé <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Il vous permet de rédiger le contenu de votre CV dans un fichier YAML propre et structuré et génère un PDF magnifiquement mis en page avec une typographie parfaite en utilisant <strong>Typst</strong> en arrière-plan. Il traite votre CV comme du code, ce qui signifie que vous pouvez le suivre avec Git, vous concentrer strictement sur le contenu, et laisser l’outil gérer les marges, l’alignement et le style.</p>
-<p>Cependant, RenderCV a été conçu principalement comme un outil CLI. Chaque fois que vous apportez une modification, vous devez exécuter <code>rendercv render John_Doe_CV.yaml</code>, vérifier la sortie et rouvrir le PDF.</p>
-<p>Je voulais combler ce fossé en ajoutant un <strong>éditeur Web en direct</strong> — une application Web locale d’une seule page avec un éditeur Monaco côte à côte, un aperçu PDF en direct, une validation de schéma instantanée et des contrôles de sections interactifs.</p>
-<p>Avec l’aide de <strong>Gemini</strong>, j’ai réussi à construire et à intégrer cette interface Web directement dans RenderCV ! Voici comment nous avons procédé.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Comment j&#39;ai construit un éditeur Web en direct pour RenderCV avec Gemini">Read More</a>
-          </p>
-        
+        <p>Telegram bot IV maker</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">Lien</a></p>
+<p>Lisez rapidement vos articles directement dans Telegram.<br>N’importe quel site est converti au format Instant View pour une lecture fluide, sans publicité ni bannières publicitaires gênantes.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/fr/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidzMKLosWOjjPPelZM1N94o" data-title="Comment j&#39;ai construit un éditeur Web en direct pour RenderCV avec Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/fr/telegram-bot-iv-maker/" data-id="cuidHpU-QFfaRcI-H2nKyh2pR" data-title="Générateur de pages Instant View pour Telegram" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/fr/tags/bot/" rel="tag">bot</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/fr/tags/reading/" rel="tag">reading</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/resume/" rel="tag">resume</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/fr/tags/telegram-bot/" rel="tag">telegram bot</a>
       </li>
     
   </ul>
@@ -324,10 +300,10 @@
 </article>
 
   
-    <article id="post-pt/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-hi/telegram-bot-iv-maker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+    <a href="/2021/06/20/hi/telegram-bot-iv-maker/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:00.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -338,7 +314,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/">Como eu construí um editor Web em tempo real para RenderCV usando Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - PT VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/hi/telegram-bot-iv-maker/">टेलीग्राम बॉट आईवी मेकर (IV Maker)<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
     </h2>
   
 
@@ -347,43 +323,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Curriculos-como-Codigo-A-elegancia-do-RenderCV"><a href="#Curriculos-como-Codigo-A-elegancia-do-RenderCV" class="headerlink" title="Currículos como Código: A elegância do RenderCV"></a>Currículos como Código: A elegância do RenderCV</h2><p>Se você é engenheiro ou acadêmico, escrever currículos no MS Word é um pesadelo de formatação, e os modelos LaTeX personalizados costumam ser verbosos demais para manter.</p>
-<p>Recentemente, me deparei com um projeto Python brilhante chamado <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Ele permite que você escreva o conteúdo do seu currículo em um arquivo YAML limpo e estruturado e gera um PDF lindamente formatado com tipografia perfeita usando <strong>Typst</strong> sob o capô. Ele trata seu currículo como código, o que significa que você pode colocá-lo em controle de versão, concentrar-se estritamente no conteúdo e deixar a ferramenta cuidar das margens da página, alinhamento e estilo.</p>
-<p>No entanto, o RenderCV foi projetado principalmente como uma ferramenta de linha de comando (CLI). Cada vez que você faz uma alteração, precisa executar <code>rendercv render John_Doe_CV.yaml</code>, verificar o resultado e abrir o PDF.</p>
-<p>Eu queria preencher essa lacuna adicionando um <strong>Editor Web em Tempo Real</strong> — um aplicativo da web local de página única com um editor Monaco lado a lado, visualização de PDF em tempo real, validação instantânea de esquema e controles interativos de seções.</p>
-<p>Com a ajuda do <strong>Gemini</strong>, construí e integrei com sucesso esta interface da web diretamente no RenderCV! Veja como fizemos isso.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Como eu construí um editor Web em tempo real para RenderCV usando Gemini">Read More</a>
-          </p>
-        
+        <p>टेलीग्राम बॉट आईवी मेकर (Telegram bot IV maker)</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">यूआरएल (Url)</a></p>
+<p>सीधे टेलीग्राम में तेज़ी से पढ़ें।<br>आसान पढ़ने के लिए किसी भी साइट को आईवी (IV - Instant View) में परिवर्तित किया जाता है।<br>डाउनलोड और कष्टप्रद बैनर (ads) के लिए प्रतीक्षा करने की कोई आवश्यकता नहीं है।</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/pt/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidyFd01F1VcgLhQWWqb10dl" data-title="Como eu construí um editor Web em tempo real para RenderCV usando Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/hi/telegram-bot-iv-maker/" data-id="cuidmQko_DbMpQO0oOFuL7YLI" data-title="टेलीग्राम बॉट आईवी मेकर (IV Maker)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/hi/tags/bot/" rel="tag">bot</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/hi/tags/reading/" rel="tag">reading</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/resume/" rel="tag">resume</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/hi/tags/telegram-bot/" rel="tag">telegram bot</a>
       </li>
     
   </ul>
@@ -394,10 +356,10 @@
 </article>
 
   
-    <article id="post-ru/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-pt/telegram-bot-iv-maker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+    <a href="/2021/06/20/pt/telegram-bot-iv-maker/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:00.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -408,7 +370,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/">Как я создал веб-редактор реального времени для RenderCV с помощью Gemini<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/pt/telegram-bot-iv-maker/">Gerador de visualização rápida para Telegram<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - PT VERSION</span></a>
     </h2>
   
 
@@ -417,43 +379,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Резюме-как-код-Элегантность-RenderCV"><a href="#Резюме-как-код-Элегантность-RenderCV" class="headerlink" title="Резюме как код: Элегантность RenderCV"></a>Резюме как код: Элегантность RenderCV</h2><p>Если вы инженер или ученый, написание резюме в MS Word — это кошмар с форматированием, а кастомные шаблоны LaTeX часто слишком сложны в поддержке.</p>
-<p>Недавно я наткнулся на отличный Python-проект под названием <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>. Он позволяет писать содержимое вашего резюме в чистом, структурированном файле YAML и генерирует красиво отформатированный PDF с идеальной типографикой, используя под капотом <strong>Typst</strong>. Он относится к резюме как к коду, а значит, вы можете использовать контроль версий, фокусироваться только на контенте и доверить инструменту настройку полей, выравнивания и стиля.</p>
-<p>Однако RenderCV изначально разрабатывался как CLI-инструмент. Каждый раз при внесении изменений нужно запускать <code>rendercv render John_Doe_CV.yaml</code>, проверять результат и открывать PDF.</p>
-<p>Я хотел исправить это, добавив <strong>веб-редактор реального времени</strong> — локальное веб-приложение на FastAPI с редактором Monaco, живым предпросмотром PDF, мгновенной валидацией схемы и интерактивным переключением разделов.</p>
-<p>С помощью <strong>Gemini</strong> я успешно создал и интегрировал этот веб-интерфейс прямо в RenderCV! Вот как мы это сделали.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: Как я создал веб-редактор реального времени для RenderCV с помощью Gemini">Read More</a>
-          </p>
-        
+        <p>Telegram bot IV maker</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">Link</a></p>
+<p>Leia artigos de forma rápida diretamente no Telegram.<br>Qualquer site é convertido para o formato Instant View (visualização rápida) para uma leitura fluida, sem anúncios ou banners incômodos.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidzB5Q6AbDp6rmPoUxPLIPw" data-title="Как я создал веб-редактор реального времени для RenderCV с помощью Gemini" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/pt/telegram-bot-iv-maker/" data-id="cuidptV2inz0WLVj1Er_XDSFt" data-title="Gerador de visualização rápida para Telegram" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/pt/tags/bot/" rel="tag">bot</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/pt/tags/reading/" rel="tag">reading</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/resume/" rel="tag">resume</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/pt/tags/telegram-bot/" rel="tag">telegram bot</a>
       </li>
     
   </ul>
@@ -464,10 +412,10 @@
 </article>
 
   
-    <article id="post-th/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-th/telegram-bot-iv-maker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+    <a href="/2021/06/20/th/telegram-bot-iv-maker/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:00.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -478,7 +426,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/">ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/th/telegram-bot-iv-maker/">บอตสร้าง Telegram Instant View<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
     </h2>
   
 
@@ -487,43 +435,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="เรซูเม่ในรูปแบบโค้ด-ความสง่างามของ-RenderCV"><a href="#เรซูเม่ในรูปแบบโค้ด-ความสง่างามของ-RenderCV" class="headerlink" title="เรซูเม่ในรูปแบบโค้ด: ความสง่างามของ RenderCV"></a>เรซูเม่ในรูปแบบโค้ด: ความสง่างามของ RenderCV</h2><p>หากคุณเป็นวิศวกรหรือนักวิชาการ การเขียนเรซูเม่ใน MS Word คือฝันร้ายของการจัดรูปแบบ และเทมเพลต LaTeX แบบกำหนดเองก็มักจะเวิ่นเว้อเกินกว่าจะดูแลรักษาได้ง่ายๆ</p>
-<p>เมื่อไม่นานมานี้ ฉันบังเอิญไปพบกับโปรเจกต์ Python ที่ยอดเยี่ยมชื่อว่า <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong> มันช่วยให้คุณเขียนเนื้อหาเรซูเม่ของคุณในไฟล์ YAML ที่สะอาดและมีโครงสร้างที่เป็นระเบียบ จากนั้นจะสร้าง PDF ที่จัดรูปแบบอย่างสวยงามด้วยไทโปกราฟีที่สมบูรณ์แบบโดยใช้ <strong>Typst</strong> เป็นตัวขับเคลื่อนเบื้องหลัง มันปฏิบัติกับเรซูเม่ของคุณเหมือนโค้ด ซึ่งหมายความว่าคุณสามารถควบคุมเวอร์ชัน (version-control) ได้ มุ่งเน้นไปที่เนื้อหาอย่างแท้จริง และปล่อยให้เครื่องมือจัดการเรื่องระยะขอบหน้า การจัดตำแหน่ง และสไตล์</p>
-<p>อย่างไรก็ตาม RenderCV ถูกออกแบบมาเพื่อใช้งานผ่าน Command-line interface (CLI) เป็นหลัก ทุกครั้งที่คุณทำการเปลี่ยนแปลง คุณต้องรัน <code>rendercv render John_Doe_CV.yaml</code> ตรวจสอบผลลัพธ์ เปิดโปรแกรมดู PDF และเช็คการจัดตำแหน่ง หากคุณทำผิดพลาดในการตรวจสอบความถูกต้องหรือ स्कीमा (schema) คุณต้องนั่งอ่าน CLI compiler tracebacks ที่ชวนปวดหัว</p>
-<p>ฉันต้องการเชื่อมช่องว่างนี้ด้วยการเพิ่ม <strong>Live Web Editor</strong>—เว็บแอปพลิเคชันหน้าเดียวแบบโลคัลที่มีโปรแกรมแก้ไข Monaco แบบเคียงข้างกัน พรีวิว PDF แบบเรียลไทม์ ตรวจสอบความถูกต้องของสคีมาทันที และการสลับธีม&#x2F;ส่วนการทำงานแบบโต้ตอบได้</p>
-<p>ด้วยความช่วยเหลือของ <strong>Gemini</strong> ฉันสร้างและรวมเว็บอินเตอร์เฟสนี้เข้ากับ RenderCV ได้โดยตรงสำเร็จแล้ว! และนี่คือวิธีที่เราทำกัน</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร">Read More</a>
-          </p>
-        
+        <p>บอตสร้าง Telegram Instant View (Telegram bot IV maker)</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">ดูรายละเอียด</a></p>
+<p>อ่านบทความได้อย่างรวดเร็วทันใจผ่าน Telegram<br>ทุกหน้าเว็บจะถูกแปลงเป็นรูปแบบ Instant View (IV) เพื่อการอ่านที่สะดวกสบาย<br>ไม่จำเป็นต้องรอหน้าเว็บโหลดนานๆ และไม่มีป้ายโฆษณาที่คอยกวนใจ</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidjSk_qUFnrP_yZvz5PCMyT" data-title="ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/th/telegram-bot-iv-maker/" data-id="cuid4al-53Br7vT2fr7RcjpmV" data-title="บอตสร้าง Telegram Instant View" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/th/tags/bot/" rel="tag">bot</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/th/tags/reading/" rel="tag">reading</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/resume/" rel="tag">resume</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/th/tags/telegram-bot/" rel="tag">telegram bot</a>
       </li>
     
   </ul>
@@ -534,10 +468,10 @@
 </article>
 
   
-    <article id="post-zh-CN/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-zh-CN/telegram-bot-iv-maker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
-  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
+    <a href="/2021/06/20/zh-CN/telegram-bot-iv-maker/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:00.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -548,7 +482,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/">我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/zh-CN/telegram-bot-iv-maker/">Telegram 网页即时预览生成机器人<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
     </h2>
   
 
@@ -557,43 +491,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="简历即代码：RenderCV-的优雅之处"><a href="#简历即代码：RenderCV-的优雅之处" class="headerlink" title="简历即代码：RenderCV 的优雅之处"></a>简历即代码：RenderCV 的优雅之处</h2><p>如果你是一名工程师或学术界人士，用 MS Word 撰写简历简直是一场排版噩梦，而自定义的 LaTeX 模板又往往过于冗长，难以维护。</p>
-<p>最近，我偶然发现了一个非常棒的 Python 项目——<strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>。它允许你在一个干净、结构化的 YAML 文件中编写简历内容，并在后台使用 <strong>Typst</strong> 生成排版完美、排版精美的 PDF。它把你的简历当成代码来对待，这意味着你可以对其进行版本控制，只专注于内容，让工具来处理页边距、对齐和样式。</p>
-<p>然而，RenderCV 最初主要被设计为一个命令行界面 (CLI) 工具。每次你做出修改，都必须运行 <code>rendercv render John_Doe_CV.yaml</code>，查看输出，打开 PDF 查看器并检查对齐。如果遇到验证或 schema 错误，你还得阅读 CLI 编译器的回溯信息。</p>
-<p>我希望通过添加一个<strong>实时网页编辑器 (Live Web Editor)</strong> 来弥补这一缺憾——这是一个本地单页 Web 应用程序，包含左右分栏的 Monaco 编辑器、实时 PDF 预览、即时模式验证以及交互式主题&#x2F;模块开关。</p>
-<p>在 <strong>Gemini</strong> 的帮助下，我成功构建了这个 Web 界面并将其直接集成到了 RenderCV 中！以下是我们的实现过程。</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: 我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的">Read More</a>
-          </p>
-        
+        <p>Telegram 网页即时预览 (Instant View) 生成机器人</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/telegram-bot-instantview-maker.html">网页链接</a></p>
+<p>直接在 Telegram 里极速阅读。<br>所有网页都会被转换为 Instant View 格式以方便阅读。<br>无需等待漫长的页面加载，也没有令人烦躁的横幅广告。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidYUMHEtyYGF2Gp6LFlXYI7" data-title="我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/zh-CN/telegram-bot-iv-maker/" data-id="cuid-HB_6N81o3rJGVShT5U3U" data-title="Telegram 网页即时预览生成机器人" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/bot/" rel="tag">bot</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/reading/" rel="tag">reading</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/resume/" rel="tag">resume</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/telegram-bot/" rel="tag">telegram bot</a>
       </li>
     
   </ul>
@@ -604,10 +524,10 @@
 </article>
 
   
-    <article id="post-how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-language-by-subtitles" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/" class="article-date">
-  <time class="dt-published" datetime="2026-07-14T13:46:31.176Z" itemprop="datePublished">2026-07-14</time>
+    <a href="/2021/06/20/language-by-subtitles/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:02.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -618,7 +538,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
+      <a class="p-name article-title" href="/2021/06/20/language-by-subtitles/">Learn Languages-by-subtitles</a>
     </h2>
   
 
@@ -627,81 +547,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Why-read-PDFs-if-you-can’t-write-on-them"><a href="#Why-read-PDFs-if-you-can’t-write-on-them" class="headerlink" title="Why read PDFs if you can’t write on them?"></a>Why read PDFs if you can’t write on them?</h2><p>Hello everyone! I’m Albert, and I love making tools more convenient.</p>
-<p>If you have ever tried self-learning, studying programming textbooks, or reading complex technical documents from PDFs on your laptop or tablet, you know this struggle. You open a book, want to highlight a key code snippet, draw a quick diagram arrow next to an explanation, or leave a note on the margins — and realize that standard PDF viewers are either bloated, commercial, or they completely lose your drawings if you accidentally refresh the tab.</p>
-<p>I wanted to fix this and create <strong>PDF Ink</strong> — a lightweight, fast web application for reading and interactively annotating PDF books directly in the browser.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: How I Built PDF Ink for Comfortable Online Learning from PDF Books">Read More</a>
-          </p>
-        
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://lang.safiullin.dev/">Here is the webApp</a></p>
+<p>A site where you can learn any language through subtitles</p>
+<p>Find subtitles for your favorite TV series or movie and upload them to the site</p>
+<p>Then just click on the phrase and see the translation</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/" data-id="cuidxkEoSfH_VDwaTU50AC-Vt" data-title="How I Built PDF Ink for Comfortable Online Learning from PDF Books" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
-      
-      
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/web-app/" rel="tag">web-app</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/pdf/" rel="tag">pdf</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/education/" rel="tag">education</a>
-      </li>
-    
-  </ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/04/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/i-built-resume-builder/">I built a resume-builder with AI in 1 prompt</a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> is a premium web-based resume builder tailored specifically for IT professionals. It allows you to build, customize, and export clean, high-resolution resumes directly in your browser.</p>
-<p>I was looking for a job and they asked to send a CV, so I was thinking about building a fresh, modern resume and decided to code this.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/i-built-resume-builder/#more" aria-label="Read More: I built a resume-builder with AI in 1 prompt">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/i-built-resume-builder/" data-id="cuidpu-FZx1Dc2t7FLCy8zZug" data-title="I built a resume-builder with AI in 1 prompt" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/language-by-subtitles/" data-id="cuid8IPxh8Y4DaqiM3DTU1t5b" data-title="Learn Languages-by-subtitles" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -712,11 +566,15 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/tools/" rel="tag">tools</a>
+        <a class="article-tag-list-link" href="/en/tags/learning/" rel="tag">learning</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/productivity/" rel="tag">productivity</a>
+        <a class="article-tag-list-link" href="/en/tags/language/" rel="tag">language</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/pwa/" rel="tag">pwa</a>
       </li>
     
   </ul>
@@ -727,10 +585,10 @@
 </article>
 
   
-    <article id="post-ar/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-ar/language-by-subtitles" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/04/ar/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
+    <a href="/2021/06/20/ar/language-by-subtitles/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:02.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -741,7 +599,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/ar/i-built-resume-builder/">قمت ببناء صانع سير ذاتية بالذكاء الاصطناعي في أمر واحد<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - AR VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/ar/language-by-subtitles/">تعلم اللغات عبر الترجمات المصاحبة<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - AR VERSION</span></a>
     </h2>
   
 
@@ -750,17 +608,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> هو صانع سير ذاتية متميز يعتمد على الويب ومصمم خصيصاً لمتخصصي تكنولوجيا المعلومات. يتيح لك بناء وتخصيص وتصدير سير ذاتية نظيفة وعالية الدقة مباشرة في متصفحك.</p>
-<p>كنت أبحث عن عمل وطلبوا مني إرسال سيرة ذاتية، لذلك فكرت في بناء سيرة ذاتية حديثة وقررت كتابة هذا الكود.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/ar/i-built-resume-builder/#more" aria-label="Read More: قمت ببناء صانع سير ذاتية بالذكاء الاصطناعي في أمر واحد">Read More</a>
-          </p>
-        
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://lang.safiullin.dev/">رابط تطبيق الويب هنا</a></p>
+<p>موقع حيث يمكنك تعلم أي لغة من خلال الترجمات المصاحبة (Subtitles).</p>
+<p>ابحث عن ملف الترجمة لفيلمك أو مسلسلك المفضل وارفعه على الموقع.</p>
+<p>ثم اضغط ببساطة على الجملة لرؤية الترجمة.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/ar/i-built-resume-builder/" data-id="cuidKPmnQCCuJnbFZXxP5C-dr" data-title="قمت ببناء صانع سير ذاتية بالذكاء الاصطناعي في أمر واحد" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/ar/language-by-subtitles/" data-id="cuidCG3VpOzx-UDm0z6p8Z9wF" data-title="تعلم اللغات عبر الترجمات المصاحبة" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -771,11 +627,15 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ar/tags/tools/" rel="tag">tools</a>
+        <a class="article-tag-list-link" href="/ar/tags/learning/" rel="tag">learning</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ar/tags/productivity/" rel="tag">productivity</a>
+        <a class="article-tag-list-link" href="/ar/tags/language/" rel="tag">language</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ar/tags/pwa/" rel="tag">pwa</a>
       </li>
     
   </ul>
@@ -786,10 +646,10 @@
 </article>
 
   
-    <article id="post-es/i-built-resume-builder" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-es/language-by-subtitles" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/04/es/i-built-resume-builder/" class="article-date">
-  <time class="dt-published" datetime="2026-07-04T10:12:00.000Z" itemprop="datePublished">2026-07-04</time>
+    <a href="/2021/06/20/es/language-by-subtitles/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:02.000Z" itemprop="datePublished">2021-06-20</time>
 </a>
     
   </div>
@@ -800,7 +660,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/04/es/i-built-resume-builder/">Construí un creador de currículums con IA en 1 prompt<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2021/06/20/es/language-by-subtitles/">Aprende Idiomas por Subtítulos<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
     </h2>
   
 
@@ -809,17 +669,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://resume-builder.safiullin.dev/">IT Resume Builder</a> es un creador de currículums web premium diseñado específicamente para profesionales de TI. Te permite crear, personalizar y exportar currículums limpios y de alta resolución directamente en tu navegador.</p>
-<p>Estaba buscando trabajo y me pidieron que enviara un CV, así que pensé en construir un currículum fresco y moderno y decidí programarlo.</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/04/es/i-built-resume-builder/#more" aria-label="Read More: Construí un creador de currículums con IA en 1 prompt">Read More</a>
-          </p>
-        
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://lang.safiullin.dev/">Aquí está la webApp</a></p>
+<p>Un sitio donde puedes aprender cualquier idioma a través de subtítulos</p>
+<p>Encuentra subtítulos para tu serie de TV o película favorita y súbelos al sitio</p>
+<p>Luego simplemente haz clic en la frase y ve la traducción</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/04/es/i-built-resume-builder/" data-id="cuidCZ-mgFCY1rXEFwbdcHPzl" data-title="Construí un creador de currículums con IA en 1 prompt" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2021/06/20/es/language-by-subtitles/" data-id="cuidVJ9UMg5LO5Flic1lO2Q0d" data-title="Aprende Idiomas por Subtítulos" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -830,11 +688,76 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/es/tags/tools/" rel="tag">tools</a>
+        <a class="article-tag-list-link" href="/es/tags/learning/" rel="tag">learning</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/es/tags/productivity/" rel="tag">productivity</a>
+        <a class="article-tag-list-link" href="/es/tags/language/" rel="tag">language</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/es/tags/pwa/" rel="tag">pwa</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-fr/language-by-subtitles" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/20/fr/language-by-subtitles/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T11:19:02.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/20/fr/language-by-subtitles/">Apprendre les langues avec les sous-titres<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - FR VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://lang.safiullin.dev/">Lien vers l’application Web</a></p>
+<p>Un site pour apprendre n’importe quelle langue grâce aux sous-titres de vos vidéos.</p>
+<p>Trouvez le fichier de sous-titres de votre film ou série préférée et chargez-le sur le site.</p>
+<p>Ensuite, cliquez simplement sur une phrase pour voir sa traduction.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2021/06/20/fr/language-by-subtitles/" data-id="cuidKeoS7aYT9IrNXj0Nl823N" data-title="Apprendre les langues avec les sous-titres" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/fr/tags/web-app/" rel="tag">web app</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/fr/tags/learning/" rel="tag">learning</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/fr/tags/language/" rel="tag">language</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/fr/tags/pwa/" rel="tag">pwa</a>
       </li>
     
   </ul>
@@ -869,29 +792,37 @@
     <div class="widget tagcloud">
       
       
-        <a href="/en/tags/mobile/" style="font-size: 10.00px;">mobile</a>
+        <a href="/en/tags/games/" style="font-size: 10.00px;">games</a>
+      
+        <a href="/en/tags/web-app/" style="font-size: 20.00px;">web app</a>
       
         <a href="/en/tags/bot/" style="font-size: 16.00px;">bot</a>
-      
-        <a href="/en/tags/viewport/" style="font-size: 10.00px;">viewport</a>
-      
-        <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
       
         <a href="/en/tags/routes/" style="font-size: 10.00px;">routes</a>
       
         <a href="/en/tags/location/" style="font-size: 10.00px;">location</a>
       
-        <a href="/en/tags/python/" style="font-size: 10.00px;">python</a>
+        <a href="/en/tags/tools/" style="font-size: 12.00px;">tools</a>
       
-        <a href="/en/tags/web-app/" style="font-size: 20.00px;">web-app</a>
+        <a href="/en/tags/meme/" style="font-size: 10.00px;">meme</a>
+      
+        <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
+      
+        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
+      
+        <a href="/en/tags/mobile/" style="font-size: 10.00px;">mobile</a>
+      
+        <a href="/en/tags/viewport/" style="font-size: 10.00px;">viewport</a>
+      
+        <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
+      
+        <a href="/en/tags/python/" style="font-size: 10.00px;">python</a>
       
         <a href="/en/tags/resume/" style="font-size: 10.00px;">resume</a>
       
         <a href="/en/tags/open-source/" style="font-size: 12.00px;">open-source</a>
       
         <a href="/en/tags/ai/" style="font-size: 12.00px;">ai</a>
-      
-        <a href="/en/tags/games/" style="font-size: 10.00px;">games</a>
       
         <a href="/en/tags/pdf/" style="font-size: 10.00px;">pdf</a>
       
@@ -900,6 +831,14 @@
         <a href="/en/tags/project/" style="font-size: 12.00px;">project</a>
       
         <a href="/en/tags/game/" style="font-size: 10.00px;">game</a>
+      
+        <a href="/en/tags/productivity/" style="font-size: 10.00px;">productivity</a>
+      
+        <a href="/en/tags/learning/" style="font-size: 10.00px;">learning</a>
+      
+        <a href="/en/tags/language/" style="font-size: 10.00px;">language</a>
+      
+        <a href="/en/tags/pwa/" style="font-size: 10.00px;">pwa</a>
       
         <a href="/en/tags/telegram-bot/" style="font-size: 12.00px;">telegram-bot</a>
       
@@ -915,22 +854,6 @@
       
         <a href="/en/tags/post/" style="font-size: 10.00px;">post</a>
       
-        <a href="/en/tags/learning/" style="font-size: 10.00px;">learning</a>
-      
-        <a href="/en/tags/language/" style="font-size: 10.00px;">language</a>
-      
-        <a href="/en/tags/pwa/" style="font-size: 10.00px;">pwa</a>
-      
-        <a href="/en/tags/tools/" style="font-size: 12.00px;">tools</a>
-      
-        <a href="/en/tags/productivity/" style="font-size: 10.00px;">productivity</a>
-      
-        <a href="/en/tags/meme/" style="font-size: 10.00px;">meme</a>
-      
-        <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
-      
-        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
-      
     </div>
   </div>
 
@@ -945,7 +868,7 @@
       <ul class="archive-list">
         
           <li class="archive-list-item">
-            <a class="archive-list-link" href="/en/archives/2023/06/">June 2023</a>
+            <a class="archive-list-link" href="/en/archives/2021/12/">December 2021</a>
             
           </li>
         
@@ -960,7 +883,7 @@
           </li>
         
           <li class="archive-list-item">
-            <a class="archive-list-link" href="/en/archives/2021/12/">December 2021</a>
+            <a class="archive-list-link" href="/en/archives/2023/06/">June 2023</a>
             
           </li>
         
@@ -994,7 +917,7 @@
       <ul>
         
           <li>
-            <a href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
+            <a href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
           </li>
         
           <li>
@@ -1002,15 +925,15 @@
           </li>
         
           <li>
+            <a href="/2026/07/23/Here-You-Can-Create-a-Cool-Meme/">Here You Can Create a Cool Meme</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
+          </li>
+        
+          <li>
             <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
-          </li>
-        
-          <li>
-            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
           </li>
         
       </ul>

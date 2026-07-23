@@ -42,13 +42,13 @@
 
 
 
-    <title>Safiullin.dev</title>
+    <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Albert Safiullin&#96;s Developer blog. Stories of life, Useful apps, useful bots. Make our world better with Information technologies">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Safiullin.dev">
+<meta property="og:title" content="Safiullin.dev Videcode. Ai. Life. Tools">
 <meta property="og:url" content="https://safiullin.dev/page/11/">
-<meta property="og:site_name" content="Safiullin.dev">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
 <meta property="og:description" content="Albert Safiullin&#96;s Developer blog. Stories of life, Useful apps, useful bots. Make our world better with Information technologies">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Albert Safiullin">
@@ -98,7 +98,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Safiullin.dev",
+  "name": "Safiullin.dev Videcode. Ai. Life. Tools",
   "url": "https://safiullin.dev",
   "description": "Albert Safiullin`s Developer blog. Stories of life, Useful apps, useful bots. Make our world better with Information technologies"
 }
@@ -114,9 +114,12 @@
   <div id="banner"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
-      <h2 id="logo-wrap">
-        <a href="/en/" id="logo">Safiullin.dev</a>
-      </h2>
+      
+        <h1 id="logo-wrap">
+          <a href="/en/" id="logo">Safiullin.dev</a>
+        </h1>
+      
+
       
         <h2 id="subtitle-wrap">
           <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
@@ -184,10 +187,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-zh-CN/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+  <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
   </div>
@@ -198,7 +201,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/instant-chat-bot/">InstantChatBot</a>
+      <a class="p-name article-title" href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/">我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
     </h2>
   
 
@@ -207,32 +210,43 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>Let’s say you have a site that people visit. But how to quickly contact you and so that they receive an answer instantly?</p>
+        <h2 id="简历即代码：RenderCV-的优雅之处"><a href="#简历即代码：RenderCV-的优雅之处" class="headerlink" title="简历即代码：RenderCV 的优雅之处"></a>简历即代码：RenderCV 的优雅之处</h2><p>如果你是一名工程师或学术界人士，用 MS Word 撰写简历简直是一场排版噩梦，而自定义的 LaTeX 模板又往往过于冗长，难以维护。</p>
+<p>最近，我偶然发现了一个非常棒的 Python 项目——<strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>。它允许你在一个干净、结构化的 YAML 文件中编写简历内容，并在后台使用 <strong>Typst</strong> 生成排版完美、排版精美的 PDF。它把你的简历当成代码来对待，这意味着你可以对其进行版本控制，只专注于内容，让工具来处理页边距、对齐和样式。</p>
+<p>然而，RenderCV 最初主要被设计为一个命令行界面 (CLI) 工具。每次你做出修改，都必须运行 <code>rendercv render John_Doe_CV.yaml</code>，查看输出，打开 PDF 查看器并检查对齐。如果遇到验证或 schema 错误，你还得阅读 CLI 编译器的回溯信息。</p>
+<p>我希望通过添加一个<strong>实时网页编辑器 (Live Web Editor)</strong> 来弥补这一缺憾——这是一个本地单页 Web 应用程序，包含左右分栏的 Monaco 编辑器、实时 PDF 预览、即时模式验证以及交互式主题&#x2F;模块开关。</p>
+<p>在 <strong>Gemini</strong> 的帮助下，我成功构建了这个 Web 界面并将其直接集成到了 RenderCV 中！以下是我们的实现过程。</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
+            <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: 我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/instant-chat-bot/" data-id="cuidNRIIURIylg4u4O6AHgV-H" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidPhoUGmRQRwte5Ls3yMP-P" data-title="我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/python/" rel="tag">python</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/telegram-bot/" rel="tag">telegram-bot</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/reading/" rel="tag">reading</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/resume/" rel="tag">resume</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/open-source/" rel="tag">open-source</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/ai/" rel="tag">ai</a>
       </li>
     
   </ul>
@@ -243,10 +257,10 @@
 </article>
 
   
-    <article id="post-ar/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-es/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/ar/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-17T10:38:59.963Z" itemprop="datePublished">2026-07-17</time>
 </a>
     
   </div>
@@ -257,7 +271,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/ar/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - AR VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/">Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
     </h2>
   
 
@@ -266,32 +280,37 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>دعنا نقول أن لديك موقعاً يزوره الناس. ولكن كيف يتواصلون معك بسرعة بحيث يتلقون إجابة على الفور؟</p>
+        <h2 id="¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos"><a href="#¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos" class="headerlink" title="¿Por qué leer PDFs si no puedes escribir en ellos?"></a>¿Por qué leer PDFs si no puedes escribir en ellos?</h2><p>¡Hola a todos! Soy Albert y me encanta hacer las herramientas más convenientes.</p>
+<p>Si alguna vez has intentado el auto-aprendizaje, estudiar libros de texto de programación o leer documentos técnicos complejos en PDF en tu laptop o tablet, conoces esta lucha. Abres un libro, quieres resaltar un fragmento de código clave, dibujar una flecha rápida en un diagrama junto a una explicación, o dejar una nota en los márgenes—y te das cuenta de que los visores de PDF estándar son o demasiado pesados, comerciales, o pierden completamente tus dibujos si accidentalmente refrescas la pestaña.</p>
+<p>Quería solucionar esto y crear <strong>PDF Ink</strong>—una aplicación web ligera y rápida para leer y anotar interactivamente libros PDF directamente en el navegador.</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/ar/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
+            <a href="/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/ar/instant-chat-bot/" data-id="cuidDlqVSpHINwGyk0B_BehCc" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/" data-id="cuid6ElzA8XTWT-xQrqqcxLyY" data-title="Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ar/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/es/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ar/tags/telegram-bot/" rel="tag">telegram-bot</a>
+        <a class="article-tag-list-link" href="/es/tags/open-source/" rel="tag">open-source</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ar/tags/reading/" rel="tag">reading</a>
+        <a class="article-tag-list-link" href="/es/tags/pdf/" rel="tag">pdf</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/es/tags/education/" rel="tag">education</a>
       </li>
     
   </ul>
@@ -302,10 +321,10 @@
 </article>
 
   
-    <article id="post-es/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-es/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/es/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-17T10:39:51.860Z" itemprop="datePublished">2026-07-17</time>
 </a>
     
   </div>
@@ -316,7 +335,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/es/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/">Cómo Crear Páginas Web con Qwen Coder AI<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ES VERSION</span></a>
     </h2>
   
 
@@ -325,32 +344,78 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>Digamos que tienes un sitio que la gente visita. ¿Pero cómo contactarte rápidamente y de modo que reciban una respuesta al instante?</p>
+        <p>En este artículo, compartiré mi experiencia y flujo de trabajo para crear páginas web usando Qwen Coder AI.</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/es/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
+            <a href="/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: Cómo Crear Páginas Web con Qwen Coder AI">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/es/instant-chat-bot/" data-id="cuidrXOIjv9E5lzT5TvK7_Fp4" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidaY_kq0slD2ztCJjAuaWrM" data-title="Cómo Crear Páginas Web con Qwen Coder AI" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-hi/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/">मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="जब-आप-PDF-पर-लिख-नहीं-सकते-तो-उन्हें-पढ़ने-का-क्या-फायदा"><a href="#जब-आप-PDF-पर-लिख-नहीं-सकते-तो-उन्हें-पढ़ने-का-क्या-फायदा" class="headerlink" title="जब आप PDF पर लिख नहीं सकते, तो उन्हें पढ़ने का क्या फायदा?"></a>जब आप PDF पर लिख नहीं सकते, तो उन्हें पढ़ने का क्या फायदा?</h2><p>सभी को नमस्कार! मैं अल्बर्ट हूँ, और मुझे टूल्स को अधिक सुविधाजनक बनाना पसंद है।</p>
+<p>यदि आपने कभी स्व-अध्ययन (self-learning) करने का प्रयास किया है, प्रोग्रामिंग पाठ्यपुस्तकों का अध्ययन किया है, या अपने लैपटॉप या टैबलेट पर PDF से जटिल तकनीकी दस्तावेज़ पढ़े हैं, तो आप इस संघर्ष को अच्छी तरह जानते हैं। आप एक किताब खोलते हैं, एक महत्वपूर्ण कोड स्निपेट को हाइलाइट करना चाहते हैं, स्पष्टीकरण के बगल में एक त्वरित आरेख तीर (diagram arrow) बनाना चाहते हैं, या मार्जिन पर एक नोट छोड़ना चाहते हैं — और महसूस करते हैं कि मानक PDF व्यूअर या तो बहुत भारी हैं, पेड (paid) हैं, या यदि आप गलती से टैब को रीफ्रेश कर देते हैं तो आपके चित्र पूरी तरह से गायब हो जाते हैं।</p>
+<p>मैं इसे ठीक करना चाहता था और <strong>PDF Ink</strong> बनाना चाहता था — सीधे ब्राउज़र में PDF पुस्तकों को पढ़ने और उन पर लिखने के लिए एक हल्का, तेज़ वेब एप्लिकेशन।</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/" data-id="cuidI9qWlzBcjHArKVIm4p0Jw" data-title="मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/es/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/hi/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/es/tags/telegram-bot/" rel="tag">telegram-bot</a>
+        <a class="article-tag-list-link" href="/hi/tags/open-source/" rel="tag">open-source</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/es/tags/reading/" rel="tag">reading</a>
+        <a class="article-tag-list-link" href="/hi/tags/pdf/" rel="tag">pdf</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/hi/tags/education/" rel="tag">education</a>
       </li>
     
   </ul>
@@ -361,10 +426,10 @@
 </article>
 
   
-    <article id="post-hi/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-hi/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/hi/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
 </a>
     
   </div>
@@ -375,7 +440,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/hi/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/">मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - HI VERSION</span></a>
     </h2>
   
 
@@ -384,32 +449,78 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>मान लीजिए आपके पास एक साइट है जिस पर लोग आते हैं। लेकिन आपसे तुरंत संपर्क कैसे करें ताकि उन्हें तुरंत उत्तर मिल सके?</p>
+        <p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/hi/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
+            <a href="/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/hi/instant-chat-bot/" data-id="cuidqM9LmVJ4lzPbgLdn5O7ks" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidL6xZGzcLpOkaOrmBfu4iU" data-title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-th/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/">ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="ทำไมต้องอ่าน-PDF-หากคุณไม่สามารถเขียนอะไรลงไปได้เลย"><a href="#ทำไมต้องอ่าน-PDF-หากคุณไม่สามารถเขียนอะไรลงไปได้เลย" class="headerlink" title="ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?"></a>ทำไมต้องอ่าน PDF หากคุณไม่สามารถเขียนอะไรลงไปได้เลย?</h2><p>สวัสดีทุกคน! ฉันชื่อ Albert และฉันรักในการทำให้เครื่องมือต่างๆ ทำงานได้สะดวกขึ้น</p>
+<p>หากคุณเคยลองเรียนรู้ด้วยตนเอง ศึกษาตำราเรียนเขียนโปรแกรม หรืออ่านเอกสารทางเทคนิคที่ซับซ้อนจากไฟล์ PDF บนแล็ปท็อปหรือแท็บเล็ตของคุณ คุณจะรู้ถึงความยุ่งยากนี้ดี คุณเปิดหนังสือขึ้นมา ต้องการไฮไลท์โค้ดสำคัญ วาดลูกศรแผนภาพด่วนถัดจากคำอธิบาย หรือจดโน้ตไว้ที่ระยะขอบ — และพบว่าโปรแกรมดู PDF มาตรฐานนั้นเทอะทะ เป็นโปรแกรมเสียเงิน หรือทำภาพวาดของคุณหายไปทั้งหมดหากเผลอกดรีเฟรชหน้าเว็บ</p>
+<p>ฉันต้องการแก้ไขปัญหานี้และสร้าง <strong>PDF Ink</strong> — เว็บแอปพลิเคชันที่มีน้ำหนักเบาและรวดเร็วสำหรับการอ่านและเขียนบันทึกโต้ตอบบนหนังสือ PDF ได้โดยตรงในเบราว์เซอร์</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" data-id="cuidAqMAlKDQoqElT6dCXQ_DL" data-title="ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/th/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/telegram-bot/" rel="tag">telegram-bot</a>
+        <a class="article-tag-list-link" href="/th/tags/open-source/" rel="tag">open-source</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/hi/tags/reading/" rel="tag">reading</a>
+        <a class="article-tag-list-link" href="/th/tags/pdf/" rel="tag">pdf</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/th/tags/education/" rel="tag">education</a>
       </li>
     
   </ul>
@@ -420,10 +531,10 @@
 </article>
 
   
-    <article id="post-fr/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-th/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/fr/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
 </a>
     
   </div>
@@ -434,7 +545,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/fr/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - FR VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/">ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
     </h2>
   
 
@@ -443,32 +554,78 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>Imaginons que vous ayez un site que les gens visitent. Mais comment peuvent-ils vous contacter rapidement pour recevoir une réponse instantanée ?</p>
+        <p>ในบทความนี้ ฉันจะแบ่งปันประสบการณ์และขั้นตอนการทำงานของฉันในการสร้างหน้าเว็บโดยใช้ Qwen Coder AI</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/fr/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
+            <a href="/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/fr/instant-chat-bot/" data-id="cuidhwIw0Qmh0bYsYGg2jfa19" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidHzfRiPaBBYiXNSJ0uXBQZ" data-title="ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-zh-CN/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么读-PDF-却不能在上面写写画画？"><a href="#为什么读-PDF-却不能在上面写写画画？" class="headerlink" title="为什么读 PDF 却不能在上面写写画画？"></a>为什么读 PDF 却不能在上面写写画画？</h2><p>大家好！我是 Albert，我热衷于让工具变得更加方便实用。</p>
+<p>如果你曾尝试过自学、研究编程教科书，或者在笔记本电脑&#x2F;平板电脑上阅读复杂的 PDF 技术文档，你一定经历过这种痛苦。当你打开一本书，想要高亮显示一段核心代码，在解释旁画个简单的示意图箭头，或者在页边空白处写下笔记——却发现标准的 PDF 阅读器要么臃肿、收费，要么在你一不小心刷新标签页时，就把你的手写涂鸦丢得精光。</p>
+<p>我想要解决这个问题，于是开发了 <strong>PDF Ink</strong>——一个轻量、快速的 Web 应用程序，可直接在浏览器中阅读 PDF 书籍并进行交互式批注。</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: 我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" data-id="cuidDdL5nr5qJgOC4NnNmeoxz" data-title="我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/telegram-bot/" rel="tag">telegram-bot</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/open-source/" rel="tag">open-source</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/fr/tags/reading/" rel="tag">reading</a>
+        <a class="article-tag-list-link" href="/zh-cn/tags/pdf/" rel="tag">pdf</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/education/" rel="tag">education</a>
       </li>
     
   </ul>
@@ -479,10 +636,10 @@
 </article>
 
   
-    <article id="post-pt/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-zh-CN/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/pt/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
 </a>
     
   </div>
@@ -493,7 +650,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/pt/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - PT VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/">我是如何使用通义千问 Qwen Coder AI 创建网页的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
     </h2>
   
 
@@ -502,46 +659,28 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>Digamos que você tenha um site que as pessoas visitam. Mas como elas podem entrar em contato com você de forma rápida para receber uma resposta instantânea?</p>
+        <p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/pt/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
+            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: 我是如何使用通义千问 Qwen Coder AI 创建网页的">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/pt/instant-chat-bot/" data-id="cuid3WGMri-6QW_KaXGaOGnMo" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuid58S2zKomv5Kra9JcA72st" data-title="我是如何使用通义千问 Qwen Coder AI 创建网页的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/bot/" rel="tag">bot</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/telegram-bot/" rel="tag">telegram-bot</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/pt/tags/reading/" rel="tag">reading</a>
-      </li>
-    
-  </ul>
-
     </footer>
   </div>
   
 </article>
 
   
-    <article id="post-ru/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-ar/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/20/ru/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
+    <a href="/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T12:03:52.870Z" itemprop="datePublished">2026-07-18</time>
 </a>
     
   </div>
@@ -552,7 +691,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/ru/instant-chat-bot/">InstantChatBot для сайта<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/">كيف بنيت PDF Ink لتعلم مريح عبر الإنترنت من كتب PDF<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - AR VERSION</span></a>
     </h2>
   
 
@@ -561,201 +700,37 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>Представим, что у вас есть сайт, на который заходят люди. Но как быстро связаться с вами, чтобы они мгновенно получили ответ?</p>
+        <h2 id="لماذا-تقرأ-ملفات-PDF-إذا-لم-تكن-قادراً-على-الكتابة-عليها؟"><a href="#لماذا-تقرأ-ملفات-PDF-إذا-لم-تكن-قادراً-على-الكتابة-عليها؟" class="headerlink" title="لماذا تقرأ ملفات PDF إذا لم تكن قادراً على الكتابة عليها؟"></a>لماذا تقرأ ملفات PDF إذا لم تكن قادراً على الكتابة عليها؟</h2><p>مرحباً بالجميع! أنا ألبيرت، وأحب جعل الأدوات أكثر ملاءمة وسهولة في الاستخدام.</p>
+<p>إذا حاولت يوماً التعلم الذاتي أو دراسة كتب البرمجة أو قراءة وثائق تقنية معقدة من ملفات PDF على الكمبيوتر المحمول أو الجهاز اللوحي، فأنت تعرف هذا الصراع. تفتح كتاباً وتريد تحديد كود برمجي رئيسي، أو رسم سهم توضيحي سريع بجوار الشرح، أو ترك ملاحظة على الهوامش — وتدرك أن قارئات PDF القياسية إما معقدة أو مدفوعة أو أنها تفقد رسوماتك تماماً إذا قمت بتحديث الصفحة بالخطأ.</p>
+<p>أردت إصلاح هذا وإنشاء <strong>PDF Ink</strong> — تطبيق ويب خفيف وسريع لقراءة وتدوين الملاحظات التفاعلية على كتب PDF مباشرة في المتصفح.</p>
         
           <p class="article-more-link">
-            <a href="/2021/06/20/ru/instant-chat-bot/#more" aria-label="Read More: InstantChatBot для сайта">Read More</a>
+            <a href="/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: كيف بنيت PDF Ink لتعلم مريح عبر الإنترنت من كتب PDF">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/ru/instant-chat-bot/" data-id="cuidqbIhxnjxceGB9coJtK6j9" data-title="InstantChatBot для сайта" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/" data-id="cuidO5lBd5bbKgXywPpZEts5f" data-title="كيف بنيت PDF Ink لتعلم مريح عبر الإنترنت من كتب PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/ar/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/telegram-bot/" rel="tag">telegram-bot</a>
+        <a class="article-tag-list-link" href="/ar/tags/open-source/" rel="tag">open-source</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/reading/" rel="tag">reading</a>
-      </li>
-    
-  </ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-th/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/20/th/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/th/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>สมมติว่าคุณมีเว็บไซต์ที่มีคนเข้ามาเยี่ยมชม แต่จะทำอย่างไรให้พวกเขาติดต่อคุณได้อย่างรวดเร็วและได้รับคำตอบในทันที?</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/20/th/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/th/instant-chat-bot/" data-id="cuid-xw3PMhefPa9yuEgKvZNR" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
-      
-      
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/bot/" rel="tag">bot</a>
+        <a class="article-tag-list-link" href="/ar/tags/pdf/" rel="tag">pdf</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/telegram-bot/" rel="tag">telegram-bot</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/th/tags/reading/" rel="tag">reading</a>
-      </li>
-    
-  </ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-zh-CN/instant-chat-bot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/20/zh-CN/instant-chat-bot/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:57.000Z" itemprop="datePublished">2021-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/zh-CN/instant-chat-bot/">InstantChatBot<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://safiullin.com/projects/instant-chat-bot-for-website.html">https://safiullin.com/projects/instant-chat-bot-for-website.html</a></p>
-<p>假设你有一个网站，有人来访问。但如何让他们能快速联系到你并获得即时答复呢？</p>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/20/zh-CN/instant-chat-bot/#more" aria-label="Read More: InstantChatBot">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/zh-CN/instant-chat-bot/" data-id="cuidP4wrFVtFZ08__Pftb2RCj" data-title="InstantChatBot" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
-      
-      
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/bot/" rel="tag">bot</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/telegram-bot/" rel="tag">telegram-bot</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/reading/" rel="tag">reading</a>
-      </li>
-    
-  </ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-pure-reader" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/20/pure-reader/" class="article-date">
-  <time class="dt-published" datetime="2021-06-20T11:18:55.000Z" itemprop="datePublished">2021-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/20/pure-reader/">Pure reader (epub)</a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://read.safiullin.dev/">Here is the webApp</a></p>
-<p>Read books directly in your browser<br>The system remembers the book and the position where you left off very conveniently</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2021/06/20/pure-reader/" data-id="cuiditQVPeN5K6a87BdwdcpNN" data-title="Pure reader (epub)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
-      
-      
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/web-app/" rel="tag">web app</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/reading/" rel="tag">reading</a>
+        <a class="article-tag-list-link" href="/ar/tags/education/" rel="tag">education</a>
       </li>
     
   </ul>
@@ -790,29 +765,37 @@
     <div class="widget tagcloud">
       
       
-        <a href="/en/tags/mobile/" style="font-size: 10.00px;">mobile</a>
+        <a href="/en/tags/games/" style="font-size: 10.00px;">games</a>
+      
+        <a href="/en/tags/web-app/" style="font-size: 20.00px;">web app</a>
       
         <a href="/en/tags/bot/" style="font-size: 16.00px;">bot</a>
-      
-        <a href="/en/tags/viewport/" style="font-size: 10.00px;">viewport</a>
-      
-        <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
       
         <a href="/en/tags/routes/" style="font-size: 10.00px;">routes</a>
       
         <a href="/en/tags/location/" style="font-size: 10.00px;">location</a>
       
-        <a href="/en/tags/python/" style="font-size: 10.00px;">python</a>
+        <a href="/en/tags/tools/" style="font-size: 12.00px;">tools</a>
       
-        <a href="/en/tags/web-app/" style="font-size: 20.00px;">web-app</a>
+        <a href="/en/tags/meme/" style="font-size: 10.00px;">meme</a>
+      
+        <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
+      
+        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
+      
+        <a href="/en/tags/mobile/" style="font-size: 10.00px;">mobile</a>
+      
+        <a href="/en/tags/viewport/" style="font-size: 10.00px;">viewport</a>
+      
+        <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
+      
+        <a href="/en/tags/python/" style="font-size: 10.00px;">python</a>
       
         <a href="/en/tags/resume/" style="font-size: 10.00px;">resume</a>
       
         <a href="/en/tags/open-source/" style="font-size: 12.00px;">open-source</a>
       
         <a href="/en/tags/ai/" style="font-size: 12.00px;">ai</a>
-      
-        <a href="/en/tags/games/" style="font-size: 10.00px;">games</a>
       
         <a href="/en/tags/pdf/" style="font-size: 10.00px;">pdf</a>
       
@@ -821,6 +804,14 @@
         <a href="/en/tags/project/" style="font-size: 12.00px;">project</a>
       
         <a href="/en/tags/game/" style="font-size: 10.00px;">game</a>
+      
+        <a href="/en/tags/productivity/" style="font-size: 10.00px;">productivity</a>
+      
+        <a href="/en/tags/learning/" style="font-size: 10.00px;">learning</a>
+      
+        <a href="/en/tags/language/" style="font-size: 10.00px;">language</a>
+      
+        <a href="/en/tags/pwa/" style="font-size: 10.00px;">pwa</a>
       
         <a href="/en/tags/telegram-bot/" style="font-size: 12.00px;">telegram-bot</a>
       
@@ -836,22 +827,6 @@
       
         <a href="/en/tags/post/" style="font-size: 10.00px;">post</a>
       
-        <a href="/en/tags/learning/" style="font-size: 10.00px;">learning</a>
-      
-        <a href="/en/tags/language/" style="font-size: 10.00px;">language</a>
-      
-        <a href="/en/tags/pwa/" style="font-size: 10.00px;">pwa</a>
-      
-        <a href="/en/tags/tools/" style="font-size: 12.00px;">tools</a>
-      
-        <a href="/en/tags/productivity/" style="font-size: 10.00px;">productivity</a>
-      
-        <a href="/en/tags/meme/" style="font-size: 10.00px;">meme</a>
-      
-        <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
-      
-        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
-      
     </div>
   </div>
 
@@ -866,7 +841,7 @@
       <ul class="archive-list">
         
           <li class="archive-list-item">
-            <a class="archive-list-link" href="/en/archives/2023/06/">June 2023</a>
+            <a class="archive-list-link" href="/en/archives/2021/12/">December 2021</a>
             
           </li>
         
@@ -881,7 +856,7 @@
           </li>
         
           <li class="archive-list-item">
-            <a class="archive-list-link" href="/en/archives/2021/12/">December 2021</a>
+            <a class="archive-list-link" href="/en/archives/2023/06/">June 2023</a>
             
           </li>
         
@@ -915,7 +890,7 @@
       <ul>
         
           <li>
-            <a href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
+            <a href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
           </li>
         
           <li>
@@ -923,15 +898,15 @@
           </li>
         
           <li>
+            <a href="/2026/07/23/Here-You-Can-Create-a-Cool-Meme/">Here You Can Create a Cool Meme</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
+          </li>
+        
+          <li>
             <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
-          </li>
-        
-          <li>
-            <a href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
-          </li>
-        
-          <li>
-            <a href="/2026/07/14/how-i-built-pdf-ink-for-online-learning/">How I Built PDF Ink for Comfortable Online Learning from PDF Books</a>
           </li>
         
       </ul>
