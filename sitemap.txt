@@ -1,5 +1,5 @@
-https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/07/23/Here-You-Can-Create-a-Cool-Meme/
+https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/07/18/fr/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/
