@@ -1,3 +1,5 @@
+https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
+https://safiullin.dev/2026/07/23/Here-You-Can-Create-a-Cool-Meme/
 https://safiullin.dev/2026/07/18/fr/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/
@@ -53,7 +55,6 @@ https://safiullin.dev/2021/06/20/ar/pure-reader/
 https://safiullin.dev/2025/12/21/ar/restapi-get-post-manager/
 https://safiullin.dev/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2023/12/27/hi/How-to-Reduce-Traffic-Congestion/
-https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/07/15/hi/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2023/12/27/zh-CN/How-to-Reduce-Traffic-Congestion/
 https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/
@@ -147,3 +148,6 @@ https://safiullin.dev/tags/language/
 https://safiullin.dev/tags/pwa/
 https://safiullin.dev/tags/tools/
 https://safiullin.dev/tags/productivity/
+https://safiullin.dev/tags/meme/
+https://safiullin.dev/tags/fun/
+https://safiullin.dev/tags/editor/
