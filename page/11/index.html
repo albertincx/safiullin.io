@@ -187,9 +187,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-zh-CN/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-th/how-i-built-a-live-web-editor-for-rendercv" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
+    <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" class="article-date">
   <time class="dt-published" datetime="2026-07-15T14:05:00.000Z" itemprop="datePublished">2026-07-15</time>
 </a>
     
@@ -201,7 +201,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/">我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+      <a class="p-name article-title" href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/">ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - TH VERSION</span></a>
     </h2>
   
 
@@ -210,43 +210,43 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="简历即代码：RenderCV-的优雅之处"><a href="#简历即代码：RenderCV-的优雅之处" class="headerlink" title="简历即代码：RenderCV 的优雅之处"></a>简历即代码：RenderCV 的优雅之处</h2><p>如果你是一名工程师或学术界人士，用 MS Word 撰写简历简直是一场排版噩梦，而自定义的 LaTeX 模板又往往过于冗长，难以维护。</p>
-<p>最近，我偶然发现了一个非常棒的 Python 项目——<strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong>。它允许你在一个干净、结构化的 YAML 文件中编写简历内容，并在后台使用 <strong>Typst</strong> 生成排版完美、排版精美的 PDF。它把你的简历当成代码来对待，这意味着你可以对其进行版本控制，只专注于内容，让工具来处理页边距、对齐和样式。</p>
-<p>然而，RenderCV 最初主要被设计为一个命令行界面 (CLI) 工具。每次你做出修改，都必须运行 <code>rendercv render John_Doe_CV.yaml</code>，查看输出，打开 PDF 查看器并检查对齐。如果遇到验证或 schema 错误，你还得阅读 CLI 编译器的回溯信息。</p>
-<p>我希望通过添加一个<strong>实时网页编辑器 (Live Web Editor)</strong> 来弥补这一缺憾——这是一个本地单页 Web 应用程序，包含左右分栏的 Monaco 编辑器、实时 PDF 预览、即时模式验证以及交互式主题&#x2F;模块开关。</p>
-<p>在 <strong>Gemini</strong> 的帮助下，我成功构建了这个 Web 界面并将其直接集成到了 RenderCV 中！以下是我们的实现过程。</p>
+        <h2 id="เรซูเม่ในรูปแบบโค้ด-ความสง่างามของ-RenderCV"><a href="#เรซูเม่ในรูปแบบโค้ด-ความสง่างามของ-RenderCV" class="headerlink" title="เรซูเม่ในรูปแบบโค้ด: ความสง่างามของ RenderCV"></a>เรซูเม่ในรูปแบบโค้ด: ความสง่างามของ RenderCV</h2><p>หากคุณเป็นวิศวกรหรือนักวิชาการ การเขียนเรซูเม่ใน MS Word คือฝันร้ายของการจัดรูปแบบ และเทมเพลต LaTeX แบบกำหนดเองก็มักจะเวิ่นเว้อเกินกว่าจะดูแลรักษาได้ง่ายๆ</p>
+<p>เมื่อไม่นานมานี้ ฉันบังเอิญไปพบกับโปรเจกต์ Python ที่ยอดเยี่ยมชื่อว่า <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rendercv/rendercv">RenderCV</a></strong> มันช่วยให้คุณเขียนเนื้อหาเรซูเม่ของคุณในไฟล์ YAML ที่สะอาดและมีโครงสร้างที่เป็นระเบียบ จากนั้นจะสร้าง PDF ที่จัดรูปแบบอย่างสวยงามด้วยไทโปกราฟีที่สมบูรณ์แบบโดยใช้ <strong>Typst</strong> เป็นตัวขับเคลื่อนเบื้องหลัง มันปฏิบัติกับเรซูเม่ของคุณเหมือนโค้ด ซึ่งหมายความว่าคุณสามารถควบคุมเวอร์ชัน (version-control) ได้ มุ่งเน้นไปที่เนื้อหาอย่างแท้จริง และปล่อยให้เครื่องมือจัดการเรื่องระยะขอบหน้า การจัดตำแหน่ง และสไตล์</p>
+<p>อย่างไรก็ตาม RenderCV ถูกออกแบบมาเพื่อใช้งานผ่าน Command-line interface (CLI) เป็นหลัก ทุกครั้งที่คุณทำการเปลี่ยนแปลง คุณต้องรัน <code>rendercv render John_Doe_CV.yaml</code> ตรวจสอบผลลัพธ์ เปิดโปรแกรมดู PDF และเช็คการจัดตำแหน่ง หากคุณทำผิดพลาดในการตรวจสอบความถูกต้องหรือ स्कीमा (schema) คุณต้องนั่งอ่าน CLI compiler tracebacks ที่ชวนปวดหัว</p>
+<p>ฉันต้องการเชื่อมช่องว่างนี้ด้วยการเพิ่ม <strong>Live Web Editor</strong>—เว็บแอปพลิเคชันหน้าเดียวแบบโลคัลที่มีโปรแกรมแก้ไข Monaco แบบเคียงข้างกัน พรีวิว PDF แบบเรียลไทม์ ตรวจสอบความถูกต้องของสคีมาทันที และการสลับธีม&#x2F;ส่วนการทำงานแบบโต้ตอบได้</p>
+<p>ด้วยความช่วยเหลือของ <strong>Gemini</strong> ฉันสร้างและรวมเว็บอินเตอร์เฟสนี้เข้ากับ RenderCV ได้โดยตรงสำเร็จแล้ว! และนี่คือวิธีที่เราทำกัน</p>
         
           <p class="article-more-link">
-            <a href="/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: 我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的">Read More</a>
+            <a href="/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/#more" aria-label="Read More: ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/15/zh-CN/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidPhoUGmRQRwte5Ls3yMP-P" data-title="我是如何利用 Gemini 为 RenderCV 构建实时网页编辑器的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/15/th/how-i-built-a-live-web-editor-for-rendercv/" data-id="cuidnSDMfZ1OBQEWC2RxkFPzR" data-title="ฉันสร้าง Live Web Editor สำหรับ RenderCV โดยใช้ Gemini ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
   <ul class="article-tag-list" itemprop="keywords">
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/python/" rel="tag">python</a>
+        <a class="article-tag-list-link" href="/th/tags/python/" rel="tag">python</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/web-app/" rel="tag">web-app</a>
+        <a class="article-tag-list-link" href="/th/tags/web-app/" rel="tag">web-app</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/resume/" rel="tag">resume</a>
+        <a class="article-tag-list-link" href="/th/tags/resume/" rel="tag">resume</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/open-source/" rel="tag">open-source</a>
+        <a class="article-tag-list-link" href="/th/tags/open-source/" rel="tag">open-source</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/ai/" rel="tag">ai</a>
+        <a class="article-tag-list-link" href="/th/tags/ai/" rel="tag">ai</a>
       </li>
     
   </ul>
@@ -291,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/" data-id="cuid6ElzA8XTWT-xQrqqcxLyY" data-title="Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/" data-id="cuidApuxAvBu3F6dysiQuE3tX" data-title="Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -353,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidaY_kq0slD2ztCJjAuaWrM" data-title="Cómo Crear Páginas Web con Qwen Coder AI" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/17/es/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidQobe1BGce0kUhlkSDZ_S6" data-title="Cómo Crear Páginas Web con Qwen Coder AI" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
     </footer>
@@ -396,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/" data-id="cuidI9qWlzBcjHArKVIm4p0Jw" data-title="मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/" data-id="cuidlMAAMcXnhcFnEl8LrnDhr" data-title="मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -458,9 +458,114 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidL6xZGzcLpOkaOrmBfu4iU" data-title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidQby94XPpMXLHUHZ8ra6Hp" data-title="मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-zh-CN/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/">我是如何使用通义千问 Qwen Coder AI 创建网页的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: 我是如何使用通义千问 Qwen Coder AI 创建网页的">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidcUpAb_wtkpcZp3zu0fxN6" data-title="我是如何使用通义千问 Qwen Coder AI 创建网页的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    <article id="post-zh-CN/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" class="article-date">
+  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么读-PDF-却不能在上面写写画画？"><a href="#为什么读-PDF-却不能在上面写写画画？" class="headerlink" title="为什么读 PDF 却不能在上面写写画画？"></a>为什么读 PDF 却不能在上面写写画画？</h2><p>大家好！我是 Albert，我热衷于让工具变得更加方便实用。</p>
+<p>如果你曾尝试过自学、研究编程教科书，或者在笔记本电脑&#x2F;平板电脑上阅读复杂的 PDF 技术文档，你一定经历过这种痛苦。当你打开一本书，想要高亮显示一段核心代码，在解释旁画个简单的示意图箭头，或者在页边空白处写下笔记——却发现标准的 PDF 阅读器要么臃肿、收费，要么在你一不小心刷新标签页时，就把你的手写涂鸦丢得精光。</p>
+<p>我想要解决这个问题，于是开发了 <strong>PDF Ink</strong>——一个轻量、快速的 Web 应用程序，可直接在浏览器中阅读 PDF 书籍并进行交互式批注。</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: 我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" data-id="cuidyme8te368a6tkF9XdYPrD" data-title="我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/web-app/" rel="tag">web-app</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/open-source/" rel="tag">open-source</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/pdf/" rel="tag">pdf</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/zh-cn/tags/education/" rel="tag">education</a>
+      </li>
+    
+  </ul>
+
     </footer>
   </div>
   
@@ -501,7 +606,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" data-id="cuidAqMAlKDQoqElT6dCXQ_DL" data-title="ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-built-pdf-ink-for-online-learning/" data-id="cuidNQLtx60ZwywZS4kOfFrf-" data-title="ฉันสร้าง PDF Ink เพื่อการเรียนรู้ออนไลน์ที่สะดวกสบายจากหนังสือ PDF ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -563,112 +668,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidHzfRiPaBBYiXNSJ0uXBQZ" data-title="ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-zh-CN/how-i-built-pdf-ink-for-online-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" class="article-date">
-  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/">我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么读-PDF-却不能在上面写写画画？"><a href="#为什么读-PDF-却不能在上面写写画画？" class="headerlink" title="为什么读 PDF 却不能在上面写写画画？"></a>为什么读 PDF 却不能在上面写写画画？</h2><p>大家好！我是 Albert，我热衷于让工具变得更加方便实用。</p>
-<p>如果你曾尝试过自学、研究编程教科书，或者在笔记本电脑&#x2F;平板电脑上阅读复杂的 PDF 技术文档，你一定经历过这种痛苦。当你打开一本书，想要高亮显示一段核心代码，在解释旁画个简单的示意图箭头，或者在页边空白处写下笔记——却发现标准的 PDF 阅读器要么臃肿、收费，要么在你一不小心刷新标签页时，就把你的手写涂鸦丢得精光。</p>
-<p>我想要解决这个问题，于是开发了 <strong>PDF Ink</strong>——一个轻量、快速的 Web 应用程序，可直接在浏览器中阅读 PDF 书籍并进行交互式批注。</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/#more" aria-label="Read More: 我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-built-pdf-ink-for-online-learning/" data-id="cuidDdL5nr5qJgOC4NnNmeoxz" data-title="我是如何构建 PDF Ink 来舒服地阅读 PDF 电子书并在线学习的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
-      
-      
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/web-app/" rel="tag">web-app</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/open-source/" rel="tag">open-source</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/pdf/" rel="tag">pdf</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/zh-cn/tags/education/" rel="tag">education</a>
-      </li>
-    
-  </ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
-    <article id="post-zh-CN/how-i-create-web-pages-with-qwen-coder-ai" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" class="article-date">
-  <time class="dt-published" datetime="2026-07-18T02:27:35.666Z" itemprop="datePublished">2026-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/">我是如何使用通义千问 Qwen Coder AI 创建网页的<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - ZH-CN VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在这篇文章中，我将分享我使用通义千问 Qwen Coder AI 创建网页的体验和工作流。</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/#more" aria-label="Read More: 我是如何使用通义千问 Qwen Coder AI 创建网页的">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/zh-CN/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuid58S2zKomv5Kra9JcA72st" data-title="我是如何使用通义千问 Qwen Coder AI 创建网页的" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/th/how-i-create-web-pages-with-qwen-coder-ai/" data-id="cuidiTA3CbAez1eAJPHKwcw8c" data-title="ฉันสร้างหน้าเว็บด้วย Qwen Coder AI ได้อย่างไร" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
     </footer>
@@ -711,7 +711,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/" data-id="cuidO5lBd5bbKgXywPpZEts5f" data-title="كيف بنيت PDF Ink لتعلم مريح عبر الإنترنت من كتب PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/18/ar/how-i-built-pdf-ink-for-online-learning/" data-id="cuidYdcCnkvxf1seM1xlQWoXG" data-title="كيف بنيت PDF Ink لتعلم مريح عبر الإنترنت من كتب PDF" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -765,6 +765,14 @@
     <div class="widget tagcloud">
       
       
+        <a href="/en/tags/meme/" style="font-size: 10.00px;">meme</a>
+      
+        <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
+      
+        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
+      
+        <a href="/en/tags/tools/" style="font-size: 14.00px;">tools</a>
+      
         <a href="/en/tags/games/" style="font-size: 10.00px;">games</a>
       
         <a href="/en/tags/web-app/" style="font-size: 20.00px;">web app</a>
@@ -775,20 +783,6 @@
       
         <a href="/en/tags/location/" style="font-size: 10.00px;">location</a>
       
-        <a href="/en/tags/tools/" style="font-size: 12.00px;">tools</a>
-      
-        <a href="/en/tags/meme/" style="font-size: 10.00px;">meme</a>
-      
-        <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
-      
-        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
-      
-        <a href="/en/tags/mobile/" style="font-size: 10.00px;">mobile</a>
-      
-        <a href="/en/tags/viewport/" style="font-size: 10.00px;">viewport</a>
-      
-        <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
-      
         <a href="/en/tags/python/" style="font-size: 10.00px;">python</a>
       
         <a href="/en/tags/resume/" style="font-size: 10.00px;">resume</a>
@@ -796,6 +790,12 @@
         <a href="/en/tags/open-source/" style="font-size: 12.00px;">open-source</a>
       
         <a href="/en/tags/ai/" style="font-size: 12.00px;">ai</a>
+      
+        <a href="/en/tags/mobile/" style="font-size: 10.00px;">mobile</a>
+      
+        <a href="/en/tags/viewport/" style="font-size: 10.00px;">viewport</a>
+      
+        <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
       
         <a href="/en/tags/pdf/" style="font-size: 10.00px;">pdf</a>
       
@@ -807,15 +807,17 @@
       
         <a href="/en/tags/productivity/" style="font-size: 10.00px;">productivity</a>
       
-        <a href="/en/tags/learning/" style="font-size: 10.00px;">learning</a>
-      
-        <a href="/en/tags/language/" style="font-size: 10.00px;">language</a>
-      
-        <a href="/en/tags/pwa/" style="font-size: 10.00px;">pwa</a>
-      
         <a href="/en/tags/telegram-bot/" style="font-size: 12.00px;">telegram-bot</a>
       
         <a href="/en/tags/reading/" style="font-size: 14.00px;">reading</a>
+      
+        <a href="/en/tags/images/" style="font-size: 10.00px;">images</a>
+      
+        <a href="/en/tags/optimization/" style="font-size: 10.00px;">optimization</a>
+      
+        <a href="/en/tags/javascript/" style="font-size: 10.00px;">javascript</a>
+      
+        <a href="/en/tags/web-performance/" style="font-size: 10.00px;">web-performance</a>
       
         <a href="/en/tags/api/" style="font-size: 10.00px;">api</a>
       
@@ -826,6 +828,12 @@
         <a href="/en/tags/get/" style="font-size: 10.00px;">get</a>
       
         <a href="/en/tags/post/" style="font-size: 10.00px;">post</a>
+      
+        <a href="/en/tags/learning/" style="font-size: 10.00px;">learning</a>
+      
+        <a href="/en/tags/language/" style="font-size: 10.00px;">language</a>
+      
+        <a href="/en/tags/pwa/" style="font-size: 10.00px;">pwa</a>
       
     </div>
   </div>
@@ -841,17 +849,17 @@
       <ul class="archive-list">
         
           <li class="archive-list-item">
+            <a class="archive-list-link" href="/en/archives/2026/07/">July 2026</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
             <a class="archive-list-link" href="/en/archives/2021/12/">December 2021</a>
             
           </li>
         
           <li class="archive-list-item">
             <a class="archive-list-link" href="/en/archives/2023/12/">December 2023</a>
-            
-          </li>
-        
-          <li class="archive-list-item">
-            <a class="archive-list-link" href="/en/archives/2026/07/">July 2026</a>
             
           </li>
         
@@ -890,6 +898,10 @@
       <ul>
         
           <li>
+            <a href="/2026/07/23/Here-You-Can-Create-a-Cool-Meme/">Here You Can Create a Cool Meme</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/27/How-I-made-a-puzzle-game/">How I made a puzzle game</a>
           </li>
         
@@ -898,15 +910,11 @@
           </li>
         
           <li>
-            <a href="/2026/07/23/Here-You-Can-Create-a-Cool-Meme/">Here You Can Create a Cool Meme</a>
+            <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
           </li>
         
           <li>
             <a href="/2023/06/11/How-to-make-any-site-mobile/">How to make any site mobile?</a>
-          </li>
-        
-          <li>
-            <a href="/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/">How I Built a Live Web Editor for RenderCV Using Gemini</a>
           </li>
         
       </ul>
