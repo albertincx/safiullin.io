@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<script>
+  (function() {
+    var adsLoaded = false;
+    function loadAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      window.removeEventListener('scroll', loadAds);
+      window.removeEventListener('mousemove', loadAds);
+      window.removeEventListener('touchstart', loadAds);
+      window.removeEventListener('keydown', loadAds);
+      
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
+    
+    window.addEventListener('scroll', loadAds, { passive: true });
+    window.addEventListener('mousemove', loadAds, { passive: true });
+    window.addEventListener('touchstart', loadAds, { passive: true });
+    window.addEventListener('keydown', loadAds, { passive: true });
+    
+    setTimeout(loadAds, 3000);
+  })();
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>Fast Client-Side Image Editor Right in Your Browser | Saf...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fast Client-Side Image Editor Right in Your Browser">
+<meta property="og:url" content="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
+<meta property="og:description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-07-25T02:34:30.754Z">
+<meta property="article:modified_time" content="2026-07-25T03:04:42.425Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="images">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="optimization">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="web-performance">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-CN" href="https://safiullin.dev/zh-CN/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="fr" href="https://safiullin.dev/fr/" />
+
+    <link rel="alternate" hreflang="pt" href="https://safiullin.dev/pt/" />
+
+    <link rel="alternate" hreflang="ar" href="https://safiullin.dev/ar/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fast Client-Side Image Editor Right in Your Browser",
+  "datePublished": "2026-07-25T02:34:30.754Z",
+  "dateModified": "2026-07-25T03:04:42.425Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev Videcode. Ai. Life. Tools",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using..."
+}
+</script>
+
+    
+        \ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
+    
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      
+          <h2 id="logo-wrap">
+            <a href="/en/" id="logo">Safiullin.dev</a>
+          </h2>
+      
+
+      
+        <h2 id="subtitle-wrap">
+          <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+          <a class="main-nav-link" href="/en/">Home</a>
+        
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <div id="lang-selector">
+          
+            <a href="/" class="lang-btn active" aria-label="Change language to EN">EN</a>
+          
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
+          
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
+          
+            <a href="/zh-CN/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
+          
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
+          
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
+          
+            <a href="/fr/" class="lang-btn" aria-label="Change language to FR">FR</a>
+          
+            <a href="/pt/" class="lang-btn" aria-label="Change language to PT">PT</a>
+          
+            <a href="/ar/" class="lang-btn" aria-label="Change language to AR">AR</a>
+          
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
+        
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="w-full!"><article id="post-Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" class="article-date">
+  <time class="dt-published" datetime="2026-07-25T02:34:30.754Z" itemprop="datePublished">2026-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Fast Client-Side Image Editor Right in Your Browser
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using client-side JavaScript. No third-party servers, no waiting for uploads—everything happens locally on your device.</p>
+<p>Try it out right now!</p>
+<span id="more"></span>
+
+<div class="w-full max-w-md_ min-h-[1000px] bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 my-auto">
+    <div class="text-center mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white">Image Studio Pro</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Crop, scale, resize and compress locally</p>
+    </div>
+    <div id="upload-section" class="border-2 border-dashed border-slate-700 hover:border-blue-500 transition-colors rounded-xl p-6 text-center cursor-pointer bg-slate-950/50">
+        <input type="file" id="file-input" accept="image/*" class="hidden">
+        <svg class="w-10 h-10 mx-auto text-blue-500 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.75 3.75 0 0118 19.5H6.75z"></path></svg>
+        <p class="text-sm font-medium text-slate-200">Upload Image</p>
+        <p class="text-xs text-slate-500 mt-1">Supports PNG, JPG, WebP, etc.</p>
+    </div>
+    <div id="decision-section" class="hidden space-y-4 text-center">
+        <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
+            <p class="text-sm font-medium text-white mb-1">Image Loaded Successfully</p>
+            <p id="decision-file-info" class="text-xs text-slate-400 mb-4"></p>
+            <div class="space-y-2">
+                <button id="use-optimized-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/20">Optimize Selected File</button>
+                <button id="use-original-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition border border-slate-700">Use Original</button>
+            </div>
+        </div>
+    </div>
+    <div id="editor-section" class="hidden space-y-4 min-h-[500px]">
+        <div class="relative w-full h-64_ bg-black/40 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800">
+            <img id="image-preview" class="max-h-full block max-w-full" alt="To edit">
+        </div>
+        <!-- Resize Percentage Buttons -->
+        <div>
+            <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-medium text-slate-400">Resize Scale (%):</label>
+                <span id="dimension-info" class="text-[10px] text-slate-400 font-mono">Original: --</span>
+            </div>
+            <div class="grid grid-cols-4 gap-1.5">
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.25">
+                    <span class="font-bold">25%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.50">
+                    <span class="font-bold">50%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.75">
+                    <span class="font-bold">75%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center active" data-scale="1.00">
+                    <span class="font-bold">100%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+            </div>
+        </div>
+        <!-- Action Buttons Grid -->
+        <div class="grid grid-cols-2 gap-2">
+            <button id="crop-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-blue-600/20">Crop Image</button>
+            <button id="optimize-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/20">Optimize Size</button>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+            <button id="reset-btn" class="w-full bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 font-medium py-2 px-3 rounded-xl text-xs transition">Start from scratch</button>
+            <a id="download-btn" class="hidden text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/20">Download Result</a>
+        </div>
+    </div>
+    <!-- Status -->
+    <div id="status-msg" class="text-xs text-center text-slate-400 mt-4 h-4"></div>
+</div>
+
+<!-- Android App Download Footer Button -->
+<div class="w-full max-w-md mt-4 text-center hidden">
+    <a href="#" class="inline-flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 py-3 px-4 rounded-xl text-xs sm:text-sm font-medium transition shadow-md">
+        <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.27-.85-.31-.16-.69-.04-.85.27l-1.87 3.24c-1.04-.48-2.2-.76-3.45-.76s-2.41.28-3.45.76L8.43 5.72c-.16-.31-.54-.43-.85-.27-.31.16-.43.54-.27.85l1.84 3.18C6.5 10.9 5.25 12.82 5 15h14c-.25-2.18-1.5-4.1-3.4-5.52zM9 13.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
+        Download Android App
+    </a>
+</div>
+
+<script>
+    let cropper = null;
+    let currentScaleFactor = 1.0;
+    let originalFileSize = 0;
+    let pendingFile = null;
+    
+    const fileInput = document.getElementById('file-input');
+    const uploadSection = document.getElementById('upload-section');
+    const decisionSection = document.getElementById('decision-section');
+    const decisionFileInfo = document.getElementById('decision-file-info');
+    const editorSection = document.getElementById('editor-section');
+    const imageElement = document.getElementById('image-preview');
+    const statusMsg = document.getElementById('status-msg');
+    const downloadBtn = document.getElementById('download-btn');
+    const scaleButtons = document.querySelectorAll('.resize-scale-btn');
+    const dimensionInfo = document.getElementById('dimension-info');
+
+    // Check sessionStorage on page load to restore last image
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedData = sessionStorage.getItem('original_image');
+        const savedSize = sessionStorage.getItem('original_size');
+        if (savedData) {
+            originalFileSize = savedSize ? parseInt(savedSize, 10) : 0;
+            loadImageIntoEditor(savedData);
+        }
+    });
+
+    // Trigger file select
+    uploadSection.addEventListener('click', () => fileInput.click());
+
+    // Handle file selection -> show decision step
+    fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        pendingFile = file;
+        originalFileSize = file.size;
+
+        decisionFileInfo.textContent = `Size: ${formatBytes(file.size)}`;
+        uploadSection.classList.add('hidden');
+        decisionSection.classList.remove('hidden');
+        statusMsg.textContent = 'Choose processing mode for the uploaded file.';
+    });
+
+    // Button: Use Original
+    document.getElementById('use-original-btn').addEventListener('click', () => {
+        if (!pendingFile) return;
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const base64Data = event.target.result;
+            try {
+                sessionStorage.setItem('original_image', base64Data);
+                sessionStorage.setItem('original_size', originalFileSize);
+                decisionSection.classList.add('hidden');
+                loadImageIntoEditor(base64Data);
+            } catch (err) {
+                statusMsg.textContent = 'File too large for sessionStorage!';
+            }
+        };
+        reader.readAsDataURL(pendingFile);
+    });
+
+    // Button: Optimize Selected File first
+    document.getElementById('use-optimized-btn').addEventListener('click', async () => {
+        if (!pendingFile) return;
+        statusMsg.textContent = 'Optimizing selected file...';
+
+        const options = {
+            maxSizeMB: 1,
+            maxWidthOrHeight: 1920,
+            useWebWorker: true,
+            fileType: 'image/webp'
+        };
+
+        try {
+            const compressedFile = await imageCompression(pendingFile, options);
+            originalFileSize = compressedFile.size;
+            
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const base64Data = event.target.result;
+                try {
+                    sessionStorage.setItem('original_image', base64Data);
+                    sessionStorage.setItem('original_size', originalFileSize);
+                    decisionSection.classList.add('hidden');
+                    loadImageIntoEditor(base64Data);
+                    statusMsg.textContent = 'File optimized and loaded!';
+                } catch (err) {
+                    statusMsg.textContent = 'File too large for sessionStorage!';
+                }
+            };
+            reader.readAsDataURL(compressedFile);
+        } catch (err) {
+            console.error(err);
+            statusMsg.textContent = 'Optimization failed, falling back to original.';
+            document.getElementById('use-original-btn').click();
+        }
+    });
+
+    function loadImageIntoEditor(src) {
+        editorSection.classList.remove('hidden');
+        imageElement.src = src;
+
+        if (cropper) {
+            cropper.destroy();
+        }
+
+        cropper = new Cropper(imageElement, {
+            aspectRatio: NaN,
+            viewMode: 1,
+            autoCropArea: 1,
+            ready: function() {
+                updateDimensionsDisplay();
+            }
+        });
+        currentScaleFactor = 1.0;
+        updateScaleButtonsUI();
+        downloadBtn.classList.add('hidden');
+    }
+
+    function formatBytes(bytes, decimals = 2) {
+        if (!bytes || bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+
+    function updateDimensionsDisplay() {
+        if (!cropper) return;
+        const data = cropper.getData();
+        const origW = Math.round(data.width);
+        const origH = Math.round(data.height);
+
+        dimensionInfo.textContent = `Original: ${origW}x${origH}px (${formatBytes(originalFileSize)})`;
+
+        scaleButtons.forEach(btn => {
+            const scale = parseFloat(btn.getAttribute('data-scale'));
+            const newW = Math.round(origW * scale);
+            const newH = Math.round(origH * scale);
+            
+            const subSpan = btn.querySelector('.scale-dimension');
+            if (subSpan) {
+                subSpan.textContent = `${newW}x${newH}px`;
+            }
+        });
+    }
+
+    // Handle scale percentage clicks
+    scaleButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const targetBtn = e.currentTarget;
+            scaleButtons.forEach(b => b.classList.remove('bg-blue-600', 'border-blue-500', 'text-white'));
+            scaleButtons.forEach(b => b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300'));
+            
+            targetBtn.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            targetBtn.classList.add('bg-blue-600', 'border-blue-500', 'text-white');
+            
+            currentScaleFactor = parseFloat(targetBtn.getAttribute('data-scale'));
+            statusMsg.textContent = `Scale factor set to ${Math.round(currentScaleFactor * 100)}%`;
+        });
+    });
+
+    function updateScaleButtonsUI() {
+        scaleButtons.forEach(b => {
+            const scale = parseFloat(b.getAttribute('data-scale'));
+            if (scale === 1.0) {
+                b.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
+                b.classList.add('bg-blue-600', 'border-blue-500', 'text-white');
+            } else {
+                b.classList.remove('bg-blue-600', 'border-blue-500', 'text-white');
+                b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            }
+        });
+    }
+
+    // Start from scratch (reload from sessionStorage)
+    document.getElementById('reset-btn').addEventListener('click', () => {
+        const originalData = sessionStorage.getItem('original_image');
+        if (originalData) {
+            loadImageIntoEditor(originalData);
+            statusMsg.textContent = 'Reset to original state.';
+        }
+    });
+
+    // Crop & Resize action
+    document.getElementById('crop-btn').addEventListener('click', () => {
+        if (!cropper) return;
+        const data = cropper.getData();
+        const canvas = cropper.getCroppedCanvas({
+            width: Math.round(data.width * currentScaleFactor),
+            height: Math.round(data.height * currentScaleFactor)
+        });
+        processCanvasResult(canvas, 'cropped-scaled-image.webp');
+    });
+
+    // Optimize Size action using browser-image-compression
+    document.getElementById('optimize-btn').addEventListener('click', async () => {
+        if (!cropper) return;
+        
+        statusMsg.textContent = 'Optimizing and compressing...';
+        
+        const data = cropper.getData();
+        const canvas = cropper.getCroppedCanvas({
+            width: Math.round(data.width * currentScaleFactor),
+            height: Math.round(data.height * currentScaleFactor)
+        });
+
+        canvas.toBlob(async (blob) => {
+            if (!blob) {
+                statusMsg.textContent = 'Optimization failed.';
+                return;
+            }
+            
+            const file = new File([blob], "image.webp", { type: "image/webp" });
+            
+            const options = {
+                maxSizeMB: 0.8,
+                maxWidthOrHeight: 1920,
+                useWebWorker: true,
+                fileType: 'image/webp'
+            };
+
+            try {
+                const compressedFile = await imageCompression(file, options);
+                const originalSizeMB = formatBytes(file.size);
+                const compressedSizeMB = formatBytes(compressedFile.size);
+                const savings = Math.round((1 - compressedFile.size / file.size) * 100);
+
+                const url = URL.createObjectURL(compressedFile);
+                downloadBtn.href = url;
+                downloadBtn.download = 'optimized-image.webp';
+                downloadBtn.classList.remove('hidden');
+                
+                statusMsg.innerHTML = `Optimized! ${originalSizeMB} → <b>${compressedSizeMB}</b> (${savings}% saved)`;
+            } catch (err) {
+                console.error(err);
+                statusMsg.textContent = 'Error during optimization.';
+            }
+        }, 'image/webp', 0.9);
+    });
+
+    function processCanvasResult(canvas, filename) {
+        canvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            downloadBtn.href = url;
+            downloadBtn.download = filename;
+            downloadBtn.classList.remove('hidden');
+            statusMsg.textContent = `Ready to download! (${formatBytes(blob.size)})`;
+        }, 'image/webp', 0.9);
+    }
+</script>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" data-id="cuidcBrIFb8ZjB5PGZRuhZH_K" data-title="Fast Client-Side Image Editor Right in Your Browser" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/tools/" rel="tag">tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/images/" rel="tag">images</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/optimization/" rel="tag">optimization</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/javascript/" rel="tag">javascript</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/web-performance/" rel="tag">web-performance</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/07/24/Fast-Client-Side-Image-Optimization-Right-in-Your-Browser/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Fast Client-Side Image Optimization Right in Your Browser</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</section>
+        
+          
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    
+  
+<script src="/js/lightbox.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
