@@ -52,7 +52,7 @@
 <meta property="og:description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-25T02:34:30.754Z">
-<meta property="article:modified_time" content="2026-07-25T03:04:42.425Z">
+<meta property="article:modified_time" content="2026-07-28T06:23:56.819Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="images">
 <meta property="article:tag" content="javascript">
@@ -102,7 +102,7 @@
   "@type": "BlogPosting",
   "headline": "Fast Client-Side Image Editor Right in Your Browser",
   "datePublished": "2026-07-25T02:34:30.754Z",
-  "dateModified": "2026-07-25T03:04:42.425Z",
+  "dateModified": "2026-07-28T06:23:56.819Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -122,6 +122,10 @@
     
         \ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
     
+
+    <meta property="og:image" content="https://safiullin.dev/logo.jpg">
+
+
 <meta name="generator" content="Hexo 8.1.2"></head>
 
 
@@ -231,37 +235,68 @@
 <p>Try it out right now!</p>
 <span id="more"></span>
 
-<div class="w-full max-w-md_ min-h-[1000px] bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 my-auto">
+<div class="w-full bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 my-auto">
     <div class="text-center mb-6">
-        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white">Image Studio Pro</h2>
-        <p class="text-xs sm:text-sm text-slate-400 mt-1">Crop, scale, resize and compress locally</p>
+        <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">Image Studio Pro</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Crop, scale, resize, pad and compress locally</p>
     </div>
     <div id="upload-section" class="border-2 border-dashed border-slate-700 hover:border-blue-500 transition-colors rounded-xl p-6 text-center cursor-pointer bg-slate-950/50">
-        <input type="file" id="file-input" accept="image/*" class="hidden">
+        <input type="file" id="file-input" accept="image/*,.svg" multiple class="hidden">
         <svg class="w-10 h-10 mx-auto text-blue-500 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.75 3.75 0 0118 19.5H6.75z"></path></svg>
-        <p class="text-sm font-medium text-slate-200">Upload Image</p>
-        <p class="text-xs text-slate-500 mt-1">Supports PNG, JPG, WebP, etc.</p>
+        <p class="text-sm font-medium text-slate-200">Upload Image(s)</p>
+        <p class="text-xs text-slate-400 mt-1">Drag & Drop files here or click to browse</p>
+        <p class="text-[10px] text-slate-500 mt-0.5">Supports PNG, JPG, WebP, SVG, etc. (Multiple allowed)</p>
     </div>
     <div id="decision-section" class="hidden space-y-4 text-center">
         <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
-            <p class="text-sm font-medium text-white mb-1">Image Loaded Successfully</p>
+            <p class="text-sm font-medium text-white mb-1">Images Loaded Successfully</p>
             <p id="decision-file-info" class="text-xs text-slate-400 mb-4"></p>
             <div class="space-y-2">
-                <button id="use-optimized-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/20">Optimize Selected File</button>
-                <button id="use-original-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition border border-slate-700">Use Original</button>
+                <button id="use-optimized-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/25">Optimize Selected Files</button>
+                <button id="use-original-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition border border-slate-700">Use Originals</button>
             </div>
         </div>
     </div>
-    <div id="editor-section" class="hidden space-y-4 min-h-[500px]">
-        <div class="relative w-full h-64_ bg-black/40 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800">
+    <div id="editor-section" class="hidden space-y-4">
+        <div id="queue-nav" class="hidden flex items-center justify-between p-2 bg-slate-950/60 border border-slate-800 rounded-xl text-xs">
+            <button type="button" id="prev-item-btn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg transition">← Prev</button>
+            <span id="queue-counter" class="text-slate-300 font-medium">Image 1 of 1</span>
+            <button type="button" id="next-item-btn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg transition">Next →</button>
+        </div>
+        <div class="relative w-full bg-black/40 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800">
             <img id="image-preview" class="max-h-full block max-w-full" alt="To edit">
         </div>
-        <!-- Resize Percentage Buttons -->
-        <div>
-            <div class="flex justify-between items-center mb-1.5">
-                <label class="text-xs font-medium text-slate-400">Resize Scale (%):</label>
+        <div class="p-3 bg-slate-950/40 border border-slate-800 rounded-xl space-y-2">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-medium text-slate-400">Custom Size (W x H, px):</label>
+                <button type="button" id="set-original-size-btn" class="text-[10px] text-blue-400 hover:text-blue-300 underline bg-transparent border-none cursor-pointer p-0">Original size</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <input type="number" id="custom-width-input" placeholder="Width" value="512" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-3 rounded-lg focus:outline-none focus:border-blue-500 font-mono">
+                <span class="text-slate-500 text-xs">×</span>
+                <input type="number" id="custom-height-input" placeholder="Height" value="512" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-3 rounded-lg focus:outline-none focus:border-blue-500 font-mono">
+                <button type="button" id="apply-custom-size-btn" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium py-1.5 px-3 rounded-lg transition shrink-0">Set Size</button>
+            </div>
+            <div class="flex items-center justify-between pt-1">
+                <label class="cursor-pointer flex items-center gap-1.5 text-xs text-slate-300">
+                    <input type="checkbox" id="lock-aspect-checkbox" class="accent-blue-600 w-3.5 h-3.5 rounded" checked>
+                    Save proportions (Aspect Ratio)
+                </label>
                 <span id="dimension-info" class="text-[10px] text-slate-400 font-mono">Original: --</span>
             </div>
+            <p class="text-[10px] text-slate-500">Put sizes of result image</p>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-slate-950/40 border border-slate-800 rounded-xl">
+            <label class="text-xs font-medium text-slate-400">Output Format:</label>
+            <div class="flex flex-wrap gap-2">
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/webp" checked class="accent-blue-600 format-radio"> WebP</label>
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/jpeg" class="accent-blue-600 format-radio"> JPG</label>
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/png" class="accent-blue-600 format-radio"> PNG</label>
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/svg+xml" class="accent-blue-600 format-radio"> SVG</label>
+            </div>
+        </div>
+        <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5">Resize Scale (%):</label>
             <div class="grid grid-cols-4 gap-1.5">
                 <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.25">
                     <span class="font-bold">25%</span>
@@ -281,33 +316,50 @@
                 </button>
             </div>
         </div>
-        <!-- Action Buttons Grid -->
+        <div class="p-3 bg-slate-950/40 border border-slate-800 rounded-xl space-y-2">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-medium text-slate-400">Add Padding (px):</label>
+                <span id="padding-val" class="text-xs text-blue-400 font-mono">0px</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <input type="range" id="padding-range" min="0" max="100" value="0" class="w-full accent-blue-600 bg-slate-800 h-1.5 rounded-lg cursor-pointer">
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-400 pt-1">
+                <span>Background:</span>
+                <div class="flex gap-2">
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px]"><input type="radio" name="pad-bg" value="transparent" checked class="accent-blue-600"> Transparent</label>
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px]"><input type="radio" name="pad-bg" value="#ffffff" class="accent-blue-600"> White</label>
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px]"><input type="radio" name="pad-bg" value="#000000" class="accent-blue-600"> Black</label>
+                </div>
+            </div>
+        </div>
         <div class="grid grid-cols-2 gap-2">
-            <button id="crop-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-blue-600/20">Crop Image</button>
-            <button id="optimize-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/20">Optimize Size</button>
+            <button id="crop-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-blue-600/25">Crop & Pad</button>
+            <button id="optimize-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/25">Optimize Size</button>
+        </div>
+        <div>
+            <button id="add-to-queue-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-indigo-600/25">Add files to edit</button>
         </div>
         <div class="grid grid-cols-2 gap-2">
             <button id="reset-btn" class="w-full bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 font-medium py-2 px-3 rounded-xl text-xs transition">Start from scratch</button>
-            <a id="download-btn" class="hidden text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/20">Download Result</a>
+            <button id="new-file-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition">Upload New Files</button>
+        </div>
+        <div class="space-y-2">
+            <a id="download-btn" class="hidden text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/25">Download Result</a>
+            <button id="download-batch-btn" class="hidden text-center w-full bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-teal-600/25">Download zip (<span id="batch-count">0</span>)</button>
         </div>
     </div>
-    <!-- Status -->
     <div id="status-msg" class="text-xs text-center text-slate-400 mt-4 h-4"></div>
-</div>
-
-<!-- Android App Download Footer Button -->
-<div class="w-full max-w-md mt-4 text-center hidden">
-    <a href="#" class="inline-flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 py-3 px-4 rounded-xl text-xs sm:text-sm font-medium transition shadow-md">
-        <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.27-.85-.31-.16-.69-.04-.85.27l-1.87 3.24c-1.04-.48-2.2-.76-3.45-.76s-2.41.28-3.45.76L8.43 5.72c-.16-.31-.54-.43-.85-.27-.31.16-.43.54-.27.85l1.84 3.18C6.5 10.9 5.25 12.82 5 15h14c-.25-2.18-1.5-4.1-3.4-5.52zM9 13.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm6 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg>
-        Download Android App
-    </a>
 </div>
 
 <script>
     let cropper = null;
     let currentScaleFactor = 1.0;
-    let originalFileSize = 0;
-    let pendingFile = null;
+    let pendingFiles = [];
+    let imageQueue = []; 
+    let currentIndex = 0;
+    let lastCanvasBlob = null;
+    let batchResults = []; 
     
     const fileInput = document.getElementById('file-input');
     const uploadSection = document.getElementById('upload-section');
@@ -317,94 +369,199 @@
     const imageElement = document.getElementById('image-preview');
     const statusMsg = document.getElementById('status-msg');
     const downloadBtn = document.getElementById('download-btn');
+    const downloadBatchBtn = document.getElementById('download-batch-btn');
+    const batchCountSpan = document.getElementById('batch-count');
     const scaleButtons = document.querySelectorAll('.resize-scale-btn');
     const dimensionInfo = document.getElementById('dimension-info');
+    const paddingRange = document.getElementById('padding-range');
+    const paddingVal = document.getElementById('padding-val');
+    const customWidthInput = document.getElementById('custom-width-input');
+    const customHeightInput = document.getElementById('custom-height-input');
+    const applyCustomSizeBtn = document.getElementById('apply-custom-size-btn');
+    const setOriginalSizeBtn = document.getElementById('set-original-size-btn');
+    const lockAspectCheckbox = document.getElementById('lock-aspect-checkbox');
+    const formatRadios = document.querySelectorAll('.format-radio');
+    const queueNav = document.getElementById('queue-nav');
+    const queueCounter = document.getElementById('queue-counter');
+    const prevItemBtn = document.getElementById('prev-item-btn');
+    const nextItemBtn = document.getElementById('next-item-btn');
 
-    // Check sessionStorage on page load to restore last image
-    window.addEventListener('DOMContentLoaded', () => {
-        const savedData = sessionStorage.getItem('original_image');
-        const savedSize = sessionStorage.getItem('original_size');
-        if (savedData) {
-            originalFileSize = savedSize ? parseInt(savedSize, 10) : 0;
-            loadImageIntoEditor(savedData);
+    // Клик по зоне загрузки открывает проводник
+    uploadSection.addEventListener('click', () => fileInput.click());
+    // Настройка Drag & Drop на область загрузки
+    ['dragenter', 'dragover'].forEach(eventName => {
+        uploadSection.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.add('border-blue-500', 'bg-blue-500/10');
+        }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        uploadSection.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.remove('border-blue-500', 'bg-blue-500/10');
+        }, false);
+    });
+
+    uploadSection.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = Array.from(dt.files);
+        if (files.length > 0) {
+            handleFilesSelection(files);
         }
     });
 
-    // Trigger file select
-    uploadSection.addEventListener('click', () => fileInput.click());
-
-    // Handle file selection -> show decision step
     fileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
+        const files = Array.from(e.target.files);
+        if (files.length > 0) {
+            handleFilesSelection(files);
+        }
+    });
 
-        pendingFile = file;
-        originalFileSize = file.size;
+    function handleFilesSelection(files) {
+        // Фильтруем только поддерживаемые типы изображений и SVG
+        const validFiles = files.filter(file => file.type.startsWith('image/') || file.name.endsWith('.svg'));
+        if (validFiles.length === 0) {
+            statusMsg.textContent = 'Please select image files SVG.';
+            return;
+        }
 
-        decisionFileInfo.textContent = `Size: ${formatBytes(file.size)}`;
+        pendingFiles = validFiles;
+        const totalSize = validFiles.reduce((acc, f) => acc + f.size, 0);
+
+        decisionFileInfo.textContent = `Files selected: ${validFiles.length} (${formatBytes(totalSize)})`;
         uploadSection.classList.add('hidden');
         decisionSection.classList.remove('hidden');
-        statusMsg.textContent = 'Choose processing mode for the uploaded file.';
-    });
+        statusMsg.textContent = 'Choose processing mode for the uploaded files.';
+    }
 
-    // Button: Use Original
-    document.getElementById('use-original-btn').addEventListener('click', () => {
-        if (!pendingFile) return;
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            const base64Data = event.target.result;
-            try {
-                sessionStorage.setItem('original_image', base64Data);
-                sessionStorage.setItem('original_size', originalFileSize);
-                decisionSection.classList.add('hidden');
-                loadImageIntoEditor(base64Data);
-            } catch (err) {
-                statusMsg.textContent = 'File too large for sessionStorage!';
-            }
-        };
-        reader.readAsDataURL(pendingFile);
-    });
-
-    // Button: Optimize Selected File first
-    document.getElementById('use-optimized-btn').addEventListener('click', async () => {
-        if (!pendingFile) return;
-        statusMsg.textContent = 'Optimizing selected file...';
-
-        const options = {
-            maxSizeMB: 1,
-            maxWidthOrHeight: 1920,
-            useWebWorker: true,
-            fileType: 'image/webp'
-        };
-
-        try {
-            const compressedFile = await imageCompression(pendingFile, options);
-            originalFileSize = compressedFile.size;
-            
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const base64Data = event.target.result;
-                try {
-                    sessionStorage.setItem('original_image', base64Data);
-                    sessionStorage.setItem('original_size', originalFileSize);
-                    decisionSection.classList.add('hidden');
-                    loadImageIntoEditor(base64Data);
-                    statusMsg.textContent = 'File optimized and loaded!';
-                } catch (err) {
-                    statusMsg.textContent = 'File too large for sessionStorage!';
-                }
-            };
-            reader.readAsDataURL(compressedFile);
-        } catch (err) {
-            console.error(err);
-            statusMsg.textContent = 'Optimization failed, falling back to original.';
-            document.getElementById('use-original-btn').click();
+    document.getElementById('new-file-btn').addEventListener('click', () => {
+        if (cropper) {
+            cropper.destroy();
+            cropper = null;
         }
+        imageQueue = [];
+        batchResults = [];
+        currentIndex = 0;
+        lastCanvasBlob = null;
+        editorSection.classList.add('hidden');
+        decisionSection.classList.add('hidden');
+        uploadSection.classList.remove('hidden');
+        fileInput.value = '';
+        downloadBatchBtn.classList.add('hidden');
+        statusMsg.textContent = 'Please select new files.';
     });
 
-    function loadImageIntoEditor(src) {
+    document.getElementById('use-original-btn').addEventListener('click', () => {
+        processAndLoadFiles(pendingFiles, false);
+    });
+
+    document.getElementById('use-optimized-btn').addEventListener('click', () => {
+        processAndLoadFiles(pendingFiles, true);
+    });
+
+    // Функция обработки и конвертации SVG в растр/DataURL для Cropper.js
+    async function parseFileToDataURL(file) {
+        if (file.type === 'image/svg+xml' || file.name.endsWith('.svg')) {
+            const text = await file.text();
+            return new Promise((resolve) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'image/svg+xml');
+                const svgElement = doc.documentElement;
+                
+                let w = parseFloat(svgElement.getAttribute('width'));
+                let h = parseFloat(svgElement.getAttribute('height'));
+                if (!w || !h) {
+                    const viewBox = svgElement.getAttribute('viewBox');
+                    if (viewBox) {
+                        const parts = viewBox.split(/[\s,]+/);
+                        if (parts.length === 4) {
+                            w = parseFloat(parts[2]);
+                            h = parseFloat(parts[3]);
+                        }
+                    }
+                }
+                if (!w) w = 800;
+                if (!h) h = 800;
+
+                svgElement.setAttribute('width', w);
+                svgElement.setAttribute('height', h);
+
+                const serialized = new XMLSerializer().serializeToString(svgElement);
+                const blob = new Blob([serialized], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    resolve({
+                        src: canvas.toDataURL('image/png'),
+                        originalSvgText: text,
+                        name: file.name,
+                        size: file.size
+                    });
+                    URL.revokeObjectURL(url);
+                };
+                img.src = url;
+            });
+        } else {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    resolve({
+                        src: event.target.result,
+                        originalSvgText: null,
+                        name: file.name,
+                        size: file.size
+                    });
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    }
+
+    async function processAndLoadFiles(files, optimize) {
+        statusMsg.textContent = optimize ? 'Optimizing files...' : 'Loading files...';
+        imageQueue = [];
+
+        for (let i = 0; i < files.length; i++) {
+            let file = files[i];
+            if (optimize && file.type !== 'image/svg+xml' && !file.name.endsWith('.svg')) {
+                try {
+                    file = await imageCompression(file, {
+                        maxSizeMB: 1,
+                        maxWidthOrHeight: 1920,
+                        useWebWorker: true,
+                        fileType: 'image/webp'
+                    });
+                } catch (err) {
+                    console.error('Optimization skipped for file', file.name);
+                }
+            }
+
+            const itemData = await parseFileToDataURL(file);
+            imageQueue.push(itemData);
+        }
+
+        decisionSection.classList.add('hidden');
+        currentIndex = 0;
+        batchResults = [];
+        downloadBatchBtn.classList.add('hidden');
+        loadQueueItem(currentIndex);
+        statusMsg.textContent = `${imageQueue.length} image(s) loaded successfully!`;
+    }
+
+    function loadQueueItem(index) {
+        if (imageQueue.length === 0) return;
+        const item = imageQueue[index];
         editorSection.classList.remove('hidden');
-        imageElement.src = src;
+        imageElement.src = item.src;
 
         if (cropper) {
             cropper.destroy();
@@ -416,12 +573,119 @@
             autoCropArea: 1,
             ready: function() {
                 updateDimensionsDisplay();
+                const data = cropper.getData();
+                customWidthInput.value = Math.round(data.width);
+                customHeightInput.value = Math.round(data.height);
+            },
+            crop: function() {
+                if (lockAspectCheckbox.checked && cropper) {
+                    const data = cropper.getData();
+                    if (data.width > 0 && data.height > 0) {
+                        const ratio = data.width / data.height;
+                        const w = parseInt(customWidthInput.value, 10);
+                        if (w && !isNaN(w)) {
+                            customHeightInput.value = Math.round(w / ratio);
+                        }
+                    }
+                }
             }
         });
+
         currentScaleFactor = 1.0;
+        lastCanvasBlob = null;
         updateScaleButtonsUI();
+        updateQueueNavUI();
         downloadBtn.classList.add('hidden');
     }
+
+    function updateQueueNavUI() {
+        if (imageQueue.length > 1) {
+            queueNav.classList.remove('hidden');
+            queueCounter.textContent = `Image ${currentIndex + 1} of ${imageQueue.length}`;
+        } else {
+            queueNav.classList.add('hidden');
+        }
+    }
+
+    prevItemBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            loadQueueItem(currentIndex);
+        }
+    });
+
+    nextItemBtn.addEventListener('click', () => {
+        if (currentIndex < imageQueue.length - 1) {
+            currentIndex++;
+            loadQueueItem(currentIndex);
+        }
+    });
+
+    customWidthInput.addEventListener('input', () => {
+        if (lockAspectCheckbox.checked && cropper) {
+            const data = cropper.getData();
+            if (data.width > 0 && data.height > 0) {
+                const ratio = data.width / data.height;
+                const w = parseInt(customWidthInput.value, 10);
+                if (w && !isNaN(w)) {
+                    customHeightInput.value = Math.round(w / ratio);
+                }
+            }
+        }
+    });
+
+    lockAspectCheckbox.addEventListener('change', () => {
+        if (!cropper) return;
+        if (lockAspectCheckbox.checked) {
+            const data = cropper.getData();
+            if (data.width > 0 && data.height > 0) {
+                cropper.setAspectRatio(data.width / data.height);
+            }
+        } else {
+            cropper.setAspectRatio(NaN);
+        }
+    });
+
+    setOriginalSizeBtn.addEventListener('click', () => {
+        if (!cropper) return;
+        const data = cropper.getData();
+        customWidthInput.value = Math.round(data.width);
+        customHeightInput.value = Math.round(data.height);
+        if (lockAspectCheckbox.checked) {
+            cropper.setAspectRatio(data.width / data.height);
+        }
+        statusMsg.textContent = 'Restored original selection size dimensions.';
+    });
+
+    applyCustomSizeBtn.addEventListener('click', () => {
+        if (!cropper) return;
+        const w = parseInt(customWidthInput.value, 10);
+        const h = parseInt(customHeightInput.value, 10);
+        
+        if (!w || w <= 0 || !h || h <= 0) {
+            statusMsg.textContent = 'Please enter valid width and height.';
+            return;
+        }
+
+        if (lockAspectCheckbox.checked) {
+            cropper.setAspectRatio(w / h);
+        } else {
+            cropper.setAspectRatio(NaN);
+        }
+        
+        currentScaleFactor = 1.0;
+        scaleButtons.forEach(b => {
+            if (b.getAttribute('data-scale') === '1.00') {
+                b.click();
+            }
+        });
+
+        statusMsg.textContent = `Target set: ${w}x${h}px`;
+    });
+
+    paddingRange.addEventListener('input', (e) => {
+        paddingVal.textContent = e.target.value + 'px';
+    });
 
     function formatBytes(bytes, decimals = 2) {
         if (!bytes || bytes === 0) return '0 Bytes';
@@ -438,7 +702,7 @@
         const origW = Math.round(data.width);
         const origH = Math.round(data.height);
 
-        dimensionInfo.textContent = `Original: ${origW}x${origH}px (${formatBytes(originalFileSize)})`;
+        dimensionInfo.textContent = `Original: ${origW}x${origH}px`;
 
         scaleButtons.forEach(btn => {
             const scale = parseFloat(btn.getAttribute('data-scale'));
@@ -452,7 +716,6 @@
         });
     }
 
-    // Handle scale percentage clicks
     scaleButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const targetBtn = e.currentTarget;
@@ -480,51 +743,254 @@
         });
     }
 
-    // Start from scratch (reload from sessionStorage)
     document.getElementById('reset-btn').addEventListener('click', () => {
-        const originalData = sessionStorage.getItem('original_image');
-        if (originalData) {
-            loadImageIntoEditor(originalData);
-            statusMsg.textContent = 'Reset to original state.';
+        loadQueueItem(currentIndex);
+        statusMsg.textContent = 'Reset current image state.';
+    });
+
+    // Функция формирования результирующего Canvas для конкретного элемента
+    function generateCanvasForItem(item, callback) {
+        const tempImg = new Image();
+        tempImg.onload = function() {
+            let cropX = 0, cropY = 0, cropW = tempImg.naturalWidth, cropH = tempImg.naturalHeight;
+            if (cropper && imageQueue[currentIndex] && item.src === imageQueue[currentIndex].src) {
+                const data = cropper.getData(true);
+                cropX = data.x;
+                cropY = data.y;
+                cropW = data.width;
+                cropH = data.height;
+            }
+
+            const customW = parseInt(customWidthInput.value, 10);
+            const customH = parseInt(customHeightInput.value, 10);
+            let targetW, targetH;
+
+            if (customW && customW > 0 && customH && customH > 0) {
+                targetW = Math.round(customW * currentScaleFactor);
+                targetH = Math.round(customH * currentScaleFactor);
+            } else {
+                targetW = Math.round(cropW * currentScaleFactor);
+                targetH = Math.round(cropH * currentScaleFactor);
+            }
+
+            const outCanvas = document.createElement('canvas');
+            outCanvas.width = targetW;
+            outCanvas.height = targetH;
+            const outCtx = outCanvas.getContext('2d');
+            outCtx.drawImage(tempImg, cropX, cropY, cropW, cropH, 0, 0, targetW, targetH);
+
+            const padding = parseInt(paddingRange.value, 10) || 0;
+            if (padding === 0) {
+                callback(outCanvas);
+                return;
+            }
+
+            const finalCanvas = document.createElement('canvas');
+            finalCanvas.width = targetW + (padding * 2);
+            finalCanvas.height = targetH + (padding * 2);
+            const finalCtx = finalCanvas.getContext('2d');
+
+            const format = document.querySelector('input[name="output-format"]:checked').value;
+            const bgChoice = document.querySelector('input[name="pad-bg"]:checked').value;
+            
+            if (format === 'image/jpeg' && bgChoice === 'transparent') {
+                finalCtx.fillStyle = '#ffffff';
+                finalCtx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+            } else if (bgChoice !== 'transparent') {
+                finalCtx.fillStyle = bgChoice;
+                finalCtx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+            }
+
+            finalCtx.drawImage(outCanvas, padding, padding);
+            callback(finalCanvas);
+        };
+        tempImg.src = item.src;
+    }
+
+    function getProcessedCanvasWithPadding() {
+        if (!cropper) return null;
+        const customW = parseInt(customWidthInput.value, 10);
+        const customH = parseInt(customHeightInput.value, 10);
+        let targetW, targetH;
+
+        if (customW && customW > 0 && customH && customH > 0) {
+            targetW = Math.round(customW * currentScaleFactor);
+            targetH = Math.round(customH * currentScaleFactor);
+        } else {
+            const data = cropper.getData();
+            targetW = Math.round(data.width * currentScaleFactor);
+            targetH = Math.round(data.height * currentScaleFactor);
         }
-    });
-
-    // Crop & Resize action
-    document.getElementById('crop-btn').addEventListener('click', () => {
-        if (!cropper) return;
-        const data = cropper.getData();
-        const canvas = cropper.getCroppedCanvas({
-            width: Math.round(data.width * currentScaleFactor),
-            height: Math.round(data.height * currentScaleFactor)
+        
+        const croppedCanvas = cropper.getCroppedCanvas({
+            width: targetW,
+            height: targetH
         });
-        processCanvasResult(canvas, 'cropped-scaled-image.webp');
+
+        const padding = parseInt(paddingRange.value, 10) || 0;
+        if (padding === 0) return croppedCanvas;
+
+        const finalCanvas = document.createElement('canvas');
+        finalCanvas.width = targetW + (padding * 2);
+        finalCanvas.height = targetH + (padding * 2);
+        const ctx = finalCanvas.getContext('2d');
+
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+        const bgChoice = document.querySelector('input[name="pad-bg"]:checked').value;
+        
+        if (format === 'image/jpeg' && bgChoice === 'transparent') {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+        } else if (bgChoice !== 'transparent') {
+            ctx.fillStyle = bgChoice;
+            ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+        }
+
+        ctx.drawImage(croppedCanvas, padding, padding);
+        return finalCanvas;
+    }
+
+    // Универсальный генератор файла нужного формата (включая SVG)
+    function exportCanvasToBlobOrSvg(canvas, format, item, callback) {
+        if (format === 'image/svg+xml') {
+            let svgContent = '';
+            if (item && item.originalSvgText) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(item.originalSvgText, 'image/svg+xml');
+                const svgEl = doc.documentElement;
+                svgEl.setAttribute('width', canvas.width);
+                svgEl.setAttribute('height', canvas.height);
+                svgContent = new XMLSerializer().serializeToString(svgEl);
+            } else {
+                const dataURL = canvas.toDataURL('image/png');
+                svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}" viewBox="0 0 ${canvas.width} ${canvas.height}"><image href="${dataURL}" width="${canvas.width}" height="${canvas.height}"/></svg>`;
+            }
+            const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+            callback(blob);
+        } else {
+            canvas.toBlob((blob) => {
+                callback(blob);
+            }, format, 0.9);
+        }
+    }
+
+    document.getElementById('crop-btn').addEventListener('click', () => {
+        const canvas = getProcessedCanvasWithPadding();
+        if (!canvas) return;
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+        const currentItem = imageQueue[currentIndex];
+        
+        exportCanvasToBlobOrSvg(canvas, format, currentItem, (blob) => {
+            lastCanvasBlob = blob;
+            updateDownloadLink(blob, format);
+            statusMsg.textContent = `Ready to download (${canvas.width}x${canvas.height}px, ${formatBytes(blob.size)})!`;
+        });
     });
 
-    // Optimize Size action using browser-image-compression
+    document.getElementById('add-to-queue-btn').addEventListener('click', async () => {
+        if (imageQueue.length === 0) return;
+        statusMsg.textContent = 'Processing batch with current settings...';
+        batchResults = [];
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+        const ext = format === 'image/jpeg' ? 'jpg' : (format === 'image/png' ? 'png' : (format === 'image/webp' ? 'webp' : 'svg'));
+
+        for (let i = 0; i < imageQueue.length; i++) {
+            await new Promise((resolve) => {
+                generateCanvasForItem(imageQueue[i], (canvas) => {
+                    exportCanvasToBlobOrSvg(canvas, format, imageQueue[i], (blob) => {
+                        let baseName = imageQueue[i].name.substring(0, imageQueue[i].name.lastIndexOf('.')) || `image_${i+1}`;
+                        batchResults.push({
+                            filename: `${baseName}_processed.${ext}`,
+                            blob: blob
+                        });
+                        resolve();
+                    });
+                });
+            });
+        }
+
+        batchCountSpan.textContent = batchResults.length;
+        downloadBatchBtn.classList.remove('hidden');
+        statusMsg.textContent = `Batch processed successfully (${batchResults.length} files ready)!`;
+    });
+
+    downloadBatchBtn.addEventListener('click', async () => {
+        if (batchResults.length === 0) return;
+        statusMsg.textContent = 'Creating ZIP archive...';
+        
+        const zip = new JSZip();
+        batchResults.forEach(item => {
+            zip.file(item.filename, item.blob);
+        });
+
+        const content = await zip.generateAsync({ type: 'blob' });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'processed_images.zip';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        statusMsg.textContent = 'ZIP archive downloaded!';
+    });
+
+    formatRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (!lastCanvasBlob && editorSection.classList.contains('hidden')) return;
+            
+            const canvas = getProcessedCanvasWithPadding();
+            if (!canvas) return;
+            
+            const format = document.querySelector('input[name="output-format"]:checked').value;
+            const currentItem = imageQueue[currentIndex];
+
+            exportCanvasToBlobOrSvg(canvas, format, currentItem, (blob) => {
+                lastCanvasBlob = blob;
+                updateDownloadLink(blob, format);
+                statusMsg.textContent = `Format changed to ${format.split('/')[1].toUpperCase()}! Ready to download.`;
+            });
+        });
+    });
+
+    function updateDownloadLink(blob, format) {
+        const ext = format === 'image/jpeg' ? 'jpg' : (format === 'image/png' ? 'png' : (format === 'image/webp' ? 'webp' : 'svg'));
+        const url = URL.createObjectURL(blob);
+        downloadBtn.href = url;
+        downloadBtn.download = `image-output.${ext}`;
+        downloadBtn.classList.remove('hidden');
+    }
+
     document.getElementById('optimize-btn').addEventListener('click', async () => {
-        if (!cropper) return;
+        const canvas = getProcessedCanvasWithPadding();
+        if (!canvas) return;
         
         statusMsg.textContent = 'Optimizing and compressing...';
-        
-        const data = cropper.getData();
-        const canvas = cropper.getCroppedCanvas({
-            width: Math.round(data.width * currentScaleFactor),
-            height: Math.round(data.height * currentScaleFactor)
-        });
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+        const currentItem = imageQueue[currentIndex];
 
-        canvas.toBlob(async (blob) => {
+        exportCanvasToBlobOrSvg(canvas, format, currentItem, async (blob) => {
             if (!blob) {
                 statusMsg.textContent = 'Optimization failed.';
                 return;
             }
             
-            const file = new File([blob], "image.webp", { type: "image/webp" });
-            
+            lastCanvasBlob = blob;
+            if (format === 'image/svg+xml') {
+                const ext = 'svg';
+                const url = URL.createObjectURL(blob);
+                downloadBtn.href = url;
+                downloadBtn.download = `optimized-image.${ext}`;
+                downloadBtn.classList.remove('hidden');
+                statusMsg.innerHTML = `SVG processed! Size: <b>${formatBytes(blob.size)}</b>`;
+                return;
+            }
+
+            const file = new File([blob], "image.tmp", { type: format });
             const options = {
                 maxSizeMB: 0.8,
                 maxWidthOrHeight: 1920,
                 useWebWorker: true,
-                fileType: 'image/webp'
+                fileType: format
             };
 
             try {
@@ -533,9 +999,10 @@
                 const compressedSizeMB = formatBytes(compressedFile.size);
                 const savings = Math.round((1 - compressedFile.size / file.size) * 100);
 
+                const ext = format === 'image/jpeg' ? 'jpg' : (format === 'image/png' ? 'png' : 'webp');
                 const url = URL.createObjectURL(compressedFile);
                 downloadBtn.href = url;
-                downloadBtn.download = 'optimized-image.webp';
+                downloadBtn.download = `optimized-image.${ext}`;
                 downloadBtn.classList.remove('hidden');
                 
                 statusMsg.innerHTML = `Optimized! ${originalSizeMB} → <b>${compressedSizeMB}</b> (${savings}% saved)`;
@@ -543,24 +1010,14 @@
                 console.error(err);
                 statusMsg.textContent = 'Error during optimization.';
             }
-        }, 'image/webp', 0.9);
+        });
     });
-
-    function processCanvasResult(canvas, filename) {
-        canvas.toBlob((blob) => {
-            const url = URL.createObjectURL(blob);
-            downloadBtn.href = url;
-            downloadBtn.download = filename;
-            downloadBtn.classList.remove('hidden');
-            statusMsg.textContent = `Ready to download! (${formatBytes(blob.size)})`;
-        }, 'image/webp', 0.9);
-    }
 </script>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" data-id="cuidLtqry4XmTWIAasFE6MbJ7" data-title="Fast Client-Side Image Editor Right in Your Browser" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" data-id="cuidQ0iG3r_rRb0eyhfABgLDH" data-title="Fast Client-Side Image Editor Right in Your Browser" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -571,11 +1028,11 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/images/" rel="tag">images</a>
+        <a class="article-tag-list-link" href="/en/tags/optimization/" rel="tag">optimization</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/optimization/" rel="tag">optimization</a>
+        <a class="article-tag-list-link" href="/en/tags/images/" rel="tag">images</a>
       </li>
     
       <li class="article-tag-list-item">
