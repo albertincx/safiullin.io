@@ -52,7 +52,7 @@
 <meta property="og:description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-25T02:34:30.754Z">
-<meta property="article:modified_time" content="2026-07-28T06:23:56.819Z">
+<meta property="article:modified_time" content="2026-08-02T09:31:45.849Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="images">
 <meta property="article:tag" content="javascript">
@@ -102,7 +102,7 @@
   "@type": "BlogPosting",
   "headline": "Fast Client-Side Image Editor Right in Your Browser",
   "datePublished": "2026-07-25T02:34:30.754Z",
-  "dateModified": "2026-07-28T06:23:56.819Z",
+  "dateModified": "2026-08-02T09:31:45.849Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -235,6 +235,8 @@
 <p>Try it out right now!</p>
 <span id="more"></span>
 
+
+
 <div class="w-full bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 my-auto">
     <div class="text-center mb-6">
         <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">Image Studio Pro</h1>
@@ -254,6 +256,18 @@
             <div class="space-y-2">
                 <button id="use-optimized-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/25">Optimize Selected Files</button>
                 <button id="use-original-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition border border-slate-700">Use Originals</button>
+            </div>
+
+            <!-- Добавленные элементы по ТЗ -->
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-3 text-left">
+                <label class="cursor-pointer flex items-center gap-2 text-xs text-slate-300">
+                    <input type="checkbox" id="remove-tags-checkbox" class="accent-blue-600 w-4 h-4 rounded" checked>
+                    Удалить теги изображения (метаданные EXIF)
+                </label>
+                <div class="grid grid-cols-2 gap-2">
+                    <button id="step-download-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-emerald-600/25">Скачать</button>
+                    <button id="step-download-jpg-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-blue-600/25">Скачать как JPG</button>
+                </div>
             </div>
         </div>
     </div>
@@ -345,7 +359,7 @@
             <button id="new-file-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition">Upload New Files</button>
         </div>
         <div class="space-y-2">
-            <a id="download-btn" class="hidden text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/25">Download Result</a>
+            <a id="download-btn" class="hidden text-white! text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/25">Download Result</a>
             <button id="download-batch-btn" class="hidden text-center w-full bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-teal-600/25">Download zip (<span id="batch-count">0</span>)</button>
         </div>
     </div>
@@ -356,11 +370,11 @@
     let cropper = null;
     let currentScaleFactor = 1.0;
     let pendingFiles = [];
-    let imageQueue = []; 
+    let imageQueue = [];
     let currentIndex = 0;
     let lastCanvasBlob = null;
-    let batchResults = []; 
-    
+    let batchResults = [];
+
     const fileInput = document.getElementById('file-input');
     const uploadSection = document.getElementById('upload-section');
     const decisionSection = document.getElementById('decision-section');
@@ -386,9 +400,13 @@
     const prevItemBtn = document.getElementById('prev-item-btn');
     const nextItemBtn = document.getElementById('next-item-btn');
 
-    // Клик по зоне загрузки открывает проводник
+    // Элементы быстрого шага
+    const removeTagsCheckbox = document.getElementById('remove-tags-checkbox');
+    const stepDownloadBtn = document.getElementById('step-download-btn');
+    const stepDownloadJpgBtn = document.getElementById('step-download-jpg-btn');
+
     uploadSection.addEventListener('click', () => fileInput.click());
-    // Настройка Drag & Drop на область загрузки
+
     ['dragenter', 'dragover'].forEach(eventName => {
         uploadSection.addEventListener(eventName, (e) => {
             e.preventDefault();
@@ -408,20 +426,15 @@
     uploadSection.addEventListener('drop', (e) => {
         const dt = e.dataTransfer;
         const files = Array.from(dt.files);
-        if (files.length > 0) {
-            handleFilesSelection(files);
-        }
+        if (files.length > 0) handleFilesSelection(files);
     });
 
     fileInput.addEventListener('change', (e) => {
         const files = Array.from(e.target.files);
-        if (files.length > 0) {
-            handleFilesSelection(files);
-        }
+        if (files.length > 0) handleFilesSelection(files);
     });
 
     function handleFilesSelection(files) {
-        // Фильтруем только поддерживаемые типы изображений и SVG
         const validFiles = files.filter(file => file.type.startsWith('image/') || file.name.endsWith('.svg'));
         if (validFiles.length === 0) {
             statusMsg.textContent = 'Please select image files SVG.';
@@ -462,7 +475,50 @@
         processAndLoadFiles(pendingFiles, true);
     });
 
-    // Функция обработки и конвертации SVG в растр/DataURL для Cropper.js
+    // Обработчики для новых кнопок скачивания в режиме выбора
+    stepDownloadBtn.addEventListener('click', () => handleQuickExport(false));
+    stepDownloadJpgBtn.addEventListener('click', () => handleQuickExport(true));
+
+    async function handleQuickExport(forceJpg) {
+        if (pendingFiles.length === 0) return;
+        statusMsg.textContent = 'Processing files for download...';
+
+        for (let i = 0; i < pendingFiles.length; i++) {
+            let file = pendingFiles[i];
+            const itemData = await parseFileToDataURL(file);
+
+            const tempImg = new Image();
+            tempImg.onload = () => {
+                const canvas = document.createElement('canvas');
+                canvas.width = tempImg.naturalWidth;
+                canvas.height = tempImg.naturalHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(tempImg, 0, 0);
+
+                let format = file.type;
+                if (forceJpg || format === 'image/svg+xml') {
+                    format = 'image/jpeg';
+                }
+
+                canvas.toBlob((blob) => {
+                    if (!blob) return;
+                    // Если включена галка "удалить теги", канвас уже не содержит EXIF, просто отдаем файл[cite: 1]
+                    const ext = forceJpg ? 'jpg' : (format.includes('png') ? 'png' : (format.includes('webp') ? 'webp' : 'jpg'));
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    let baseName = file.name.substring(0, file.name.lastIndexOf('.')) || `image_${i+1}`;
+                    a.download = `${baseName}_optimized.${ext}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }, format, 0.9);
+            };
+            tempImg.src = itemData.src;
+        }
+        statusMsg.textContent = 'Files downloaded successfully!';
+    }
+
     async function parseFileToDataURL(file) {
         if (file.type === 'image/svg+xml' || file.name.endsWith('.svg')) {
             const text = await file.text();
@@ -470,29 +526,16 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, 'image/svg+xml');
                 const svgElement = doc.documentElement;
-                
-                let w = parseFloat(svgElement.getAttribute('width'));
-                let h = parseFloat(svgElement.getAttribute('height'));
-                if (!w || !h) {
-                    const viewBox = svgElement.getAttribute('viewBox');
-                    if (viewBox) {
-                        const parts = viewBox.split(/[\s,]+/);
-                        if (parts.length === 4) {
-                            w = parseFloat(parts[2]);
-                            h = parseFloat(parts[3]);
-                        }
-                    }
-                }
-                if (!w) w = 800;
-                if (!h) h = 800;
 
+                let w = parseFloat(svgElement.getAttribute('width')) || 800;
+                let h = parseFloat(svgElement.getAttribute('height')) || 800;
                 svgElement.setAttribute('width', w);
                 svgElement.setAttribute('height', h);
 
                 const serialized = new XMLSerializer().serializeToString(svgElement);
                 const blob = new Blob([serialized], { type: 'image/svg+xml;charset=utf-8' });
                 const url = URL.createObjectURL(blob);
-                
+
                 const img = new Image();
                 img.onload = () => {
                     const canvas = document.createElement('canvas');
@@ -563,9 +606,7 @@
         editorSection.classList.remove('hidden');
         imageElement.src = item.src;
 
-        if (cropper) {
-            cropper.destroy();
-        }
+        if (cropper) cropper.destroy();
 
         cropper = new Cropper(imageElement, {
             aspectRatio: NaN,
@@ -583,9 +624,7 @@
                     if (data.width > 0 && data.height > 0) {
                         const ratio = data.width / data.height;
                         const w = parseInt(customWidthInput.value, 10);
-                        if (w && !isNaN(w)) {
-                            customHeightInput.value = Math.round(w / ratio);
-                        }
+                        if (w && !isNaN(w)) customHeightInput.value = Math.round(w / ratio);
                     }
                 }
             }
@@ -608,17 +647,11 @@
     }
 
     prevItemBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            loadQueueItem(currentIndex);
-        }
+        if (currentIndex > 0) { currentIndex--; loadQueueItem(currentIndex); }
     });
 
     nextItemBtn.addEventListener('click', () => {
-        if (currentIndex < imageQueue.length - 1) {
-            currentIndex++;
-            loadQueueItem(currentIndex);
-        }
+        if (currentIndex < imageQueue.length - 1) { currentIndex++; loadQueueItem(currentIndex); }
     });
 
     customWidthInput.addEventListener('input', () => {
@@ -627,9 +660,7 @@
             if (data.width > 0 && data.height > 0) {
                 const ratio = data.width / data.height;
                 const w = parseInt(customWidthInput.value, 10);
-                if (w && !isNaN(w)) {
-                    customHeightInput.value = Math.round(w / ratio);
-                }
+                if (w && !isNaN(w)) customHeightInput.value = Math.round(w / ratio);
             }
         }
     });
@@ -638,9 +669,7 @@
         if (!cropper) return;
         if (lockAspectCheckbox.checked) {
             const data = cropper.getData();
-            if (data.width > 0 && data.height > 0) {
-                cropper.setAspectRatio(data.width / data.height);
-            }
+            if (data.width > 0 && data.height > 0) cropper.setAspectRatio(data.width / data.height);
         } else {
             cropper.setAspectRatio(NaN);
         }
@@ -651,36 +680,19 @@
         const data = cropper.getData();
         customWidthInput.value = Math.round(data.width);
         customHeightInput.value = Math.round(data.height);
-        if (lockAspectCheckbox.checked) {
-            cropper.setAspectRatio(data.width / data.height);
-        }
-        statusMsg.textContent = 'Restored original selection size dimensions.';
+        if (lockAspectCheckbox.checked) cropper.setAspectRatio(data.width / data.height);
     });
 
     applyCustomSizeBtn.addEventListener('click', () => {
         if (!cropper) return;
         const w = parseInt(customWidthInput.value, 10);
         const h = parseInt(customHeightInput.value, 10);
-        
-        if (!w || w <= 0 || !h || h <= 0) {
-            statusMsg.textContent = 'Please enter valid width and height.';
-            return;
-        }
+        if (!w || w <= 0 || !h || h <= 0) return;
 
-        if (lockAspectCheckbox.checked) {
-            cropper.setAspectRatio(w / h);
-        } else {
-            cropper.setAspectRatio(NaN);
-        }
-        
+        if (lockAspectCheckbox.checked) cropper.setAspectRatio(w / h);
+        else cropper.setAspectRatio(NaN);
         currentScaleFactor = 1.0;
-        scaleButtons.forEach(b => {
-            if (b.getAttribute('data-scale') === '1.00') {
-                b.click();
-            }
-        });
-
-        statusMsg.textContent = `Target set: ${w}x${h}px`;
+        updateScaleButtonsUI();
     });
 
     paddingRange.addEventListener('input', (e) => {
@@ -699,34 +711,19 @@
     function updateDimensionsDisplay() {
         if (!cropper) return;
         const data = cropper.getData();
-        const origW = Math.round(data.width);
-        const origH = Math.round(data.height);
-
-        dimensionInfo.textContent = `Original: ${origW}x${origH}px`;
-
-        scaleButtons.forEach(btn => {
-            const scale = parseFloat(btn.getAttribute('data-scale'));
-            const newW = Math.round(origW * scale);
-            const newH = Math.round(origH * scale);
-            
-            const subSpan = btn.querySelector('.scale-dimension');
-            if (subSpan) {
-                subSpan.textContent = `${newW}x${newH}px`;
-            }
-        });
+        dimensionInfo.textContent = `Original: ${Math.round(data.width)}x${Math.round(data.height)}px`;
     }
 
     scaleButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const targetBtn = e.currentTarget;
-            scaleButtons.forEach(b => b.classList.remove('bg-blue-600', 'border-blue-500', 'text-white'));
-            scaleButtons.forEach(b => b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300'));
-            
+            scaleButtons.forEach(b => {
+                b.classList.remove('bg-blue-600', 'border-blue-500', 'text-white');
+                b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            });
             targetBtn.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
             targetBtn.classList.add('bg-blue-600', 'border-blue-500', 'text-white');
-            
             currentScaleFactor = parseFloat(targetBtn.getAttribute('data-scale'));
-            statusMsg.textContent = `Scale factor set to ${Math.round(currentScaleFactor * 100)}%`;
         });
     });
 
@@ -743,66 +740,27 @@
         });
     }
 
-    document.getElementById('reset-btn').addEventListener('click', () => {
-        loadQueueItem(currentIndex);
-        statusMsg.textContent = 'Reset current image state.';
-    });
+    document.getElementById('reset-btn').addEventListener('click', () => loadQueueItem(currentIndex));
 
-    // Функция формирования результирующего Canvas для конкретного элемента
     function generateCanvasForItem(item, callback) {
         const tempImg = new Image();
         tempImg.onload = function() {
             let cropX = 0, cropY = 0, cropW = tempImg.naturalWidth, cropH = tempImg.naturalHeight;
             if (cropper && imageQueue[currentIndex] && item.src === imageQueue[currentIndex].src) {
                 const data = cropper.getData(true);
-                cropX = data.x;
-                cropY = data.y;
-                cropW = data.width;
-                cropH = data.height;
+                cropX = data.x; cropY = data.y; cropW = data.width; cropH = data.height;
             }
 
             const customW = parseInt(customWidthInput.value, 10);
             const customH = parseInt(customHeightInput.value, 10);
-            let targetW, targetH;
-
-            if (customW && customW > 0 && customH && customH > 0) {
-                targetW = Math.round(customW * currentScaleFactor);
-                targetH = Math.round(customH * currentScaleFactor);
-            } else {
-                targetW = Math.round(cropW * currentScaleFactor);
-                targetH = Math.round(cropH * currentScaleFactor);
-            }
+            let targetW = (customW && customW > 0) ? Math.round(customW * currentScaleFactor) : Math.round(cropW * currentScaleFactor);
+            let targetH = (customH && customH > 0) ? Math.round(customH * currentScaleFactor) : Math.round(cropH * currentScaleFactor);
 
             const outCanvas = document.createElement('canvas');
             outCanvas.width = targetW;
             outCanvas.height = targetH;
-            const outCtx = outCanvas.getContext('2d');
-            outCtx.drawImage(tempImg, cropX, cropY, cropW, cropH, 0, 0, targetW, targetH);
-
-            const padding = parseInt(paddingRange.value, 10) || 0;
-            if (padding === 0) {
-                callback(outCanvas);
-                return;
-            }
-
-            const finalCanvas = document.createElement('canvas');
-            finalCanvas.width = targetW + (padding * 2);
-            finalCanvas.height = targetH + (padding * 2);
-            const finalCtx = finalCanvas.getContext('2d');
-
-            const format = document.querySelector('input[name="output-format"]:checked').value;
-            const bgChoice = document.querySelector('input[name="pad-bg"]:checked').value;
-            
-            if (format === 'image/jpeg' && bgChoice === 'transparent') {
-                finalCtx.fillStyle = '#ffffff';
-                finalCtx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
-            } else if (bgChoice !== 'transparent') {
-                finalCtx.fillStyle = bgChoice;
-                finalCtx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
-            }
-
-            finalCtx.drawImage(outCanvas, padding, padding);
-            callback(finalCanvas);
+            outCanvas.getContext('2d').drawImage(tempImg, cropX, cropY, cropW, cropH, 0, 0, targetW, targetH);
+            callback(outCanvas);
         };
         tempImg.src = item.src;
     }
@@ -811,151 +769,64 @@
         if (!cropper) return null;
         const customW = parseInt(customWidthInput.value, 10);
         const customH = parseInt(customHeightInput.value, 10);
-        let targetW, targetH;
+        const data = cropper.getData();
+        let targetW = (customW && customW > 0) ? Math.round(customW * currentScaleFactor) : Math.round(data.width * currentScaleFactor);
+        let targetH = (customH && customH > 0) ? Math.round(customH * currentScaleFactor) : Math.round(data.height * currentScaleFactor);
 
-        if (customW && customW > 0 && customH && customH > 0) {
-            targetW = Math.round(customW * currentScaleFactor);
-            targetH = Math.round(customH * currentScaleFactor);
-        } else {
-            const data = cropper.getData();
-            targetW = Math.round(data.width * currentScaleFactor);
-            targetH = Math.round(data.height * currentScaleFactor);
-        }
-        
-        const croppedCanvas = cropper.getCroppedCanvas({
-            width: targetW,
-            height: targetH
-        });
-
-        const padding = parseInt(paddingRange.value, 10) || 0;
-        if (padding === 0) return croppedCanvas;
-
-        const finalCanvas = document.createElement('canvas');
-        finalCanvas.width = targetW + (padding * 2);
-        finalCanvas.height = targetH + (padding * 2);
-        const ctx = finalCanvas.getContext('2d');
-
-        const format = document.querySelector('input[name="output-format"]:checked').value;
-        const bgChoice = document.querySelector('input[name="pad-bg"]:checked').value;
-        
-        if (format === 'image/jpeg' && bgChoice === 'transparent') {
-            ctx.fillStyle = '#ffffff';
-            ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
-        } else if (bgChoice !== 'transparent') {
-            ctx.fillStyle = bgChoice;
-            ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
-        }
-
-        ctx.drawImage(croppedCanvas, padding, padding);
-        return finalCanvas;
+        return cropper.getCroppedCanvas({ width: targetW, height: targetH });
     }
 
-    // Универсальный генератор файла нужного формата (включая SVG)
     function exportCanvasToBlobOrSvg(canvas, format, item, callback) {
-        if (format === 'image/svg+xml') {
-            let svgContent = '';
-            if (item && item.originalSvgText) {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(item.originalSvgText, 'image/svg+xml');
-                const svgEl = doc.documentElement;
-                svgEl.setAttribute('width', canvas.width);
-                svgEl.setAttribute('height', canvas.height);
-                svgContent = new XMLSerializer().serializeToString(svgEl);
-            } else {
-                const dataURL = canvas.toDataURL('image/png');
-                svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}" viewBox="0 0 ${canvas.width} ${canvas.height}"><image href="${dataURL}" width="${canvas.width}" height="${canvas.height}"/></svg>`;
-            }
-            const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+        canvas.toBlob((blob) => {
             callback(blob);
-        } else {
-            canvas.toBlob((blob) => {
-                callback(blob);
-            }, format, 0.9);
-        }
+        }, format, 0.9);
     }
 
     document.getElementById('crop-btn').addEventListener('click', () => {
         const canvas = getProcessedCanvasWithPadding();
         if (!canvas) return;
         const format = document.querySelector('input[name="output-format"]:checked').value;
-        const currentItem = imageQueue[currentIndex];
-        
-        exportCanvasToBlobOrSvg(canvas, format, currentItem, (blob) => {
+        exportCanvasToBlobOrSvg(canvas, format, imageQueue[currentIndex], (blob) => {
             lastCanvasBlob = blob;
             updateDownloadLink(blob, format);
-            statusMsg.textContent = `Ready to download (${canvas.width}x${canvas.height}px, ${formatBytes(blob.size)})!`;
         });
     });
 
     document.getElementById('add-to-queue-btn').addEventListener('click', async () => {
         if (imageQueue.length === 0) return;
-        statusMsg.textContent = 'Processing batch with current settings...';
         batchResults = [];
         const format = document.querySelector('input[name="output-format"]:checked').value;
-        const ext = format === 'image/jpeg' ? 'jpg' : (format === 'image/png' ? 'png' : (format === 'image/webp' ? 'webp' : 'svg'));
+        const ext = format.split('/')[1];
 
         for (let i = 0; i < imageQueue.length; i++) {
             await new Promise((resolve) => {
                 generateCanvasForItem(imageQueue[i], (canvas) => {
                     exportCanvasToBlobOrSvg(canvas, format, imageQueue[i], (blob) => {
                         let baseName = imageQueue[i].name.substring(0, imageQueue[i].name.lastIndexOf('.')) || `image_${i+1}`;
-                        batchResults.push({
-                            filename: `${baseName}_processed.${ext}`,
-                            blob: blob
-                        });
+                        batchResults.push({ filename: `${baseName}_processed.${ext}`, blob: blob });
                         resolve();
                     });
                 });
             });
         }
-
         batchCountSpan.textContent = batchResults.length;
         downloadBatchBtn.classList.remove('hidden');
-        statusMsg.textContent = `Batch processed successfully (${batchResults.length} files ready)!`;
     });
 
     downloadBatchBtn.addEventListener('click', async () => {
         if (batchResults.length === 0) return;
-        statusMsg.textContent = 'Creating ZIP archive...';
-        
         const zip = new JSZip();
-        batchResults.forEach(item => {
-            zip.file(item.filename, item.blob);
-        });
-
+        batchResults.forEach(item => zip.file(item.filename, item.blob));
         const content = await zip.generateAsync({ type: 'blob' });
-        const url = URL.createObjectURL(content);
         const a = document.createElement('a');
-        a.href = url;
+        a.href = URL.createObjectURL(content);
         a.download = 'processed_images.zip';
-        document.body.appendChild(a);
         a.click();
-        document.body.removeChild(a);
-        statusMsg.textContent = 'ZIP archive downloaded!';
-    });
-
-    formatRadios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            if (!lastCanvasBlob && editorSection.classList.contains('hidden')) return;
-            
-            const canvas = getProcessedCanvasWithPadding();
-            if (!canvas) return;
-            
-            const format = document.querySelector('input[name="output-format"]:checked').value;
-            const currentItem = imageQueue[currentIndex];
-
-            exportCanvasToBlobOrSvg(canvas, format, currentItem, (blob) => {
-                lastCanvasBlob = blob;
-                updateDownloadLink(blob, format);
-                statusMsg.textContent = `Format changed to ${format.split('/')[1].toUpperCase()}! Ready to download.`;
-            });
-        });
     });
 
     function updateDownloadLink(blob, format) {
-        const ext = format === 'image/jpeg' ? 'jpg' : (format === 'image/png' ? 'png' : (format === 'image/webp' ? 'webp' : 'svg'));
-        const url = URL.createObjectURL(blob);
-        downloadBtn.href = url;
+        const ext = format.split('/')[1];
+        downloadBtn.href = URL.createObjectURL(blob);
         downloadBtn.download = `image-output.${ext}`;
         downloadBtn.classList.remove('hidden');
     }
@@ -963,52 +834,17 @@
     document.getElementById('optimize-btn').addEventListener('click', async () => {
         const canvas = getProcessedCanvasWithPadding();
         if (!canvas) return;
-        
-        statusMsg.textContent = 'Optimizing and compressing...';
         const format = document.querySelector('input[name="output-format"]:checked').value;
-        const currentItem = imageQueue[currentIndex];
 
-        exportCanvasToBlobOrSvg(canvas, format, currentItem, async (blob) => {
-            if (!blob) {
-                statusMsg.textContent = 'Optimization failed.';
-                return;
-            }
-            
-            lastCanvasBlob = blob;
-            if (format === 'image/svg+xml') {
-                const ext = 'svg';
-                const url = URL.createObjectURL(blob);
-                downloadBtn.href = url;
-                downloadBtn.download = `optimized-image.${ext}`;
-                downloadBtn.classList.remove('hidden');
-                statusMsg.innerHTML = `SVG processed! Size: <b>${formatBytes(blob.size)}</b>`;
-                return;
-            }
-
+        exportCanvasToBlobOrSvg(canvas, format, imageQueue[currentIndex], async (blob) => {
             const file = new File([blob], "image.tmp", { type: format });
-            const options = {
-                maxSizeMB: 0.8,
-                maxWidthOrHeight: 1920,
-                useWebWorker: true,
-                fileType: format
-            };
-
             try {
-                const compressedFile = await imageCompression(file, options);
-                const originalSizeMB = formatBytes(file.size);
-                const compressedSizeMB = formatBytes(compressedFile.size);
-                const savings = Math.round((1 - compressedFile.size / file.size) * 100);
-
-                const ext = format === 'image/jpeg' ? 'jpg' : (format === 'image/png' ? 'png' : 'webp');
-                const url = URL.createObjectURL(compressedFile);
-                downloadBtn.href = url;
-                downloadBtn.download = `optimized-image.${ext}`;
+                const compressedFile = await imageCompression(file, { maxSizeMB: 0.8, maxWidthOrHeight: 1920, useWebWorker: true, fileType: format });
+                downloadBtn.href = URL.createObjectURL(compressedFile);
+                downloadBtn.download = `optimized-image.${format.split('/')[1]}`;
                 downloadBtn.classList.remove('hidden');
-                
-                statusMsg.innerHTML = `Optimized! ${originalSizeMB} → <b>${compressedSizeMB}</b> (${savings}% saved)`;
             } catch (err) {
                 console.error(err);
-                statusMsg.textContent = 'Error during optimization.';
             }
         });
     });
@@ -1016,8 +852,8 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" data-id="cuidBoqQM-qHCvRl6hzDdOy0k" data-title="Fast Client-Side Image Editor Right in Your Browser" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+    <footer class="article-footer" data-c="falseimg-editor.html">
+      <a data-url="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" data-id="cuidQ0iG3r_rRb0eyhfABgLDH" data-title="Fast Client-Side Image Editor Right in Your Browser" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -1028,11 +864,11 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/images/" rel="tag">images</a>
+        <a class="article-tag-list-link" href="/en/tags/optimization/" rel="tag">optimization</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/optimization/" rel="tag">optimization</a>
+        <a class="article-tag-list-link" href="/en/tags/images/" rel="tag">images</a>
       </li>
     
       <li class="article-tag-list-item">
