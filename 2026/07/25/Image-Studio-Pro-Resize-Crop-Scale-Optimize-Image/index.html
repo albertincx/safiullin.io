@@ -249,6 +249,12 @@
         <p class="text-xs text-slate-400 mt-1">Drag & Drop files here or click to browse</p>
         <p class="text-[10px] text-slate-500 mt-0.5">Supports PNG, JPG, WebP, SVG, etc. (Multiple allowed)</p>
     </div>
+    <div class="mt-3">
+        <button type="button" id="paste-clipboard-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"></path></svg>
+            Paste from Clipboard
+        </button>
+    </div>
     <div id="decision-section" class="hidden space-y-4 text-center">
         <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
             <p class="text-sm font-medium text-white mb-1">Images Loaded Successfully</p>
@@ -377,6 +383,7 @@
 
     const fileInput = document.getElementById('file-input');
     const uploadSection = document.getElementById('upload-section');
+    const pasteClipboardBtn = document.getElementById('paste-clipboard-btn');
     const decisionSection = document.getElementById('decision-section');
     const decisionFileInfo = document.getElementById('decision-file-info');
     const editorSection = document.getElementById('editor-section');
@@ -434,6 +441,62 @@
         if (files.length > 0) handleFilesSelection(files);
     });
 
+    async function handleClipboardPaste(clipboardData) {
+        const items = clipboardData.items || clipboardData.files;
+        const imageFiles = [];
+
+        for (let item of items) {
+            if (item.type && item.type.startsWith('image/')) {
+                const file = item.getAsFile ? item.getAsFile() : item;
+                if (file) {
+                    const ext = file.type.split('/')[1] || 'png';
+                    const renamedFile = new File([file], `clipboard_image_${Date.now()}.${ext}`, { type: file.type });
+                    imageFiles.push(renamedFile);
+                }
+            }
+        }
+
+        if (imageFiles.length > 0) {
+            handleFilesSelection(imageFiles);
+        } else {
+            statusMsg.textContent = 'No image found in clipboard.';
+        }
+    }
+
+    pasteClipboardBtn.addEventListener('click', async () => {
+        try {
+            if (navigator.clipboard && navigator.clipboard.read) {
+                const clipboardItems = await navigator.clipboard.read();
+                const dataTransfer = { items: [] };
+
+                for (const clipboardItem of clipboardItems) {
+                    for (const type of clipboardItem.types) {
+                        if (type.startsWith('image/')) {
+                            const blob = await clipboardItem.getType(type);
+                            dataTransfer.items.push(blob);
+                        }
+                    }
+                }
+                if (dataTransfer.items.length > 0) {
+                    handleClipboardPaste(dataTransfer);
+                    return;
+                }
+            }
+            statusMsg.textContent = 'Please use Ctrl+V to paste the image directly.';
+        } catch (err) {
+            statusMsg.textContent = 'Clipboard permission denied or unavailable. Press Ctrl+V instead.';
+        }
+    });
+
+    window.addEventListener('paste', (e) => {
+        if (e.clipboardData && e.clipboardData.files.length > 0) {
+            e.preventDefault();
+            handleFilesSelection(Array.from(e.clipboardData.files));
+        } else if (e.clipboardData && e.clipboardData.items) {
+            handleClipboardPaste(e.clipboardData);
+        }
+    });
+
     function handleFilesSelection(files) {
         const validFiles = files.filter(file => file.type.startsWith('image/') || file.name.endsWith('.svg'));
         if (validFiles.length === 0) {
@@ -480,7 +543,10 @@
     stepDownloadJpgBtn.addEventListener('click', () => handleQuickExport(true));
 
     async function handleQuickExport(forceJpg) {
-        if (pendingFiles.length === 0) return;
+        if (pendingFiles.length === 0) {
+            console.log('No image found in clipboard.');
+            return;
+        }
         statusMsg.textContent = 'Processing files for download...';
 
         for (let i = 0; i < pendingFiles.length; i++) {
@@ -502,7 +568,6 @@
 
                 canvas.toBlob((blob) => {
                     if (!blob) return;
-                    // Если включена галка "удалить теги", канвас уже не содержит EXIF, просто отдаем файл[cite: 1]
                     const ext = forceJpg ? 'jpg' : (format.includes('png') ? 'png' : (format.includes('webp') ? 'webp' : 'jpg'));
                     const url = URL.createObjectURL(blob);
                     const a = document.createElement('a');
