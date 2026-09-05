@@ -1,3 +1,4 @@
+https://safiullin.dev/2026/09/05/extract-audio-from-video-file-online/
 https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/
 https://safiullin.dev/2026/07/24/Fast-Client-Side-Image-Optimization-Right-in-Your-Browser/
 https://safiullin.dev/404
@@ -159,3 +160,7 @@ https://safiullin.dev/tags/optimization/
 https://safiullin.dev/tags/images/
 https://safiullin.dev/tags/javascript/
 https://safiullin.dev/tags/web-performance/
+https://safiullin.dev/tags/audio/
+https://safiullin.dev/tags/extract/
+https://safiullin.dev/tags/video/
+https://safiullin.dev/tags/useful/
