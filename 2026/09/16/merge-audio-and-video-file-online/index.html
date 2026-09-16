@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<script>
+  (function() {
+    var adsLoaded = false;
+    function loadAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      window.removeEventListener('scroll', loadAds);
+      window.removeEventListener('mousemove', loadAds);
+      window.removeEventListener('touchstart', loadAds);
+      window.removeEventListener('keydown', loadAds);
+      
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
+    
+    window.addEventListener('scroll', loadAds, { passive: true });
+    window.addEventListener('mousemove', loadAds, { passive: true });
+    window.addEventListener('touchstart', loadAds, { passive: true });
+    window.addEventListener('keydown', loadAds, { passive: true });
+    
+    setTimeout(loadAds, 3000);
+  })();
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>Merge Audio and video online to Mp4 | Safiullin.dev Videc...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Extract audio from your videos instantly, right inside your browser — completely client-side with no backend or server uploads required.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merge Audio and video online to Mp4">
+<meta property="og:url" content="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
+<meta property="og:description" content="Extract audio from your videos instantly, right inside your browser — completely client-side with no backend or server uploads required.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-16T08:27:18.724Z">
+<meta property="article:modified_time" content="2026-09-16T08:28:18.608Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="audio">
+<meta property="article:tag" content="merge">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="useful">
+<meta property="article:tag" content="video">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-cn" href="https://safiullin.dev/zh-cn/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="fr" href="https://safiullin.dev/fr/" />
+
+    <link rel="alternate" hreflang="pt" href="https://safiullin.dev/pt/" />
+
+    <link rel="alternate" hreflang="ar" href="https://safiullin.dev/ar/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Merge Audio and video online to Mp4",
+  "datePublished": "2026-09-16T08:27:18.724Z",
+  "dateModified": "2026-09-16T08:28:18.608Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev Videcode. Ai. Life. Tools",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "Extract audio from your videos instantly, right inside your browser — completely client-side with no backend or server uploads required."
+}
+</script>
+
+    
+        <script src="/ffmpeg.js"></script>
+    
+
+    <meta property="og:image" content="https://safiullin.dev/logo.jpg">
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      
+          <h2 id="logo-wrap">
+            <a href="/en/" id="logo">Safiullin.dev</a>
+          </h2>
+      
+
+      
+        <h2 id="subtitle-wrap">
+          <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+          <a class="main-nav-link" href="/en/">Home</a>
+        
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <div id="lang-selector">
+          
+            <a href="/" class="lang-btn active" aria-label="Change language to EN">EN</a>
+          
+            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
+          
+            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
+          
+            <a href="/zh-cn/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
+          
+            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
+          
+            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
+          
+            <a href="/fr/" class="lang-btn" aria-label="Change language to FR">FR</a>
+          
+            <a href="/pt/" class="lang-btn" aria-label="Change language to PT">PT</a>
+          
+            <a href="/ar/" class="lang-btn" aria-label="Change language to AR">AR</a>
+          
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
+        
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="w-full!"><article id="post-merge-audio-and-video-file-online" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/09/16/merge-audio-and-video-file-online/" class="article-date">
+  <time class="dt-published" datetime="2026-09-16T08:27:18.724Z" itemprop="datePublished">2026-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Merge Audio and video online to Mp4
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Extract audio from your videos instantly, right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p>
+<span id="more"></span>
+
+<p>Powered by WebAssembly and FFmpeg, it processes files locally on your device in mere seconds. It supports a wide variety of video formats (MP4, WebM, MOV, and more) and lets you extract the pure audio track without any quality loss or transcoding delays. Safe, private, and lightning-fast!</p>
+
+
+<style>
+    .card {
+        background: #fff;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    input[type="file"] {
+        width: 100%;
+    }
+    button {
+        background: #34c759;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+    #status {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #666;
+        white-space: pre-wrap;
+    }
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #007aff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+</style>
+
+
+<div class="card">
+    <h2>Instant Muxer (Zero Transcoding / Copy Mode)</h2>
+
+    <div class="input-group">
+        <label for="videoInput">Select Video (MP4):</label>
+        <input type="file" id="videoInput" accept="video/mp4" disabled>
+    </div>
+
+    <div class="input-group">
+        <label for="audioInput">Select Audio Track (M4A / AAC):</label>
+        <input type="file" id="audioInput" accept="audio/mp4,audio/aac" disabled>
+    </div>
+
+    <button id="muxBtn" disabled>Mux Instantly (Zero Re-encoding)</button>
+    <div id="status">Initializing engine...</div>
+    <br>
+    <a id="downloadLink" style="display: none;">Download Combined Video</a>
+</div>
+
+<script>
+    const { FFmpeg } = FFmpegWASM;
+    const { fetchFile, toBlobURL } = FFmpegUtil;
+
+    const videoInput = document.getElementById('videoInput');
+    const audioInput = document.getElementById('audioInput');
+    const muxBtn = document.getElementById('muxBtn');
+    const status = document.getElementById('status');
+    const downloadLink = document.getElementById('downloadLink');
+
+    let ffmpeg = null;
+    let videoFile = null;
+    let audioFile = null;
+
+    async function initFFmpeg() {
+        try {
+            ffmpeg = new FFmpeg();
+
+            ffmpeg.on('log', ({ message }) => {
+                console.log(message);
+            });
+
+            const baseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
+
+            await ffmpeg.load({
+                coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+                wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+            });
+
+            status.textContent = 'Engine ready. Choose video and audio files.';
+            videoInput.disabled = false;
+            audioInput.disabled = false;
+        } catch (err) {
+            console.error(err);
+            status.textContent = 'Failed to load the engine. Check your internet connection.';
+        }
+    }
+
+    initFFmpeg();
+
+    function checkReady() {
+        if (videoFile && audioFile && ffmpeg) {
+            muxBtn.disabled = false;
+        }
+    }
+
+    videoInput.addEventListener('change', (e) => {
+        videoFile = e.target.files[0];
+        if (videoFile) checkReady();
+    });
+
+    audioInput.addEventListener('change', (e) => {
+        audioFile = e.target.files[0];
+        if (audioFile) checkReady();
+    });
+
+    muxBtn.addEventListener('click', async () => {
+        if (!videoFile || !audioFile || !ffmpeg) return;
+
+        muxBtn.disabled = true;
+        downloadLink.style.display = 'none';
+        status.textContent = 'Muxing streams instantly...';
+
+        try {
+            const inputVideoName = 'input_video.mp4';
+            const inputAudioName = 'input_audio.m4a';
+            const outputName = 'output.mp4';
+
+            await ffmpeg.writeFile(inputVideoName, await fetchFile(videoFile));
+            await ffmpeg.writeFile(inputAudioName, await fetchFile(audioFile));
+
+            // МАГИЯ: `-c:a copy` копирует аудиопоток без перекодирования (занимает доли секунды)
+            await ffmpeg.exec([
+                '-i', inputVideoName,
+                '-i', inputAudioName,
+                '-c:v', 'copy',
+                '-c:a', 'copy',
+                '-shortest',
+                outputName
+            ]);
+
+            const data = await ffmpeg.readFile(outputName);
+            const videoBlob = new Blob([data.buffer], { type: 'video/mp4' });
+            const url = URL.createObjectURL(videoBlob);
+
+            downloadLink.href = url;
+            downloadLink.download = `combined_${videoFile.name}`;
+            downloadLink.style.display = 'block';
+            downloadLink.textContent = `Download ${downloadLink.download}`;
+
+            status.textContent = 'Done! Files combined instantly without re-encoding.';
+        } catch (err) {
+            console.error(err);
+            status.textContent = 'Error: Make sure the audio format is compatible (e.g. AAC inside M4A).';
+        } finally {
+            muxBtn.disabled = false;
+        }
+    });
+</script>
+
+      
+    </div>
+    <footer class="article-footer" data-c="falseaudio-merge.html">
+      <a data-url="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/" data-id="cuidUBqMgLTnk5YO59548p6oD" data-title="Merge Audio and video online to Mp4" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/tools/" rel="tag">tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/audio/" rel="tag">audio</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/video/" rel="tag">video</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/useful/" rel="tag">useful</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/merge/" rel="tag">merge</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/09/05/extract-audio-from-video-file-online/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Extract Audio from video online</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</section>
+        
+          
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    
+  
+<script src="/js/lightbox.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

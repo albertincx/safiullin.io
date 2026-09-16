@@ -10,7 +10,28 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-09-05T08:45:20.469Z</updated>
+  <updated>2026-09-16T08:28:18.608Z</updated>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="audio" scheme="https://safiullin.dev/tags/audio/"/>
+    <category term="video" scheme="https://safiullin.dev/tags/video/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="merge" scheme="https://safiullin.dev/tags/merge/"/>
+    <content>
+      <![CDATA[<p>Extract audio from your videos instantly, right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p><span id="more"></span><p>Powered by WebAssembly and FFmpeg, it processes files locally on your device in mere seconds. It supports a wide variety of video formats (MP4, WebM, MOV, and more) and lets you extract the pure audio track without any quality loss or transcoding delays. Safe, private, and lightning-fast!</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/</id>
+    <link href="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/"/>
+    <published>2026-09-16T08:27:18.724Z</published>
+    <summary>
+      <![CDATA[<p>Extract audio from your videos instantly, right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p>]]>
+    </summary>
+    <title>Merge Audio and video online to Mp4</title>
+    <updated>2026-09-16T08:28:18.608Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
@@ -378,27 +399,5 @@
     </summary>
     <title>Cómo Crear Páginas Web con Qwen Coder AI</title>
     <updated>2026-07-18T04:44:20.826Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
-    <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
-    <category term="pdf" scheme="https://safiullin.dev/tags/pdf/"/>
-    <category term="education" scheme="https://safiullin.dev/tags/education/"/>
-    <content>
-      <![CDATA[<h2 id="¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos"><a href="#¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos" class="headerlink" title="¿Por qué leer PDFs si no puedes escribir en ellos?"></a>¿Por qué leer PDFs si no puedes escribir en ellos?</h2><p>¡Hola a todos! Soy Albert y me encanta hacer las herramientas más convenientes.</p><p>Si alguna vez has intentado el auto-aprendizaje, estudiar libros de texto de programación o leer documentos técnicos complejos en PDF en tu laptop o tablet, conoces esta lucha. Abres un libro, quieres resaltar un fragmento de código clave, dibujar una flecha rápida en un diagrama junto a una explicación, o dejar una nota en los márgenes—y te das cuenta de que los visores de PDF estándar son o demasiado pesados, comerciales, o pierden completamente tus dibujos si accidentalmente refrescas la pestaña.</p><p>Quería solucionar esto y crear <strong>PDF Ink</strong>—una aplicación web ligera y rápida para leer y anotar interactivamente libros PDF directamente en el navegador.</p><span id="more"></span><hr><h2 id="La-Idea-y-el-Stack-Tecnologico"><a href="#La-Idea-y-el-Stack-Tecnologico" class="headerlink" title="La Idea y el Stack Tecnológico"></a>La Idea y el Stack Tecnológico</h2><p>El objetivo principal era construir una herramienta que:</p><ol><li>Se inicie con un clic en cualquier navegador moderno.</li><li>Permita cargar cualquier libro de texto PDF local.</li><li>Deje dibujar en las páginas con ratón, lápiz óptico o toque, y escribir anotaciones de texto.</li><li><strong>Lo más importante:</strong> Guarde de forma segura tu página actual, nivel de zoom, lista de biblioteca y todas las notas de dibujo localmente para que puedas retomar el aprendizaje en cualquier momento.</li></ol><p>Para la implementación, seleccioné el stack moderno: <strong>React + TypeScript + Vite + TailwindCSS</strong>.</p><p>Para el motor de renderizado de PDF, integré el confiable <code>pdfjs-dist</code> (PDF.js) de Mozilla, que renderiza páginas de documentos directamente en elementos HTML5 <code>&lt;canvas&gt;</code>.</p><hr><h2 id="Arquitectura-de-Canvas-de-Doble-Capa"><a href="#Arquitectura-de-Canvas-de-Doble-Capa" class="headerlink" title="Arquitectura de Canvas de Doble Capa"></a>Arquitectura de Canvas de Doble Capa</h2><p>Para mantener la aplicación altamente eficiente y responsiva durante la interacción con el ratón o el toque, dividí el espacio de trabajo en dos capas independientes:</p><ol><li><strong>Capa PDF:</strong> Un <code>&lt;canvas&gt;</code> de fondo estático que renderiza la imagen de la página PDF con respecto a la escala activa (zoom).</li><li><strong>Capa de Anotaciones:</strong> Un <code>&lt;canvas&gt;</code> transparente de superposición absoluta que intercepta los eventos del puntero del usuario, dibuja trazos vectoriales y superpone notas de texto.</li></ol><p>Este enfoque de doble capa hace que dibujar sea extremadamente rápido: cuando un usuario dibuja una línea, la aplicación solo repinta la ligera superposición de trazo vectorial, dejando intacto el pesado canvas del PDF.</p><hr><h2 id="Evolucion-de-la-Base-de-Datos-Actualizacion-a-IndexedDB-v2"><a href="#Evolucion-de-la-Base-de-Datos-Actualizacion-a-IndexedDB-v2" class="headerlink" title="Evolución de la Base de Datos: Actualización a IndexedDB v2"></a>Evolución de la Base de Datos: Actualización a IndexedDB v2</h2><p>La versión inicial del prototipo guardaba el archivo PDF activo y todos los dibujos en IndexedDB como un único objeto bajo la clave <code>last-opened</code>.</p><p>Sin embargo, a medida que los libros se volvían más grandes, encontramos un cuello de botella de rendimiento:</p><blockquote><p><strong>El Problema:</strong> Cada vez que el usuario añadía un trazo de tinta o movía una nota de texto, la aplicación realizaba un autoguardado en IndexedDB. Escribir un búfer de array de 20 MB del archivo PDF en bruto de vuelta al disco cada 250 ms provocaba lag en la interfaz y desgastaba el SSD.</p></blockquote><h3 id="La-Solucion-Separar-Archivos-de-Anotaciones"><a href="#La-Solucion-Separar-Archivos-de-Anotaciones" class="headerlink" title="La Solución: Separar Archivos de Anotaciones"></a>La Solución: Separar Archivos de Anotaciones</h3><p>Reescribí el gestor de IndexedDB y actualicé el esquema del almacén a la versión 2:</p><ol><li><strong>Almacén <code>pdfs</code></strong>: Almacena los búferes de archivos binarios en bruto (<code>ArrayBuffer</code>) con clave por UUID del documento. Esto se escribe <strong>solo una vez</strong> cuando se sube un nuevo archivo a la biblioteca.</li><li><strong>Almacén <code>pdfs_metadata</code></strong>: Almacena metadatos JSON ligeros, incluyendo números de página, niveles de zoom, trazos de dibujo y coordenadas de texto.</li></ol><p>¡Ahora, al dibujar, solo se actualiza el objeto de metadatos ligero, eliminando completamente el lag!</p><hr><h2 id="Pulido-de-UX-Biblioteca-Idiomas-y-Controles-Plegables"><a href="#Pulido-de-UX-Biblioteca-Idiomas-y-Controles-Plegables" class="headerlink" title="Pulido de UX: Biblioteca, Idiomas y Controles Plegables"></a>Pulido de UX: Biblioteca, Idiomas y Controles Plegables</h2><p>Para que PDF Ink se sintiera como una herramienta premium:</p><ul><li><strong>Biblioteca de PDF Responsiva:</strong> Un panel lateral plegable que muestra la lista de PDFs subidos con tarjetas interactivas.</li><li><strong>Selector de Idioma:</strong> Sistema de localización compatible con inglés (predeterminado) y ruso, con configuraciones persistidas en <code>localStorage</code>.</li><li><strong>Configuración de Pincel Plegable:</strong> La fila de configuración del bolígrafo (colores, control deslizante de tamaño, opacidad) se puede ocultar para maximizar el espacio en pantallas más pequeñas.</li></ul><hr><h2 id="¡Pruebalo"><a href="#¡Pruebalo" class="headerlink" title="¡Pruébalo!"></a>¡Pruébalo!</h2><p>Puedes probar la versión en vivo de la aplicación aquí:<br>👉 <strong><a href="https://practice-book-app.web.app/">PDF Ink App en Vivo</a></strong></p><hr><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusión"></a>Conclusión</h2><p>Las herramientas de aprendizaje deben ayudarte a concentrarte en absorber conocimiento, no en luchar con la interfaz. Desarrollar <strong>PDF Ink</strong> me mostró cómo las API modernas del navegador (IndexedDB, PointerEvents, HTML5 Canvas) permiten a los desarrolladores construir herramientas potentes y offline-first que respetan la privacidad de los datos del usuario.</p><p>¡Feliz aprendizaje, y escribe código que simplifique las vidas!</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/</id>
-    <link href="https://safiullin.dev/2026/07/17/es/how-i-built-pdf-ink-for-online-learning/"/>
-    <published>2026-07-17T10:38:59.963Z</published>
-    <summary>
-      <![CDATA[<h2 id="¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos"><a href="#¿Por-que-leer-PDFs-si-no-puedes-escribir-en-ellos" class="headerlink" title="¿Por qué leer PDFs si no puedes escribir en ellos?"></a>¿Por qué leer PDFs si no puedes escribir en ellos?</h2><p>¡Hola a todos! Soy Albert y me encanta hacer las herramientas más convenientes.</p>
-<p>Si alguna vez has intentado el auto-aprendizaje, estudiar libros de texto de programación o leer documentos técnicos complejos en PDF en tu laptop o tablet, conoces esta lucha. Abres un libro, quieres resaltar un fragmento de código clave, dibujar una flecha rápida en un diagrama junto a una explicación, o dejar una nota en los márgenes—y te das cuenta de que los visores de PDF estándar son o demasiado pesados, comerciales, o pierden completamente tus dibujos si accidentalmente refrescas la pestaña.</p>
-<p>Quería solucionar esto y crear <strong>PDF Ink</strong>—una aplicación web ligera y rápida para leer y anotar interactivamente libros PDF directamente en el navegador.</p>]]>
-    </summary>
-    <title>Cómo Construí PDF Ink para un Aprendizaje Online Cómodo desde Libros PDF</title>
-    <updated>2026-07-17T10:38:59.965Z</updated>
   </entry>
 </feed>
