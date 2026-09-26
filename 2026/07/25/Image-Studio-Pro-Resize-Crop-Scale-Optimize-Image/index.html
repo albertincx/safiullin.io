@@ -52,7 +52,7 @@
 <meta property="og:description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-25T02:34:30.754Z">
-<meta property="article:modified_time" content="2026-09-05T08:31:33.921Z">
+<meta property="article:modified_time" content="2026-09-26T03:18:19.006Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="images">
 <meta property="article:tag" content="javascript">
@@ -102,7 +102,7 @@
   "@type": "BlogPosting",
   "headline": "Fast Client-Side Image Editor Right in Your Browser",
   "datePublished": "2026-07-25T02:34:30.754Z",
-  "dateModified": "2026-09-05T08:31:33.921Z",
+  "dateModified": "2026-09-26T03:18:19.006Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -120,7 +120,7 @@
 </script>
 
     
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script> <script src="/browser-image-compression.js"></script> <script src="/jszip.min.js"></script>
     
 
     <meta property="og:image" content="https://safiullin.dev/logo.jpg">
@@ -364,8 +364,8 @@
             <button id="reset-btn" class="w-full bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 font-medium py-2 px-3 rounded-xl text-xs transition">Start from scratch</button>
             <button id="new-file-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition">Upload New Files</button>
         </div>
-        <div class="space-y-2">
-            <a id="download-btn" class="hidden text-white! text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/25">Download Result</a>
+        <div class="space-y-2 mb-2">
+            <a id="download-btn" class="hidden  text-white! text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/25">Download Result</a>
             <button id="download-batch-btn" class="hidden text-center w-full bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-teal-600/25">Download zip (<span id="batch-count">0</span>)</button>
         </div>
     </div>
@@ -846,8 +846,7 @@
             callback(blob);
         }, format, 0.9);
     }
-
-    document.getElementById('crop-btn').addEventListener('click', () => {
+    function updExportBtn() {
         const canvas = getProcessedCanvasWithPadding();
         if (!canvas) return;
         const format = document.querySelector('input[name="output-format"]:checked').value;
@@ -855,6 +854,25 @@
             lastCanvasBlob = blob;
             updateDownloadLink(blob, format);
         });
+    }
+    formatRadios && formatRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            updExportBtn()
+            // const selectedFormat = e.target.value;
+            // const extMap = {
+            //     'image/webp': 'WEBP',
+            //     'image/jpeg': 'JPG',
+            //     'image/png': 'PNG',
+            //     'image/svg+xml': 'SVG'
+            // };
+            //
+            // // Показываем кнопку и обновляем текст формата
+            // selectedFormatLabel.textContent = extMap[selectedFormat] || 'ФАЙЛ';
+            // formatDownloadContainer.classList.remove('hidden');
+        });
+    });
+    document.getElementById('crop-btn').addEventListener('click', () => {
+        updExportBtn()
     });
 
     document.getElementById('add-to-queue-btn').addEventListener('click', async () => {

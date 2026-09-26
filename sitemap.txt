@@ -1,7 +1,7 @@
-https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/
-https://safiullin.dev/2026/09/05/extract-audio-from-video-file-online/
 https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/
 https://safiullin.dev/2026/07/24/Fast-Client-Side-Image-Optimization-Right-in-Your-Browser/
+https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/
+https://safiullin.dev/2026/09/05/extract-audio-from-video-file-online/
 https://safiullin.dev/404
 https://safiullin.dev/2026/07/18/zh-cn/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2021/06/20/zh-cn/telegram-bot-iv-maker/

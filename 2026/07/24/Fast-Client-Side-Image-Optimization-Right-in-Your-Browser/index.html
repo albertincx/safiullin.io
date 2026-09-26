@@ -53,7 +53,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://safiullin.dev/2026/07/24/Fast-Client-Side-Image-Optimization-Right-in-Your-Browser/$%7BdownloadUrl%7D">
 <meta property="article:published_time" content="2026-07-24T09:01:18.140Z">
-<meta property="article:modified_time" content="2026-08-01T04:25:14.254Z">
+<meta property="article:modified_time" content="2026-09-26T03:17:11.624Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="images">
 <meta property="article:tag" content="javascript">
@@ -104,7 +104,7 @@
   "@type": "BlogPosting",
   "headline": "Fast Client-Side Image Optimization Right in Your Browser",
   "datePublished": "2026-07-24T09:01:18.140Z",
-  "dateModified": "2026-08-01T04:25:14.254Z",
+  "dateModified": "2026-09-26T03:17:11.624Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -122,7 +122,7 @@
 </script>
 
     
-        \ <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.1/dist/browser-image-compression.js"></script>
+        <script src="/browser-image-compression.js"></script> <script src="/jszip.min.js"></script>
     
 
     <meta property="og:image" content="https://safiullin.dev/logo.jpg">
@@ -251,8 +251,8 @@
          */
         function initImageOptimizer(containerElement) {
             // Если передан ID строкой, находим элемент
-            const container = typeof containerElement === 'string' 
-                ? document.getElementById(containerElement) 
+            const container = typeof containerElement === 'string'
+                ? document.getElementById(containerElement)
                 : containerElement;
 
             if (!container) {
@@ -264,7 +264,7 @@
             container.innerHTML = `
                 <div class="image-compressor-box" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 2px dashed #cbd5e1; padding: 32px 24px; text-align: center; border-radius: 16px; font-family: system-ui, -apple-system, sans-serif; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); transition: all 0.3s ease;">
     <input type="file" id="optimizer-file-input" accept="image/*" style="display: none;">
-    
+
     <div style="margin-bottom: 16px;">
         <svg style="width: 48px; height: 48px; color: #3b82f6;" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.75 3.75 0 0118 19.5H6.75z"></path>
@@ -275,7 +275,7 @@
     <p style="margin: 0 0 20px 0; color: #64748b; font-size: 14px;">Select a photo to compress it instantly right in your browser</p>
 
     <button class="image-compressor-btn" id="optimizer-trigger-btn" style="background: #2563eb; color: white; padding: 12px 24px; border: none; border-radius: 10px; cursor: pointer; font-size: 15px; font-weight: 600; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: background 0.2s, transform 0.1s;">Upload Image</button>
-    
+
     <div class="status" id="optimizer-status" style="margin-top: 16px; font-size: 14px; color: #475569; font-weight: 500;"></div>
     <div class="preview-area" id="optimizer-preview" style="margin-top: 20px;"></div>
 </div>
@@ -311,12 +311,12 @@
                 try {
                     // Сжимаем картинку прямо в браузере
                     const compressedFile = await imageCompression(file, options);
-                    
+
                     const compressedSizeMB = (compressedFile.size / 1024 / 1024).toFixed(2);
                     const savings = Math.round((1 - compressedFile.size / file.size) * 100);
 
                     statusDiv.innerHTML = `
-                        COMPLETED! Compressed to: <b>${compressedSizeMB} MB</b> 
+                        COMPLETED! Compressed to: <b>${compressedSizeMB} MB</b>
                         <span style="color: green;">(less to ${savings}%)</span>
                     `;
 
@@ -349,7 +349,7 @@
     document.getElementById('bookmark-btn').addEventListener('click', function() {
         const title = document.title;
         const url = window.location.href;
-        
+
         if (window.sidebar && window.sidebar.addPanel) {
             window.sidebar.addPanel(title, url, '');
         } else if (window.external && ('AddFavorite' in window.external)) {
