@@ -425,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/ru/instant-chat-bot/</loc>
+    <loc>https://safiullin.dev/2026/07/04/ru/i-built-resume-builder/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -434,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2026/07/04/ru/i-built-resume-builder/</loc>
+    <loc>https://safiullin.dev/2021/06/20/ru/instant-chat-bot/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -659,7 +659,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/fr/instant-chat-bot/</loc>
+    <loc>https://safiullin.dev/2026/07/04/fr/i-built-resume-builder/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -668,7 +668,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2026/07/04/fr/i-built-resume-builder/</loc>
+    <loc>https://safiullin.dev/2021/06/20/fr/instant-chat-bot/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -704,6 +704,15 @@
   </url>
   
   <url>
+    <loc>https://safiullin.dev/2023/12/27/ar/How-to-Reduce-Traffic-Congestion/</loc>
+    
+    <lastmod>2026-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://safiullin.dev/2023/06/11/ar/How-to-make-any-site-mobile/</loc>
     
     <lastmod>2026-07-18</lastmod>
@@ -722,15 +731,6 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2023/12/27/ar/How-to-Reduce-Traffic-Congestion/</loc>
-    
-    <lastmod>2026-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/2026/07/04/ar/i-built-resume-builder/</loc>
     
     <lastmod>2026-07-18</lastmod>
@@ -740,7 +740,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/ar/instant-chat-bot/</loc>
+    <loc>https://safiullin.dev/2021/06/20/ar/language-by-subtitles/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -749,7 +749,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/ar/language-by-subtitles/</loc>
+    <loc>https://safiullin.dev/2021/06/20/ar/instant-chat-bot/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -893,15 +893,6 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2025/12/21/hi/restapi-get-post-manager/</loc>
-    
-    <lastmod>2026-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/2021/06/20/hi/telegram-bot-iv-maker/</loc>
     
     <lastmod>2026-07-18</lastmod>
@@ -911,7 +902,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2025/12/21/th/restapi-get-post-manager/</loc>
+    <loc>https://safiullin.dev/2025/12/21/hi/restapi-get-post-manager/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -929,7 +920,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/th/telegram-bot-iv-maker/</loc>
+    <loc>https://safiullin.dev/2025/12/21/th/restapi-get-post-manager/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -938,7 +929,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/hi/language-by-subtitles/</loc>
+    <loc>https://safiullin.dev/2021/06/20/th/telegram-bot-iv-maker/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -956,7 +947,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2021/06/20/th/language-by-subtitles/</loc>
+    <loc>https://safiullin.dev/2021/06/20/hi/language-by-subtitles/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -966,6 +957,15 @@
   
   <url>
     <loc>https://safiullin.dev/2021/06/20/th/instant-chat-bot/</loc>
+    
+    <lastmod>2026-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/2021/06/20/th/language-by-subtitles/</loc>
     
     <lastmod>2026-07-18</lastmod>
     
@@ -1181,27 +1181,6 @@
 
   
   <url>
-    <loc>https://safiullin.dev/tags/meme/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/fun/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/editor/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/tags/tools/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -1245,6 +1224,27 @@
   
   <url>
     <loc>https://safiullin.dev/tags/web-app/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/meme/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/fun/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/editor/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1321,35 +1321,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/tags/python/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/tags/web-app/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/resume/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/open-source/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/ai/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1370,6 +1342,41 @@
   </url>
   
   <url>
+    <loc>https://safiullin.dev/tags/open-source/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/python/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/resume/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/ai/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/productivity/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://safiullin.dev/tags/project/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -1384,13 +1391,6 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/tags/productivity/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/tags/telegram-bot/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -1399,6 +1399,13 @@
   
   <url>
     <loc>https://safiullin.dev/tags/reading/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/merge/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1426,7 +1433,35 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/tags/merge/</loc>
+    <loc>https://safiullin.dev/tags/join/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/combine/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/split/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/cut/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/trim/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1468,42 +1503,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/tags/split/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/cut/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/trim/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/tags/telegram-bot/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/join/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/combine/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
