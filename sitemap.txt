@@ -1,3 +1,5 @@
+https://safiullin.dev/2026/10/27/ru/copy-notes-manage-your-notes-fast/
+https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/
 https://safiullin.dev/2021/12/27/How-I-made-a-puzzle-game/
 https://safiullin.dev/2021/06/20/telegram-bot-iv-maker/
 https://safiullin.dev/2026/10/26/merge-video-files-online/
@@ -11,7 +13,6 @@ https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/
 https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
-https://safiullin.dev/2026/10/01/copy-notes-manage-your-notes-fast/
 https://safiullin.dev/2026/09/05/extract-audio-from-video-file-online/
 https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/
 https://safiullin.dev/2023/12/27/How-to-Reduce-Traffic-Congestion/
@@ -176,3 +177,6 @@ https://safiullin.dev/tags/rest/
 https://safiullin.dev/tags/get/
 https://safiullin.dev/tags/post/
 https://safiullin.dev/tags/telegram-bot/
+https://safiullin.dev/tags/notes/
+https://safiullin.dev/tags/notepad/
+https://safiullin.dev/tags/localstorage/

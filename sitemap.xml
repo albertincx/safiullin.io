@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://safiullin.dev/2026/10/27/ru/copy-notes-manage-your-notes-fast/</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://safiullin.dev/2021/12/27/How-I-made-a-puzzle-game/</loc>
     
     <lastmod>2026-10-26</lastmod>
@@ -111,15 +129,6 @@
   
   <url>
     <loc>https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/2026/10/01/copy-notes-manage-your-notes-fast/</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -1504,6 +1513,27 @@
   
   <url>
     <loc>https://safiullin.dev/tags/telegram-bot/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/notes/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/notepad/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/localstorage/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<script>
+  (function() {
+    var adsLoaded = false;
+    function loadAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      window.removeEventListener('scroll', loadAds);
+      window.removeEventListener('mousemove', loadAds);
+      window.removeEventListener('touchstart', loadAds);
+      window.removeEventListener('keydown', loadAds);
+      
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
+    
+    window.addEventListener('scroll', loadAds, { passive: true });
+    window.addEventListener('mousemove', loadAds, { passive: true });
+    window.addEventListener('touchstart', loadAds, { passive: true });
+    window.addEventListener('keydown', loadAds, { passive: true });
+    
+    setTimeout(loadAds, 3000);
+  })();
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>Copy Notes – Manage Your Notes Fast (Client-Side Local No...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="A fast, private, client-side personal notepad with instant 1-click copy to clipboard. All your notes, snippets, prompts, and ideas are stored locally...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Copy Notes – Manage Your Notes Fast (Client-Side Local Notepad)">
+<meta property="og:url" content="https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
+<meta property="og:description" content="A fast, private, client-side personal notepad with instant 1-click copy to clipboard. All your notes, snippets, prompts, and ideas are stored locally...">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-26T18:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T14:25:31.412Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="localstorage">
+<meta property="article:tag" content="notepad">
+<meta property="article:tag" content="notes">
+<meta property="article:tag" content="productivity">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="useful">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1793024903550">
+<link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-cn" href="https://safiullin.dev/zh-cn/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="fr" href="https://safiullin.dev/fr/" />
+
+    <link rel="alternate" hreflang="pt" href="https://safiullin.dev/pt/" />
+
+    <link rel="alternate" hreflang="ar" href="https://safiullin.dev/ar/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Copy Notes – Manage Your Notes Fast (Client-Side Local Notepad)",
+  "datePublished": "2026-10-26T18:00:00.000Z",
+  "dateModified": "2026-10-26T14:25:31.412Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev Videcode. Ai. Life. Tools",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "A fast, private, client-side personal notepad with instant 1-click copy to clipboard. All your notes, snippets, prompts, and ideas are stored locally..."
+}
+</script>
+
+    
+
+    <meta property="og:image" content="https://safiullin.dev/images/covers/copy-notes-manage-your-notes-fast.jpg">
+    <meta name="twitter:image" content="https://safiullin.dev/images/covers/copy-notes-manage-your-notes-fast.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      
+          <h2 id="logo-wrap">
+            <a href="/en/" id="logo">Safiullin.dev</a>
+          </h2>
+      
+
+      
+        <h2 id="subtitle-wrap">
+          <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+          <a class="main-nav-link" href="/en/">Home</a>
+        
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <div id="lang-dropdown-wrap" class="lang-dropdown-wrap">
+          <button id="lang-dropdown-btn" class="lang-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="lang-current-code">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-arrow-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="lang-dropdown-menu" class="lang-dropdown-menu">
+            
+              <a href="/" class="lang-dropdown-item active" aria-label="English">
+                <span class="lang-item-code">EN</span>
+                <span class="lang-item-name">English</span>
+                
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                
+              </a>
+            
+              <a href="/ru/" class="lang-dropdown-item" aria-label="Русский">
+                <span class="lang-item-code">RU</span>
+                <span class="lang-item-name">Русский</span>
+                
+              </a>
+            
+              <a href="/es/" class="lang-dropdown-item" aria-label="Español">
+                <span class="lang-item-code">ES</span>
+                <span class="lang-item-name">Español</span>
+                
+              </a>
+            
+              <a href="/zh-cn/" class="lang-dropdown-item" aria-label="中文">
+                <span class="lang-item-code">ZH-CN</span>
+                <span class="lang-item-name">中文</span>
+                
+              </a>
+            
+              <a href="/hi/" class="lang-dropdown-item" aria-label="हिन्दी">
+                <span class="lang-item-code">HI</span>
+                <span class="lang-item-name">हिन्दी</span>
+                
+              </a>
+            
+              <a href="/th/" class="lang-dropdown-item" aria-label="ไทย">
+                <span class="lang-item-code">TH</span>
+                <span class="lang-item-name">ไทย</span>
+                
+              </a>
+            
+              <a href="/fr/" class="lang-dropdown-item" aria-label="Français">
+                <span class="lang-item-code">FR</span>
+                <span class="lang-item-name">Français</span>
+                
+              </a>
+            
+              <a href="/pt/" class="lang-dropdown-item" aria-label="Português">
+                <span class="lang-item-code">PT</span>
+                <span class="lang-item-name">Português</span>
+                
+              </a>
+            
+              <a href="/ar/" class="lang-dropdown-item" aria-label="العربية">
+                <span class="lang-item-code">AR</span>
+                <span class="lang-item-name">العربية</span>
+                
+              </a>
+            
+          </div>
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
+        
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="w-full!"><article id="post-copy-notes-manage-your-notes-fast" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/10/27/copy-notes-manage-your-notes-fast/" class="article-date">
+  <time class="dt-published" datetime="2026-10-26T18:00:00.000Z" itemprop="datePublished">2026-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Copy Notes – Manage Your Notes Fast (Client-Side Local Notepad)
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>A fast, private, client-side personal notepad with instant 1-click copy to clipboard. All your notes, snippets, prompts, and ideas are stored locally in your browser’s LocalStorage with zero server uploads.</p>
+<span id="more"></span>
+
+<p>Managing quick notes, code snippets, prompt templates, and frequently used text snippets shouldn’t require complex cloud apps, account logins, or sluggish interfaces. </p>
+<p><strong>Copy Notes</strong> is an instant client-side notepad built for speed, privacy, and convenience:</p>
+<ul>
+<li><strong>Instant 1-Click Copy</strong>: Copy any note’s text or markdown directly to your clipboard in a single click with instant visual confirmation.</li>
+<li><strong>100% Private &amp; Local</strong>: Your data lives purely in your browser’s <code>LocalStorage</code>. No servers, no tracking, and no external requests.</li>
+<li><strong>Fast Search &amp; Filter</strong>: Find snippets instantly by keyword or tag (<code>#work</code>, <code>#code</code>, <code>#prompts</code>, etc.).</li>
+<li><strong>Organize &amp; Pin</strong>: Pin key notes to the top and color-code cards for quick visual scanning.</li>
+<li><strong>Backup &amp; Restore</strong>: Export all your notes to a JSON file at any time, or restore from a backup across devices.</li>
+<li><strong>Works Offline</strong>: Accessible anytime, even without an active internet connection.</li>
+</ul>
+<p>Enjoy a clean, distraction-free notepad designed to keep your most important snippets always at your fingertips!</p>
+
+<style>
+    .copynotes-wrapper {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #1e293b;
+        margin: 20px auto 40px;
+        max-width: 960px;
+        box-sizing: border-box;
+    }
+
+    .copynotes-wrapper *, .copynotes-wrapper *::before, .copynotes-wrapper *::after {
+        box-sizing: border-box;
+    }
+
+    /* Container Card */
+    .copynotes-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+        overflow: hidden;
+        transition: all 0.25s ease;
+    }
+
+    /* Header Banner */
+    .copynotes-header {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #ffffff;
+        padding: 28px 24px 24px;
+        position: relative;
+    }
+
+    .copynotes-header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .copynotes-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .copynotes-brand-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+        flex-shrink: 0;
+    }
+
+    .copynotes-brand-title {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0;
+        line-height: 1.2;
+        color: #ffffff;
+    }
+
+    .copynotes-brand-subtitle {
+        font-size: 13px;
+        color: #94a3b8;
+        margin: 4px 0 0;
+        line-height: 1.4;
+    }
+
+    .copynotes-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .copynotes-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 5px 10px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #cbd5e1;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copynotes-lang-btn {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .copynotes-lang-btn:hover {
+        background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Main Toolbar */
+    .copynotes-toolbar {
+        background: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .copynotes-search-box {
+        position: relative;
+        flex: 1;
+        min-width: 220px;
+    }
+
+    .copynotes-search-input {
+        width: 100%;
+        padding: 9px 12px 9px 36px;
+        border-radius: 10px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        font-size: 13.5px;
+        color: #1e293b;
+        outline: none;
+        transition: all 0.2s ease;
+    }
+    .copynotes-search-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .copynotes-search-icon {
+        position: absolute;
+        left: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        pointer-events: none;
+    }
+
+    .copynotes-toolbar-buttons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    /* Primary & Secondary Buttons */
+    .copynotes-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 9px 15px;
+        font-size: 13.5px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .copynotes-btn-primary {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        color: #ffffff;
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    }
+    .copynotes-btn-primary:hover {
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    .copynotes-btn-secondary {
+        background: #ffffff;
+        color: #475569;
+        border: 1px solid #cbd5e1;
+    }
+    .copynotes-btn-secondary:hover {
+        background: #f1f5f9;
+        color: #1e293b;
+        border-color: #94a3b8;
+    }
+
+    .copynotes-btn-danger {
+        background: #fee2e2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+    }
+    .copynotes-btn-danger:hover {
+        background: #fecaca;
+    }
+
+    .copynotes-btn-icon {
+        padding: 8px;
+        border-radius: 8px;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        color: #64748b;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+    }
+    .copynotes-btn-icon:hover {
+        background: #f1f5f9;
+        color: #1e293b;
+    }
+
+    /* Filter Chips */
+    .copynotes-chips-bar {
+        padding: 10px 20px;
+        background: #ffffff;
+        border-bottom: 1px solid #f1f5f9;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .copynotes-chip {
+        font-size: 12px;
+        font-weight: 500;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: #f1f5f9;
+        color: #64748b;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .copynotes-chip:hover {
+        background: #e2e8f0;
+        color: #334155;
+    }
+    .copynotes-chip.active {
+        background: #eff6ff;
+        color: #2563eb;
+        border-color: #bfdbfe;
+        font-weight: 600;
+    }
+
+    /* Note Editor Drawer / Modal Area */
+    .copynotes-editor-box {
+        display: none;
+        background: #ffffff;
+        border-bottom: 2px solid #e2e8f0;
+        padding: 20px;
+        animation: copynotesFadeIn 0.25s ease-out;
+    }
+    .copynotes-editor-box.open {
+        display: block;
+    }
+
+    @keyframes copynotesFadeIn {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .copynotes-editor-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #0f172a;
+        margin: 0 0 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .copynotes-input {
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 14px;
+        border-radius: 10px;
+        border: 1px solid #cbd5e1;
+        outline: none;
+        transition: all 0.2s;
+        margin-bottom: 12px;
+        color: #1e293b;
+        font-family: inherit;
+    }
+    .copynotes-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .copynotes-textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 12px 14px;
+        font-size: 14px;
+        line-height: 1.5;
+        border-radius: 10px;
+        border: 1px solid #cbd5e1;
+        outline: none;
+        transition: all 0.2s;
+        margin-bottom: 12px;
+        resize: vertical;
+        color: #1e293b;
+        font-family: inherit;
+    }
+    .copynotes-textarea:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .copynotes-editor-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .copynotes-color-picker {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .copynotes-color-label {
+        font-size: 12px;
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    .copynotes-color-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: transform 0.15s, border-color 0.15s;
+    }
+    .copynotes-color-dot:hover {
+        transform: scale(1.15);
+    }
+    .copynotes-color-dot.active {
+        border-color: #0f172a;
+        transform: scale(1.15);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset;
+    }
+
+    .color-default { background: #f8fafc; border: 1px solid #cbd5e1 !important; }
+    .color-blue    { background: #eff6ff; }
+    .color-emerald { background: #ecfdf5; }
+    .color-amber   { background: #fffbeb; }
+    .color-rose    { background: #fff1f2; }
+    .color-purple  { background: #faf5ff; }
+
+    .card-color-default { background: #ffffff; border-color: #e2e8f0; }
+    .card-color-blue    { background: #f0f7ff; border-color: #bfdbfe; }
+    .card-color-emerald { background: #f0fdf4; border-color: #bbf7d0; }
+    .card-color-amber   { background: #fffbeb; border-color: #fde68a; }
+    .card-color-rose    { background: #fff1f2; border-color: #fecdd3; }
+    .card-color-purple  { background: #faf5ff; border-color: #e9d5ff; }
+
+    /* Notes Grid Area */
+    .copynotes-body {
+        padding: 20px;
+        background: #f8fafc;
+        min-height: 280px;
+    }
+
+    .copynotes-stats-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    .copynotes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+    }
+
+    /* Note Card */
+    .copynote-item {
+        border-radius: 14px;
+        border: 1px solid #e2e8f0;
+        background: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .copynote-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.06);
+    }
+
+    .copynote-item.pinned {
+        border-top: 3px solid #f59e0b;
+    }
+
+    .copynote-card-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .copynote-card-title {
+        font-size: 15.5px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0;
+        line-height: 1.35;
+        word-break: break-word;
+    }
+
+    .copynote-pin-badge {
+        color: #f59e0b;
+        cursor: pointer;
+        padding: 2px;
+        border-radius: 4px;
+        display: inline-flex;
+        transition: transform 0.15s;
+    }
+    .copynote-pin-badge:hover {
+        transform: scale(1.2);
+    }
+    .copynote-pin-badge.unpinned {
+        color: #cbd5e1;
+    }
+
+    .copynote-card-content {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #334155;
+        margin: 0 0 14px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        max-height: 240px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+
+    .copynote-tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 12px;
+    }
+
+    .copynote-tag-badge {
+        font-size: 11px;
+        padding: 2px 7px;
+        border-radius: 6px;
+        background: rgba(15, 23, 42, 0.06);
+        color: #475569;
+        font-weight: 500;
+    }
+
+    /* Card Footer & Quick Copy Button */
+    .copynote-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        margin-top: auto;
+    }
+
+    .copynote-date {
+        font-size: 11.5px;
+        color: #94a3b8;
+    }
+
+    .copynote-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* Copy Button Special Emphasis */
+    .copynote-copy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: #2563eb;
+        color: #ffffff;
+        font-size: 12.5px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+        transition: all 0.2s ease;
+    }
+    .copynote-copy-btn:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+    }
+    .copynote-copy-btn.copied {
+        background: #10b981 !important;
+        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35) !important;
+    }
+
+    .copynote-icon-btn {
+        background: transparent;
+        border: none;
+        color: #94a3b8;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+    }
+    .copynote-icon-btn:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: #334155;
+    }
+    .copynote-icon-btn.danger:hover {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    /* Empty State */
+    .copynotes-empty {
+        text-align: center;
+        padding: 48px 20px;
+        background: #ffffff;
+        border-radius: 14px;
+        border: 2px dashed #cbd5e1;
+        margin: 20px 0;
+    }
+
+    .copynotes-empty-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #eff6ff;
+        color: #3b82f6;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+
+    .copynotes-empty-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0 0 6px;
+    }
+
+    .copynotes-empty-text {
+        font-size: 13.5px;
+        color: #64748b;
+        max-width: 380px;
+        margin: 0 auto 18px;
+        line-height: 1.5;
+    }
+
+    /* Notification Toast */
+    .copynotes-toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #0f172a;
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 13.5px;
+        font-weight: 500;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 99999;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+    }
+    .copynotes-toast.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .copynotes-toast-icon {
+        color: #10b981;
+    }
+
+    /* Modal for Backup / Settings / Confirm */
+    .copynotes-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99990;
+        padding: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s ease;
+    }
+    .copynotes-modal-backdrop.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .copynotes-modal {
+        background: #ffffff;
+        width: 100%;
+        max-width: 480px;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        transform: scale(0.95);
+        transition: transform 0.25s ease;
+    }
+    .copynotes-modal-backdrop.open .copynotes-modal {
+        transform: scale(1);
+    }
+
+    .copynotes-modal-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 10px;
+    }
+
+    .copynotes-modal-desc {
+        font-size: 13.5px;
+        color: #64748b;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .copynotes-modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    @media (max-width: 640px) {
+        .copynotes-header {
+            padding: 20px 16px;
+        }
+        .copynotes-toolbar {
+            padding: 12px 14px;
+        }
+        .copynotes-body {
+            padding: 14px;
+        }
+        .copynotes-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="copynotes-wrapper" id="copynotesApp">
+    <div class="copynotes-card">
+        <!-- Header -->
+        <header class="copynotes-header">
+            <div class="copynotes-header-top">
+                <div class="copynotes-brand">
+                    <div class="copynotes-brand-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="copynotes-brand-title" id="lblTitle">Copy Notes</h2>
+                        <p class="copynotes-brand-subtitle" id="lblSubtitle">Personal notepad stored locally in your browser with 1-click instant copy</p>
+                    </div>
+                </div>
+                <div class="copynotes-header-actions">
+                    <span class="copynotes-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span id="lblStorageBadge">100% LocalStorage</span>
+                    </span>
+                    <button class="copynotes-lang-btn" id="btnToggleLang" title="Switch language">RU / EN</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Toolbar -->
+        <div class="copynotes-toolbar">
+            <div class="copynotes-search-box">
+                <svg class="copynotes-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="copynotesSearch" class="copynotes-search-input" placeholder="Search notes, tags, or text... (Ctrl+K)">
+            </div>
+            <div class="copynotes-toolbar-buttons">
+                <button class="copynotes-btn copynotes-btn-primary" id="btnOpenNewNote">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    <span id="lblNewNote">New Note</span>
+                </button>
+                <button class="copynotes-btn-icon" id="btnExportData" title="Export Notes (Backup)">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </button>
+                <button class="copynotes-btn-icon" id="btnImportData" title="Import Notes">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                </button>
+                <input type="file" id="copynotesImportInput" accept=".json,.txt" style="display: none;">
+            </div>
+        </div>
+
+        <!-- Filter Chips Bar -->
+        <div class="copynotes-chips-bar" id="copynotesChipsBar">
+            <span class="copynotes-chip active" data-filter="all" id="chipAll">All Notes</span>
+            <span class="copynotes-chip" data-filter="pinned" id="chipPinned">⭐ Pinned</span>
+            <!-- Tag chips dynamically added here -->
+        </div>
+
+        <!-- Note Editor Area (Hidden by default, slides down) -->
+        <div class="copynotes-editor-box" id="copynotesEditorBox">
+            <div class="copynotes-editor-title">
+                <span id="lblEditorMode">Create New Note</span>
+                <button class="copynote-icon-btn" id="btnCloseEditor" title="Close editor">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <input type="hidden" id="noteEditId" value="">
+            <input type="text" id="noteTitleInput" class="copynotes-input" placeholder="Note Title (Optional)...">
+            <textarea id="noteContentInput" class="copynotes-textarea" placeholder="Write your note, code snippet, template, prompt, or quick draft here..."></textarea>
+            
+            <div class="copynotes-editor-row">
+                <div style="flex: 1; min-width: 180px;">
+                    <input type="text" id="noteTagsInput" class="copynotes-input" style="margin-bottom: 0;" placeholder="Tags (separated by comma, e.g. work, prompts, code)">
+                </div>
+                <div class="copynotes-color-picker">
+                    <span class="copynotes-color-label" id="lblColor">Color:</span>
+                    <div class="copynotes-color-dot color-default active" data-color="default" title="Default"></div>
+                    <div class="copynotes-color-dot color-blue" data-color="blue" title="Blue"></div>
+                    <div class="copynotes-color-dot color-emerald" data-color="emerald" title="Emerald"></div>
+                    <div class="copynotes-color-dot color-amber" data-color="amber" title="Amber"></div>
+                    <div class="copynotes-color-dot color-rose" data-color="rose" title="Rose"></div>
+                    <div class="copynotes-color-dot color-purple" data-color="purple" title="Purple"></div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                <label style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #475569; cursor: pointer;">
+                    <input type="checkbox" id="notePinCheckbox" style="accent-color: #f59e0b;">
+                    <span id="lblPinNote">Pin this note to top</span>
+                </label>
+                <div style="display: flex; gap: 8px;">
+                    <button class="copynotes-btn copynotes-btn-secondary" id="btnCancelEditor">
+                        <span id="lblCancel">Cancel</span>
+                    </button>
+                    <button class="copynotes-btn copynotes-btn-primary" id="btnSaveNote">
+                        <span id="lblSave">Save Note</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes Grid Area -->
+        <div class="copynotes-body">
+            <div class="copynotes-stats-bar">
+                <span id="copynotesStatsText">Loading notes...</span>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <button id="btnClearAllNotes" class="copynotes-btn-icon danger" title="Clear all notes" style="display: none; font-size: 11.5px; padding: 4px 8px; gap: 4px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        <span id="lblClearAll">Clear All</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notes List -->
+            <div class="copynotes-grid" id="copynotesGrid"></div>
+
+            <!-- Empty State -->
+            <div class="copynotes-empty" id="copynotesEmptyState" style="display: none;">
+                <div class="copynotes-empty-icon">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                </div>
+                <h3 class="copynotes-empty-title" id="lblEmptyTitle">No notes found</h3>
+                <p class="copynotes-empty-text" id="lblEmptyDesc">Create your first note or load starter templates to start managing and copying your snippets quickly.</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="copynotes-btn copynotes-btn-primary" id="btnEmptyAddNote">
+                        <span id="lblEmptyCreateBtn">+ Create First Note</span>
+                    </button>
+                    <button class="copynotes-btn copynotes-btn-secondary" id="btnLoadSampleNotes">
+                        <span id="lblLoadSamples">Add Sample Snippets</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast notification -->
+<div class="copynotes-toast" id="copynotesToast">
+    <svg class="copynotes-toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="copynotesToastText">Copied to clipboard!</span>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="copynotes-modal-backdrop" id="copynotesModal">
+    <div class="copynotes-modal">
+        <h3 class="copynotes-modal-title" id="modalTitle">Confirm Action</h3>
+        <p class="copynotes-modal-desc" id="modalDesc">Are you sure you want to proceed?</p>
+        <div class="copynotes-modal-actions">
+            <button class="copynotes-btn copynotes-btn-secondary" id="btnModalCancel">Cancel</button>
+            <button class="copynotes-btn copynotes-btn-danger" id="btnModalConfirm">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const STORAGE_KEY = 'copynotes_items_v1';
+    const LANG_KEY = 'copynotes_lang_v1';
+
+    // Translations dictionary
+    const I18N = {
+        en: {
+            title: "Copy Notes",
+            subtitle: "Personal notepad stored locally in your browser with 1-click instant copy",
+            storageBadge: "100% LocalStorage",
+            searchPlaceholder: "Search notes, tags, or text... (Ctrl+K)",
+            newNote: "New Note",
+            allNotes: "All Notes",
+            pinned: "⭐ Pinned",
+            createTitle: "Create New Note",
+            editTitle: "Edit Note",
+            noteTitlePlaceholder: "Note Title (Optional)...",
+            noteContentPlaceholder: "Write your note, code snippet, template, prompt, or quick draft here...",
+            tagsPlaceholder: "Tags (comma separated, e.g. work, prompts, code)",
+            color: "Color:",
+            pinNote: "Pin this note to top",
+            cancel: "Cancel",
+            save: "Save Note",
+            clearAll: "Clear All",
+            copyBtn: "Copy",
+            copiedBtn: "Copied!",
+            emptyTitle: "No notes found",
+            emptyDesc: "Create your first note or load starter templates to start managing and copying your snippets quickly.",
+            emptyCreateBtn: "+ Create First Note",
+            loadSamples: "Add Sample Snippets",
+            notesCount: (count, total) => `${count} of ${total} notes`,
+            toastCopied: "Note copied to clipboard!",
+            toastSaved: "Note saved successfully!",
+            toastDeleted: "Note removed",
+            toastImported: "Notes imported successfully!",
+            confirmClearTitle: "Clear All Notes?",
+            confirmClearDesc: "This will permanently delete all your notes stored in local storage. This action cannot be undone.",
+            confirmDeleteTitle: "Delete Note?",
+            confirmDeleteDesc: "Are you sure you want to delete this note?"
+        },
+        ru: {
+            title: "Copy Notes",
+            subtitle: "Личный локальный блокнот в браузере с быстрым копированием заметок в один клик",
+            storageBadge: "100% LocalStorage",
+            searchPlaceholder: "Поиск заметок, тегов или текста... (Ctrl+K)",
+            newNote: "Новая заметка",
+            allNotes: "Все заметки",
+            pinned: "⭐ Закрепленные",
+            createTitle: "Создать заметку",
+            editTitle: "Редактировать заметку",
+            noteTitlePlaceholder: "Заголовок заметки (необязательно)...",
+            noteContentPlaceholder: "Введите текст заметки, промпт, фрагмент кода, шаблон или быстрый черновик...",
+            tagsPlaceholder: "Теги через запятую (напр. работа, идеи, промпты, код)",
+            color: "Цвет:",
+            pinNote: "Закрепить вверху списка",
+            cancel: "Отмена",
+            save: "Сохранить",
+            clearAll: "Очистить всё",
+            copyBtn: "Скопировать",
+            copiedBtn: "Скопировано!",
+            emptyTitle: "Заметок пока нет",
+            emptyDesc: "Создайте свою первую запись или добавьте примеры, чтобы удобно хранить и мгновенно копировать заметки.",
+            emptyCreateBtn: "+ Создать заметку",
+            loadSamples: "Добавить примеры",
+            notesCount: (count, total) => `Показано ${count} из ${total} заметок`,
+            toastCopied: "Заметка скопирована в буфер обмена!",
+            toastSaved: "Заметка успешно сохранена!",
+            toastDeleted: "Заметка удалена",
+            toastImported: "Заметки успешно импортированы!",
+            confirmClearTitle: "Удалить все заметки?",
+            confirmClearDesc: "Это действие удалит все сохраненные заметки из LocalStorage вашего браузера без возможности восстановления.",
+            confirmDeleteTitle: "Удалить заметку?",
+            confirmDeleteDesc: "Вы уверены, что хотите удалить эту заметку?"
+        }
+    };
+
+    // Detect language: check localStorage, then html lang
+    let currentLang = localStorage.getItem(LANG_KEY);
+    if (!currentLang) {
+        const docLang = (document.documentElement.lang || '').toLowerCase();
+        currentLang = docLang.startsWith('ru') ? 'ru' : 'en';
+    }
+
+    // Default sample notes
+    const SAMPLE_NOTES_EN = [
+        {
+            id: 'sample-1',
+            title: 'Welcome to Copy Notes! 🚀',
+            content: 'Click the "Copy" button below to instantly copy this snippet to your clipboard. All notes are saved automatically in your browser\'s LocalStorage.',
+            tags: ['guide', 'welcome'],
+            color: 'blue',
+            pinned: true,
+            createdAt: Date.now() - 3600000,
+            updatedAt: Date.now() - 3600000
+        },
+        {
+            id: 'sample-2',
+            title: 'Sample Code Snippet',
+            content: 'function copyToClipboard(text) {\n  navigator.clipboard.writeText(text);\n  console.log("Copied!");\n}',
+            tags: ['code', 'javascript'],
+            color: 'emerald',
+            pinned: false,
+            createdAt: Date.now() - 7200000,
+            updatedAt: Date.now() - 7200000
+        },
+        {
+            id: 'sample-3',
+            title: 'AI Prompt Template',
+            content: 'Act as an expert software architect. Analyze the following requirements and suggest an optimal, modular, and performant design:\n[INSERT REQUIREMENTS HERE]',
+            tags: ['prompts', 'ai'],
+            color: 'purple',
+            pinned: false,
+            createdAt: Date.now() - 10800000,
+            updatedAt: Date.now() - 10800000
+        }
+    ];
+
+    const SAMPLE_NOTES_RU = [
+        {
+            id: 'sample-1',
+            title: 'Добро пожаловать в Copy Notes! 🚀',
+            content: 'Нажмите кнопку «Скопировать» внизу карточки, чтобы мгновенно скопировать этот текст в буфер обмена. Заметки сохраняются в браузере автоматически.',
+            tags: ['инструкция', 'быстрый старт'],
+            color: 'blue',
+            pinned: true,
+            createdAt: Date.now() - 3600000,
+            updatedAt: Date.now() - 3600000
+        },
+        {
+            id: 'sample-2',
+            title: 'Шаблон AI промпта',
+            content: 'Действуй как опытный Senior разработчик. Проанализируй следующий код и предложи оптимизации по производительности и читаемости:\n[ВСТАВИТЬ КОД]',
+            tags: ['промпты', 'ai'],
+            color: 'purple',
+            pinned: false,
+            createdAt: Date.now() - 7200000,
+            updatedAt: Date.now() - 7200000
+        },
+        {
+            id: 'sample-3',
+            title: 'Быстрый сниппет JavaScript',
+            content: 'function copyToClipboard(text) {\n  navigator.clipboard.writeText(text);\n  console.log("Скопировано!");\n}',
+            tags: ['код', 'javascript'],
+            color: 'emerald',
+            pinned: false,
+            createdAt: Date.now() - 10800000,
+            updatedAt: Date.now() - 10800000
+        }
+    ];
+
+    // State
+    let notes = [];
+    let activeFilter = 'all';
+    let searchQuery = '';
+    let selectedColor = 'default';
+    let modalCallback = null;
+
+    // DOM Elements
+    const grid = document.getElementById('copynotesGrid');
+    const emptyState = document.getElementById('copynotesEmptyState');
+    const statsText = document.getElementById('copynotesStatsText');
+    const searchInput = document.getElementById('copynotesSearch');
+    const chipsBar = document.getElementById('copynotesChipsBar');
+    const editorBox = document.getElementById('copynotesEditorBox');
+    const noteEditId = document.getElementById('noteEditId');
+    const noteTitleInput = document.getElementById('noteTitleInput');
+    const noteContentInput = document.getElementById('noteContentInput');
+    const noteTagsInput = document.getElementById('noteTagsInput');
+    const notePinCheckbox = document.getElementById('notePinCheckbox');
+    const colorDots = document.querySelectorAll('.copynotes-color-dot');
+    const btnOpenNewNote = document.getElementById('btnOpenNewNote');
+    const btnCloseEditor = document.getElementById('btnCloseEditor');
+    const btnCancelEditor = document.getElementById('btnCancelEditor');
+    const btnSaveNote = document.getElementById('btnSaveNote');
+    const btnEmptyAddNote = document.getElementById('btnEmptyAddNote');
+    const btnLoadSampleNotes = document.getElementById('btnLoadSampleNotes');
+    const btnClearAllNotes = document.getElementById('btnClearAllNotes');
+    const btnExportData = document.getElementById('btnExportData');
+    const btnImportData = document.getElementById('btnImportData');
+    const importInput = document.getElementById('copynotesImportInput');
+    const btnToggleLang = document.getElementById('btnToggleLang');
+    const toast = document.getElementById('copynotesToast');
+    const toastText = document.getElementById('copynotesToastText');
+    const modalBackdrop = document.getElementById('copynotesModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const btnModalConfirm = document.getElementById('btnModalConfirm');
+    const btnModalCancel = document.getElementById('btnModalCancel');
+
+    // Storage functions
+    function loadNotes() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+                notes = JSON.parse(raw);
+            } else {
+                notes = currentLang === 'ru' ? [...SAMPLE_NOTES_RU] : [...SAMPLE_NOTES_EN];
+                saveNotesToStorage();
+            }
+        } catch(e) {
+            console.error('Failed to load notes from LocalStorage:', e);
+            notes = [];
+        }
+    }
+
+    function saveNotesToStorage() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+        } catch(e) {
+            console.error('Failed to save to LocalStorage:', e);
+            showToast('Storage quota exceeded or disabled!');
+        }
+    }
+
+    // Toast utility
+    let toastTimeout;
+    function showToast(msg) {
+        toastText.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+
+    // Modal utility
+    function openModal(title, desc, onConfirm) {
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modalCallback = onConfirm;
+        modalBackdrop.classList.add('open');
+    }
+
+    function closeModal() {
+        modalBackdrop.classList.remove('open');
+        modalCallback = null;
+    }
+
+    btnModalCancel.addEventListener('click', closeModal);
+    btnModalConfirm.addEventListener('click', () => {
+        if (modalCallback) modalCallback();
+        closeModal();
+    });
+
+    // Update UI Texts based on language
+    function applyLanguage() {
+        const t = I18N[currentLang];
+        document.getElementById('lblTitle').textContent = t.title;
+        document.getElementById('lblSubtitle').textContent = t.subtitle;
+        document.getElementById('lblStorageBadge').textContent = t.storageBadge;
+        searchInput.placeholder = t.searchPlaceholder;
+        document.getElementById('lblNewNote').textContent = t.newNote;
+        document.getElementById('chipAll').textContent = t.allNotes;
+        document.getElementById('chipPinned').textContent = t.pinned;
+        document.getElementById('lblEditorMode').textContent = noteEditId.value ? t.editTitle : t.createTitle;
+        noteTitleInput.placeholder = t.noteTitlePlaceholder;
+        noteContentInput.placeholder = t.noteContentPlaceholder;
+        noteTagsInput.placeholder = t.tagsPlaceholder;
+        document.getElementById('lblColor').textContent = t.color;
+        document.getElementById('lblPinNote').textContent = t.pinNote;
+        document.getElementById('lblCancel').textContent = t.cancel;
+        document.getElementById('lblSave').textContent = t.save;
+        document.getElementById('lblClearAll').textContent = t.clearAll;
+        document.getElementById('lblEmptyTitle').textContent = t.emptyTitle;
+        document.getElementById('lblEmptyDesc').textContent = t.emptyDesc;
+        document.getElementById('lblEmptyCreateBtn').textContent = t.emptyCreateBtn;
+        document.getElementById('lblLoadSamples').textContent = t.loadSamples;
+        btnToggleLang.textContent = currentLang === 'ru' ? 'EN' : 'RU';
+
+        renderChips();
+        renderNotes();
+    }
+
+    btnToggleLang.addEventListener('click', () => {
+        currentLang = currentLang === 'ru' ? 'en' : 'ru';
+        localStorage.setItem(LANG_KEY, currentLang);
+        applyLanguage();
+    });
+
+    // Color picker
+    colorDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            colorDots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+            selectedColor = dot.getAttribute('data-color') || 'default';
+        });
+    });
+
+    function setColor(color) {
+        selectedColor = color || 'default';
+        colorDots.forEach(dot => {
+            if (dot.getAttribute('data-color') === selectedColor) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    // Editor functions
+    function openEditor(note = null) {
+        const t = I18N[currentLang];
+        if (note) {
+            noteEditId.value = note.id;
+            noteTitleInput.value = note.title || '';
+            noteContentInput.value = note.content || '';
+            noteTagsInput.value = (note.tags || []).join(', ');
+            notePinCheckbox.checked = !!note.pinned;
+            setColor(note.color);
+            document.getElementById('lblEditorMode').textContent = t.editTitle;
+        } else {
+            noteEditId.value = '';
+            noteTitleInput.value = '';
+            noteContentInput.value = '';
+            noteTagsInput.value = '';
+            notePinCheckbox.checked = false;
+            setColor('default');
+            document.getElementById('lblEditorMode').textContent = t.createTitle;
+        }
+        editorBox.classList.add('open');
+        setTimeout(() => {
+            if (note) {
+                noteContentInput.focus();
+            } else {
+                noteTitleInput.focus();
+            }
+        }, 100);
+    }
+
+    function closeEditor() {
+        editorBox.classList.remove('open');
+        noteEditId.value = '';
+    }
+
+    btnOpenNewNote.addEventListener('click', () => openEditor());
+    btnEmptyAddNote.addEventListener('click', () => openEditor());
+    btnCloseEditor.addEventListener('click', closeEditor);
+    btnCancelEditor.addEventListener('click', closeEditor);
+
+    btnSaveNote.addEventListener('click', saveNoteFromEditor);
+
+    function saveNoteFromEditor() {
+        const content = noteContentInput.value.trim();
+        const title = noteTitleInput.value.trim();
+        const t = I18N[currentLang];
+
+        if (!content && !title) {
+            noteContentInput.focus();
+            return;
+        }
+
+        const tags = noteTagsInput.value
+            .split(',')
+            .map(s => s.trim().toLowerCase())
+            .filter(s => s.length > 0);
+
+        const id = noteEditId.value;
+        const now = Date.now();
+
+        if (id) {
+            // Edit existing
+            const idx = notes.findIndex(n => n.id === id);
+            if (idx !== -1) {
+                notes[idx].title = title;
+                notes[idx].content = content;
+                notes[idx].tags = tags;
+                notes[idx].color = selectedColor;
+                notes[idx].pinned = notePinCheckbox.checked;
+                notes[idx].updatedAt = now;
+            }
+        } else {
+            // New note
+            const newNote = {
+                id: 'note_' + now + '_' + Math.random().toString(36).substr(2, 6),
+                title: title,
+                content: content,
+                tags: tags,
+                color: selectedColor,
+                pinned: notePinCheckbox.checked,
+                createdAt: now,
+                updatedAt: now
+            };
+            notes.unshift(newNote);
+        }
+
+        saveNotesToStorage();
+        closeEditor();
+        renderChips();
+        renderNotes();
+        showToast(t.toastSaved);
+    }
+
+    // Render Tag Filter Chips
+    function renderChips() {
+        const allTags = new Set();
+        notes.forEach(n => {
+            if (Array.isArray(n.tags)) {
+                n.tags.forEach(tag => allTags.add(tag));
+            }
+        });
+
+        // Clear dynamic chips (keep All and Pinned)
+        const staticChips = [document.getElementById('chipAll'), document.getElementById('chipPinned')];
+        chipsBar.innerHTML = '';
+        staticChips.forEach(c => chipsBar.appendChild(c));
+
+        allTags.forEach(tag => {
+            const chip = document.createElement('span');
+            chip.className = 'copynotes-chip' + (activeFilter === tag ? ' active' : '');
+            chip.setAttribute('data-filter', tag);
+            chip.textContent = '#' + tag;
+            chip.addEventListener('click', () => {
+                setFilter(tag);
+            });
+            chipsBar.appendChild(chip);
+        });
+
+        // Re-attach listeners to static chips
+        document.getElementById('chipAll').onclick = () => setFilter('all');
+        document.getElementById('chipPinned').onclick = () => setFilter('pinned');
+    }
+
+    function setFilter(filter) {
+        activeFilter = filter;
+        document.querySelectorAll('.copynotes-chip').forEach(c => {
+            if (c.getAttribute('data-filter') === filter) {
+                c.classList.add('active');
+            } else {
+                c.classList.remove('active');
+            }
+        });
+        renderNotes();
+    }
+
+    // Copy to clipboard with instant visual feedback
+    function copyNote(note, btnElement) {
+        const t = I18N[currentLang];
+        let textToCopy = note.content;
+        if (note.title) {
+            textToCopy = note.title + "\n\n" + note.content;
+        }
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            if (btnElement) {
+                const origHtml = btnElement.innerHTML;
+                btnElement.classList.add('copied');
+                btnElement.innerHTML = `
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>${t.copiedBtn}</span>
+                `;
+                setTimeout(() => {
+                    btnElement.classList.remove('copied');
+                    btnElement.innerHTML = origHtml;
+                }, 1800);
+            }
+            showToast(t.toastCopied);
+        }).catch(err => {
+            console.error('Clipboard copy error:', err);
+            // Fallback for older browsers
+            const ta = document.createElement('textarea');
+            ta.value = textToCopy;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast(t.toastCopied);
+        });
+    }
+
+    function togglePin(id) {
+        const note = notes.find(n => n.id === id);
+        if (note) {
+            note.pinned = !note.pinned;
+            saveNotesToStorage();
+            renderNotes();
+        }
+    }
+
+    function deleteNote(id) {
+        const t = I18N[currentLang];
+        openModal(t.confirmDeleteTitle, t.confirmDeleteDesc, () => {
+            notes = notes.filter(n => n.id !== id);
+            saveNotesToStorage();
+            renderChips();
+            renderNotes();
+            showToast(t.toastDeleted);
+        });
+    }
+
+    function duplicateNote(id) {
+        const note = notes.find(n => n.id === id);
+        if (!note) return;
+        const now = Date.now();
+        const copy = {
+            ...note,
+            id: 'note_' + now + '_' + Math.random().toString(36).substr(2, 6),
+            title: note.title ? `${note.title} (Copy)` : '',
+            createdAt: now,
+            updatedAt: now,
+            pinned: false
+        };
+        notes.unshift(copy);
+        saveNotesToStorage();
+        renderChips();
+        renderNotes();
+        showToast(I18N[currentLang].toastSaved);
+    }
+
+    // Format date nicely
+    function formatDate(ts) {
+        if (!ts) return '';
+        const d = new Date(ts);
+        const now = new Date();
+        const isToday = d.toDateString() === now.toDateString();
+        if (isToday) {
+            return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        return d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+    }
+
+    // Render note cards
+    function renderNotes() {
+        const t = I18N[currentLang];
+        const q = searchQuery.toLowerCase().trim();
+
+        // Filter
+        let filtered = notes.filter(n => {
+            // Text search
+            const matchSearch = !q ||
+                (n.title && n.title.toLowerCase().includes(q)) ||
+                (n.content && n.content.toLowerCase().includes(q)) ||
+                (n.tags && n.tags.some(tag => tag.toLowerCase().includes(q)));
+
+            if (!matchSearch) return false;
+
+            // Category filter
+            if (activeFilter === 'all') return true;
+            if (activeFilter === 'pinned') return !!n.pinned;
+            return n.tags && n.tags.includes(activeFilter);
+        });
+
+        // Sort: pinned first, then newest updated
+        filtered.sort((a, b) => {
+            if (a.pinned && !b.pinned) return -1;
+            if (!a.pinned && b.pinned) return 1;
+            return (b.updatedAt || b.createdAt || 0) - (a.updatedAt || a.createdAt || 0);
+        });
+
+        // Update stats
+        statsText.textContent = t.notesCount(filtered.length, notes.length);
+        btnClearAllNotes.style.display = notes.length > 0 ? 'inline-flex' : 'none';
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '';
+            emptyState.style.display = 'block';
+            return;
+        }
+
+        emptyState.style.display = 'none';
+        grid.innerHTML = '';
+
+        filtered.forEach(note => {
+            const card = document.createElement('div');
+            const colorClass = 'card-color-' + (note.color || 'default');
+            card.className = `copynote-item ${colorClass} ${note.pinned ? 'pinned' : ''}`;
+
+            // Title and Pin icon
+            const header = document.createElement('div');
+            header.className = 'copynote-card-header';
+
+            const title = document.createElement('h4');
+            title.className = 'copynote-card-title';
+            title.textContent = note.title || (currentLang === 'ru' ? 'Без названия' : 'Untitled');
+            header.appendChild(title);
+
+            const pinBtn = document.createElement('button');
+            pinBtn.className = `copynote-pin-badge ${note.pinned ? '' : 'unpinned'}`;
+            pinBtn.title = note.pinned ? 'Unpin' : 'Pin to top';
+            pinBtn.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="${note.pinned ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            `;
+            pinBtn.onclick = () => togglePin(note.id);
+            header.appendChild(pinBtn);
+            card.appendChild(header);
+
+            // Content
+            const content = document.createElement('div');
+            content.className = 'copynote-card-content';
+            content.textContent = note.content;
+            card.appendChild(content);
+
+            // Tags
+            if (note.tags && note.tags.length > 0) {
+                const tagsList = document.createElement('div');
+                tagsList.className = 'copynote-tags-list';
+                note.tags.forEach(tag => {
+                    const badge = document.createElement('span');
+                    badge.className = 'copynote-tag-badge';
+                    badge.textContent = '#' + tag;
+                    badge.onclick = (e) => {
+                        e.stopPropagation();
+                        setFilter(tag);
+                    };
+                    badge.style.cursor = 'pointer';
+                    tagsList.appendChild(badge);
+                });
+                card.appendChild(tagsList);
+            }
+
+            // Footer
+            const footer = document.createElement('div');
+            footer.className = 'copynote-card-footer';
+
+            const date = document.createElement('span');
+            date.className = 'copynote-date';
+            date.textContent = formatDate(note.updatedAt || note.createdAt);
+            footer.appendChild(date);
+
+            const actions = document.createElement('div');
+            actions.className = 'copynote-actions';
+
+            // Edit button
+            const editBtn = document.createElement('button');
+            editBtn.className = 'copynote-icon-btn';
+            editBtn.title = 'Edit';
+            editBtn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>`;
+            editBtn.onclick = () => openEditor(note);
+            actions.appendChild(editBtn);
+
+            // Duplicate button
+            const dupBtn = document.createElement('button');
+            dupBtn.className = 'copynote-icon-btn';
+            dupBtn.title = 'Duplicate';
+            dupBtn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+            dupBtn.onclick = () => duplicateNote(note.id);
+            actions.appendChild(dupBtn);
+
+            // Delete button
+            const delBtn = document.createElement('button');
+            delBtn.className = 'copynote-icon-btn danger';
+            delBtn.title = 'Delete';
+            delBtn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
+            delBtn.onclick = () => deleteNote(note.id);
+            actions.appendChild(delBtn);
+
+            // Prominent Copy Button
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copynote-copy-btn';
+            copyBtn.innerHTML = `
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>${t.copyBtn}</span>
+            `;
+            copyBtn.onclick = () => copyNote(note, copyBtn);
+            actions.appendChild(copyBtn);
+
+            footer.appendChild(actions);
+            card.appendChild(footer);
+
+            grid.appendChild(card);
+        });
+    }
+
+    // Search input
+    searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        renderNotes();
+    });
+
+    // Clear All
+    btnClearAllNotes.addEventListener('click', () => {
+        const t = I18N[currentLang];
+        openModal(t.confirmClearTitle, t.confirmClearDesc, () => {
+            notes = [];
+            saveNotesToStorage();
+            renderChips();
+            renderNotes();
+            showToast(t.toastDeleted);
+        });
+    });
+
+    // Load sample snippets
+    btnLoadSampleNotes.addEventListener('click', () => {
+        const samples = currentLang === 'ru' ? SAMPLE_NOTES_RU : SAMPLE_NOTES_EN;
+        notes = [...samples];
+        saveNotesToStorage();
+        renderChips();
+        renderNotes();
+        showToast(I18N[currentLang].toastSaved);
+    });
+
+    // Export Data to JSON
+    btnExportData.addEventListener('click', () => {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(notes, null, 2));
+        const downloadAnchor = document.createElement('a');
+        downloadAnchor.setAttribute("href", dataStr);
+        downloadAnchor.setAttribute("download", `copynotes_backup_${new Date().toISOString().slice(0, 10)}.json`);
+        document.body.appendChild(downloadAnchor);
+        downloadAnchor.click();
+        downloadAnchor.remove();
+        showToast("Backup downloaded!");
+    });
+
+    // Import Data from JSON
+    btnImportData.addEventListener('click', () => {
+        importInput.click();
+    });
+
+    importInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+            try {
+                const parsed = JSON.parse(evt.target.result);
+                if (Array.isArray(parsed)) {
+                    // Merge or replace
+                    notes = parsed;
+                    saveNotesToStorage();
+                    renderChips();
+                    renderNotes();
+                    showToast(I18N[currentLang].toastImported);
+                } else {
+                    showToast('Invalid backup file format');
+                }
+            } catch (err) {
+                console.error(err);
+                showToast('Failed to parse JSON file');
+            }
+        };
+        reader.readAsText(file);
+        importInput.value = '';
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+        // Ctrl+K or Cmd+K: search
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+        // Esc: close editor or modal
+        if (e.key === 'Escape') {
+            if (modalBackdrop.classList.contains('open')) {
+                closeModal();
+            } else if (editorBox.classList.contains('open')) {
+                closeEditor();
+            }
+        }
+        // Ctrl+Enter or Cmd+Enter inside editor: save
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            if (editorBox.classList.contains('open')) {
+                e.preventDefault();
+                saveNoteFromEditor();
+            }
+        }
+    });
+
+    // Initialization
+    loadNotes();
+    applyLanguage();
+})();
+</script>
+
+      
+    </div>
+    <footer class="article-footer" data-c="falsecopy-notes.html">
+      <a data-url="https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/" data-id="cuid-ZgSBaW4Va1IsShLShInt" data-title="Copy Notes – Manage Your Notes Fast (Client-Side Local Notepad)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/tools/" rel="tag">tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/useful/" rel="tag">useful</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/productivity/" rel="tag">productivity</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/notes/" rel="tag">notes</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/notepad/" rel="tag">notepad</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/localstorage/" rel="tag">localstorage</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/10/27/ru/copy-notes-manage-your-notes-fast/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Copy Notes – Быстрый личный блокнот с мгновенным копированием</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</section>
+        
+          
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<nav id="mobile-nav">
+  
+    <a href="/en/" class="mobile-nav-link">Home</a>
+  
+    <a href="/en/archives" class="mobile-nav-link">Archives</a>
+  
+  
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0 10px; padding: 15px 20px 5px; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Languages</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 20px 20px;">
+      
+        <a href="/" class="mobile-lang-btn active" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(255,255,255,0.22); border-radius: 4px; text-decoration: none;">EN</a>
+      
+        <a href="/ru/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">RU</a>
+      
+        <a href="/es/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ES</a>
+      
+        <a href="/zh-cn/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ZH-CN</a>
+      
+        <a href="/hi/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">HI</a>
+      
+        <a href="/th/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">TH</a>
+      
+        <a href="/fr/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">FR</a>
+      
+        <a href="/pt/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">PT</a>
+      
+        <a href="/ar/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">AR</a>
+      
+    </div>
+  
+</nav>
+    <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    
+  
+<script src="/js/lightbox.js"></script>
+
+
+
+<script src="/js/script.js?v=1793024903550"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

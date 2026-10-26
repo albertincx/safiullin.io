@@ -10,7 +10,53 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-10-26T04:40:44.675Z</updated>
+  <updated>2026-10-26T14:25:31.412Z</updated>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="productivity" scheme="https://safiullin.dev/tags/productivity/"/>
+    <category term="notes" scheme="https://safiullin.dev/tags/notes/"/>
+    <category term="notepad" scheme="https://safiullin.dev/tags/notepad/"/>
+    <category term="localstorage" scheme="https://safiullin.dev/tags/localstorage/"/>
+    <content>
+      <![CDATA[<p>A fast, private, client-side personal notepad with instant 1-click copy to clipboard. All your notes, snippets, prompts, and ideas are stored locally in your browser’s LocalStorage with zero server uploads.</p><span id="more"></span><p>Managing quick notes, code snippets, prompt templates, and frequently used text snippets shouldn’t require complex cloud apps, account logins, or sluggish interfaces. </p><p><strong>Copy Notes</strong> is an instant client-side notepad built for speed, privacy, and convenience:</p><ul><li><strong>Instant 1-Click Copy</strong>: Copy any note’s text or markdown directly to your clipboard in a single click with instant visual confirmation.</li><li><strong>100% Private &amp; Local</strong>: Your data lives purely in your browser’s <code>LocalStorage</code>. No servers, no tracking, and no external requests.</li><li><strong>Fast Search &amp; Filter</strong>: Find snippets instantly by keyword or tag (<code>#work</code>, <code>#code</code>, <code>#prompts</code>, etc.).</li><li><strong>Organize &amp; Pin</strong>: Pin key notes to the top and color-code cards for quick visual scanning.</li><li><strong>Backup &amp; Restore</strong>: Export all your notes to a JSON file at any time, or restore from a backup across devices.</li><li><strong>Works Offline</strong>: Accessible anytime, even without an active internet connection.</li></ul><p>Enjoy a clean, distraction-free notepad designed to keep your most important snippets always at your fingertips!</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/</id>
+    <link href="https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/"/>
+    <link href="https://safiullin.dev/images/covers/copy-notes-manage-your-notes-fast.jpg" rel="enclosure"/>
+    <published>2026-10-26T18:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>A fast, private, client-side personal notepad with instant 1-click copy to clipboard. All your notes, snippets, prompts, and ideas are stored locally in your browser’s LocalStorage with zero server uploads.</p>]]>
+    </summary>
+    <title>Copy Notes – Manage Your Notes Fast (Client-Side Local Notepad)</title>
+    <updated>2026-10-26T14:25:31.412Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="productivity" scheme="https://safiullin.dev/tags/productivity/"/>
+    <category term="notes" scheme="https://safiullin.dev/tags/notes/"/>
+    <category term="notepad" scheme="https://safiullin.dev/tags/notepad/"/>
+    <category term="localstorage" scheme="https://safiullin.dev/tags/localstorage/"/>
+    <content>
+      <![CDATA[<p>Быстрый и конфиденциальный личный блокнот прямо в браузере с функцией мгновенного копирования любой заметки в буфер обмена в один клик. Данные хранятся исключительно в LocalStorage вашего устройства.</p><span id="more"></span><p>Для сохранения быстрых заметок, сниппетов кода, шаблонов для нейросетей и часто используемых фраз не нужны тяжелые сервисы с регистрацией.</p><p><strong>Copy Notes</strong> — это удобный локальный блокнот, созданный для максимальной скорости и приватности:</p><ul><li><strong>Мгновенное копирование в 1 клик</strong>: Нажмите кнопку «Скопировать», и текст заметки сразу же окажется в буфере обмена с наглядным подтверждением.</li><li><strong>100% приватно и локально</strong>: Все записи хранятся только в браузере (<code>LocalStorage</code>). Никаких серверов, трекеров или отправки данных в сеть.</li><li><strong>Быстрый поиск и теги</strong>: Мгновенно фильтруйте записи по тексту и тегам (<code>#работа</code>, <code>#промпты</code>, <code>#код</code>, <code>#идеи</code>).</li><li><strong>Закрепление и цветовые метки</strong>: Закрепляйте самые важные заметки вверху списка и выделяйте карточки цветом.</li><li><strong>Экспорт и импорт бэкапа</strong>: Скачивайте резервную копию всех заметок в формате JSON и восстанавливайте на любых других устройствах.</li><li><strong>Работает офлайн</strong>: Доступен даже при отсутствии интернет-соединения.</li></ul><p>Используйте блокнот как персональную шпаргалку и базу сниппетов прямо на странице!</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/10/27/ru/copy-notes-manage-your-notes-fast/</id>
+    <link href="https://safiullin.dev/2026/10/27/ru/copy-notes-manage-your-notes-fast/"/>
+    <link href="https://safiullin.dev/images/covers/copy-notes-manage-your-notes-fast.jpg" rel="enclosure"/>
+    <published>2026-10-26T18:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>Быстрый и конфиденциальный личный блокнот прямо в браузере с функцией мгновенного копирования любой заметки в буфер обмена в один клик. Данные хранятся исключительно в LocalStorage вашего устройства.</p>]]>
+    </summary>
+    <title>Copy Notes – Быстрый личный блокнот с мгновенным копированием</title>
+    <updated>2026-10-26T14:25:42.516Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
@@ -100,17 +146,6 @@
     </summary>
     <title>Split Video Online Instantly without Server</title>
     <updated>2026-10-26T11:53:04.740Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <id>https://safiullin.dev/2026/10/01/copy-notes-manage-your-notes-fast/</id>
-    <link href="https://safiullin.dev/2026/10/01/copy-notes-manage-your-notes-fast/"/>
-    <link href="https://safiullin.dev/images/covers/copy-notes-manage-your-notes-fast.jpg" rel="enclosure"/>
-    <published>2026-10-01T02:46:41.842Z</published>
-    <title>copy-notes-manage-your-notes-fast</title>
-    <updated>2026-10-26T11:53:04.736Z</updated>
   </entry>
   <entry>
     <author>
@@ -391,27 +426,5 @@
     </summary>
     <title>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</title>
     <updated>2026-07-23T09:49:33.084Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
-    <category term="pdf" scheme="https://safiullin.dev/tags/pdf/"/>
-    <category term="education" scheme="https://safiullin.dev/tags/education/"/>
-    <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
-    <content>
-      <![CDATA[<h2 id="जब-आप-PDF-पर-लिख-नहीं-सकते-तो-उन्हें-पढ़ने-का-क्या-फायदा"><a href="#जब-आप-PDF-पर-लिख-नहीं-सकते-तो-उन्हें-पढ़ने-का-क्या-फायदा" class="headerlink" title="जब आप PDF पर लिख नहीं सकते, तो उन्हें पढ़ने का क्या फायदा?"></a>जब आप PDF पर लिख नहीं सकते, तो उन्हें पढ़ने का क्या फायदा?</h2><p>सभी को नमस्कार! मैं अल्बर्ट हूँ, और मुझे टूल्स को अधिक सुविधाजनक बनाना पसंद है।</p><p>यदि आपने कभी स्व-अध्ययन (self-learning) करने का प्रयास किया है, प्रोग्रामिंग पाठ्यपुस्तकों का अध्ययन किया है, या अपने लैपटॉप या टैबलेट पर PDF से जटिल तकनीकी दस्तावेज़ पढ़े हैं, तो आप इस संघर्ष को अच्छी तरह जानते हैं। आप एक किताब खोलते हैं, एक महत्वपूर्ण कोड स्निपेट को हाइलाइट करना चाहते हैं, स्पष्टीकरण के बगल में एक त्वरित आरेख तीर (diagram arrow) बनाना चाहते हैं, या मार्जिन पर एक नोट छोड़ना चाहते हैं — और महसूस करते हैं कि मानक PDF व्यूअर या तो बहुत भारी हैं, पेड (paid) हैं, या यदि आप गलती से टैब को रीफ्रेश कर देते हैं तो आपके चित्र पूरी तरह से गायब हो जाते हैं।</p><p>मैं इसे ठीक करना चाहता था और <strong>PDF Ink</strong> बनाना चाहता था — सीधे ब्राउज़र में PDF पुस्तकों को पढ़ने और उन पर लिखने के लिए एक हल्का, तेज़ वेब एप्लिकेशन।</p><span id="more"></span><hr><h2 id="विचार-और-टेक-स्टैक"><a href="#विचार-और-टेक-स्टैक" class="headerlink" title="विचार और टेक स्टैक"></a>विचार और टेक स्टैक</h2><p>मुख्य लक्ष्य एक ऐसा टूल बनाना था जो:</p><ol><li>किसी भी आधुनिक ब्राउज़र में एक क्लिक में लॉन्च हो सके।</li><li>आपको किसी भी स्थानीय PDF पाठ्यपुस्तक को लोड करने की अनुमति दे।</li><li>आपको माउस, स्टाइलस या स्पर्श का उपयोग करके पृष्ठों पर चित्र बनाने और टेक्स्ट नोट्स टाइप करने दे।</li><li><strong>सबसे महत्वपूर्ण:</strong> आपके वर्तमान पृष्ठ, ज़ूम स्तर, लाइब्रेरी सूची और सभी ड्राइंग नोट्स को स्थानीय रूप से सुरक्षित रूप से सहेजता है ताकि आप किसी भी समय अपनी पढ़ाई फिर से शुरू कर सकें।</li></ol><p>कार्यान्वयन के लिए, मैंने आधुनिक स्टैक चुना: <strong>React + TypeScript + Vite + TailwindCSS</strong>।</p><p>PDF रेंडरिंग इंजन के लिए, मैंने मोज़िला के विश्वसनीय <code>pdfjs-dist</code> (PDF.js) को एकीकृत किया, जो दस्तावेज़ पृष्ठों को सीधे HTML5 <code>&lt;canvas&gt;</code> तत्वों पर रेंडर करता है।</p><hr><h2 id="डबल-लेयर-कैनवास-आर्किटेक्चर"><a href="#डबल-लेयर-कैनवास-आर्किटेक्चर" class="headerlink" title="डबल-लेयर कैनवास आर्किटेक्चर"></a>डबल-लेयर कैनवास आर्किटेक्चर</h2><p>माउस या टच इंटरेक्शन के दौरान एप्लिकेशन को अत्यधिक उत्तरदायी (responsive) रखने के लिए, मैंने कार्यक्षेत्र को दो स्वतंत्र परतों में विभाजित किया:</p><ol><li><strong>PDF परत (PDF Layer)</strong>: एक स्थिर पृष्ठभूमि <code>&lt;canvas&gt;</code> जो सक्रिय पैमाने (ज़ूम) के संबंध में PDF पृष्ठ छवि को रेंडर करती है।</li><li><strong>एनोटेशन परत (Annotation Layer)</strong>: एक बिल्कुल पारदर्शी ओवरले <code>&lt;canvas&gt;</code> जो उपयोगकर्ता के पॉइंटर इवेंट्स (<code>PointerEvents</code>) को रोकता है, वेक्टर स्ट्रोक खींचता है, और टेक्स्ट नोट्स को ऊपर रखता है।</li></ol><p>यह डबल-लेयर दृष्टिकोण ड्राइंग को बेहद तेज़ बनाता है: जब कोई उपयोगकर्ता एक रेखा खींचता है, तो एप्लिकेशन केवल हल्के वेक्टर स्ट्रोक ओवरले को दोबारा पेंट करता है, जिससे भारी PDF कैनवास अप्रभावित रहता है।</p><p>टच-स्क्रीन उपकरणों के लिए, मैंने यह भी जोड़ा:</p><ul><li>मल्टी-टच पिंच-टू-ज़ूम स्केलिंग सपोर्ट।</li><li>पेज पहलू अनुपात (aspect ratio) निर्देशांक के लिए मैप किए गए टच ड्रैग-एंड-ड्रॉप ऑफ़सेट के साथ टेक्स्ट नोट प्लेसमेंट।</li></ul><hr><h2 id="डेटाबेस-विकास-IndexedDB-v2-में-अपग्रेड-करना"><a href="#डेटाबेस-विकास-IndexedDB-v2-में-अपग्रेड-करना" class="headerlink" title="डेटाबेस विकास: IndexedDB v2 में अपग्रेड करना"></a>डेटाबेस विकास: IndexedDB v2 में अपग्रेड करना</h2><p>प्रोटोटाइप के प्रारंभिक संस्करण ने सक्रिय PDF फ़ाइल और सभी चित्रों को IndexedDB में <code>last-opened</code> कुंजी के तहत एकल ऑब्जेक्ट के रूप में सहेजा था।</p><p>हालाँकि, जैसे-जैसे पुस्तकें बड़ी होती गईं, हमें प्रदर्शन में बाधा (performance bottleneck) का सामना करना पड़ा:</p><blockquote><p><strong>समस्या:</strong> हर बार जब उपयोगकर्ता ने एक स्याही स्ट्रोक जोड़ा या एक टेक्स्ट नोट स्थानांतरित किया, तो एप्लिकेशन ने IndexedDB में एक ऑटोसेव किया। हर 250ms में कच्चे PDF फ़ाइल के 20MB ऐरे बफर को वापस डिस्क पर लिखने से इंटरफ़ेस धीमा हो गया और SSD भी घिस गया।</p></blockquote><h3 id="समाधान-फ़ाइलों-को-एनोटेशन-से-अलग-करना"><a href="#समाधान-फ़ाइलों-को-एनोटेशन-से-अलग-करना" class="headerlink" title="समाधान: फ़ाइलों को एनोटेशन से अलग करना"></a>समाधान: फ़ाइलों को एनोटेशन से अलग करना</h3><p>मैंने IndexedDB मैनेजर को फिर से लिखा और स्टोर स्कीमा को संस्करण 2 में अपग्रेड किया:</p><ol><li><strong><code>pdfs</code> स्टोर</strong>: दस्तावेज़ UUID द्वारा कुंजीकृत कच्चे बाइनरी फ़ाइल बफ़र्स (<code>ArrayBuffer</code>) को संग्रहीत करता है। यह लाइब्रेरी में एक नई फ़ाइल अपलोड होने पर <strong>केवल एक बार</strong> लिखा जाता है।</li><li><strong><code>pdfs_metadata</code> स्टोर</strong>: हल्के JSON मेटाडेटा को संग्रहीत करता है, जिसमें पृष्ठ संख्या, ज़ूम स्तर, ड्राइंग स्ट्रोक और टेक्स्ट निर्देशांक शामिल हैं।</li></ol><p>अब, जैसे ही आप चित्र बनाते हैं, केवल हल्का मेटाडेटा ऑब्जेक्ट अपडेट होता है। इसे लिखने में एक मिलीसेकंड का एक अंश लगता है, जिससे लैग (lag) पूरी तरह से समाप्त हो जाता है!</p><p>मैंने एक स्वचालित माइग्रेशन स्क्रिप्ट भी जोड़ी है। यदि कोई उपयोगकर्ता पुराने संस्करण 1 डेटाबेस के साथ ऐप खोलता है, तो यह स्वचालित रूप से बाइनरी डेटा निकालता है, एक नया UUID उत्पन्न करता है, मेटाडेटा को अलग करता है, और उनके ड्राइंग सत्र को माइग्रेट करता है।</p><hr><h2 id="UX-को-चमकाना-लाइब्रेरी-भाषाएँ-और-ढहने-योग्य-नियंत्रण"><a href="#UX-को-चमकाना-लाइब्रेरी-भाषाएँ-और-ढहने-योग्य-नियंत्रण" class="headerlink" title="UX को चमकाना: लाइब्रेरी, भाषाएँ और ढहने योग्य नियंत्रण"></a>UX को चमकाना: लाइब्रेरी, भाषाएँ और ढहने योग्य नियंत्रण</h2><p>PDF Ink को एक प्रीमियम वर्कस्पेस टूल की तरह महसूस कराने के लिए, मैंने तीन अतिरिक्त सुविधाओं को एकीकृत किया:</p><ul><li><strong>रेस्पॉन्सिव PDF लाइब्रेरी</strong>: एक ढहने योग्य (collapsible) साइडबार पैनल जो अपलोड की गई PDF की सूची, पृष्ठ राज्यों और एनोटेशन आंकड़ों को इंटरैक्टिव कार्ड के साथ प्रदर्शित करता है।</li><li><strong>भाषा स्विचर</strong>: अंग्रेजी (डिफ़ॉल्ट, EN पहले) और रूसी (RU) का समर्थन करने वाली एक स्थानीयकरण प्रणाली का निर्माण किया, जिसमें सेटिंग्स को <code>localStorage</code> में सहेजा जाता है।</li><li><strong>ढहने योग्य ब्रश सेटिंग्स</strong>: पेन कॉन्फ़िगरेशन रो (रंग, आकार स्लाइडर, अपारदर्शिता) को एक आइकन के माध्यम से टॉगल करने योग्य बनाया गया ताकि उपयोगकर्ता इसे छिपा सकें और छोटी स्क्रीन पर स्क्रीन वर्कस्पेस को अधिकतम कर सकें।</li></ul><hr><h2 id="इसे-आज़माएं"><a href="#इसे-आज़माएं" class="headerlink" title="इसे आज़माएं!"></a>इसे आज़माएं!</h2><p>आप यहाँ एप्लिकेशन का लाइव संस्करण आज़मा सकते हैं:<br>👉 <strong><a href="https://practice-book-app.web.app/">PDF Ink लाइव ऐप</a></strong></p><hr><h2 id="निष्कर्ष"><a href="#निष्कर्ष" class="headerlink" title="निष्कर्ष"></a>निष्कर्ष</h2><p>सीखने के टूल्स को आपको ज्ञान प्राप्त करने पर ध्यान केंद्रित करने में मदद करनी चाहिए, न कि इंटरफ़ेस से लड़ने में। <strong>PDF Ink</strong> विकसित करने से मुझे पता चला कि कैसे आधुनिक ब्राउज़र API (IndexedDB, PointerEvents, HTML5 Canvas) डेवलपर्स को शक्तिशाली, ऑफलाइन-फर्स्ट टूल बनाने की अनुमति देते हैं जो उपयोगकर्ता डेटा गोपनीयता का सम्मान करते हैं।</p><p>खुशी से सीखें, और ऐसा कोड लिखें जो जीवन को आसान बनाता है!</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/</id>
-    <link href="https://safiullin.dev/2026/07/18/hi/how-i-built-pdf-ink-for-online-learning/"/>
-    <published>2026-07-18T02:27:35.666Z</published>
-    <summary>
-      <![CDATA[<h2 id="जब-आप-PDF-पर-लिख-नहीं-सकते-तो-उन्हें-पढ़ने-का-क्या-फायदा"><a href="#जब-आप-PDF-पर-लिख-नहीं-सकते-तो-उन्हें-पढ़ने-का-क्या-फायदा" class="headerlink" title="जब आप PDF पर लिख नहीं सकते, तो उन्हें पढ़ने का क्या फायदा?"></a>जब आप PDF पर लिख नहीं सकते, तो उन्हें पढ़ने का क्या फायदा?</h2><p>सभी को नमस्कार! मैं अल्बर्ट हूँ, और मुझे टूल्स को अधिक सुविधाजनक बनाना पसंद है।</p>
-<p>यदि आपने कभी स्व-अध्ययन (self-learning) करने का प्रयास किया है, प्रोग्रामिंग पाठ्यपुस्तकों का अध्ययन किया है, या अपने लैपटॉप या टैबलेट पर PDF से जटिल तकनीकी दस्तावेज़ पढ़े हैं, तो आप इस संघर्ष को अच्छी तरह जानते हैं। आप एक किताब खोलते हैं, एक महत्वपूर्ण कोड स्निपेट को हाइलाइट करना चाहते हैं, स्पष्टीकरण के बगल में एक त्वरित आरेख तीर (diagram arrow) बनाना चाहते हैं, या मार्जिन पर एक नोट छोड़ना चाहते हैं — और महसूस करते हैं कि मानक PDF व्यूअर या तो बहुत भारी हैं, पेड (paid) हैं, या यदि आप गलती से टैब को रीफ्रेश कर देते हैं तो आपके चित्र पूरी तरह से गायब हो जाते हैं।</p>
-<p>मैं इसे ठीक करना चाहता था और <strong>PDF Ink</strong> बनाना चाहता था — सीधे ब्राउज़र में PDF पुस्तकों को पढ़ने और उन पर लिखने के लिए एक हल्का, तेज़ वेब एप्लिकेशन।</p>]]>
-    </summary>
-    <title>मैंने PDF पुस्तकों से आरामदायक ऑनलाइन सीखने के लिए PDF Ink कैसे बनाया</title>
-    <updated>2026-07-18T02:27:35.666Z</updated>
   </entry>
 </feed>
