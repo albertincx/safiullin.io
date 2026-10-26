@@ -1,5 +1,7 @@
 https://safiullin.dev/2026/10/26/ru/split-video-file-online/
 https://safiullin.dev/2026/10/26/split-video-file-online/
+https://safiullin.dev/2026/10/26/ru/merge-video-files-online/
+https://safiullin.dev/2026/10/26/merge-video-files-online/
 https://safiullin.dev/2026/10/01/copy-notes-manage-your-notes-fast/
 https://safiullin.dev/2026/07/24/Fast-Client-Side-Image-Optimization-Right-in-Your-Browser/
 https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/
@@ -172,3 +174,5 @@ https://safiullin.dev/tags/split/
 https://safiullin.dev/tags/cut/
 https://safiullin.dev/tags/trim/
 https://safiullin.dev/tags/telegram-bot/
+https://safiullin.dev/tags/join/
+https://safiullin.dev/tags/combine/

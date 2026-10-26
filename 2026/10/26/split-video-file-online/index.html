@@ -52,7 +52,7 @@
 <meta property="og:description" content="Split, trim, and cut your video files instantly right inside your browser — completely client-side with no backend or server uploads required.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-10-26T03:47:26.019Z">
-<meta property="article:modified_time" content="2026-10-26T03:47:26.020Z">
+<meta property="article:modified_time" content="2026-10-26T04:41:48.242Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="cut">
 <meta property="article:tag" content="split">
@@ -103,7 +103,7 @@
   "@type": "BlogPosting",
   "headline": "Split Video Online Instantly without Server",
   "datePublished": "2026-10-26T03:47:26.019Z",
-  "dateModified": "2026-10-26T03:47:26.020Z",
+  "dateModified": "2026-10-26T04:41:48.242Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -164,26 +164,71 @@
       <nav id="sub-nav">
         
         
-        <div id="lang-selector">
-          
-            <a href="/" class="lang-btn active" aria-label="Change language to EN">EN</a>
-          
-            <a href="/ru/" class="lang-btn" aria-label="Change language to RU">RU</a>
-          
-            <a href="/es/" class="lang-btn" aria-label="Change language to ES">ES</a>
-          
-            <a href="/zh-cn/" class="lang-btn" aria-label="Change language to ZH-CN">ZH-CN</a>
-          
-            <a href="/hi/" class="lang-btn" aria-label="Change language to HI">HI</a>
-          
-            <a href="/th/" class="lang-btn" aria-label="Change language to TH">TH</a>
-          
-            <a href="/fr/" class="lang-btn" aria-label="Change language to FR">FR</a>
-          
-            <a href="/pt/" class="lang-btn" aria-label="Change language to PT">PT</a>
-          
-            <a href="/ar/" class="lang-btn" aria-label="Change language to AR">AR</a>
-          
+        <div id="lang-dropdown-wrap" class="lang-dropdown-wrap">
+          <button id="lang-dropdown-btn" class="lang-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="lang-current-code">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-arrow-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="lang-dropdown-menu" class="lang-dropdown-menu">
+            
+              <a href="/" class="lang-dropdown-item active" aria-label="English">
+                <span class="lang-item-code">EN</span>
+                <span class="lang-item-name">English</span>
+                
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                
+              </a>
+            
+              <a href="/ru/" class="lang-dropdown-item" aria-label="Русский">
+                <span class="lang-item-code">RU</span>
+                <span class="lang-item-name">Русский</span>
+                
+              </a>
+            
+              <a href="/es/" class="lang-dropdown-item" aria-label="Español">
+                <span class="lang-item-code">ES</span>
+                <span class="lang-item-name">Español</span>
+                
+              </a>
+            
+              <a href="/zh-cn/" class="lang-dropdown-item" aria-label="中文">
+                <span class="lang-item-code">ZH-CN</span>
+                <span class="lang-item-name">中文</span>
+                
+              </a>
+            
+              <a href="/hi/" class="lang-dropdown-item" aria-label="हिन्दी">
+                <span class="lang-item-code">HI</span>
+                <span class="lang-item-name">हिन्दी</span>
+                
+              </a>
+            
+              <a href="/th/" class="lang-dropdown-item" aria-label="ไทย">
+                <span class="lang-item-code">TH</span>
+                <span class="lang-item-name">ไทย</span>
+                
+              </a>
+            
+              <a href="/fr/" class="lang-dropdown-item" aria-label="Français">
+                <span class="lang-item-code">FR</span>
+                <span class="lang-item-name">Français</span>
+                
+              </a>
+            
+              <a href="/pt/" class="lang-dropdown-item" aria-label="Português">
+                <span class="lang-item-code">PT</span>
+                <span class="lang-item-name">Português</span>
+                
+              </a>
+            
+              <a href="/ar/" class="lang-dropdown-item" aria-label="العربية">
+                <span class="lang-item-code">AR</span>
+                <span class="lang-item-name">العربية</span>
+                
+              </a>
+            
+          </div>
         </div>
         
         
@@ -236,6 +281,9 @@
 <span id="more"></span>
 
 <p>Powered by WebAssembly and FFmpeg, this tool processes files locally on your device in mere seconds. It supports all popular video formats (MP4, WebM, MOV, MKV, and more) and lets you trim single clips, divide long videos into 15s&#x2F;30s&#x2F;60s chunks for WhatsApp, Instagram Stories, TikTok, or YouTube Shorts, or split into equal parts. With zero-transcoding copy mode, your video stream is sliced losslessly at lightning speed without any degradation in quality. Safe, private, and works smoothly on both mobile phones and desktop computers!</p>
+<blockquote>
+<p>💡 Need to merge multiple videos together instead of splitting? Use our client-side <a href="/2026/10/26/merge-video-files-online/">Merge Video Files Online</a> tool.</p>
+</blockquote>
 
 <style>
     .vsplit-container {
@@ -867,6 +915,24 @@
     .vsplit-clip-btn.preview:hover {
         background: #cbd5e1;
     }
+
+    .vsplit-crosslink {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #3b82f6;
+        text-decoration: none;
+        margin-top: 8px;
+        padding: 4px 10px;
+        background: #eff6ff;
+        border-radius: 20px;
+        transition: background 0.15s ease;
+    }
+    .vsplit-crosslink:hover {
+        background: #dbeafe;
+    }
 </style>
 
 <div class="vsplit-container">
@@ -878,6 +944,9 @@
         <p class="vsplit-subtitle">
             Split, cut and trim videos locally without uploading to any server. Fast zero-transcoding stream copy mode.
         </p>
+        <a href="/2026/10/26/merge-video-files-online/" class="vsplit-crosslink">
+            🔗 Looking to merge multiple videos into one? Try Video Merger &rarr;
+        </a>
     </div>
 
     <!-- Engine Status -->
@@ -1181,7 +1250,7 @@
         }
     }
 
-    initFFmpeg();
+    const ffmpegPromise = initFFmpeg();
 
     // Dropzone Events
     dropzone.addEventListener('dragover', (e) => {
@@ -1403,14 +1472,29 @@
             alert('Please choose a video file first.');
             return;
         }
-        if (!ffmpeg || !ffmpeg.loaded) {
-            alert('FFmpeg engine is still initializing. Please wait a moment.');
-            return;
-        }
 
         actionBtn.disabled = true;
         progressWrap.style.display = 'block';
-        progressFill.style.width = '5%';
+
+        if (!ffmpeg || !ffmpeg.loaded) {
+            progressFill.style.width = '10%';
+            progressText.textContent = '⏳ Waiting for FFmpeg engine to finish initializing...';
+            try {
+                await ffmpegPromise;
+            } catch (initErr) {
+                progressText.textContent = '❌ Failed to load FFmpeg engine: ' + (initErr.message || initErr);
+                actionBtn.disabled = false;
+                return;
+            }
+        }
+
+        if (!ffmpeg || !ffmpeg.loaded) {
+            progressText.textContent = '❌ FFmpeg engine is not ready. Please refresh the page.';
+            actionBtn.disabled = false;
+            return;
+        }
+
+        progressFill.style.width = '15%';
         progressText.textContent = 'Reading video file...';
 
         clearGeneratedClips();

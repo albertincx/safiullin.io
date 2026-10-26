@@ -20,6 +20,24 @@
   </url>
   
   <url>
+    <loc>https://safiullin.dev/2026/10/26/ru/merge-video-files-online/</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/2026/10/26/merge-video-files-online/</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://safiullin.dev/2026/10/01/copy-notes-manage-your-notes-fast/</loc>
     
     <lastmod>2026-10-01</lastmod>
@@ -1472,6 +1490,20 @@
   
   <url>
     <loc>https://safiullin.dev/tags/telegram-bot/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/join/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/combine/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
