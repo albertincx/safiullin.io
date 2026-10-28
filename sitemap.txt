@@ -1,3 +1,5 @@
+https://safiullin.dev/2026/10/28/save-text-as-file-online/
+https://safiullin.dev/2026/10/28/ru/save-text-as-file-online/
 https://safiullin.dev/2026/10/27/ru/copy-notes-manage-your-notes-fast/
 https://safiullin.dev/2026/10/27/copy-notes-manage-your-notes-fast/
 https://safiullin.dev/2021/12/27/How-I-made-a-puzzle-game/
@@ -180,3 +182,7 @@ https://safiullin.dev/tags/telegram-bot/
 https://safiullin.dev/tags/notes/
 https://safiullin.dev/tags/notepad/
 https://safiullin.dev/tags/localstorage/
+https://safiullin.dev/tags/code/
+https://safiullin.dev/tags/files/
+https://safiullin.dev/tags/developer/
+https://safiullin.dev/tags/offline/

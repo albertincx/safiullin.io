@@ -10,7 +10,57 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-10-26T14:25:31.412Z</updated>
+  <updated>2026-10-28T03:03:34.174Z</updated>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="productivity" scheme="https://safiullin.dev/tags/productivity/"/>
+    <category term="code" scheme="https://safiullin.dev/tags/code/"/>
+    <category term="files" scheme="https://safiullin.dev/tags/files/"/>
+    <category term="developer" scheme="https://safiullin.dev/tags/developer/"/>
+    <category term="offline" scheme="https://safiullin.dev/tags/offline/"/>
+    <content>
+      <![CDATA[<p>A fast, free, and private online tool to write or paste code, text, markdown, or data and instantly download it as any file type (.txt, .js, .py, .html, .json, .css, and more) with a full local history stored directly in your browser.</p><span id="more"></span><p>Often you need to quickly save a code snippet, API response, configuration snippet, or generated text directly as a file without opening a heavy IDE or creating a project folder. </p><p><strong>Text &amp; Code to File Saver</strong> gives you an instant, distraction-free playground to edit, format, and download files right in your browser:</p><ul><li><strong>Universal File Formats</strong>: Save as <code>.txt</code>, <code>.js</code>, <code>.ts</code>, <code>.html</code>, <code>.css</code>, <code>.py</code>, <code>.json</code>, <code>.csv</code>, <code>.md</code>, <code>.sh</code>, <code>.sql</code>, <code>.yaml</code>, and dozens more with automatic extension handling.</li><li><strong>Built-in IndexedDB History</strong>: Every downloaded file is saved locally in your browser’s private database. You can re-open, inspect, copy, or re-download previous files at any time.</li><li><strong>100% Free &amp; Client-Side</strong>: No accounts, no paywalls, and no uploads to any remote server. Your text and code never leave your computer or phone.</li><li><strong>Developer-Friendly Editor</strong>: Includes Tab indentation support, character&#x2F;line&#x2F;word&#x2F;byte counters, drag-and-drop file loading, and instant <code>Ctrl+S</code> &#x2F; <code>Cmd+S</code> quick save.</li><li><strong>Works Offline</strong>: Once loaded, use it anywhere without an internet connection.</li></ul><p>Type or paste your text below, select your desired file format, and click <strong>Download &amp; Save</strong>!</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/10/28/save-text-as-file-online/</id>
+    <link href="https://safiullin.dev/2026/10/28/save-text-as-file-online/"/>
+    <link href="https://safiullin.dev/images/covers/save-text-as-file-online.jpg" rel="enclosure"/>
+    <published>2026-10-28T10:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>A fast, free, and private online tool to write or paste code, text, markdown, or data and instantly download it as any file type (.txt, .js, .py, .html, .json, .css, and more) with a full local history stored directly in your browser.</p>]]>
+    </summary>
+    <title>
+      <![CDATA[Save Text as File Online – Quick Code & File Saver with History]]>
+    </title>
+    <updated>2026-10-28T03:03:34.174Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="productivity" scheme="https://safiullin.dev/tags/productivity/"/>
+    <category term="code" scheme="https://safiullin.dev/tags/code/"/>
+    <category term="files" scheme="https://safiullin.dev/tags/files/"/>
+    <category term="developer" scheme="https://safiullin.dev/tags/developer/"/>
+    <category term="offline" scheme="https://safiullin.dev/tags/offline/"/>
+    <content>
+      <![CDATA[<p>Быстрый, бесплатный и конфиденциальный онлайн-инструмент для сохранения любого текста или кода в файл нужного формата (.txt, .js, .py, .html, .json, .css и др.) с удобной локальной историей прямо в браузере.</p><span id="more"></span><p>Бывает нужно срочно сохранить фрагмент кода, ответ API, JSON-конфиг или заметку в виде файла на диск без открытия тяжелых IDE и текстовых редакторов.</p><p><strong>Quick Text &amp; Code Saver</strong> предоставляет мгновенную рабочую среду прямо в браузере:</p><ul><li><strong>Любые форматы файлов</strong>: Быстрое скачивание в <code>.txt</code>, <code>.js</code>, <code>.ts</code>, <code>.html</code>, <code>.css</code>, <code>.py</code>, <code>.json</code>, <code>.csv</code>, <code>.md</code>, <code>.sh</code>, <code>.sql</code> и многие другие форматы.</li><li><strong>Встроенная история (IndexedDB)</strong>: Каждый сохраненный файл автоматически записывается в локальную базу данных браузера. Вы можете в любой момент открыть старую запись, скопировать текст или скачать файл повторно.</li><li><strong>100% бесплатно и локально</strong>: Никаких серверов, регистраций или отправки данных по сети. Все операции происходят исключительно на вашем устройстве.</li><li><strong>Удобный редактор кода</strong>: Поддержка клавиши Tab (вставка пробелов), подсчет строк, слов, символов и размера файла, загрузка файлов перетаскиванием (drag &amp; drop) и горячая клавиша <code>Ctrl+S</code> &#x2F; <code>Cmd+S</code>.</li><li><strong>Работает офлайн</strong>: Доступен даже без доступа к интернету.</li></ul><p>Вставьте или напишите текст в поле ниже, выберите расширение и нажмите <strong>«Скачать и сохранить»</strong>!</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/10/28/ru/save-text-as-file-online/</id>
+    <link href="https://safiullin.dev/2026/10/28/ru/save-text-as-file-online/"/>
+    <link href="https://safiullin.dev/images/covers/save-text-as-file-online.jpg" rel="enclosure"/>
+    <published>2026-10-28T10:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>Быстрый, бесплатный и конфиденциальный онлайн-инструмент для сохранения любого текста или кода в файл нужного формата (.txt, .js, .py, .html, .json, .css и др.) с удобной локальной историей прямо в браузере.</p>]]>
+    </summary>
+    <title>Сохранить текст в файл онлайн – Быстрое сохранение кода с историей</title>
+    <updated>2026-10-28T03:03:34.160Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
@@ -394,37 +444,5 @@
     </summary>
     <title>كيف بنيت PDF Ink لتعلم مريح عبر الإنترنت من كتب PDF</title>
     <updated>2026-07-21T12:08:26.870Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<p>في هذه المقالة، سأشارك تجربتي وسير عملي لإنشاء صفحات الويب باستخدام Qwen Coder AI.</p><span id="more"></span><h2 id="مقدمة"><a href="#مقدمة" class="headerlink" title="مقدمة"></a>مقدمة</h2><p>أصبح Qwen Coder AI أداة لا غنى عنها في عملية تطوير الويب الخاصة بي. إنه يساعدني على كتابة الأكواد بشكل أسرع، وتصحيح الأخطاء بكفاءة أكبر، واستكشاف التقنيات الجديدة بثقة.</p><h2 id="سير-عملي"><a href="#سير-عملي" class="headerlink" title="سير عملي"></a>سير عملي</h2><h3 id="1-التخطيط-لبنية-الصفحة"><a href="#1-التخطيط-لبنية-الصفحة" class="headerlink" title="1. التخطيط لبنية الصفحة"></a>1. التخطيط لبنية الصفحة</h3><p>قبل كتابة أي كود، أقوم بتحديد بنية الصفحة:</p><ul><li>الرأس (Header) مع القائمة</li><li>منطقة المحتوى الرئيسية</li><li>الشريط الجانبي (إذا لزم الأمر)</li><li>التذييل (Footer)</li></ul><h3 id="2-توليد-الهيكل-الأساسي-لـ-HTML"><a href="#2-توليد-الهيكل-الأساسي-لـ-HTML" class="headerlink" title="2. توليد الهيكل الأساسي لـ HTML"></a>2. توليد الهيكل الأساسي لـ HTML</h3><p>أطلب من Qwen Coder AI إنشاء هيكل HTML5 نظيف مع العلامات الدلالية المناسبة.</p><h3 id="3-التنسيق-باستخدام-CSS"><a href="#3-التنسيق-باستخدام-CSS" class="headerlink" title="3. التنسيق باستخدام CSS"></a>3. التنسيق باستخدام CSS</h3><p>يساعدني الذكاء الاصطناعي في إنشاء تنسيقات CSS متجاوبة بسرعة. أصف التصميم الذي أريده ويقوم بتوليد كود CSS المناسب.</p><h3 id="4-إضافة-التفاعلية-باستخدام-JavaScript"><a href="#4-إضافة-التفاعلية-باستخدام-JavaScript" class="headerlink" title="4. إضافة التفاعلية باستخدام JavaScript"></a>4. إضافة التفاعلية باستخدام JavaScript</h3><p>بالنسبة للميزات الديناميكية، يساعدني في كتابة دوال جافا سكريبت ومعالجات الأحداث.</p><h2 id="الخلاصة"><a href="#الخلاصة" class="headerlink" title="الخلاصة"></a>الخلاصة</h2><p>لقد غير Qwen Coder AI طريقة تطويري للويب. إنه ليس مجرد مولد أكواد بل شريك تعاوني يزيد من إنتاجيتي ويساعدني في بناء صفحات ويب أفضل.</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/ar/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/ar/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T12:03:52.870Z</published>
-    <summary>
-      <![CDATA[<p>في هذه المقالة، سأشارك تجربتي وسير عملي لإنشاء صفحات الويب باستخدام Qwen Coder AI.</p>]]>
-    </summary>
-    <title>كيف أنشئ صفحات ويب باستخدام Qwen Coder AI</title>
-    <updated>2026-07-23T09:48:55.082Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p><span id="more"></span><h2 id="परिचय"><a href="#परिचय" class="headerlink" title="परिचय"></a>परिचय</h2><p>Qwen Coder AI मेरी वेब विकास प्रक्रिया में एक अमूल्य उपकरण बन गया है। यह मुझे तेज़ी से कोड लिखने, समस्याओं को अधिक कुशलता से डीबग करने और आत्मविश्वास के साथ नई तकनीकों का पता लगाने में मदद करता है।</p><h2 id="मेरा-वर्कफ़्लो"><a href="#मेरा-वर्कफ़्लो" class="headerlink" title="मेरा वर्कफ़्लो"></a>मेरा वर्कफ़्लो</h2><h3 id="1-पेज-संरचना-की-योजना-बनाना"><a href="#1-पेज-संरचना-की-योजना-बनाना" class="headerlink" title="1. पेज संरचना की योजना बनाना"></a>1. पेज संरचना की योजना बनाना</h3><p>कोई भी कोड लिखने से पहले, मैं वेब पेज की संरचना की रूपरेखा तैयार करता हूँ:</p><ul><li>नेविगेशन के साथ हेडर</li><li>मुख्य सामग्री क्षेत्र (Main content area)</li><li>साइडबार (यदि आवश्यक हो)</li><li>फुटर</li></ul><h3 id="2-HTML-स्केलेटन-तैयार-करना"><a href="#2-HTML-स्केलेटन-तैयार-करना" class="headerlink" title="2. HTML स्केलेटन तैयार करना"></a>2. HTML स्केलेटन तैयार करना</h3><p>मैं Qwen Coder AI से उचित सिमेंटिक टैग के साथ एक साफ HTML5 स्केलेटन बनाने के लिए कहता हूँ:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;hi&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>मेरा वेब पेज<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span>...<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span>...<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span>...<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-CSS-के-साथ-स्टाइलिंग"><a href="#3-CSS-के-साथ-स्टाइलिंग" class="headerlink" title="3. CSS के साथ स्टाइलिंग"></a>3. CSS के साथ स्टाइलिंग</h3><p>Qwen Coder AI मुझे प्रतिक्रियाशील (responsive) CSS स्टाइल तेज़ी से बनाने में मदद करता है। मैं अपनी पसंद के डिज़ाइन का वर्णन कर सकता हूँ, और यह उपयुक्त CSS कोड उत्पन्न करता है।</p><h3 id="4-जावास्क्रिप्ट-के-साथ-अन्तरक्रियाशीलता-जोड़ना"><a href="#4-जावास्क्रिप्ट-के-साथ-अन्तरक्रियाशीलता-जोड़ना" class="headerlink" title="4. जावास्क्रिप्ट के साथ अन्तरक्रियाशीलता जोड़ना"></a>4. जावास्क्रिप्ट के साथ अन्तरक्रियाशीलता जोड़ना</h3><p>गतिशील (dynamic) सुविधाओं के लिए, Qwen Coder AI जावास्क्रिप्ट फ़ंक्शंस, इवेंट हैंडलर और DOM हेरफेर कोड लिखने में सहायता करता है।</p><h3 id="5-डीबगिंग-और-अनुकूलन-Optimization"><a href="#5-डीबगिंग-और-अनुकूलन-Optimization" class="headerlink" title="5. डीबगिंग और अनुकूलन (Optimization)"></a>5. डीबगिंग और अनुकूलन (Optimization)</h3><p>जब मुझे बग्स मिलते हैं या प्रदर्शन को अनुकूलित करने की आवश्यकता होती है, तो Qwen Coder AI सुझाव और सुधार प्रदान करता है।</p><h2 id="Qwen-Coder-AI-का-उपयोग-करने-के-लाभ"><a href="#Qwen-Coder-AI-का-उपयोग-करने-के-लाभ" class="headerlink" title="Qwen Coder AI का उपयोग करने के लाभ"></a>Qwen Coder AI का उपयोग करने के लाभ</h2><ul><li><strong>गति</strong>: विकास के समय को काफी कम करता है</li><li><strong>सीखना</strong>: मुझे सर्वोत्तम प्रथाओं और नई तकनीकों को समझने में मदद करता है</li><li><strong>निरंतरता</strong>: सुनिश्चित करता है कि कोड स्थापित पैटर्नों का पालन करता है</li><li><strong>समस्या समाधान</strong>: जटिल समस्याओं का त्वरित समाधान</li></ul><h2 id="निष्कर्ष"><a href="#निष्कर्ष" class="headerlink" title="निष्कर्ष"></a>निष्कर्ष</h2><p>Qwen Coder AI ने वेब विकास के प्रति मेरे दृष्टिकोण को बदल दिया है। यह सिर्फ एक कोड जनरेटर नहीं है—यह एक सहयोगी भागीदार है जो मेरी उत्पादकता को बढ़ाता है और मुझे बेहतर वेब पेज बनाने में मदद करता है।</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/hi/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T02:27:35.666Z</published>
-    <summary>
-      <![CDATA[<p>इस लेख में, मैं Qwen Coder AI का उपयोग करके वेब पेज बनाने के अपने अनुभव और वर्कफ़्लो को साझा करूँगा।</p>]]>
-    </summary>
-    <title>मैं Qwen Coder AI के साथ वेब पेज कैसे बनाता हूँ</title>
-    <updated>2026-07-23T09:49:33.084Z</updated>
   </entry>
 </feed>
