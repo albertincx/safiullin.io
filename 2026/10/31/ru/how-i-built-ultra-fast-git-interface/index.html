@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DPEJ5T23C');
+</script>
+<script>
+  (function() {
+    var adsLoaded = false;
+    function loadAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      window.removeEventListener('scroll', loadAds);
+      window.removeEventListener('mousemove', loadAds);
+      window.removeEventListener('touchstart', loadAds);
+      window.removeEventListener('keydown', loadAds);
+      
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
+    
+    window.addEventListener('scroll', loadAds, { passive: true });
+    window.addEventListener('mousemove', loadAds, { passive: true });
+    window.addEventListener('touchstart', loadAds, { passive: true });
+    window.addEventListener('keydown', loadAds, { passive: true });
+    
+    setTimeout(loadAds, 3000);
+  })();
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>Как я создал супер-быстрый Git-интерфейс в стиле WebStorm...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)Если вы когда-либо писали код в WebStorm, IntelliJ IDEA или PyCharm, то...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился">
+<meta property="og:url" content="https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
+<meta property="og:description" content="Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)Если вы когда-либо писали код в WebStorm, IntelliJ IDEA или PyCharm, то...">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/screenshot.png">
+<meta property="article:published_time" content="2026-10-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-31T12:15:45.318Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="developer-tools">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="macos">
+<meta property="article:tag" content="monaco-editor">
+<meta property="article:tag" content="open-source">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="swift">
+<meta property="article:tag" content="webstorm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/screenshot.png">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1793448954560">
+<link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-cn" href="https://safiullin.dev/zh-cn/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="fr" href="https://safiullin.dev/fr/" />
+
+    <link rel="alternate" hreflang="pt" href="https://safiullin.dev/pt/" />
+
+    <link rel="alternate" hreflang="ar" href="https://safiullin.dev/ar/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился",
+  "datePublished": "2026-10-31T16:00:00.000Z",
+  "dateModified": "2026-10-31T12:15:45.318Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev Videcode. Ai. Life. Tools",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)Если вы когда-либо писали код в WebStorm, IntelliJ IDEA или PyCharm, то..."
+}
+</script>
+
+    
+
+    <meta property="og:image" content="https://safiullin.dev/images/covers/how-i-built-ultra-fast-git-interface.jpg">
+    <meta name="twitter:image" content="https://safiullin.dev/images/covers/how-i-built-ultra-fast-git-interface.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      
+          <h2 id="logo-wrap">
+            <a href="/en/" id="logo">Safiullin.dev</a>
+          </h2>
+      
+
+      
+        <h2 id="subtitle-wrap">
+          <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+          <a class="main-nav-link" href="/en/">Home</a>
+        
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <div id="lang-dropdown-wrap" class="lang-dropdown-wrap">
+          <button id="lang-dropdown-btn" class="lang-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="lang-current-code">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-arrow-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="lang-dropdown-menu" class="lang-dropdown-menu">
+            
+              <a href="/" class="lang-dropdown-item active" aria-label="English">
+                <span class="lang-item-code">EN</span>
+                <span class="lang-item-name">English</span>
+                
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                
+              </a>
+            
+              <a href="/ru/" class="lang-dropdown-item" aria-label="Русский">
+                <span class="lang-item-code">RU</span>
+                <span class="lang-item-name">Русский</span>
+                
+              </a>
+            
+              <a href="/es/" class="lang-dropdown-item" aria-label="Español">
+                <span class="lang-item-code">ES</span>
+                <span class="lang-item-name">Español</span>
+                
+              </a>
+            
+              <a href="/zh-cn/" class="lang-dropdown-item" aria-label="中文">
+                <span class="lang-item-code">ZH-CN</span>
+                <span class="lang-item-name">中文</span>
+                
+              </a>
+            
+              <a href="/hi/" class="lang-dropdown-item" aria-label="हिन्दी">
+                <span class="lang-item-code">HI</span>
+                <span class="lang-item-name">हिन्दी</span>
+                
+              </a>
+            
+              <a href="/th/" class="lang-dropdown-item" aria-label="ไทย">
+                <span class="lang-item-code">TH</span>
+                <span class="lang-item-name">ไทย</span>
+                
+              </a>
+            
+              <a href="/fr/" class="lang-dropdown-item" aria-label="Français">
+                <span class="lang-item-code">FR</span>
+                <span class="lang-item-name">Français</span>
+                
+              </a>
+            
+              <a href="/pt/" class="lang-dropdown-item" aria-label="Português">
+                <span class="lang-item-code">PT</span>
+                <span class="lang-item-name">Português</span>
+                
+              </a>
+            
+              <a href="/ar/" class="lang-dropdown-item" aria-label="العربية">
+                <span class="lang-item-code">AR</span>
+                <span class="lang-item-name">العربية</span>
+                
+              </a>
+            
+          </div>
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
+        
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class=""><article id="post-ru/how-i-built-ultra-fast-git-interface" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/10/31/ru/how-i-built-ultra-fast-git-interface/" class="article-date">
+  <time class="dt-published" datetime="2026-10-31T16:00:00.000Z" itemprop="datePublished">2026-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Непревзойденное-удобство-Git-в-JetBrains-и-какую-цену-мы-за-него-платим"><a href="#Непревзойденное-удобство-Git-в-JetBrains-и-какую-цену-мы-за-него-платим" class="headerlink" title="Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)"></a>Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)</h2><p>Если вы когда-либо писали код в WebStorm, IntelliJ IDEA или PyCharm, то наверняка знаете: в JetBrains создали эталонный, невероятно удобный рабочий процесс для работы с Git.</p>
+<p>Дело не просто в добавлении файлов в индекс — дело в многолетней мышечной памяти:</p>
+<ul>
+<li><strong>Changelists (Списки изменений):</strong> Возможность логически группировать файлы по задачам, отделять эксперименты от срочных хотфиксов и коммитить только нужную часть работы без утомительного <code>git add -p</code>.</li>
+<li><strong>Git Shelf (Локальная полка):</strong> Откладывание незавершенной работы («зашелвить») с понятными описаниями и комментариями, оставляя рабочую директорию чистой и не засоряя анонимными записями <code>git stash</code>.</li>
+<li><strong>Интерактивный Diff-редактор:</strong> Сравнение файлов side-by-side с возможностью прямо в окне диффа редактировать файл рабочей копии и сохранять по <code>Cmd+S</code>, а также откатывать отдельные куски (hunks) одним кликом по стрелке в гаттере (<code>↩</code>).</li>
+<li><strong>Эргономика горячих клавиш:</strong> Перемещение между различиями по <code>F7</code> &#x2F; <code>Shift+F7</code> и моментальный коммит по <code>Cmd+Enter</code>.</li>
+</ul>
+<img src="/2026/10/31/ru/how-i-built-ultra-fast-git-interface/screenshot.png" class="" title="Ultra Git Interface">
+
+<span id="more"></span>
+
+<h3 id="В-чем-проблема-налог-на-тяжеловесность"><a href="#В-чем-проблема-налог-на-тяжеловесность" class="headerlink" title="В чем проблема: налог на тяжеловесность"></a>В чем проблема: налог на тяжеловесность</h3><p>Несмотря на всю любовь к этому воркфлоу, меня постоянно преследовало раздражение. IDE от JetBrains — это огромные комбайны на JVM. Запуск WebStorm только ради того, чтобы посмотреть дифф, зашелвить пару файлов или сделать чистый аккуратный коммит, занимает <strong>от 15 до 30 секунд</strong> и сжирает <strong>1.5–3 ГБ оперативной памяти</strong>.</p>
+<p>Когда я пишу небольшие скрипты в терминале, редактирую конфиги в легких редакторах или переключаюсь между десятком микросервисных репозиториев, открывать полноценную IntelliJ IDEA ради пары кликов в Git — все равно что заводить тяжелый самолет, чтобы просто доехать до соседнего магазина.</p>
+<p>Я перепробовал все популярные альтернативы:</p>
+<ul>
+<li><strong>VS Code:</strong> Встроенная работа с Git лишена полноценных ченджлистов, нет аналога Shelf, а диффы не дают интерактивно откатывать конкретные куски кода удобными маркерами в гаттере.</li>
+<li><strong>GitKraken:</strong> Сделан на Electron. Потребляет <strong>700 МБ–1.2 ГБ RAM</strong>, запускается по 4–6 секунд, а базовые фичи прячет за платной подпиской.</li>
+<li><strong>SourceTree:</strong> Медленный, визуально перегруженный и морально устаревший интерфейс.</li>
+<li><strong>Sublime Merge:</strong> Очень быстрый, но в нем нет концепции ченджлистов, редактирования кода прямо внутри диффа и удобного шелвинга.</li>
+</ul>
+<p>Тогда я задал себе простой вопрос:</p>
+<blockquote>
+<p><em>А можно ли сделать отдельный автономный Git-клиент для macOS, который запускается меньше чем за 150 миллисекунд, потребляет всего ~35 МБ памяти и дает ровно тот самый любимый воркфлоу WebStorm?</em></p>
+</blockquote>
+<p>Так родился проект <strong>ultra Git</strong>. Ниже — подробная история того, как устроена архитектура приложения, какие инженерные грабли встретились на пути и как удалось добиться такой скорости.</p>
+<hr>
+<h2 id="Архитектура-почему-мы-отказались-от-Electron-в-пользу-Swift-WKWebView"><a href="#Архитектура-почему-мы-отказались-от-Electron-в-пользу-Swift-WKWebView" class="headerlink" title="Архитектура: почему мы отказались от Electron в пользу Swift + WKWebView"></a>Архитектура: почему мы отказались от Electron в пользу Swift + WKWebView</h2><p>Когда сегодня разрабатывают кроссплатформенные десктопные инструменты, первым делом берут Electron. Однако у Electron огромная цена: каждое окно тащит с собой целый экземпляр браузера Chromium и процесс Node.js. В итоге установщик весит 200+ МБ, в памяти приложение занимает от 400 МБ, а холодный старт заставляет ждать.</p>
+<p>Чтобы на macOS приложение открывалось мгновенно и не расходовало ресурсы ноутбука, я выбрал гибридную нативную архитектуру:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">┌────────────────────────────────────────────────────────┐</span><br><span class="line">│                   ultra Git (macOS)                    │</span><br><span class="line">│                                                        │</span><br><span class="line">│  ┌──────────────────────────────────────────────────┐  │</span><br><span class="line">│  │  Нативная оболочка на Swift (бинарник 75 КБ)     │  │</span><br><span class="line">│  │  - Окно NSWindow и системный компонент WKWebView │  │</span><br><span class="line">│  │  - Холодный старт: &lt; 150 мс | RAM: ~35 МБ        │  │</span><br><span class="line">│  └─────────────────────────┬────────────────────────┘  │</span><br><span class="line">│                            │ загружает http://localhost│</span><br><span class="line">│  ┌─────────────────────────▼────────────────────────┐  │</span><br><span class="line">│  │  Интерфейс React 18 + TypeScript + Vite          │  │</span><br><span class="line">│  │  - Тема JetBrains Darcula / Dark                 │  │</span><br><span class="line">│  │  - Движки диффов Monaco и CodeMirror 6           │  │</span><br><span class="line">│  │  - Ченджлисты, Полка (Shelf), Вкладки проектов   │  │</span><br><span class="line">│  └─────────────────────────┬────────────────────────┘  │</span><br><span class="line">│                            │ REST / WebSocket          │</span><br><span class="line">│  ┌─────────────────────────▼────────────────────────┐  │</span><br><span class="line">│  │  Локальный микро-сервер Node.js                  │  │</span><br><span class="line">│  │  - Прямое выполнение команд CLI git и файловой   │  │</span><br><span class="line">│  │    системы                                       │  │</span><br><span class="line">│  │  - Ченджлисты: .git/ultra-changelists.json       │  │</span><br><span class="line">│  │  - Полка: .git/ultra-shelf/*.patch               │  │</span><br><span class="line">│  └──────────────────────────────────────────────────┘  │</span><br><span class="line">└────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-Нативный-контейнер-на-Swift-macos-main-swift"><a href="#1-Нативный-контейнер-на-Swift-macos-main-swift" class="headerlink" title="1. Нативный контейнер на Swift (macos/main.swift)"></a>1. Нативный контейнер на Swift (<code>macos/main.swift</code>)</h3><p>Приложение для macOS написано на чистом Swift без сторонних зависимостей:</p>
+<ul>
+<li>Создает нативное окно <code>NSWindow</code> с темным оформлением и аккуратными системными кнопками управления.</li>
+<li>Встраивает компонент Apple <code>WKWebView</code> с аппаратным ускорением графики.</li>
+<li>Автоматически поднимает локальный бэкенд-процесс при старте.</li>
+<li>Скомпилированный бинарник весит всего <strong>75 КБ</strong>, стартует за <strong>менее чем 150 миллисекунд</strong> и потребляет в покое всего <strong>~35 МБ оперативной памяти</strong>.</li>
+</ul>
+<h3 id="2-Локальный-Git-микро-сервер"><a href="#2-Локальный-Git-микро-сервер" class="headerlink" title="2. Локальный Git микро-сервер"></a>2. Локальный Git микро-сервер</h3><p>Вместо использования тяжелых нативных C-библиотек вроде <code>libgit2</code> (которые регулярно вызывают проблемы со сборкой на разных архитектурах процессоров и не учитывают пользовательские конфиги), бэкенд общается напрямую со стандартным системным <code>git</code> CLI:</p>
+<ul>
+<li>Автоматически подхватывает ваш существующий <code>.gitconfig</code>, SSH-ключи, GPG-подписи и алиасы.</li>
+<li>Все операции (стейджинг, диффы, шелв, коммиты) выполняются стандартными проверенными командами Git без скрытых сайд-эффектов.</li>
+</ul>
+<hr>
+<h2 id="Воплощение-возможностей-WebStorm-в-жизнь"><a href="#Воплощение-возможностей-WebStorm-в-жизнь" class="headerlink" title="Воплощение возможностей WebStorm в жизнь"></a>Воплощение возможностей WebStorm в жизнь</h2><h3 id="1-Ченджлисты-осознанный-стейджинг-файлов"><a href="#1-Ченджлисты-осознанный-стейджинг-файлов" class="headerlink" title="1. Ченджлисты: осознанный стейджинг файлов"></a>1. Ченджлисты: осознанный стейджинг файлов</h3><p>В стандартном Git файлы либо не отслеживаются, либо изменены, либо находятся в индексе. JetBrains превратил работу с изменениями в удовольствие с помощью <strong>Changelists</strong> — виртуальных списков файлов, позволяющих разделить текущую работу на независимые части:</p>
+<ul>
+<li><code>Default changelist</code>: активная работа, готовая к ревью и коммиту.</li>
+<li>Пользовательские ченджлисты (например, <code>Рефакторинг авторизации</code>, <code>Временные тесты</code>, <code>Правки в доках</code>).</li>
+</ul>
+<p>В <strong>ultra Git</strong> ченджлисты сохраняются в файле <code>.git/ultra-changelists.json</code>. Любой измененный файл можно перетащить мышкой (drag &amp; drop) в другой список или переместить через контекстное меню.</p>
+<p>При нажатии <code>Cmd+Enter</code> ultra Git берет только выбранные галочками файлы конкретного ченджлиста, аккуратно индексирует их и создает коммит.</p>
+<h3 id="2-Локальная-полка-JetBrains-Shelf"><a href="#2-Локальная-полка-JetBrains-Shelf" class="headerlink" title="2. Локальная полка (JetBrains Shelf)"></a>2. Локальная полка (JetBrains Shelf)</h3><p>В отличие от <code>git stash</code>, который работает как слепой стек по всему репозиторию сразу, функция Shelve позволяет:</p>
+<ol>
+<li>Выбрать конкретные файлы или целый ченджлист.</li>
+<li>Задать понятное текстовое описание.</li>
+<li>Сохранить их на диск в виде отдельного патча.</li>
+<li>В любой момент просмотреть дифф отложенных изменений прямо в интерфейсе.</li>
+<li>Вернуть изменения обратно в рабочую копию (Unshelve) в один клик (с возможностью опции <em>Keep in shelf</em>, чтобы сохранить патч для повторного применения).</li>
+</ol>
+<p>В ultra Git все шелвы лежат в папке <code>.git/ultra-shelf/</code> в виде чистых <code>.patch</code> файлов с метаданными в JSON. Они изолированы, не засоряют историю <code>git reflog</code> и не конфликтуют с удаленными ветками.</p>
+<h3 id="3-Вкладки-проектов-и-история-недавних-репозиториев"><a href="#3-Вкладки-проектов-и-история-недавних-репозиториев" class="headerlink" title="3. Вкладки проектов и история недавних репозиториев"></a>3. Вкладки проектов и история недавних репозиториев</h3><p>Разработчики редко сидят в одном репозитории. В верхней панели ultra Git встроены вкладки с переключением за 0 миллисекунд:</p>
+<ul>
+<li>Параллельное открытие нескольких проектов.</li>
+<li>Быстрый доступ к 10 последним открытым репозиториям.</li>
+<li>Дерево файлов с ленивой подгрузкой, которое мгновенно открывает даже огромные монорепозитории с десятками тысяч файлов.</li>
+</ul>
+<hr>
+<h2 id="Редактор-диффов-технические-вызовы-и-решения"><a href="#Редактор-диффов-технические-вызовы-и-решения" class="headerlink" title="Редактор диффов: технические вызовы и решения"></a>Редактор диффов: технические вызовы и решения</h2><p>Сердце любого Git-клиента — это просмотр диффов. Создание по-настоящему удобного редактора изменений оказалось самой интересной инженерной задачей проекта.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">      Оригинал (HEAD)                Модифицированный (Рабочая копия)</span><br><span class="line">┌─────────────────────────────┬───────────────────────────────────┐</span><br><span class="line">│ 12  const port = 3000;      │ 12  const port = 8080;  [↩]       │</span><br><span class="line">│ 13  const host = &quot;0.0.0.0&quot;; │ 13  const host = &quot;0.0.0.0&quot;;       │</span><br><span class="line">│                             │ 14  const debug = true; [↩]       │</span><br><span class="line">└─────────────────────────────┴───────────────────────────────────┘</span><br><span class="line">                                ▲</span><br><span class="line">                    Редактируемая область</span><br><span class="line">                  (Cmd+S сохраняет на диск)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Вызов-1-Баг-виртуализации-отступов-в-CodeMirror-6"><a href="#Вызов-1-Баг-виртуализации-отступов-в-CodeMirror-6" class="headerlink" title="Вызов 1: Баг виртуализации отступов в CodeMirror 6"></a>Вызов 1: Баг виртуализации отступов в CodeMirror 6</h3><p>Первая версия редактора была построена на <strong>CodeMirror 6</strong> с кастомными расширениями <code>ViewPlugin</code> для отрисовки стрелок отката (<code>↩</code>) в колонке номеров строк (гаттере).</p>
+<p>Здесь мы натолкнулись на неприятную особенность: CodeMirror 6 агрессивно виртуализирует DOM-узлы за пределами экрана. При выравнивании параллельных панелей диффа с разным количеством строк движок вставляет пустые спейсеры (spacer elements). При быстрой прокрутке больших файлов (на 2000+ строк) расчет высоты спейсеров сбивался, и правая колонка внезапно становилась пустой серой областью!</p>
+<p><strong>Решение:</strong> Мы переписали расчет координат высоты строк, стабилизировали спейсеры через проекцию абсолютных координат и добавили автоматическое центрирование скролла на первом изменившемся блоке при открытии любого файла.</p>
+<h3 id="Вызов-2-Полностью-автономный-офлайн-запуск-Monaco-Editor"><a href="#Вызов-2-Полностью-автономный-офлайн-запуск-Monaco-Editor" class="headerlink" title="Вызов 2: Полностью автономный офлайн-запуск Monaco Editor"></a>Вызов 2: Полностью автономный офлайн-запуск Monaco Editor</h3><p>Многие разработчики привыкли к движку <strong>Monaco Editor</strong> (на котором работает VS Code) за его подсветку синтаксиса, миникарту и работу с мультикурсорами.</p>
+<p>Однако библиотека <code>@monaco-editor/react</code> по умолчанию загружает ресурсы Monaco из публичных CDN. Для локального инструмента разработчика недопустимо зависеть от подключения к интернету.</p>
+<p>Мы полностью собрали Monaco локально через Vite. Чтобы веб-воркер сборщика корректно отрабатывал без сетевых запросов, мы настроили инстанцирование воркера через нативный синтаксис ES URL:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Конфигурация локального офлайн веб-воркера Monaco</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">MonacoEnvironment</span> = &#123;</span><br><span class="line">  <span class="title function_">getWorker</span>(<span class="params"><span class="attr">_</span>: <span class="built_in">any</span>, <span class="attr">label</span>: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Worker</span>(</span><br><span class="line">      <span class="keyword">new</span> <span class="title function_">URL</span>(<span class="string">&#x27;../../../node_modules/monaco-editor/esm/vs/editor/editor.worker.js&#x27;</span>, <span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">url</span>),</span><br><span class="line">      &#123; <span class="attr">type</span>: <span class="string">&#x27;module&#x27;</span> &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Вызов-3-Коллизия-URI-моделей-и-баг-«0-различий»"><a href="#Вызов-3-Коллизия-URI-моделей-и-баг-«0-различий»" class="headerlink" title="Вызов 3: Коллизия URI моделей и баг «0 различий»"></a>Вызов 3: Коллизия URI моделей и баг «0 различий»</h3><p>После первого подключения <code>DiffEditor</code> из Monaco проявился коварный баг: файлы с очевидными изменениями отображали <strong>«0 diffs»</strong>, а обе панели показывали либо пустой текст, либо одинаковый контент.</p>
+<p>Изучение исходников Monaco показало причину: редактор кэширует модели глобально по их URI. При переключении между файлами обертка <code>@monaco-editor/react</code> повторно использовала анонимный URI по умолчанию (<code>inmemory://model/1</code>). Monaco считал, что модель не поменялась, и отдавал старую кэшированную пустую модель!</p>
+<p>Мы решили проблему явной изоляцией URI для каждого открываемого файла:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> originalUri = monaco.<span class="property">Uri</span>.<span class="title function_">parse</span>(<span class="string">`inmemory://diff/<span class="subst">$&#123;safeFilePath&#125;</span>/original`</span>);</span><br><span class="line"><span class="keyword">const</span> modifiedUri = monaco.<span class="property">Uri</span>.<span class="title function_">parse</span>(<span class="string">`inmemory://diff/<span class="subst">$&#123;safeFilePath&#125;</span>/modified`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> originalModel = monaco.<span class="property">editor</span>.<span class="title function_">getModel</span>(originalUri) </span><br><span class="line">  || monaco.<span class="property">editor</span>.<span class="title function_">createModel</span>(originalContent, language, originalUri);</span><br><span class="line"><span class="keyword">let</span> modifiedModel = monaco.<span class="property">editor</span>.<span class="title function_">getModel</span>(modifiedUri) </span><br><span class="line">  || monaco.<span class="property">editor</span>.<span class="title function_">createModel</span>(modifiedContent, language, modifiedUri);</span><br><span class="line"></span><br><span class="line">diffEditor.<span class="title function_">setModel</span>(&#123; <span class="attr">original</span>: originalModel, <span class="attr">modified</span>: modifiedModel &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>После этого расчет диффов заработал со 100% стабильностью: появился мгновенный подсчет измененных блоков через <code>Chunk.build</code> и удобная навигация по клавишам <code>F7</code> и <code>Shift+F7</code>.</p>
+<h3 id="Вызов-4-Синхронизированный-поиск-по-коду-Cmd-F"><a href="#Вызов-4-Синхронизированный-поиск-по-коду-Cmd-F" class="headerlink" title="Вызов 4: Синхронизированный поиск по коду (Cmd+F)"></a>Вызов 4: Синхронизированный поиск по коду (<code>Cmd+F</code>)</h3><p>Стандартный браузерный поиск не видит текст внутри виртуализированных строк редактора. Мы реализовали кастомную строку поиска поверх редактора:</p>
+<ul>
+<li>Поиск ведется одновременно по обоим буферам: и в оригинальном (HEAD), и в модифицированном.</li>
+<li>Показывается общий счетчик совпадений (например, <code>3 из 14</code>).</li>
+<li>Кнопки «Вперед» и «Назад» плавно скроллят нужный редактор и подсвечивают найденные строки.</li>
+</ul>
+<hr>
+<h2 id="Сравнение-производительности-в-цифрах"><a href="#Сравнение-производительности-в-цифрах" class="headerlink" title="Сравнение производительности в цифрах"></a>Сравнение производительности в цифрах</h2><p>Вот как ultra Git показывает себя в реальной повседневной работе на MacBook с Apple Silicon (M-серия):</p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>WebStorm Git</th>
+<th>GitKraken</th>
+<th>VS Code Git</th>
+<th>ultra Git</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Холодный старт</strong></td>
+<td>~18.5 сек</td>
+<td>~4.2 сек</td>
+<td>~2.8 сек</td>
+<td><strong>&lt; 0.18 сек (180 мс)</strong></td>
+</tr>
+<tr>
+<td><strong>Память в покое (RAM)</strong></td>
+<td>~2100 МБ</td>
+<td>~780 МБ</td>
+<td>~450 МБ</td>
+<td><strong>~35 МБ</strong></td>
+</tr>
+<tr>
+<td><strong>Размер нативного бинарника</strong></td>
+<td>~1.4 ГБ</td>
+<td>~280 МБ</td>
+<td>~310 МБ</td>
+<td><strong>75 КБ (Swift)</strong></td>
+</tr>
+<tr>
+<td><strong>Редактирование прямо в диффе</strong></td>
+<td>✅ Да</td>
+<td>❌ Нет</td>
+<td>⚠️ Частично</td>
+<td><strong>✅ Да (<code>Cmd+S</code>)</strong></td>
+</tr>
+<tr>
+<td><strong>Откат отдельных кусков в гаттере</strong></td>
+<td>✅ Да</td>
+<td>❌ Нет</td>
+<td>❌ Нет</td>
+<td><strong>✅ Да (<code>↩</code>)</strong></td>
+</tr>
+<tr>
+<td><strong>Полноценный Git Shelf</strong></td>
+<td>✅ Да</td>
+<td>❌ Нет</td>
+<td>❌ Нет</td>
+<td><strong>✅ Да</strong></td>
+</tr>
+<tr>
+<td><strong>Поддержка Changelists</strong></td>
+<td>✅ Да</td>
+<td>❌ Нет</td>
+<td>❌ Нет</td>
+<td><strong>✅ Да</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Что-дальше-и-как-поучаствовать-🤝"><a href="#Что-дальше-и-как-поучаствовать-🤝" class="headerlink" title="Что дальше и как поучаствовать 🤝"></a>Что дальше и как поучаствовать 🤝</h2><p>Разработка <strong>ultra Git</strong> доказала: современный веб-стек в сочетании с нативными системными возможностями операционной системы не обязан быть прожорливым монстром. При грамотном подходе можно получить визуальное богатство современных редакторов кода со скоростью нативного C- или Swift-софта.</p>
+<p>Проект полностью открыт и разрабатывается с прицелом на чистоту и модульность архитектуры. В планах:</p>
+<ul>
+<li><input disabled="" type="checkbox"> Визуальный граф коммитов и история веток (Git Log)</li>
+<li><input disabled="" type="checkbox"> Окно произвольного сравнения файлов с ветками и ревизиями</li>
+<li><input disabled="" type="checkbox"> Интерактивное разрешение 3-way конфликтов при слиянии (Merge Conflicts)</li>
+<li><input disabled="" type="checkbox"> Переключатель тем оформления (Светлая JetBrains Light, классическая Darcula, Catppuccin)</li>
+</ul>
+<p>Если вы цените быстрые и отзывчивые инструменты для разработчиков — заходите в репозиторий, пробуйте на своих проектах и присылайте Pull Request!</p>
+
+
+      
+    </div>
+    <footer class="article-footer" data-c="NaN">
+      <a data-url="https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/" data-id="cuidl7qiAccGP7P3ntk6VpwWC" data-title="Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/open-source/" rel="tag">open-source</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/git/" rel="tag">git</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/developer-tools/" rel="tag">developer-tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/macos/" rel="tag">macos</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/swift/" rel="tag">swift</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/react/" rel="tag">react</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/webstorm/" rel="tag">webstorm</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/performance/" rel="tag">performance</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/monaco-editor/" rel="tag">monaco-editor</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/10/31/how-i-built-ultra-fast-git-interface/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          How I Built an Ultra-Fast WebStorm-Style Git GUI from Scratch
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/10/28/save-text-as-file-online/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Save Text as File Online – Quick Code &amp; File Saver with History</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</section>
+        
+          
+    <aside id="sidebar">
+        
+            
+
+        
+            
+
+        
+            
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      
+      
+        <a href="/ru/tags/games/" style="font-size: 10.00px;">games</a>
+      
+        <a href="/ru/tags/web-app/" style="font-size: 20.00px;">web app</a>
+      
+        <a href="/ru/tags/bot/" style="font-size: 16.00px;">bot</a>
+      
+        <a href="/ru/tags/mobile/" style="font-size: 10.00px;">mobile</a>
+      
+        <a href="/ru/tags/viewport/" style="font-size: 10.00px;">viewport</a>
+      
+        <a href="/ru/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
+      
+        <a href="/ru/tags/routes/" style="font-size: 10.00px;">routes</a>
+      
+        <a href="/ru/tags/location/" style="font-size: 10.00px;">location</a>
+      
+        <a href="/ru/tags/open-source/" style="font-size: 14.00px;">open-source</a>
+      
+        <a href="/ru/tags/python/" style="font-size: 10.00px;">python</a>
+      
+        <a href="/ru/tags/resume/" style="font-size: 10.00px;">resume</a>
+      
+        <a href="/ru/tags/ai/" style="font-size: 12.00px;">ai</a>
+      
+        <a href="/ru/tags/pdf/" style="font-size: 10.00px;">pdf</a>
+      
+        <a href="/ru/tags/education/" style="font-size: 10.00px;">education</a>
+      
+        <a href="/ru/tags/project/" style="font-size: 12.00px;">project</a>
+      
+        <a href="/ru/tags/game/" style="font-size: 10.00px;">game</a>
+      
+        <a href="/ru/tags/tools/" style="font-size: 18.00px;">tools</a>
+      
+        <a href="/ru/tags/productivity/" style="font-size: 14.00px;">productivity</a>
+      
+        <a href="/ru/tags/telegram-bot/" style="font-size: 12.00px;">telegram-bot</a>
+      
+        <a href="/ru/tags/reading/" style="font-size: 12.00px;">reading</a>
+      
+        <a href="/ru/tags/learning/" style="font-size: 10.00px;">learning</a>
+      
+        <a href="/ru/tags/language/" style="font-size: 10.00px;">language</a>
+      
+        <a href="/ru/tags/pwa/" style="font-size: 10.00px;">pwa</a>
+      
+        <a href="/ru/tags/video/" style="font-size: 12.00px;">video</a>
+      
+        <a href="/ru/tags/useful/" style="font-size: 16.00px;">useful</a>
+      
+        <a href="/ru/tags/merge/" style="font-size: 10.00px;">merge</a>
+      
+        <a href="/ru/tags/join/" style="font-size: 10.00px;">join</a>
+      
+        <a href="/ru/tags/combine/" style="font-size: 10.00px;">combine</a>
+      
+        <a href="/ru/tags/api/" style="font-size: 10.00px;">api</a>
+      
+        <a href="/ru/tags/manager/" style="font-size: 10.00px;">manager</a>
+      
+        <a href="/ru/tags/rest/" style="font-size: 10.00px;">rest</a>
+      
+        <a href="/ru/tags/get/" style="font-size: 10.00px;">get</a>
+      
+        <a href="/ru/tags/post/" style="font-size: 10.00px;">post</a>
+      
+        <a href="/ru/tags/split/" style="font-size: 10.00px;">split</a>
+      
+        <a href="/ru/tags/cut/" style="font-size: 10.00px;">cut</a>
+      
+        <a href="/ru/tags/trim/" style="font-size: 10.00px;">trim</a>
+      
+        <a href="/ru/tags/notes/" style="font-size: 10.00px;">notes</a>
+      
+        <a href="/ru/tags/notepad/" style="font-size: 10.00px;">notepad</a>
+      
+        <a href="/ru/tags/localstorage/" style="font-size: 10.00px;">localstorage</a>
+      
+        <a href="/ru/tags/code/" style="font-size: 10.00px;">code</a>
+      
+        <a href="/ru/tags/files/" style="font-size: 10.00px;">files</a>
+      
+        <a href="/ru/tags/developer/" style="font-size: 10.00px;">developer</a>
+      
+        <a href="/ru/tags/offline/" style="font-size: 10.00px;">offline</a>
+      
+        <a href="/ru/tags/git/" style="font-size: 10.00px;">git</a>
+      
+        <a href="/ru/tags/developer-tools/" style="font-size: 10.00px;">developer-tools</a>
+      
+        <a href="/ru/tags/macos/" style="font-size: 10.00px;">macos</a>
+      
+        <a href="/ru/tags/swift/" style="font-size: 10.00px;">swift</a>
+      
+        <a href="/ru/tags/react/" style="font-size: 10.00px;">react</a>
+      
+        <a href="/ru/tags/webstorm/" style="font-size: 10.00px;">webstorm</a>
+      
+        <a href="/ru/tags/performance/" style="font-size: 10.00px;">performance</a>
+      
+        <a href="/ru/tags/monaco-editor/" style="font-size: 10.00px;">monaco-editor</a>
+      
+    </div>
+  </div>
+
+        
+            
+
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2021/12/">December 2021</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2023/06/">June 2023</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2023/12/">December 2023</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2026/07/">July 2026</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2026/03/">March 2026</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2021/06/">June 2021</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2025/01/">January 2025</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2026/10/">October 2026</a>
+            
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/ru/archives/2025/12/">December 2025</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+        
+            
+
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/27/ru/How-I-made-a-puzzle-game/">Как я создавал игру-головоломку</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/11/ru/How-to-make-any-site-mobile/">Как сделать любой сайт мобильным?</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/27/ru/How-to-Reduce-Traffic-Congestion/">Как уменьшить автомобильные пробки</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/15/ru/how-i-built-a-live-web-editor-for-rendercv/">Как я создал веб-редактор реального времени для RenderCV с помощью Gemini</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/18/ru/how-i-built-pdf-ink-for-online-learning/">Как я создал PDF Ink для комфортного онлайн-обучения по книгам в формате PDF</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+        
+    </aside>
+
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<nav id="mobile-nav">
+  
+    <a href="/en/" class="mobile-nav-link">Home</a>
+  
+    <a href="/en/archives" class="mobile-nav-link">Archives</a>
+  
+  
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0 10px; padding: 15px 20px 5px; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Languages</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 20px 20px;">
+      
+        <a href="/" class="mobile-lang-btn active" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(255,255,255,0.22); border-radius: 4px; text-decoration: none;">EN</a>
+      
+        <a href="/ru/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">RU</a>
+      
+        <a href="/es/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ES</a>
+      
+        <a href="/zh-cn/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ZH-CN</a>
+      
+        <a href="/hi/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">HI</a>
+      
+        <a href="/th/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">TH</a>
+      
+        <a href="/fr/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">FR</a>
+      
+        <a href="/pt/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">PT</a>
+      
+        <a href="/ar/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">AR</a>
+      
+    </div>
+  
+</nav>
+    <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    
+  
+<script src="/js/lightbox.js"></script>
+
+
+
+<script src="/js/script.js?v=1793448954560"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

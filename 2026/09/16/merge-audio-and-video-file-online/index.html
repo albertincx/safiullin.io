@@ -42,17 +42,17 @@
 
 
 
-    <title>Merge Audio and video online to Mp4 | Safiullin.dev Videc...</title>
+    <title>Merge Audio and Video Online to MP4 – Fast Client-Side Mu...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Extract audio from your videos instantly, right inside your browser — completely client-side with no backend or server uploads required.">
+<meta name="description" content="Combine any video with a separate audio track into a single MP4 file instantly, right inside your browser — completely client-side with zero backend...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Merge Audio and video online to Mp4">
+<meta property="og:title" content="Merge Audio and Video Online to MP4 – Fast Client-Side Muxer">
 <meta property="og:url" content="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/">
 <meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
-<meta property="og:description" content="Extract audio from your videos instantly, right inside your browser — completely client-side with no backend or server uploads required.">
+<meta property="og:description" content="Combine any video with a separate audio track into a single MP4 file instantly, right inside your browser — completely client-side with zero backend...">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-09-16T08:27:18.724Z">
-<meta property="article:modified_time" content="2026-10-26T11:53:04.739Z">
+<meta property="article:modified_time" content="2026-10-31T11:50:57.937Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="audio">
 <meta property="article:tag" content="merge">
@@ -67,7 +67,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1793160690930">
+<link rel="stylesheet" href="/css/style.css?v=1793448954560">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -100,9 +100,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Merge Audio and video online to Mp4",
+  "headline": "Merge Audio and Video Online to MP4 – Fast Client-Side Muxer",
   "datePublished": "2026-09-16T08:27:18.724Z",
-  "dateModified": "2026-10-26T11:53:04.739Z",
+  "dateModified": "2026-10-31T11:50:57.937Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -115,7 +115,7 @@
       "url": "https://safiullin.dev/logo.png"
     }
   },
-  "description": "Extract audio from your videos instantly, right inside your browser — completely client-side with no backend or server uploads required."
+  "description": "Combine any video with a separate audio track into a single MP4 file instantly, right inside your browser — completely client-side with zero backend..."
 }
 </script>
 
@@ -269,7 +269,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Merge Audio and video online to Mp4
+      Merge Audio and Video Online to MP4 – Fast Client-Side Muxer
     </h1>
   
 
@@ -278,184 +278,1019 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Extract audio from your videos instantly, right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p>
+        <p>Combine any video with a separate audio track into a single MP4 file instantly, right inside your browser — completely client-side with <strong>zero backend or server uploads required</strong>.</p>
 <span id="more"></span>
 
-<p>Powered by WebAssembly and FFmpeg, it processes files locally on your device in mere seconds. It supports a wide variety of video formats (MP4, WebM, MOV, and more) and lets you extract the pure audio track without any quality loss or transcoding delays. Safe, private, and lightning-fast!</p>
-
+<p>Often you have a clean video recording without sound (or with background noise) and a separate high-quality voiceover, music track, or podcast audio that you need to merge into a single MP4 video file. Opening a heavy video editor just to replace or attach an audio track is slow and often forces hours of video re-encoding, ruining the original visual quality.</p>
+<p><strong>Instant Audio &amp; Video Muxer</strong> solves this by performing stream-copy multiplexing directly on your computer or phone using WebAssembly and FFmpeg:</p>
+<ul>
+<li><strong>Zero Video Re-encoding (Lossless &amp; Blazing Fast)</strong>: The video stream is copied bit-for-bit directly into the new MP4 container in milliseconds. There is zero compression degradation and zero quality loss.</li>
+<li><strong>Automatic MP3 to M4A (AAC) Conversion</strong>: MP4 video containers standardly require AAC audio (<code>.m4a</code>) for smooth, universal playback. If you upload an <code>.mp3</code> audio track, the tool automatically detects it and suggests converting it on-the-fly to high-quality M4A (AAC 192 kbps) right on the frontend before muxing. You can also download the converted <code>.m4a</code> file independently!</li>
+<li><strong>100% Client-Side &amp; Private</strong>: Your videos and audio files are never uploaded to any remote server or cloud. All processing happens entirely inside your local browser memory via FFmpeg WASM.</li>
+<li><strong>Supports Popular Media Formats</strong>: Works seamlessly with MP4, MOV, WebM, and MKV video files, and M4A, AAC, MP3, WAV, and OGG audio tracks.</li>
+<li><strong>Instant Preview &amp; Download</strong>: Watch your combined video right in the browser player and download it with a single click.</li>
+</ul>
+<p>Choose your video and audio track below to merge them instantly!</p>
 
 <style>
-    .card {
-        background: #fff;
+    .amux-container {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
         padding: 24px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin: 20px auto 35px;
+        max-width: 820px;
+        box-sizing: border-box;
+        color: #1e293b;
     }
-    .input-group {
+
+    @media (min-width: 640px) {
+        .amux-container {
+            padding: 28px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .amux-container {
+            margin: 10px 0 20px 0;
+            max-width: 100%;
+            width: 100%;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            padding: 14px 10px;
+        }
+    }
+
+    .amux-header {
+        text-align: center;
+        margin-bottom: 22px;
+    }
+
+    .amux-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 6px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .amux-subtitle {
+        font-size: 14px;
+        color: #64748b;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .amux-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 20px;
+        background: #ecfdf5;
+        color: #059669;
+        vertical-align: middle;
+        border: 1px solid #a7f3d0;
+    }
+
+    /* Engine Status */
+    .amux-engine-status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 13px;
+        margin-bottom: 20px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease;
+    }
+
+    .amux-engine-status.ready {
+        background: #f0fdf4;
+        border-color: #bbf7d0;
+        color: #166534;
+    }
+
+    .amux-engine-status.error {
+        background: #fef2f2;
+        border-color: #fecaca;
+        color: #991b1b;
+    }
+
+    .amux-engine-status.working {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+        color: #1e40af;
+    }
+
+    .amux-engine-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .amux-status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #94a3b8;
+        display: inline-block;
+    }
+
+    .amux-engine-status.ready .amux-status-dot {
+        background: #22c55e;
+        box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+    }
+
+    .amux-engine-status.working .amux-status-dot {
+        background: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        animation: amuxPulse 1.5s infinite;
+    }
+
+    @keyframes amuxPulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    /* Grid for Inputs */
+    .amux-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
         margin-bottom: 20px;
     }
-    label {
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 500;
+
+    @media (min-width: 640px) {
+        .amux-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .amux-card-slot {
+        background: #f8fafc;
+        border: 2px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        transition: all 0.2s ease;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 150px;
+    }
+
+    .amux-card-slot.dragover {
+        border-color: #3b82f6;
+        background: #eff6ff;
+    }
+
+    .amux-card-slot.loaded {
+        border-style: solid;
+        border-color: #cbd5e1;
+        background: #ffffff;
+    }
+
+    .amux-slot-icon {
+        width: 38px;
+        height: 38px;
+        margin: 0 auto 8px;
+        border-radius: 10px;
+        background: #e2e8f0;
+        color: #475569;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .amux-card-slot.loaded .amux-slot-icon {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .amux-slot-title {
         font-size: 14px;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 4px;
     }
-    input[type="file"] {
-        width: 100%;
+
+    .amux-slot-desc {
+        font-size: 12px;
+        color: #64748b;
+        margin-bottom: 12px;
     }
-    button {
-        background: #34c759;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        width: 100%;
-    }
-    button:disabled {
-        background: #ccc;
-        cursor: not-allowed;
-    }
-    #status {
-        margin-top: 15px;
-        font-size: 14px;
-        color: #666;
-        white-space: pre-wrap;
-    }
-    a {
+
+    .amux-file-btn {
         display: inline-block;
-        margin-top: 15px;
-        color: #007aff;
-        text-decoration: none;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 13px;
         font-weight: 500;
+        color: #334155;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .amux-file-btn:hover {
+        background: #f1f5f9;
+        border-color: #94a3b8;
+    }
+
+    .amux-file-info {
+        margin-top: 10px;
+        padding: 8px 12px;
+        background: #f1f5f9;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        text-align: left;
+    }
+
+    .amux-file-info-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    .amux-file-info-size {
+        color: #64748b;
+        flex-shrink: 0;
+        font-size: 11px;
+    }
+
+    /* MP3 Conversion Suggestion Card */
+    .amux-mp3-banner {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 20px;
+        display: none;
+        animation: amuxFadeIn 0.25s ease;
+    }
+
+    .amux-mp3-banner.show {
+        display: block;
+    }
+
+    @keyframes amuxFadeIn {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .amux-mp3-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .amux-mp3-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: #fef3c7;
+        color: #d97706;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .amux-mp3-title {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #92400e;
+        margin: 0 0 4px 0;
+    }
+
+    .amux-mp3-text {
+        font-size: 13px;
+        color: #78350f;
+        margin: 0;
+        line-height: 1.45;
+    }
+
+    .amux-mp3-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+    }
+
+    .amux-convert-btn {
+        background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 2px 8px rgba(180, 83, 9, 0.25);
+        transition: all 0.15s ease;
+    }
+
+    .amux-convert-btn:hover {
+        background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+        transform: translateY(-1px);
+    }
+
+    .amux-convert-btn:disabled {
+        background: #cbd5e1;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .amux-secondary-btn {
+        background: #fef3c7;
+        color: #92400e;
+        border: 1px solid #fde68a;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+
+    .amux-secondary-btn:hover {
+        background: #fde68a;
+    }
+
+    /* M4A Converted Success State */
+    .amux-converted-pill {
+        display: none;
+        margin-top: 10px;
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 12.5px;
+        color: #065f46;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .amux-converted-pill.show {
+        display: flex;
+    }
+
+    .amux-download-m4a-btn {
+        background: #ffffff;
+        border: 1px solid #6ee7b7;
+        color: #047857;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 11.5px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .amux-download-m4a-btn:hover {
+        background: #d1fae5;
+    }
+
+    /* Primary Action Button */
+    .amux-mux-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: #ffffff;
+        border: none;
+        padding: 14px 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        transition: all 0.15s ease;
+    }
+
+    .amux-mux-btn:hover:not(:disabled) {
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+    }
+
+    .amux-mux-btn:disabled {
+        background: #e2e8f0;
+        color: #94a3b8;
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+    }
+
+    /* Progress & Output */
+    .amux-progress-container {
+        display: none;
+        margin-top: 18px;
+        text-align: center;
+    }
+
+    .amux-progress-bar-bg {
+        width: 100%;
+        height: 6px;
+        background: #e2e8f0;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 8px;
+    }
+
+    .amux-progress-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #3b82f6, #10b981);
+        border-radius: 4px;
+        transition: width 0.2s ease;
+    }
+
+    .amux-progress-text {
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    /* Output Card */
+    .amux-output-card {
+        display: none;
+        margin-top: 24px;
+        padding: 18px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        text-align: center;
+        animation: amuxFadeIn 0.3s ease;
+    }
+
+    .amux-output-card.show {
+        display: block;
+    }
+
+    .amux-output-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+    }
+
+    .amux-preview-video {
+        width: 100%;
+        max-height: 380px;
+        border-radius: 8px;
+        background: #000;
+        margin-bottom: 14px;
+    }
+
+    .amux-download-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        color: #ffffff;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        transition: all 0.15s ease;
+    }
+
+    .amux-download-btn:hover {
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        color: #ffffff;
+        text-decoration: none;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+
+    .amux-meta-tag {
+        font-size: 11px;
+        color: #64748b;
+        margin-top: 8px;
     }
 </style>
 
-
-<div class="card">
-    <h2>Instant Muxer (Zero Transcoding / Copy Mode)</h2>
-
-    <div class="input-group">
-        <label for="videoInput">Select Video (*):</label>
-        <input type="file" id="videoInput" accept="video/*" disabled>
+<div class="amux-container">
+    <div class="amux-header">
+        <h2 class="amux-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="2" y1="7" x2="7" y2="7"></line>
+                <line x1="2" y1="17" x2="7" y2="17"></line>
+                <line x1="17" y1="17" x2="22" y2="17"></line>
+                <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+            Instant Audio & Video Muxer
+            <span class="amux-badge">Zero Re-encoding</span>
+        </h2>
+        <p class="amux-subtitle">Combine separate video and audio streams into a single MP4 file instantly right inside your browser.</p>
     </div>
 
-    <div class="input-group">
-        <label for="audioInput">Select Audio Track (M4A / AAC):</label>
-        <input type="file" id="audioInput" accept="audio/*" disabled>
+    <!-- Engine Status -->
+    <div id="amuxEngineStatus" class="amux-engine-status">
+        <div class="amux-engine-indicator">
+            <span class="amux-status-dot"></span>
+            <span id="amuxEngineMsg">Initializing WebAssembly engine...</span>
+        </div>
+        <span id="amuxEngineBadge" style="font-size: 11px; font-weight: 600; opacity: 0.7;">FFmpeg WASM</span>
     </div>
 
-    <button id="muxBtn" disabled>Mux Instantly (Zero Re-encoding)</button>
-    <div id="status">Initializing engine...</div>
-    <br>
-    <a id="downloadLink" style="display: none;">Download Combined Video</a>
+    <!-- Selection Grid -->
+    <div class="amux-grid">
+        <!-- Video Slot -->
+        <div class="amux-card-slot" id="amuxVideoSlot">
+            <div class="amux-slot-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+            </div>
+            <div class="amux-slot-title">1. Select Video File</div>
+            <div class="amux-slot-desc">MP4, MOV, WebM, or MKV</div>
+            <label class="amux-file-btn" for="amuxVideoInput">
+                Choose Video
+                <input type="file" id="amuxVideoInput" accept="video/*,.mp4,.mov,.webm,.mkv" style="display:none;" disabled>
+            </label>
+            <div id="amuxVideoInfo" class="amux-file-info" style="display: none;">
+                <span class="amux-file-info-text" id="amuxVideoName">-</span>
+                <span class="amux-file-info-size" id="amuxVideoSize">-</span>
+            </div>
+        </div>
+
+        <!-- Audio Slot -->
+        <div class="amux-card-slot" id="amuxAudioSlot">
+            <div class="amux-slot-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+            </div>
+            <div class="amux-slot-title">2. Select Audio Track</div>
+            <div class="amux-slot-desc">M4A, AAC, or MP3</div>
+            <label class="amux-file-btn" for="amuxAudioInput">
+                Choose Audio
+                <input type="file" id="amuxAudioInput" accept="audio/*,.m4a,.aac,.mp3,.wav,.ogg" style="display:none;" disabled>
+            </label>
+            <div id="amuxAudioInfo" class="amux-file-info" style="display: none;">
+                <span class="amux-file-info-text" id="amuxAudioName">-</span>
+                <span class="amux-file-info-size" id="amuxAudioSize">-</span>
+            </div>
+
+            <!-- Converted M4A Pill -->
+            <div id="amuxConvertedPill" class="amux-converted-pill">
+                <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                    ✓ Converted to M4A: <strong id="amuxConvertedName">track.m4a</strong>
+                </span>
+                <a id="amuxDownloadM4aBtn" class="amux-download-m4a-btn" title="Download converted M4A track" download="audio.m4a">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Save .m4a
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MP3 Conversion Suggestion Banner -->
+    <div id="amuxMp3Banner" class="amux-mp3-banner">
+        <div class="amux-mp3-header">
+            <div class="amux-mp3-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </div>
+            <div>
+                <div class="amux-mp3-title">MP3 Audio Detected — Convert to M4A for Best Results?</div>
+                <p class="amux-mp3-text">
+                    MP4 video containers use <strong>M4A / AAC</strong> audio streams. Converting your MP3 to M4A in advance enables <strong>instant zero-reencoding muxing</strong> (< 1 second) and guarantees smooth audio playback on Apple, Android, Windows, and all modern browsers.
+                </p>
+                <div class="amux-mp3-actions">
+                    <button id="amuxConvertMp3Btn" class="amux-convert-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        Convert MP3 to M4A now (Client-Side)
+                    </button>
+                    <button id="amuxKeepMp3Btn" class="amux-secondary-btn">
+                        Keep MP3 as-is
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mux Action Button -->
+    <button id="amuxMuxBtn" class="amux-mux-btn" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20"></path>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        Mux Video & Audio (Zero Re-encoding)
+    </button>
+
+    <!-- Progress Container -->
+    <div id="amuxProgressContainer" class="amux-progress-container">
+        <div class="amux-progress-bar-bg">
+            <div id="amuxProgressBar" class="amux-progress-bar-fill"></div>
+        </div>
+        <div id="amuxProgressText" class="amux-progress-text">Processing...</div>
+    </div>
+
+    <!-- Output Section -->
+    <div id="amuxOutputCard" class="amux-output-card">
+        <div class="amux-output-title">✓ Video & Audio Successfully Combined!</div>
+        <video id="amuxPreviewVideo" class="amux-preview-video" controls playsinline></video>
+        <div>
+            <a id="amuxDownloadBtn" class="amux-download-btn" href="#" download="combined_video.mp4">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Combined MP4
+            </a>
+            <div id="amuxOutputMeta" class="amux-meta-tag">Fast lossless stream copy • 0% quality loss</div>
+        </div>
+    </div>
 </div>
 
 <script>
-    const { FFmpeg } = FFmpegWASM;
-    const { fetchFile, toBlobURL } = FFmpegUtil;
-
-    const videoInput = document.getElementById('videoInput');
-    const audioInput = document.getElementById('audioInput');
-    const muxBtn = document.getElementById('muxBtn');
-    const status = document.getElementById('status');
-    const downloadLink = document.getElementById('downloadLink');
-
+(function() {
     let ffmpeg = null;
     let videoFile = null;
     let audioFile = null;
+    let originalAudioFile = null;
+    let isMp3Converted = false;
 
+    // Elements
+    const engineStatus = document.getElementById('amuxEngineStatus');
+    const engineMsg = document.getElementById('amuxEngineMsg');
+    const videoInput = document.getElementById('amuxVideoInput');
+    const audioInput = document.getElementById('amuxAudioInput');
+    const videoSlot = document.getElementById('amuxVideoSlot');
+    const audioSlot = document.getElementById('amuxAudioSlot');
+    const videoInfo = document.getElementById('amuxVideoInfo');
+    const audioInfo = document.getElementById('amuxAudioInfo');
+    const videoName = document.getElementById('amuxVideoName');
+    const videoSize = document.getElementById('amuxVideoSize');
+    const audioName = document.getElementById('amuxAudioName');
+    const audioSize = document.getElementById('amuxAudioSize');
+    const mp3Banner = document.getElementById('amuxMp3Banner');
+    const convertMp3Btn = document.getElementById('amuxConvertMp3Btn');
+    const keepMp3Btn = document.getElementById('amuxKeepMp3Btn');
+    const convertedPill = document.getElementById('amuxConvertedPill');
+    const convertedName = document.getElementById('amuxConvertedName');
+    const downloadM4aBtn = document.getElementById('amuxDownloadM4aBtn');
+    const muxBtn = document.getElementById('amuxMuxBtn');
+    const progressContainer = document.getElementById('amuxProgressContainer');
+    const progressBar = document.getElementById('amuxProgressBar');
+    const progressText = document.getElementById('amuxProgressText');
+    const outputCard = document.getElementById('amuxOutputCard');
+    const previewVideo = document.getElementById('amuxPreviewVideo');
+    const downloadBtn = document.getElementById('amuxDownloadBtn');
+    const outputMeta = document.getElementById('amuxOutputMeta');
+
+    function formatBytes(bytes) {
+        if (!bytes || bytes === 0) return '0 B';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    function isMp3(file) {
+        if (!file) return false;
+        const name = file.name.toLowerCase();
+        const type = (file.type || '').toLowerCase();
+        return name.endsWith('.mp3') || type === 'audio/mpeg' || type === 'audio/mp3';
+    }
+
+    function checkReady() {
+        if (videoFile && audioFile && ffmpeg) {
+            muxBtn.disabled = false;
+        } else {
+            muxBtn.disabled = true;
+        }
+    }
+
+    // Initialize FFmpeg WASM
     async function initFFmpeg() {
         try {
+            if (typeof FFmpegWASM === 'undefined' || typeof FFmpegUtil === 'undefined') {
+                throw new Error('FFmpeg script was not loaded. Please check your network.');
+            }
+
+            const { FFmpeg } = FFmpegWASM;
+            const { toBlobURL } = FFmpegUtil;
+
             ffmpeg = new FFmpeg();
-
             ffmpeg.on('log', ({ message }) => {
-                console.log(message);
+                console.log('[FFmpeg Muxer]', message);
             });
 
-            const baseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
+            let loaded = false;
+            try {
+                const coreURL = await toBlobURL('/ffmpeg-core.js', 'text/javascript');
+                const wasmURL = await toBlobURL('/ffmpeg-core.wasm', 'application/wasm');
+                await ffmpeg.load({ coreURL, wasmURL });
+                loaded = true;
+            } catch (localErr) {
+                console.warn('Local ffmpeg loading failed, falling back to CDN...', localErr);
+            }
 
-            await ffmpeg.load({
-                coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
-                wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-            });
+            if (!loaded) {
+                const baseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
+                await ffmpeg.load({
+                    coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+                    wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+                });
+            }
 
-            status.textContent = 'Engine ready. Choose video and audio files.';
+            engineStatus.className = 'amux-engine-status ready';
+            engineMsg.textContent = '⚡ Engine ready. Select video & audio to mux locally.';
             videoInput.disabled = false;
             audioInput.disabled = false;
+            checkReady();
         } catch (err) {
-            console.error(err);
-            status.textContent = 'Failed to load the engine. Check your internet connection.';
+            console.error('Failed to init FFmpeg:', err);
+            engineStatus.className = 'amux-engine-status error';
+            engineMsg.textContent = 'Failed to load engine. Please refresh or check connection.';
         }
     }
 
     initFFmpeg();
 
-    function checkReady() {
-        if (videoFile && audioFile && ffmpeg) {
-            muxBtn.disabled = false;
-        }
+    // Drag and drop handlers
+    function setupDragDrop(slot, input, onFile) {
+        slot.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            slot.classList.add('dragover');
+        });
+        slot.addEventListener('dragleave', () => {
+            slot.classList.remove('dragover');
+        });
+        slot.addEventListener('drop', (e) => {
+            e.preventDefault();
+            slot.classList.remove('dragover');
+            if (e.dataTransfer.files && e.dataTransfer.files.length) {
+                onFile(e.dataTransfer.files[0]);
+            }
+        });
+    }
+
+    // Video Selection
+    function handleVideoFile(file) {
+        if (!file) return;
+        videoFile = file;
+        videoSlot.classList.add('loaded');
+        videoInfo.style.display = 'flex';
+        videoName.textContent = file.name;
+        videoSize.textContent = formatBytes(file.size);
+        checkReady();
     }
 
     videoInput.addEventListener('change', (e) => {
-        videoFile = e.target.files[0];
-        if (videoFile) checkReady();
+        if (e.target.files && e.target.files.length) {
+            handleVideoFile(e.target.files[0]);
+        }
     });
+    setupDragDrop(videoSlot, videoInput, handleVideoFile);
+
+    // Audio Selection & MP3 Detection
+    function handleAudioFile(file) {
+        if (!file) return;
+        originalAudioFile = file;
+        audioFile = file;
+        isMp3Converted = false;
+        convertedPill.classList.remove('show');
+
+        audioSlot.classList.add('loaded');
+        audioInfo.style.display = 'flex';
+        audioName.textContent = file.name;
+        audioSize.textContent = formatBytes(file.size);
+
+        if (isMp3(file)) {
+            // Suggest conversion to M4A
+            mp3Banner.classList.add('show');
+        } else {
+            mp3Banner.classList.remove('show');
+        }
+
+        checkReady();
+    }
 
     audioInput.addEventListener('change', (e) => {
-        audioFile = e.target.files[0];
-        if (audioFile) checkReady();
+        if (e.target.files && e.target.files.length) {
+            handleAudioFile(e.target.files[0]);
+        }
+    });
+    setupDragDrop(audioSlot, audioInput, handleAudioFile);
+
+    // Dismiss / Keep MP3 as-is
+    keepMp3Btn.addEventListener('click', () => {
+        mp3Banner.classList.remove('show');
+        checkReady();
     });
 
+    // Convert MP3 to M4A on frontend
+    convertMp3Btn.addEventListener('click', async () => {
+        if (!originalAudioFile || !ffmpeg) return;
+
+        convertMp3Btn.disabled = true;
+        keepMp3Btn.disabled = true;
+        const origBtnText = convertMp3Btn.innerHTML;
+        convertMp3Btn.innerHTML = `
+            <svg class="amux-spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+                <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+            </svg>
+            Converting to M4A (AAC)...
+        `;
+
+        try {
+            const { fetchFile } = FFmpegUtil;
+            const inputMp3Name = 'input_convert_' + Date.now() + '.mp3';
+            const outputM4aName = 'output_convert_' + Date.now() + '.m4a';
+
+            await ffmpeg.writeFile(inputMp3Name, await fetchFile(originalAudioFile));
+
+            // Transcode MP3 to standard AAC in M4A container (192 kbps stereo)
+            await ffmpeg.exec([
+                '-i', inputMp3Name,
+                '-c:a', 'aac',
+                '-b:a', '192k',
+                outputM4aName
+            ]);
+
+            const m4aData = await ffmpeg.readFile(outputM4aName);
+            const m4aBlob = new Blob([m4aData.buffer], { type: 'audio/mp4' });
+            const m4aFileName = originalAudioFile.name.replace(/\.[^/.]+$/, "") + ".m4a";
+            const convertedFileObj = new File([m4aBlob], m4aFileName, { type: 'audio/mp4' });
+
+            // Cleanup temp files in wasm filesystem
+            try {
+                await ffmpeg.deleteFile(inputMp3Name);
+                await ffmpeg.deleteFile(outputM4aName);
+            } catch (cleanErr) {}
+
+            // Assign converted file as active audio
+            audioFile = convertedFileObj;
+            isMp3Converted = true;
+
+            // Update UI
+            mp3Banner.classList.remove('show');
+            audioName.textContent = m4aFileName;
+            audioSize.textContent = formatBytes(convertedFileObj.size);
+
+            convertedName.textContent = m4aFileName;
+            const downloadUrl = URL.createObjectURL(m4aBlob);
+            downloadM4aBtn.href = downloadUrl;
+            downloadM4aBtn.download = m4aFileName;
+            convertedPill.classList.add('show');
+
+            engineMsg.textContent = `✓ MP3 converted to M4A (${formatBytes(convertedFileObj.size)}). Ready to mux instantly!`;
+            checkReady();
+        } catch (err) {
+            console.error('MP3 to M4A conversion error:', err);
+            alert('Failed to convert MP3 to M4A: ' + (err.message || err));
+        } finally {
+            convertMp3Btn.disabled = false;
+            keepMp3Btn.disabled = false;
+            convertMp3Btn.innerHTML = origBtnText;
+        }
+    });
+
+    // Mux Execution
     muxBtn.addEventListener('click', async () => {
         if (!videoFile || !audioFile || !ffmpeg) return;
 
         muxBtn.disabled = true;
-        downloadLink.style.display = 'none';
-        status.textContent = 'Muxing streams instantly...';
+        outputCard.classList.remove('show');
+        progressContainer.style.display = 'block';
+        progressBar.style.width = '20%';
+        progressText.textContent = 'Reading media files into memory...';
+        engineStatus.className = 'amux-engine-status working';
+        engineMsg.textContent = 'Muxing video and audio tracks...';
 
         try {
-            const inputVideoName = 'input_video.mp4';
-            const inputAudioName = 'input_audio.m4a';
-            const outputName = 'output.mp4';
+            const { fetchFile } = FFmpegUtil;
+            const extVideo = (videoFile.name.split('.').pop() || 'mp4').toLowerCase();
+            const inputVideoName = `in_video_${Date.now()}.${extVideo}`;
+            
+            const extAudio = (audioFile.name.split('.').pop() || 'm4a').toLowerCase();
+            const inputAudioName = `in_audio_${Date.now()}.${extAudio}`;
+            const outputVideoName = `out_merged_${Date.now()}.mp4`;
 
             await ffmpeg.writeFile(inputVideoName, await fetchFile(videoFile));
-            await ffmpeg.writeFile(inputAudioName, await fetchFile(audioFile));
+            progressBar.style.width = '45%';
+            progressText.textContent = 'Writing audio stream...';
 
-            // МАГИЯ: `-c:a copy` копирует аудиопоток без перекодирования (занимает доли секунды)
+            await ffmpeg.writeFile(inputAudioName, await fetchFile(audioFile));
+            progressBar.style.width = '65%';
+            progressText.textContent = 'Muxing streams...';
+
+            // Determine audio parameters:
+            // If already M4A / AAC or converted: use zero-transcoding direct stream copy `-c:a copy`
+            // If unconverted MP3/WAV: encode audio to AAC `-c:a aac -b:a 192k` so MP4 container succeeds
+            const isCopyAudio = isMp3Converted || extAudio === 'm4a' || extAudio === 'aac';
+            const audioArgs = isCopyAudio ? ['-c:a', 'copy'] : ['-c:a', 'aac', '-b:a', '192k'];
+
             await ffmpeg.exec([
                 '-i', inputVideoName,
                 '-i', inputAudioName,
                 '-c:v', 'copy',
-                '-c:a', 'copy',
+                ...audioArgs,
+                '-map', '0:v:0',
+                '-map', '1:a:0',
                 '-shortest',
-                outputName
+                outputVideoName
             ]);
 
-            const data = await ffmpeg.readFile(outputName);
-            const videoBlob = new Blob([data.buffer], { type: 'video/mp4' });
-            const url = URL.createObjectURL(videoBlob);
+            progressBar.style.width = '90%';
+            progressText.textContent = 'Generating final MP4 video...';
 
-            downloadLink.href = url;
-            downloadLink.download = `combined_${videoFile.name}`;
-            downloadLink.style.display = 'block';
-            downloadLink.textContent = `Download ${downloadLink.download}`;
+            const outData = await ffmpeg.readFile(outputVideoName);
+            const outputBlob = new Blob([outData.buffer], { type: 'video/mp4' });
+            const outputUrl = URL.createObjectURL(outputBlob);
 
-            status.textContent = 'Done! Files combined instantly without re-encoding.';
+            // Clean up files in wasm memory
+            try {
+                await ffmpeg.deleteFile(inputVideoName);
+                await ffmpeg.deleteFile(inputAudioName);
+                await ffmpeg.deleteFile(outputVideoName);
+            } catch (cErr) {}
+
+            progressBar.style.width = '100%';
+            progressText.textContent = 'Complete!';
+
+            // Setup preview and download
+            previewVideo.src = outputUrl;
+            const combinedFileName = `combined_${videoFile.name.replace(/\.[^/.]+$/, "")}.mp4`;
+            downloadBtn.href = outputUrl;
+            downloadBtn.download = combinedFileName;
+            outputMeta.textContent = `${combinedFileName} • ${formatBytes(outputBlob.size)} • ${isCopyAudio ? 'Instant Lossless Stream Copy' : 'Video stream copied, audio encoded to AAC'}`;
+
+            outputCard.classList.add('show');
+            engineStatus.className = 'amux-engine-status ready';
+            engineMsg.textContent = '✓ Done! Video and audio combined successfully.';
         } catch (err) {
-            console.error(err);
-            status.textContent = 'Error: Make sure the audio format is compatible (e.g. AAC inside M4A).';
+            console.error('Muxing error:', err);
+            engineStatus.className = 'amux-engine-status error';
+            engineMsg.textContent = 'Error during muxing: ' + (err.message || 'Make sure formats are compatible.');
+            alert('Muxing error: ' + (err.message || 'Unknown error occurred.'));
         } finally {
             muxBtn.disabled = false;
+            setTimeout(() => {
+                progressContainer.style.display = 'none';
+            }, 1200);
         }
     });
+})();
 </script>
 
       
     </div>
     <footer class="article-footer" data-c="falseaudio-merge.html">
-      <a data-url="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/" data-id="cuidrR6SJh0H1peOWS8XGUM2m" data-title="Merge Audio and video online to Mp4" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/" data-id="cuidrR6SJh0H1peOWS8XGUM2m" data-title="Merge Audio and Video Online to MP4 – Fast Client-Side Muxer" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -569,7 +1404,7 @@
 
 
 
-<script src="/js/script.js?v=1793160690930"></script>
+<script src="/js/script.js?v=1793448954560"></script>
 
 
 

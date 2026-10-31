@@ -1,3 +1,6 @@
+https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/
+https://safiullin.dev/2026/10/31/how-i-built-ultra-fast-git-interface/
+https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/
 https://safiullin.dev/2026/10/28/save-text-as-file-online/
 https://safiullin.dev/2026/10/28/ru/save-text-as-file-online/
 https://safiullin.dev/2026/10/27/ru/copy-notes-manage-your-notes-fast/
@@ -8,7 +11,6 @@ https://safiullin.dev/2026/10/26/merge-video-files-online/
 https://safiullin.dev/2026/10/26/split-video-file-online/
 https://safiullin.dev/2025/12/21/restapi-get-post-manager/
 https://safiullin.dev/2021/06/20/instant-chat-bot/
-https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/
 https://safiullin.dev/2021/06/20/language-by-subtitles/
 https://safiullin.dev/2026/07/04/i-built-resume-builder/
 https://safiullin.dev/2026/07/04/how-i-create-web-pages-with-qwen-coder-ai/
@@ -186,3 +188,11 @@ https://safiullin.dev/tags/code/
 https://safiullin.dev/tags/files/
 https://safiullin.dev/tags/developer/
 https://safiullin.dev/tags/offline/
+https://safiullin.dev/tags/git/
+https://safiullin.dev/tags/developer-tools/
+https://safiullin.dev/tags/macos/
+https://safiullin.dev/tags/swift/
+https://safiullin.dev/tags/react/
+https://safiullin.dev/tags/webstorm/
+https://safiullin.dev/tags/performance/
+https://safiullin.dev/tags/monaco-editor/

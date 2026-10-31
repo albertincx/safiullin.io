@@ -65,7 +65,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1793160690930">
+<link rel="stylesheet" href="/css/style.css?v=1793448954560">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -237,6 +237,96 @@
 
       <div class="outer">
         <section id="main" class="">
+  
+    <article id="post-ru/how-i-built-ultra-fast-git-interface" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/10/31/ru/how-i-built-ultra-fast-git-interface/" class="article-date">
+  <time class="dt-published" datetime="2026-10-31T16:00:00.000Z" itemprop="datePublished">2026-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="p-name article-title" href="/2026/10/31/ru/how-i-built-ultra-fast-git-interface/">Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился</a>
+    </h2>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Непревзойденное-удобство-Git-в-JetBrains-и-какую-цену-мы-за-него-платим"><a href="#Непревзойденное-удобство-Git-в-JetBrains-и-какую-цену-мы-за-него-платим" class="headerlink" title="Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)"></a>Непревзойденное удобство Git в JetBrains (и какую цену мы за него платим)</h2><p>Если вы когда-либо писали код в WebStorm, IntelliJ IDEA или PyCharm, то наверняка знаете: в JetBrains создали эталонный, невероятно удобный рабочий процесс для работы с Git.</p>
+<p>Дело не просто в добавлении файлов в индекс — дело в многолетней мышечной памяти:</p>
+<ul>
+<li><strong>Changelists (Списки изменений):</strong> Возможность логически группировать файлы по задачам, отделять эксперименты от срочных хотфиксов и коммитить только нужную часть работы без утомительного <code>git add -p</code>.</li>
+<li><strong>Git Shelf (Локальная полка):</strong> Откладывание незавершенной работы («зашелвить») с понятными описаниями и комментариями, оставляя рабочую директорию чистой и не засоряя анонимными записями <code>git stash</code>.</li>
+<li><strong>Интерактивный Diff-редактор:</strong> Сравнение файлов side-by-side с возможностью прямо в окне диффа редактировать файл рабочей копии и сохранять по <code>Cmd+S</code>, а также откатывать отдельные куски (hunks) одним кликом по стрелке в гаттере (<code>↩</code>).</li>
+<li><strong>Эргономика горячих клавиш:</strong> Перемещение между различиями по <code>F7</code> &#x2F; <code>Shift+F7</code> и моментальный коммит по <code>Cmd+Enter</code>.</li>
+</ul>
+<img src="/2026/10/31/ru/how-i-built-ultra-fast-git-interface/screenshot.png" class="" title="Ultra Git Interface">
+        
+          <p class="article-more-link">
+            <a href="/2026/10/31/ru/how-i-built-ultra-fast-git-interface/#more" aria-label="Read More: Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer" data-c="NaN">
+      <a data-url="https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/" data-id="cuidl7qiAccGP7P3ntk6VpwWC" data-title="Как я создал супер-быстрый Git-интерфейс в стиле WebStorm и зачем он мне понадобился" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Поделиться</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/open-source/" rel="tag">open-source</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/git/" rel="tag">git</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/developer-tools/" rel="tag">developer-tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/macos/" rel="tag">macos</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/swift/" rel="tag">swift</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/react/" rel="tag">react</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/webstorm/" rel="tag">webstorm</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/performance/" rel="tag">performance</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/monaco-editor/" rel="tag">monaco-editor</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+</article>
+
   
     <article id="post-ru/save-text-as-file-online" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -815,77 +905,6 @@
 </article>
 
   
-    <article id="post-ru/restapi-get-post-manager" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/21/ru/restapi-get-post-manager/" class="article-date">
-  <time class="dt-published" datetime="2025-12-21T00:00:00.000Z" itemprop="datePublished">2025-12-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/21/ru/restapi-get-post-manager/">Менеджер запросов REST API GET POST<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
-    </h2>
-  
-
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Этот проект предоставляет простое решение для управления GET- и POST-запросами к REST API.</p>
-<h2 id="Обзор-проекта"><a href="#Обзор-проекта" class="headerlink" title="Обзор проекта"></a>Обзор проекта</h2><p>REST API GET POST Manager — это утилита, призванная упростить отправку GET- и POST-запросов к REST API. Она предлагает простой в использовании интерфейс для разработчиков, взаимодействующих с сервисами RESTful.</p>
-        
-          <p class="article-more-link">
-            <a href="/2025/12/21/ru/restapi-get-post-manager/#more" aria-label="Read More: Менеджер запросов REST API GET POST">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer" data-c="NaN">
-      <a data-url="https://safiullin.dev/2025/12/21/ru/restapi-get-post-manager/" data-id="cuidDgEBRcU9_FFmPV_Zu_znQ" data-title="Менеджер запросов REST API GET POST" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Поделиться</a>
-      
-      
-  
-  <ul class="article-tag-list" itemprop="keywords">
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/project/" rel="tag">project</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/api/" rel="tag">api</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/manager/" rel="tag">manager</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/rest/" rel="tag">rest</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/get/" rel="tag">get</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/post/" rel="tag">post</a>
-      </li>
-    
-  </ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -927,7 +946,7 @@
       
         <a href="/ru/tags/location/" style="font-size: 10.00px;">location</a>
       
-        <a href="/ru/tags/open-source/" style="font-size: 12.00px;">open-source</a>
+        <a href="/ru/tags/open-source/" style="font-size: 14.00px;">open-source</a>
       
         <a href="/ru/tags/python/" style="font-size: 10.00px;">python</a>
       
@@ -996,6 +1015,22 @@
         <a href="/ru/tags/developer/" style="font-size: 10.00px;">developer</a>
       
         <a href="/ru/tags/offline/" style="font-size: 10.00px;">offline</a>
+      
+        <a href="/ru/tags/git/" style="font-size: 10.00px;">git</a>
+      
+        <a href="/ru/tags/developer-tools/" style="font-size: 10.00px;">developer-tools</a>
+      
+        <a href="/ru/tags/macos/" style="font-size: 10.00px;">macos</a>
+      
+        <a href="/ru/tags/swift/" style="font-size: 10.00px;">swift</a>
+      
+        <a href="/ru/tags/react/" style="font-size: 10.00px;">react</a>
+      
+        <a href="/ru/tags/webstorm/" style="font-size: 10.00px;">webstorm</a>
+      
+        <a href="/ru/tags/performance/" style="font-size: 10.00px;">performance</a>
+      
+        <a href="/ru/tags/monaco-editor/" style="font-size: 10.00px;">monaco-editor</a>
       
     </div>
   </div>
@@ -1153,7 +1188,7 @@
 
 
 
-<script src="/js/script.js?v=1793160690930"></script>
+<script src="/js/script.js?v=1793448954560"></script>
 
 
 
