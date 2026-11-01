@@ -67,7 +67,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1793513556107">
+<link rel="stylesheet" href="/css/style.css?v=1793515275071">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -456,6 +456,32 @@
 
     let ffmpeg = null;
     let selectedFile = null;
+    let ffmpegLogs = [];
+    let currentStatusPrefix = '';
+    let totalDurationSec = 0;
+
+    function updateProgress(percent) {
+        if (!currentStatusPrefix) return;
+        const clamped = Math.min(100, Math.max(0, Math.round(percent)));
+        status.textContent = `${currentStatusPrefix}... ${clamped}%`;
+    }
+
+    function getVideoDuration(file) {
+        return new Promise((resolve) => {
+            const v = document.createElement('video');
+            v.preload = 'metadata';
+            const url = URL.createObjectURL(file);
+            v.onloadedmetadata = () => {
+                URL.revokeObjectURL(url);
+                resolve(v.duration || 0);
+            };
+            v.onerror = () => {
+                URL.revokeObjectURL(url);
+                resolve(0);
+            };
+            v.src = url;
+        });
+    }
 
     async function initFFmpeg() {
         loader.hidden = false;
@@ -464,6 +490,33 @@
 
             ffmpeg.on('log', ({ message }) => {
                 console.log(message);
+                ffmpegLogs.push(message);
+
+                const durMatch = message.match(/Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/);
+                if (durMatch) {
+                    totalDurationSec = parseInt(durMatch[1], 10) * 3600 + parseInt(durMatch[2], 10) * 60 + parseFloat(durMatch[3]);
+                }
+
+                if (currentStatusPrefix && totalDurationSec > 0) {
+                    const timeMatch = message.match(/time=(\d+):(\d+):(\d+(?:\.\d+)?)/);
+                    if (timeMatch) {
+                        const curSec = parseInt(timeMatch[1], 10) * 3600 + parseInt(timeMatch[2], 10) * 60 + parseFloat(timeMatch[3]);
+                        updateProgress((curSec / totalDurationSec) * 100);
+                    }
+                }
+            });
+
+            ffmpeg.on('progress', ({ progress, time }) => {
+                if (!currentStatusPrefix) return;
+                if (typeof progress === 'number' && progress >= 0) {
+                    if (progress <= 1) {
+                        updateProgress(progress * 100);
+                    } else if (progress <= 1.05) {
+                        updateProgress(100);
+                    }
+                } else if (typeof time === 'number' && time > 0 && totalDurationSec > 0) {
+                    updateProgress((time / 1000000 / totalDurationSec) * 100);
+                }
             });
 
             // const baseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
@@ -494,6 +547,57 @@
         }
     });
 
+    async function decodeViaWebAudio(file, outputName) {
+        status.textContent = 'Decoding audio track via browser media engine...';
+        const arrayBuffer = await file.arrayBuffer();
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioCtx();
+        let audioBuffer;
+        try {
+            audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+        } finally {
+            if (audioCtx.close) {
+                await audioCtx.close().catch(() => {});
+            }
+        }
+
+        const numChannels = Math.min(audioBuffer.numberOfChannels || 1, 2);
+        const length = audioBuffer.length;
+        const sampleRate = audioBuffer.sampleRate;
+        const pcmData = new Float32Array(length * numChannels);
+
+        if (numChannels === 1) {
+            pcmData.set(audioBuffer.getChannelData(0));
+        } else {
+            const ch0 = audioBuffer.getChannelData(0);
+            const ch1 = audioBuffer.getChannelData(1);
+            for (let i = 0; i < length; i++) {
+                pcmData[i * 2] = ch0[i];
+                pcmData[i * 2 + 1] = ch1[i];
+            }
+        }
+
+        const pcmFile = 'decoded.pcm';
+        try {
+            await ffmpeg.writeFile(pcmFile, new Uint8Array(pcmData.buffer));
+            totalDurationSec = audioBuffer.duration || (length / sampleRate);
+            currentStatusPrefix = 'Converting audio track to M4A';
+            updateProgress(0);
+            try { await ffmpeg.deleteFile(outputName); } catch {}
+            return await ffmpeg.exec([
+                '-f', 'f32le',
+                '-ar', String(sampleRate),
+                '-ac', String(numChannels),
+                '-i', pcmFile,
+                '-c:a', 'aac',
+                '-b:a', '192k',
+                outputName
+            ]);
+        } finally {
+            try { await ffmpeg.deleteFile(pcmFile); } catch {}
+        }
+    }
+
     extractBtn.addEventListener('click', async () => {
         if (!selectedFile || !ffmpeg) return;
 
@@ -501,28 +605,102 @@
         downloadLink.style.display = 'none';
         loader.hidden = false;
         status.textContent = 'Copying audio track...';
+        ffmpegLogs = [];
+        currentStatusPrefix = '';
+        totalDurationSec = 0;
+        getVideoDuration(selectedFile).then((d) => {
+            if (d > 0 && !totalDurationSec) totalDurationSec = d;
+        }).catch(() => {});
 
         const extMatch = selectedFile.name.match(/\.[^/.]+$/);
         const inputExt = extMatch ? extMatch[0].toLowerCase() : '.mp4';
-        const inputName = `input${inputExt}`;
+        const mountDir = '/work';
+        const inputFileName = `input${inputExt}`;
         const outputName = 'output.m4a';
+        let mounted = false;
+        let inputName = inputFileName;
 
         try {
-            await ffmpeg.writeFile(inputName, await fetchFile(selectedFile));
-            let exitCode = await ffmpeg.exec(['-i', inputName, '-map', '0:a:0', '-vn', '-c:a', 'copy', outputName]);
-
-            let isTranscoded = false;
-            if (exitCode !== 0) {
-                isTranscoded = true;
-                status.textContent = 'Converting audio track to M4A...';
-                exitCode = await ffmpeg.exec(['-i', inputName, '-map', '0:a:0', '-vn', '-c:a', 'aac', '-b:a', '192k', outputName]);
+            try {
+                await selectedFile.slice(0, 64).arrayBuffer();
+            } catch (readErr) {
+                throw new Error('Browser could not read this file (it may be stored in iCloud/cloud storage, moved, or locked by another app). Please make sure it is downloaded locally and select it again.');
             }
 
+            try {
+                try { await ffmpeg.createDir(mountDir); } catch {}
+                try { await ffmpeg.unmount(mountDir); } catch {}
+                await ffmpeg.mount('WORKERFS', { blobs: [{ name: inputFileName, data: selectedFile }] }, mountDir);
+                mounted = true;
+                inputName = `${mountDir}/${inputFileName}`;
+            } catch (mountErr) {
+                console.warn('WORKERFS mount failed, falling back to MEMFS:', mountErr);
+                await ffmpeg.writeFile(inputFileName, await fetchFile(selectedFile));
+            }
+
+            let exitCode = await ffmpeg.exec(['-i', inputName, '-map', '0:a:0', '-vn', '-dn', '-sn', '-c:a', 'copy', outputName]);
+
+            // Parse discovered audio streams from FFmpeg log output
+            const audioStreams = [];
+            for (const line of ffmpegLogs) {
+                const match = line.match(/Stream #0:\d+(?:\[[^\]]+\])?(?:\([^)]*\))?: Audio: ([^\s,]+)/);
+                if (match) {
+                    audioStreams.push({ index: audioStreams.length, codec: match[1].toLowerCase() });
+                }
+            }
+
+            let isTranscoded = false;
+
+            // Try lossless copy on secondary audio tracks (e.g. iPhone MOV where 0:a:0 is apac and 0:a:1 is aac)
+            if (exitCode !== 0 && audioStreams.length > 1) {
+                for (let i = 1; i < audioStreams.length; i++) {
+                    if (audioStreams[i].codec === 'none') continue;
+                    try { await ffmpeg.deleteFile(outputName); } catch {}
+                    exitCode = await ffmpeg.exec(['-i', inputName, '-map', `0:a:${i}`, '-vn', '-dn', '-sn', '-c:a', 'copy', outputName]);
+                    if (exitCode === 0) break;
+                }
+            }
+
+            // Fallback: transcode decodable audio streams to stereo AAC (handles PCM, downmix DL+DR layouts, AC3/EAC3, etc.)
             if (exitCode !== 0) {
-                throw new Error(`FFmpeg exited with code ${exitCode}`);
+                isTranscoded = true;
+                currentStatusPrefix = 'Converting audio track to M4A';
+                updateProgress(0);
+                const candidateIndices = audioStreams.length > 0
+                    ? audioStreams.filter(s => s.codec !== 'none').map(s => s.index)
+                    : [0];
+
+                for (const idx of candidateIndices) {
+                    try { await ffmpeg.deleteFile(outputName); } catch {}
+                    exitCode = await ffmpeg.exec([
+                        '-i', inputName,
+                        '-map', `0:a:${idx}`,
+                        '-vn', '-dn', '-sn',
+                        '-ac', '2',
+                        '-c:a', 'aac',
+                        '-b:a', '192k',
+                        outputName
+                    ]);
+                    if (exitCode === 0) break;
+                }
+            }
+
+            // Fallback for codecs unsupported by FFmpeg 5.1 WASM (e.g. iOS 18+ single-track APAC Spatial Audio MOV)
+            if (exitCode !== 0) {
+                isTranscoded = true;
+                exitCode = await decodeViaWebAudio(selectedFile, outputName);
+            }
+
+            currentStatusPrefix = '';
+
+            if (exitCode !== 0) {
+                throw new Error('The audio codec in this video might not be compatible with M4A.');
             }
 
             const data = await ffmpeg.readFile(outputName);
+            if (!data || data.byteLength === 0) {
+                throw new Error('Extracted output file is empty.');
+            }
             const m4aBlob = new Blob([data.buffer], { type: 'audio/mp4' });
             const url = URL.createObjectURL(m4aBlob);
 
@@ -536,9 +714,16 @@
                 : 'Done! Audio extracted losslessly in a fraction of a second.';
         } catch (err) {
             console.error(err);
-            status.textContent = 'Error: The audio codec in this video might not be compatible with M4A.';
+            currentStatusPrefix = '';
+            status.textContent = `Error: ${err.message || 'The audio codec in this video might not be compatible with M4A.'}`;
         } finally {
-            try { await ffmpeg.deleteFile(inputName); } catch {}
+            currentStatusPrefix = '';
+            if (mounted) {
+                try { await ffmpeg.unmount(mountDir); } catch {}
+                try { await ffmpeg.deleteDir(mountDir); } catch {}
+            } else {
+                try { await ffmpeg.deleteFile(inputFileName); } catch {}
+            }
             try { await ffmpeg.deleteFile(outputName); } catch {}
             loader.hidden = true;
             extractBtn.disabled = false;
@@ -663,7 +848,7 @@
 
 
 
-<script src="/js/script.js?v=1793513556107"></script>
+<script src="/js/script.js?v=1793515275071"></script>
 
 
 
