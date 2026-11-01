@@ -67,7 +67,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1793448954560">
+<link rel="stylesheet" href="/css/style.css?v=1793513556107">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -285,6 +285,21 @@
 
 
 <style>
+    @property --arc-start {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+    }
+    @property --arc-end {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+    }
+    @property --progress-dash-animation {
+        syntax: "*";
+        inherits: false;
+        initial-value: , progress-dash 3s ease-in-out infinite;
+    }
 
     .card {
         background: #fff;
@@ -310,11 +325,101 @@
         background: #ccc;
         cursor: not-allowed;
     }
-    #status {
+    .status-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         margin-top: 15px;
+    }
+    #status {
         font-size: 14px;
         color: #666;
         white-space: pre-wrap;
+    }
+    progress.loading-spinner[hidden] {
+        display: none;
+    }
+    progress.loading-spinner:indeterminate::-webkit-progress-bar {
+        display: none;
+        background: none;
+    }
+    progress.loading-spinner:indeterminate::-webkit-progress-value {
+        display: none;
+        background: none;
+    }
+    progress.loading-spinner:indeterminate::-moz-progress-bar {
+        display: none;
+        background: none;
+    }
+    progress.loading-spinner:indeterminate::slider-fill {
+        display: none;
+        background: none;
+    }
+    progress.loading-spinner:indeterminate {
+        --_from: calc(90deg + var(--arc-start, 0deg));
+        --_to: calc(90deg + var(--arc-end, 158deg));
+        --size: 20px;
+        --thickness: 2.5px;
+        --spinner-color: #34c759;
+        --track-color: #e2e5e7;
+        --spinner-duration: 1.5s;
+        --_used-spinner-duration: var(--spinner-duration);
+
+        flex-shrink: 0;
+        position: relative;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        appearance: none;
+        background: conic-gradient(
+            from var(--_from),
+            var(--spinner-color) calc(var(--_to) - var(--_from)),
+            transparent 0
+        ) var(--track-color);
+
+        @supports (background-clip: border-area) {
+            background-clip: border-area;
+            border: var(--thickness) solid transparent;
+            background-origin: border-box;
+        }
+
+        @supports not (background-clip: border-area) {
+            --clip-boundary: calc(100% - var(--thickness));
+            mask-image: radial-gradient(
+                farthest-side,
+                transparent var(--clip-boundary),
+                black var(--clip-boundary)
+            );
+            border: 0;
+        }
+
+        animation:
+            progress-spin var(--_used-spinner-duration) linear infinite
+            var(--progress-dash-animation, );
+    }
+    @keyframes progress-spin {
+        to {
+            rotate: 1turn;
+        }
+    }
+    @keyframes progress-dash {
+        from {
+            --arc-start: 0deg;
+            --arc-end: 3deg;
+        }
+        50% {
+            --arc-start: 100deg;
+            --arc-end: 358deg;
+        }
+        to {
+            --arc-start: 360deg;
+            --arc-end: 363deg;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .loading-spinner {
+            --_used-spinner-duration: 6s;
+        }
     }
     a {
         display: inline-block;
@@ -329,9 +434,12 @@
 
 <div class="card">
     <h2>M4A Audio Extractor (Zero Transcoding)</h2>
-    <input type="file" id="videoInput" accept="video/*" disabled>
+    <input type="file" id="videoInput" accept="video/*,.mov,video/quicktime" disabled>
     <button id="extractBtn" disabled>Extract M4A Instantly</button>
-    <div id="status">Initializing engine...</div>
+    <div class="status-container">
+        <progress id="loader" aria-label="Loading FFmpeg engine" class="loading-spinner"></progress>
+        <div id="status">Initializing engine...</div>
+    </div>
     <br>
     <a id="downloadLink" style="display: none;">Download M4A File</a>
 </div>
@@ -342,6 +450,7 @@
 
     const videoInput = document.getElementById('videoInput');
     const extractBtn = document.getElementById('extractBtn');
+    const loader = document.getElementById('loader');
     const status = document.getElementById('status');
     const downloadLink = document.getElementById('downloadLink');
 
@@ -349,6 +458,7 @@
     let selectedFile = null;
 
     async function initFFmpeg() {
+        loader.hidden = false;
         try {
             ffmpeg = new FFmpeg();
 
@@ -369,6 +479,8 @@
         } catch (err) {
             console.error(err);
             status.textContent = 'Failed to load the engine. Check your internet connection.';
+        } finally {
+            loader.hidden = true;
         }
     }
 
@@ -387,14 +499,28 @@
 
         extractBtn.disabled = true;
         downloadLink.style.display = 'none';
+        loader.hidden = false;
         status.textContent = 'Copying audio track...';
 
-        try {
-            const inputName = 'input.mp4';
-            const outputName = 'output.m4a';
+        const extMatch = selectedFile.name.match(/\.[^/.]+$/);
+        const inputExt = extMatch ? extMatch[0].toLowerCase() : '.mp4';
+        const inputName = `input${inputExt}`;
+        const outputName = 'output.m4a';
 
+        try {
             await ffmpeg.writeFile(inputName, await fetchFile(selectedFile));
-            await ffmpeg.exec(['-i', inputName, '-vn', '-c:a', 'copy', outputName]);
+            let exitCode = await ffmpeg.exec(['-i', inputName, '-map', '0:a:0', '-vn', '-c:a', 'copy', outputName]);
+
+            let isTranscoded = false;
+            if (exitCode !== 0) {
+                isTranscoded = true;
+                status.textContent = 'Converting audio track to M4A...';
+                exitCode = await ffmpeg.exec(['-i', inputName, '-map', '0:a:0', '-vn', '-c:a', 'aac', '-b:a', '192k', outputName]);
+            }
+
+            if (exitCode !== 0) {
+                throw new Error(`FFmpeg exited with code ${exitCode}`);
+            }
 
             const data = await ffmpeg.readFile(outputName);
             const m4aBlob = new Blob([data.buffer], { type: 'audio/mp4' });
@@ -405,11 +531,16 @@
             downloadLink.style.display = 'block';
             downloadLink.textContent = `Download ${downloadLink.download}`;
 
-            status.textContent = 'Done! Audio extracted losslessly in a fraction of a second.';
+            status.textContent = isTranscoded
+                ? 'Done! Audio converted and extracted to M4A.'
+                : 'Done! Audio extracted losslessly in a fraction of a second.';
         } catch (err) {
             console.error(err);
             status.textContent = 'Error: The audio codec in this video might not be compatible with M4A.';
         } finally {
+            try { await ffmpeg.deleteFile(inputName); } catch {}
+            try { await ffmpeg.deleteFile(outputName); } catch {}
+            loader.hidden = true;
             extractBtn.disabled = false;
         }
     });
@@ -532,7 +663,7 @@
 
 
 
-<script src="/js/script.js?v=1793448954560"></script>
+<script src="/js/script.js?v=1793513556107"></script>
 
 
 
