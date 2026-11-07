@@ -1,3 +1,5 @@
+https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/
+https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/
 https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/
 https://safiullin.dev/2026/10/31/how-i-built-ultra-fast-git-interface/
 https://safiullin.dev/2026/09/16/merge-audio-and-video-file-online/
@@ -196,3 +198,6 @@ https://safiullin.dev/tags/react/
 https://safiullin.dev/tags/webstorm/
 https://safiullin.dev/tags/performance/
 https://safiullin.dev/tags/monaco-editor/
+https://safiullin.dev/tags/slow-motion/
+https://safiullin.dev/tags/voiceover/
+https://safiullin.dev/tags/speed/

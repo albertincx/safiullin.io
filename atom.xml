@@ -10,7 +10,56 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-10-31T12:15:45.300Z</updated>
+  <updated>2026-11-07T03:10:03.009Z</updated>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="video" scheme="https://safiullin.dev/tags/video/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="trim" scheme="https://safiullin.dev/tags/trim/"/>
+    <category term="slow-motion" scheme="https://safiullin.dev/tags/slow-motion/"/>
+    <category term="voiceover" scheme="https://safiullin.dev/tags/voiceover/"/>
+    <category term="speed" scheme="https://safiullin.dev/tags/speed/"/>
+    <content>
+      <![CDATA[<p>Обрезайте видео, замедляйте воспроизведение для детального анализа движений и записывайте закадровую озвучку с микрофона прямо в браузере — на 100% локально, <strong>без загрузки на сервер и без передачи данных в интернет</strong>.</p><span id="more"></span><p>Инструмент работает на базе современных браузерных стандартов HTML5 Canvas, Web Audio API и MediaStream Recording. Вы можете точно задать границы обрезки на интерактивном таймлайне с аудиоволной, плавно замедлить или ускорить видео (от 0.25x до 2.0x или любая произвольная скорость) и параллельно наложить живой комментарий с микрофона с раздельной регулировкой громкости.</p><p>Вся обработка происходит прямо в оперативной памяти вашего браузера: файлы не покидают ваше устройство, гарантируя полную конфиденциальность и отсутствие ограничений по скорости интернета или объёму трафика. Идеально подходит для разбора спортивной техники, слоу-мо повторов, озвучки обучающих видео и быстрого монтажа роликов!</p><blockquote><p>💡 Нужно нарезать видео на равные части или сторис? Попробуйте наш инструмент <a href="/2026/10/26/ru/split-video-file-online/">Разрезать видео онлайн (Video Split)</a>.<br>💡 Нужно соединить несколько видео в один файл? Используйте <a href="/2026/10/26/ru/merge-video-files-online/">Объединить видео онлайн (Video Merge)</a>.</p></blockquote>]]>
+    </content>
+    <id>https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/</id>
+    <link href="https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/"/>
+    <published>2026-11-07T03:07:51.156Z</published>
+    <summary>
+      <![CDATA[<p>Обрезайте видео, замедляйте воспроизведение для детального анализа движений и записывайте закадровую озвучку с микрофона прямо в браузере — на 100% локально, <strong>без загрузки на сервер и без передачи данных в интернет</strong>.</p>]]>
+    </summary>
+    <title>Замедлить видео и записать озвучку онлайн (Video Editor)</title>
+    <updated>2026-11-07T03:10:03.009Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="video" scheme="https://safiullin.dev/tags/video/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="trim" scheme="https://safiullin.dev/tags/trim/"/>
+    <category term="slow-motion" scheme="https://safiullin.dev/tags/slow-motion/"/>
+    <category term="voiceover" scheme="https://safiullin.dev/tags/voiceover/"/>
+    <category term="speed" scheme="https://safiullin.dev/tags/speed/"/>
+    <content>
+      <![CDATA[<p>Trim video clips, slow down motion for detailed frame-by-frame analysis, and record live microphone commentary right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p><span id="more"></span><p>Powered by HTML5 Canvas, Web Audio API, and MediaStream recording, this tool lets you edit your videos locally on your device in mere seconds. Pick precise trim boundaries with visual waveform markers, choose playback speeds from 0.25x to 2.0x (or your own custom factor), and mix original video audio with real-time microphone voice-over narration. </p><p>Everything is computed 100% offline inside your browser: no data is sent to any server, your files remain strictly confidential, and there are no file size limits or network bandwidth delays. Perfect for sports technique breakdowns, slow-motion replays, video tutorial voice-overs, and quick social media clip edits!</p><blockquote><p>💡 Need to cut long videos into equal parts or stories instead? Try our <a href="/2026/10/26/split-video-file-online/">Split Video Online (Video Split)</a> tool.<br>💡 Need to combine multiple video clips into one file? Use our <a href="/2026/10/26/merge-video-files-online/">Merge Video Files Online</a> utility.</p></blockquote>]]>
+    </content>
+    <id>https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/</id>
+    <link href="https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/"/>
+    <link href="https://safiullin.dev/images/covers/slow-down-video-and-voiceover-online.jpg" rel="enclosure"/>
+    <published>2026-11-07T03:07:40.066Z</published>
+    <summary>
+      <![CDATA[<p>Trim video clips, slow down motion for detailed frame-by-frame analysis, and record live microphone commentary right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p>]]>
+    </summary>
+    <title>
+      <![CDATA[Slow Down Video & Record Voice-Over Online (Trim, Speed, Audio)]]>
+    </title>
+    <updated>2026-11-07T03:10:03.025Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
@@ -436,37 +485,5 @@
     </summary>
     <title>Como eu construí o PDF Ink para um aprendizado online confortável usando livros em PDF</title>
     <updated>2026-07-21T12:08:26.886Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<p>Neste artigo, vou compartilhar minha experiência e fluxo de trabalho para criar páginas da web usando o Qwen Coder AI.</p><span id="more"></span><h2 id="Introducao"><a href="#Introducao" class="headerlink" title="Introdução"></a>Introdução</h2><p>O Qwen Coder AI tornou-se uma ferramenta valiosa no meu processo de desenvolvimento web. Ele me ajuda a escrever código mais rápido, depurar problemas de forma mais eficiente e explorar novas tecnologias com confiança.</p><h2 id="Meu-Fluxo-de-Trabalho"><a href="#Meu-Fluxo-de-Trabalho" class="headerlink" title="Meu Fluxo de Trabalho"></a>Meu Fluxo de Trabalho</h2><h3 id="1-Planejamento-da-estrutura-da-pagina"><a href="#1-Planejamento-da-estrutura-da-pagina" class="headerlink" title="1. Planejamento da estrutura da página"></a>1. Planejamento da estrutura da página</h3><p>Antes de escrever código, defino a estrutura:</p><ul><li>Cabeçalho (Header) com menu</li><li>Área de conteúdo principal (Main)</li><li>Barra lateral (Sidebar se necessário)</li><li>Rodapé (Footer)</li></ul><h3 id="2-Geracao-do-esqueleto-HTML"><a href="#2-Geracao-do-esqueleto-HTML" class="headerlink" title="2. Geração do esqueleto HTML"></a>2. Geração do esqueleto HTML</h3><p>Peço ao Qwen Coder AI para gerar um esqueleto HTML5 limpo com tags semânticas adequadas.</p><h3 id="3-Estilizacao-com-CSS"><a href="#3-Estilizacao-com-CSS" class="headerlink" title="3. Estilização com CSS"></a>3. Estilização com CSS</h3><p>A IA me ajuda a criar rapidamente estilos CSS responsivos conforme minhas descrições.</p><h3 id="4-Adicionando-interatividade-com-JavaScript"><a href="#4-Adicionando-interatividade-com-JavaScript" class="headerlink" title="4. Adicionando interatividade com JavaScript"></a>4. Adicionando interatividade com JavaScript</h3><p>Para recursos dinâmicos, ele me auxilia na escrita de funções JS e manipuladores de eventos.</p><h2 id="Conclusao"><a href="#Conclusao" class="headerlink" title="Conclusão"></a>Conclusão</h2><p>O Qwen Coder AI transformou a minha forma de desenvolver. Não é apenas um gerador de código, é um parceiro que melhora minha produtividade.</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/pt/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/pt/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T12:04:28.041Z</published>
-    <summary>
-      <![CDATA[<p>Neste artigo, vou compartilhar minha experiência e fluxo de trabalho para criar páginas da web usando o Qwen Coder AI.</p>]]>
-    </summary>
-    <title>Como eu crio páginas web com Qwen Coder AI</title>
-    <updated>2026-07-23T09:49:46.387Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<p>Dans cet article, je partagerai mon expérience et mon workflow pour créer des pages Web à l’aide de Qwen Coder AI.</p><span id="more"></span><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Qwen Coder AI est devenu un outil précieux dans mon processus de développement Web. Il m’aide à écrire du code plus rapidement, à déboguer les problèmes plus efficacement et à explorer de nouvelles technologies en toute confiance.</p><h2 id="Mon-Workflow"><a href="#Mon-Workflow" class="headerlink" title="Mon Workflow"></a>Mon Workflow</h2><h3 id="1-Planification-de-la-structure-de-la-page"><a href="#1-Planification-de-la-structure-de-la-page" class="headerlink" title="1. Planification de la structure de la page"></a>1. Planification de la structure de la page</h3><p>Avant d’écrire du code, je définis la structure :</p><ul><li>En-tête (Header) avec menu</li><li>Zone de contenu principale (Main)</li><li>Barre latérale (Sidebar si nécessaire)</li><li>Pied de page (Footer)</li></ul><h3 id="2-Generation-du-squelette-HTML"><a href="#2-Generation-du-squelette-HTML" class="headerlink" title="2. Génération du squelette HTML"></a>2. Génération du squelette HTML</h3><p>Je demande à Qwen Coder AI de générer un squelette HTML5 propre avec des balises sémantiques appropriées.</p><h3 id="3-Style-avec-CSS"><a href="#3-Style-avec-CSS" class="headerlink" title="3. Style avec CSS"></a>3. Style avec CSS</h3><p>L’IA m’aide à créer rapidement des styles CSS réactifs selon mes descriptions.</p><h3 id="4-Ajout-d’interactivite-avec-JavaScript"><a href="#4-Ajout-d’interactivite-avec-JavaScript" class="headerlink" title="4. Ajout d’interactivité avec JavaScript"></a>4. Ajout d’interactivité avec JavaScript</h3><p>Pour les fonctionnalités dynamiques, il m’assiste dans l’écriture de fonctions JS et de gestionnaires d’événements.</p><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Qwen Coder AI a transformé ma façon de développer. Ce n’est pas seulement un générateur de code, c’est un partenaire collaboratif qui améliore ma productivité.</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/fr/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/fr/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T12:04:10.549Z</published>
-    <summary>
-      <![CDATA[<p>Dans cet article, je partagerai mon expérience et mon workflow pour créer des pages Web à l’aide de Qwen Coder AI.</p>]]>
-    </summary>
-    <title>Comment je crée des pages Web avec Qwen Coder AI</title>
-    <updated>2026-07-23T09:49:21.849Z</updated>
   </entry>
 </feed>
