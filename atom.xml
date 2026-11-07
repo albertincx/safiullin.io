@@ -10,55 +10,55 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-11-07T03:10:03.009Z</updated>
+  <updated>2026-11-07T03:55:53.181Z</updated>
   <entry>
     <author>
       <name>Albert Safiullin</name>
     </author>
     <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="editor" scheme="https://safiullin.dev/tags/editor/"/>
+    <category term="audio" scheme="https://safiullin.dev/tags/audio/"/>
     <category term="video" scheme="https://safiullin.dev/tags/video/"/>
-    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
     <category term="trim" scheme="https://safiullin.dev/tags/trim/"/>
-    <category term="slow-motion" scheme="https://safiullin.dev/tags/slow-motion/"/>
-    <category term="voiceover" scheme="https://safiullin.dev/tags/voiceover/"/>
     <category term="speed" scheme="https://safiullin.dev/tags/speed/"/>
+    <category term="rotate" scheme="https://safiullin.dev/tags/rotate/"/>
+    <category term="полезное" scheme="https://safiullin.dev/tags/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B5/"/>
     <content>
-      <![CDATA[<p>Обрезайте видео, замедляйте воспроизведение для детального анализа движений и записывайте закадровую озвучку с микрофона прямо в браузере — на 100% локально, <strong>без загрузки на сервер и без передачи данных в интернет</strong>.</p><span id="more"></span><p>Инструмент работает на базе современных браузерных стандартов HTML5 Canvas, Web Audio API и MediaStream Recording. Вы можете точно задать границы обрезки на интерактивном таймлайне с аудиоволной, плавно замедлить или ускорить видео (от 0.25x до 2.0x или любая произвольная скорость) и параллельно наложить живой комментарий с микрофона с раздельной регулировкой громкости.</p><p>Вся обработка происходит прямо в оперативной памяти вашего браузера: файлы не покидают ваше устройство, гарантируя полную конфиденциальность и отсутствие ограничений по скорости интернета или объёму трафика. Идеально подходит для разбора спортивной техники, слоу-мо повторов, озвучки обучающих видео и быстрого монтажа роликов!</p><blockquote><p>💡 Нужно нарезать видео на равные части или сторис? Попробуйте наш инструмент <a href="/2026/10/26/ru/split-video-file-online/">Разрезать видео онлайн (Video Split)</a>.<br>💡 Нужно соединить несколько видео в один файл? Используйте <a href="/2026/10/26/ru/merge-video-files-online/">Объединить видео онлайн (Video Merge)</a>.</p></blockquote>]]>
+      <![CDATA[<p>Бесплатный <strong>онлайн видеоредактор</strong>, работающий на 100% локально в вашем браузере. Нарезка видео, смена соотношения сторон (16:9, 9:16 для Shorts&#x2F;Reels&#x2F;TikTok, 1:1), поворот, зеркальное отражение, ускорение и замедление, цветофильтры, добавление текста и микширование музыки или озвучки с микрофона — без водяных знаков и без загрузки на сервер.</p><span id="more"></span><h3 id="Преимущества-локального-видеоредактора"><a href="#Преимущества-локального-видеоредактора" class="headerlink" title="Преимущества локального видеоредактора"></a>Преимущества локального видеоредактора</h3><p>Большинство онлайн-сервисов для редактирования видео отправляют тяжелые файлы на удаленные серверы, заставляют ждать в очереди на рендеринг, пережимают качество или ставят водяные знаки.</p><p>Наш <strong>Онлайн Видеоредактор</strong> работает прямо на вашем устройстве с использованием технологий <strong>HTML5 Canvas, Web Audio API и MediaRecorder</strong>:</p><ul><li><strong>Полная конфиденциальность</strong>: Видео обрабатывается в оперативной памяти браузера и никуда не отправляется.</li><li><strong>Форматы для соцсетей</strong>: Мгновенное кадрирование под YouTube (16:9), вертикальные Shorts&#x2F;Reels&#x2F;TikTok (9:16) или квадрат (1:1).</li><li><strong>Поворот и зеркало</strong>: Исправляйте ориентацию видео (поворот на 90° в любую сторону) и отзеркаливайте фронтальную камеру.</li><li><strong>Скорость воспроизведения</strong>: Замедление (0.25x–0.75x) для анализа движений или таймлапс&#x2F;ускорение (до 4x).</li><li><strong>Цветокоррекция и фильтры</strong>: Ч&#x2F;Б, Сепия, Винтаж, Насыщенный цвет, Киберпанк, настройка яркости и контраста.</li><li><strong>Текст и водяной знак</strong>: Наложение надписей, подписей и водяных знаков с выбором цвета, размера и подложки.</li><li><strong>Работа со звуком</strong>: Регулировка громкости оригинала, загрузка фоновой музыки (MP3&#x2F;WAV) и запись комментариев с микрофона в реальном времени.</li><li><strong>Снимок кадра в один клик</strong>: Сохраняйте любой момент видео в высоком разрешении с учетом всех примененных фильтров.</li></ul><blockquote><p>💡 Нужно объединить несколько видео в одно? Воспользуйтесь инструментом <a href="/2026/10/26/ru/merge-video-files-online/">Объединить видео онлайн</a>.</p></blockquote>]]>
     </content>
-    <id>https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/</id>
-    <link href="https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/"/>
-    <published>2026-11-07T03:07:51.156Z</published>
+    <id>https://safiullin.dev/2026/11/07/ru/online-video-editor/</id>
+    <link href="https://safiullin.dev/2026/11/07/ru/online-video-editor/"/>
+    <link href="https://safiullin.dev/images/covers/online-video-editor.jpg" rel="enclosure"/>
+    <published>2026-11-07T03:53:14.046Z</published>
     <summary>
-      <![CDATA[<p>Обрезайте видео, замедляйте воспроизведение для детального анализа движений и записывайте закадровую озвучку с микрофона прямо в браузере — на 100% локально, <strong>без загрузки на сервер и без передачи данных в интернет</strong>.</p>]]>
+      <![CDATA[<p>Бесплатный <strong>онлайн видеоредактор</strong>, работающий на 100% локально в вашем браузере. Нарезка видео, смена соотношения сторон (16:9, 9:16 для Shorts&#x2F;Reels&#x2F;TikTok, 1:1), поворот, зеркальное отражение, ускорение и замедление, цветофильтры, добавление текста и микширование музыки или озвучки с микрофона — без водяных знаков и без загрузки на сервер.</p>]]>
     </summary>
-    <title>Замедлить видео и записать озвучку онлайн (Video Editor)</title>
-    <updated>2026-11-07T03:10:03.009Z</updated>
+    <title>Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)</title>
+    <updated>2026-11-07T03:55:53.181Z</updated>
   </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
     </author>
     <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="editor" scheme="https://safiullin.dev/tags/editor/"/>
+    <category term="audio" scheme="https://safiullin.dev/tags/audio/"/>
     <category term="video" scheme="https://safiullin.dev/tags/video/"/>
-    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
     <category term="trim" scheme="https://safiullin.dev/tags/trim/"/>
-    <category term="slow-motion" scheme="https://safiullin.dev/tags/slow-motion/"/>
-    <category term="voiceover" scheme="https://safiullin.dev/tags/voiceover/"/>
     <category term="speed" scheme="https://safiullin.dev/tags/speed/"/>
+    <category term="rotate" scheme="https://safiullin.dev/tags/rotate/"/>
     <content>
-      <![CDATA[<p>Trim video clips, slow down motion for detailed frame-by-frame analysis, and record live microphone commentary right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p><span id="more"></span><p>Powered by HTML5 Canvas, Web Audio API, and MediaStream recording, this tool lets you edit your videos locally on your device in mere seconds. Pick precise trim boundaries with visual waveform markers, choose playback speeds from 0.25x to 2.0x (or your own custom factor), and mix original video audio with real-time microphone voice-over narration. </p><p>Everything is computed 100% offline inside your browser: no data is sent to any server, your files remain strictly confidential, and there are no file size limits or network bandwidth delays. Perfect for sports technique breakdowns, slow-motion replays, video tutorial voice-overs, and quick social media clip edits!</p><blockquote><p>💡 Need to cut long videos into equal parts or stories instead? Try our <a href="/2026/10/26/split-video-file-online/">Split Video Online (Video Split)</a> tool.<br>💡 Need to combine multiple video clips into one file? Use our <a href="/2026/10/26/merge-video-files-online/">Merge Video Files Online</a> utility.</p></blockquote>]]>
+      <![CDATA[<p>A free, private <strong>online video editor</strong> that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&#x2F;Reels, 1:1), rotate, flip, change speed, apply color filters, add subtitles, and mix background music or voice-over — without server uploads or watermarks.</p><span id="more"></span><h3 id="Why-Use-an-In-Browser-Video-Editor"><a href="#Why-Use-an-In-Browser-Video-Editor" class="headerlink" title="Why Use an In-Browser Video Editor?"></a>Why Use an In-Browser Video Editor?</h3><p>Most web-based video editing services upload your large video files to remote cloud servers, enforce low resolution limits, or stamp distracting watermarks unless you purchase a subscription.</p><p>This <strong>Online Video Editor</strong> runs entirely on your device using client-side <strong>HTML5 Canvas, Web Audio API, and MediaRecorder</strong>:</p><ul><li><strong>100% Confidential &amp; Private</strong>: Your videos never leave your computer or phone.</li><li><strong>Aspect Ratio Formatting</strong>: One-click framing for YouTube (16:9), Instagram&#x2F;TikTok&#x2F;Shorts (9:16), or Square (1:1).</li><li><strong>Rotate &amp; Mirror</strong>: Rotate 90°&#x2F;180°&#x2F;270° or mirror selfie videos horizontally&#x2F;vertically.</li><li><strong>Speed Control</strong>: Smooth slow-motion (0.25x - 0.75x) or fast-forward (1.25x - 4.0x) with real-time audio sync.</li><li><strong>Color Grading &amp; Filters</strong>: Instant B&amp;W, Warm Sepia, Vintage Cinema, Vibrant, Cyberpunk, and brightness&#x2F;contrast sliders.</li><li><strong>Text &amp; Watermark</strong>: Add custom titles, handles, or captions with positioning and styling.</li><li><strong>Multi-Track Audio Mixing</strong>: Adjust original video audio, add your own background music (MP3&#x2F;WAV), or record live voice-overs with your microphone.</li><li><strong>Instant Frame Snapshot</strong>: Download any frame in high quality with all edits and filters applied.</li></ul><blockquote><p>💡 Need to merge multiple video clips? Try our <a href="/2026/10/26/merge-video-files-online/">Merge Video Files Online</a> tool.</p></blockquote>]]>
     </content>
-    <id>https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/</id>
-    <link href="https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/"/>
-    <link href="https://safiullin.dev/images/covers/slow-down-video-and-voiceover-online.jpg" rel="enclosure"/>
-    <published>2026-11-07T03:07:40.066Z</published>
+    <id>https://safiullin.dev/2026/11/07/online-video-editor/</id>
+    <link href="https://safiullin.dev/2026/11/07/online-video-editor/"/>
+    <link href="https://safiullin.dev/images/covers/online-video-editor.jpg" rel="enclosure"/>
+    <published>2026-11-07T03:53:06.704Z</published>
     <summary>
-      <![CDATA[<p>Trim video clips, slow down motion for detailed frame-by-frame analysis, and record live microphone commentary right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p>]]>
+      <![CDATA[<p>A free, private <strong>online video editor</strong> that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&#x2F;Reels, 1:1), rotate, flip, change speed, apply color filters, add subtitles, and mix background music or voice-over — without server uploads or watermarks.</p>]]>
     </summary>
-    <title>
-      <![CDATA[Slow Down Video & Record Voice-Over Online (Trim, Speed, Audio)]]>
-    </title>
-    <updated>2026-11-07T03:10:03.025Z</updated>
+    <title>Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)</title>
+    <updated>2026-11-07T03:55:53.166Z</updated>
   </entry>
   <entry>
     <author>

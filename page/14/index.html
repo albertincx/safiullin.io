@@ -3,17 +3,36 @@
 <head>
     <meta charset="utf-8">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9DPEJ5T23C');
-</script>
+<!-- Google Analytics & Google Ads (Disabled on localhost / 127.0.0.1 for local dev) -->
 <script>
   (function() {
+    var host = window.location.hostname;
+    var isLocal = host === 'localhost' || 
+                  host === '127.0.0.1' || 
+                  host === '0.0.0.0' || 
+                  host === '[::1]' || 
+                  host.endsWith('.local') || 
+                  window.location.protocol === 'file:';
+
+    if (isLocal) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { window.dataLayer.push(arguments); };
+      return;
+    }
+
+    // 1. Google Analytics (gtag.js)
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-9DPEJ5T23C');
+
+    // 2. Google Ads (AdSense)
     var adsLoaded = false;
     function loadAds() {
       if (adsLoaded) return;
@@ -23,18 +42,17 @@
       window.removeEventListener('touchstart', loadAds);
       window.removeEventListener('keydown', loadAds);
       
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
-      script.crossOrigin = "anonymous";
-      document.head.appendChild(script);
+      var adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      adScript.crossOrigin = "anonymous";
+      document.head.appendChild(adScript);
     }
     
     window.addEventListener('scroll', loadAds, { passive: true });
     window.addEventListener('mousemove', loadAds, { passive: true });
     window.addEventListener('touchstart', loadAds, { passive: true });
     window.addEventListener('keydown', loadAds, { passive: true });
-    
     setTimeout(loadAds, 3000);
   })();
 </script>
@@ -65,7 +83,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1794022267097">
+<link rel="stylesheet" href="/css/style.css?v=1794023964513">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -418,10 +436,10 @@
 </article>
 
   
-    <article id="post-slow-down-video-and-voiceover-online" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-online-video-editor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/11/07/slow-down-video-and-voiceover-online/" class="article-date">
-  <time class="dt-published" datetime="2026-11-07T03:07:40.066Z" itemprop="datePublished">2026-11-07</time>
+    <a href="/2026/11/07/online-video-editor/" class="article-date">
+  <time class="dt-published" datetime="2026-11-07T03:53:06.704Z" itemprop="datePublished">2026-11-07</time>
 </a>
     
   </div>
@@ -432,7 +450,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/11/07/slow-down-video-and-voiceover-online/">Slow Down Video &amp; Record Voice-Over Online (Trim, Speed, Audio)</a>
+      <a class="p-name article-title" href="/2026/11/07/online-video-editor/">Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)</a>
     </h2>
   
 
@@ -441,16 +459,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Trim video clips, slow down motion for detailed frame-by-frame analysis, and record live microphone commentary right inside your browser — completely client-side with <strong>no backend or server uploads required</strong>.</p>
+        <p>A free, private <strong>online video editor</strong> that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&#x2F;Reels, 1:1), rotate, flip, change speed, apply color filters, add subtitles, and mix background music or voice-over — without server uploads or watermarks.</p>
         
           <p class="article-more-link">
-            <a href="/2026/11/07/slow-down-video-and-voiceover-online/#more" aria-label="Read More: Slow Down Video &amp; Record Voice-Over Online (Trim, Speed, Audio)">Read More</a>
+            <a href="/2026/11/07/online-video-editor/#more" aria-label="Read More: Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer" data-c="NaN">
-      <a data-url="https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/" data-id="cuidkrE0QNe1uVGkZdbsReIQO" data-title="Slow Down Video &amp; Record Voice-Over Online (Trim, Speed, Audio)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/11/07/online-video-editor/" data-id="cuidDSEyMazvPEIdF-bBfa7-6" data-title="Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -461,11 +479,15 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/video/" rel="tag">video</a>
+        <a class="article-tag-list-link" href="/en/tags/editor/" rel="tag">editor</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/useful/" rel="tag">useful</a>
+        <a class="article-tag-list-link" href="/en/tags/audio/" rel="tag">audio</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/video/" rel="tag">video</a>
       </li>
     
       <li class="article-tag-list-item">
@@ -473,15 +495,11 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/slow-motion/" rel="tag">slow-motion</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/en/tags/voiceover/" rel="tag">voiceover</a>
-      </li>
-    
-      <li class="article-tag-list-item">
         <a class="article-tag-list-link" href="/en/tags/speed/" rel="tag">speed</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/rotate/" rel="tag">rotate</a>
       </li>
     
   </ul>
@@ -492,10 +510,10 @@
 </article>
 
   
-    <article id="post-ru/slow-down-video-and-voiceover-online" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-ru/online-video-editor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2026/11/07/ru/slow-down-video-and-voiceover-online/" class="article-date">
-  <time class="dt-published" datetime="2026-11-07T03:07:51.156Z" itemprop="datePublished">2026-11-07</time>
+    <a href="/2026/11/07/ru/online-video-editor/" class="article-date">
+  <time class="dt-published" datetime="2026-11-07T03:53:14.046Z" itemprop="datePublished">2026-11-07</time>
 </a>
     
   </div>
@@ -506,7 +524,7 @@
         
   
     <h2 itemprop="name">
-      <a class="p-name article-title" href="/2026/11/07/ru/slow-down-video-and-voiceover-online/">Замедлить видео и записать озвучку онлайн (Video Editor)<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
+      <a class="p-name article-title" href="/2026/11/07/ru/online-video-editor/">Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)<span class="lang-tag" style="font-size: 0.8em; opacity: 0.7;"> - RU VERSION</span></a>
     </h2>
   
 
@@ -515,16 +533,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Обрезайте видео, замедляйте воспроизведение для детального анализа движений и записывайте закадровую озвучку с микрофона прямо в браузере — на 100% локально, <strong>без загрузки на сервер и без передачи данных в интернет</strong>.</p>
+        <p>Бесплатный <strong>онлайн видеоредактор</strong>, работающий на 100% локально в вашем браузере. Нарезка видео, смена соотношения сторон (16:9, 9:16 для Shorts&#x2F;Reels&#x2F;TikTok, 1:1), поворот, зеркальное отражение, ускорение и замедление, цветофильтры, добавление текста и микширование музыки или озвучки с микрофона — без водяных знаков и без загрузки на сервер.</p>
         
           <p class="article-more-link">
-            <a href="/2026/11/07/ru/slow-down-video-and-voiceover-online/#more" aria-label="Read More: Замедлить видео и записать озвучку онлайн (Video Editor)">Read More</a>
+            <a href="/2026/11/07/ru/online-video-editor/#more" aria-label="Read More: Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer" data-c="NaN">
-      <a data-url="https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/" data-id="cuidEIKhl_6yw87v1AulFsqe5" data-title="Замедлить видео и записать озвучку онлайн (Video Editor)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      <a data-url="https://safiullin.dev/2026/11/07/ru/online-video-editor/" data-id="cuidvz_JGuQNOkdPMl8Dm0Alw" data-title="Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
       
       
   
@@ -535,11 +553,15 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/video/" rel="tag">video</a>
+        <a class="article-tag-list-link" href="/ru/tags/editor/" rel="tag">editor</a>
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/useful/" rel="tag">useful</a>
+        <a class="article-tag-list-link" href="/ru/tags/audio/" rel="tag">audio</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/video/" rel="tag">video</a>
       </li>
     
       <li class="article-tag-list-item">
@@ -547,15 +569,15 @@
       </li>
     
       <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/slow-motion/" rel="tag">slow-motion</a>
-      </li>
-    
-      <li class="article-tag-list-item">
-        <a class="article-tag-list-link" href="/ru/tags/voiceover/" rel="tag">voiceover</a>
-      </li>
-    
-      <li class="article-tag-list-item">
         <a class="article-tag-list-link" href="/ru/tags/speed/" rel="tag">speed</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/rotate/" rel="tag">rotate</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/ru/tags/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B5/" rel="tag">полезное</a>
       </li>
     
   </ul>
@@ -609,7 +631,7 @@
       
         <a href="/en/tags/fun/" style="font-size: 10.00px;">fun</a>
       
-        <a href="/en/tags/editor/" style="font-size: 10.00px;">editor</a>
+        <a href="/en/tags/editor/" style="font-size: 11.00px;">editor</a>
       
         <a href="/en/tags/bot/" style="font-size: 13.00px;">bot</a>
       
@@ -623,7 +645,7 @@
       
         <a href="/en/tags/browser-extension/" style="font-size: 10.00px;">browser extension</a>
       
-        <a href="/en/tags/useful/" style="font-size: 16.00px;">useful</a>
+        <a href="/en/tags/useful/" style="font-size: 15.00px;">useful</a>
       
         <a href="/en/tags/productivity/" style="font-size: 12.00px;">productivity</a>
       
@@ -633,7 +655,7 @@
       
         <a href="/en/tags/localstorage/" style="font-size: 10.00px;">localstorage</a>
       
-        <a href="/en/tags/audio/" style="font-size: 11.00px;">audio</a>
+        <a href="/en/tags/audio/" style="font-size: 12.00px;">audio</a>
       
         <a href="/en/tags/extract/" style="font-size: 10.00px;">extract</a>
       
@@ -711,11 +733,9 @@
       
         <a href="/en/tags/monaco-editor/" style="font-size: 10.00px;">monaco-editor</a>
       
-        <a href="/en/tags/slow-motion/" style="font-size: 10.00px;">slow-motion</a>
-      
-        <a href="/en/tags/voiceover/" style="font-size: 10.00px;">voiceover</a>
-      
         <a href="/en/tags/speed/" style="font-size: 10.00px;">speed</a>
+      
+        <a href="/en/tags/rotate/" style="font-size: 10.00px;">rotate</a>
       
     </div>
   </div>
@@ -878,7 +898,7 @@
 
 
 
-<script src="/js/script.js?v=1794022267097"></script>
+<script src="/js/script.js?v=1794023964513"></script>
 
 
 

@@ -3,17 +3,36 @@
 <head>
     <meta charset="utf-8">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9DPEJ5T23C');
-</script>
+<!-- Google Analytics & Google Ads (Disabled on localhost / 127.0.0.1 for local dev) -->
 <script>
   (function() {
+    var host = window.location.hostname;
+    var isLocal = host === 'localhost' || 
+                  host === '127.0.0.1' || 
+                  host === '0.0.0.0' || 
+                  host === '[::1]' || 
+                  host.endsWith('.local') || 
+                  window.location.protocol === 'file:';
+
+    if (isLocal) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { window.dataLayer.push(arguments); };
+      return;
+    }
+
+    // 1. Google Analytics (gtag.js)
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-9DPEJ5T23C');
+
+    // 2. Google Ads (AdSense)
     var adsLoaded = false;
     function loadAds() {
       if (adsLoaded) return;
@@ -23,18 +42,17 @@
       window.removeEventListener('touchstart', loadAds);
       window.removeEventListener('keydown', loadAds);
       
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
-      script.crossOrigin = "anonymous";
-      document.head.appendChild(script);
+      var adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      adScript.crossOrigin = "anonymous";
+      document.head.appendChild(adScript);
     }
     
     window.addEventListener('scroll', loadAds, { passive: true });
     window.addEventListener('mousemove', loadAds, { passive: true });
     window.addEventListener('touchstart', loadAds, { passive: true });
     window.addEventListener('keydown', loadAds, { passive: true });
-    
     setTimeout(loadAds, 3000);
   })();
 </script>
@@ -67,7 +85,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1794022267097">
+<link rel="stylesheet" href="/css/style.css?v=1794023964513">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -432,7 +450,7 @@
       
         <a href="/ru/tags/video/" style="font-size: 14.00px;">video</a>
       
-        <a href="/ru/tags/useful/" style="font-size: 18.00px;">useful</a>
+        <a href="/ru/tags/useful/" style="font-size: 16.00px;">useful</a>
       
         <a href="/ru/tags/merge/" style="font-size: 10.00px;">merge</a>
       
@@ -486,11 +504,15 @@
       
         <a href="/ru/tags/monaco-editor/" style="font-size: 10.00px;">monaco-editor</a>
       
-        <a href="/ru/tags/slow-motion/" style="font-size: 10.00px;">slow-motion</a>
+        <a href="/ru/tags/editor/" style="font-size: 10.00px;">editor</a>
       
-        <a href="/ru/tags/voiceover/" style="font-size: 10.00px;">voiceover</a>
+        <a href="/ru/tags/audio/" style="font-size: 10.00px;">audio</a>
       
         <a href="/ru/tags/speed/" style="font-size: 10.00px;">speed</a>
+      
+        <a href="/ru/tags/rotate/" style="font-size: 10.00px;">rotate</a>
+      
+        <a href="/ru/tags/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B5/" style="font-size: 10.00px;">полезное</a>
       
     </div>
   </div>
@@ -653,7 +675,7 @@
 
 
 
-<script src="/js/script.js?v=1794022267097"></script>
+<script src="/js/script.js?v=1794023964513"></script>
 
 
 

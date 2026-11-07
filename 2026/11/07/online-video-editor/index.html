@@ -1,0 +1,2726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+<!-- Google Analytics & Google Ads (Disabled on localhost / 127.0.0.1 for local dev) -->
+<script>
+  (function() {
+    var host = window.location.hostname;
+    var isLocal = host === 'localhost' || 
+                  host === '127.0.0.1' || 
+                  host === '0.0.0.0' || 
+                  host === '[::1]' || 
+                  host.endsWith('.local') || 
+                  window.location.protocol === 'file:';
+
+    if (isLocal) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { window.dataLayer.push(arguments); };
+      return;
+    }
+
+    // 1. Google Analytics (gtag.js)
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-9DPEJ5T23C');
+
+    // 2. Google Ads (AdSense)
+    var adsLoaded = false;
+    function loadAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      window.removeEventListener('scroll', loadAds);
+      window.removeEventListener('mousemove', loadAds);
+      window.removeEventListener('touchstart', loadAds);
+      window.removeEventListener('keydown', loadAds);
+      
+      var adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      adScript.crossOrigin = "anonymous";
+      document.head.appendChild(adScript);
+    }
+    
+    window.addEventListener('scroll', loadAds, { passive: true });
+    window.addEventListener('mousemove', loadAds, { passive: true });
+    window.addEventListener('touchstart', loadAds, { passive: true });
+    window.addEventListener('keydown', loadAds, { passive: true });
+    setTimeout(loadAds, 3000);
+  })();
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>Free Online Video Editor (Trim, Crop, Rotate, Speed, Audi...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="A free, private online video editor that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&#x2F;Reels, 1:1), rotate,...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)">
+<meta property="og:url" content="https://safiullin.dev/2026/11/07/online-video-editor/">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
+<meta property="og:description" content="A free, private online video editor that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&#x2F;Reels, 1:1), rotate,...">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-07T03:53:06.704Z">
+<meta property="article:modified_time" content="2026-11-07T03:55:53.166Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="audio">
+<meta property="article:tag" content="editor">
+<meta property="article:tag" content="rotate">
+<meta property="article:tag" content="speed">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="trim">
+<meta property="article:tag" content="video">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1794023964513">
+<link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/11/07/online-video-editor/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-cn" href="https://safiullin.dev/zh-cn/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="fr" href="https://safiullin.dev/fr/" />
+
+    <link rel="alternate" hreflang="pt" href="https://safiullin.dev/pt/" />
+
+    <link rel="alternate" hreflang="ar" href="https://safiullin.dev/ar/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)",
+  "datePublished": "2026-11-07T03:53:06.704Z",
+  "dateModified": "2026-11-07T03:55:53.166Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev Videcode. Ai. Life. Tools",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "A free, private online video editor that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&amp;#x2F;Reels, 1:1), rotate,..."
+}
+</script>
+
+    
+
+    <meta property="og:image" content="https://safiullin.dev/images/covers/online-video-editor.jpg">
+    <meta name="twitter:image" content="https://safiullin.dev/images/covers/online-video-editor.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      
+          <h2 id="logo-wrap">
+            <a href="/en/" id="logo">Safiullin.dev</a>
+          </h2>
+      
+
+      
+        <h2 id="subtitle-wrap">
+          <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+          <a class="main-nav-link" href="/en/">Home</a>
+        
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <div id="lang-dropdown-wrap" class="lang-dropdown-wrap">
+          <button id="lang-dropdown-btn" class="lang-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="lang-current-code">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-arrow-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="lang-dropdown-menu" class="lang-dropdown-menu">
+            
+              <a href="/" class="lang-dropdown-item active" aria-label="English">
+                <span class="lang-item-code">EN</span>
+                <span class="lang-item-name">English</span>
+                
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                
+              </a>
+            
+              <a href="/ru/" class="lang-dropdown-item" aria-label="Русский">
+                <span class="lang-item-code">RU</span>
+                <span class="lang-item-name">Русский</span>
+                
+              </a>
+            
+              <a href="/es/" class="lang-dropdown-item" aria-label="Español">
+                <span class="lang-item-code">ES</span>
+                <span class="lang-item-name">Español</span>
+                
+              </a>
+            
+              <a href="/zh-cn/" class="lang-dropdown-item" aria-label="中文">
+                <span class="lang-item-code">ZH-CN</span>
+                <span class="lang-item-name">中文</span>
+                
+              </a>
+            
+              <a href="/hi/" class="lang-dropdown-item" aria-label="हिन्दी">
+                <span class="lang-item-code">HI</span>
+                <span class="lang-item-name">हिन्दी</span>
+                
+              </a>
+            
+              <a href="/th/" class="lang-dropdown-item" aria-label="ไทย">
+                <span class="lang-item-code">TH</span>
+                <span class="lang-item-name">ไทย</span>
+                
+              </a>
+            
+              <a href="/fr/" class="lang-dropdown-item" aria-label="Français">
+                <span class="lang-item-code">FR</span>
+                <span class="lang-item-name">Français</span>
+                
+              </a>
+            
+              <a href="/pt/" class="lang-dropdown-item" aria-label="Português">
+                <span class="lang-item-code">PT</span>
+                <span class="lang-item-name">Português</span>
+                
+              </a>
+            
+              <a href="/ar/" class="lang-dropdown-item" aria-label="العربية">
+                <span class="lang-item-code">AR</span>
+                <span class="lang-item-name">العربية</span>
+                
+              </a>
+            
+          </div>
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
+        
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="no-sidebar w-full"><article id="post-online-video-editor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/11/07/online-video-editor/" class="article-date">
+  <time class="dt-published" datetime="2026-11-07T03:53:06.704Z" itemprop="datePublished">2026-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>A free, private <strong>online video editor</strong> that works 100% in your browser. Trim videos, crop aspect ratios (16:9, 9:16 Shorts&#x2F;Reels, 1:1), rotate, flip, change speed, apply color filters, add subtitles, and mix background music or voice-over — without server uploads or watermarks.</p>
+<span id="more"></span>
+
+<h3 id="Why-Use-an-In-Browser-Video-Editor"><a href="#Why-Use-an-In-Browser-Video-Editor" class="headerlink" title="Why Use an In-Browser Video Editor?"></a>Why Use an In-Browser Video Editor?</h3><p>Most web-based video editing services upload your large video files to remote cloud servers, enforce low resolution limits, or stamp distracting watermarks unless you purchase a subscription.</p>
+<p>This <strong>Online Video Editor</strong> runs entirely on your device using client-side <strong>HTML5 Canvas, Web Audio API, and MediaRecorder</strong>:</p>
+<ul>
+<li><strong>100% Confidential &amp; Private</strong>: Your videos never leave your computer or phone.</li>
+<li><strong>Aspect Ratio Formatting</strong>: One-click framing for YouTube (16:9), Instagram&#x2F;TikTok&#x2F;Shorts (9:16), or Square (1:1).</li>
+<li><strong>Rotate &amp; Mirror</strong>: Rotate 90°&#x2F;180°&#x2F;270° or mirror selfie videos horizontally&#x2F;vertically.</li>
+<li><strong>Speed Control</strong>: Smooth slow-motion (0.25x - 0.75x) or fast-forward (1.25x - 4.0x) with real-time audio sync.</li>
+<li><strong>Color Grading &amp; Filters</strong>: Instant B&amp;W, Warm Sepia, Vintage Cinema, Vibrant, Cyberpunk, and brightness&#x2F;contrast sliders.</li>
+<li><strong>Text &amp; Watermark</strong>: Add custom titles, handles, or captions with positioning and styling.</li>
+<li><strong>Multi-Track Audio Mixing</strong>: Adjust original video audio, add your own background music (MP3&#x2F;WAV), or record live voice-overs with your microphone.</li>
+<li><strong>Instant Frame Snapshot</strong>: Download any frame in high quality with all edits and filters applied.</li>
+</ul>
+<blockquote>
+<p>💡 Need to merge multiple video clips? Try our <a href="/2026/10/26/merge-video-files-online/">Merge Video Files Online</a> tool.</p>
+</blockquote>
+
+<!-- ========================================================
+     ONLINE VIDEO EDITOR (100% CLIENT-SIDE IN-BROWSER)
+     Trim, Crop/Aspect Ratio, Rotate, Mirror, Speed,
+     Color Filters, Text Watermark, Audio Mixing & Mic
+     ======================================================== -->
+<style>
+    .veditor-container {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #090d16;
+        border: 1px solid #1e293b;
+        border-radius: 18px;
+        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 1040px;
+        box-sizing: border-box;
+        color: #f1f5f9;
+    }
+
+    @media (min-width: 640px) {
+        .veditor-container {
+            padding: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .veditor-container {
+            margin: 10px 0 20px 0;
+            max-width: 100%;
+            width: 100%;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            padding: 14px 10px;
+        }
+    }
+
+    .veditor-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .veditor-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 6px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .veditor-subtitle {
+        font-size: 13px;
+        color: #94a3b8;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .veditor-badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 20px;
+        background: #083344;
+        color: #22d3ee;
+        border: 1px solid #0e7490;
+        vertical-align: middle;
+    }
+
+    .veditor-private-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 20px;
+        background: #022c22;
+        color: #34d399;
+        border: 1px solid #065f46;
+        margin-top: 6px;
+    }
+    .veditor-dot-pulse {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #34d399;
+        animation: veditor-pulse 2s infinite;
+    }
+    @keyframes veditor-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Dropzone */
+    .veditor-dropzone {
+        border: 2px dashed #334155;
+        border-radius: 14px;
+        padding: 36px 16px;
+        text-align: center;
+        background: #0f172a;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        user-select: none;
+    }
+    .veditor-dropzone:hover, .veditor-dropzone.dragover {
+        border-color: #06b6d4;
+        background: #162032;
+        transform: translateY(-1px);
+    }
+    .veditor-upload-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #0891b2, #2563eb);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin-top: 12px;
+        box-shadow: 0 4px 14px rgba(6, 182, 212, 0.25);
+    }
+
+    /* Editor Layout */
+    .veditor-app {
+        display: none;
+    }
+    .veditor-app.active {
+        display: block;
+    }
+
+    .veditor-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 14px;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+    .veditor-file-meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        color: #cbd5e1;
+    }
+    .veditor-file-name {
+        font-weight: 600;
+        color: #38bdf8;
+        max-width: 260px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .veditor-main-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    @media (min-width: 860px) {
+        .veditor-main-grid {
+            grid-template-columns: 1.15fr 0.85fr;
+        }
+    }
+
+    /* Left Column: Player & Stage */
+    .veditor-player-card {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 14px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .veditor-stage-wrap {
+        position: relative;
+        width: 100%;
+        background: #000000;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 280px;
+        max-height: 480px;
+        border: 1px solid #1e293b;
+    }
+
+    /* Video element */
+    .veditor-video-el {
+        max-width: 100%;
+        max-height: 480px;
+        display: block;
+        transition: transform 0.2s ease, filter 0.2s ease;
+        transform-origin: center center;
+    }
+
+    /* Live Text Overlay */
+    .veditor-live-text {
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        transition: all 0.15s ease;
+        z-index: 10;
+        max-width: 90%;
+        word-break: break-word;
+        display: none;
+    }
+
+    /* Floating quick tools over video */
+    .veditor-stage-actions {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        gap: 6px;
+        z-index: 20;
+    }
+    .veditor-stage-btn {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(6px);
+        color: #f1f5f9;
+        border: 1px solid rgba(51, 65, 85, 0.8);
+        border-radius: 8px;
+        padding: 6px 9px;
+        font-size: 11px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.15s ease;
+    }
+    .veditor-stage-btn:hover {
+        background: #06b6d4;
+        color: #ffffff;
+        border-color: #06b6d4;
+    }
+
+    /* Player Controls bar */
+    .veditor-controls-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        background: #090d16;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 6px 12px;
+    }
+    .veditor-ctrl-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .veditor-btn-icon {
+        background: #1e293b;
+        color: #ffffff;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    .veditor-btn-icon:hover {
+        background: #06b6d4;
+        border-color: #06b6d4;
+    }
+    .veditor-time-display {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        color: #cbd5e1;
+    }
+
+    .veditor-btn-pill {
+        background: #1e293b;
+        color: #94a3b8;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        padding: 5px 9px;
+        font-size: 11px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.15s;
+    }
+    .veditor-btn-pill:hover {
+        color: #f1f5f9;
+        border-color: #64748b;
+    }
+    .veditor-btn-pill.active {
+        background: #083344;
+        color: #22d3ee;
+        border-color: #0e7490;
+        font-weight: 600;
+    }
+
+    /* Right Column: Tabbed Inspector */
+    .veditor-inspector-card {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 14px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Tabs Bar */
+    .veditor-tabs-nav {
+        display: flex;
+        gap: 4px;
+        background: #090d16;
+        padding: 4px;
+        border-radius: 10px;
+        border: 1px solid #1e293b;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .veditor-tabs-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .veditor-tab-btn {
+        flex: 1;
+        min-width: 62px;
+        text-align: center;
+        padding: 7px 6px;
+        background: transparent;
+        border: none;
+        border-radius: 7px;
+        color: #94a3b8;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.15s ease;
+    }
+    .veditor-tab-btn:hover {
+        color: #f1f5f9;
+    }
+    .veditor-tab-btn.active {
+        background: #1e293b;
+        color: #38bdf8;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Tab Panels */
+    .veditor-tab-pane {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .veditor-tab-pane.active {
+        display: flex;
+    }
+
+    .veditor-sec-title {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #cbd5e1;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .veditor-desc-text {
+        font-size: 11px;
+        color: #94a3b8;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    /* Speed Grid */
+    .veditor-btn-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+    .veditor-opt-btn {
+        padding: 7px 4px;
+        background: #1e293b;
+        color: #cbd5e1;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.15s;
+    }
+    .veditor-opt-btn:hover {
+        background: #334155;
+        color: #ffffff;
+    }
+    .veditor-opt-btn.active {
+        background: #083344;
+        color: #22d3ee;
+        border-color: #0e7490;
+    }
+
+    /* Aspect Ratio Grid */
+    .veditor-aspect-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    /* Rotate & Flip Buttons */
+    .veditor-rotate-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+
+    /* Sliders */
+    .veditor-slider-box {
+        background: #090d16;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .veditor-slider-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        color: #94a3b8;
+    }
+    .veditor-slider-meta span:last-child {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        color: #38bdf8;
+        font-weight: 600;
+    }
+    .veditor-range {
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background: #1e293b;
+        accent-color: #06b6d4;
+        cursor: pointer;
+    }
+
+    /* Calculation Box */
+    .veditor-calc-box {
+        background: #090d16;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 8px 12px;
+        font-size: 11px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .veditor-calc-row {
+        display: flex;
+        justify-content: space-between;
+        color: #94a3b8;
+    }
+    .veditor-calc-val {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        color: #f1f5f9;
+    }
+
+    /* Text watermark inputs */
+    .veditor-input-text {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 10px;
+        background: #090d16;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 12px;
+        outline: none;
+    }
+    .veditor-input-text:focus {
+        border-color: #06b6d4;
+    }
+
+    /* Color picker & presets */
+    .veditor-color-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .veditor-color-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid #334155;
+        cursor: pointer;
+        transition: transform 0.15s;
+    }
+    .veditor-color-dot:hover, .veditor-color-dot.active {
+        transform: scale(1.15);
+        border-color: #38bdf8;
+    }
+
+    /* Audio section file import */
+    .veditor-audio-import {
+        background: #090d16;
+        border: 1px dashed #334155;
+        border-radius: 10px;
+        padding: 10px 12px;
+        text-align: center;
+        font-size: 11px;
+    }
+
+    /* Export Action Box */
+    .veditor-export-box {
+        margin-top: auto;
+        padding-top: 10px;
+        border-top: 1px solid #1e293b;
+    }
+    .veditor-export-btn {
+        width: 100%;
+        padding: 13px 18px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #0891b2, #2563eb);
+        color: #ffffff;
+        border: none;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 4px 16px rgba(8, 145, 178, 0.35);
+        transition: all 0.15s ease;
+        touch-action: manipulation;
+    }
+    .veditor-export-btn:hover:not(:disabled) {
+        background: linear-gradient(135deg, #06b6d4, #3b82f6);
+        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.5);
+    }
+    .veditor-export-btn:disabled {
+        background: #334155;
+        color: #94a3b8;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    /* Timeline Section (Bottom of Left Column or Full Width) */
+    .veditor-timeline-panel {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 14px;
+        padding: 14px;
+        margin-top: 16px;
+    }
+    .veditor-timeline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .veditor-ruler {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        color: #64748b;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        margin-bottom: 4px;
+        padding: 0 4px;
+    }
+    .veditor-timeline-track {
+        position: relative;
+        height: 60px;
+        background: #090d16;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #1e293b;
+        cursor: pointer;
+        user-select: none;
+    }
+    .veditor-timeline-stripes {
+        position: absolute;
+        inset: 0;
+        opacity: 0.35;
+        background: repeating-linear-gradient(90deg, #1e293b 0px, #1e293b 2px, #090d16 2px, #090d16 12px);
+    }
+    .veditor-wave-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.85;
+    }
+    .veditor-dim-left, .veditor-dim-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: rgba(3, 7, 18, 0.85);
+        pointer-events: none;
+        z-index: 2;
+    }
+    .veditor-dim-left { left: 0; width: 0%; }
+    .veditor-dim-right { right: 0; width: 0%; }
+
+    .veditor-active-range {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: rgba(14, 165, 233, 0.15);
+        border-top: 2px solid #0284c7;
+        border-bottom: 2px solid #0284c7;
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    .veditor-handle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 16px;
+        margin-left: -8px;
+        cursor: ew-resize;
+        z-index: 6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        touch-action: none;
+    }
+    .veditor-handle-bar {
+        width: 4px;
+        height: 34px;
+        border-radius: 4px;
+        background: #38bdf8;
+        box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+        pointer-events: none;
+    }
+    .veditor-handle.start { left: 0%; }
+    .veditor-handle.end { left: 100%; }
+    .veditor-handle.end .veditor-handle-bar {
+        background: #818cf8;
+        box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+    }
+
+    .veditor-playhead {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #ef4444;
+        box-shadow: 0 0 6px rgba(239, 68, 68, 0.8);
+        pointer-events: none;
+        z-index: 5;
+        left: 0%;
+    }
+    .veditor-playhead::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -4px;
+        width: 10px;
+        height: 10px;
+        background: #ef4444;
+        border-radius: 50%;
+    }
+
+    .veditor-fine-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 8px;
+        margin-top: 10px;
+    }
+    .veditor-fine-box {
+        background: #090d16;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .veditor-fine-val {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 11px;
+        color: #38bdf8;
+        font-weight: 600;
+    }
+
+    /* Modal Progress & Export */
+    .veditor-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+    }
+    .veditor-modal.active {
+        display: flex;
+    }
+    .veditor-modal-card {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 480px;
+        padding: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .veditor-progress-bar-bg {
+        width: 100%;
+        height: 10px;
+        background: #1e293b;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .veditor-progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #06b6d4, #3b82f6);
+        transition: width 0.15s linear;
+    }
+    .veditor-preview-box {
+        background: #000;
+        border-radius: 8px;
+        overflow: hidden;
+        max-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #1e293b;
+    }
+    .veditor-preview-box canvas {
+        max-width: 100%;
+        max-height: 200px;
+        display: block;
+    }
+
+    /* Hidden Canvas for background export & snapshot */
+    #vEditorExportCanvas {
+        display: none;
+    }
+</style>
+
+<div class="veditor-container">
+    <!-- Header -->
+    <div class="veditor-header">
+        <h2 class="veditor-title">
+            <span>🎬 Online Video Editor</span>
+            <span class="veditor-badge">All-in-One</span>
+        </h2>
+        <p class="veditor-subtitle">Trim, crop aspect ratio, rotate, adjust speed, apply filters, add text & mix audio tracks.</p>
+        <div>
+            <span class="veditor-private-badge">
+                <span class="veditor-dot-pulse"></span>
+                <span>100% In-Browser • Zero Server Uploads • No Watermark</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Dropzone Area -->
+    <div id="vEditorDropzone" class="veditor-dropzone">
+        <svg style="width: 44px; height: 44px; margin: 0 auto 8px auto; color: #38bdf8;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        <p style="font-size: 15px; font-weight: 600; color: #f1f5f9; margin: 0 0 4px 0;">Drop your video here to start editing</p>
+        <p style="font-size: 12px; color: #94a3b8; margin: 0;">Supports MP4, WebM, MOV, MKV, AVI • Instant client processing</p>
+        <div>
+            <button type="button" class="veditor-upload-btn" id="vEditorSelectFileBtn">
+                <svg style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                </svg>
+                <span>Select Video File</span>
+            </button>
+        </div>
+        <input type="file" id="vEditorFileInput" accept="video/*" style="display: none;">
+    </div>
+
+    <!-- Active Workspace -->
+    <div id="vEditorApp" class="veditor-app">
+        <!-- Topbar -->
+        <div class="veditor-topbar">
+            <div class="veditor-file-meta">
+                <span class="veditor-file-name" id="vEditorFileName">video.mp4</span>
+                <span id="vEditorFileDim" style="color: #64748b; font-family: ui-monospace, monospace;">1920x1080</span>
+                <span id="vEditorFileDuration" style="color: #64748b; font-family: ui-monospace, monospace;">00:00.0</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <button type="button" id="vEditorCaptureFrameTopBtn" class="veditor-btn-pill" title="Take a high-res screenshot of current frame">
+                    <svg style="width: 14px; height: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    </svg>
+                    <span>Capture Frame</span>
+                </button>
+                <button type="button" id="vEditorNewFileBtn" class="veditor-btn-pill">
+                    <span>Change Video</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Editor Grid -->
+        <div class="veditor-main-grid">
+            <!-- Left: Stage & Controls -->
+            <div class="veditor-player-card">
+                <!-- Video Stage -->
+                <div class="veditor-stage-wrap" id="vEditorStageWrap">
+                    <video id="vEditorVideo" class="veditor-video-el" playsinline preload="auto"></video>
+                    <!-- Live Text Overlay -->
+                    <div id="vEditorLiveText" class="veditor-live-text">Watermark</div>
+                    <!-- Quick actions over stage -->
+                    <div class="veditor-stage-actions">
+                        <button type="button" id="vEditorResetTransformBtn" class="veditor-stage-btn" title="Reset Rotate & Aspect">
+                            <span>Reset View</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Controls Bar -->
+                <div class="veditor-controls-bar">
+                    <div class="veditor-ctrl-group">
+                        <button type="button" id="vEditorPlayBtn" class="veditor-btn-icon" title="Play / Pause (Spacebar)">
+                            <svg id="vEditorPlayIcon" style="width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                            </svg>
+                            <svg id="vEditorPauseIcon" style="width: 16px; height: 16px; display: none;" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/>
+                            </svg>
+                        </button>
+                        <button type="button" id="vEditorLoopBtn" class="veditor-btn-pill" title="Loop trimmed selection">
+                            <span>Loop Selection</span>
+                        </button>
+                        <span id="vEditorTimeDisplay" class="veditor-time-display">00:00.0 / 00:00.0</span>
+                    </div>
+                    <div class="veditor-ctrl-group">
+                        <button type="button" id="vEditorMuteBtn" class="veditor-btn-pill" title="Toggle Mute">
+                            <span id="vEditorMuteLabel">Mute</span>
+                        </button>
+                        <input type="range" id="vEditorVolumeRange" min="0" max="1" step="0.05" value="1" class="veditor-range" style="width: 60px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Inspector Tabs -->
+            <div class="veditor-inspector-card">
+                <!-- Tabs navigation -->
+                <div class="veditor-tabs-nav">
+                    <button type="button" class="veditor-tab-btn active" data-tab="tab-trim">✂️ Trim & Speed</button>
+                    <button type="button" class="veditor-tab-btn" data-tab="tab-format">📐 Format</button>
+                    <button type="button" class="veditor-tab-btn" data-tab="tab-filters">🎨 Filters</button>
+                    <button type="button" class="veditor-tab-btn" data-tab="tab-text">📝 Text</button>
+                    <button type="button" class="veditor-tab-btn" data-tab="tab-audio">🎵 Audio</button>
+                </div>
+
+                <!-- TAB 1: TRIM & SPEED -->
+                <div id="tab-trim" class="veditor-tab-pane active">
+                    <div>
+                        <h4 class="veditor-sec-title">Playback Speed</h4>
+                        <p class="veditor-desc-text">Slow motion or fast-forward with pitch correction.</p>
+                    </div>
+                    <div class="veditor-btn-grid">
+                        <button type="button" class="veditor-opt-btn" data-speed="0.25">0.25x</button>
+                        <button type="button" class="veditor-opt-btn" data-speed="0.5">0.5x</button>
+                        <button type="button" class="veditor-opt-btn" data-speed="0.75">0.75x</button>
+                        <button type="button" class="veditor-opt-btn active" data-speed="1.0">1.0x</button>
+                        <button type="button" class="veditor-opt-btn" data-speed="1.25">1.25x</button>
+                        <button type="button" class="veditor-opt-btn" data-speed="1.5">1.5x</button>
+                        <button type="button" class="veditor-opt-btn" data-speed="2.0">2.0x</button>
+                        <button type="button" id="vEditorCustomSpeedBtn" class="veditor-opt-btn">Custom</button>
+                    </div>
+
+                    <!-- Timing summary -->
+                    <div class="veditor-calc-box">
+                        <div class="veditor-calc-row">
+                            <span>Selected duration:</span>
+                            <span id="vEditorCalcOrig" class="veditor-calc-val">0.0 s</span>
+                        </div>
+                        <div class="veditor-calc-row">
+                            <span>Speed multiplier:</span>
+                            <span id="vEditorCalcMult" class="veditor-calc-val" style="color: #38bdf8;">1.00x</span>
+                        </div>
+                        <div class="veditor-calc-row" style="border-top: 1px solid #1e293b; padding-top: 4px; font-weight: 700;">
+                            <span>Resulting output time:</span>
+                            <span id="vEditorCalcFinal" class="veditor-calc-val" style="color: #22d3ee;">0.0 s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: FORMAT & ROTATE -->
+                <div id="tab-format" class="veditor-tab-pane">
+                    <div>
+                        <h4 class="veditor-sec-title">Aspect Ratio</h4>
+                        <p class="veditor-desc-text">Frame for Shorts, Reels, YouTube or Square.</p>
+                    </div>
+                    <div class="veditor-aspect-grid">
+                        <button type="button" class="veditor-opt-btn active" data-aspect="original">Auto</button>
+                        <button type="button" class="veditor-opt-btn" data-aspect="16:9">16:9</button>
+                        <button type="button" class="veditor-opt-btn" data-aspect="9:16">9:16</button>
+                        <button type="button" class="veditor-opt-btn" data-aspect="1:1">1:1</button>
+                        <button type="button" class="veditor-opt-btn" data-aspect="4:5">4:5</button>
+                    </div>
+
+                    <div style="margin-top: 4px;">
+                        <h4 class="veditor-sec-title">Rotate & Mirror</h4>
+                        <p class="veditor-desc-text">Fix sideways orientation or mirror selfie camera.</p>
+                    </div>
+                    <div class="veditor-rotate-grid">
+                        <button type="button" id="vEditorRotateCCWBtn" class="veditor-opt-btn">⟲ -90°</button>
+                        <button type="button" id="vEditorRotateCWBtn" class="veditor-opt-btn">⟳ +90°</button>
+                        <button type="button" id="vEditorFlipHBtn" class="veditor-opt-btn">⇆ Mirror</button>
+                        <button type="button" id="vEditorFlipVBtn" class="veditor-opt-btn">⇅ Flip</button>
+                    </div>
+                </div>
+
+                <!-- TAB 3: FILTERS & COLOR -->
+                <div id="tab-filters" class="veditor-tab-pane">
+                    <div>
+                        <h4 class="veditor-sec-title">Color Presets</h4>
+                        <p class="veditor-desc-text">Instant cinematic color grading.</p>
+                    </div>
+                    <div class="veditor-btn-grid">
+                        <button type="button" class="veditor-opt-btn active" data-filter="none">Normal</button>
+                        <button type="button" class="veditor-opt-btn" data-filter="bw">B&W</button>
+                        <button type="button" class="veditor-opt-btn" data-filter="sepia">Warm</button>
+                        <button type="button" class="veditor-opt-btn" data-filter="vintage">Vintage</button>
+                        <button type="button" class="veditor-opt-btn" data-filter="contrast">Vibrant</button>
+                        <button type="button" class="veditor-opt-btn" data-filter="cyber">Cyber</button>
+                        <button type="button" class="veditor-opt-btn" data-filter="invert">Invert</button>
+                        <button type="button" id="vEditorResetFiltersBtn" class="veditor-opt-btn">Reset</button>
+                    </div>
+
+                    <!-- Sliders -->
+                    <div class="veditor-slider-box">
+                        <div class="veditor-slider-meta">
+                            <span>Brightness</span>
+                            <span id="vEditorBrightVal">100%</span>
+                        </div>
+                        <input type="range" id="vEditorBrightRange" min="50" max="150" value="100" class="veditor-range">
+                    </div>
+                    <div class="veditor-slider-box">
+                        <div class="veditor-slider-meta">
+                            <span>Contrast</span>
+                            <span id="vEditorContrastVal">100%</span>
+                        </div>
+                        <input type="range" id="vEditorContrastRange" min="50" max="160" value="100" class="veditor-range">
+                    </div>
+                    <div class="veditor-slider-box">
+                        <div class="veditor-slider-meta">
+                            <span>Saturation</span>
+                            <span id="vEditorSatVal">100%</span>
+                        </div>
+                        <input type="range" id="vEditorSatRange" min="0" max="200" value="100" class="veditor-range">
+                    </div>
+                </div>
+
+                <!-- TAB 4: TEXT / WATERMARK -->
+                <div id="tab-text" class="veditor-tab-pane">
+                    <div>
+                        <h4 class="veditor-sec-title">Text Overlay / Subtitle</h4>
+                        <p class="veditor-desc-text">Add title, caption, or handle (@username).</p>
+                    </div>
+                    <input type="text" id="vEditorTextInput" class="veditor-input-text" placeholder="Type text here (leave empty for none)..." maxlength="60">
+
+                    <div style="display: flex; gap: 8px;">
+                        <div style="flex: 1;">
+                            <label style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 4px;">Position</label>
+                            <div class="veditor-btn-grid" style="grid-template-columns: repeat(3, 1fr);">
+                                <button type="button" class="veditor-opt-btn" data-textpos="top">Top</button>
+                                <button type="button" class="veditor-opt-btn" data-textpos="center">Center</button>
+                                <button type="button" class="veditor-opt-btn active" data-textpos="bottom">Bottom</button>
+                            </div>
+                        </div>
+                        <div style="width: 100px;">
+                            <label style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 4px;">Size</label>
+                            <div class="veditor-btn-grid" style="grid-template-columns: repeat(2, 1fr);">
+                                <button type="button" class="veditor-opt-btn active" data-textsize="normal">Med</button>
+                                <button type="button" class="veditor-opt-btn" data-textsize="large">Big</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color palette -->
+                    <div>
+                        <label style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 4px;">Text Color & Box</label>
+                        <div class="veditor-color-row">
+                            <div class="veditor-color-dot active" style="background: #ffffff;" data-color="#ffffff"></div>
+                            <div class="veditor-color-dot" style="background: #fde047;" data-color="#fde047"></div>
+                            <div class="veditor-color-dot" style="background: #38bdf8;" data-color="#38bdf8"></div>
+                            <div class="veditor-color-dot" style="background: #f43f5e;" data-color="#f43f5e"></div>
+                            <div class="veditor-color-dot" style="background: #4ade80;" data-color="#4ade80"></div>
+                            <div class="veditor-color-dot" style="background: #000000;" data-color="#000000"></div>
+                            <button type="button" id="vEditorTextBgToggle" class="veditor-btn-pill active" style="margin-left: auto;">
+                                <span>Dark Pill Box</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: AUDIO, MUSIC & MIC -->
+                <div id="tab-audio" class="veditor-tab-pane">
+                    <div>
+                        <h4 class="veditor-sec-title">Original Video Audio</h4>
+                    </div>
+                    <div class="veditor-slider-box">
+                        <div class="veditor-slider-meta">
+                            <span>Video Sound Volume</span>
+                            <span id="vEditorOrigVolVal">100%</span>
+                        </div>
+                        <input type="range" id="vEditorOrigVolRange" min="0" max="2" step="0.05" value="1" class="veditor-range">
+                    </div>
+
+                    <div>
+                        <h4 class="veditor-sec-title">Background Music</h4>
+                    </div>
+                    <div class="veditor-audio-import">
+                        <input type="file" id="vEditorMusicInput" accept="audio/*" style="display: none;">
+                        <button type="button" id="vEditorSelectMusicBtn" class="veditor-btn-pill">
+                            <svg style="width: 14px; height: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                            <span>Add Music File (MP3 / WAV)</span>
+                        </button>
+                        <div id="vEditorMusicInfo" style="display: none; margin-top: 8px; color: #38bdf8; font-size: 11px;">
+                            <span id="vEditorMusicName">music.mp3</span>
+                            <button type="button" id="vEditorRemoveMusicBtn" style="background: transparent; border: none; color: #f43f5e; cursor: pointer; text-decoration: underline; margin-left: 8px;">Remove</button>
+                        </div>
+                    </div>
+                    <div id="vEditorMusicVolBox" class="veditor-slider-box" style="display: none;">
+                        <div class="veditor-slider-meta">
+                            <span>Music Volume</span>
+                            <span id="vEditorMusicVolVal">80%</span>
+                        </div>
+                        <input type="range" id="vEditorMusicVolRange" min="0" max="2" step="0.05" value="0.8" class="veditor-range">
+                    </div>
+
+                    <div>
+                        <h4 class="veditor-sec-title">Microphone Voiceover</h4>
+                    </div>
+                    <button type="button" id="vEditorMicBtn" class="veditor-btn-pill" style="width: 100%; justify-content: center; padding: 9px;">
+                        <svg style="width: 15px; height: 15px; color: #f43f5e;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                        <span id="vEditorMicLabel">Enable Microphone</span>
+                    </button>
+                    <div id="vEditorMicVolBox" class="veditor-slider-box" style="display: none;">
+                        <div class="veditor-slider-meta">
+                            <span>Microphone Level</span>
+                            <span id="vEditorMicVolVal">100%</span>
+                        </div>
+                        <input type="range" id="vEditorMicVolRange" min="0" max="2" step="0.05" value="1" class="veditor-range">
+                    </div>
+                </div>
+
+                <!-- Export Area (Sticky at bottom of Inspector) -->
+                <div class="veditor-export-box">
+                    <button type="button" id="vEditorExportBtn" class="veditor-export-btn">
+                        <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        <span>Export Edited Video</span>
+                    </button>
+                    <p style="font-size: 11px; color: #64748b; text-align: center; margin: 6px 0 0 0;">
+                        100% Client-Side Render • Web Audio & Canvas Acceleration
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Timeline (Full Width Bottom) -->
+        <div class="veditor-timeline-panel">
+            <div class="veditor-timeline-header">
+                <h4 class="veditor-sec-title">Timeline Range & Trim</h4>
+                <div style="display: flex; gap: 6px;">
+                    <button type="button" id="vEditorSetStartBtn" class="veditor-btn-pill">[ Mark Start</button>
+                    <button type="button" id="vEditorSetEndBtn" class="veditor-btn-pill">Mark End ]</button>
+                    <button type="button" id="vEditorResetRangeBtn" class="veditor-btn-pill">Full Clip</button>
+                </div>
+            </div>
+
+            <div class="veditor-ruler">
+                <span id="vEditorRulerStart">00:00.0</span>
+                <span id="vEditorRulerMid">--:--</span>
+                <span id="vEditorRulerEnd">--:--</span>
+            </div>
+
+            <!-- Track -->
+            <div id="vEditorTimelineTrack" class="veditor-timeline-track">
+                <div class="veditor-timeline-stripes"></div>
+                <canvas id="vEditorWaveCanvas" class="veditor-wave-canvas"></canvas>
+                <div id="vEditorDimLeft" class="veditor-dim-left"></div>
+                <div id="vEditorDimRight" class="veditor-dim-right"></div>
+                <div id="vEditorActiveRange" class="veditor-active-range"></div>
+
+                <div id="vEditorHandleStart" class="veditor-handle start" title="Drag start point">
+                    <div class="veditor-handle-bar"></div>
+                </div>
+                <div id="vEditorHandleEnd" class="veditor-handle end" title="Drag end point">
+                    <div class="veditor-handle-bar"></div>
+                </div>
+                <div id="vEditorPlayhead" class="veditor-playhead"></div>
+            </div>
+
+            <!-- Fine-tuning buttons -->
+            <div class="veditor-fine-grid">
+                <div class="veditor-fine-box">
+                    <div>
+                        <span style="color: #64748b; font-size: 10px;">Start:</span>
+                        <span id="vEditorStartBadge" class="veditor-fine-val">00:00.00</span>
+                    </div>
+                    <div style="display: flex; gap: 4px;">
+                        <button type="button" id="vEditorStartSub" class="veditor-btn-pill">-0.1s</button>
+                        <button type="button" id="vEditorStartAdd" class="veditor-btn-pill">+0.1s</button>
+                    </div>
+                </div>
+                <div class="veditor-fine-box">
+                    <div>
+                        <span style="color: #64748b; font-size: 10px;">End:</span>
+                        <span id="vEditorEndBadge" class="veditor-fine-val" style="color: #818cf8;">00:00.00</span>
+                    </div>
+                    <div style="display: flex; gap: 4px;">
+                        <button type="button" id="vEditorEndSub" class="veditor-btn-pill">-0.1s</button>
+                        <button type="button" id="vEditorEndAdd" class="veditor-btn-pill">+0.1s</button>
+                    </div>
+                </div>
+                <div class="veditor-fine-box">
+                    <div>
+                        <span style="color: #64748b; font-size: 10px;">Selection:</span>
+                        <span id="vEditorSelectedDuration" class="veditor-fine-val" style="color: #ffffff;">0.00 s</span>
+                    </div>
+                    <button type="button" id="vEditorPlaySelectionBtn" class="veditor-btn-pill active">
+                        ▶ Preview Cut
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Export Canvas & Audio Elements -->
+    <canvas id="vEditorExportCanvas"></canvas>
+    <audio id="vEditorBgAudio" preload="auto" style="display: none;"></audio>
+
+    <!-- Export Modal -->
+    <div id="vEditorExportModal" class="veditor-modal">
+        <div class="veditor-modal-card">
+            <h3 id="vEditorModalTitle" style="font-size: 17px; font-weight: 700; color: #ffffff; margin: 0;">Rendering Video...</h3>
+            <p id="vEditorModalDesc" style="font-size: 12px; color: #94a3b8; margin: 0;">Encoding frames, applying effects and mixing audio tracks.</p>
+
+            <div class="veditor-progress-bar-bg">
+                <div id="vEditorModalProgressBar" class="veditor-progress-fill"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: ui-monospace, monospace; color: #94a3b8;">
+                <span id="vEditorModalPct">0%</span>
+                <span id="vEditorModalTimeLeft">Remaining: calculating...</span>
+            </div>
+
+            <div class="veditor-preview-box">
+                <canvas id="vEditorLivePreview"></canvas>
+            </div>
+
+            <div id="vEditorModalActions" style="display: none; flex-direction: column; gap: 8px;">
+                <a id="vEditorDownloadBtn" class="veditor-export-btn" style="text-decoration: none; background: #059669;" download>
+                    <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Download Edited Video</span>
+                </a>
+                <button type="button" id="vEditorCloseModalBtn" class="veditor-btn-pill" style="justify-content: center; padding: 8px;">
+                    Back to Editor
+                </button>
+            </div>
+
+            <button type="button" id="vEditorCancelExportBtn" class="veditor-btn-pill" style="justify-content: center; color: #f43f5e; border-color: #be123c;">
+                Cancel Export
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    // DOM Elements
+    const dropzone = document.getElementById('vEditorDropzone');
+    const selectFileBtn = document.getElementById('vEditorSelectFileBtn');
+    const fileInput = document.getElementById('vEditorFileInput');
+    const app = document.getElementById('vEditorApp');
+    const newFileBtn = document.getElementById('vEditorNewFileBtn');
+
+    const fileNameEl = document.getElementById('vEditorFileName');
+    const fileDimEl = document.getElementById('vEditorFileDim');
+    const fileDurationEl = document.getElementById('vEditorFileDuration');
+
+    const video = document.getElementById('vEditorVideo');
+    const stageWrap = document.getElementById('vEditorStageWrap');
+    const liveText = document.getElementById('vEditorLiveText');
+    const resetTransformBtn = document.getElementById('vEditorResetTransformBtn');
+
+    const playBtn = document.getElementById('vEditorPlayBtn');
+    const playIcon = document.getElementById('vEditorPlayIcon');
+    const pauseIcon = document.getElementById('vEditorPauseIcon');
+    const loopBtn = document.getElementById('vEditorLoopBtn');
+    const timeDisplay = document.getElementById('vEditorTimeDisplay');
+    const muteBtn = document.getElementById('vEditorMuteBtn');
+    const muteLabel = document.getElementById('vEditorMuteLabel');
+    const volumeRange = document.getElementById('vEditorVolumeRange');
+
+    const tabBtns = document.querySelectorAll('.veditor-tab-btn');
+    const tabPanes = document.querySelectorAll('.veditor-tab-pane');
+
+    // Speed
+    const speedBtns = document.querySelectorAll('[data-speed]');
+    const customSpeedBtn = document.getElementById('vEditorCustomSpeedBtn');
+    const calcOrig = document.getElementById('vEditorCalcOrig');
+    const calcMult = document.getElementById('vEditorCalcMult');
+    const calcFinal = document.getElementById('vEditorCalcFinal');
+
+    // Format & Rotate
+    const aspectBtns = document.querySelectorAll('[data-aspect]');
+    const rotateCCWBtn = document.getElementById('vEditorRotateCCWBtn');
+    const rotateCWBtn = document.getElementById('vEditorRotateCWBtn');
+    const flipHBtn = document.getElementById('vEditorFlipHBtn');
+    const flipVBtn = document.getElementById('vEditorFlipVBtn');
+
+    // Filters
+    const filterBtns = document.querySelectorAll('[data-filter]');
+    const resetFiltersBtn = document.getElementById('vEditorResetFiltersBtn');
+    const brightRange = document.getElementById('vEditorBrightRange');
+    const brightVal = document.getElementById('vEditorBrightVal');
+    const contrastRange = document.getElementById('vEditorContrastRange');
+    const contrastVal = document.getElementById('vEditorContrastVal');
+    const satRange = document.getElementById('vEditorSatRange');
+    const satVal = document.getElementById('vEditorSatVal');
+
+    // Text
+    const textInput = document.getElementById('vEditorTextInput');
+    const textPosBtns = document.querySelectorAll('[data-textpos]');
+    const textSizeBtns = document.querySelectorAll('[data-textsize]');
+    const colorDots = document.querySelectorAll('.veditor-color-dot');
+    const textBgToggle = document.getElementById('vEditorTextBgToggle');
+
+    // Audio
+    const origVolRange = document.getElementById('vEditorOrigVolRange');
+    const origVolVal = document.getElementById('vEditorOrigVolVal');
+    const selectMusicBtn = document.getElementById('vEditorSelectMusicBtn');
+    const musicInput = document.getElementById('vEditorMusicInput');
+    const bgAudio = document.getElementById('vEditorBgAudio');
+    const musicInfo = document.getElementById('vEditorMusicInfo');
+    const musicName = document.getElementById('vEditorMusicName');
+    const removeMusicBtn = document.getElementById('vEditorRemoveMusicBtn');
+    const musicVolBox = document.getElementById('vEditorMusicVolBox');
+    const musicVolRange = document.getElementById('vEditorMusicVolRange');
+    const musicVolVal = document.getElementById('vEditorMusicVolVal');
+
+    const micBtn = document.getElementById('vEditorMicBtn');
+    const micLabel = document.getElementById('vEditorMicLabel');
+    const micVolBox = document.getElementById('vEditorMicVolBox');
+    const micVolRange = document.getElementById('vEditorMicVolRange');
+    const micVolVal = document.getElementById('vEditorMicVolVal');
+
+    // Timeline
+    const timelineTrack = document.getElementById('vEditorTimelineTrack');
+    const waveCanvas = document.getElementById('vEditorWaveCanvas');
+    const dimLeft = document.getElementById('vEditorDimLeft');
+    const dimRight = document.getElementById('vEditorDimRight');
+    const activeRange = document.getElementById('vEditorActiveRange');
+    const handleStart = document.getElementById('vEditorHandleStart');
+    const handleEnd = document.getElementById('vEditorHandleEnd');
+    const playhead = document.getElementById('vEditorPlayhead');
+    const startBadge = document.getElementById('vEditorStartBadge');
+    const endBadge = document.getElementById('vEditorEndBadge');
+    const selectedDuration = document.getElementById('vEditorSelectedDuration');
+    const playSelectionBtn = document.getElementById('vEditorPlaySelectionBtn');
+    const rulerStart = document.getElementById('vEditorRulerStart');
+    const rulerMid = document.getElementById('vEditorRulerMid');
+    const rulerEnd = document.getElementById('vEditorRulerEnd');
+
+    // Export & Capture
+    const captureFrameTopBtn = document.getElementById('vEditorCaptureFrameTopBtn');
+    const exportBtn = document.getElementById('vEditorExportBtn');
+    const exportCanvas = document.getElementById('vEditorExportCanvas');
+    const exportModal = document.getElementById('vEditorExportModal');
+    const modalTitle = document.getElementById('vEditorModalTitle');
+    const modalDesc = document.getElementById('vEditorModalDesc');
+    const modalProgressBar = document.getElementById('vEditorModalProgressBar');
+    const modalPct = document.getElementById('vEditorModalPct');
+    const modalTimeLeft = document.getElementById('vEditorModalTimeLeft');
+    const livePreview = document.getElementById('vEditorLivePreview');
+    const modalActions = document.getElementById('vEditorModalActions');
+    const downloadBtn = document.getElementById('vEditorDownloadBtn');
+    const closeModalBtn = document.getElementById('vEditorCloseModalBtn');
+    const cancelExportBtn = document.getElementById('vEditorCancelExportBtn');
+
+    // State Variables
+    let videoFile = null;
+    let videoUrl = null;
+    let videoDuration = 0;
+    let trimStart = 0;
+    let trimEnd = 0;
+    let isLooping = true;
+    let currentSpeed = 1.0;
+
+    // Transform & Aspect
+    let currentAspect = 'original';
+    let currentRotation = 0; // 0, 90, 180, 270
+    let isFlipH = false;
+    let isFlipV = false;
+
+    // Filter state
+    let activePreset = 'none';
+    let brightness = 100;
+    let contrast = 100;
+    let saturation = 100;
+
+    // Text state
+    let overlayText = '';
+    let textPos = 'bottom';
+    let textSize = 'normal';
+    let textColor = '#ffffff';
+    let hasTextBg = true;
+
+    // Audio state
+    let bgMusicFile = null;
+    let isMicEnabled = false;
+    let micStream = null;
+
+    // Dragging Timeline
+    let isDragging = null; // 'start', 'end', 'scrub'
+    let isExporting = false;
+    let exportCancelled = false;
+    let exportedBlobUrl = null;
+
+    // Time formatting helper
+    function formatTime(seconds, detailed) {
+        if (isNaN(seconds) || seconds < 0) seconds = 0;
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        const ms = Math.floor((seconds % 1) * 10);
+        const pad = (n) => String(n).padStart(2, '0');
+        if (detailed) {
+            const hms = Math.floor((seconds % 1) * 100);
+            return `${pad(mins)}:${pad(secs)}.${String(hms).padStart(2, '0')}`;
+        }
+        return `${pad(mins)}:${pad(secs)}.${ms}`;
+    }
+
+    // Dropzone listeners
+    selectFileBtn.addEventListener('click', () => fileInput.click());
+    dropzone.addEventListener('click', (e) => {
+        if (e.target !== selectFileBtn && !selectFileBtn.contains(e.target)) {
+            fileInput.click();
+        }
+    });
+
+    ['dragenter', 'dragover'].forEach(name => {
+        dropzone.addEventListener(name, (e) => {
+            e.preventDefault();
+            dropzone.classList.add('dragover');
+        });
+    });
+    ['dragleave', 'drop'].forEach(name => {
+        dropzone.addEventListener(name, (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+        });
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+            handleSelectedFile(e.dataTransfer.files[0]);
+        }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+            handleSelectedFile(e.target.files[0]);
+        }
+    });
+
+    newFileBtn.addEventListener('click', () => {
+        fileInput.value = '';
+        fileInput.click();
+    });
+
+    function handleSelectedFile(file) {
+        if (!file.type.startsWith('video/') && !file.name.match(/\.(mp4|webm|mov|mkv|avi|m4v)$/i)) {
+            alert('Please select a valid video file.');
+            return;
+        }
+
+        videoFile = file;
+        fileNameEl.textContent = file.name;
+
+        if (videoUrl) URL.revokeObjectURL(videoUrl);
+        videoUrl = URL.createObjectURL(file);
+        video.src = videoUrl;
+        video.load();
+
+        video.onloadedmetadata = () => {
+            videoDuration = video.duration;
+            trimStart = 0;
+            trimEnd = videoDuration;
+
+            fileDimEl.textContent = `${video.videoWidth}x${video.videoHeight}`;
+            fileDurationEl.textContent = formatTime(videoDuration, true);
+            rulerStart.textContent = '00:00.0';
+            rulerMid.textContent = formatTime(videoDuration / 2);
+            rulerEnd.textContent = formatTime(videoDuration);
+
+            dropzone.style.display = 'none';
+            app.classList.add('active');
+
+            updateTimelineUI();
+            drawWaveform();
+            applyVisualTransform();
+            applyVisualFilters();
+            applyTextOverlay();
+
+            video.currentTime = 0;
+        };
+    }
+
+    // Tab Navigation
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const target = document.getElementById(btn.dataset.tab);
+            if (target) target.classList.add('active');
+        });
+    });
+
+    // Playback & Controls
+    function togglePlay() {
+        if (video.paused) {
+            if (video.currentTime >= trimEnd) video.currentTime = trimStart;
+            video.playbackRate = currentSpeed;
+            video.play();
+            if (bgMusicFile && bgAudio.src) {
+                syncBgMusic();
+                bgAudio.play().catch(() => {});
+            }
+        } else {
+            video.pause();
+            if (bgAudio.src) bgAudio.pause();
+        }
+        updatePlayIcons();
+    }
+
+    function syncBgMusic() {
+        if (!bgAudio.duration) return;
+        const relTime = Math.max(0, video.currentTime - trimStart);
+        bgAudio.currentTime = relTime % bgAudio.duration;
+    }
+
+    playBtn.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay);
+
+    window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && app.classList.contains('active') && e.target.tagName !== 'INPUT') {
+            e.preventDefault();
+            togglePlay();
+        }
+    });
+
+    function updatePlayIcons() {
+        if (video.paused) {
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        } else {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        }
+    }
+
+    video.addEventListener('timeupdate', () => {
+        if (isDragging) return;
+
+        timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(videoDuration)}`;
+        updatePlayheadPosition();
+
+        if (video.currentTime >= trimEnd) {
+            if (isLooping) {
+                video.currentTime = trimStart;
+                if (bgAudio.src) syncBgMusic();
+            } else {
+                video.pause();
+                if (bgAudio.src) bgAudio.pause();
+                updatePlayIcons();
+            }
+        }
+    });
+
+    video.addEventListener('pause', () => {
+        updatePlayIcons();
+        if (bgAudio.src) bgAudio.pause();
+    });
+    video.addEventListener('play', () => {
+        updatePlayIcons();
+        if (bgMusicFile && bgAudio.src) {
+            syncBgMusic();
+            bgAudio.play().catch(() => {});
+        }
+    });
+
+    loopBtn.addEventListener('click', () => {
+        isLooping = !isLooping;
+        loopBtn.classList.toggle('active', isLooping);
+    });
+
+    muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        muteLabel.textContent = video.muted ? 'Unmute' : 'Mute';
+        muteBtn.classList.toggle('active', video.muted);
+    });
+
+    volumeRange.addEventListener('input', (e) => {
+        video.volume = parseFloat(e.target.value);
+        if (video.volume > 0 && video.muted) {
+            video.muted = false;
+            muteLabel.textContent = 'Mute';
+            muteBtn.classList.remove('active');
+        }
+    });
+
+    // Speed Controls
+    speedBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            speedBtns.forEach(b => b.classList.remove('active'));
+            setSpeed(parseFloat(btn.dataset.speed));
+            btn.classList.add('active');
+        });
+    });
+
+    customSpeedBtn.addEventListener('click', () => {
+        const input = prompt('Enter custom playback speed (e.g., 0.35, 0.8, 1.75):', currentSpeed);
+        if (input !== null) {
+            const val = parseFloat(input);
+            if (!isNaN(val) && val >= 0.1 && val <= 4.0) {
+                setSpeed(val);
+                speedBtns.forEach(b => b.classList.remove('active'));
+            } else {
+                alert('Please enter a valid speed between 0.1 and 4.0');
+            }
+        }
+    });
+
+    function setSpeed(speed) {
+        currentSpeed = speed;
+        video.playbackRate = speed;
+        calcMult.textContent = `${speed.toFixed(2)}x`;
+        updateTimingCalculator();
+    }
+
+    function updateTimingCalculator() {
+        const origDur = Math.max(0, trimEnd - trimStart);
+        const finalDur = origDur / currentSpeed;
+        calcOrig.textContent = `${origDur.toFixed(2)} s`;
+        calcFinal.textContent = `${finalDur.toFixed(2)} s`;
+        selectedDuration.textContent = `${origDur.toFixed(2)} s`;
+    }
+
+    // Aspect Ratio & Transforms
+    aspectBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            aspectBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentAspect = btn.dataset.aspect;
+            applyVisualTransform();
+        });
+    });
+
+    rotateCWBtn.addEventListener('click', () => {
+        currentRotation = (currentRotation + 90) % 360;
+        applyVisualTransform();
+    });
+    rotateCCWBtn.addEventListener('click', () => {
+        currentRotation = (currentRotation + 270) % 360;
+        applyVisualTransform();
+    });
+    flipHBtn.addEventListener('click', () => {
+        isFlipH = !isFlipH;
+        flipHBtn.classList.toggle('active', isFlipH);
+        applyVisualTransform();
+    });
+    flipVBtn.addEventListener('click', () => {
+        isFlipV = !isFlipV;
+        flipVBtn.classList.toggle('active', isFlipV);
+        applyVisualTransform();
+    });
+
+    resetTransformBtn.addEventListener('click', () => {
+        currentAspect = 'original';
+        currentRotation = 0;
+        isFlipH = false;
+        isFlipV = false;
+        aspectBtns.forEach(b => b.classList.toggle('active', b.dataset.aspect === 'original'));
+        flipHBtn.classList.remove('active');
+        flipVBtn.classList.remove('active');
+        applyVisualTransform();
+    });
+
+    function applyVisualTransform() {
+        // Aspect ratio on container
+        if (currentAspect === '16:9') {
+            stageWrap.style.aspectRatio = '16 / 9';
+        } else if (currentAspect === '9:16') {
+            stageWrap.style.aspectRatio = '9 / 16';
+        } else if (currentAspect === '1:1') {
+            stageWrap.style.aspectRatio = '1 / 1';
+        } else if (currentAspect === '4:5') {
+            stageWrap.style.aspectRatio = '4 / 5';
+        } else {
+            stageWrap.style.aspectRatio = '';
+        }
+
+        // Transform video
+        const scaleX = isFlipH ? -1 : 1;
+        const scaleY = isFlipV ? -1 : 1;
+        video.style.transform = `rotate(${currentRotation}deg) scaleX(${scaleX}) scaleY(${scaleY})`;
+    }
+
+    // Filters
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activePreset = btn.dataset.filter;
+            applyVisualFilters();
+        });
+    });
+
+    brightRange.addEventListener('input', (e) => {
+        brightness = e.target.value;
+        brightVal.textContent = `${brightness}%`;
+        applyVisualFilters();
+    });
+    contrastRange.addEventListener('input', (e) => {
+        contrast = e.target.value;
+        contrastVal.textContent = `${contrast}%`;
+        applyVisualFilters();
+    });
+    satRange.addEventListener('input', (e) => {
+        saturation = e.target.value;
+        satVal.textContent = `${saturation}%`;
+        applyVisualFilters();
+    });
+
+    resetFiltersBtn.addEventListener('click', () => {
+        activePreset = 'none';
+        brightness = 100;
+        contrast = 100;
+        saturation = 100;
+        brightRange.value = 100; brightVal.textContent = '100%';
+        contrastRange.value = 100; contrastVal.textContent = '100%';
+        satRange.value = 100; satVal.textContent = '100%';
+        filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === 'none'));
+        applyVisualFilters();
+    });
+
+    function getFilterString() {
+        let presetStr = '';
+        if (activePreset === 'bw') presetStr = 'grayscale(100%)';
+        else if (activePreset === 'sepia') presetStr = 'sepia(70%)';
+        else if (activePreset === 'vintage') presetStr = 'contrast(120%) saturate(130%) sepia(25%)';
+        else if (activePreset === 'contrast') presetStr = 'contrast(140%) saturate(130%)';
+        else if (activePreset === 'cyber') presetStr = 'hue-rotate(180deg) saturate(140%)';
+        else if (activePreset === 'invert') presetStr = 'invert(100%)';
+
+        return `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%) ${presetStr}`.trim();
+    }
+
+    function applyVisualFilters() {
+        video.style.filter = getFilterString();
+    }
+
+    // Text Overlay
+    textInput.addEventListener('input', (e) => {
+        overlayText = e.target.value;
+        applyTextOverlay();
+    });
+
+    textPosBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            textPosBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            textPos = btn.dataset.textpos;
+            applyTextOverlay();
+        });
+    });
+
+    textSizeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            textSizeBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            textSize = btn.dataset.textsize;
+            applyTextOverlay();
+        });
+    });
+
+    colorDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            colorDots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+            textColor = dot.dataset.color;
+            applyTextOverlay();
+        });
+    });
+
+    textBgToggle.addEventListener('click', () => {
+        hasTextBg = !hasTextBg;
+        textBgToggle.classList.toggle('active', hasTextBg);
+        applyTextOverlay();
+    });
+
+    function applyTextOverlay() {
+        if (!overlayText.trim()) {
+            liveText.style.display = 'none';
+            return;
+        }
+
+        liveText.style.display = 'block';
+        liveText.textContent = overlayText;
+        liveText.style.color = textColor;
+        liveText.style.fontSize = textSize === 'large' ? '22px' : '15px';
+
+        // Position
+        liveText.style.left = '50%';
+        liveText.style.transform = 'translateX(-50%)';
+        liveText.style.top = '';
+        liveText.style.bottom = '';
+
+        if (textPos === 'top') {
+            liveText.style.top = '16px';
+        } else if (textPos === 'center') {
+            liveText.style.top = '50%';
+            liveText.style.transform = 'translate(-50%, -50%)';
+        } else {
+            liveText.style.bottom = '16px';
+        }
+
+        if (hasTextBg) {
+            liveText.style.background = 'rgba(0, 0, 0, 0.65)';
+            liveText.style.padding = '5px 12px';
+            liveText.style.borderRadius = '20px';
+            liveText.style.textShadow = 'none';
+        } else {
+            liveText.style.background = 'transparent';
+            liveText.style.padding = '0';
+            liveText.style.textShadow = '0 2px 4px rgba(0,0,0,0.8), 0 0 2px rgba(0,0,0,0.9)';
+        }
+    }
+
+    // Audio mixing & Mic
+    origVolRange.addEventListener('input', (e) => {
+        origVolVal.textContent = `${Math.round(e.target.value * 100)}%`;
+    });
+
+    selectMusicBtn.addEventListener('click', () => musicInput.click());
+    musicInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+            bgMusicFile = e.target.files[0];
+            musicName.textContent = bgMusicFile.name;
+            musicInfo.style.display = 'block';
+            musicVolBox.style.display = 'flex';
+            bgAudio.src = URL.createObjectURL(bgMusicFile);
+            bgAudio.volume = parseFloat(musicVolRange.value);
+            bgAudio.load();
+        }
+    });
+
+    removeMusicBtn.addEventListener('click', () => {
+        bgMusicFile = null;
+        bgAudio.pause();
+        bgAudio.src = '';
+        musicInput.value = '';
+        musicInfo.style.display = 'none';
+        musicVolBox.style.display = 'none';
+    });
+
+    musicVolRange.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        musicVolVal.textContent = `${Math.round(val * 100)}%`;
+        if (bgAudio) bgAudio.volume = Math.min(1, val);
+    });
+
+    micBtn.addEventListener('click', async () => {
+        if (!isMicEnabled) {
+            try {
+                micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                isMicEnabled = true;
+                micLabel.textContent = 'Microphone Active';
+                micBtn.classList.add('active');
+                micVolBox.style.display = 'flex';
+            } catch (err) {
+                alert('Microphone access denied: ' + (err.message || err));
+            }
+        } else {
+            if (micStream) {
+                micStream.getTracks().forEach(t => t.stop());
+                micStream = null;
+            }
+            isMicEnabled = false;
+            micLabel.textContent = 'Enable Microphone';
+            micBtn.classList.remove('active');
+            micVolBox.style.display = 'none';
+        }
+    });
+
+    micVolRange.addEventListener('input', (e) => {
+        micVolVal.textContent = `${Math.round(e.target.value * 100)}%`;
+    });
+
+    // Timeline Dragging & Scrubbing
+    function updateTimelineUI() {
+        if (!videoDuration) return;
+        const startPercent = (trimStart / videoDuration) * 100;
+        const endPercent = (trimEnd / videoDuration) * 100;
+
+        handleStart.style.left = `${startPercent}%`;
+        handleEnd.style.left = `${endPercent}%`;
+
+        dimLeft.style.width = `${startPercent}%`;
+        dimRight.style.width = `${100 - endPercent}%`;
+
+        activeRange.style.left = `${startPercent}%`;
+        activeRange.style.width = `${endPercent - startPercent}%`;
+
+        startBadge.textContent = formatTime(trimStart, true);
+        endBadge.textContent = formatTime(trimEnd, true);
+
+        updateTimingCalculator();
+    }
+
+    function updatePlayheadPosition() {
+        if (!videoDuration) return;
+        const curPercent = (video.currentTime / videoDuration) * 100;
+        playhead.style.left = `${Math.min(100, Math.max(0, curPercent))}%`;
+    }
+
+    function getTimeFromEvent(e) {
+        const rect = timelineTrack.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+        return (x / rect.width) * videoDuration;
+    }
+
+    handleStart.addEventListener('mousedown', (e) => { e.stopPropagation(); isDragging = 'start'; });
+    handleStart.addEventListener('touchstart', (e) => { e.stopPropagation(); isDragging = 'start'; });
+    handleEnd.addEventListener('mousedown', (e) => { e.stopPropagation(); isDragging = 'end'; });
+    handleEnd.addEventListener('touchstart', (e) => { e.stopPropagation(); isDragging = 'end'; });
+
+    timelineTrack.addEventListener('mousedown', (e) => {
+        isDragging = 'scrub';
+        video.currentTime = getTimeFromEvent(e);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging || !videoDuration) return;
+        const time = getTimeFromEvent(e);
+
+        if (isDragging === 'start') {
+            trimStart = Math.min(time, trimEnd - 0.1);
+            if (trimStart < 0) trimStart = 0;
+            video.currentTime = trimStart;
+            updateTimelineUI();
+        } else if (isDragging === 'end') {
+            trimEnd = Math.max(time, trimStart + 0.1);
+            if (trimEnd > videoDuration) trimEnd = videoDuration;
+            video.currentTime = trimEnd;
+            updateTimelineUI();
+        } else if (isDragging === 'scrub') {
+            video.currentTime = time;
+        }
+    });
+
+    window.addEventListener('mouseup', () => { isDragging = null; });
+    window.addEventListener('touchend', () => { isDragging = null; });
+
+    // Markers and fine-tuning
+    document.getElementById('vEditorSetStartBtn').addEventListener('click', () => {
+        trimStart = Math.min(video.currentTime, trimEnd - 0.1);
+        updateTimelineUI();
+    });
+    document.getElementById('vEditorSetEndBtn').addEventListener('click', () => {
+        trimEnd = Math.max(video.currentTime, trimStart + 0.1);
+        updateTimelineUI();
+    });
+    document.getElementById('vEditorResetRangeBtn').addEventListener('click', () => {
+        trimStart = 0;
+        trimEnd = videoDuration;
+        updateTimelineUI();
+    });
+
+    document.getElementById('vEditorStartSub').addEventListener('click', () => {
+        trimStart = Math.max(0, trimStart - 0.1);
+        video.currentTime = trimStart;
+        updateTimelineUI();
+    });
+    document.getElementById('vEditorStartAdd').addEventListener('click', () => {
+        trimStart = Math.min(trimEnd - 0.1, trimStart + 0.1);
+        video.currentTime = trimStart;
+        updateTimelineUI();
+    });
+    document.getElementById('vEditorEndSub').addEventListener('click', () => {
+        trimEnd = Math.max(trimStart + 0.1, trimEnd - 0.1);
+        video.currentTime = trimEnd;
+        updateTimelineUI();
+    });
+    document.getElementById('vEditorEndAdd').addEventListener('click', () => {
+        trimEnd = Math.min(videoDuration, trimEnd + 0.1);
+        video.currentTime = trimEnd;
+        updateTimelineUI();
+    });
+
+    playSelectionBtn.addEventListener('click', () => {
+        video.currentTime = trimStart;
+        video.playbackRate = currentSpeed;
+        video.play();
+        updatePlayIcons();
+    });
+
+    function drawWaveform() {
+        waveCanvas.width = timelineTrack.clientWidth || 800;
+        waveCanvas.height = timelineTrack.clientHeight || 60;
+        const ctx = waveCanvas.getContext('2d');
+        ctx.clearRect(0, 0, waveCanvas.width, waveCanvas.height);
+
+        const count = Math.floor(waveCanvas.width / 4);
+        ctx.fillStyle = '#0284c7';
+        for (let i = 0; i < count; i++) {
+            const factor = Math.abs(Math.sin(i * 0.12) * Math.cos(i * 0.05) * 0.7 + Math.sin(i * 0.4) * 0.3);
+            const bHeight = Math.max(4, factor * (waveCanvas.height * 0.65));
+            const x = i * 4;
+            const y = (waveCanvas.height - bHeight) / 2;
+            ctx.fillRect(x, y, 2, bHeight);
+        }
+    }
+
+    window.addEventListener('resize', () => {
+        if (videoDuration) drawWaveform();
+    });
+
+    // ==========================================
+    // SNAPSHOT / FRAME CAPTURE
+    // ==========================================
+    captureFrameTopBtn.addEventListener('click', captureCurrentFrame);
+
+    function captureCurrentFrame() {
+        if (!videoDuration) return;
+
+        const snapCanvas = document.createElement('canvas');
+        const { width, height } = computeCanvasDimensions(video.videoWidth, video.videoHeight);
+        snapCanvas.width = width;
+        snapCanvas.height = height;
+        const ctx = snapCanvas.getContext('2d');
+
+        renderFrameToContext(ctx, width, height);
+
+        snapCanvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `frame_${Math.floor(video.currentTime)}s_${Date.now()}.jpg`;
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+        }, 'image/jpeg', 0.95);
+    }
+
+    // Helper: Compute target canvas dimensions based on Aspect Ratio and Rotation
+    function computeCanvasDimensions(vw, vh) {
+        let baseW = vw || 1280;
+        let baseH = vh || 720;
+
+        if (currentRotation === 90 || currentRotation === 270) {
+            const temp = baseW; baseW = baseH; baseH = temp;
+        }
+
+        if (currentAspect === '16:9') {
+            const h = Math.round(baseW * (9 / 16));
+            return { width: baseW, height: h };
+        } else if (currentAspect === '9:16') {
+            const w = Math.round(baseH * (9 / 16));
+            return { width: w, height: baseH };
+        } else if (currentAspect === '1:1') {
+            const s = Math.min(baseW, baseH);
+            return { width: s, height: s };
+        } else if (currentAspect === '4:5') {
+            const w = Math.round(baseH * (4 / 5));
+            return { width: w, height: baseH };
+        }
+
+        return { width: baseW, height: baseH };
+    }
+
+    // Helper: Render complete transformed video frame + text overlay to canvas context
+    function renderFrameToContext(ctx, cw, ch) {
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, cw, ch);
+
+        ctx.save();
+        ctx.filter = getFilterString();
+
+        ctx.translate(cw / 2, ch / 2);
+        if (currentRotation) ctx.rotate((currentRotation * Math.PI) / 180);
+        const scaleX = isFlipH ? -1 : 1;
+        const scaleY = isFlipV ? -1 : 1;
+        ctx.scale(scaleX, scaleY);
+
+        let effSrcW = video.videoWidth || 1280;
+        let effSrcH = video.videoHeight || 720;
+        if (currentRotation === 90 || currentRotation === 270) {
+            effSrcW = video.videoHeight;
+            effSrcH = video.videoWidth;
+        }
+
+        const fitScale = Math.min(cw / effSrcW, ch / effSrcH);
+        const drawW = (video.videoWidth || 1280) * fitScale;
+        const drawH = (video.videoHeight || 720) * fitScale;
+
+        ctx.drawImage(video, -drawW / 2, -drawH / 2, drawW, drawH);
+        ctx.restore();
+
+        // Render Text Overlay
+        if (overlayText.trim()) {
+            ctx.save();
+            const relScale = ch / 480;
+            const fontPx = textSize === 'large' ? Math.round(26 * relScale) : Math.round(18 * relScale);
+            ctx.font = `bold ${fontPx}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            let posY = ch / 2;
+            if (textPos === 'top') posY = fontPx * 1.6;
+            else if (textPos === 'bottom') posY = ch - fontPx * 1.6;
+
+            const textW = ctx.measureText(overlayText).width;
+            if (hasTextBg) {
+                const boxPadX = fontPx * 0.8;
+                const boxPadY = fontPx * 0.4;
+                const boxW = textW + boxPadX * 2;
+                const boxH = fontPx + boxPadY * 2;
+
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.65)';
+                ctx.beginPath();
+                if (ctx.roundRect) {
+                    ctx.roundRect((cw - boxW) / 2, posY - boxH / 2, boxW, boxH, 12);
+                } else {
+                    ctx.rect((cw - boxW) / 2, posY - boxH / 2, boxW, boxH);
+                }
+                ctx.fill();
+            } else {
+                ctx.shadowColor = 'rgba(0,0,0,0.85)';
+                ctx.shadowBlur = 6;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+            }
+
+            ctx.fillStyle = textColor;
+            ctx.fillText(overlayText, cw / 2, posY);
+            ctx.restore();
+        }
+    }
+
+    // ==========================================
+    // EXPORT RENDER LOOP
+    // ==========================================
+    exportBtn.addEventListener('click', startExport);
+
+    cancelExportBtn.addEventListener('click', () => {
+        exportCancelled = true;
+        exportModal.classList.remove('active');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        exportModal.classList.remove('active');
+    });
+
+    async function startExport() {
+        if (!videoFile || !videoDuration) return;
+
+        exportCancelled = false;
+        isExporting = true;
+        exportModal.classList.add('active');
+        modalActions.style.display = 'none';
+        cancelExportBtn.style.display = 'inline-block';
+        modalTitle.textContent = 'Rendering Edited Video...';
+        modalProgressBar.style.width = '0%';
+        modalPct.textContent = '0%';
+        modalTimeLeft.textContent = 'Preparing audio & canvas...';
+
+        if (exportedBlobUrl) {
+            URL.revokeObjectURL(exportedBlobUrl);
+            exportedBlobUrl = null;
+        }
+
+        const { width: targetW, height: targetH } = computeCanvasDimensions(video.videoWidth, video.videoHeight);
+        exportCanvas.width = targetW;
+        exportCanvas.height = targetH;
+        const ctx = exportCanvas.getContext('2d');
+
+        livePreview.width = targetW;
+        livePreview.height = targetH;
+        const liveCtx = livePreview.getContext('2d');
+
+        // Setup Web Audio Graph
+        const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioCtxClass();
+        const audioDestination = audioCtx.createMediaStreamDestination();
+
+        // 1. Video Audio Source
+        try {
+            const videoAudioSource = audioCtx.createMediaElementSource(video);
+            const origGain = audioCtx.createGain();
+            origGain.gain.value = parseFloat(origVolRange.value);
+            videoAudioSource.connect(origGain);
+            origGain.connect(audioDestination);
+            origGain.connect(audioCtx.destination);
+        } catch (e) {
+            console.warn('Video audio track routing note:', e);
+        }
+
+        // 2. Background Music Source
+        if (bgMusicFile && bgAudio.src) {
+            try {
+                const bgSource = audioCtx.createMediaElementSource(bgAudio);
+                const bgGain = audioCtx.createGain();
+                bgGain.gain.value = parseFloat(musicVolRange.value);
+                bgSource.connect(bgGain);
+                bgGain.connect(audioDestination);
+                bgGain.connect(audioCtx.destination);
+            } catch (bgErr) {
+                console.warn('Background music track routing note:', bgErr);
+            }
+        }
+
+        // 3. Microphone Source
+        if (isMicEnabled && micStream) {
+            try {
+                const micSource = audioCtx.createMediaStreamSource(micStream);
+                const micGain = audioCtx.createGain();
+                micGain.gain.value = parseFloat(micVolRange.value);
+                micSource.connect(micGain);
+                micGain.connect(audioDestination);
+            } catch (micErr) {
+                console.warn('Microphone audio note:', micErr);
+            }
+        }
+
+        const canvasStream = exportCanvas.captureStream(30);
+        const combinedStream = new MediaStream([
+            ...canvasStream.getVideoTracks(),
+            ...audioDestination.stream.getAudioTracks()
+        ]);
+
+        const mimeTypes = [
+            'video/webm;codecs=vp9,opus',
+            'video/webm;codecs=vp8,opus',
+            'video/webm',
+            'video/mp4'
+        ];
+        const selectedMime = mimeTypes.find(type => MediaRecorder.isTypeSupported(type)) || '';
+        const mediaRecorder = new MediaRecorder(combinedStream, selectedMime ? { mimeType: selectedMime } : {});
+        const recordedChunks = [];
+
+        mediaRecorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) {
+                recordedChunks.push(e.data);
+            }
+        };
+
+        const finalDuration = (trimEnd - trimStart) / currentSpeed;
+        const startTimeMs = performance.now();
+
+        mediaRecorder.start(100);
+
+        video.pause();
+        video.currentTime = trimStart;
+        video.playbackRate = currentSpeed;
+
+        if (bgMusicFile && bgAudio.src) {
+            bgAudio.currentTime = 0;
+            bgAudio.playbackRate = 1.0;
+        }
+
+        await new Promise(r => setTimeout(r, 200));
+        await video.play();
+        if (bgMusicFile && bgAudio.src) {
+            bgAudio.play().catch(() => {});
+        }
+
+        function renderLoop() {
+            if (exportCancelled) {
+                try { mediaRecorder.stop(); } catch {}
+                video.pause();
+                if (bgAudio.src) bgAudio.pause();
+                try { audioCtx.close(); } catch {}
+                return;
+            }
+
+            renderFrameToContext(ctx, targetW, targetH);
+            liveCtx.drawImage(exportCanvas, 0, 0, targetW, targetH);
+
+            const currentPos = video.currentTime;
+            const progress = Math.min(1.0, Math.max(0, (currentPos - trimStart) / (trimEnd - trimStart)));
+            const pct = Math.floor(progress * 100);
+            modalProgressBar.style.width = `${pct}%`;
+            modalPct.textContent = `${pct}%`;
+
+            const elapsedSec = (performance.now() - startTimeMs) / 1000;
+            const remainingSec = Math.max(0, finalDuration - elapsedSec);
+            modalTimeLeft.textContent = `Remaining: ~${remainingSec.toFixed(1)} s`;
+
+            if (currentPos < trimEnd && !video.paused) {
+                requestAnimationFrame(renderLoop);
+            } else {
+                mediaRecorder.stop();
+                video.pause();
+                if (bgAudio.src) bgAudio.pause();
+                finishExport();
+            }
+        }
+
+        requestAnimationFrame(renderLoop);
+
+        function finishExport() {
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(recordedChunks, { type: selectedMime || 'video/webm' });
+                exportedBlobUrl = URL.createObjectURL(blob);
+
+                modalProgressBar.style.width = '100%';
+                modalPct.textContent = '100%';
+                modalTitle.textContent = 'Video Ready!';
+                modalDesc.textContent = `Size: ${(blob.size / (1024 * 1024)).toFixed(2)} MB • Duration: ${finalDuration.toFixed(1)} s`;
+
+                downloadBtn.href = exportedBlobUrl;
+                const extension = selectedMime.includes('mp4') ? 'mp4' : 'webm';
+                downloadBtn.download = `edited_video_${Date.now()}.${extension}`;
+
+                modalActions.style.display = 'flex';
+                cancelExportBtn.style.display = 'none';
+                isExporting = false;
+                try { audioCtx.close(); } catch {}
+            };
+        }
+    }
+})();
+</script>
+
+
+      
+    </div>
+    <footer class="article-footer" data-c="falsevideo-editor.html">
+      <a data-url="https://safiullin.dev/2026/11/07/online-video-editor/" data-id="cuidDSEyMazvPEIdF-bBfa7-6" data-title="Free Online Video Editor (Trim, Crop, Rotate, Speed, Audio, Subtitles)" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/tools/" rel="tag">tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/editor/" rel="tag">editor</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/audio/" rel="tag">audio</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/video/" rel="tag">video</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/trim/" rel="tag">trim</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/speed/" rel="tag">speed</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/rotate/" rel="tag">rotate</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/11/07/ru/online-video-editor/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/10/31/how-i-built-ultra-fast-git-interface/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How I Built an Ultra-Fast WebStorm-Style Git GUI from Scratch</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<nav id="mobile-nav">
+  
+    <a href="/en/" class="mobile-nav-link">Home</a>
+  
+    <a href="/en/archives" class="mobile-nav-link">Archives</a>
+  
+  
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0 10px; padding: 15px 20px 5px; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Languages</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 20px 20px;">
+      
+        <a href="/" class="mobile-lang-btn active" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(255,255,255,0.22); border-radius: 4px; text-decoration: none;">EN</a>
+      
+        <a href="/ru/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">RU</a>
+      
+        <a href="/es/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ES</a>
+      
+        <a href="/zh-cn/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ZH-CN</a>
+      
+        <a href="/hi/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">HI</a>
+      
+        <a href="/th/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">TH</a>
+      
+        <a href="/fr/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">FR</a>
+      
+        <a href="/pt/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">PT</a>
+      
+        <a href="/ar/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">AR</a>
+      
+    </div>
+  
+</nav>
+    <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    
+  
+<script src="/js/lightbox.js"></script>
+
+
+
+<script src="/js/script.js?v=1794023964513"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

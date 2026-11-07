@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://safiullin.dev/2026/11/07/slow-down-video-and-voiceover-online/</loc>
+    <loc>https://safiullin.dev/2026/11/07/ru/online-video-editor/</loc>
     
     <lastmod>2026-11-07</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/2026/11/07/ru/slow-down-video-and-voiceover-online/</loc>
+    <loc>https://safiullin.dev/2026/11/07/online-video-editor/</loc>
     
     <lastmod>2026-11-07</lastmod>
     
@@ -1678,21 +1678,21 @@
   </url>
   
   <url>
-    <loc>https://safiullin.dev/tags/slow-motion/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://safiullin.dev/tags/voiceover/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://safiullin.dev/tags/speed/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/rotate/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://safiullin.dev/tags/%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B5/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
