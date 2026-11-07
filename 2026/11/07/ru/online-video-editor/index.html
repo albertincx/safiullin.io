@@ -70,7 +70,7 @@
 <meta property="og:description" content="Бесплатный онлайн видеоредактор, работающий на 100% локально в вашем браузере. Нарезка видео, смена соотношения сторон (16:9, 9:16 для...">
 <meta property="og:locale" content="ru_RU">
 <meta property="article:published_time" content="2026-11-07T03:53:14.046Z">
-<meta property="article:modified_time" content="2026-11-07T03:55:53.181Z">
+<meta property="article:modified_time" content="2026-11-07T04:18:50.582Z">
 <meta property="article:author" content="Albert Safiullin">
 <meta property="article:tag" content="audio">
 <meta property="article:tag" content="editor">
@@ -88,7 +88,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 
 
-<link rel="stylesheet" href="/css/style.css?v=1794023964513">
+<link rel="stylesheet" href="/css/style.css?v=1794028047162">
 <link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
 
 
@@ -123,7 +123,7 @@
   "@type": "BlogPosting",
   "headline": "Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)",
   "datePublished": "2026-11-07T03:53:14.046Z",
-  "dateModified": "2026-11-07T03:55:53.181Z",
+  "dateModified": "2026-11-07T04:18:50.582Z",
   "author": {
     "@type": "Person",
     "name": "Albert Safiullin"
@@ -140,6 +140,8 @@
 }
 </script>
 
+    
+        <script src="/ffmpeg.js"></script>
     
 
     <meta property="og:image" content="https://safiullin.dev/images/covers/online-video-editor.jpg">
@@ -312,9 +314,12 @@
 <li><strong>Работа со звуком</strong>: Регулировка громкости оригинала, загрузка фоновой музыки (MP3&#x2F;WAV) и запись комментариев с микрофона в реальном времени.</li>
 <li><strong>Снимок кадра в один клик</strong>: Сохраняйте любой момент видео в высоком разрешении с учетом всех примененных фильтров.</li>
 </ul>
-<blockquote>
-<p>💡 Нужно объединить несколько видео в одно? Воспользуйтесь инструментом <a href="/2026/10/26/ru/merge-video-files-online/">Объединить видео онлайн</a>.</p>
-</blockquote>
+<h3 id="Другие-полезные-видеоинструменты-без-сервера"><a href="#Другие-полезные-видеоинструменты-без-сервера" class="headerlink" title="Другие полезные видеоинструменты без сервера"></a>Другие полезные видеоинструменты без сервера</h3><ul>
+<li>🔗 <strong><a href="/2026/10/26/ru/merge-video-files-online/">Объединить видео онлайн (Склейка)</a></strong>: Быстро склеить несколько видеороликов в один MP4 без потери качества.</li>
+<li>✂️ <strong><a href="/2026/10/26/ru/split-video-file-online/">Разрезать видео онлайн (Разделение)</a></strong>: Разбить длинное видео на части или нарезать фрагменты по точным таймкодам.</li>
+<li>🎵 <strong><a href="/2026/09/05/extract-audio-from-video-file-online/">Извлечь аудио из видео</a></strong>: Сохранить звуковую дорожку из видео в MP3 или M4A.</li>
+<li>🔀 <strong><a href="/2026/09/16/merge-audio-and-video-file-online/">Объединить звук и видео в MP4</a></strong>: Наложить аудиодорожку на видео без перекодирования.</li>
+</ul>
 
 <!-- ========================================================
      ONLINE VIDEO EDITOR (100% CLIENT-SIDE IN-BROWSER)
@@ -399,7 +404,27 @@
         background: #022c22;
         color: #34d399;
         border: 1px solid #065f46;
-        margin-top: 6px;
+    }
+    .veditor-lang-btn {
+        background: #1e293b;
+        color: #f1f5f9;
+        border: 1px solid #334155;
+        border-radius: 20px;
+        padding: 3px 10px;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.15s ease;
+        line-height: 1.4;
+    }
+    .veditor-lang-btn:hover {
+        background: #083344;
+        color: #22d3ee;
+        border-color: #0e7490;
+        transform: translateY(-1px);
     }
     .veditor-dot-pulse {
         width: 6px;
@@ -569,6 +594,14 @@
         color: #ffffff;
         border-color: #06b6d4;
     }
+    .veditor-stage-btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        background: rgba(15, 23, 42, 0.4);
+        border-color: rgba(51, 65, 85, 0.4);
+        color: #64748b;
+        pointer-events: none;
+    }
 
     /* Player Controls bar */
     .veditor-controls-bar {
@@ -634,7 +667,7 @@
         font-weight: 600;
     }
 
-    /* Right Column: Tabbed Inspector */
+    /* Right Column: Tabbed Inspector & Tool List */
     .veditor-inspector-card {
         background: #0f172a;
         border: 1px solid #1e293b;
@@ -645,42 +678,189 @@
         gap: 12px;
     }
 
-    /* Tabs Bar */
-    .veditor-tabs-nav {
+    /* Clean Tool Action Buttons */
+    .veditor-tools-list {
         display: flex;
-        gap: 4px;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .veditor-tool-entry-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px;
         background: #090d16;
-        padding: 4px;
-        border-radius: 10px;
         border: 1px solid #1e293b;
-        overflow-x: auto;
-        scrollbar-width: none;
+        border-radius: 12px;
+        cursor: pointer;
+        text-align: left;
+        transition: all 0.15s ease;
+        width: 100%;
+        box-sizing: border-box;
     }
-    .veditor-tabs-nav::-webkit-scrollbar {
-        display: none;
+    .veditor-tool-entry-btn:hover {
+        background: #162032;
+        border-color: #38bdf8;
+        transform: translateY(-1px);
     }
-    .veditor-tab-btn {
+    .veditor-tool-entry-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    .veditor-tool-entry-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
         flex: 1;
-        min-width: 62px;
-        text-align: center;
-        padding: 7px 6px;
+        min-width: 0;
+    }
+    .veditor-tool-entry-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #f1f5f9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .veditor-tool-entry-badge {
+        font-size: 11px;
+        color: #94a3b8;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .veditor-tool-entry-arrow {
+        font-size: 11px;
+        color: #38bdf8;
+        font-weight: 600;
+        white-space: nowrap;
+        padding: 4px 8px;
+        background: rgba(56, 189, 248, 0.1);
+        border-radius: 6px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    /* Tool Configuration Popup Modal */
+    .veditor-tool-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .veditor-tool-modal.active {
+        display: flex;
+    }
+    .veditor-tool-modal-card {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 500px;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        animation: veditorModalIn 0.2s ease-out;
+    }
+    @keyframes veditorModalIn {
+        from { opacity: 0; transform: scale(0.96) translateY(8px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .veditor-tool-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+        border-bottom: 1px solid #1e293b;
+        background: #090d16;
+    }
+    .veditor-tool-modal-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .veditor-tool-modal-close {
         background: transparent;
         border: none;
-        border-radius: 7px;
         color: #94a3b8;
-        font-size: 11px;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 6px;
+        transition: all 0.15s;
+        line-height: 1;
+    }
+    .veditor-tool-modal-close:hover {
+        color: #ffffff;
+        background: #1e293b;
+    }
+    .veditor-tool-modal-body {
+        padding: 18px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .veditor-tool-modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 12px 18px;
+        border-top: 1px solid #1e293b;
+        background: #090d16;
+    }
+    .veditor-tool-modal-btn {
+        padding: 9px 18px;
+        border-radius: 10px;
+        font-size: 13px;
         font-weight: 600;
         cursor: pointer;
-        white-space: nowrap;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         transition: all 0.15s ease;
     }
-    .veditor-tab-btn:hover {
-        color: #f1f5f9;
-    }
-    .veditor-tab-btn.active {
+    .veditor-btn-cancel {
         background: #1e293b;
-        color: #38bdf8;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        color: #cbd5e1;
+        border: 1px solid #334155;
+    }
+    .veditor-btn-cancel:hover {
+        background: #334155;
+        color: #ffffff;
+    }
+    .veditor-btn-apply {
+        background: linear-gradient(135deg, #0891b2, #2563eb);
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+    }
+    .veditor-btn-apply:hover {
+        background: linear-gradient(135deg, #06b6d4, #3b82f6);
+        box-shadow: 0 6px 16px rgba(8, 145, 178, 0.45);
+    }
+
+    /* Tabs Bar (optional fallback) */
+    .veditor-tabs-nav {
+        display: none;
     }
 
     /* Tab Panels */
@@ -855,33 +1035,52 @@
         padding-top: 10px;
         border-top: 1px solid #1e293b;
     }
+    .veditor-export-btns-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
     .veditor-export-btn {
         width: 100%;
-        padding: 13px 18px;
+        box-sizing: border-box;
+        padding: 12px 14px;
         border-radius: 12px;
-        background: linear-gradient(135deg, #0891b2, #2563eb);
-        color: #ffffff;
+        color: #ffffff !important;
         border: none;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        box-shadow: 0 4px 16px rgba(8, 145, 178, 0.35);
         transition: all 0.15s ease;
         touch-action: manipulation;
+        text-decoration: none !important;
     }
-    .veditor-export-btn:hover:not(:disabled) {
+    .veditor-btn-fast {
+        background: linear-gradient(135deg, #0891b2, #2563eb);
+        box-shadow: 0 4px 14px rgba(8, 145, 178, 0.3);
+    }
+    .veditor-btn-fast:hover:not(:disabled) {
         background: linear-gradient(135deg, #06b6d4, #3b82f6);
-        box-shadow: 0 6px 20px rgba(8, 145, 178, 0.5);
+        box-shadow: 0 6px 18px rgba(8, 145, 178, 0.45);
+    }
+    .veditor-btn-mp4 {
+        background: linear-gradient(135deg, #059669, #0d9488);
+        box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .veditor-btn-mp4:hover:not(:disabled) {
+        background: linear-gradient(135deg, #10b981, #14b8a6);
+        box-shadow: 0 6px 18px rgba(5, 150, 105, 0.45);
     }
     .veditor-export-btn:disabled {
         background: #334155;
         color: #94a3b8;
         cursor: not-allowed;
         box-shadow: none;
+        border: none;
     }
 
     /* Timeline Section (Bottom of Left Column or Full Width) */
@@ -1053,6 +1252,7 @@
         display: flex;
         flex-direction: column;
         gap: 14px;
+        box-sizing: border-box;
     }
     .veditor-progress-bar-bg {
         width: 100%;
@@ -1083,9 +1283,181 @@
         display: block;
     }
 
+    /* Export Modal Actions & Download Button */
+    .veditor-modal-actions-box {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 4px;
+    }
+    .veditor-download-btn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 13px 18px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #059669, #0d9488);
+        box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
+        border: 1px solid rgba(52, 211, 153, 0.35);
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.2s ease;
+        touch-action: manipulation;
+    }
+    .veditor-download-btn:hover {
+        background: linear-gradient(135deg, #10b981, #14b8a6);
+        box-shadow: 0 6px 20px rgba(5, 150, 105, 0.55);
+        color: #ffffff !important;
+        text-decoration: none !important;
+        transform: translateY(-1px);
+    }
+    .veditor-download-btn:active {
+        transform: translateY(0);
+    }
+    .veditor-modal-btn-convert {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 16px;
+        border-radius: 12px;
+        background: #083344;
+        color: #22d3ee !important;
+        border: 1px solid #0e7490;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.15s ease;
+    }
+    .veditor-modal-btn-convert:hover {
+        background: #0e7490;
+        color: #ffffff !important;
+        border-color: #22d3ee;
+    }
+    .veditor-modal-btn-close {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: #1e293b;
+        color: #cbd5e1 !important;
+        border: 1px solid #334155;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s ease;
+    }
+    .veditor-modal-btn-close:hover {
+        background: #334155;
+        color: #ffffff !important;
+    }
+    .veditor-modal-btn-cancel {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: rgba(239, 68, 68, 0.08);
+        color: #f87171 !important;
+        border: 1px solid rgba(239, 68, 68, 0.25);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s ease;
+    }
+    .veditor-modal-btn-cancel:hover {
+        background: #ef4444;
+        color: #ffffff !important;
+        border-color: #ef4444;
+    }
+
     /* Hidden Canvas for background export & snapshot */
     #vEditorExportCanvas {
         display: none;
+    }
+
+    /* Related Video Tools */
+    .veditor-related-tools {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid #1e293b;
+    }
+    .veditor-related-header {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .veditor-related-title {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #94a3b8;
+    }
+    .veditor-related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 12px;
+    }
+    .veditor-tool-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    .veditor-tool-card:hover {
+        background: #1e293b;
+        border-color: #38bdf8;
+        transform: translateY(-2px);
+    }
+    .veditor-tool-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .veditor-tool-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        overflow: hidden;
+    }
+    .veditor-tool-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: #f1f5f9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .veditor-tool-desc {
+        font-size: 11px;
+        color: #94a3b8;
+        line-height: 1.3;
     }
 </style>
 
@@ -1093,15 +1465,18 @@
     <!-- Header -->
     <div class="veditor-header">
         <h2 class="veditor-title">
-            <span>🎬 Online Video Editor</span>
+            <span id="vEditorMainTitle">🎬 Online Video Editor</span>
             <span class="veditor-badge">All-in-One</span>
         </h2>
-        <p class="veditor-subtitle">Trim, crop aspect ratio, rotate, adjust speed, apply filters, add text & mix audio tracks.</p>
-        <div>
+        <p class="veditor-subtitle" id="vEditorMainSubtitle">Trim, crop aspect ratio, rotate, adjust speed, apply filters, add text & mix audio tracks.</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
             <span class="veditor-private-badge">
                 <span class="veditor-dot-pulse"></span>
-                <span>100% In-Browser • Zero Server Uploads • No Watermark</span>
+                <span id="vEditorBadgePrivate">100% In-Browser • Zero Server Uploads • No Watermark</span>
             </span>
+            <button type="button" class="veditor-lang-btn" id="vEditorLangToggleBtn" title="Switch language / Переключить язык">
+                🌐 <span id="vEditorLangCode">RU</span>
+            </button>
         </div>
     </div>
 
@@ -1110,14 +1485,14 @@
         <svg style="width: 44px; height: 44px; margin: 0 auto 8px auto; color: #38bdf8;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
-        <p style="font-size: 15px; font-weight: 600; color: #f1f5f9; margin: 0 0 4px 0;">Drop your video here to start editing</p>
-        <p style="font-size: 12px; color: #94a3b8; margin: 0;">Supports MP4, WebM, MOV, MKV, AVI • Instant client processing</p>
+        <p style="font-size: 15px; font-weight: 600; color: #f1f5f9; margin: 0 0 4px 0;" id="vEditorDropTitle">Drop your video here to start editing</p>
+        <p style="font-size: 12px; color: #94a3b8; margin: 0;" id="vEditorDropSubtitle">Supports MP4, WebM, MOV, MKV, AVI • Instant client processing</p>
         <div>
             <button type="button" class="veditor-upload-btn" id="vEditorSelectFileBtn">
                 <svg style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                 </svg>
-                <span>Select Video File</span>
+                <span id="vEditorSelectFileText">Select Video File</span>
             </button>
         </div>
         <input type="file" id="vEditorFileInput" accept="video/*" style="display: none;">
@@ -1132,15 +1507,18 @@
                 <span id="vEditorFileDim" style="color: #64748b; font-family: ui-monospace, monospace;">1920x1080</span>
                 <span id="vEditorFileDuration" style="color: #64748b; font-family: ui-monospace, monospace;">00:00.0</span>
             </div>
-            <div style="display: flex; gap: 8px;">
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <button type="button" class="veditor-lang-btn" id="vEditorTopLangToggleBtn" title="Switch language / Переключить язык">
+                    🌐 <span id="vEditorTopLangCode">RU</span>
+                </button>
                 <button type="button" id="vEditorCaptureFrameTopBtn" class="veditor-btn-pill" title="Take a high-res screenshot of current frame">
                     <svg style="width: 14px; height: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                     </svg>
-                    <span>Capture Frame</span>
+                    <span id="vEditorCaptureFrameText">Capture Frame</span>
                 </button>
                 <button type="button" id="vEditorNewFileBtn" class="veditor-btn-pill">
-                    <span>Change Video</span>
+                    <span id="vEditorChangeVideoText">Change Video</span>
                 </button>
             </div>
         </div>
@@ -1156,8 +1534,14 @@
                     <div id="vEditorLiveText" class="veditor-live-text">Watermark</div>
                     <!-- Quick actions over stage -->
                     <div class="veditor-stage-actions">
-                        <button type="button" id="vEditorResetTransformBtn" class="veditor-stage-btn" title="Reset Rotate & Aspect">
-                            <span>Reset View</span>
+                        <button type="button" id="vEditorUndoBtn" class="veditor-stage-btn" disabled title="Undo last action">
+                            <svg style="width: 14px; height: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a5 5 0 015 5v2m0 0l-4-4m4 4l4-4" transform="matrix(-1 0 0 1 24 0)"/>
+                            </svg>
+                            <span id="vEditorUndoLabel">↶ Undo</span>
+                        </button>
+                        <button type="button" id="vEditorResetTransformBtn" class="veditor-stage-btn" title="Reset View">
+                            <span id="vEditorResetTransformLabel">Reset View</span>
                         </button>
                     </div>
                 </div>
@@ -1187,19 +1571,176 @@
                 </div>
             </div>
 
-            <!-- Right: Inspector Tabs -->
+            <!-- Right: Inspector Tools List -->
             <div class="veditor-inspector-card">
-                <!-- Tabs navigation -->
-                <div class="veditor-tabs-nav">
-                    <button type="button" class="veditor-tab-btn active" data-tab="tab-trim">✂️ Trim & Speed</button>
-                    <button type="button" class="veditor-tab-btn" data-tab="tab-format">📐 Format</button>
-                    <button type="button" class="veditor-tab-btn" data-tab="tab-filters">🎨 Filters</button>
-                    <button type="button" class="veditor-tab-btn" data-tab="tab-text">📝 Text</button>
-                    <button type="button" class="veditor-tab-btn" data-tab="tab-audio">🎵 Audio</button>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                    <h3 class="veditor-sec-title" id="vEditorToolsTitle">🛠️ Video Tools</h3>
+                    <span class="veditor-desc-text" id="vEditorToolsDesc">Click to configure</span>
                 </div>
 
+                <!-- Clean action buttons for each tool -->
+                <div class="veditor-tools-list">
+                    <button type="button" class="veditor-tool-entry-btn" data-tool="trim">
+                        <div class="veditor-tool-entry-icon" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8;">
+                            ✂️
+                        </div>
+                        <div class="veditor-tool-entry-content">
+                            <span class="veditor-tool-entry-title" id="vEditorTitleTrim">Speed & Trim</span>
+                            <span class="veditor-tool-entry-badge" id="vEditorBadgeTrim">1.0x • Full clip</span>
+                        </div>
+                        <div class="veditor-tool-entry-arrow">Configure ›</div>
+                    </button>
+
+                    <button type="button" class="veditor-tool-entry-btn" data-tool="format">
+                        <div class="veditor-tool-entry-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">
+                            📐
+                        </div>
+                        <div class="veditor-tool-entry-content">
+                            <span class="veditor-tool-entry-title" id="vEditorTitleFormat">Format & Rotate</span>
+                            <span class="veditor-tool-entry-badge" id="vEditorBadgeFormat">Original • 0°</span>
+                        </div>
+                        <div class="veditor-tool-entry-arrow">Configure ›</div>
+                    </button>
+
+                    <button type="button" class="veditor-tool-entry-btn" data-tool="filters">
+                        <div class="veditor-tool-entry-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+                            🎨
+                        </div>
+                        <div class="veditor-tool-entry-content">
+                            <span class="veditor-tool-entry-title" id="vEditorTitleFilters">Filters & Colors</span>
+                            <span class="veditor-tool-entry-badge" id="vEditorBadgeFilters">Normal</span>
+                        </div>
+                        <div class="veditor-tool-entry-arrow">Configure ›</div>
+                    </button>
+
+                    <button type="button" class="veditor-tool-entry-btn" data-tool="text">
+                        <div class="veditor-tool-entry-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+                            📝
+                        </div>
+                        <div class="veditor-tool-entry-content">
+                            <span class="veditor-tool-entry-title" id="vEditorTitleText">Text Overlay</span>
+                            <span class="veditor-tool-entry-badge" id="vEditorBadgeText">No text</span>
+                        </div>
+                        <div class="veditor-tool-entry-arrow">Configure ›</div>
+                    </button>
+
+                    <button type="button" class="veditor-tool-entry-btn" data-tool="audio">
+                        <div class="veditor-tool-entry-icon" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">
+                            🎵
+                        </div>
+                        <div class="veditor-tool-entry-content">
+                            <span class="veditor-tool-entry-title" id="vEditorTitleAudio">Audio & Voiceover</span>
+                            <span class="veditor-tool-entry-badge" id="vEditorBadgeAudio">Volume 100%</span>
+                        </div>
+                        <div class="veditor-tool-entry-arrow">Configure ›</div>
+                    </button>
+                </div>
+
+                <!-- Export Area (Sticky at bottom of Inspector) -->
+                <div class="veditor-export-box">
+                    <div class="veditor-export-btns-grid">
+                        <!-- Button 1: Save Video (Fast WebM) -->
+                        <button type="button" id="vEditorExportFastBtn" class="veditor-export-btn veditor-btn-fast">
+                            <svg style="width: 17px; height: 17px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span id="vEditorFastBtnText">Сохранить видео</span>
+                        </button>
+
+                        <!-- Button 2: Save Video in MP4 (Longer, conversion) -->
+                        <button type="button" id="vEditorExportMp4Btn" class="veditor-export-btn veditor-btn-mp4">
+                            <svg style="width: 17px; height: 17px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <span id="vEditorMp4BtnText">Сохранить видео в MP4 (дольше, конвертация)</span>
+                        </button>
+                    </div>
+                    <p style="font-size: 11px; color: #64748b; text-align: center; margin: 8px 0 0 0;" id="vEditorEngineNote">
+                        100% локально в браузере • MP4 через FFmpeg для iPhone, Android и ПК
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Timeline (Full Width Bottom) -->
+        <div class="veditor-timeline-panel">
+            <div class="veditor-timeline-header">
+                <h4 class="veditor-sec-title">Timeline Range & Trim</h4>
+                <div style="display: flex; gap: 6px;">
+                    <button type="button" id="vEditorSetStartBtn" class="veditor-btn-pill">[ Mark Start</button>
+                    <button type="button" id="vEditorSetEndBtn" class="veditor-btn-pill">Mark End ]</button>
+                    <button type="button" id="vEditorResetRangeBtn" class="veditor-btn-pill">Full Clip</button>
+                </div>
+            </div>
+
+            <div class="veditor-ruler">
+                <span id="vEditorRulerStart">00:00.0</span>
+                <span id="vEditorRulerMid">--:--</span>
+                <span id="vEditorRulerEnd">--:--</span>
+            </div>
+
+            <!-- Track -->
+            <div id="vEditorTimelineTrack" class="veditor-timeline-track">
+                <div class="veditor-timeline-stripes"></div>
+                <canvas id="vEditorWaveCanvas" class="veditor-wave-canvas"></canvas>
+                <div id="vEditorDimLeft" class="veditor-dim-left"></div>
+                <div id="vEditorDimRight" class="veditor-dim-right"></div>
+                <div id="vEditorActiveRange" class="veditor-active-range"></div>
+
+                <div id="vEditorHandleStart" class="veditor-handle start" title="Drag start point">
+                    <div class="veditor-handle-bar"></div>
+                </div>
+                <div id="vEditorHandleEnd" class="veditor-handle end" title="Drag end point">
+                    <div class="veditor-handle-bar"></div>
+                </div>
+                <div id="vEditorPlayhead" class="veditor-playhead"></div>
+            </div>
+
+            <!-- Fine-tuning buttons -->
+            <div class="veditor-fine-grid">
+                <div class="veditor-fine-box">
+                    <div>
+                        <span style="color: #64748b; font-size: 10px;">Start:</span>
+                        <span id="vEditorStartBadge" class="veditor-fine-val">00:00.00</span>
+                    </div>
+                    <div style="display: flex; gap: 4px;">
+                        <button type="button" id="vEditorStartSub" class="veditor-btn-pill">-0.1s</button>
+                        <button type="button" id="vEditorStartAdd" class="veditor-btn-pill">+0.1s</button>
+                    </div>
+                </div>
+                <div class="veditor-fine-box">
+                    <div>
+                        <span style="color: #64748b; font-size: 10px;">End:</span>
+                        <span id="vEditorEndBadge" class="veditor-fine-val" style="color: #818cf8;">00:00.00</span>
+                    </div>
+                    <div style="display: flex; gap: 4px;">
+                        <button type="button" id="vEditorEndSub" class="veditor-btn-pill">-0.1s</button>
+                        <button type="button" id="vEditorEndAdd" class="veditor-btn-pill">+0.1s</button>
+                    </div>
+                </div>
+                <div class="veditor-fine-box">
+                    <div>
+                        <span style="color: #64748b; font-size: 10px;">Selection:</span>
+                        <span id="vEditorSelectedDuration" class="veditor-fine-val" style="color: #ffffff;">0.00 s</span>
+                    </div>
+                    <button type="button" id="vEditorPlaySelectionBtn" class="veditor-btn-pill active">
+                        ▶ Preview Cut
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tool Configuration Modal Dialog -->
+    <div id="vEditorToolModal" class="veditor-tool-modal">
+        <div class="veditor-tool-modal-card">
+            <div class="veditor-tool-modal-header">
+                <h3 class="veditor-tool-modal-title" id="vEditorToolModalTitle">🛠️ Tool Settings</h3>
+                <button type="button" class="veditor-tool-modal-close" id="vEditorToolModalClose" title="Close without saving">✕</button>
+            </div>
+            <div class="veditor-tool-modal-body" id="vEditorToolModalBody">
                 <!-- TAB 1: TRIM & SPEED -->
-                <div id="tab-trim" class="veditor-tab-pane active">
+                <div id="tab-trim" class="veditor-tab-pane">
                     <div>
                         <h4 class="veditor-sec-title">Playback Speed</h4>
                         <p class="veditor-desc-text">Slow motion or fast-forward with pitch correction.</p>
@@ -1396,87 +1937,14 @@
                         <input type="range" id="vEditorMicVolRange" min="0" max="2" step="0.05" value="1" class="veditor-range">
                     </div>
                 </div>
-
-                <!-- Export Area (Sticky at bottom of Inspector) -->
-                <div class="veditor-export-box">
-                    <button type="button" id="vEditorExportBtn" class="veditor-export-btn">
-                        <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        <span>Export Edited Video</span>
-                    </button>
-                    <p style="font-size: 11px; color: #64748b; text-align: center; margin: 6px 0 0 0;">
-                        100% Client-Side Render • Web Audio & Canvas Acceleration
-                    </p>
-                </div>
             </div>
-        </div>
-
-        <!-- Interactive Timeline (Full Width Bottom) -->
-        <div class="veditor-timeline-panel">
-            <div class="veditor-timeline-header">
-                <h4 class="veditor-sec-title">Timeline Range & Trim</h4>
-                <div style="display: flex; gap: 6px;">
-                    <button type="button" id="vEditorSetStartBtn" class="veditor-btn-pill">[ Mark Start</button>
-                    <button type="button" id="vEditorSetEndBtn" class="veditor-btn-pill">Mark End ]</button>
-                    <button type="button" id="vEditorResetRangeBtn" class="veditor-btn-pill">Full Clip</button>
-                </div>
-            </div>
-
-            <div class="veditor-ruler">
-                <span id="vEditorRulerStart">00:00.0</span>
-                <span id="vEditorRulerMid">--:--</span>
-                <span id="vEditorRulerEnd">--:--</span>
-            </div>
-
-            <!-- Track -->
-            <div id="vEditorTimelineTrack" class="veditor-timeline-track">
-                <div class="veditor-timeline-stripes"></div>
-                <canvas id="vEditorWaveCanvas" class="veditor-wave-canvas"></canvas>
-                <div id="vEditorDimLeft" class="veditor-dim-left"></div>
-                <div id="vEditorDimRight" class="veditor-dim-right"></div>
-                <div id="vEditorActiveRange" class="veditor-active-range"></div>
-
-                <div id="vEditorHandleStart" class="veditor-handle start" title="Drag start point">
-                    <div class="veditor-handle-bar"></div>
-                </div>
-                <div id="vEditorHandleEnd" class="veditor-handle end" title="Drag end point">
-                    <div class="veditor-handle-bar"></div>
-                </div>
-                <div id="vEditorPlayhead" class="veditor-playhead"></div>
-            </div>
-
-            <!-- Fine-tuning buttons -->
-            <div class="veditor-fine-grid">
-                <div class="veditor-fine-box">
-                    <div>
-                        <span style="color: #64748b; font-size: 10px;">Start:</span>
-                        <span id="vEditorStartBadge" class="veditor-fine-val">00:00.00</span>
-                    </div>
-                    <div style="display: flex; gap: 4px;">
-                        <button type="button" id="vEditorStartSub" class="veditor-btn-pill">-0.1s</button>
-                        <button type="button" id="vEditorStartAdd" class="veditor-btn-pill">+0.1s</button>
-                    </div>
-                </div>
-                <div class="veditor-fine-box">
-                    <div>
-                        <span style="color: #64748b; font-size: 10px;">End:</span>
-                        <span id="vEditorEndBadge" class="veditor-fine-val" style="color: #818cf8;">00:00.00</span>
-                    </div>
-                    <div style="display: flex; gap: 4px;">
-                        <button type="button" id="vEditorEndSub" class="veditor-btn-pill">-0.1s</button>
-                        <button type="button" id="vEditorEndAdd" class="veditor-btn-pill">+0.1s</button>
-                    </div>
-                </div>
-                <div class="veditor-fine-box">
-                    <div>
-                        <span style="color: #64748b; font-size: 10px;">Selection:</span>
-                        <span id="vEditorSelectedDuration" class="veditor-fine-val" style="color: #ffffff;">0.00 s</span>
-                    </div>
-                    <button type="button" id="vEditorPlaySelectionBtn" class="veditor-btn-pill active">
-                        ▶ Preview Cut
-                    </button>
-                </div>
+            <div class="veditor-tool-modal-footer">
+                <button type="button" class="veditor-tool-modal-btn veditor-btn-cancel" id="vEditorToolCancelBtn">
+                    <span id="vEditorModalCancelLabel">Cancel</span>
+                </button>
+                <button type="button" class="veditor-tool-modal-btn veditor-btn-apply" id="vEditorToolApplyBtn">
+                    <span id="vEditorModalApplyLabel">✓ Apply</span>
+                </button>
             </div>
         </div>
     </div>
@@ -1503,28 +1971,120 @@
                 <canvas id="vEditorLivePreview"></canvas>
             </div>
 
-            <div id="vEditorModalActions" style="display: none; flex-direction: column; gap: 8px;">
-                <a id="vEditorDownloadBtn" class="veditor-export-btn" style="text-decoration: none; background: #059669;" download>
-                    <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div id="vEditorModalActions" class="veditor-modal-actions-box">
+                <a id="vEditorDownloadBtn" class="veditor-download-btn" download>
+                    <svg style="width: 18px; height: 18px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    <span>Download Edited Video</span>
+                    <span id="vEditorDownloadLabel">Download WebM Video</span>
                 </a>
-                <button type="button" id="vEditorCloseModalBtn" class="veditor-btn-pill" style="justify-content: center; padding: 8px;">
-                    Back to Editor
+                <button type="button" id="vEditorConvertMp4Btn" class="veditor-modal-btn-convert">
+                    <svg style="width: 16px; height: 16px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span id="vEditorConvertMp4Label">Convert WebM to MP4 (FFmpeg)</span>
+                </button>
+                <button type="button" id="vEditorCloseModalBtn" class="veditor-modal-btn-close">
+                    <span id="vEditorCloseModalText">Back to Editor</span>
                 </button>
             </div>
 
-            <button type="button" id="vEditorCancelExportBtn" class="veditor-btn-pill" style="justify-content: center; color: #f43f5e; border-color: #be123c;">
-                Cancel Export
+            <button type="button" id="vEditorCancelExportBtn" class="veditor-modal-btn-cancel">
+                <span id="vEditorCancelExportText">Cancel Export</span>
             </button>
+        </div>
+    </div>
+
+    <!-- Related Video Tools Section -->
+    <div class="veditor-related-tools">
+        <div class="veditor-related-header">
+            <span class="veditor-related-title" id="vEditorRelatedHeading">⚡ More Online Video Tools</span>
+        </div>
+        <div class="veditor-related-grid">
+            <a href="/2026/10/26/merge-video-files-online/" class="veditor-tool-card" id="vEditorLinkMerge">
+                <div class="veditor-tool-icon" style="background: rgba(14, 165, 233, 0.15); color: #38bdf8;">
+                    <svg style="width: 20px; height: 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                </div>
+                <div class="veditor-tool-info">
+                    <span class="veditor-tool-name" id="vEditorNameMerge">Merge Video (Склейка)</span>
+                    <span class="veditor-tool-desc" id="vEditorDescMerge">Combine multiple MP4 / WebM clips into one file without re-encoding</span>
+                </div>
+            </a>
+            <a href="/2026/10/26/split-video-file-online/" class="veditor-tool-card" id="vEditorLinkSplit">
+                <div class="veditor-tool-icon" style="background: rgba(239, 68, 68, 0.15); color: #f87171;">
+                    <svg style="width: 20px; height: 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                    </svg>
+                </div>
+                <div class="veditor-tool-info">
+                    <span class="veditor-tool-name" id="vEditorNameSplit">Split Video (Разрезание)</span>
+                    <span class="veditor-tool-desc" id="vEditorDescSplit">Cut video into parts or split by exact timestamps instantly</span>
+                </div>
+            </a>
+            <a href="/2026/09/05/extract-audio-from-video-file-online/" class="veditor-tool-card">
+                <div class="veditor-tool-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+                    <svg style="width: 20px; height: 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                    </svg>
+                </div>
+                <div class="veditor-tool-info">
+                    <span class="veditor-tool-name" id="vEditorNameExtract">Extract Audio (Извлечь аудио)</span>
+                    <span class="veditor-tool-desc" id="vEditorDescExtract">Extract MP3 / M4A / AAC sound track from any video</span>
+                </div>
+            </a>
+            <a href="/2026/09/16/merge-audio-and-video-file-online/" class="veditor-tool-card">
+                <div class="veditor-tool-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">
+                    <svg style="width: 20px; height: 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15a3 3 0 01-3-3V4.5a3 3 0 116 0v7.5a3 3 0 01-3 3z" />
+                    </svg>
+                </div>
+                <div class="veditor-tool-info">
+                    <span class="veditor-tool-name" id="vEditorNameMux">Mux Sound & Video (Звук + Видео)</span>
+                    <span class="veditor-tool-desc" id="vEditorDescMux">Replace or add audio track to MP4 without re-encoding</span>
+                </div>
+            </a>
         </div>
     </div>
 </div>
 
 <script>
 (function() {
+    const LANG_PREF_KEY = 'veditor_lang_pref';
+
+    let currentLang = 'en'; // Default is English
+    try {
+        const savedLang = localStorage.getItem(LANG_PREF_KEY);
+        if (savedLang === 'ru' || savedLang === 'en') {
+            currentLang = savedLang;
+        } else {
+            // Check browser language: if Russian, switch to Russian; otherwise keep English
+            const browserLang = (
+                (navigator.languages && navigator.languages[0]) ||
+                navigator.language ||
+                navigator.userLanguage ||
+                ''
+            ).toLowerCase();
+            const isUrlRu = window.location.pathname.includes('/ru/');
+            if (browserLang.startsWith('ru') || isUrlRu) {
+                currentLang = 'ru';
+            } else {
+                currentLang = 'en';
+            }
+        }
+    } catch (e) {
+        currentLang = 'en';
+    }
+
+    let isRu = currentLang === 'ru';
+
     // DOM Elements
+    const langToggleBtn = document.getElementById('vEditorLangToggleBtn');
+    const langCodeEl = document.getElementById('vEditorLangCode');
+    const topLangToggleBtn = document.getElementById('vEditorTopLangToggleBtn');
+    const topLangCodeEl = document.getElementById('vEditorTopLangCode');
+
     const dropzone = document.getElementById('vEditorDropzone');
     const selectFileBtn = document.getElementById('vEditorSelectFileBtn');
     const fileInput = document.getElementById('vEditorFileInput');
@@ -1538,7 +2098,27 @@
     const video = document.getElementById('vEditorVideo');
     const stageWrap = document.getElementById('vEditorStageWrap');
     const liveText = document.getElementById('vEditorLiveText');
+    const undoBtn = document.getElementById('vEditorUndoBtn');
+    const undoLabel = document.getElementById('vEditorUndoLabel');
     const resetTransformBtn = document.getElementById('vEditorResetTransformBtn');
+    const resetTransformLabel = document.getElementById('vEditorResetTransformLabel');
+
+    // Tool Entry Buttons & Modal Elements
+    const toolEntryBtns = document.querySelectorAll('.veditor-tool-entry-btn');
+    const toolModal = document.getElementById('vEditorToolModal');
+    const toolModalTitle = document.getElementById('vEditorToolModalTitle');
+    const toolModalClose = document.getElementById('vEditorToolModalClose');
+    const toolCancelBtn = document.getElementById('vEditorToolCancelBtn');
+    const toolApplyBtn = document.getElementById('vEditorToolApplyBtn');
+    const modalApplyLabel = document.getElementById('vEditorModalApplyLabel');
+    const modalCancelLabel = document.getElementById('vEditorModalCancelLabel');
+
+    // Tool Badges
+    const badgeTrim = document.getElementById('vEditorBadgeTrim');
+    const badgeFormat = document.getElementById('vEditorBadgeFormat');
+    const badgeFilters = document.getElementById('vEditorBadgeFilters');
+    const badgeText = document.getElementById('vEditorBadgeText');
+    const badgeAudio = document.getElementById('vEditorBadgeAudio');
 
     const playBtn = document.getElementById('vEditorPlayBtn');
     const playIcon = document.getElementById('vEditorPlayIcon');
@@ -1634,8 +2214,21 @@
     const downloadBtn = document.getElementById('vEditorDownloadBtn');
     const closeModalBtn = document.getElementById('vEditorCloseModalBtn');
     const cancelExportBtn = document.getElementById('vEditorCancelExportBtn');
+    const exportFastBtn = document.getElementById('vEditorExportFastBtn');
+    const exportMp4Btn = document.getElementById('vEditorExportMp4Btn');
+    const fastBtnText = document.getElementById('vEditorFastBtnText');
+    const mp4BtnText = document.getElementById('vEditorMp4BtnText');
+    const downloadLabel = document.getElementById('vEditorDownloadLabel');
+    const convertMp4Btn = document.getElementById('vEditorConvertMp4Btn');
+    const convertMp4Label = document.getElementById('vEditorConvertMp4Label');
+    const engineNote = document.getElementById('vEditorEngineNote');
 
     // State Variables
+    let exportFormat = 'mp4';
+    let lastRecordedWebmBlob = null;
+    let ffmpegInstance = null;
+    let ffmpegLoadingPromise = null;
+
     let videoFile = null;
     let videoUrl = null;
     let videoDuration = 0;
@@ -1689,42 +2282,48 @@
     }
 
     // Dropzone listeners
-    selectFileBtn.addEventListener('click', () => fileInput.click());
-    dropzone.addEventListener('click', (e) => {
-        if (e.target !== selectFileBtn && !selectFileBtn.contains(e.target)) {
+    if (selectFileBtn && fileInput) selectFileBtn.addEventListener('click', () => fileInput.click());
+    if (dropzone && fileInput) {
+        dropzone.addEventListener('click', (e) => {
+            if (selectFileBtn && e.target !== selectFileBtn && !selectFileBtn.contains(e.target)) {
+                fileInput.click();
+            }
+        });
+
+        ['dragenter', 'dragover'].forEach(name => {
+            dropzone.addEventListener(name, (e) => {
+                e.preventDefault();
+                dropzone.classList.add('dragover');
+            });
+        });
+        ['dragleave', 'drop'].forEach(name => {
+            dropzone.addEventListener(name, (e) => {
+                e.preventDefault();
+                dropzone.classList.remove('dragover');
+            });
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                handleSelectedFile(e.dataTransfer.files[0]);
+            }
+        });
+    }
+
+    if (fileInput) {
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files[0]) {
+                handleSelectedFile(e.target.files[0]);
+            }
+        });
+    }
+
+    if (newFileBtn && fileInput) {
+        newFileBtn.addEventListener('click', () => {
+            fileInput.value = '';
             fileInput.click();
-        }
-    });
-
-    ['dragenter', 'dragover'].forEach(name => {
-        dropzone.addEventListener(name, (e) => {
-            e.preventDefault();
-            dropzone.classList.add('dragover');
         });
-    });
-    ['dragleave', 'drop'].forEach(name => {
-        dropzone.addEventListener(name, (e) => {
-            e.preventDefault();
-            dropzone.classList.remove('dragover');
-        });
-    });
-
-    dropzone.addEventListener('drop', (e) => {
-        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-            handleSelectedFile(e.dataTransfer.files[0]);
-        }
-    });
-
-    fileInput.addEventListener('change', (e) => {
-        if (e.target.files && e.target.files[0]) {
-            handleSelectedFile(e.target.files[0]);
-        }
-    });
-
-    newFileBtn.addEventListener('click', () => {
-        fileInput.value = '';
-        fileInput.click();
-    });
+    }
 
     function handleSelectedFile(file) {
         if (!file.type.startsWith('video/') && !file.name.match(/\.(mp4|webm|mov|mkv|avi|m4v)$/i)) {
@@ -1754,26 +2353,273 @@
             dropzone.style.display = 'none';
             app.classList.add('active');
 
+            historyStack.length = 0;
+            if (undoBtn) undoBtn.disabled = true;
+
             updateTimelineUI();
             drawWaveform();
             applyVisualTransform();
             applyVisualFilters();
             applyTextOverlay();
+            updateToolBadges();
 
             video.currentTime = 0;
         };
     }
 
-    // Tab Navigation
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabPanes.forEach(p => p.classList.remove('active'));
+    // ==========================================
+    // STATE SNAPSHOTS & UNDO HISTORY SYSTEM
+    // ==========================================
+    const historyStack = [];
+    let draftSnapshot = null;
+    let activeToolId = null;
 
-            btn.classList.add('active');
-            const target = document.getElementById(btn.dataset.tab);
-            if (target) target.classList.add('active');
+    function getEditorStateSnapshot() {
+        return {
+            speed: currentSpeed,
+            trimStart: trimStart,
+            trimEnd: trimEnd,
+            aspect: currentAspect,
+            rotation: currentRotation,
+            isFlipH: isFlipH,
+            isFlipV: isFlipV,
+            preset: activePreset,
+            brightness: parseFloat(brightRange.value),
+            contrast: parseFloat(contrastRange.value),
+            saturation: parseFloat(satRange.value),
+            text: textInput.value,
+            textPos: textPos,
+            textSize: textSize,
+            textColor: textColor,
+            hasTextBg: hasTextBg,
+            origVol: parseFloat(origVolRange.value),
+            musicVol: parseFloat(musicVolRange.value),
+            micVol: parseFloat(micVolRange.value)
+        };
+    }
+
+    function statesEqual(a, b) {
+        if (!a || !b) return false;
+        return a.speed === b.speed &&
+               Math.abs(a.trimStart - b.trimStart) < 0.05 &&
+               Math.abs(a.trimEnd - b.trimEnd) < 0.05 &&
+               a.aspect === b.aspect &&
+               a.rotation === b.rotation &&
+               a.isFlipH === b.isFlipH &&
+               a.isFlipV === b.isFlipV &&
+               a.preset === b.preset &&
+               a.brightness === b.brightness &&
+               a.contrast === b.contrast &&
+               a.saturation === b.saturation &&
+               a.text === b.text &&
+               a.textPos === b.textPos &&
+               a.textSize === b.textSize &&
+               a.textColor === b.textColor &&
+               a.hasTextBg === b.hasTextBg &&
+               a.origVol === b.origVol &&
+               a.musicVol === b.musicVol &&
+               a.micVol === b.micVol;
+    }
+
+    function restoreEditorState(s) {
+        if (!s) return;
+
+        // 1. Speed
+        currentSpeed = s.speed;
+        video.playbackRate = s.speed;
+        calcMult.textContent = `${s.speed.toFixed(2)}x`;
+        speedBtns.forEach(b => {
+            b.classList.toggle('active', parseFloat(b.dataset.speed) === s.speed);
         });
+
+        // 2. Trim
+        trimStart = s.trimStart;
+        trimEnd = s.trimEnd;
+        updateTimelineUI();
+
+        // 3. Aspect & Rotate
+        currentAspect = s.aspect;
+        currentRotation = s.rotation;
+        isFlipH = s.isFlipH;
+        isFlipV = s.isFlipV;
+        aspectBtns.forEach(b => b.classList.toggle('active', b.dataset.aspect === s.aspect));
+        flipHBtn.classList.toggle('active', isFlipH);
+        flipVBtn.classList.toggle('active', isFlipV);
+        applyVisualTransform();
+
+        // 4. Filters
+        activePreset = s.preset;
+        brightness = s.brightness;
+        contrast = s.contrast;
+        saturation = s.saturation;
+        brightRange.value = s.brightness;
+        brightVal.textContent = `${s.brightness}%`;
+        contrastRange.value = s.contrast;
+        contrastVal.textContent = `${s.contrast}%`;
+        satRange.value = s.saturation;
+        satVal.textContent = `${s.saturation}%`;
+        filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === s.preset));
+        applyVisualFilters();
+
+        // 5. Text
+        overlayText = s.text;
+        textInput.value = s.text;
+        textPos = s.textPos;
+        textSize = s.textSize;
+        textColor = s.textColor;
+        hasTextBg = s.hasTextBg;
+        textPosBtns.forEach(b => b.classList.toggle('active', b.dataset.textpos === s.textPos));
+        textSizeBtns.forEach(b => b.classList.toggle('active', b.dataset.textsize === s.textSize));
+        colorDots.forEach(d => d.classList.toggle('active', d.dataset.color.toLowerCase() === s.textColor.toLowerCase()));
+        textBgToggle.classList.toggle('active', s.hasTextBg);
+        applyTextOverlay();
+
+        // 6. Audio
+        origVolRange.value = s.origVol;
+        origVolVal.textContent = `${Math.round(s.origVol * 100)}%`;
+        musicVolRange.value = s.musicVol;
+        musicVolVal.textContent = `${Math.round(s.musicVol * 100)}%`;
+        if (bgAudio) bgAudio.volume = Math.min(1, s.musicVol);
+        micVolRange.value = s.micVol;
+        micVolVal.textContent = `${Math.round(s.micVol * 100)}%`;
+
+        updateTimingCalculator();
+        updateToolBadges();
+    }
+
+    function updateToolBadges() {
+        if (badgeTrim) {
+            const dur = Math.max(0, trimEnd - trimStart).toFixed(1);
+            badgeTrim.textContent = isRu 
+                ? `${currentSpeed.toFixed(2).replace(/\.00$/, '')}x • ${dur} сек`
+                : `${currentSpeed.toFixed(2).replace(/\.00$/, '')}x • ${dur}s`;
+        }
+
+        if (badgeFormat) {
+            const aspectText = currentAspect === 'original' ? (isRu ? 'Оригинал' : 'Auto') : currentAspect;
+            const flipText = (isFlipH || isFlipV) ? ` • ${isRu ? 'Зеркало' : 'Flip'}` : '';
+            badgeFormat.textContent = `${aspectText} • ${currentRotation}°${flipText}`;
+        }
+
+        if (badgeFilters) {
+            let fName = isRu ? 'Обычный' : 'Normal';
+            if (activePreset === 'bw') fName = isRu ? 'Ч/Б' : 'B&W';
+            else if (activePreset === 'sepia') fName = isRu ? 'Теплый' : 'Warm';
+            else if (activePreset === 'vintage') fName = isRu ? 'Винтаж' : 'Vintage';
+            else if (activePreset === 'contrast') fName = isRu ? 'Яркий' : 'Vibrant';
+            else if (activePreset === 'cyber') fName = isRu ? 'Кибер' : 'Cyber';
+            else if (activePreset === 'invert') fName = isRu ? 'Инверсия' : 'Invert';
+            
+            const isAdj = (parseInt(brightness, 10) !== 100 || parseInt(contrast, 10) !== 100 || parseInt(saturation, 10) !== 100);
+            const adj = isAdj ? ` (+${isRu ? 'корр.' : 'adj'})` : '';
+            badgeFilters.textContent = `${fName}${adj}`;
+        }
+
+        if (badgeText) {
+            if (!overlayText.trim()) {
+                badgeText.textContent = isRu ? 'Без текста' : 'No text';
+            } else {
+                const truncated = overlayText.length > 14 ? overlayText.slice(0, 14) + '…' : overlayText;
+                badgeText.textContent = `«${truncated}»`;
+            }
+        }
+
+        if (badgeAudio) {
+            const origPct = Math.round(parseFloat(origVolRange.value) * 100);
+            let audioParts = [isRu ? `Звук ${origPct}%` : `Vol ${origPct}%`];
+            if (bgMusicFile) audioParts.push(isRu ? '+Музыка' : '+Music');
+            if (isMicEnabled) audioParts.push(isRu ? '+Микрофон' : '+Mic');
+            badgeAudio.textContent = audioParts.join(' • ');
+        }
+    }
+
+    // ==========================================
+    // TOOL MODAL (OPEN, APPLY, CANCEL)
+    // ==========================================
+    const toolTitles = {
+        trim: { ru: '✂️ Скорость и Нарезка', en: '✂️ Speed & Trim' },
+        format: { ru: '📐 Формат и Поворот', en: '📐 Format & Rotate' },
+        filters: { ru: '🎨 Фильтры и Цвета', en: '🎨 Filters & Colors' },
+        text: { ru: '📝 Текст и Титры', en: '📝 Text & Watermark' },
+        audio: { ru: '🎵 Аудио и Озвучка', en: '🎵 Audio & Voiceover' }
+    };
+
+    function openToolModal(toolId) {
+        activeToolId = toolId;
+        draftSnapshot = getEditorStateSnapshot();
+
+        const titleData = toolTitles[toolId] || { ru: '🛠️ Настройка', en: '🛠️ Settings' };
+        if (toolModalTitle) {
+            toolModalTitle.textContent = isRu ? titleData.ru : titleData.en;
+        }
+
+        tabPanes.forEach(pane => {
+            pane.classList.remove('active');
+            if (pane.id === `tab-${toolId}`) {
+                pane.classList.add('active');
+            }
+        });
+
+        if (toolModal) {
+            toolModal.classList.add('active');
+        }
+    }
+
+    function closeToolModal(apply) {
+        if (apply) {
+            const current = getEditorStateSnapshot();
+            if (!statesEqual(draftSnapshot, current)) {
+                historyStack.push(draftSnapshot);
+                if (undoBtn) undoBtn.disabled = false;
+            }
+        } else {
+            if (draftSnapshot) {
+                restoreEditorState(draftSnapshot);
+            }
+        }
+        if (toolModal) {
+            toolModal.classList.remove('active');
+        }
+        draftSnapshot = null;
+        activeToolId = null;
+        updateToolBadges();
+    }
+
+    toolEntryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            openToolModal(btn.dataset.tool);
+        });
+    });
+
+    if (toolApplyBtn) toolApplyBtn.addEventListener('click', () => closeToolModal(true));
+    if (toolCancelBtn) toolCancelBtn.addEventListener('click', () => closeToolModal(false));
+    if (toolModalClose) toolModalClose.addEventListener('click', () => closeToolModal(false));
+
+    if (toolModal) {
+        toolModal.addEventListener('click', (e) => {
+            if (e.target === toolModal) closeToolModal(false);
+        });
+    }
+
+    // Undo button
+    if (undoBtn) {
+        undoBtn.addEventListener('click', () => {
+            if (historyStack.length > 0) {
+                const prev = historyStack.pop();
+                restoreEditorState(prev);
+                undoBtn.disabled = historyStack.length === 0;
+            }
+        });
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (toolModal && toolModal.classList.contains('active')) {
+                closeToolModal(false);
+            } else if (exportModal && exportModal.classList.contains('active') && !isExporting) {
+                exportModal.classList.remove('active');
+            }
+        }
     });
 
     // Playback & Controls
@@ -1936,6 +2782,7 @@
     });
 
     resetTransformBtn.addEventListener('click', () => {
+        const prev = getEditorStateSnapshot();
         currentAspect = 'original';
         currentRotation = 0;
         isFlipH = false;
@@ -1944,6 +2791,11 @@
         flipHBtn.classList.remove('active');
         flipVBtn.classList.remove('active');
         applyVisualTransform();
+        if (!statesEqual(prev, getEditorStateSnapshot())) {
+            historyStack.push(prev);
+            if (undoBtn) undoBtn.disabled = false;
+            updateToolBadges();
+        }
     });
 
     function applyVisualTransform() {
@@ -2224,49 +3076,76 @@
     window.addEventListener('touchend', () => { isDragging = null; });
 
     // Markers and fine-tuning
-    document.getElementById('vEditorSetStartBtn').addEventListener('click', () => {
-        trimStart = Math.min(video.currentTime, trimEnd - 0.1);
-        updateTimelineUI();
-    });
-    document.getElementById('vEditorSetEndBtn').addEventListener('click', () => {
-        trimEnd = Math.max(video.currentTime, trimStart + 0.1);
-        updateTimelineUI();
-    });
-    document.getElementById('vEditorResetRangeBtn').addEventListener('click', () => {
-        trimStart = 0;
-        trimEnd = videoDuration;
-        updateTimelineUI();
-    });
+    const btnSetStart = document.getElementById('vEditorSetStartBtn');
+    if (btnSetStart) {
+        btnSetStart.addEventListener('click', () => {
+            trimStart = Math.min(video.currentTime, trimEnd - 0.1);
+            updateTimelineUI();
+        });
+    }
+    const btnSetEnd = document.getElementById('vEditorSetEndBtn');
+    if (btnSetEnd) {
+        btnSetEnd.addEventListener('click', () => {
+            trimEnd = Math.max(video.currentTime, trimStart + 0.1);
+            updateTimelineUI();
+        });
+    }
+    const btnResetRange = document.getElementById('vEditorResetRangeBtn');
+    if (btnResetRange) {
+        btnResetRange.addEventListener('click', () => {
+            trimStart = 0;
+            trimEnd = videoDuration;
+            updateTimelineUI();
+        });
+    }
 
-    document.getElementById('vEditorStartSub').addEventListener('click', () => {
-        trimStart = Math.max(0, trimStart - 0.1);
-        video.currentTime = trimStart;
-        updateTimelineUI();
-    });
-    document.getElementById('vEditorStartAdd').addEventListener('click', () => {
-        trimStart = Math.min(trimEnd - 0.1, trimStart + 0.1);
-        video.currentTime = trimStart;
-        updateTimelineUI();
-    });
-    document.getElementById('vEditorEndSub').addEventListener('click', () => {
-        trimEnd = Math.max(trimStart + 0.1, trimEnd - 0.1);
-        video.currentTime = trimEnd;
-        updateTimelineUI();
-    });
-    document.getElementById('vEditorEndAdd').addEventListener('click', () => {
-        trimEnd = Math.min(videoDuration, trimEnd + 0.1);
-        video.currentTime = trimEnd;
-        updateTimelineUI();
-    });
+    const btnStartSub = document.getElementById('vEditorStartSub');
+    if (btnStartSub) {
+        btnStartSub.addEventListener('click', () => {
+            trimStart = Math.max(0, trimStart - 0.1);
+            video.currentTime = trimStart;
+            updateTimelineUI();
+        });
+    }
+    const btnStartAdd = document.getElementById('vEditorStartAdd');
+    if (btnStartAdd) {
+        btnStartAdd.addEventListener('click', () => {
+            trimStart = Math.min(trimEnd - 0.1, trimStart + 0.1);
+            video.currentTime = trimStart;
+            updateTimelineUI();
+        });
+    }
+    const btnEndSub = document.getElementById('vEditorEndSub');
+    if (btnEndSub) {
+        btnEndSub.addEventListener('click', () => {
+            trimEnd = Math.max(trimStart + 0.1, trimEnd - 0.1);
+            video.currentTime = trimEnd;
+            updateTimelineUI();
+        });
+    }
+    const btnEndAdd = document.getElementById('vEditorEndAdd');
+    if (btnEndAdd) {
+        btnEndAdd.addEventListener('click', () => {
+            trimEnd = Math.min(videoDuration, trimEnd + 0.1);
+            video.currentTime = trimEnd;
+            updateTimelineUI();
+        });
+    }
 
-    playSelectionBtn.addEventListener('click', () => {
-        video.currentTime = trimStart;
-        video.playbackRate = currentSpeed;
-        video.play();
-        updatePlayIcons();
-    });
+    if (playSelectionBtn) {
+        playSelectionBtn.addEventListener('click', () => {
+            video.currentTime = trimStart;
+            video.playbackRate = currentSpeed;
+            video.play();
+            updatePlayIcons();
+        });
+    }
+    if (captureFrameTopBtn) {
+        captureFrameTopBtn.addEventListener('click', captureCurrentFrame);
+    }
 
     function drawWaveform() {
+        if (!waveCanvas || !timelineTrack) return;
         waveCanvas.width = timelineTrack.clientWidth || 800;
         waveCanvas.height = timelineTrack.clientHeight || 60;
         const ctx = waveCanvas.getContext('2d');
@@ -2286,11 +3165,6 @@
     window.addEventListener('resize', () => {
         if (videoDuration) drawWaveform();
     });
-
-    // ==========================================
-    // SNAPSHOT / FRAME CAPTURE
-    // ==========================================
-    captureFrameTopBtn.addEventListener('click', captureCurrentFrame);
 
     function captureCurrentFrame() {
         if (!videoDuration) return;
@@ -2411,16 +3285,20 @@
     // ==========================================
     // EXPORT RENDER LOOP
     // ==========================================
-    exportBtn.addEventListener('click', startExport);
+    if (exportBtn) exportBtn.addEventListener('click', startExport);
 
-    cancelExportBtn.addEventListener('click', () => {
-        exportCancelled = true;
-        exportModal.classList.remove('active');
-    });
+    if (cancelExportBtn) {
+        cancelExportBtn.addEventListener('click', () => {
+            exportCancelled = true;
+            if (exportModal) exportModal.classList.remove('active');
+        });
+    }
 
-    closeModalBtn.addEventListener('click', () => {
-        exportModal.classList.remove('active');
-    });
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            if (exportModal) exportModal.classList.remove('active');
+        });
+    }
 
     async function startExport() {
         if (!videoFile || !videoDuration) return;
@@ -2570,26 +3448,347 @@
         requestAnimationFrame(renderLoop);
 
         function finishExport() {
-            mediaRecorder.onstop = () => {
-                const blob = new Blob(recordedChunks, { type: selectedMime || 'video/webm' });
-                exportedBlobUrl = URL.createObjectURL(blob);
+            mediaRecorder.onstop = async () => {
+                const recordedBlob = new Blob(recordedChunks, { type: selectedMime || 'video/webm' });
+                lastRecordedWebmBlob = recordedBlob;
 
-                modalProgressBar.style.width = '100%';
-                modalPct.textContent = '100%';
-                modalTitle.textContent = 'Video Ready!';
-                modalDesc.textContent = `Size: ${(blob.size / (1024 * 1024)).toFixed(2)} MB • Duration: ${finalDuration.toFixed(1)} s`;
-
-                downloadBtn.href = exportedBlobUrl;
-                const extension = selectedMime.includes('mp4') ? 'mp4' : 'webm';
-                downloadBtn.download = `edited_video_${Date.now()}.${extension}`;
-
-                modalActions.style.display = 'flex';
-                cancelExportBtn.style.display = 'none';
-                isExporting = false;
                 try { audioCtx.close(); } catch {}
+
+                if (exportFormat === 'mp4') {
+                    await convertBlobToMp4(recordedBlob, finalDuration);
+                } else {
+                    exportedBlobUrl = URL.createObjectURL(recordedBlob);
+                    modalProgressBar.style.width = '100%';
+                    modalPct.textContent = '100%';
+                    modalTitle.textContent = isRu ? 'Видео готово (WebM)!' : 'Video Ready (WebM)!';
+                    modalDesc.textContent = `${isRu ? 'Размер' : 'Size'}: ${(recordedBlob.size / (1024 * 1024)).toFixed(2)} MB • ${isRu ? 'Длительность' : 'Duration'}: ${finalDuration.toFixed(1)} s`;
+
+                    downloadBtn.href = exportedBlobUrl;
+                    downloadBtn.download = `edited_video_${Date.now()}.webm`;
+                    if (downloadLabel) downloadLabel.textContent = isRu ? 'Скачать WebM видео' : 'Download WebM Video';
+
+                    if (convertMp4Btn) convertMp4Btn.style.display = 'inline-flex';
+                    modalActions.style.display = 'flex';
+                    cancelExportBtn.style.display = 'none';
+                    isExporting = false;
+                }
             };
         }
     }
+
+    async function getFFmpeg() {
+        if (ffmpegInstance && ffmpegInstance.loaded) return ffmpegInstance;
+        if (ffmpegLoadingPromise) return ffmpegLoadingPromise;
+
+        ffmpegLoadingPromise = (async () => {
+            if (typeof FFmpegWASM === 'undefined' || typeof FFmpegUtil === 'undefined') {
+                await new Promise((resolve, reject) => {
+                    const s = document.createElement('script');
+                    s.src = '/ffmpeg.js';
+                    s.onload = resolve;
+                    s.onerror = () => reject(new Error('Failed to load /ffmpeg.js'));
+                    document.head.appendChild(s);
+                });
+            }
+
+            const { FFmpeg } = window.FFmpegWASM;
+            const { toBlobURL } = window.FFmpegUtil;
+
+            const ffmpeg = new FFmpeg();
+            ffmpeg.on('log', ({ message }) => {
+                console.log('[FFmpeg Editor]', message);
+            });
+
+            let loaded = false;
+            try {
+                const coreURL = await toBlobURL('/ffmpeg-core.js', 'text/javascript');
+                const wasmURL = await toBlobURL('/ffmpeg-core.wasm', 'application/wasm');
+                await ffmpeg.load({ coreURL, wasmURL });
+                loaded = true;
+            } catch (localErr) {
+                console.warn('Local FFmpeg load note, falling back to CDN...', localErr);
+            }
+
+            if (!loaded) {
+                const baseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.6/dist/umd';
+                await ffmpeg.load({
+                    coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+                    wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+                });
+            }
+
+            ffmpegInstance = ffmpeg;
+            return ffmpeg;
+        })();
+
+        return ffmpegLoadingPromise;
+    }
+
+    async function convertBlobToMp4(blob, dur) {
+        modalActions.style.display = 'none';
+        cancelExportBtn.style.display = 'none';
+        modalTitle.textContent = isRu ? 'Конвертация в MP4 (локальный FFmpeg)...' : 'Packaging to MP4 (local FFmpeg)...';
+        modalDesc.textContent = isRu ? 'Сжатие H.264 + AAC для 100% совместимости с iPhone, Android и ПК' : 'Encoding with H.264 + AAC for 100% universal playback across all devices';
+        modalProgressBar.style.width = '20%';
+        modalPct.textContent = isRu ? 'Запуск FFmpeg...' : 'Loading FFmpeg...';
+        modalTimeLeft.textContent = isRu ? 'Пожалуйста, подождите...' : 'Please wait...';
+
+        try {
+            const ffmpeg = await getFFmpeg();
+            const { fetchFile } = window.FFmpegUtil;
+
+            modalProgressBar.style.width = '45%';
+            modalPct.textContent = isRu ? 'Кодирование видео...' : 'Encoding MP4...';
+
+            ffmpeg.on('progress', ({ progress }) => {
+                if (progress > 0 && progress <= 1) {
+                    const pct = Math.floor(45 + progress * 50);
+                    modalProgressBar.style.width = `${pct}%`;
+                    modalPct.textContent = `${pct}%`;
+                }
+            });
+
+            const inName = `input_${Date.now()}.webm`;
+            const outName = `output_${Date.now()}.mp4`;
+
+            await ffmpeg.writeFile(inName, await fetchFile(blob));
+
+            await ffmpeg.exec([
+                '-i', inName,
+                '-c:v', 'libx264',
+                '-preset', 'ultrafast',
+                '-crf', '23',
+                '-pix_fmt', 'yuv420p',
+                '-c:a', 'aac',
+                '-b:a', '192k',
+                '-movflags', '+faststart',
+                outName
+            ]);
+
+            const mp4Data = await ffmpeg.readFile(outName);
+            const mp4Blob = new Blob([mp4Data.buffer], { type: 'video/mp4' });
+            const mp4Url = URL.createObjectURL(mp4Blob);
+
+            try {
+                await ffmpeg.deleteFile(inName);
+                await ffmpeg.deleteFile(outName);
+            } catch (e) {}
+
+            modalProgressBar.style.width = '100%';
+            modalPct.textContent = '100%';
+            modalTitle.textContent = isRu ? 'MP4 видео готово!' : 'MP4 Video Ready!';
+            const dispDur = dur ? ` • ${isRu ? 'Длительность' : 'Duration'}: ${dur.toFixed(1)} s` : '';
+            modalDesc.textContent = `${isRu ? 'Размер' : 'Size'}: ${(mp4Blob.size / (1024 * 1024)).toFixed(2)} MB • MP4 (H.264/AAC)${dispDur}`;
+            modalTimeLeft.textContent = '';
+
+            downloadBtn.href = mp4Url;
+            downloadBtn.download = `edited_video_${Date.now()}.mp4`;
+            if (downloadLabel) downloadLabel.textContent = isRu ? 'Скачать MP4 видео' : 'Download MP4 Video';
+
+            if (convertMp4Btn) convertMp4Btn.style.display = 'none';
+            modalActions.style.display = 'flex';
+            isExporting = false;
+        } catch (err) {
+            console.error('MP4 conversion error:', err);
+            modalTitle.textContent = isRu ? 'Ошибка конвертации в MP4' : 'MP4 Conversion Notice';
+            modalDesc.textContent = (err.message || err) + (isRu ? '. Вы можете скачать видео в формате WebM.' : '. You can still download the WebM version.');
+            
+            exportedBlobUrl = URL.createObjectURL(blob);
+            downloadBtn.href = exportedBlobUrl;
+            downloadBtn.download = `edited_video_${Date.now()}.webm`;
+            if (downloadLabel) downloadLabel.textContent = isRu ? 'Скачать WebM видео' : 'Download WebM Video';
+            
+            if (convertMp4Btn) convertMp4Btn.style.display = 'none';
+            modalActions.style.display = 'flex';
+            isExporting = false;
+        }
+    }
+
+    // Export button listeners
+    if (exportFastBtn) {
+        exportFastBtn.addEventListener('click', () => {
+            exportFormat = 'webm';
+            startExport();
+        });
+    }
+    if (exportMp4Btn) {
+        exportMp4Btn.addEventListener('click', () => {
+            exportFormat = 'mp4';
+            startExport();
+        });
+    }
+    if (convertMp4Btn) {
+        convertMp4Btn.addEventListener('click', () => {
+            if (lastRecordedWebmBlob) {
+                convertBlobToMp4(lastRecordedWebmBlob, 0);
+            }
+        });
+    }
+
+    // ==========================================
+    // MULTILINGUAL (EN & RU) DYNAMIC LOCALIZATION
+    // Default is English; auto-detects Russian browser
+    // ==========================================
+    function setLanguage(lang, savePref) {
+        currentLang = lang === 'ru' ? 'ru' : 'en';
+        isRu = currentLang === 'ru';
+
+        if (savePref) {
+            try {
+                localStorage.setItem(LANG_PREF_KEY, currentLang);
+            } catch (e) {}
+        }
+
+        // Toggle button displays target language or state
+        const targetCode = isRu ? 'EN' : 'RU';
+        const targetTitle = isRu ? 'Switch language to English' : 'Переключить на русский язык';
+        if (langCodeEl) langCodeEl.textContent = targetCode;
+        if (langToggleBtn) langToggleBtn.title = targetTitle;
+        if (topLangCodeEl) topLangCodeEl.textContent = targetCode;
+        if (topLangToggleBtn) topLangToggleBtn.title = targetTitle;
+
+        // Header
+        const mainTitle = document.getElementById('vEditorMainTitle');
+        if (mainTitle) mainTitle.textContent = isRu ? '🎬 Онлайн видеоредактор' : '🎬 Online Video Editor';
+        const mainSubtitle = document.getElementById('vEditorMainSubtitle');
+        if (mainSubtitle) mainSubtitle.textContent = isRu 
+            ? 'Нарезка, кадрирование, поворот, скорость, фильтры, добавление текста и наложение аудио.' 
+            : 'Trim, crop aspect ratio, rotate, adjust speed, apply filters, add text & mix audio tracks.';
+        const badgePrivate = document.getElementById('vEditorBadgePrivate');
+        if (badgePrivate) badgePrivate.textContent = isRu 
+            ? '100% В браузере • Без отправки на сервер • Без водяных знаков' 
+            : '100% In-Browser • Zero Server Uploads • No Watermark';
+
+        // Dropzone
+        const dropTitle = document.getElementById('vEditorDropTitle');
+        if (dropTitle) dropTitle.textContent = isRu ? 'Перетащите видео сюда для начала монтажа' : 'Drop your video here to start editing';
+        const dropSubtitle = document.getElementById('vEditorDropSubtitle');
+        if (dropSubtitle) dropSubtitle.textContent = isRu ? 'Поддержка MP4, WebM, MOV, MKV, AVI • Мгновенная локальная обработка' : 'Supports MP4, WebM, MOV, MKV, AVI • Instant client processing';
+        const selectFileText = document.getElementById('vEditorSelectFileText');
+        if (selectFileText) selectFileText.textContent = isRu ? 'Выбрать видеофайл' : 'Select Video File';
+
+        // Topbar
+        const captureFrameText = document.getElementById('vEditorCaptureFrameText');
+        if (captureFrameText) captureFrameText.textContent = isRu ? 'Снимок кадра' : 'Capture Frame';
+        const changeVideoText = document.getElementById('vEditorChangeVideoText');
+        if (changeVideoText) changeVideoText.textContent = isRu ? 'Сменить видео' : 'Change Video';
+
+        // Stage actions
+        if (undoLabel) undoLabel.textContent = isRu ? '↶ Отменить' : '↶ Undo';
+        if (undoBtn) undoBtn.title = isRu ? 'Отменить последнее действие' : 'Undo last action';
+        if (resetTransformLabel) resetTransformLabel.textContent = isRu ? 'Сбросить вид' : 'Reset View';
+        if (resetTransformBtn) resetTransformBtn.title = isRu ? 'Сбросить поворот и соотношение сторон' : 'Reset Rotate & Aspect';
+
+        // Controls bar
+        if (loopBtn) loopBtn.title = isRu ? 'Зациклить отрезок' : 'Loop trimmed selection';
+        if (muteLabel) muteLabel.textContent = video.muted ? (isRu ? 'Вкл. звук' : 'Unmute') : (isRu ? 'Без звука' : 'Mute');
+
+        // Tools List
+        const toolsTitle = document.getElementById('vEditorToolsTitle');
+        if (toolsTitle) toolsTitle.textContent = isRu ? '🛠️ Инструменты видео' : '🛠️ Video Tools';
+        const toolsDesc = document.getElementById('vEditorToolsDesc');
+        if (toolsDesc) toolsDesc.textContent = isRu ? 'Нажмите для настройки' : 'Click to configure';
+
+        const titleTrim = document.getElementById('vEditorTitleTrim');
+        if (titleTrim) titleTrim.textContent = isRu ? 'Скорость и Нарезка' : 'Speed & Trim';
+        const titleFormat = document.getElementById('vEditorTitleFormat');
+        if (titleFormat) titleFormat.textContent = isRu ? 'Формат и Поворот' : 'Format & Rotate';
+        const titleFilters = document.getElementById('vEditorTitleFilters');
+        if (titleFilters) titleFilters.textContent = isRu ? 'Фильтры и Цвета' : 'Filters & Colors';
+        const titleText = document.getElementById('vEditorTitleText');
+        if (titleText) titleText.textContent = isRu ? 'Текст и Титры' : 'Text Overlay';
+        const titleAudio = document.getElementById('vEditorTitleAudio');
+        if (titleAudio) titleAudio.textContent = isRu ? 'Аудио и Озвучка' : 'Audio & Voiceover';
+
+        document.querySelectorAll('.veditor-tool-entry-arrow').forEach(el => {
+            el.textContent = isRu ? 'Настроить ›' : 'Configure ›';
+        });
+
+        // Timeline controls
+        const btnSetStart = document.getElementById('vEditorSetStartBtn');
+        if (btnSetStart) btnSetStart.textContent = isRu ? '[ Метка начала' : '[ Mark Start';
+        const btnSetEnd = document.getElementById('vEditorSetEndBtn');
+        if (btnSetEnd) btnSetEnd.textContent = isRu ? 'Метка конца ]' : 'Mark End ]';
+        const btnResetRange = document.getElementById('vEditorResetRangeBtn');
+        if (btnResetRange) btnResetRange.textContent = isRu ? 'Весь клип' : 'Full Clip';
+        if (playSelectionBtn) playSelectionBtn.textContent = isRu ? '▶ Превью отрезка' : '▶ Preview Cut';
+
+        // Export area
+        if (fastBtnText) fastBtnText.textContent = isRu ? 'Сохранить видео' : 'Save Video';
+        if (mp4BtnText) mp4BtnText.textContent = isRu ? 'Сохранить видео в MP4 (дольше, конвертация)' : 'Save Video in MP4 (longer, conversion)';
+        if (engineNote) engineNote.textContent = isRu 
+            ? '100% локально в браузере • MP4 через FFmpeg для iPhone, Android и ПК' 
+            : '100% locally in browser • MP4 via FFmpeg for iPhone, Android & PC';
+        if (downloadLabel) {
+            const isMp4 = downloadBtn && downloadBtn.download && downloadBtn.download.endsWith('.mp4');
+            if (isMp4) {
+                downloadLabel.textContent = isRu ? 'Скачать MP4 видео' : 'Download MP4 Video';
+            } else {
+                downloadLabel.textContent = isRu ? 'Скачать WebM видео' : 'Download WebM Video';
+            }
+        }
+        if (convertMp4Label) convertMp4Label.textContent = isRu ? 'Конвертировать в MP4 (FFmpeg)' : 'Convert WebM to MP4 (FFmpeg)';
+        const closeModalText = document.getElementById('vEditorCloseModalText');
+        if (closeModalText) closeModalText.textContent = isRu ? 'Вернуться в редактор' : 'Back to Editor';
+        const cancelExportText = document.getElementById('vEditorCancelExportText');
+        if (cancelExportText) cancelExportText.textContent = isRu ? 'Отменить экспорт' : 'Cancel Export';
+
+        // Tool Modal
+        if (modalApplyLabel) modalApplyLabel.textContent = isRu ? '✓ Применить' : '✓ Apply';
+        if (modalCancelLabel) modalCancelLabel.textContent = isRu ? 'Отмена' : 'Cancel';
+        if (toolModalClose) toolModalClose.title = isRu ? 'Закрыть без сохранения' : 'Close without saving';
+        if (toolModalTitle && activeToolId) {
+            const titleData = toolTitles[activeToolId] || { ru: '🛠️ Настройка', en: '🛠️ Settings' };
+            toolModalTitle.textContent = isRu ? titleData.ru : titleData.en;
+        }
+
+        // Text & Audio
+        if (textInput) textInput.placeholder = isRu ? 'Введите текст (или оставьте пустым)...' : 'Type text here (leave empty for none)...';
+        if (selectMusicBtn) {
+            const musicSpan = selectMusicBtn.querySelector('span');
+            if (musicSpan) musicSpan.textContent = isRu ? 'Добавить аудиофайл (MP3 / WAV)' : 'Add Music File (MP3 / WAV)';
+        }
+        if (removeMusicBtn) removeMusicBtn.textContent = isRu ? 'Удалить' : 'Remove';
+        if (micLabel) micLabel.textContent = isMicEnabled ? (isRu ? 'Микрофон активен' : 'Microphone Active') : (isRu ? 'Включить микрофон' : 'Enable Microphone');
+
+        // Related tools
+        const heading = document.getElementById('vEditorRelatedHeading');
+        if (heading) heading.textContent = isRu ? '⚡ Другие видеоинструменты (без сервера)' : '⚡ More Online Video Tools';
+        const linkMerge = document.getElementById('vEditorLinkMerge');
+        if (linkMerge) linkMerge.href = isRu ? '/2026/10/26/ru/merge-video-files-online/' : '/2026/10/26/merge-video-files-online/';
+        const linkSplit = document.getElementById('vEditorLinkSplit');
+        if (linkSplit) linkSplit.href = isRu ? '/2026/10/26/ru/split-video-file-online/' : '/2026/10/26/split-video-file-online/';
+
+        const nameMerge = document.getElementById('vEditorNameMerge');
+        if (nameMerge) nameMerge.textContent = isRu ? 'Объединить видео (Склейка)' : 'Merge Video (Склейка)';
+        const descMerge = document.getElementById('vEditorDescMerge');
+        if (descMerge) descMerge.textContent = isRu ? 'Быстро соединить несколько роликов в один MP4 без потери качества' : 'Combine multiple MP4 / WebM clips into one file without re-encoding';
+        const nameSplit = document.getElementById('vEditorNameSplit');
+        if (nameSplit) nameSplit.textContent = isRu ? 'Разрезать видео (Разделение)' : 'Split Video (Разрезание)';
+        const descSplit = document.getElementById('vEditorDescSplit');
+        if (descSplit) descSplit.textContent = isRu ? 'Нарезка видео на части или извлечение фрагментов по таймкодам' : 'Cut video into parts or split by exact timestamps instantly';
+        const nameExtract = document.getElementById('vEditorNameExtract');
+        if (nameExtract) nameExtract.textContent = isRu ? 'Извлечь аудио из видео' : 'Extract Audio (Извлечь аудио)';
+        const descExtract = document.getElementById('vEditorDescExtract');
+        if (descExtract) descExtract.textContent = isRu ? 'Сохранить звуковую дорожку из любого видео в MP3 или M4A' : 'Extract MP3 / M4A / AAC sound track from any video';
+        const nameMux = document.getElementById('vEditorNameMux');
+        if (nameMux) nameMux.textContent = isRu ? 'Объединить звук и видео в MP4' : 'Mux Sound & Video (Звук + Видео)';
+        const descMux = document.getElementById('vEditorDescMux');
+        if (descMux) descMux.textContent = isRu ? 'Замена или наложение аудиодорожки на видео без перекодирования' : 'Replace or add audio track to MP4 without re-encoding';
+
+        updateToolBadges();
+    }
+
+    // Toggle button listeners
+    function toggleLanguage() {
+        const nextLang = currentLang === 'ru' ? 'en' : 'ru';
+        setLanguage(nextLang, true);
+    }
+    if (langToggleBtn) langToggleBtn.addEventListener('click', toggleLanguage);
+    if (topLangToggleBtn) topLangToggleBtn.addEventListener('click', toggleLanguage);
+
+    // Initial language setup
+    setLanguage(currentLang, false);
 })();
 </script>
 
@@ -2711,7 +3910,7 @@
 
 
 
-<script src="/js/script.js?v=1794023964513"></script>
+<script src="/js/script.js?v=1794028047162"></script>
 
 
 
