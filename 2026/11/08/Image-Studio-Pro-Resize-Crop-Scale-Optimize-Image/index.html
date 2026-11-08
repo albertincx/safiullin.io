@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+<!-- Google Analytics & Google Ads (Disabled on localhost / 127.0.0.1 for local dev) -->
+<script>
+  (function() {
+    var host = window.location.hostname;
+    var isLocal = host === 'localhost' || 
+                  host === '127.0.0.1' || 
+                  host === '0.0.0.0' || 
+                  host === '[::1]' || 
+                  host.endsWith('.local') || 
+                  window.location.protocol === 'file:';
+
+    if (isLocal) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { window.dataLayer.push(arguments); };
+      return;
+    }
+
+    // 1. Google Analytics (gtag.js)
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-9DPEJ5T23C";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-9DPEJ5T23C');
+
+    // 2. Google Ads (AdSense)
+    var adsLoaded = false;
+    function loadAds() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      window.removeEventListener('scroll', loadAds);
+      window.removeEventListener('mousemove', loadAds);
+      window.removeEventListener('touchstart', loadAds);
+      window.removeEventListener('keydown', loadAds);
+      
+      var adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9147007155868784";
+      adScript.crossOrigin = "anonymous";
+      document.head.appendChild(adScript);
+    }
+    
+    window.addEventListener('scroll', loadAds, { passive: true });
+    window.addEventListener('mousemove', loadAds, { passive: true });
+    window.addEventListener('touchstart', loadAds, { passive: true });
+    window.addEventListener('keydown', loadAds, { passive: true });
+    setTimeout(loadAds, 3000);
+  })();
+</script>
+<!-- End Google Analytics -->
+
+
+
+    <title>Fast Client-Side Image Editor Right in Your Browser | Saf...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fast Client-Side Image Editor Right in Your Browser">
+<meta property="og:url" content="https://safiullin.dev/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/">
+<meta property="og:site_name" content="Safiullin.dev Videcode. Ai. Life. Tools">
+<meta property="og:description" content="I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using...">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-11-08T06:27:19.505Z">
+<meta property="article:modified_time" content="2026-11-08T06:27:19.505Z">
+<meta property="article:author" content="Albert Safiullin">
+<meta property="article:tag" content="images">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="optimization">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="web-performance">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" href="/atom.xml" title="Safiullin.dev. Developer projects and stories of life" type="application/atom+xml">
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1794121201340">
+<link rel="preload" as="image" href="/css/images/banner.jpg" fetchpriority="high">
+
+
+    <link rel="canonical" href="https://safiullin.dev/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" />
+
+
+    <link rel="alternate" hreflang="en" href="https://safiullin.dev/" />
+
+    <link rel="alternate" hreflang="ru" href="https://safiullin.dev/ru/" />
+
+    <link rel="alternate" hreflang="es" href="https://safiullin.dev/es/" />
+
+    <link rel="alternate" hreflang="zh-cn" href="https://safiullin.dev/zh-cn/" />
+
+    <link rel="alternate" hreflang="hi" href="https://safiullin.dev/hi/" />
+
+    <link rel="alternate" hreflang="th" href="https://safiullin.dev/th/" />
+
+    <link rel="alternate" hreflang="fr" href="https://safiullin.dev/fr/" />
+
+    <link rel="alternate" hreflang="pt" href="https://safiullin.dev/pt/" />
+
+    <link rel="alternate" hreflang="ar" href="https://safiullin.dev/ar/" />
+
+    <link rel="alternate" hreflang="x-default" href="https://safiullin.dev/" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fast Client-Side Image Editor Right in Your Browser",
+  "datePublished": "2026-11-08T06:27:19.505Z",
+  "dateModified": "2026-11-08T06:27:19.505Z",
+  "author": {
+    "@type": "Person",
+    "name": "Albert Safiullin"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Safiullin.dev Videcode. Ai. Life. Tools",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://safiullin.dev/logo.png"
+    }
+  },
+  "description": "I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using..."
+}
+</script>
+
+    
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script> <script src="/browser-image-compression.js"></script> <script src="/jszip.min.js"></script>
+    
+
+    <meta property="og:image" content="https://safiullin.dev/images/covers/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image.jpg">
+    <meta name="twitter:image" content="https://safiullin.dev/images/covers/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      
+          <h2 id="logo-wrap">
+            <a href="/en/" id="logo">Safiullin.dev</a>
+          </h2>
+      
+
+      
+        <h2 id="subtitle-wrap">
+          <a href="/en/" id="subtitle">Albert Safiullin`s Blog Apps, Games, Bots</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <button id="main-nav-toggle" class="nav-icon" type="button" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        
+          <a class="main-nav-link" href="/en/">Home</a>
+        
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <div id="lang-dropdown-wrap" class="lang-dropdown-wrap">
+          <button id="lang-dropdown-btn" class="lang-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-globe-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span class="lang-current-code">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-arrow-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="lang-dropdown-menu" class="lang-dropdown-menu">
+            
+              <a href="/" class="lang-dropdown-item active" aria-label="English">
+                <span class="lang-item-code">EN</span>
+                <span class="lang-item-name">English</span>
+                
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke lang-check-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                
+              </a>
+            
+              <a href="/ru/" class="lang-dropdown-item" aria-label="Русский">
+                <span class="lang-item-code">RU</span>
+                <span class="lang-item-name">Русский</span>
+                
+              </a>
+            
+              <a href="/es/" class="lang-dropdown-item" aria-label="Español">
+                <span class="lang-item-code">ES</span>
+                <span class="lang-item-name">Español</span>
+                
+              </a>
+            
+              <a href="/zh-cn/" class="lang-dropdown-item" aria-label="中文">
+                <span class="lang-item-code">ZH-CN</span>
+                <span class="lang-item-name">中文</span>
+                
+              </a>
+            
+              <a href="/hi/" class="lang-dropdown-item" aria-label="हिन्दी">
+                <span class="lang-item-code">HI</span>
+                <span class="lang-item-name">हिन्दी</span>
+                
+              </a>
+            
+              <a href="/th/" class="lang-dropdown-item" aria-label="ไทย">
+                <span class="lang-item-code">TH</span>
+                <span class="lang-item-name">ไทย</span>
+                
+              </a>
+            
+              <a href="/fr/" class="lang-dropdown-item" aria-label="Français">
+                <span class="lang-item-code">FR</span>
+                <span class="lang-item-name">Français</span>
+                
+              </a>
+            
+              <a href="/pt/" class="lang-dropdown-item" aria-label="Português">
+                <span class="lang-item-code">PT</span>
+                <span class="lang-item-name">Português</span>
+                
+              </a>
+            
+              <a href="/ar/" class="lang-dropdown-item" aria-label="العربية">
+                <span class="lang-item-code">AR</span>
+                <span class="lang-item-name">العربية</span>
+                
+              </a>
+            
+          </div>
+        </div>
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          </a>
+        
+        <button class="nav-icon nav-search-btn" type="button" title="Search" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search" aria-label="Search">
+          <button type="submit" class="search-form-submit" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 13px; height: 13px; color: #bbb;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <input type="hidden" name="sitesearch" value="https://safiullin.dev">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="no-sidebar w-full"><article id="post-Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" class="article-date">
+  <time class="dt-published" datetime="2026-11-08T06:27:19.505Z" itemprop="datePublished">2026-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Fast Client-Side Image Editor Right in Your Browser
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using client-side JavaScript. No third-party servers, no waiting for uploads—everything happens locally on your device.</p>
+<p>Try it out right now!</p>
+<span id="more"></span>
+
+
+
+<style>
+    .veditor-checkerboard {
+        background-color: #0b0f19;
+        background-image: 
+            linear-gradient(45deg, #1e293b 25%, transparent 25%), 
+            linear-gradient(-45deg, #1e293b 25%, transparent 25%), 
+            linear-gradient(45deg, transparent 75%, #1e293b 75%), 
+            linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+        background-size: 16px 16px;
+        background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+    }
+
+    /* Режим вырезки полосы в Cropper */
+    .cropper-slice-mode .cropper-view-box {
+        outline: 2px dashed #f43f5e !important;
+        outline-color: #f43f5e !important;
+    }
+    .cropper-slice-mode .cropper-face {
+        background-color: rgba(244, 63, 94, 0.35) !important;
+        background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.2) 0, rgba(0,0,0,0.2) 8px, transparent 8px, transparent 16px) !important;
+    }
+    .cropper-slice-mode .cropper-line,
+    .cropper-slice-mode .cropper-point {
+        background-color: #f43f5e !important;
+    }
+    .cropper-slice-mode .cropper-crop-box::after {
+        content: var(--cropper-slice-badge, '✂️ CUT');
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        background: rgba(225, 29, 72, 0.9);
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 700;
+        font-family: ui-monospace, monospace;
+        padding: 2px 6px;
+        border-radius: 4px;
+        pointer-events: none;
+        z-index: 10;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .imgeditor-lang-btn {
+        background: #1e293b;
+        color: #f1f5f9;
+        border: 1px solid #334155;
+        border-radius: 20px;
+        padding: 3px 10px;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.15s ease;
+        line-height: 1.4;
+    }
+    .imgeditor-lang-btn:hover {
+        background: #083344;
+        color: #22d3ee;
+        border-color: #0e7490;
+        transform: translateY(-1px);
+    }
+</style>
+<div class="w-full bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-8 my-auto">
+    <div class="text-center mb-6">
+        <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white" id="imgEditorTitle">Image Studio Pro</h1>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1" id="imgEditorSubtitle">Crop, scale, resize, pad and compress locally</p>
+        <div class="flex justify-center items-center gap-2 mt-3 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span id="imgEditorBadgePrivate">100% In-Browser • Zero Server Uploads • No Watermark</span>
+            </span>
+            <button type="button" class="imgeditor-lang-btn" id="imgEditorLangToggleBtn" title="Switch language / Переключить язык">
+                🌐 <span id="imgEditorLangCode">RU</span>
+            </button>
+        </div>
+    </div>
+    <div id="upload-section" class="border-2 border-dashed border-slate-700 hover:border-blue-500 transition-colors rounded-xl p-6 text-center cursor-pointer bg-slate-950/50">
+        <input type="file" id="file-input" accept="image/*,.svg" multiple class="hidden">
+        <svg class="w-10 h-10 mx-auto text-blue-500 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.75 3.75 0 0118 19.5H6.75z"></path></svg>
+        <p class="text-sm font-medium text-slate-200" id="imgEditorUploadTitle">Upload Image(s)</p>
+        <p class="text-xs text-slate-400 mt-1" id="imgEditorUploadSubtitle">Drag & Drop files here or click to browse</p>
+        <p class="text-[10px] text-slate-500 mt-0.5" id="imgEditorUploadHint">Supports PNG, JPG, WebP, SVG, etc. (Multiple allowed)</p>
+    </div>
+    <div class="mt-3">
+        <button type="button" id="paste-clipboard-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"></path></svg>
+            <span id="paste-clipboard-text">Paste from Clipboard</span>
+        </button>
+    </div>
+    <div id="decision-section" class="hidden space-y-4 text-center">
+        <div class="p-4 bg-slate-950/50 rounded-xl border border-slate-800">
+            <p class="text-sm font-medium text-white mb-1" id="decision-title">Images Loaded Successfully</p>
+            <p id="decision-file-info" class="text-xs text-slate-400 mb-4"></p>
+            <div class="space-y-2">
+                <button id="use-optimized-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/25">Optimize Selected Files</button>
+                <button id="use-original-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition border border-slate-700">Use Originals</button>
+            </div>
+
+            <!-- Дополнительные действия -->
+            <div class="mt-4 pt-4 border-t border-slate-800 space-y-3 text-left">
+                <label class="cursor-pointer flex items-center gap-2 text-xs text-slate-300">
+                    <input type="checkbox" id="remove-tags-checkbox" class="accent-blue-600 w-4 h-4 rounded" checked>
+                    <span id="remove-tags-label">Remove image tags (EXIF metadata)</span>
+                </label>
+                <div class="grid grid-cols-2 gap-2">
+                    <button id="step-download-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-emerald-600/25">Download</button>
+                    <button id="step-download-jpg-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-blue-600/25">Download as JPG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="editor-section" class="hidden space-y-4">
+        <div id="queue-nav" class="hidden flex items-center justify-between p-2 bg-slate-950/60 border border-slate-800 rounded-xl text-xs">
+            <button type="button" id="prev-item-btn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg transition">← Prev</button>
+            <span id="queue-counter" class="text-slate-300 font-medium">Image 1 of 1</span>
+            <button type="button" id="next-item-btn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg transition">Next →</button>
+        </div>
+
+        <!-- Переключатель режима работы рамки Cropper -->
+        <div class="flex items-center justify-between p-1.5 bg-slate-950/80 border border-slate-800 rounded-xl text-xs">
+            <span class="text-slate-400 font-medium px-2 flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                </svg>
+                <span id="cropper-mode-label">Cropper Mode:</span>
+            </span>
+            <div class="flex gap-1">
+                <button type="button" id="cropper-mode-slice-btn" class="px-3 py-1.5 rounded-lg font-semibold transition text-xs flex items-center gap-1.5 bg-rose-600 text-white shadow-md shadow-rose-600/30">
+                    ✂️ Strip Slice & Stitch
+                </button>
+                <button type="button" id="cropper-mode-crop-btn" class="px-3 py-1.5 rounded-lg font-medium transition text-xs flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:bg-slate-700">
+                    📐 Standard Crop
+                </button>
+            </div>
+        </div>
+
+        <div id="cropper-container-wrapper" class="relative w-full bg-black/40 rounded-xl overflow-hidden flex items-center justify-center border border-slate-800 cropper-slice-mode">
+            <img id="image-preview" class="max-h-full block max-w-full" alt="To edit">
+        </div>
+
+        <!-- Панель быстрого действия прямо под Cropper -->
+        <div id="cropper-slice-toolbar" class="p-2.5 bg-rose-950/30 border border-rose-800/50 rounded-xl flex items-center justify-between text-xs gap-2 flex-wrap">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-rose-600/30 text-rose-300 font-bold text-sm">✂️</span>
+                <div>
+                    <div id="cropper-slice-title" class="font-semibold text-rose-200">Cut Strip in Cropper:</div>
+                    <div id="cropper-slice-info-text" class="text-[11px] text-rose-300/80 font-mono">From 0px to 0px (cut width: 0px)</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 ml-auto">
+                <button type="button" id="cropper-undo-slice-btn" class="hidden bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-medium px-3 py-1.5 rounded-lg transition text-xs flex items-center gap-1">
+                    ↩️ Undo
+                </button>
+                <button type="button" id="cropper-apply-slice-btn" class="bg-rose-600 hover:bg-rose-500 text-white font-bold px-3.5 py-1.5 rounded-lg transition shadow-lg shadow-rose-600/30 flex items-center gap-1.5 text-xs cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                    </svg>
+                    <span id="cropper-apply-slice-text">Cut & Stitch Edges</span>
+                </button>
+            </div>
+        </div>
+        <div class="p-3 bg-slate-950/40 border border-slate-800 rounded-xl space-y-2">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-medium text-slate-400" id="custom-size-label">Custom Size (W x H, px):</label>
+                <button type="button" id="set-original-size-btn" class="text-[10px] text-blue-400 hover:text-blue-300 underline bg-transparent border-none cursor-pointer p-0">Original size</button>
+            </div>
+            <div class="flex items-center gap-2">
+                <input type="number" id="custom-width-input" placeholder="Width" value="512" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-3 rounded-lg focus:outline-none focus:border-blue-500 font-mono">
+                <span class="text-slate-500 text-xs">×</span>
+                <input type="number" id="custom-height-input" placeholder="Height" value="512" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-3 rounded-lg focus:outline-none focus:border-blue-500 font-mono">
+                <button type="button" id="apply-custom-size-btn" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium py-1.5 px-3 rounded-lg transition shrink-0">Set Size</button>
+            </div>
+            <div class="flex items-center justify-between pt-1">
+                <label class="cursor-pointer flex items-center gap-1.5 text-xs text-slate-300">
+                    <input type="checkbox" id="lock-aspect-checkbox" class="accent-blue-600 w-3.5 h-3.5 rounded" checked>
+                    <span id="lock-aspect-label">Save proportions (Aspect Ratio)</span>
+                </label>
+                <span id="dimension-info" class="text-[10px] text-slate-400 font-mono">Original: --</span>
+            </div>
+            <p class="text-[10px] text-slate-500" id="custom-size-hint">Put sizes of result image</p>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-slate-950/40 border border-slate-800 rounded-xl">
+            <label class="text-xs font-medium text-slate-400" id="output-format-label">Output Format:</label>
+            <div class="flex flex-wrap gap-2">
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/webp" checked class="accent-blue-600 format-radio"> WebP</label>
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/jpeg" class="accent-blue-600 format-radio"> JPG</label>
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/png" class="accent-blue-600 format-radio"> PNG</label>
+                <label class="cursor-pointer flex items-center gap-1 text-xs text-slate-200"><input type="radio" name="output-format" value="image/svg+xml" class="accent-blue-600 format-radio"> SVG</label>
+            </div>
+        </div>
+        <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1.5" id="resize-scale-label">Resize Scale (%):</label>
+            <div class="grid grid-cols-4 gap-1.5">
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.25">
+                    <span class="font-bold">25%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.50">
+                    <span class="font-bold">50%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center" data-scale="0.75">
+                    <span class="font-bold">75%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+                <button type="button" class="resize-scale-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 rounded-lg border border-slate-700 transition flex flex-col items-center active" data-scale="1.00">
+                    <span class="font-bold">100%</span>
+                    <span class="text-[9px] text-slate-400 scale-dimension">-</span>
+                </button>
+            </div>
+        </div>
+        <div class="p-3 bg-slate-950/40 border border-slate-800 rounded-xl space-y-2">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-medium text-slate-400" id="padding-label">Add Padding (px):</label>
+                <span id="padding-val" class="text-xs text-blue-400 font-mono">0px</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <input type="range" id="padding-range" min="0" max="100" value="0" class="w-full accent-blue-600 bg-slate-800 h-1.5 rounded-lg cursor-pointer">
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-400 pt-1">
+                <span id="padding-bg-label">Background:</span>
+                <div class="flex gap-2">
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px]"><input type="radio" name="pad-bg" value="transparent" checked class="accent-blue-600"> <span class="pad-bg-text-trans">Transparent</span></label>
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px]"><input type="radio" name="pad-bg" value="#ffffff" class="accent-blue-600"> <span class="pad-bg-text-white">White</span></label>
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px]"><input type="radio" name="pad-bg" value="#000000" class="accent-blue-600"> <span class="pad-bg-text-black">Black</span></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- ИНСТРУМЕНТ: ДОБАВИТЬ ПОЛОТНО ВНИЗ (EXTEND CANVAS DOWNWARDS) -->
+        <div class="hidden p-3 bg-slate-950/50 border-2 border-blue-500/40 rounded-xl space-y-2.5 shadow-lg shadow-blue-500/5">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-semibold text-white flex items-center gap-1.5" id="bottom-extend-label">
+                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                    </svg>
+                    <span id="bottom-extend-title">Extend Canvas Down:</span>
+                </label>
+                <span id="bottom-extend-display" class="text-xs text-blue-400 font-mono font-bold">+0% (+0px)</span>
+            </div>
+
+            <!-- Быстрые кнопки пресетов -->
+            <div class="grid grid-cols-5 gap-1.5" id="bottom-presets-container">
+                <button type="button" class="bottom-preset-btn bg-blue-600 text-white text-xs py-1.5 px-1 rounded-lg border border-blue-500 font-semibold transition text-center" data-percent="0">
+                    0%
+                </button>
+                <button type="button" class="bottom-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 px-1 rounded-lg border border-slate-700 font-medium transition text-center" data-percent="25">
+                    +25%
+                </button>
+                <button type="button" class="bottom-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 px-1 rounded-lg border border-slate-700 font-medium transition text-center" data-percent="50">
+                    +50%
+                </button>
+                <button type="button" class="bottom-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 px-1 rounded-lg border border-slate-700 font-medium transition text-center" data-percent="100">
+                    +100% (2×)
+                </button>
+                <button type="button" class="bottom-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-1.5 px-1 rounded-lg border border-slate-700 font-medium transition text-center" data-percent="200">
+                    +200% (3×)
+                </button>
+            </div>
+
+            <!-- Ползунок -->
+            <div class="space-y-1">
+                <div class="flex justify-between text-[11px] text-slate-400">
+                    <span id="bottom-slider-label">Height slider down (0% - 200%):</span>
+                    <span id="bottom-slider-val" class="font-mono text-blue-300">0%</span>
+                </div>
+                <input type="range" id="bottom-extend-range" min="0" max="200" step="1" value="0" class="w-full accent-blue-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+            </div>
+
+            <!-- Точный ввод (% и px) -->
+            <div class="grid grid-cols-2 gap-2 pt-0.5">
+                <div>
+                    <label class="text-[11px] text-slate-300 block mb-1 font-medium" id="bottom-percent-label">Height down (% of image):</label>
+                    <div class="relative">
+                        <input type="number" id="bottom-extend-percent" min="0" max="2000" step="5" value="0" placeholder="0" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-2.5 rounded-lg focus:outline-none focus:border-blue-500 font-mono pr-7">
+                        <span class="absolute right-2.5 top-1.5 text-xs text-slate-500 font-mono">%</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="text-[11px] text-slate-300 block mb-1 font-medium" id="bottom-px-label">Height down (exact px):</label>
+                    <div class="relative">
+                        <input type="number" id="bottom-extend-px" min="0" max="50000" step="10" value="0" placeholder="0" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-2.5 rounded-lg focus:outline-none focus:border-blue-500 font-mono pr-7">
+                        <span class="absolute right-2.5 top-1.5 text-xs text-slate-500 font-mono">px</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Выбор фона -->
+            <div class="flex items-center justify-between text-xs text-slate-300 pt-1 border-t border-slate-800">
+                <span class="font-medium" id="bottom-bg-title">Canvas background:</span>
+                <div class="flex items-center gap-3">
+                    <label class="cursor-pointer flex items-center gap-1 text-xs">
+                        <input type="radio" name="bottom-bg" value="transparent" checked class="accent-blue-600"> <span class="bottom-bg-text-trans">Transparent</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-1 text-xs">
+                        <input type="radio" name="bottom-bg" value="#ffffff" class="accent-blue-600"> <span class="bottom-bg-text-white">White</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-1 text-xs">
+                        <input type="radio" name="bottom-bg" value="#000000" class="accent-blue-600"> <span class="bottom-bg-text-black">Black</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-1.5 text-xs">
+                        <input type="radio" name="bottom-bg" value="custom" id="bottom-bg-custom-radio" class="accent-blue-600">
+                        <input type="color" id="bottom-bg-custom-picker" value="#1e293b" class="w-5 h-5 rounded cursor-pointer border border-slate-700 bg-transparent p-0">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Динамический бейдж итогового размера -->
+            <div id="final-dimensions-info" class="text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 rounded-lg p-2 font-mono flex items-center justify-between">
+                <span id="final-dimensions-title">Final canvas size:</span>
+                <span id="final-size-badge" class="font-bold text-emerald-300">-- × -- px</span>
+            </div>
+        </div>
+
+        <!-- ИНСТРУМЕНТ: ВЫРЕЗАТЬ ОТРЕЗОК И СОЕДИНИТЬ КРАЯ (КАК В ВИДЕО) -->
+        <div class="hidden p-3 bg-slate-950/50 border-2 border-emerald-500/40 rounded-xl space-y-2.5 shadow-lg shadow-emerald-500/5">
+            <div class="flex justify-between items-center">
+                <label class="text-xs font-semibold text-white flex items-center gap-1.5" id="slice-tool-label">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                    </svg>
+                    <span id="slice-tool-title">Cut slice & stitch edges (video style):</span>
+                </label>
+                <span id="slice-status-badge" class="text-xs text-emerald-400 font-mono font-bold">0% — 0% (0px)</span>
+            </div>
+
+            <!-- Режим: горизонтальный / вертикальный -->
+            <div class="flex items-center justify-between text-xs text-slate-300 pb-1 border-b border-slate-800">
+                <span class="text-[11px] text-slate-400" id="slice-direction-title">Direction:</span>
+                <div class="flex gap-3">
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px] font-medium text-slate-200">
+                        <input type="radio" name="slice-direction" value="horizontal" checked class="accent-emerald-500">
+                        <span id="slice-dir-horiz-label">↔️ Horizontal (stitch left & right)</span>
+                    </label>
+                    <label class="cursor-pointer flex items-center gap-1 text-[11px] font-medium text-slate-200">
+                        <input type="radio" name="slice-direction" value="vertical" class="accent-emerald-500">
+                        <span id="slice-dir-vert-label">↕️ Vertical (top & bottom)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Интерактивная шкала отрезков (как таймлайн в видео) -->
+            <div class="space-y-1">
+                <div class="flex justify-between text-[11px] text-slate-400 font-mono">
+                    <span id="slice-bar-left-label">0px</span>
+                    <span id="slice-bar-cut-label" class="text-rose-400 font-semibold">Cut: 0px</span>
+                    <span id="slice-bar-right-label">End</span>
+                </div>
+                <!-- Визуальная полоса таймлайна с вырезом -->
+                <div class="relative w-full h-6 bg-slate-900 rounded-lg border border-slate-700 overflow-hidden flex items-center">
+                    <div id="slice-visual-left" class="h-full bg-emerald-600/40 border-r border-emerald-500 transition-all flex items-center justify-center text-[9px] text-emerald-200 font-mono overflow-hidden" style="width: 25%;">Left part</div>
+                    <div id="slice-visual-cut" class="h-full bg-rose-600/60 transition-all flex items-center justify-center text-[10px] text-rose-100 font-mono font-bold select-none overflow-hidden" style="width: 50%; background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.2) 0, rgba(0,0,0,0.2) 6px, transparent 6px, transparent 12px);">
+                        ✂️ CUT
+                    </div>
+                    <div id="slice-visual-right" class="h-full bg-emerald-600/40 border-l border-emerald-500 transition-all flex items-center justify-center text-[9px] text-emerald-200 font-mono overflow-hidden" style="width: 25%;">Right part</div>
+                </div>
+            </div>
+
+            <!-- Ползунки От и До -->
+            <div class="space-y-2 pt-1">
+                <div>
+                    <div class="flex justify-between text-[11px] text-slate-300 mb-0.5">
+                        <span class="font-medium text-emerald-400 flex items-center gap-1" id="slice-from-label">📍 From (cut start):</span>
+                        <span id="slice-from-val-display" class="font-mono text-emerald-300">25% (0px)</span>
+                    </div>
+                    <input type="range" id="slice-from-range" min="0" max="100" step="0.5" value="25" class="w-full accent-emerald-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                </div>
+                <div>
+                    <div class="flex justify-between text-[11px] text-slate-300 mb-0.5">
+                        <span class="font-medium text-rose-400 flex items-center gap-1" id="slice-to-label">📍 To (cut end):</span>
+                        <span id="slice-to-val-display" class="font-mono text-rose-300">75% (0px)</span>
+                    </div>
+                    <input type="range" id="slice-to-range" min="0" max="100" step="0.5" value="75" class="w-full accent-rose-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                </div>
+            </div>
+
+            <!-- Точный ввод (% и px) -->
+            <div class="grid grid-cols-2 gap-2 pt-0.5">
+                <div class="space-y-1">
+                    <label class="text-[11px] text-slate-300 block font-medium" id="slice-from-exact-label">Slice «FROM» (Start):</label>
+                    <div class="grid grid-cols-2 gap-1.5">
+                        <div class="relative">
+                            <input type="number" id="slice-from-percent" min="0" max="100" step="1" value="25" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-2 rounded-lg font-mono pr-5 focus:outline-none focus:border-emerald-500">
+                            <span class="absolute right-1.5 top-1.5 text-xs text-slate-500 font-mono">%</span>
+                        </div>
+                        <div class="relative">
+                            <input type="number" id="slice-from-px" min="0" max="50000" step="1" value="0" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-2 rounded-lg font-mono pr-5 focus:outline-none focus:border-emerald-500">
+                            <span class="absolute right-1.5 top-1.5 text-xs text-slate-500 font-mono">px</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[11px] text-slate-300 block font-medium" id="slice-to-exact-label">Slice «TO» (End):</label>
+                    <div class="grid grid-cols-2 gap-1.5">
+                        <div class="relative">
+                            <input type="number" id="slice-to-percent" min="0" max="100" step="1" value="75" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-2 rounded-lg font-mono pr-5 focus:outline-none focus:border-rose-500">
+                            <span class="absolute right-1.5 top-1.5 text-xs text-slate-500 font-mono">%</span>
+                        </div>
+                        <div class="relative">
+                            <input type="number" id="slice-to-px" min="0" max="50000" step="1" value="0" class="w-full bg-slate-900 border border-slate-700 text-slate-100 text-xs py-1.5 px-2 rounded-lg font-mono pr-5 focus:outline-none focus:border-rose-500">
+                            <span class="absolute right-1.5 top-1.5 text-xs text-slate-500 font-mono">px</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Быстрые кнопки пресетов -->
+            <div class="flex flex-wrap gap-1.5 pt-1">
+                <button type="button" class="slice-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] py-1 px-2 rounded-lg border border-slate-700 transition" data-from="40" data-to="60" id="preset-c20">
+                    Center 20%
+                </button>
+                <button type="button" class="slice-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] py-1 px-2 rounded-lg border border-slate-700 transition" data-from="33.3" data-to="66.6" id="preset-c33">
+                    Center 33%
+                </button>
+                <button type="button" class="slice-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] py-1 px-2 rounded-lg border border-slate-700 transition" data-from="25" data-to="75" id="preset-m50">
+                    Middle 50%
+                </button>
+                <button type="button" class="slice-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] py-1 px-2 rounded-lg border border-slate-700 transition" data-from="0" data-to="30" id="preset-l30">
+                    Left 30%
+                </button>
+                <button type="button" class="slice-preset-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] py-1 px-2 rounded-lg border border-slate-700 transition" data-from="70" data-to="100" id="preset-r30">
+                    Right 30%
+                </button>
+            </div>
+
+            <!-- Индикатор результата и кнопка обрезать -->
+            <div class="pt-1 space-y-2">
+                <div id="slice-result-preview-info" class="text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 rounded-lg p-2 font-mono flex items-center justify-between">
+                    <span id="slice-result-preview-title">Final size after cut:</span>
+                    <span id="slice-final-size-badge" class="font-bold text-emerald-300">-- × -- px</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <button type="button" id="apply-slice-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                        </svg>
+                        <span id="apply-slice-text">Cut & Stitch</span>
+                    </button>
+                    <button type="button" id="undo-slice-btn" class="hidden w-full bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition flex items-center justify-center gap-1">
+                        <span id="undo-slice-text">↩️ Undo Cut</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+            <button id="crop-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-blue-600/25">Crop & Pad</button>
+            <button id="optimize-btn" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-purple-600/25">Optimize Size</button>
+        </div>
+        <div>
+            <button id="add-to-queue-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 px-3 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-indigo-600/25">Add files to edit</button>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+            <button id="reset-btn" class="w-full bg-amber-500/10 text-amber-400 border border-amber-500/20 hover:bg-amber-500/20 font-medium py-2 px-3 rounded-xl text-xs transition">Start from scratch</button>
+            <button id="new-file-btn" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium py-2 px-3 rounded-xl text-xs transition">Upload New Files</button>
+        </div>
+
+        <!-- Превью итогового результата с шахматным фоном для проверки прозрачности -->
+        <div id="result-preview-container" class="hidden p-3 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
+            <div class="flex justify-between items-center text-xs text-slate-400">
+                <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span id="result-preview-title">Result (Canvas Preview):</span>
+                </span>
+                <span id="result-preview-dim" class="font-mono text-emerald-400 text-[11px]"></span>
+            </div>
+            <div class="relative w-full rounded-lg overflow-hidden flex items-center justify-center p-2 veditor-checkerboard border border-slate-700/60 max-h-72">
+                <canvas id="result-preview-canvas" class="max-h-64 max-w-full object-contain rounded shadow-lg"></canvas>
+            </div>
+        </div>
+
+        <div class="space-y-2 mb-2">
+            <a id="download-btn" class="hidden text-white! text-center w-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition leading-loose shadow-lg shadow-emerald-600/25">Download Result</a>
+            <button id="download-batch-btn" class="hidden text-center w-full bg-teal-600 hover:bg-teal-500 text-white font-medium py-2 px-3 rounded-xl text-xs transition shadow-lg shadow-teal-600/25"><span id="download-batch-text">Download zip</span> (<span id="batch-count">0</span>)</button>
+        </div>
+    </div>
+    <div id="status-msg" class="text-xs text-center text-slate-400 mt-4 h-4"></div>
+</div>
+
+<script>
+    const LANG_PREF_KEY = 'imgeditor_lang_pref';
+
+    let currentLang = 'en'; // Default is English
+    try {
+        const savedLang = localStorage.getItem(LANG_PREF_KEY);
+        if (savedLang === 'ru' || savedLang === 'en') {
+            currentLang = savedLang;
+        } else {
+            // Check browser language or URL: if Russian, switch to Russian; otherwise keep English
+            const browserLang = (
+                (navigator.languages && navigator.languages[0]) ||
+                navigator.language ||
+                navigator.userLanguage ||
+                ''
+            ).toLowerCase();
+            const isUrlRu = window.location.pathname.includes('/ru/');
+            if (browserLang.startsWith('ru') || isUrlRu) {
+                currentLang = 'ru';
+            } else {
+                currentLang = 'en';
+            }
+        }
+    } catch (e) {
+        currentLang = 'en';
+    }
+
+    let isRu = currentLang === 'ru';
+
+    let cropper = null;
+    let currentScaleFactor = 1.0;
+    let pendingFiles = [];
+    let imageQueue = [];
+    let currentIndex = 0;
+    let lastCanvasBlob = null;
+    let batchResults = [];
+
+    // Language Toggle DOM Elements
+    const langToggleBtn = document.getElementById('imgEditorLangToggleBtn');
+    const langCodeEl = document.getElementById('imgEditorLangCode');
+
+    const fileInput = document.getElementById('file-input');
+    const uploadSection = document.getElementById('upload-section');
+    const pasteClipboardBtn = document.getElementById('paste-clipboard-btn');
+    const decisionSection = document.getElementById('decision-section');
+    const decisionFileInfo = document.getElementById('decision-file-info');
+    const editorSection = document.getElementById('editor-section');
+    const imageElement = document.getElementById('image-preview');
+    const statusMsg = document.getElementById('status-msg');
+    const downloadBtn = document.getElementById('download-btn');
+    const downloadBatchBtn = document.getElementById('download-batch-btn');
+    const batchCountSpan = document.getElementById('batch-count');
+    const scaleButtons = document.querySelectorAll('.resize-scale-btn');
+    const dimensionInfo = document.getElementById('dimension-info');
+    const paddingRange = document.getElementById('padding-range');
+    const paddingVal = document.getElementById('padding-val');
+    const customWidthInput = document.getElementById('custom-width-input');
+    const customHeightInput = document.getElementById('custom-height-input');
+    const applyCustomSizeBtn = document.getElementById('apply-custom-size-btn');
+    const setOriginalSizeBtn = document.getElementById('set-original-size-btn');
+    const lockAspectCheckbox = document.getElementById('lock-aspect-checkbox');
+    const formatRadios = document.querySelectorAll('.format-radio');
+    const queueNav = document.getElementById('queue-nav');
+    const queueCounter = document.getElementById('queue-counter');
+    const prevItemBtn = document.getElementById('prev-item-btn');
+    const nextItemBtn = document.getElementById('next-item-btn');
+
+    // Элементы быстрого шага
+    const removeTagsCheckbox = document.getElementById('remove-tags-checkbox');
+    const stepDownloadBtn = document.getElementById('step-download-btn');
+    const stepDownloadJpgBtn = document.getElementById('step-download-jpg-btn');
+
+    // Элементы расширения холста вниз
+    const bottomExtendPercentInput = document.getElementById('bottom-extend-percent');
+    const bottomExtendPxInput = document.getElementById('bottom-extend-px');
+    const bottomExtendRange = document.getElementById('bottom-extend-range');
+    const bottomSliderVal = document.getElementById('bottom-slider-val');
+    const bottomExtendDisplay = document.getElementById('bottom-extend-display');
+    const bottomPresetButtons = document.querySelectorAll('.bottom-preset-btn');
+    const bottomBgCustomPicker = document.getElementById('bottom-bg-custom-picker');
+    const bottomBgCustomRadio = document.getElementById('bottom-bg-custom-radio');
+    const finalSizeBadge = document.getElementById('final-size-badge');
+    const resultPreviewContainer = document.getElementById('result-preview-container');
+    const resultPreviewCanvas = document.getElementById('result-preview-canvas');
+    const resultPreviewDim = document.getElementById('result-preview-dim');
+    let activeBottomUnit = 'percent';
+
+    // Элементы инструмента «Вырезать отрезок и соединить края» (как в видео)
+    let isSliceModeActive = true;
+    let isUpdatingFromCropper = false;
+    let isUpdatingFromSliders = false;
+    let sliceHistory = [];
+    const cropperContainerWrapper = document.getElementById('cropper-container-wrapper');
+    const cropperModeSliceBtn = document.getElementById('cropper-mode-slice-btn');
+    const cropperModeCropBtn = document.getElementById('cropper-mode-crop-btn');
+    const cropperSliceToolbar = document.getElementById('cropper-slice-toolbar');
+    const cropperSliceInfoText = document.getElementById('cropper-slice-info-text');
+    const cropperApplySliceBtn = document.getElementById('cropper-apply-slice-btn');
+    const cropperUndoSliceBtn = document.getElementById('cropper-undo-slice-btn');
+    const sliceFromRange = document.getElementById('slice-from-range');
+    const sliceToRange = document.getElementById('slice-to-range');
+    const sliceFromPercent = document.getElementById('slice-from-percent');
+    const sliceToPercent = document.getElementById('slice-to-percent');
+    const sliceFromPx = document.getElementById('slice-from-px');
+    const sliceToPx = document.getElementById('slice-to-px');
+    const sliceFromValDisplay = document.getElementById('slice-from-val-display');
+    const sliceToValDisplay = document.getElementById('slice-to-val-display');
+    const sliceStatusBadge = document.getElementById('slice-status-badge');
+    const sliceBarLeftLabel = document.getElementById('slice-bar-left-label');
+    const sliceBarCutLabel = document.getElementById('slice-bar-cut-label');
+    const sliceBarRightLabel = document.getElementById('slice-bar-right-label');
+    const sliceVisualLeft = document.getElementById('slice-visual-left');
+    const sliceVisualCut = document.getElementById('slice-visual-cut');
+    const sliceVisualRight = document.getElementById('slice-visual-right');
+    const sliceFinalSizeBadge = document.getElementById('slice-final-size-badge');
+    const applySliceBtn = document.getElementById('apply-slice-btn');
+    const undoSliceBtn = document.getElementById('undo-slice-btn');
+    const sliceDirectionRadios = document.querySelectorAll('input[name="slice-direction"]');
+    const slicePresetButtons = document.querySelectorAll('.slice-preset-btn');
+
+    uploadSection.addEventListener('click', () => fileInput.click());
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+        uploadSection.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.add('border-blue-500', 'bg-blue-500/10');
+        }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        uploadSection.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.remove('border-blue-500', 'bg-blue-500/10');
+        }, false);
+    });
+
+    uploadSection.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = Array.from(dt.files);
+        if (files.length > 0) handleFilesSelection(files);
+    });
+
+    fileInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files);
+        if (files.length > 0) handleFilesSelection(files);
+    });
+
+    async function handleClipboardPaste(clipboardData) {
+        const items = clipboardData.items || clipboardData.files;
+        const imageFiles = [];
+
+        for (let item of items) {
+            if (item.type && item.type.startsWith('image/')) {
+                const file = item.getAsFile ? item.getAsFile() : item;
+                if (file) {
+                    const ext = file.type.split('/')[1] || 'png';
+                    const renamedFile = new File([file], `clipboard_image_${Date.now()}.${ext}`, { type: file.type });
+                    imageFiles.push(renamedFile);
+                }
+            }
+        }
+
+        if (imageFiles.length > 0) {
+            handleFilesSelection(imageFiles);
+        } else {
+            statusMsg.textContent = isRu ? 'Изображение в буфере обмена не найдено.' : 'No image found in clipboard.';
+        }
+    }
+
+    pasteClipboardBtn.addEventListener('click', async () => {
+        try {
+            if (navigator.clipboard && navigator.clipboard.read) {
+                const clipboardItems = await navigator.clipboard.read();
+                const dataTransfer = { items: [] };
+
+                for (const clipboardItem of clipboardItems) {
+                    for (const type of clipboardItem.types) {
+                        if (type.startsWith('image/')) {
+                            const blob = await clipboardItem.getType(type);
+                            dataTransfer.items.push(blob);
+                        }
+                    }
+                }
+                if (dataTransfer.items.length > 0) {
+                    handleClipboardPaste(dataTransfer);
+                    return;
+                }
+            }
+            statusMsg.textContent = isRu ? 'Используйте сочетание клавиш Ctrl+V для вставки.' : 'Please use Ctrl+V to paste the image directly.';
+        } catch (err) {
+            statusMsg.textContent = isRu ? 'Доступ к буферу обмена запрещен или недоступен. Нажмите Ctrl+V.' : 'Clipboard permission denied or unavailable. Press Ctrl+V instead.';
+        }
+    });
+
+    window.addEventListener('paste', (e) => {
+        if (e.clipboardData && e.clipboardData.files.length > 0) {
+            e.preventDefault();
+            handleFilesSelection(Array.from(e.clipboardData.files));
+        } else if (e.clipboardData && e.clipboardData.items) {
+            handleClipboardPaste(e.clipboardData);
+        }
+    });
+
+    function handleFilesSelection(files) {
+        const validFiles = files.filter(file => file.type.startsWith('image/') || file.name.endsWith('.svg'));
+        if (validFiles.length === 0) {
+            statusMsg.textContent = isRu ? 'Пожалуйста, выберите изображения или SVG.' : 'Please select image files SVG.';
+            return;
+        }
+
+        pendingFiles = validFiles;
+        const totalSize = validFiles.reduce((acc, f) => acc + f.size, 0);
+
+        decisionFileInfo.textContent = `${isRu ? 'Выбрано файлов' : 'Files selected'}: ${validFiles.length} (${formatBytes(totalSize)})`;
+        uploadSection.classList.add('hidden');
+        decisionSection.classList.remove('hidden');
+        statusMsg.textContent = isRu ? 'Выберите режим обработки для загруженных файлов.' : 'Choose processing mode for the uploaded files.';
+    }
+
+    document.getElementById('new-file-btn').addEventListener('click', () => {
+        if (cropper) {
+            cropper.destroy();
+            cropper = null;
+        }
+        imageQueue = [];
+        batchResults = [];
+        currentIndex = 0;
+        lastCanvasBlob = null;
+        editorSection.classList.add('hidden');
+        decisionSection.classList.add('hidden');
+        uploadSection.classList.remove('hidden');
+        fileInput.value = '';
+        downloadBatchBtn.classList.add('hidden');
+        if (resultPreviewContainer) resultPreviewContainer.classList.add('hidden');
+        sliceHistory = [];
+        if (undoSliceBtn) undoSliceBtn.classList.add('hidden');
+        if (bottomExtendPercentInput) bottomExtendPercentInput.value = 0;
+        if (bottomExtendPxInput) bottomExtendPxInput.value = 0;
+        if (bottomExtendRange) bottomExtendRange.value = 0;
+        if (bottomSliderVal) bottomSliderVal.textContent = '0%';
+        if (bottomExtendDisplay) bottomExtendDisplay.textContent = '+0% (+0px)';
+        highlightActivePreset(0);
+        statusMsg.textContent = isRu ? 'Пожалуйста, выберите новые файлы.' : 'Please select new files.';
+    });
+
+    document.getElementById('use-original-btn').addEventListener('click', () => {
+        processAndLoadFiles(pendingFiles, false);
+    });
+
+    document.getElementById('use-optimized-btn').addEventListener('click', () => {
+        processAndLoadFiles(pendingFiles, true);
+    });
+
+    // Обработчики для новых кнопок скачивания в режиме выбора
+    stepDownloadBtn.addEventListener('click', () => handleQuickExport(false));
+    stepDownloadJpgBtn.addEventListener('click', () => handleQuickExport(true));
+
+    async function handleQuickExport(forceJpg) {
+        if (pendingFiles.length === 0) {
+            console.log('No image found in clipboard.');
+            return;
+        }
+        statusMsg.textContent = isRu ? 'Подготовка файлов к скачиванию...' : 'Processing files for download...';
+
+        for (let i = 0; i < pendingFiles.length; i++) {
+            let file = pendingFiles[i];
+            const itemData = await parseFileToDataURL(file);
+
+            const tempImg = new Image();
+            tempImg.onload = () => {
+                const canvas = document.createElement('canvas');
+                canvas.width = tempImg.naturalWidth;
+                canvas.height = tempImg.naturalHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(tempImg, 0, 0);
+
+                let format = file.type;
+                if (forceJpg || format === 'image/svg+xml') {
+                    format = 'image/jpeg';
+                }
+
+                canvas.toBlob((blob) => {
+                    if (!blob) return;
+                    const ext = forceJpg ? 'jpg' : (format.includes('png') ? 'png' : (format.includes('webp') ? 'webp' : 'jpg'));
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    let baseName = file.name.substring(0, file.name.lastIndexOf('.')) || `image_${i+1}`;
+                    a.download = `${baseName}_optimized.${ext}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }, format, 0.9);
+            };
+            tempImg.src = itemData.src;
+        }
+        statusMsg.textContent = isRu ? 'Файлы успешно скачаны!' : 'Files downloaded successfully!';
+    }
+
+    async function parseFileToDataURL(file) {
+        if (file.type === 'image/svg+xml' || file.name.endsWith('.svg')) {
+            const text = await file.text();
+            return new Promise((resolve) => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'image/svg+xml');
+                const svgElement = doc.documentElement;
+
+                let w = parseFloat(svgElement.getAttribute('width')) || 800;
+                let h = parseFloat(svgElement.getAttribute('height')) || 800;
+                svgElement.setAttribute('width', w);
+                svgElement.setAttribute('height', h);
+
+                const serialized = new XMLSerializer().serializeToString(svgElement);
+                const blob = new Blob([serialized], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    resolve({
+                        src: canvas.toDataURL('image/png'),
+                        originalSvgText: text,
+                        name: file.name,
+                        size: file.size
+                    });
+                    URL.revokeObjectURL(url);
+                };
+                img.src = url;
+            });
+        } else {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    resolve({
+                        src: event.target.result,
+                        originalSvgText: null,
+                        name: file.name,
+                        size: file.size
+                    });
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    }
+
+    async function processAndLoadFiles(files, optimize) {
+        statusMsg.textContent = optimize ? (isRu ? 'Оптимизация файлов...' : 'Optimizing files...') : (isRu ? 'Загрузка файлов...' : 'Loading files...');
+        imageQueue = [];
+
+        for (let i = 0; i < files.length; i++) {
+            let file = files[i];
+            if (optimize && file.type !== 'image/svg+xml' && !file.name.endsWith('.svg')) {
+                try {
+                    file = await imageCompression(file, {
+                        maxSizeMB: 1,
+                        maxWidthOrHeight: 1920,
+                        useWebWorker: true,
+                        fileType: 'image/webp'
+                    });
+                } catch (err) {
+                    console.error('Optimization skipped for file', file.name);
+                }
+            }
+
+            const itemData = await parseFileToDataURL(file);
+            imageQueue.push(itemData);
+        }
+
+        decisionSection.classList.add('hidden');
+        currentIndex = 0;
+        batchResults = [];
+        downloadBatchBtn.classList.add('hidden');
+        loadQueueItem(currentIndex);
+        statusMsg.textContent = isRu ? `${imageQueue.length} изобр. успешно загружено!` : `${imageQueue.length} image(s) loaded successfully!`;
+    }
+
+    function loadQueueItem(index) {
+        if (imageQueue.length === 0) return;
+        const item = imageQueue[index];
+        editorSection.classList.remove('hidden');
+        imageElement.src = item.src;
+
+        if (cropper) cropper.destroy();
+
+        cropper = new Cropper(imageElement, {
+            aspectRatio: NaN,
+            viewMode: 1,
+            autoCropArea: 0.8,
+            ready: function() {
+                const data = cropper.getData();
+                customWidthInput.value = Math.round(data.width);
+                customHeightInput.value = Math.round(data.height);
+                syncBottomExtensionFromPercent();
+                if (isSliceModeActive) {
+                    syncSliceUI();
+                }
+                updateDimensionsDisplay();
+            },
+            crop: function() {
+                if (isSliceModeActive && !isUpdatingFromSliders && cropper) {
+                    const cData = cropper.getData(true);
+                    const { total, isHorizontal } = getSliceDimension();
+                    let fromPx = isHorizontal ? Math.round(cData.x) : Math.round(cData.y);
+                    let cutSize = isHorizontal ? Math.round(cData.width) : Math.round(cData.height);
+                    fromPx = Math.max(0, Math.min(total, fromPx));
+                    let toPx = Math.max(fromPx, Math.min(total, fromPx + cutSize));
+
+                    isUpdatingFromCropper = true;
+                    const fromP = total > 0 ? (fromPx / total) * 100 : 0;
+                    const toP = total > 0 ? (toPx / total) * 100 : 0;
+                    if (sliceFromRange) sliceFromRange.value = fromP;
+                    if (sliceToRange) sliceToRange.value = toP;
+                    syncSliceUI('fromCropper');
+                    isUpdatingFromCropper = false;
+                } else if (lockAspectCheckbox.checked && cropper) {
+                    const data = cropper.getData();
+                    if (data.width > 0 && data.height > 0) {
+                        const ratio = data.width / data.height;
+                        const w = parseInt(customWidthInput.value, 10);
+                        if (w && !isNaN(w)) customHeightInput.value = Math.round(w / ratio);
+                    }
+                }
+                updateDimensionsDisplay();
+            }
+        });
+
+        currentScaleFactor = 1.0;
+        lastCanvasBlob = null;
+        sliceHistory = [];
+        if (undoSliceBtn) undoSliceBtn.classList.add('hidden');
+        if (cropperUndoSliceBtn) cropperUndoSliceBtn.classList.add('hidden');
+        updateScaleButtonsUI();
+        updateQueueNavUI();
+        downloadBtn.classList.add('hidden');
+        if (resultPreviewContainer) resultPreviewContainer.classList.add('hidden');
+    }
+
+    function updateQueueNavUI() {
+        if (imageQueue.length > 1) {
+            queueNav.classList.remove('hidden');
+            queueCounter.textContent = isRu ? `Изображение ${currentIndex + 1} из ${imageQueue.length}` : `Image ${currentIndex + 1} of ${imageQueue.length}`;
+        } else {
+            queueNav.classList.add('hidden');
+        }
+    }
+
+    prevItemBtn.addEventListener('click', () => {
+        if (currentIndex > 0) { currentIndex--; loadQueueItem(currentIndex); }
+    });
+
+    nextItemBtn.addEventListener('click', () => {
+        if (currentIndex < imageQueue.length - 1) { currentIndex++; loadQueueItem(currentIndex); }
+    });
+
+    customWidthInput.addEventListener('input', () => {
+        if (lockAspectCheckbox.checked && cropper) {
+            const data = cropper.getData();
+            if (data.width > 0 && data.height > 0) {
+                const ratio = data.width / data.height;
+                const w = parseInt(customWidthInput.value, 10);
+                if (w && !isNaN(w)) customHeightInput.value = Math.round(w / ratio);
+            }
+        }
+    });
+
+    lockAspectCheckbox.addEventListener('change', () => {
+        if (!cropper) return;
+        if (lockAspectCheckbox.checked) {
+            const data = cropper.getData();
+            if (data.width > 0 && data.height > 0) cropper.setAspectRatio(data.width / data.height);
+        } else {
+            cropper.setAspectRatio(NaN);
+        }
+    });
+
+    setOriginalSizeBtn.addEventListener('click', () => {
+        if (!cropper) return;
+        const data = cropper.getData();
+        customWidthInput.value = Math.round(data.width);
+        customHeightInput.value = Math.round(data.height);
+        if (lockAspectCheckbox.checked) cropper.setAspectRatio(data.width / data.height);
+    });
+
+    applyCustomSizeBtn.addEventListener('click', () => {
+        if (!cropper) return;
+        const w = parseInt(customWidthInput.value, 10);
+        const h = parseInt(customHeightInput.value, 10);
+        if (!w || w <= 0 || !h || h <= 0) return;
+
+        if (lockAspectCheckbox.checked) cropper.setAspectRatio(w / h);
+        else cropper.setAspectRatio(NaN);
+        currentScaleFactor = 1.0;
+        updateScaleButtonsUI();
+    });
+
+    paddingRange.addEventListener('input', (e) => {
+        paddingVal.textContent = e.target.value + 'px';
+        updateDimensionsDisplay();
+        if (lastCanvasBlob) updExportBtn();
+    });
+
+    function formatBytes(bytes, decimals = 2) {
+        if (!bytes || bytes === 0) return isRu ? '0 Байт' : '0 Bytes';
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = isRu ? ['Байт', 'КБ', 'МБ', 'ГБ'] : ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+
+    // Получение базовых размеров текущего кадрирования
+    function getBaseDimensions() {
+        if (!cropper) return { w: 512, h: 512 };
+        const customW = parseInt(customWidthInput.value, 10);
+        const customH = parseInt(customHeightInput.value, 10);
+        const data = cropper.getData();
+        let targetW = (customW && customW > 0) ? Math.round(customW * currentScaleFactor) : Math.round(data.width * currentScaleFactor);
+        let targetH = (customH && customH > 0) ? Math.round(customH * currentScaleFactor) : Math.round(data.height * currentScaleFactor);
+        return { w: Math.max(1, targetW), h: Math.max(1, targetH) };
+    }
+
+    // Синхронизация при изменении процентов
+    function syncBottomExtensionFromPercent() {
+        const { w, h } = getBaseDimensions();
+        const percent = Math.max(0, parseFloat(bottomExtendPercentInput.value) || 0);
+        const extraPx = Math.round(h * (percent / 100));
+        
+        bottomExtendPxInput.value = extraPx;
+        bottomExtendRange.value = Math.min(200, percent);
+        bottomSliderVal.textContent = Math.round(percent) + '%';
+        bottomExtendDisplay.textContent = `+${Math.round(percent)}% (+${extraPx}px)`;
+
+        updateDimensionsDisplay();
+        highlightActivePreset(percent);
+    }
+
+    // Синхронизация при изменении пикселей
+    function syncBottomExtensionFromPx() {
+        const { w, h } = getBaseDimensions();
+        const extraPx = Math.max(0, parseInt(bottomExtendPxInput.value, 10) || 0);
+        const percent = h > 0 ? ((extraPx / h) * 100) : 0;
+
+        bottomExtendPercentInput.value = Math.round(percent * 10) / 10;
+        bottomExtendRange.value = Math.min(200, Math.round(percent));
+        bottomSliderVal.textContent = Math.round(percent) + '%';
+        bottomExtendDisplay.textContent = `+${Math.round(percent)}% (+${extraPx}px)`;
+
+        updateDimensionsDisplay();
+        highlightActivePreset(percent);
+    }
+
+    function highlightActivePreset(percent) {
+        bottomPresetButtons.forEach(btn => {
+            const p = parseFloat(btn.getAttribute('data-percent'));
+            if (Math.abs(p - percent) < 1) {
+                btn.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
+                btn.classList.add('bg-blue-600', 'border-blue-500', 'text-white', 'font-semibold');
+            } else {
+                btn.classList.remove('bg-blue-600', 'border-blue-500', 'text-white', 'font-semibold');
+                btn.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            }
+        });
+    }
+
+    function getSelectedBottomBgColor() {
+        const checked = document.querySelector('input[name="bottom-bg"]:checked');
+        if (!checked) return 'transparent';
+        if (checked.value === 'custom') return bottomBgCustomPicker.value;
+        return checked.value;
+    }
+
+    function updateDimensionsDisplay() {
+        if (!cropper) return;
+        const data = cropper.getData();
+        const baseW = Math.round(data.width);
+        const baseH = Math.round(data.height);
+        dimensionInfo.textContent = `${isRu ? 'Оригинал' : 'Original'}: ${baseW}x${baseH}px`;
+
+        const { w: targetW, h: targetH } = getBaseDimensions();
+        const pad = (paddingRange ? parseInt(paddingRange.value, 10) : 0) || 0;
+        let bottomExtraH = 0;
+        if (activeBottomUnit === 'px') {
+            bottomExtraH = Math.max(0, parseInt(bottomExtendPxInput.value, 10) || 0);
+        } else {
+            const percent = Math.max(0, parseFloat(bottomExtendPercentInput.value) || 0);
+            bottomExtraH = Math.max(0, Math.round(targetH * (percent / 100)));
+        }
+        const finalW = targetW + pad * 2;
+        const finalH = targetH + pad * 2 + bottomExtraH;
+        if (finalSizeBadge) {
+            finalSizeBadge.textContent = `${finalW} × ${finalH} px (${isRu ? 'было' : 'was'} ${targetW} × ${targetH} px)`;
+        }
+    }
+
+    // Обработчики для расширения холста вниз
+    bottomPresetButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const percent = parseFloat(btn.getAttribute('data-percent'));
+            activeBottomUnit = 'percent';
+            bottomExtendPercentInput.value = percent;
+            syncBottomExtensionFromPercent();
+            if (lastCanvasBlob) updExportBtn();
+        });
+    });
+
+    bottomExtendRange.addEventListener('input', (e) => {
+        activeBottomUnit = 'percent';
+        bottomExtendPercentInput.value = e.target.value;
+        syncBottomExtensionFromPercent();
+        if (lastCanvasBlob) updExportBtn();
+    });
+
+    bottomExtendPercentInput.addEventListener('input', () => {
+        activeBottomUnit = 'percent';
+        syncBottomExtensionFromPercent();
+        if (lastCanvasBlob) updExportBtn();
+    });
+
+    bottomExtendPxInput.addEventListener('input', () => {
+        activeBottomUnit = 'px';
+        syncBottomExtensionFromPx();
+        if (lastCanvasBlob) updExportBtn();
+    });
+
+    bottomBgCustomPicker.addEventListener('input', () => {
+        bottomBgCustomRadio.checked = true;
+        if (lastCanvasBlob) updExportBtn();
+    });
+
+    document.querySelectorAll('input[name="bottom-bg"]').forEach(r => {
+        r.addEventListener('change', () => {
+            if (lastCanvasBlob) updExportBtn();
+        });
+    });
+
+    document.querySelectorAll('input[name="pad-bg"]').forEach(r => {
+        r.addEventListener('change', () => {
+            if (lastCanvasBlob) updExportBtn();
+        });
+    });
+
+    scaleButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const targetBtn = e.currentTarget;
+            scaleButtons.forEach(b => {
+                b.classList.remove('bg-blue-600', 'border-blue-500', 'text-white');
+                b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            });
+            targetBtn.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            targetBtn.classList.add('bg-blue-600', 'border-blue-500', 'text-white');
+            currentScaleFactor = parseFloat(targetBtn.getAttribute('data-scale'));
+            syncBottomExtensionFromPercent();
+            updateDimensionsDisplay();
+            if (lastCanvasBlob) updExportBtn();
+        });
+    });
+
+    function updateScaleButtonsUI() {
+        scaleButtons.forEach(b => {
+            const scale = parseFloat(b.getAttribute('data-scale'));
+            if (scale === 1.0) {
+                b.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-300');
+                b.classList.add('bg-blue-600', 'border-blue-500', 'text-white');
+            } else {
+                b.classList.remove('bg-blue-600', 'border-blue-500', 'text-white');
+                b.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-300');
+            }
+        });
+    }
+
+    document.getElementById('reset-btn').addEventListener('click', () => loadQueueItem(currentIndex));
+
+    // Логика инструмента «Вырезать отрезок и соединить края» (как в видео)
+    function getSliceDimension() {
+        const isHorizontal = document.querySelector('input[name="slice-direction"]:checked')?.value !== 'vertical';
+        let w = 800, h = 800;
+        if (cropper) {
+            const imgData = cropper.getImageData();
+            if (imgData && imgData.naturalWidth) {
+                w = Math.round(imgData.naturalWidth);
+                h = Math.round(imgData.naturalHeight);
+            }
+        }
+        if ((!w || w <= 0) && imageElement) {
+            w = imageElement.naturalWidth || 800;
+            h = imageElement.naturalHeight || 800;
+        }
+        const total = isHorizontal ? w : h;
+        return { total: Math.max(1, total), w: Math.max(1, w), h: Math.max(1, h), isHorizontal };
+    }
+
+    function syncSliceUI(changed) {
+        if (!sliceFromRange || !sliceToRange) return;
+        const { total, w, h, isHorizontal } = getSliceDimension();
+        let fromP = parseFloat(sliceFromRange.value);
+        let toP = parseFloat(sliceToRange.value);
+        if (isNaN(fromP)) fromP = 0;
+        if (isNaN(toP)) toP = 0;
+
+        if (changed === 'fromPercent') {
+            fromP = Math.max(0, Math.min(100, parseFloat(sliceFromPercent.value) || 0));
+            sliceFromRange.value = fromP;
+        } else if (changed === 'toPercent') {
+            toP = Math.max(0, Math.min(100, parseFloat(sliceToPercent.value) || 0));
+            sliceToRange.value = toP;
+        } else if (changed === 'fromPx') {
+            const pxVal = Math.max(0, parseInt(sliceFromPx.value, 10) || 0);
+            fromP = total > 0 ? (pxVal / total) * 100 : 0;
+            fromP = Math.max(0, Math.min(100, fromP));
+            sliceFromRange.value = fromP;
+        } else if (changed === 'toPx') {
+            const pxVal = Math.max(0, parseInt(sliceToPx.value, 10) || 0);
+            toP = total > 0 ? (pxVal / total) * 100 : 0;
+            toP = Math.max(0, Math.min(100, toP));
+            sliceToRange.value = toP;
+        }
+
+        // Авто-выравнивание: toP >= fromP
+        if (fromP > toP) {
+            if (changed && (changed.includes('to') || changed === 'toRange')) {
+                fromP = toP;
+                sliceFromRange.value = fromP;
+            } else {
+                toP = fromP;
+                sliceToRange.value = toP;
+            }
+        }
+
+        const fromPxVal = Math.round((fromP / 100) * total);
+        const toPxVal = Math.round((toP / 100) * total);
+        const cutPxVal = Math.max(0, toPxVal - fromPxVal);
+        const remainingTotal = Math.max(0, total - cutPxVal);
+
+        // Синхронизация с рамкой Cropper
+        if (!isUpdatingFromCropper && cropper && isSliceModeActive) {
+            isUpdatingFromSliders = true;
+            try {
+                if (isHorizontal) {
+                    cropper.setData({
+                        x: fromPxVal,
+                        y: 0,
+                        width: Math.max(1, cutPxVal),
+                        height: h
+                    });
+                } else {
+                    cropper.setData({
+                        x: 0,
+                        y: fromPxVal,
+                        width: w,
+                        height: Math.max(1, cutPxVal)
+                    });
+                }
+            } catch (e) {}
+            isUpdatingFromSliders = false;
+        }
+
+        if (cropperSliceInfoText) {
+            cropperSliceInfoText.textContent = isRu 
+                ? `От ${fromPxVal}px до ${toPxVal}px (ширина выреза: ${cutPxVal}px)` 
+                : `From ${fromPxVal}px to ${toPxVal}px (cut width: ${cutPxVal}px)`;
+        }
+
+        // Обновление числовых инпутов
+        if (changed !== 'fromPercent' && sliceFromPercent) sliceFromPercent.value = Math.round(fromP * 10) / 10;
+        if (changed !== 'toPercent' && sliceToPercent) sliceToPercent.value = Math.round(toP * 10) / 10;
+        if (changed !== 'fromPx' && sliceFromPx) sliceFromPx.value = fromPxVal;
+        if (changed !== 'toPx' && sliceToPx) sliceToPx.value = toPxVal;
+
+        if (sliceFromValDisplay) sliceFromValDisplay.textContent = `${Math.round(fromP * 10) / 10}% (${fromPxVal}px)`;
+        if (sliceToValDisplay) sliceToValDisplay.textContent = `${Math.round(toP * 10) / 10}% (${toPxVal}px)`;
+        if (sliceStatusBadge) sliceStatusBadge.textContent = `${Math.round(fromP)}% — ${Math.round(toP)}% (${cutPxVal}px)`;
+
+        // Визуальная шкала отрезков
+        const leftPercent = fromP;
+        const cutPercent = Math.max(0, toP - fromP);
+        const rightPercent = Math.max(0, 100 - toP);
+
+        if (sliceVisualLeft) {
+            sliceVisualLeft.style.width = `${leftPercent}%`;
+            sliceVisualLeft.textContent = leftPercent > 10 ? (isHorizontal ? (isRu ? 'Левая часть' : 'Left part') : (isRu ? 'Верх' : 'Top')) : (leftPercent > 4 ? 'L' : '');
+        }
+        if (sliceVisualCut) {
+            sliceVisualCut.style.width = `${cutPercent}%`;
+            sliceVisualCut.textContent = cutPercent > 12 ? (isRu ? '✂️ ВЫРЕЗ' : '✂️ CUT') : (cutPercent > 4 ? '✂️' : '');
+        }
+        if (sliceVisualRight) {
+            sliceVisualRight.style.width = `${rightPercent}%`;
+            sliceVisualRight.textContent = rightPercent > 10 ? (isHorizontal ? (isRu ? 'Правая часть' : 'Right part') : (isRu ? 'Низ' : 'Bottom')) : (rightPercent > 4 ? 'R' : '');
+        }
+
+        if (sliceBarLeftLabel) sliceBarLeftLabel.textContent = `0px (${isHorizontal ? (isRu ? 'Левый край' : 'Left edge') : (isRu ? 'Верх' : 'Top')})`;
+        if (sliceBarRightLabel) sliceBarRightLabel.textContent = `${total}px (${isHorizontal ? (isRu ? 'Правый край' : 'Right edge') : (isRu ? 'Низ' : 'Bottom')})`;
+        if (sliceBarCutLabel) sliceBarCutLabel.textContent = `${isRu ? 'Вырезается' : 'Cut'}: ${cutPxVal}px (${Math.round(cutPercent)}%)`;
+
+        const finalW = isHorizontal ? remainingTotal : w;
+        const finalH = isHorizontal ? h : remainingTotal;
+        if (sliceFinalSizeBadge) {
+            sliceFinalSizeBadge.textContent = `${finalW} × ${finalH} px (${isRu ? 'было' : 'was'} ${w} × ${h} px)`;
+        }
+    }
+
+    function performSliceAndStitch() {
+        if (!imageQueue[currentIndex]) return;
+        const { total, w, h, isHorizontal } = getSliceDimension();
+        let fromPx, toPx;
+
+        if (cropper && isSliceModeActive) {
+            const cData = cropper.getData(true);
+            fromPx = isHorizontal ? Math.round(cData.x) : Math.round(cData.y);
+            const size = isHorizontal ? Math.round(cData.width) : Math.round(cData.height);
+            toPx = fromPx + size;
+        } else {
+            const fromP = parseFloat(sliceFromRange.value) || 0;
+            const toP = parseFloat(sliceToRange.value) || 0;
+            fromPx = Math.round((fromP / 100) * total);
+            toPx = Math.round((toP / 100) * total);
+        }
+
+        fromPx = Math.max(0, Math.min(total, fromPx));
+        toPx = Math.max(fromPx, Math.min(total, toPx));
+        const cutSize = toPx - fromPx;
+
+        if (cutSize <= 0) {
+            statusMsg.textContent = isRu 
+                ? 'Диапазон вырезки равен 0. Задайте рамку в Cropper или укажите отрезок «От» и «До».' 
+                : 'Cut range is 0. Set frame in Cropper or specify From & To range.';
+            return;
+        }
+
+        if (cutSize >= total) {
+            statusMsg.textContent = isRu 
+                ? 'Нельзя вырезать изображение целиком.' 
+                : 'Cannot cut the entire image.';
+            return;
+        }
+
+        const currentItem = imageQueue[currentIndex];
+        sliceHistory.push({
+            index: currentIndex,
+            src: currentItem.src,
+            width: w,
+            height: h
+        });
+        if (undoSliceBtn) undoSliceBtn.classList.remove('hidden');
+        if (cropperUndoSliceBtn) cropperUndoSliceBtn.classList.remove('hidden');
+
+        const tempImg = new Image();
+        tempImg.onload = function() {
+            let outCanvas;
+            if (isHorizontal) {
+                const newW = w - cutSize;
+                const newH = h;
+                outCanvas = document.createElement('canvas');
+                outCanvas.width = Math.max(1, newW);
+                outCanvas.height = Math.max(1, newH);
+                const ctx = outCanvas.getContext('2d');
+
+                // Левая часть: от 0 до fromPx
+                if (fromPx > 0) {
+                    ctx.drawImage(tempImg, 0, 0, fromPx, h, 0, 0, fromPx, h);
+                }
+                // Правая часть: от toPx до w, рисуется сразу за левой (на x = fromPx)
+                const rightW = w - toPx;
+                if (rightW > 0) {
+                    ctx.drawImage(tempImg, toPx, 0, rightW, h, fromPx, 0, rightW, h);
+                }
+            } else {
+                const newW = w;
+                const newH = h - cutSize;
+                outCanvas = document.createElement('canvas');
+                outCanvas.width = Math.max(1, newW);
+                outCanvas.height = Math.max(1, newH);
+                const ctx = outCanvas.getContext('2d');
+
+                // Верхняя часть: от 0 до fromPx
+                if (fromPx > 0) {
+                    ctx.drawImage(tempImg, 0, 0, w, fromPx, 0, 0, w, fromPx);
+                }
+                // Нижняя часть: от toPx до h, рисуется сразу за верхней (на y = fromPx)
+                const bottomH = h - toPx;
+                if (bottomH > 0) {
+                    ctx.drawImage(tempImg, 0, toPx, w, bottomH, 0, fromPx, w, bottomH);
+                }
+            }
+
+            const newSrc = outCanvas.toDataURL('image/png');
+            currentItem.src = newSrc;
+            imageElement.src = newSrc;
+
+            if (cropper) {
+                cropper.replace(newSrc);
+            }
+
+            customWidthInput.value = outCanvas.width;
+            customHeightInput.value = outCanvas.height;
+
+            // Сбрасываем слайдеры вырезки на 0
+            sliceFromRange.value = 0;
+            sliceToRange.value = 0;
+            syncSliceUI('fromPercent');
+            syncBottomExtensionFromPercent();
+            updateDimensionsDisplay();
+            updExportBtn();
+
+            statusMsg.textContent = isRu 
+                ? `✂️ Отрезок вырезан! Края соединены (${outCanvas.width}×${outCanvas.height}px).` 
+                : `✂️ Slice cut! Edges stitched (${outCanvas.width}×${outCanvas.height}px).`;
+        };
+        tempImg.src = currentItem.src;
+    }
+
+    function undoSlice() {
+        if (sliceHistory.length === 0) return;
+        const lastState = sliceHistory.pop();
+        if (sliceHistory.length === 0) {
+            if (undoSliceBtn) undoSliceBtn.classList.add('hidden');
+            if (cropperUndoSliceBtn) cropperUndoSliceBtn.classList.add('hidden');
+        }
+
+        const currentItem = imageQueue[lastState.index];
+        currentItem.src = lastState.src;
+        imageElement.src = lastState.src;
+
+        if (cropper) {
+            cropper.replace(lastState.src);
+        }
+
+        customWidthInput.value = lastState.width;
+        customHeightInput.value = lastState.height;
+        sliceFromRange.value = 0;
+        sliceToRange.value = 0;
+        syncSliceUI('fromPercent');
+        syncBottomExtensionFromPercent();
+        updateDimensionsDisplay();
+        updExportBtn();
+
+        statusMsg.textContent = isRu 
+            ? '↩️ Вырезка отменена, исходное изображение восстановлено.' 
+            : '↩️ Cut undone, original image restored.';
+    }
+
+    function setCropperMode(mode) {
+        isSliceModeActive = (mode === 'slice');
+        if (isSliceModeActive) {
+            if (cropperContainerWrapper) cropperContainerWrapper.classList.add('cropper-slice-mode');
+            if (cropperSliceToolbar) cropperSliceToolbar.classList.remove('hidden');
+            if (cropperModeSliceBtn) {
+                cropperModeSliceBtn.classList.remove('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
+                cropperModeSliceBtn.classList.add('bg-rose-600', 'text-white', 'shadow-md', 'shadow-rose-600/30');
+            }
+            if (cropperModeCropBtn) {
+                cropperModeCropBtn.classList.remove('bg-blue-600', 'text-white', 'shadow-md', 'shadow-blue-600/30');
+                cropperModeCropBtn.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
+            }
+            syncSliceUI();
+        } else {
+            if (cropperContainerWrapper) cropperContainerWrapper.classList.remove('cropper-slice-mode');
+            if (cropperSliceToolbar) cropperSliceToolbar.classList.add('hidden');
+            if (cropperModeCropBtn) {
+                cropperModeCropBtn.classList.remove('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
+                cropperModeCropBtn.classList.add('bg-blue-600', 'text-white', 'shadow-md', 'shadow-blue-600/30');
+            }
+            if (cropperModeSliceBtn) {
+                cropperModeSliceBtn.classList.remove('bg-rose-600', 'text-white', 'shadow-md', 'shadow-rose-600/30');
+                cropperModeSliceBtn.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700');
+            }
+        }
+    }
+
+    if (cropperModeSliceBtn) cropperModeSliceBtn.addEventListener('click', () => setCropperMode('slice'));
+    if (cropperModeCropBtn) cropperModeCropBtn.addEventListener('click', () => setCropperMode('crop'));
+    if (cropperApplySliceBtn) cropperApplySliceBtn.addEventListener('click', performSliceAndStitch);
+    if (cropperUndoSliceBtn) cropperUndoSliceBtn.addEventListener('click', undoSlice);
+
+    // Слушатели событий инструмента вырезки
+    if (sliceFromRange) sliceFromRange.addEventListener('input', () => syncSliceUI('fromRange'));
+    if (sliceToRange) sliceToRange.addEventListener('input', () => syncSliceUI('toRange'));
+    if (sliceFromPercent) sliceFromPercent.addEventListener('input', () => syncSliceUI('fromPercent'));
+    if (sliceToPercent) sliceToPercent.addEventListener('input', () => syncSliceUI('toPercent'));
+    if (sliceFromPx) sliceFromPx.addEventListener('input', () => syncSliceUI('fromPx'));
+    if (sliceToPx) sliceToPx.addEventListener('input', () => syncSliceUI('toPx'));
+
+    if (sliceDirectionRadios) {
+        sliceDirectionRadios.forEach(r => {
+            r.addEventListener('change', () => syncSliceUI());
+        });
+    }
+
+    if (slicePresetButtons) {
+        slicePresetButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const f = parseFloat(btn.getAttribute('data-from')) || 0;
+                const t = parseFloat(btn.getAttribute('data-to')) || 0;
+                sliceFromRange.value = f;
+                sliceToRange.value = t;
+                syncSliceUI();
+            });
+        });
+    }
+
+    if (applySliceBtn) applySliceBtn.addEventListener('click', performSliceAndStitch);
+    if (undoSliceBtn) undoSliceBtn.addEventListener('click', undoSlice);
+
+    // Функция добавления дополнительного холста снизу и отступов
+    function addCanvasPaddingAndBottomSpace(sourceCanvas, targetW, targetH) {
+        const pad = (paddingRange ? parseInt(paddingRange.value, 10) : 0) || 0;
+        
+        let bottomExtraH = 0;
+        if (activeBottomUnit === 'px') {
+            bottomExtraH = Math.max(0, parseInt(bottomExtendPxInput.value, 10) || 0);
+        } else {
+            const percent = Math.max(0, parseFloat(bottomExtendPercentInput.value) || 0);
+            bottomExtraH = Math.max(0, Math.round(targetH * (percent / 100)));
+        }
+
+        if (pad === 0 && bottomExtraH === 0) {
+            return sourceCanvas;
+        }
+
+        const finalW = targetW + pad * 2;
+        const finalH = targetH + pad * 2 + bottomExtraH;
+
+        const outCanvas = document.createElement('canvas');
+        outCanvas.width = finalW;
+        outCanvas.height = finalH;
+        const ctx = outCanvas.getContext('2d');
+
+        let bgColor = getSelectedBottomBgColor();
+        if (bgColor === 'transparent') {
+            const padBgChecked = document.querySelector('input[name="pad-bg"]:checked');
+            if (padBgChecked && padBgChecked.value !== 'transparent') {
+                bgColor = padBgChecked.value;
+            }
+        }
+        if (bgColor && bgColor !== 'transparent') {
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, finalW, finalH);
+        }
+
+        // Исходное изображение рисуется сверху с учётом pad
+        ctx.drawImage(sourceCanvas, pad, pad, targetW, targetH);
+        return outCanvas;
+    }
+
+    function generateCanvasForItem(item, callback) {
+        const tempImg = new Image();
+        tempImg.onload = function() {
+            let cropX = 0, cropY = 0, cropW = tempImg.naturalWidth, cropH = tempImg.naturalHeight;
+            if (cropper && imageQueue[currentIndex] && item.src === imageQueue[currentIndex].src) {
+                const data = cropper.getData(true);
+                cropX = data.x; cropY = data.y; cropW = data.width; cropH = data.height;
+            }
+
+            const customW = parseInt(customWidthInput.value, 10);
+            const customH = parseInt(customHeightInput.value, 10);
+            let targetW = (customW && customW > 0) ? Math.round(customW * currentScaleFactor) : Math.round(cropW * currentScaleFactor);
+            let targetH = (customH && customH > 0) ? Math.round(customH * currentScaleFactor) : Math.round(cropH * currentScaleFactor);
+
+            const croppedCanvas = document.createElement('canvas');
+            croppedCanvas.width = targetW;
+            croppedCanvas.height = targetH;
+            croppedCanvas.getContext('2d').drawImage(tempImg, cropX, cropY, cropW, cropH, 0, 0, targetW, targetH);
+
+            const finalCanvas = addCanvasPaddingAndBottomSpace(croppedCanvas, targetW, targetH);
+            callback(finalCanvas);
+        };
+        tempImg.src = item.src;
+    }
+
+    function getProcessedCanvasWithPadding() {
+        if (!cropper) return null;
+        const customW = parseInt(customWidthInput.value, 10);
+        const customH = parseInt(customHeightInput.value, 10);
+        const data = cropper.getData();
+        let targetW = (customW && customW > 0) ? Math.round(customW * currentScaleFactor) : Math.round(data.width * currentScaleFactor);
+        let targetH = (customH && customH > 0) ? Math.round(customH * currentScaleFactor) : Math.round(data.height * currentScaleFactor);
+
+        const croppedCanvas = cropper.getCroppedCanvas({ width: targetW, height: targetH });
+        if (!croppedCanvas) return null;
+
+        return addCanvasPaddingAndBottomSpace(croppedCanvas, targetW, targetH);
+    }
+
+    function updateResultPreview(canvas) {
+        if (!resultPreviewContainer || !resultPreviewCanvas || !canvas) return;
+        resultPreviewCanvas.width = canvas.width;
+        resultPreviewCanvas.height = canvas.height;
+        const pCtx = resultPreviewCanvas.getContext('2d');
+        pCtx.clearRect(0, 0, canvas.width, canvas.height);
+        pCtx.drawImage(canvas, 0, 0);
+        if (resultPreviewDim) {
+            resultPreviewDim.textContent = `${canvas.width} × ${canvas.height} px`;
+        }
+        resultPreviewContainer.classList.remove('hidden');
+    }
+
+    function exportCanvasToBlobOrSvg(canvas, format, item, callback) {
+        canvas.toBlob((blob) => {
+            callback(blob);
+        }, format, 0.9);
+    }
+
+    function updExportBtn() {
+        const canvas = getProcessedCanvasWithPadding();
+        if (!canvas) return;
+        updateResultPreview(canvas);
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+        exportCanvasToBlobOrSvg(canvas, format, imageQueue[currentIndex], (blob) => {
+            lastCanvasBlob = blob;
+            updateDownloadLink(blob, format);
+        });
+    }
+
+    formatRadios && formatRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            updExportBtn();
+        });
+    });
+
+    document.getElementById('crop-btn').addEventListener('click', () => {
+        updExportBtn();
+    });
+
+    document.getElementById('add-to-queue-btn').addEventListener('click', async () => {
+        if (imageQueue.length === 0) return;
+        batchResults = [];
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+        const ext = format.split('/')[1];
+
+        for (let i = 0; i < imageQueue.length; i++) {
+            await new Promise((resolve) => {
+                generateCanvasForItem(imageQueue[i], (canvas) => {
+                    exportCanvasToBlobOrSvg(canvas, format, imageQueue[i], (blob) => {
+                        let baseName = imageQueue[i].name.substring(0, imageQueue[i].name.lastIndexOf('.')) || `image_${i+1}`;
+                        batchResults.push({ filename: `${baseName}_processed.${ext}`, blob: blob });
+                        resolve();
+                    });
+                });
+            });
+        }
+        batchCountSpan.textContent = batchResults.length;
+        downloadBatchBtn.classList.remove('hidden');
+    });
+
+    downloadBatchBtn.addEventListener('click', async () => {
+        if (batchResults.length === 0) return;
+        const zip = new JSZip();
+        batchResults.forEach(item => zip.file(item.filename, item.blob));
+        const content = await zip.generateAsync({ type: 'blob' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(content);
+        a.download = 'processed_images.zip';
+        a.click();
+    });
+
+    function updateDownloadLink(blob, format) {
+        const ext = format.split('/')[1];
+        downloadBtn.href = URL.createObjectURL(blob);
+        downloadBtn.download = `image-output.${ext}`;
+        downloadBtn.classList.remove('hidden');
+    }
+
+    document.getElementById('optimize-btn').addEventListener('click', async () => {
+        const canvas = getProcessedCanvasWithPadding();
+        if (!canvas) return;
+        updateResultPreview(canvas);
+        const format = document.querySelector('input[name="output-format"]:checked').value;
+
+        exportCanvasToBlobOrSvg(canvas, format, imageQueue[currentIndex], async (blob) => {
+            const file = new File([blob], "image.tmp", { type: format });
+            try {
+                const compressedFile = await imageCompression(file, { maxSizeMB: 0.8, maxWidthOrHeight: 1920, useWebWorker: true, fileType: format });
+                downloadBtn.href = URL.createObjectURL(compressedFile);
+                downloadBtn.download = `optimized-image.${format.split('/')[1]}`;
+                downloadBtn.classList.remove('hidden');
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    });
+
+    // ==========================================
+    // MULTILINGUAL (EN & RU) DYNAMIC LOCALIZATION
+    // Default is English; auto-detects Russian browser or /ru/ URL
+    // ==========================================
+    function setLanguage(lang, savePref) {
+        currentLang = lang === 'ru' ? 'ru' : 'en';
+        isRu = currentLang === 'ru';
+
+        if (savePref) {
+            try {
+                localStorage.setItem(LANG_PREF_KEY, currentLang);
+            } catch (e) {}
+        }
+
+        // Toggle button displays target language or state
+        const targetCode = isRu ? 'EN' : 'RU';
+        const targetTitle = isRu ? 'Switch language to English' : 'Переключить на русский язык';
+        if (langCodeEl) langCodeEl.textContent = targetCode;
+        if (langToggleBtn) langToggleBtn.title = targetTitle;
+
+        document.documentElement.style.setProperty('--cropper-slice-badge', isRu ? "'✂️ ВЫРЕЗ'" : "'✂️ CUT'");
+
+        // Header
+        const subtitle = document.getElementById('imgEditorSubtitle');
+        if (subtitle) subtitle.textContent = isRu 
+            ? 'Нарезка, масштабирование, изменение размера, поля и сжатие локально' 
+            : 'Crop, scale, resize, pad and compress locally';
+        const badgePrivate = document.getElementById('imgEditorBadgePrivate');
+        if (badgePrivate) badgePrivate.textContent = isRu 
+            ? '100% В браузере • Без отправки на сервер • Без водяных знаков' 
+            : '100% In-Browser • Zero Server Uploads • No Watermark';
+
+        // Upload Section
+        const uploadTitle = document.getElementById('imgEditorUploadTitle');
+        if (uploadTitle) uploadTitle.textContent = isRu ? 'Загрузить изображение(я)' : 'Upload Image(s)';
+        const uploadSubtitle = document.getElementById('imgEditorUploadSubtitle');
+        if (uploadSubtitle) uploadSubtitle.textContent = isRu ? 'Перетащите файлы сюда или кликните для выбора' : 'Drag & Drop files here or click to browse';
+        const uploadHint = document.getElementById('imgEditorUploadHint');
+        if (uploadHint) uploadHint.textContent = isRu ? 'Поддержка PNG, JPG, WebP, SVG и др. (можно несколько)' : 'Supports PNG, JPG, WebP, SVG, etc. (Multiple allowed)';
+        const pasteClipboardText = document.getElementById('paste-clipboard-text');
+        if (pasteClipboardText) pasteClipboardText.textContent = isRu ? 'Вставить из буфера обмена' : 'Paste from Clipboard';
+
+        // Decision Section
+        const decisionTitle = document.getElementById('decision-title');
+        if (decisionTitle) decisionTitle.textContent = isRu ? 'Изображения успешно загружены' : 'Images Loaded Successfully';
+        const useOptimizedBtn = document.getElementById('use-optimized-btn');
+        if (useOptimizedBtn) useOptimizedBtn.textContent = isRu ? 'Оптимизировать выбранные файлы' : 'Optimize Selected Files';
+        const useOriginalBtn = document.getElementById('use-original-btn');
+        if (useOriginalBtn) useOriginalBtn.textContent = isRu ? 'Использовать оригиналы' : 'Use Originals';
+        const removeTagsLabel = document.getElementById('remove-tags-label');
+        if (removeTagsLabel) removeTagsLabel.textContent = isRu ? 'Удалить теги изображения (метаданные EXIF)' : 'Remove image tags (EXIF metadata)';
+        if (stepDownloadBtn) stepDownloadBtn.textContent = isRu ? 'Скачать' : 'Download';
+        if (stepDownloadJpgBtn) stepDownloadJpgBtn.textContent = isRu ? 'Скачать как JPG' : 'Download as JPG';
+
+        // Queue Nav
+        if (prevItemBtn) prevItemBtn.textContent = isRu ? '← Назад' : '← Prev';
+        if (nextItemBtn) nextItemBtn.textContent = isRu ? 'Вперед →' : 'Next →';
+        updateQueueNavUI();
+
+        // Cropper Mode Switcher
+        const cropperModeLabel = document.getElementById('cropper-mode-label');
+        if (cropperModeLabel) cropperModeLabel.textContent = isRu ? 'Режим Cropper:' : 'Cropper Mode:';
+        if (cropperModeSliceBtn) cropperModeSliceBtn.textContent = isRu ? '✂️ Вырезка полосы (как в видео)' : '✂️ Strip Slice & Stitch';
+        if (cropperModeCropBtn) cropperModeCropBtn.textContent = isRu ? '📐 Обычный кроп' : '📐 Standard Crop';
+
+        // Cropper Slice Toolbar
+        const cropperSliceTitle = document.getElementById('cropper-slice-title');
+        if (cropperSliceTitle) cropperSliceTitle.textContent = isRu ? 'Вырезаемая полоса в Cropper:' : 'Cut Strip in Cropper:';
+        if (cropperUndoSliceBtn) cropperUndoSliceBtn.textContent = isRu ? '↩️ Отменить' : '↩️ Undo';
+        const cropperApplySliceText = document.getElementById('cropper-apply-slice-text');
+        if (cropperApplySliceText) cropperApplySliceText.textContent = isRu ? 'Обрезать и соединить края' : 'Cut & Stitch Edges';
+
+        // Custom Size
+        const customSizeLabel = document.getElementById('custom-size-label');
+        if (customSizeLabel) customSizeLabel.textContent = isRu ? 'Пользовательский размер (Ш × В, px):' : 'Custom Size (W x H, px):';
+        if (setOriginalSizeBtn) setOriginalSizeBtn.textContent = isRu ? 'Исходный размер' : 'Original size';
+        if (customWidthInput) customWidthInput.placeholder = isRu ? 'Ширина' : 'Width';
+        if (customHeightInput) customHeightInput.placeholder = isRu ? 'Высота' : 'Height';
+        if (applyCustomSizeBtn) applyCustomSizeBtn.textContent = isRu ? 'Применить' : 'Set Size';
+        const lockAspectLabel = document.getElementById('lock-aspect-label');
+        if (lockAspectLabel) lockAspectLabel.textContent = isRu ? 'Сохранять пропорции (Aspect Ratio)' : 'Save proportions (Aspect Ratio)';
+        const customSizeHint = document.getElementById('custom-size-hint');
+        if (customSizeHint) customSizeHint.textContent = isRu ? 'Укажите желаемые размеры итогового изображения' : 'Put sizes of result image';
+
+        // Output format & Scale
+        const outputFormatLabel = document.getElementById('output-format-label');
+        if (outputFormatLabel) outputFormatLabel.textContent = isRu ? 'Формат сохранения:' : 'Output Format:';
+        const resizeScaleLabel = document.getElementById('resize-scale-label');
+        if (resizeScaleLabel) resizeScaleLabel.textContent = isRu ? 'Масштаб (%):' : 'Resize Scale (%):';
+
+        // Padding
+        const paddingLabel = document.getElementById('padding-label');
+        if (paddingLabel) paddingLabel.textContent = isRu ? 'Добавить поля (px):' : 'Add Padding (px):';
+        const paddingBgLabel = document.getElementById('padding-bg-label');
+        if (paddingBgLabel) paddingBgLabel.textContent = isRu ? 'Цвет фона:' : 'Background:';
+        document.querySelectorAll('.pad-bg-text-trans').forEach(el => el.textContent = isRu ? 'Прозрачный' : 'Transparent');
+        document.querySelectorAll('.pad-bg-text-white').forEach(el => el.textContent = isRu ? 'Белый' : 'White');
+        document.querySelectorAll('.pad-bg-text-black').forEach(el => el.textContent = isRu ? 'Черный' : 'Black');
+
+        // Extend Canvas Down
+        const bottomExtendTitle = document.getElementById('bottom-extend-title');
+        if (bottomExtendTitle) bottomExtendTitle.textContent = isRu ? 'Добавить полотно вниз:' : 'Extend Canvas Down:';
+        const bottomSliderLabel = document.getElementById('bottom-slider-label');
+        if (bottomSliderLabel) bottomSliderLabel.textContent = isRu ? 'Слайдер высоты вниз (0% - 200%):' : 'Height slider down (0% - 200%):';
+        const bottomPercentLabel = document.getElementById('bottom-percent-label');
+        if (bottomPercentLabel) bottomPercentLabel.textContent = isRu ? 'Высота вниз (% от картинки):' : 'Height down (% of image):';
+        const bottomPxLabel = document.getElementById('bottom-px-label');
+        if (bottomPxLabel) bottomPxLabel.textContent = isRu ? 'Высота вниз (точно в px):' : 'Height down (exact px):';
+        const bottomBgTitle = document.getElementById('bottom-bg-title');
+        if (bottomBgTitle) bottomBgTitle.textContent = isRu ? 'Фон пространства:' : 'Canvas background:';
+        document.querySelectorAll('.bottom-bg-text-trans').forEach(el => el.textContent = isRu ? 'Прозрачный' : 'Transparent');
+        document.querySelectorAll('.bottom-bg-text-white').forEach(el => el.textContent = isRu ? 'Белый' : 'White');
+        document.querySelectorAll('.bottom-bg-text-black').forEach(el => el.textContent = isRu ? 'Черный' : 'Black');
+        const finalDimensionsTitle = document.getElementById('final-dimensions-title');
+        if (finalDimensionsTitle) finalDimensionsTitle.textContent = isRu ? 'Итоговый размер полотна:' : 'Final canvas size:';
+
+        // Slice & Stitch Tool
+        const sliceToolTitle = document.getElementById('slice-tool-title');
+        if (sliceToolTitle) sliceToolTitle.textContent = isRu ? 'Вырезать отрезок и соединить (как в видео):' : 'Cut slice & stitch edges (video style):';
+        const sliceDirectionTitle = document.getElementById('slice-direction-title');
+        if (sliceDirectionTitle) sliceDirectionTitle.textContent = isRu ? 'Направление:' : 'Direction:';
+        const sliceDirHorizLabel = document.getElementById('slice-dir-horiz-label');
+        if (sliceDirHorizLabel) sliceDirHorizLabel.textContent = isRu ? '↔️ Слева-направо (соединить лево и право)' : '↔️ Horizontal (stitch left & right)';
+        const sliceDirVertLabel = document.getElementById('slice-dir-vert-label');
+        if (sliceDirVertLabel) sliceDirVertLabel.textContent = isRu ? '↕️ Сверху-вниз (верх и низ)' : '↕️ Vertical (top & bottom)';
+        const sliceFromLabel = document.getElementById('slice-from-label');
+        if (sliceFromLabel) sliceFromLabel.textContent = isRu ? '📍 От (начало выреза):' : '📍 From (cut start):';
+        const sliceToLabel = document.getElementById('slice-to-label');
+        if (sliceToLabel) sliceToLabel.textContent = isRu ? '📍 До (конец выреза):' : '📍 To (cut end):';
+        const sliceFromExactLabel = document.getElementById('slice-from-exact-label');
+        if (sliceFromExactLabel) sliceFromExactLabel.textContent = isRu ? 'Отрезок «ОТ» (Start):' : 'Slice «FROM» (Start):';
+        const sliceToExactLabel = document.getElementById('slice-to-exact-label');
+        if (sliceToExactLabel) sliceToExactLabel.textContent = isRu ? 'Отрезок «ДО» (End):' : 'Slice «TO» (End):';
+        const presetC20 = document.getElementById('preset-c20');
+        if (presetC20) presetC20.textContent = isRu ? 'Центр 20%' : 'Center 20%';
+        const presetC33 = document.getElementById('preset-c33');
+        if (presetC33) presetC33.textContent = isRu ? 'Центр 33%' : 'Center 33%';
+        const presetM50 = document.getElementById('preset-m50');
+        if (presetM50) presetM50.textContent = isRu ? 'Середина 50%' : 'Middle 50%';
+        const presetL30 = document.getElementById('preset-l30');
+        if (presetL30) presetL30.textContent = isRu ? 'Левые 30%' : 'Left 30%';
+        const presetR30 = document.getElementById('preset-r30');
+        if (presetR30) presetR30.textContent = isRu ? 'Правые 30%' : 'Right 30%';
+        const sliceResultPreviewTitle = document.getElementById('slice-result-preview-title');
+        if (sliceResultPreviewTitle) sliceResultPreviewTitle.textContent = isRu ? 'Итоговый размер после вырезки:' : 'Final size after cut:';
+        const applySliceText = document.getElementById('apply-slice-text');
+        if (applySliceText) applySliceText.textContent = isRu ? 'Обрезать и соединить' : 'Cut & Stitch';
+        const undoSliceText = document.getElementById('undo-slice-text');
+        if (undoSliceText) undoSliceText.textContent = isRu ? '↩️ Отменить вырезку' : '↩️ Undo Cut';
+
+        // Bottom Actions
+        const cropBtn = document.getElementById('crop-btn');
+        if (cropBtn) cropBtn.textContent = isRu ? 'Кадрировать и поля' : 'Crop & Pad';
+        const optimizeBtn = document.getElementById('optimize-btn');
+        if (optimizeBtn) optimizeBtn.textContent = isRu ? 'Оптимизировать размер' : 'Optimize Size';
+        const addToQueueBtn = document.getElementById('add-to-queue-btn');
+        if (addToQueueBtn) addToQueueBtn.textContent = isRu ? 'Добавить файлы в очередь' : 'Add files to edit';
+        const resetBtn = document.getElementById('reset-btn');
+        if (resetBtn) resetBtn.textContent = isRu ? 'Начать заново' : 'Start from scratch';
+        const newFileBtn = document.getElementById('new-file-btn');
+        if (newFileBtn) newFileBtn.textContent = isRu ? 'Загрузить новые файлы' : 'Upload New Files';
+        const resultPreviewTitle = document.getElementById('result-preview-title');
+        if (resultPreviewTitle) resultPreviewTitle.textContent = isRu ? 'Результат (Превью холста):' : 'Result (Canvas Preview):';
+        if (downloadBtn) downloadBtn.textContent = isRu ? 'Скачать результат' : 'Download Result';
+        const downloadBatchText = document.getElementById('download-batch-text');
+        if (downloadBatchText) downloadBatchText.textContent = isRu ? 'Скачать zip' : 'Download zip';
+
+        updateDimensionsDisplay();
+        syncSliceUI();
+        syncBottomExtensionFromPercent();
+    }
+
+    // Toggle button listeners
+    function toggleLanguage() {
+        const nextLang = currentLang === 'ru' ? 'en' : 'ru';
+        setLanguage(nextLang, true);
+    }
+    if (langToggleBtn) langToggleBtn.addEventListener('click', toggleLanguage);
+
+    // Initial language setup
+    setLanguage(currentLang, false);
+</script>
+
+      
+    </div>
+    <footer class="article-footer" data-c="falseimg-editor.html">
+      <a data-url="https://safiullin.dev/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/" data-id="cuidNs4Bp_LeF3T7e2B-vcgWf" data-title="Fast Client-Side Image Editor Right in Your Browser" class="article-share-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="margin-right: 5px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>Share</a>
+      
+      
+  
+  <ul class="article-tag-list" itemprop="keywords">
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/tools/" rel="tag">tools</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/images/" rel="tag">images</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/optimization/" rel="tag">optimization</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/javascript/" rel="tag">javascript</a>
+      </li>
+    
+      <li class="article-tag-list-item">
+        <a class="article-tag-list-link" href="/en/tags/web-performance/" rel="tag">web-performance</a>
+      </li>
+    
+  </ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/11/07/ru/online-video-editor/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Онлайн видеоредактор без водяных знаков и сервера (Video Editor Online)</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 <a href="https://safiullin.com" rel="external nofollow noreferrer" target="_blank">Albert Safiullin</a><br>
+        Telegram Channel: <a href="https://telegram.me/safiullin_ai_dev" rel="external nofollow noreferrer" target="_blank">@safiullin_ai_dev</a><br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<nav id="mobile-nav">
+  
+    <a href="/en/" class="mobile-nav-link">Home</a>
+  
+    <a href="/en/archives" class="mobile-nav-link">Archives</a>
+  
+  
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0 10px; padding: 15px 20px 5px; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Languages</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 20px 20px;">
+      
+        <a href="/" class="mobile-lang-btn active" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(255,255,255,0.22); border-radius: 4px; text-decoration: none;">EN</a>
+      
+        <a href="/ru/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">RU</a>
+      
+        <a href="/es/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ES</a>
+      
+        <a href="/zh-cn/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">ZH-CN</a>
+      
+        <a href="/hi/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">HI</a>
+      
+        <a href="/th/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">TH</a>
+      
+        <a href="/fr/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">FR</a>
+      
+        <a href="/pt/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">PT</a>
+      
+        <a href="/ar/" class="mobile-lang-btn" style="display: inline-block; padding: 6px 10px; font-size: 12px; font-weight: 600; color: #aaa; background: rgba(255,255,255,0.06); border-radius: 4px; text-decoration: none;">AR</a>
+      
+    </div>
+  
+</nav>
+    <button id="scroll-to-top" class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="svg-icon icon-stroke" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    
+  
+<script src="/js/lightbox.js"></script>
+
+    
+
+      <script
+        src="/js/script.js?v=1794121201340"></script>
+
+      
+  </div>
+</body>
+</html>

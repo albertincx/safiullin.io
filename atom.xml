@@ -10,7 +10,30 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-11-07T04:18:50.582Z</updated>
+  <updated>2026-11-08T06:27:19.505Z</updated>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="images" scheme="https://safiullin.dev/tags/images/"/>
+    <category term="optimization" scheme="https://safiullin.dev/tags/optimization/"/>
+    <category term="javascript" scheme="https://safiullin.dev/tags/javascript/"/>
+    <category term="web-performance" scheme="https://safiullin.dev/tags/web-performance/"/>
+    <content>
+      <![CDATA[<p>I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using client-side JavaScript. No third-party servers, no waiting for uploads—everything happens locally on your device.</p><p>Try it out right now!</p><span id="more"></span>]]>
+    </content>
+    <id>https://safiullin.dev/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/</id>
+    <link href="https://safiullin.dev/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/"/>
+    <link href="https://safiullin.dev/images/covers/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image.jpg" rel="enclosure"/>
+    <published>2026-11-08T06:27:19.505Z</published>
+    <summary>
+      <![CDATA[<p>I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using client-side JavaScript. No third-party servers, no waiting for uploads—everything happens locally on your device.</p>
+<p>Try it out right now!</p>]]>
+    </summary>
+    <title>Fast Client-Side Image Editor Right in Your Browser</title>
+    <updated>2026-11-08T06:27:19.505Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
@@ -357,29 +380,6 @@
     </summary>
     <title>Extract Audio from video online</title>
     <updated>2026-10-26T11:53:04.736Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
-    <category term="images" scheme="https://safiullin.dev/tags/images/"/>
-    <category term="optimization" scheme="https://safiullin.dev/tags/optimization/"/>
-    <category term="javascript" scheme="https://safiullin.dev/tags/javascript/"/>
-    <category term="web-performance" scheme="https://safiullin.dev/tags/web-performance/"/>
-    <content>
-      <![CDATA[<p>I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using client-side JavaScript. No third-party servers, no waiting for uploads—everything happens locally on your device.</p><p>Try it out right now!</p><span id="more"></span>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/</id>
-    <link href="https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/"/>
-    <link href="https://safiullin.dev/images/covers/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image.jpg" rel="enclosure"/>
-    <published>2026-07-25T02:34:30.754Z</published>
-    <summary>
-      <![CDATA[<p>I wanted a simple, private, and instant solution. Here is a lightweight image optimization widget that runs entirely inside your browser using client-side JavaScript. No third-party servers, no waiting for uploads—everything happens locally on your device.</p>
-<p>Try it out right now!</p>]]>
-    </summary>
-    <title>Fast Client-Side Image Editor Right in Your Browser</title>
-    <updated>2026-10-26T11:53:04.735Z</updated>
   </entry>
   <entry>
     <author>

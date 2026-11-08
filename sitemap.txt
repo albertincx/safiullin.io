@@ -1,3 +1,4 @@
+https://safiullin.dev/2026/11/08/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/
 https://safiullin.dev/2026/11/07/ru/online-video-editor/
 https://safiullin.dev/2026/11/07/online-video-editor/
 https://safiullin.dev/2026/10/31/ru/how-i-built-ultra-fast-git-interface/
@@ -20,7 +21,6 @@ https://safiullin.dev/2026/03/21/how-to-build-a-good-blocks-game-with-ai/
 https://safiullin.dev/2026/07/14/how-i-built-pdf-ink-for-online-learning/
 https://safiullin.dev/2026/07/15/how-i-built-a-live-web-editor-for-rendercv/
 https://safiullin.dev/2026/09/05/extract-audio-from-video-file-online/
-https://safiullin.dev/2026/07/25/Image-Studio-Pro-Resize-Crop-Scale-Optimize-Image/
 https://safiullin.dev/2023/12/27/How-to-Reduce-Traffic-Congestion/
 https://safiullin.dev/2023/06/11/How-to-make-any-site-mobile/
 https://safiullin.dev/2026/07/24/Fast-Client-Side-Image-Optimization-Right-in-Your-Browser/
