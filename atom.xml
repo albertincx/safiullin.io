@@ -10,7 +10,54 @@
   <rights>All rights reserved 2026, Albert Safiullin</rights>
   <subtitle>Albert Safiullin`s Blog Apps, Games, Bots</subtitle>
   <title>Safiullin.dev Videcode. Ai. Life. Tools</title>
-  <updated>2026-11-08T06:27:19.505Z</updated>
+  <updated>2026-11-17T09:59:46.259Z</updated>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="education" scheme="https://safiullin.dev/tags/education/"/>
+    <category term="english" scheme="https://safiullin.dev/tags/english/"/>
+    <category term="grammar" scheme="https://safiullin.dev/tags/grammar/"/>
+    <category term="test" scheme="https://safiullin.dev/tags/test/"/>
+    <content>
+      <![CDATA[<p>Проверьте и закрепите знания английской грамматики и лексики в <strong>safiullin.dev test</strong> — интерактивном онлайн-тренажёре по всем <strong>125 параграфам</strong> (Level 2 §1–49 и Level 3 §1–76, всего <strong>1 250 вопросов</strong>) с подробным разбором ошибок, шпаргалками по правилам и историей прохождения.</p><span id="more"></span><p>Вы можете проходить любую главу по порядку, пропускать сложные вопросы и целые темы, запускать случайный <strong>Блиц (20 вопросов)</strong> или <strong>Экзамен (50 вопросов)</strong> по всему курсу, а также отрабатывать только свои ошибки. Все результаты и статистика сохраняются в истории вашего браузера.</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/11/17/ru/english-grammar-test-online/</id>
+    <link href="https://safiullin.dev/2026/11/17/ru/english-grammar-test-online/"/>
+    <published>2026-11-17T09:59:46.258Z</published>
+    <summary>
+      <![CDATA[<p>Проверьте и закрепите знания английской грамматики и лексики в <strong>safiullin.dev test</strong> — интерактивном онлайн-тренажёре по всем <strong>125 параграфам</strong> (Level 2 §1–49 и Level 3 §1–76, всего <strong>1 250 вопросов</strong>) с подробным разбором ошибок, шпаргалками по правилам и историей прохождения.</p>]]>
+    </summary>
+    <title>safiullin.dev test: Полный онлайн-тест по английскому языку (1 250 вопросов)</title>
+    <updated>2026-11-17T09:59:46.259Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Albert Safiullin</name>
+    </author>
+    <category term="tools" scheme="https://safiullin.dev/tags/tools/"/>
+    <category term="useful" scheme="https://safiullin.dev/tags/useful/"/>
+    <category term="education" scheme="https://safiullin.dev/tags/education/"/>
+    <category term="english" scheme="https://safiullin.dev/tags/english/"/>
+    <category term="grammar" scheme="https://safiullin.dev/tags/grammar/"/>
+    <category term="test" scheme="https://safiullin.dev/tags/test/"/>
+    <content>
+      <![CDATA[<p>Practice and master English grammar and vocabulary with <strong>safiullin.dev test</strong> — an interactive online course quiz covering <strong>125 units</strong> (Level 2 §1–49 &amp; Level 3 §1–76) and <strong>1,250 questions</strong> with instant explanations, grammar rule cheat sheets, and progress tracking.</p><span id="more"></span><p>Whether you want to test a specific grammar topic, take a quick 20-question Blitz, or challenge yourself with a 50-question mixed exam, <strong>safiullin.dev test</strong> gives you immediate feedback on every answer, highlights your mistakes with clear Russian explanations and rules, and saves your test history locally in your browser.</p>]]>
+    </content>
+    <id>https://safiullin.dev/2026/11/17/english-grammar-test-online/</id>
+    <link href="https://safiullin.dev/2026/11/17/english-grammar-test-online/"/>
+    <link href="https://safiullin.dev/images/covers/english-grammar-test-online.jpg" rel="enclosure"/>
+    <published>2026-11-17T09:59:39.953Z</published>
+    <summary>
+      <![CDATA[<p>Practice and master English grammar and vocabulary with <strong>safiullin.dev test</strong> — an interactive online course quiz covering <strong>125 units</strong> (Level 2 §1–49 &amp; Level 3 §1–76) and <strong>1,250 questions</strong> with instant explanations, grammar rule cheat sheets, and progress tracking.</p>]]>
+    </summary>
+    <title>
+      <![CDATA[safiullin.dev test: Complete English Grammar & Vocabulary Test (1,250 Questions)]]>
+    </title>
+    <updated>2026-11-17T09:59:39.953Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Albert Safiullin</name>
@@ -447,43 +494,5 @@
     </summary>
     <title>Как я создал PDF Ink для комфортного онлайн-обучения по книгам в формате PDF</title>
     <updated>2026-07-21T12:08:26.871Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <content>
-      <![CDATA[<p>В этой статье я поделюсь своим опытом и рабочим процессом создания веб-страниц с использованием Qwen Coder AI.</p><span id="more"></span><h2 id="Введение"><a href="#Введение" class="headerlink" title="Введение"></a>Введение</h2><p>Qwen Coder AI стал незаменимым инструментом в моем процессе веб-разработки. Он помогает мне быстрее писать код, эффективнее отлаживать ошибки и уверенно изучать новые технологии.</p><h2 id="Мой-рабочий-процесс"><a href="#Мой-рабочий-процесс" class="headerlink" title="Мой рабочий процесс"></a>Мой рабочий процесс</h2><h3 id="1-Планирование-структуры-страницы"><a href="#1-Планирование-структуры-страницы" class="headerlink" title="1. Планирование структуры страницы"></a>1. Планирование структуры страницы</h3><p>Перед написанием кода я намечаю структуру страницы:</p><ul><li>Шапка (Header) с меню</li><li>Основная область контента</li><li>Боковая панель (если нужно)</li><li>Подвал (Footer)</li></ul><h3 id="2-Генерация-скелета-HTML"><a href="#2-Генерация-скелета-HTML" class="headerlink" title="2. Генерация скелета HTML"></a>2. Генерация скелета HTML</h3><p>Я прошу Qwen Coder AI сгенерировать чистый скелет HTML5 с использованием семантических тегов.</p><h3 id="3-Стилизация-с-помощью-CSS"><a href="#3-Стилизация-с-помощью-CSS" class="headerlink" title="3. Стилизация с помощью CSS"></a>3. Стилизация с помощью CSS</h3><p>ИИ помогает мне быстро создавать адаптивные стили CSS на основе моих описаний.</p><h3 id="4-Добавление-интерактивности-с-помощью-JavaScript"><a href="#4-Добавление-интерактивности-с-помощью-JavaScript" class="headerlink" title="4. Добавление интерактивности с помощью JavaScript"></a>4. Добавление интерактивности с помощью JavaScript</h3><p>Для динамических функций он помогает мне писать JS-функции и обработчики событий.</p><h2 id="Заключение"><a href="#Заключение" class="headerlink" title="Заключение"></a>Заключение</h2><p>Qwen Coder AI изменил мой подход к разработке. Это не просто генератор кода, а полноценный партнер, который повышает мою продуктивность.</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/ru/how-i-create-web-pages-with-qwen-coder-ai/</id>
-    <link href="https://safiullin.dev/2026/07/18/ru/how-i-create-web-pages-with-qwen-coder-ai/"/>
-    <published>2026-07-18T12:04:49.731Z</published>
-    <summary>
-      <![CDATA[<p>В этой статье я поделюсь своим опытом и рабочим процессом создания веб-страниц с использованием Qwen Coder AI.</p>]]>
-    </summary>
-    <title>Как я создаю веб-страницы с помощью Qwen Coder AI</title>
-    <updated>2026-07-23T09:49:57.458Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Albert Safiullin</name>
-    </author>
-    <category term="web-app" scheme="https://safiullin.dev/tags/web-app/"/>
-    <category term="pdf" scheme="https://safiullin.dev/tags/pdf/"/>
-    <category term="education" scheme="https://safiullin.dev/tags/education/"/>
-    <category term="open-source" scheme="https://safiullin.dev/tags/open-source/"/>
-    <content>
-      <![CDATA[<h2 id="Por-que-ler-PDFs-se-voce-nao-pode-escrever-neles"><a href="#Por-que-ler-PDFs-se-voce-nao-pode-escrever-neles" class="headerlink" title="Por que ler PDFs se você não pode escrever neles?"></a>Por que ler PDFs se você não pode escrever neles?</h2><p>Olá a todos! Eu sou o Albert, e adoro tornar as ferramentas mais convenientes e fáceis de usar.</p><p>Se você já tentou aprender sozinho, estudar livros de programação ou ler documentos técnicos complexos em PDF no seu notebook, conhece essa dificuldade. Você abre um livro, quer destacar um trecho de código, desenhar uma seta ao lado de uma explicação ou deixar uma nota de margem — e percebe que os visualizadores de PDF clássicos são pesados, pagos ou perdem todos os seus desenhos ao atualizar a página.</p><p>Quis resolver isso e criei o <strong>PDF Ink</strong> — um aplicativo web leve e rápido para ler e anotar livros em PDF de forma interativa diretamente no seu navegador.</p><span id="more"></span><hr><h2 id="A-Ideia-e-a-Stack-Tecnologica"><a href="#A-Ideia-e-a-Stack-Tecnologica" class="headerlink" title="A Ideia e a Stack Tecnológica"></a>A Ideia e a Stack Tecnológica</h2><p>O principal objetivo era construir uma ferramenta que:</p><ol><li>Iniciasse em um clique em qualquer navegador moderno.</li><li>Permitisse carregar qualquer livro em PDF local.</li><li>Permitisse desenhar usando o mouse, caneta ou toque, e adicionar notas de texto.</li><li><strong>O mais importante:</strong> Salvasse sua página atual, nível de zoom, biblioteca e notas de desenho localmente de forma segura para retomar os estudos a qualquer momento.</li></ol><p>Para a implementação, selecionei: <strong>React + TypeScript + Vite + TailwindCSS</strong>.<br>Para renderização de PDF, integrei a biblioteca <code>pdfjs-dist</code> (PDF.js) da Mozilla.</p><hr><h2 id="Arquitetura-de-Canvas-com-Camada-Dupla"><a href="#Arquitetura-de-Canvas-com-Camada-Dupla" class="headerlink" title="Arquitetura de Canvas com Camada Dupla"></a>Arquitetura de Canvas com Camada Dupla</h2><p>Para garantir que o aplicativo continue responsivo durante os desenhos, dividi a área de trabalho em duas camadas independentes:</p><ol><li><strong>Camada PDF</strong> : Um <code>&lt;canvas&gt;</code> de fundo estático que renderiza a imagem do PDF conforme o zoom.</li><li><strong>Camada de Anotação</strong> : Um <code>&lt;canvas&gt;</code> transparente sobreposto que captura os eventos do ponteiro, desenha os traços e exibe as notas de texto.</li></ol><p>Esse método torna o desenho super rápido: quando você desenha uma linha, o aplicativo redesenha apenas a leve camada vector, deixando intacta a pesada imagem do PDF.</p><hr><h2 id="Evolucao-do-Banco-de-Dados-Passando-para-o-IndexedDB-v2"><a href="#Evolucao-do-Banco-de-Dados-Passando-para-o-IndexedDB-v2" class="headerlink" title="Evolução do Banco de Dados: Passando para o IndexedDB v2"></a>Evolução do Banco de Dados: Passando para o IndexedDB v2</h2><p>A versão inicial salvava o arquivo PDF e todos os desenhos como um único objeto no IndexedDB. Com manuais pesados, gravar 20 MB no disco a cada 250 ms causava lentidão na interface.</p><p>Reescrevi o gerenciador do IndexedDB para separar os arquivos das anotações:</p><ol><li><strong>Armazém <code>pdfs</code></strong>: Armazena o arquivo binário bruto (<code>ArrayBuffer</code>) apenas uma vez no primeiro import.</li><li><strong>Armazém <code>pdfs_metadata</code></strong>: Armazena coordenadas, páginas e notas leves em JSON.</li></ol><p>Agora, ao desenhar, apenas os metadados são salvos. A gravação leva uma fração de milissegundo, eliminando qualquer lentidão!</p><hr><h2 id="Teste-agora-mesmo"><a href="#Teste-agora-mesmo" class="headerlink" title="Teste agora mesmo!"></a>Teste agora mesmo!</h2><p>Você pode testar a versão online aqui:<br>👉 <strong><a href="https://practice-book-app.safiullin.dev/">Practice Book PDF APP Live App</a></strong></p><p>Bons estudos, e escreva códigos que facilitem a vida!</p>]]>
-    </content>
-    <id>https://safiullin.dev/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/</id>
-    <link href="https://safiullin.dev/2026/07/18/pt/how-i-built-pdf-ink-for-online-learning/"/>
-    <published>2026-07-18T12:04:28.041Z</published>
-    <summary>
-      <![CDATA[<h2 id="Por-que-ler-PDFs-se-voce-nao-pode-escrever-neles"><a href="#Por-que-ler-PDFs-se-voce-nao-pode-escrever-neles" class="headerlink" title="Por que ler PDFs se você não pode escrever neles?"></a>Por que ler PDFs se você não pode escrever neles?</h2><p>Olá a todos! Eu sou o Albert, e adoro tornar as ferramentas mais convenientes e fáceis de usar.</p>
-<p>Se você já tentou aprender sozinho, estudar livros de programação ou ler documentos técnicos complexos em PDF no seu notebook, conhece essa dificuldade. Você abre um livro, quer destacar um trecho de código, desenhar uma seta ao lado de uma explicação ou deixar uma nota de margem — e percebe que os visualizadores de PDF clássicos são pesados, pagos ou perdem todos os seus desenhos ao atualizar a página.</p>
-<p>Quis resolver isso e criei o <strong>PDF Ink</strong> — um aplicativo web leve e rápido para ler e anotar livros em PDF de forma interativa diretamente no seu navegador.</p>]]>
-    </summary>
-    <title>Como eu construí o PDF Ink para um aprendizado online confortável usando livros em PDF</title>
-    <updated>2026-07-21T12:08:26.886Z</updated>
   </entry>
 </feed>
